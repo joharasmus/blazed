@@ -32,8 +32,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          repository: joharasmus/iced
 
       - uses: actions/setup-dotnet@v2
         with:
