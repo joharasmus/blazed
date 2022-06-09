@@ -7,7 +7,6 @@ on:
 # Keep this in sync with the other *.yml files
 env:
   CI_REQ_DOTNET_SDK_VER: '6.0.x'
-  MACOSX_DEPLOYMENT_TARGET: '10.12'
 
 jobs:
 
@@ -38,13 +37,6 @@ jobs:
           fi
           ./build/build-dotnet $extra_args
 
-      - uses: actions/upload-artifact@v3
-        if: startsWith(matrix.os, 'ubuntu-')
-        with:
-          name: nupkg
-          path: src/csharp/Intel/Iced/bin/Release/*.*nupkg
-          if-no-files-found: error
-
   #############################################################################
   #############################################################################
   #############################################################################
@@ -65,23 +57,3 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           path: /tmp/artifacts
-
-      - name: Verify downloads
-        shell: bash
-        run: |
-          if [ -z "$(ls -A /tmp/artifacts/nupkg/Iced.*.nupkg)" ]; then
-            echo "Missing nupkg files"
-            exit 1
-          fi
-
-      - name: Upload checks
-        shell: bash
-        run: |
-          dotnet nuget push --help
-
-      - name: Upload to nuget.org
-        shell: bash
-        run: |
-          for file in /tmp/artifacts/nupkg/Iced.*.nupkg; do
-            dotnet nuget push "$file" --api-key "${{secrets.NUGET_APIKEY}}" --source https://api.nuget.org/v3/index.json
-          done

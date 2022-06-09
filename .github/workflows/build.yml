@@ -20,9 +20,6 @@ on:
 # Keep this in sync with the other *.yml files
 env:
   CI_REQ_DOTNET_SDK_VER: '6.0.x'
-  CI_NODE_MIN_VER: '14.0.0'
-  RUSTFLAGS: '-D warnings'
-  MACOSX_DEPLOYMENT_TARGET: '10.12'
 
 jobs:
 
@@ -47,12 +44,6 @@ jobs:
       - name: Build and test
         shell: bash
         run: ./build/build-dotnet --quick-check
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: nupkg
-          path: src/csharp/Intel/Iced/bin/Release/*.*nupkg
-          if-no-files-found: error
 
       - uses: actions/upload-artifact@v3
         with:
