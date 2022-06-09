@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace IcedFuzzer.Core {
+namespace IcedFuzzer {
 	sealed class CodeWriter {
 		readonly byte[] data;
 		int dataLen;

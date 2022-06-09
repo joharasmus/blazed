@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace IcedFuzzer.Core {
+namespace IcedFuzzer {
 	enum FuzzerEncodingKind {
 		Legacy,
 		D3NOW,

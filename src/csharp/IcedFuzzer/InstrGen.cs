@@ -7,7 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Iced.Intel;
 
-namespace IcedFuzzer.Core {
+namespace IcedFuzzer {
 	public sealed class EncodingTables {
 		public readonly List<FuzzerOpCode> Legacy = new List<FuzzerOpCode>();
 		public readonly List<FuzzerOpCode> D3now = new List<FuzzerOpCode>();

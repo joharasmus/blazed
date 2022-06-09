@@ -3,7 +3,7 @@
 
 using Iced.Intel;
 
-namespace IcedFuzzer.Core {
+namespace IcedFuzzer {
 	readonly struct RegisterInfo {
 		readonly int bitness;
 		readonly FuzzerOperandRegLocation regLoc;

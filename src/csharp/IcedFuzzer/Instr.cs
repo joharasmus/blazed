@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using Iced.Intel;
 
-namespace IcedFuzzer.Core {
+namespace IcedFuzzer {
 	public static class OpCodeTableIndexes {
 		public const int D3nowTable = 1;
 

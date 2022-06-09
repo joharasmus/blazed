@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Iced\Iced.csproj" />
-    <ProjectReference Include="..\IcedFuzzer.Core\IcedFuzzer.Core.csproj" />
   </ItemGroup>
 
 </Project>

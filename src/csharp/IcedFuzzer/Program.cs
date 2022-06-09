@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using IcedFuzzer.Core;
 using Iced.Intel;
 
 namespace IcedFuzzer {
