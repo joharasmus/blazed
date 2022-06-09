@@ -5,6 +5,7 @@ root_dir=$(dirname "$0")
 root_dir=$(cd "$root_dir/.." && pwd)
 if [ ! -f "$root_dir/LICENSE.txt" ]; then
 	echo "Couldn't find the root dir"
+	echo "$root_dir"
 	exit 1
 fi
 
