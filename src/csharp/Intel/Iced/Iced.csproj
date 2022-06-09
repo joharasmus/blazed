@@ -8,8 +8,7 @@
     <AssemblyTitle>Iced</AssemblyTitle>
     <AssemblyName>Iced</AssemblyName>
     <PackageId>Iced</PackageId>
-    <PackageIcon>logo.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/icedland/iced</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/joharasmus/iced</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageVersion>$(InformationalVersion)</PackageVersion>
     <PackageTags>disassembler;x86;x64;assembler;encoder;decoder;formatter</PackageTags>
@@ -46,7 +45,6 @@ iced is a blazing fast and correct x86 (16/32/64-bit) instruction decoder, disas
 
   <ItemGroup>
     <None Include="..\..\..\..\LICENSE.txt" Pack="true" PackagePath="" />
-    <None Include="..\..\..\..\logo.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
   <ItemGroup>
