@@ -1,4 +1,4 @@
-# iced [![NuGet](https://img.shields.io/nuget/v/iced.svg)](https://www.nuget.org/packages/iced/) [![GitHub builds](https://github.com/icedland/iced/workflows/GitHub%20CI/badge.svg)](https://github.com/icedland/iced/actions) [![codecov](https://codecov.io/gh/icedland/iced/branch/master/graph/badge.svg)](https://codecov.io/gh/icedland/iced)
+# iced [![GitHub builds](https://github.com/joharasmus/iced/workflows/GitHub%20CI/badge.svg)](https://github.com/joharasmus/iced/actions) [![codecov](https://codecov.io/gh/icedland/iced/branch/master/graph/badge.svg)](https://codecov.io/gh/icedland/iced)
 
 <img align="right" width="160px" height="160px" src="../../../logo.png">
 
