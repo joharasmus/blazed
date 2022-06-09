@@ -60,14 +60,6 @@ namespace Generator {
 			var langComments = new List<(TargetLanguage language, string comment)>();
 			if (attr.CSharp is string csharpComment)
 				langComments.Add((TargetLanguage.CSharp, csharpComment));
-			if (attr.Rust is string rustComment)
-				langComments.Add((TargetLanguage.Rust, rustComment));
-			if (attr.RustJS is string rustJSComment)
-				langComments.Add((TargetLanguage.RustJS, rustJSComment));
-			if (attr.Python is string pythonComment)
-				langComments.Add((TargetLanguage.Python, pythonComment));
-			if (attr.Lua is string luaComment)
-				langComments.Add((TargetLanguage.Lua, luaComment));
 			return new(attr.Comment, langComments.Count == 0 ? Array.Empty<(TargetLanguage language, string comment)>() : langComments.ToArray());
 		}
 	}

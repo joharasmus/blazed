@@ -164,7 +164,7 @@ Options:
 		}
 
 		static bool TryParseCommandLine(string[] args, [NotNullWhen(true)] out CommandLineOptions? options, [NotNullWhen(false)] out string? error) {
-			if (Enum.GetValues<TargetLanguage>().Length != 6)
+			if (Enum.GetValues<TargetLanguage>().Length != 2)
 				throw new InvalidOperationException("Enum updated, update help message and this method");
 			options = new CommandLineOptions();
 			for (int i = 0; i < args.Length; i++) {
@@ -186,18 +186,6 @@ Options:
 					switch (value.ToLowerInvariant()) {
 					case "cs":
 						options.Languages.Add(TargetLanguage.CSharp);
-						break;
-					case "rs":
-						options.Languages.Add(TargetLanguage.Rust);
-						break;
-					case "rsjs":
-						options.Languages.Add(TargetLanguage.RustJS);
-						break;
-					case "py":
-						options.Languages.Add(TargetLanguage.Python);
-						break;
-					case "lua":
-						options.Languages.Add(TargetLanguage.Lua);
 						break;
 					default:
 						error = $"Unknown language: {value}";

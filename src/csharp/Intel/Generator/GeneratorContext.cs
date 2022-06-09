@@ -56,10 +56,6 @@ namespace Generator {
 		public string UnitTestsDir { get; }
 		public string CSharpDir => langDirs[(int)TargetLanguage.CSharp];
 		public string CSharpTestsDir { get; }
-		public string RustDir => langDirs[(int)TargetLanguage.Rust];
-		public string RustJSDir => langDirs[(int)TargetLanguage.RustJS];
-		public string PythonDir => langDirs[(int)TargetLanguage.Python];
-		public string LuaDir => langDirs[(int)TargetLanguage.Lua];
 		public string GeneratorDir { get; }
 		readonly string[] langDirs;
 
@@ -71,10 +67,6 @@ namespace Generator {
 				string path = (TargetLanguage)i switch {
 					TargetLanguage.Other => string.Empty,
 					TargetLanguage.CSharp => GetAndVerifyPath(baseDir, "csharp", "Intel", "Iced"),
-					TargetLanguage.Rust => GetAndVerifyPath(baseDir, "rust", "iced-x86", "src"),
-					TargetLanguage.RustJS => GetAndVerifyPath(baseDir, "rust", "iced-x86-js", "src"),
-					TargetLanguage.Python => GetAndVerifyPath(baseDir, "rust", "iced-x86-py"),
-					TargetLanguage.Lua => GetAndVerifyPath(baseDir, "rust", "iced-x86-lua"),
 					_ => throw new InvalidOperationException(),
 				};
 				langDirs[i] = path;
@@ -91,17 +83,6 @@ namespace Generator {
 
 		public string GetUnitTestFilename(params string[] names) => Path.Combine(UnitTestsDir, Path.Combine(names));
 		public string GetCSharpTestFilename(params string[] names) => Path.Combine(CSharpTestsDir, Path.Combine(names));
-		public string GetRustFilename(params string[] names) => Path.Combine(RustDir, Path.Combine(names));
-		public string GetRustJSFilename(params string[] names) => Path.Combine(RustJSDir, Path.Combine(names));
-		public string GetPythonPyFilename(params string[] names) => Path.Combine(Path.Combine(PythonDir, "src", "iced_x86"), Path.Combine(names));
-		public string GetPythonRustFilename(params string[] names) => Path.Combine(Path.Combine(PythonDir, "src"), Path.Combine(names));
-		public string GetPythonDocsFilename(params string[] names) => Path.Combine(Path.Combine(PythonDir, "docs"), Path.Combine(names));
-		public string GetPythonDocsSrcFilename(params string[] names) => Path.Combine(Path.Combine(PythonDir, "docs", "src"), Path.Combine(names));
-		public string GetPythonRustDir() => Path.Combine(PythonDir, "src");
-		public string GetLuaFilename(params string[] names) => Path.Combine(Path.Combine(LuaDir, "lua"), Path.Combine(names));
-		public string GetLuaTypesFilename(params string[] names) => Path.Combine(Path.Combine(LuaDir, "lua", "types"), Path.Combine(names));
-		public string GetLuaRustFilename(params string[] names) => Path.Combine(Path.Combine(LuaDir, "src"), Path.Combine(names));
-		public string GetLuaRustDir() => Path.Combine(LuaDir, "src");
 		public string GetGeneratorFilename(params string[] names) => Path.Combine(GeneratorDir, Path.Combine(names));
 	}
 
