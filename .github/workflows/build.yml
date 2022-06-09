@@ -3,7 +3,7 @@ on:
   push:
     paths:
       - ".github/workflows/build.yml"
-      - "build/**"
+      - "build-dotnet"
       - "src/**"
       - "!**/*.md"
     branches:
@@ -11,7 +11,7 @@ on:
   pull_request:
     paths:
       - ".github/workflows/build.yml"
-      - "build/**"
+      - "build-dotnet"
       - "src/**"
       - "!**/*.md"
     branches:
@@ -22,10 +22,6 @@ env:
   CI_REQ_DOTNET_SDK_VER: '6.0.x'
 
 jobs:
-
-  #############################################################################
-  #############################################################################
-  #############################################################################
 
   build-dotnet:
     name: C# (${{matrix.os}})
