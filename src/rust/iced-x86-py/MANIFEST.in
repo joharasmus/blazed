@@ -1,5 +1,0 @@
-include Cargo.toml LICENSE.txt requirements.txt requirements-dev.txt
-recursive-include docs *
-recursive-include src *
-recursive-include tests *
-global-exclude *.py[cod] __pycache__ *.so
