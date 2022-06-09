@@ -2,3 +2,4 @@
 .vs/
 coverage.info
 /cov-out/
+*.snk

@@ -37,7 +37,7 @@ new_func() {
 generator_check() {
 	new_func "Run generator, verify no diff"
 
-	dotnet run -c $configuration --project "$root_dir/src/csharp/Intel/Generator/Generator.csproj"
+	dotnet run -c $configuration --project "$root_dir/src/csharp/Generator/Generator.csproj"
 	git diff --exit-code
 }
 
@@ -66,7 +66,7 @@ build_features() {
 		echo
 		echo "==== $features ===="
 		echo
-		dotnet build -v:m -c $configuration -p:TargetFramework=$net_std -p:IcedFeatureFlags="$features" "$root_dir/src/csharp/Intel/Iced/Iced.csproj"
+		dotnet build -v:m -c $configuration -p:TargetFramework=$net_std -p:IcedFeatureFlags="$features" "$root_dir/src/csharp/Iced/Iced.csproj"
 	done
 
 	set -- \
@@ -91,20 +91,20 @@ build_features() {
 		echo
 		echo "==== TEST $features ===="
 		echo
-		dotnet build -v:m -c $configuration -p:TargetFramework=$net_tfm -p:IcedFeatureFlags="$features" "$root_dir/src/csharp/Intel/Iced.UnitTests/Iced.UnitTests.csproj"
+		dotnet build -v:m -c $configuration -p:TargetFramework=$net_tfm -p:IcedFeatureFlags="$features" "$root_dir/src/csharp/Iced.UnitTests/Iced.UnitTests.csproj"
 	done
 }
 
 build_test() {
 	new_func "Build, test"
 
-	dotnet build -v:m -c $configuration "$root_dir/src/csharp/Intel/Iced.sln"
+	dotnet build -v:m -c $configuration "$root_dir/src/csharp/Iced/Iced.sln"
 
 	if [ "$test_code" = "y" ]; then
 		echo
 		echo "==== TEST ===="
 		echo
-		if [ ! -d "$root_dir/src/csharp/Intel/Iced.UnitTests/bin/$configuration/$net_tfm" ]; then
+		if [ ! -d "$root_dir/src/csharp/Iced.UnitTests/bin/$configuration/$net_tfm" ]; then
 			echo "Invalid tfm: $net_tfm"
 			exit 1
 		fi
@@ -119,7 +119,7 @@ build_test() {
 		else
 			cov_dir="$root_dir"
 		fi
-		dotnet test -c $configuration -f $net_tfm -p:Exclude='"[Iced]Iced.Intel.InstructionMemorySizes,[Iced]Iced.Intel.EncoderInternal.OpCodeHandlers,[Iced]Iced.Intel.InstructionInfoInternal.InfoHandlers,[Iced]Iced.Intel.MnemonicUtils,[Iced]Iced.Intel.InstructionOpCounts"' -p:ExcludeByFile="$cov_dir/src/csharp/Intel/Iced/**/*.g.cs" -p:ExcludeByAttribute='ObsoleteAttribute' -p:CollectCoverage=$collect_coverage -p:CoverletOutputFormat=lcov --no-build "$root_dir/src/csharp/Intel/Iced.UnitTests/Iced.UnitTests.csproj" -- RunConfiguration.NoAutoReporters=true RunConfiguration.TargetPlatform=X64
+		dotnet test -c $configuration -f $net_tfm -p:Exclude='"[Iced]Iced.Intel.InstructionMemorySizes,[Iced]Iced.Intel.EncoderInternal.OpCodeHandlers,[Iced]Iced.Intel.InstructionInfoInternal.InfoHandlers,[Iced]Iced.Intel.MnemonicUtils,[Iced]Iced.Intel.InstructionOpCounts"' -p:ExcludeByFile="$cov_dir/src/csharp/Iced/**/*.g.cs" -p:ExcludeByAttribute='ObsoleteAttribute' -p:CollectCoverage=$collect_coverage -p:CoverletOutputFormat=lcov --no-build "$root_dir/src/csharp/Iced.UnitTests/Iced.UnitTests.csproj" -- RunConfiguration.NoAutoReporters=true RunConfiguration.TargetPlatform=X64
 	fi
 
 	if [ "$pack_code" = "y" ]; then
@@ -127,7 +127,7 @@ build_test() {
 		echo "==== PACK ===="
 		echo
 		# Don't include the IVT in the final binary
-		dotnet pack -v:m -c $configuration -p:IcedDefineConstants="IcedNoIVT" "$root_dir/src/csharp/Intel/Iced/Iced.csproj"
+		dotnet pack -v:m -c $configuration -p:IcedDefineConstants="IcedNoIVT" "$root_dir/src/csharp/Iced/Iced.csproj"
 	fi
 }
 
