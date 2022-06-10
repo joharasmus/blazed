@@ -1,4 +1,5 @@
-# iced [![GitHub builds](https://github.com/joharasmus/iced/workflows/GitHub%20CI/badge.svg)](https://github.com/joharasmus/iced/actions) [![codecov](https://codecov.io/gh/joharasmus/iced/branch/master/graph/badge.svg)](https://codecov.io/gh/joharasmus/iced)
+# iced [![GitHub builds](https://github.com/joharasmus/iced/workflows/GitHub%20CI/badge.svg)](https://github.com/joharasmus/iced/actions) 
+[![codecov](https://codecov.io/gh/joharasmus/icedSharp/branch/master/graph/badge.svg)](https://codecov.io/gh/joharasmus/icedSharp)
 
 iced is a blazing fast and correct x86 (16/32/64-bit) instruction decoder, disassembler and assembler.
 
