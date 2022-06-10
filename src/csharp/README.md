@@ -15,7 +15,7 @@ iced is a blazing fast and correct x86 (16/32/64-bit) instruction decoder, disas
 - 👍 Create instructions with [code assembler](#assemble-instructions), eg. `asm.mov(eax, edx)`
 - 👍 The encoder can be used to re-encode decoded instructions at any address
 - 👍 API to get instruction info, eg. read/written registers, memory and rflags bits; CPUID feature flag, control flow info, etc
-- 👍 Supports ``.NET Standard 2.1``
+- 👍 Built for and by ``.NET 6``
 - 👍 License: MIT
 
 # Classes
