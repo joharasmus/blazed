@@ -1,4 +1,4 @@
-# iced 
+# blazed
 [![GitHub builds](https://github.com/joharasmus/blazed/workflows/GitHub%20CI/badge.svg)](https://github.com/joharasmus/blazed/actions) 
 [![codecov](https://codecov.io/gh/joharasmus/blazed/branch/master/graph/badge.svg)](https://codecov.io/gh/joharasmus/blazed)
 
