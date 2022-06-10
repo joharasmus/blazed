@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.InstructionInfoTests {
+namespace UnitTests.Intel.InstructionInfoTests {
 	public sealed class MemorySizeExtensionsTests {
 		[Theory]
 		[InlineData((MemorySize)(-1))]

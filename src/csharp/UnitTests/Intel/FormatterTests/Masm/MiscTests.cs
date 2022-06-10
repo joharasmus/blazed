@@ -4,9 +4,10 @@
 #if MASM
 using System.Collections.Generic;
 using Iced.Intel;
+using UnitTests.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Masm {
+namespace UnitTests.Intel.FormatterTests.Masm {
 	public sealed class MiscTests {
 		[Fact]
 		void Verify_default_formatter_options() {

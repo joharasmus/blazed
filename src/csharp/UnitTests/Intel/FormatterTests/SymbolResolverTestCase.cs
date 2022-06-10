@@ -4,7 +4,7 @@
 #if GAS || INTEL || MASM || NASM || FAST_FMT
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	public readonly struct SymbolResolverTestCase {
 		internal readonly int Bitness;
 		internal readonly string HexBytes;

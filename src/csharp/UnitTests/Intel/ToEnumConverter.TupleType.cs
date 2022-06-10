@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryTupleType(string value, out TupleType tupleType) => tupleTypeDict.TryGetValue(value, out tupleType);
 		public static TupleType GetTupleType(string value) => TryTupleType(value, out var tupleType) ? tupleType : throw new InvalidOperationException($"Invalid TupleType value: {value}");

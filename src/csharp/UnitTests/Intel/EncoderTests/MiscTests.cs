@@ -8,7 +8,7 @@ using Iced.Intel;
 using Iced.Intel.EncoderInternal;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.EncoderTests {
+namespace UnitTests.Intel.EncoderTests {
 	public sealed class MiscTests : EncoderTest {
 		[Fact]
 		void Encode_INVALID_Code_value_is_an_error() {

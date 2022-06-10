@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.DecoderTests {
+namespace UnitTests.Intel.DecoderTests {
 	public abstract class DecoderTest {
 		(Decoder decoder, int length, bool canRead, ByteArrayCodeReader codeReader) CreateDecoder(int bitness, string hexBytes, ulong ip, DecoderOptions options) {
 			var codeReader = new ByteArrayCodeReader(hexBytes);

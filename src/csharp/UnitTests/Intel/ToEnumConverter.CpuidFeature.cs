@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryCpuidFeature(string value, out CpuidFeature cpuidFeature) => cpuidFeatureDict.TryGetValue(value, out cpuidFeature);
 		public static CpuidFeature GetCpuidFeature(string value) => TryCpuidFeature(value, out var cpuidFeature) ? cpuidFeature : throw new InvalidOperationException($"Invalid CpuidFeature value: {value}");

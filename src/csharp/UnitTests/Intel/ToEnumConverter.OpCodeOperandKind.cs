@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryOpCodeOperandKind(string value, out OpCodeOperandKind opCodeOperandKind) => opCodeOperandKindDict.TryGetValue(value, out opCodeOperandKind);
 		public static OpCodeOperandKind GetOpCodeOperandKind(string value) => TryOpCodeOperandKind(value, out var opCodeOperandKind) ? opCodeOperandKind : throw new InvalidOperationException($"Invalid OpCodeOperandKind value: {value}");

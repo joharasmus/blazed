@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Gas {
+namespace UnitTests.Intel.FormatterTests.Gas {
 	public sealed class NumberTests : FormatterTests.NumberTests {
 		[Theory]
 		[MemberData(nameof(Format_Data))]

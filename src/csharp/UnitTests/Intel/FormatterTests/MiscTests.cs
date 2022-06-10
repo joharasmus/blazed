@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	public sealed class MiscTests {
 		[Fact]
 		void Test_FormatterOperandOptions_properties() {

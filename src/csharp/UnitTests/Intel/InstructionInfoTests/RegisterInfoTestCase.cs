@@ -4,7 +4,7 @@
 #if INSTR_INFO
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.InstructionInfoTests {
+namespace UnitTests.Intel.InstructionInfoTests {
 	sealed class RegisterInfoTestCase {
 		public int LineNumber;
 		public Register Register;

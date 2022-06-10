@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.InstructionInfoTests {
+namespace UnitTests.Intel.InstructionInfoTests {
 	public sealed class InstructionInfoTestCase {
 		public InstructionInfoTestCase() => Static.Assert(IcedConstants.MaxOpCount == 5 ? 0 : -1);
 		public ulong IP = 0;

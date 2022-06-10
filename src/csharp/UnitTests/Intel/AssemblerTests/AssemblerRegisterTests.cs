@@ -6,7 +6,7 @@ using Iced.Intel;
 using Xunit;
 using static Iced.Intel.AssemblerRegisters;
 
-namespace Iced.UnitTests.Intel.AssemblerTests {
+namespace UnitTests.Intel.AssemblerTests {
 	public class AssemblerRegisterTests {
 		[Fact]
 		public void TestMemoryOperands() {

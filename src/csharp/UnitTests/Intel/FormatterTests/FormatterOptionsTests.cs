@@ -4,8 +4,9 @@
 #if GAS || INTEL || MASM || NASM || FAST_FMT
 using System.Collections.Generic;
 using System.Linq;
+using UnitTests.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	static class FormatterOptionsTests {
 		public static readonly (OptionsInstructionInfo[] testCases, HashSet<int> ignored) CommonInfos = ReadAllInfos("Options.Common.txt", "Formatter");
 		public static readonly (OptionsInstructionInfo[] testCases, HashSet<int> ignored) AllInfos = ReadAllInfos("Options.txt", "Formatter");

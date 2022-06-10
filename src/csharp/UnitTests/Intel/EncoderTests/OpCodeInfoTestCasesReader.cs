@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.EncoderTests {
+namespace UnitTests.Intel.EncoderTests {
 	static class OpCodeInfoTestCasesReader {
 		public static IEnumerable<OpCodeInfoTestCase> ReadFile(string filename) {
 			int lineNo = 0;

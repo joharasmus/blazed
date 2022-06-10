@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.DecoderTests {
+namespace UnitTests.Intel.DecoderTests {
 	public static class NonDecodedInstructions {
 		public static IEnumerable<(int bitness, string hexBytes, Instruction instruction)> GetTests() {
 			foreach (var info in Infos16)

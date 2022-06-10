@@ -4,7 +4,7 @@
 #if NASM
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Nasm {
+namespace UnitTests.Intel.FormatterTests.Nasm {
 	static class FormatterFactory {
 		static FormatterOptions CreateOptions() {
 			var options = FormatterOptions.CreateNasm();

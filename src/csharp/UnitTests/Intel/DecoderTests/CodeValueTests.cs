@@ -6,7 +6,7 @@ using System.Text;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.DecoderTests {
+namespace UnitTests.Intel.DecoderTests {
 	public sealed class CodeValueTests {
 		public static readonly Code[] NonDecodedCodeValues1632 = new Code[] {
 			Code.Popw_CS,

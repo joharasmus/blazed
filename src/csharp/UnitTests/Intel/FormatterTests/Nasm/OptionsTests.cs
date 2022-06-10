@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Nasm {
+namespace UnitTests.Intel.FormatterTests.Nasm {
 	public sealed class OptionsTests : FormatterTests.OptionsTests {
 		[Theory]
 		[MemberData(nameof(FormatCommon_Data))]

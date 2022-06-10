@@ -4,7 +4,7 @@
 #if MASM
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Masm {
+namespace UnitTests.Intel.FormatterTests.Masm {
 	static class FormatterFactory {
 		static FormatterOptions CreateOptions() => FormatterOptions.CreateMasm();
 

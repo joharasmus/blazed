@@ -8,7 +8,7 @@ using System.Linq;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	public abstract class NumberTests {
 		protected static IEnumerable<object[]> GetFormatData() {
 			var numbers = NumberFileReader.ReadNumberFile(FileUtils.GetFormatterFilename("Number")).ToArray();

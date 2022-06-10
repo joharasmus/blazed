@@ -4,7 +4,7 @@
 using System;
 using SG = System.Globalization;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static class NumberConverter {
 		public static ulong ToUInt64(string value) {
 			if (value.StartsWith("0x", StringComparison.Ordinal)) {

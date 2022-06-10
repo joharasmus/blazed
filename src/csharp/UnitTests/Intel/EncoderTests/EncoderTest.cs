@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using Iced.Intel;
-using Iced.UnitTests.Intel.DecoderTests;
+using UnitTests.Intel.DecoderTests;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.EncoderTests {
+namespace UnitTests.Intel.EncoderTests {
 	public abstract class EncoderTest {
 		static string ToString(byte[] bytes) {
 			if (bytes.Length == 0)

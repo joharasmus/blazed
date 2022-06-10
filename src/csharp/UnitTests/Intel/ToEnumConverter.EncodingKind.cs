@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryEncodingKind(string value, out EncodingKind encodingKind) => encodingKindDict.TryGetValue(value, out encodingKind);
 		public static EncodingKind GetEncodingKind(string value) => TryEncodingKind(value, out var encodingKind) ? encodingKind : throw new InvalidOperationException($"Invalid EncodingKind value: {value}");

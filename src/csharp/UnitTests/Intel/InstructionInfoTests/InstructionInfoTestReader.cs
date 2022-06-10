@@ -8,8 +8,9 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using Iced.Intel;
+using UnitTests.Intel;
 
-namespace Iced.UnitTests.Intel.InstructionInfoTests {
+namespace UnitTests.Intel.InstructionInfoTests {
 	sealed class InstructionInfoTestReader {
 		static readonly char[] commaSeparator = new char[] { ',' };
 		static readonly char[] spaceSeparator = new char[] { ' ' };

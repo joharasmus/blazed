@@ -4,7 +4,7 @@
 #if GAS || INTEL || MASM || NASM
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	public abstract class SymbolResolverTests {
 		protected void FormatBase(int index, in SymbolResolverTestCase info, string formattedString, (Formatter formatter, ISymbolResolver symbolResolver) formatterInfo) {
 			var infoCopy = info;

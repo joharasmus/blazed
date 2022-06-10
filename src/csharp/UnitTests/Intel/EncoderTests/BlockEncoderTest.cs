@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.EncoderTests {
+namespace UnitTests.Intel.EncoderTests {
 	public abstract class BlockEncoderTest {
 		protected const DecoderOptions decoderOptions = DecoderOptions.None;
 

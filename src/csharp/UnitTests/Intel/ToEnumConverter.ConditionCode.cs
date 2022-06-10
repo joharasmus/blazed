@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryConditionCode(string value, out ConditionCode conditionCode) => conditionCodeDict.TryGetValue(value, out conditionCode);
 		public static ConditionCode GetConditionCode(string value) => TryConditionCode(value, out var conditionCode) ? conditionCode : throw new InvalidOperationException($"Invalid ConditionCode value: {value}");

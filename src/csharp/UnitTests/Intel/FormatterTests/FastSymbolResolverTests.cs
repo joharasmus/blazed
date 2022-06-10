@@ -4,7 +4,7 @@
 #if FAST_FMT
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	public abstract class FastSymbolResolverTests {
 		protected void FormatBase(int index, in SymbolResolverTestCase info, string formattedString, (FastFormatter formatter, ISymbolResolver symbolResolver) formatterInfo) {
 			var infoCopy = info;

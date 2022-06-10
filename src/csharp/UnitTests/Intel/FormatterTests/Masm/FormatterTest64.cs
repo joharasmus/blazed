@@ -4,10 +4,10 @@
 #if MASM
 using System.Collections.Generic;
 using Iced.Intel;
-using Iced.UnitTests.Intel.DecoderTests;
+using UnitTests.Intel.DecoderTests;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Masm {
+namespace UnitTests.Intel.FormatterTests.Masm {
 	public sealed class FormatterTest64 : FormatterTest {
 		[Theory]
 		[MemberData(nameof(Format_Data_MemAlways))]

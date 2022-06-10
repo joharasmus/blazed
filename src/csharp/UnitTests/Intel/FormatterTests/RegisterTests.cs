@@ -9,7 +9,7 @@ using System.Linq;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	public abstract class RegisterTests {
 		protected static IEnumerable<object[]> GetFormatData(string formatterDir, string formattedRegistersFile) {
 			var formattedRegisters = FileUtils.ReadRawStrings(Path.Combine(formatterDir, formattedRegistersFile)).ToArray();

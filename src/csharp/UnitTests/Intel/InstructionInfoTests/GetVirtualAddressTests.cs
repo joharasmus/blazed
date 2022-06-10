@@ -6,10 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Iced.Intel;
-using Iced.UnitTests.Intel.InstructionTests;
+using UnitTests.Intel.InstructionTests;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.InstructionInfoTests {
+namespace UnitTests.Intel.InstructionInfoTests {
 	public sealed class GetVirtualAddressTests {
 		[Theory]
 		[MemberData(nameof(VATests_Data))]

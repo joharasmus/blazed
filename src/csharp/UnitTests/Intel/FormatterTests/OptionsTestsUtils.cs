@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	static class OptionsTestsUtils {
 		public static IEnumerable<object[]> GetFormatData_Common(string formatterDir, string formattedStringsFile) {
 			var (infos, ignored) = FormatterOptionsTests.CommonInfos;

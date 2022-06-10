@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.InstructionTests {
+namespace UnitTests.Intel.InstructionTests {
 	static class VATestCaseReader {
 		public static IEnumerable<VirtualAddressTestCase> ReadFile(string filename) {
 			Debug.Assert(File.Exists(filename));

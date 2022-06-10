@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryMemorySize(string value, out MemorySize memorySize) => memorySizeDict.TryGetValue(value, out memorySize);
 		public static MemorySize GetMemorySize(string value) => TryMemorySize(value, out var memorySize) ? memorySize : throw new InvalidOperationException($"Invalid MemorySize value: {value}");

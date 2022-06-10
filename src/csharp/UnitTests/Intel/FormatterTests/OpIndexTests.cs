@@ -6,7 +6,7 @@ using System;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	public abstract class OpIndexTests {
 		protected void TestBase(Formatter formatter) {
 			var instrToFormatter = new int[IcedConstants.MaxOpCount];

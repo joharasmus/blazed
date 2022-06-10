@@ -7,7 +7,7 @@ using System.IO;
 using System.Text;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.DecoderTests.MemoryTestGenImpl {
+namespace UnitTests.Intel.DecoderTests.MemoryTestGenImpl {
 	readonly struct MemInfo : IEquatable<MemInfo> {
 		public readonly string HexBytes;
 		public readonly int Length;

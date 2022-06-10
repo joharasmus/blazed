@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryNumberBase(string value, out NumberBase numberBase) => numberBaseDict.TryGetValue(value, out numberBase);
 		public static NumberBase GetNumberBase(string value) => TryNumberBase(value, out var numberBase) ? numberBase : throw new InvalidOperationException($"Invalid NumberBase value: {value}");

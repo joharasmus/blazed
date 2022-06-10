@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.IO;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	readonly struct MnemonicOptionsTestCase {
 		public readonly string HexBytes;
 		public readonly Code Code;

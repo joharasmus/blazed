@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryMvexConvFn(string value, out MvexConvFn mvexConvFn) => mvexConvFnDict.TryGetValue(value, out mvexConvFn);
 		public static MvexConvFn GetMvexConvFn(string value) => TryMvexConvFn(value, out var mvexConvFn) ? mvexConvFn : throw new InvalidOperationException($"Invalid MvexConvFn value: {value}");

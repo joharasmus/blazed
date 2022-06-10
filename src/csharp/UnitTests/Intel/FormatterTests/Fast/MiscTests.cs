@@ -5,7 +5,7 @@
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Fast {
+namespace UnitTests.Intel.FormatterTests.Fast {
 	public sealed class MiscTests {
 		[Fact]
 		void Verify_default_formatter_options() {

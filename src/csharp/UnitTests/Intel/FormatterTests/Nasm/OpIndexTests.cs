@@ -4,7 +4,7 @@
 #if NASM
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Nasm {
+namespace UnitTests.Intel.FormatterTests.Nasm {
 	public sealed class OpIndexTests : FormatterTests.OpIndexTests {
 		[Fact]
 		void Test() => TestBase(FormatterFactory.Create());

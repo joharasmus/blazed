@@ -71,7 +71,7 @@ namespace Generator {
 				};
 				langDirs[i] = path;
 			}
-			CSharpTestsDir = GetAndVerifyPath(baseDir, "src", "csharp", "Iced.UnitTests");
+			CSharpTestsDir = GetAndVerifyPath(baseDir, "src", "csharp", "UnitTests");
 		}
 
 		static string GetAndVerifyPath(params string[] paths) {

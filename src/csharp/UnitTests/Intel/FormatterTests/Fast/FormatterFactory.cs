@@ -4,7 +4,7 @@
 #if FAST_FMT
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Fast {
+namespace UnitTests.Intel.FormatterTests.Fast {
 	static class FormatterFactory {
 		public static FastFormatter Create_Default() => new FastFormatter();
 

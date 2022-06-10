@@ -4,10 +4,10 @@
 #if FAST_FMT
 using System.Collections.Generic;
 using Iced.Intel;
-using Iced.UnitTests.Intel.DecoderTests;
+using UnitTests.Intel.DecoderTests;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Fast {
+namespace UnitTests.Intel.FormatterTests.Fast {
 	public sealed class FormatterTest32 : FastFormatterTest {
 		[Theory]
 		[MemberData(nameof(Format_Data_Default))]

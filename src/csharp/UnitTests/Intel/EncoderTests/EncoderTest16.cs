@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.EncoderTests {
+namespace UnitTests.Intel.EncoderTests {
 	public sealed class EncoderTest16 : EncoderTest {
 		[Theory]
 		[MemberData(nameof(Encode_Data))]

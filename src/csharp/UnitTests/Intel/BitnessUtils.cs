@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static class BitnessUtils {
 		public static IEnumerable<int> GetInvalidBitnessValues() {
 			yield return int.MinValue;

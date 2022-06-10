@@ -4,10 +4,10 @@
 #if ENCODER
 using System.Collections.Generic;
 using Iced.Intel;
-using Iced.UnitTests.Intel.DecoderTests;
+using UnitTests.Intel.DecoderTests;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.EncoderTests {
+namespace UnitTests.Intel.EncoderTests {
 	public sealed class EncoderTest_Invalid : EncoderTest {
 		[Theory]
 		[MemberData(nameof(EncodeInvalid_Data))]

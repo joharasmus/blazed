@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	static class SymbolResolverTestUtils {
 		public static IEnumerable<object[]> GetFormatData(string formatterDir, string formattedStringsFile) {
 			var (infos, ignored) = SymbolResolverTestInfos.AllInfos;

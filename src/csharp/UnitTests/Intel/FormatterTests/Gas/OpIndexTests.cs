@@ -4,7 +4,7 @@
 #if GAS
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Gas {
+namespace UnitTests.Intel.FormatterTests.Gas {
 	public sealed class OpIndexTests : FormatterTests.OpIndexTests {
 		[Fact]
 		void Test() => TestBase(FormatterFactory.Create());

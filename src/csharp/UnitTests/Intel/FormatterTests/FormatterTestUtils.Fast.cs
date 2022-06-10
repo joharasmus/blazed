@@ -6,7 +6,7 @@ using System;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	static partial class FormatterTestUtils {
 		public static void FormatTest(int bitness, string hexBytes, ulong ip, Code code, DecoderOptions options, string formattedString, FastFormatter formatter) {
 			var decoder = CreateDecoder(bitness, hexBytes, ip, options);

@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	static class NumberFileReader {
 		public static IEnumerable<object> ReadNumberFile(string filename) {
 			int lineNo = 0;

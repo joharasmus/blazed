@@ -4,8 +4,9 @@
 #if GAS || INTEL || MASM || NASM || FAST_FMT
 using System.Collections.Generic;
 using System.Linq;
+using UnitTests.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	static class SymbolResolverTestInfos {
 		public static readonly (SymbolResolverTestCase[] testCases, HashSet<int> ignored) AllInfos = GetTests();
 

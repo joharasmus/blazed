@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	public readonly struct InstructionInfo {
 		public readonly int Bitness;
 		public readonly string HexBytes;

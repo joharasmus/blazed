@@ -4,9 +4,9 @@
 #if GAS || INTEL || MASM || NASM || FAST_FMT
 using System;
 using System.Collections.Generic;
-using Iced.UnitTests.Intel.FormatterTests;
+using UnitTests.Intel.FormatterTests;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryOptionsProps(string value, out OptionsProps optionsProps) => optionsPropsDict.TryGetValue(value, out optionsProps);
 		public static OptionsProps GetOptionsProps(string value) => TryOptionsProps(value, out var optionsProps) ? optionsProps : throw new InvalidOperationException($"Invalid OptionsProps value: {value}");

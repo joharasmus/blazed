@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Fast {
+namespace UnitTests.Intel.FormatterTests.Fast {
 	public sealed class OptionsTests : FastOptionsTests {
 		[Theory]
 		[MemberData(nameof(FormatCommon_Data))]

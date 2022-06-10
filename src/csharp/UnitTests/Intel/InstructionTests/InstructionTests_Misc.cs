@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.InstructionTests {
+namespace UnitTests.Intel.InstructionTests {
 	public sealed class InstructionTests_Misc {
 		[Fact]
 		void INVALID_Code_value_is_zero() {

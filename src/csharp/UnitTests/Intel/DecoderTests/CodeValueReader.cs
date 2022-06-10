@@ -5,8 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Iced.Intel;
+using UnitTests.Intel;
 
-namespace Iced.UnitTests.Intel.DecoderTests {
+namespace UnitTests.Intel.DecoderTests {
 	static class CodeValueReader {
 		public static HashSet<Code> Read(string name) {
 			var filename = PathUtils.GetTestTextFilename(name, "Decoder");

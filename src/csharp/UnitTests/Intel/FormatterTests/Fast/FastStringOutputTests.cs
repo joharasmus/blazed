@@ -5,7 +5,7 @@
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Fast {
+namespace UnitTests.Intel.FormatterTests.Fast {
 	public sealed class FastStringOutputTests {
 		[Theory]
 		[InlineData(-1)]

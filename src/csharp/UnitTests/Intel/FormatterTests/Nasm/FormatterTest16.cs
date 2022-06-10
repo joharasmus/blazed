@@ -4,10 +4,10 @@
 #if NASM
 using System.Collections.Generic;
 using Iced.Intel;
-using Iced.UnitTests.Intel.DecoderTests;
+using UnitTests.Intel.DecoderTests;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Nasm {
+namespace UnitTests.Intel.FormatterTests.Nasm {
 	public sealed class FormatterTest16 : FormatterTest {
 		[Theory]
 		[MemberData(nameof(Format_Data_MemAlways))]

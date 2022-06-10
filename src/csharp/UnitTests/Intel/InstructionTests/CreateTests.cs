@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.InstructionTests {
+namespace UnitTests.Intel.InstructionTests {
 	public sealed class CreateTests {
 		sealed class CodeWriterImpl : CodeWriter {
 			readonly List<byte> bytes = new List<byte>();

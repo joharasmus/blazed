@@ -4,8 +4,9 @@
 #if GAS || INTEL || MASM || NASM || FAST_FMT
 using System.Collections.Generic;
 using System.IO;
+using UnitTests.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	static class FileUtils {
 		public static string GetFormatterFilename(string filename) =>
 			PathUtils.GetTestTextFilename(filename + ".txt", "Formatter");

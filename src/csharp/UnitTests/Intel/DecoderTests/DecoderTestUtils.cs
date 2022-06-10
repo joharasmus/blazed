@@ -4,7 +4,7 @@
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.DecoderTests {
+namespace UnitTests.Intel.DecoderTests {
 	public readonly struct DecoderTestInfo {
 		public readonly uint Id;
 		public readonly int Bitness;

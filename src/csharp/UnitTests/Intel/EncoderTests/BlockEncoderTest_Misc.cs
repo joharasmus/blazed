@@ -6,7 +6,7 @@ using System;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.EncoderTests {
+namespace UnitTests.Intel.EncoderTests {
 	public sealed class BlockEncoderTest_Misc {
 		[Fact]
 		void Encode_zero_blocks() {

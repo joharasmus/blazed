@@ -7,7 +7,7 @@ using System.Linq;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.DecoderTests {
+namespace UnitTests.Intel.DecoderTests {
 	public sealed class MiscTests : DecoderTest {
 		sealed class DecodeMultipleCodeReader : CodeReader {
 			byte[] data;

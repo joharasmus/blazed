@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryDecoderOptions(string value, out DecoderOptions decoderOptions) => decoderOptionsDict.TryGetValue(value, out decoderOptions);
 		public static DecoderOptions GetDecoderOptions(string value) => TryDecoderOptions(value, out var decoderOptions) ? decoderOptions : throw new InvalidOperationException($"Invalid DecoderOptions value: {value}");

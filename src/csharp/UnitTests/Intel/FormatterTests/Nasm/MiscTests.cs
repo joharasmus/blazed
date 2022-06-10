@@ -4,9 +4,10 @@
 #if NASM
 using System.Collections.Generic;
 using Iced.Intel;
+using UnitTests.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Nasm {
+namespace UnitTests.Intel.FormatterTests.Nasm {
 	public sealed class MiscTests {
 		[Fact]
 		void Verify_default_formatter_options() {

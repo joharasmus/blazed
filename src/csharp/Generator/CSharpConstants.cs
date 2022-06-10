@@ -20,7 +20,7 @@ namespace Generator {
 		public const string NasmFormatterNamespace = "Iced.Intel.NasmFormatterInternal";
 		public const string FastFormatterNamespace = "Iced.Intel.FastFormatterInternal";
 
-		public const string IcedUnitTestsNamespace = "Iced.UnitTests.Intel";
+		public const string IcedUnitTestsNamespace = "UnitTests.Intel";
 
 		public const string HasSpanDefine = "HAS_SPAN";
 		public const string DecoderDefine = "DECODER";

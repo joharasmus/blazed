@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Intel {
+namespace UnitTests.Intel.FormatterTests.Intel {
 	public sealed class SymbolResolverTests : FormatterTests.SymbolResolverTests {
 		[Theory]
 		[MemberData(nameof(Format_Data))]

@@ -6,7 +6,7 @@ using System;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.EncoderTests {
+namespace UnitTests.Intel.EncoderTests {
 	public sealed class BlockEncoderTest32_call : BlockEncoderTest {
 		const int bitness = 32;
 		const ulong origRip = 0x8000;

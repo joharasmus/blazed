@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.DecoderTests {
+namespace UnitTests.Intel.DecoderTests {
 	public sealed class MemoryTest64 : DecoderTest {
 		[Theory]
 		[MemberData(nameof(Test64_DecodeMemOps_as32_1_Data))]

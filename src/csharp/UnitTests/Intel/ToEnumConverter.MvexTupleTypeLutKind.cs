@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryMvexTupleTypeLutKind(string value, out MvexTupleTypeLutKind mvexTupleTypeLutKind) => mvexTupleTypeLutKindDict.TryGetValue(value, out mvexTupleTypeLutKind);
 		public static MvexTupleTypeLutKind GetMvexTupleTypeLutKind(string value) => TryMvexTupleTypeLutKind(value, out var mvexTupleTypeLutKind) ? mvexTupleTypeLutKind : throw new InvalidOperationException($"Invalid MvexTupleTypeLutKind value: {value}");

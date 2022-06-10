@@ -6,10 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Iced.Intel;
-using Iced.UnitTests.Intel.DecoderTests;
+using UnitTests.Intel.DecoderTests;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.EncoderTests {
+namespace UnitTests.Intel.EncoderTests {
 	public sealed class DecEncTests {
 		[Fact]
 		void Verify_invalid_and_valid_lock_prefix() {

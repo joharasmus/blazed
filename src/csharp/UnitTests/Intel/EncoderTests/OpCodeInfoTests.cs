@@ -9,7 +9,7 @@ using System.Text;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.EncoderTests {
+namespace UnitTests.Intel.EncoderTests {
 	public sealed class OpCodeInfoTests {
 		[Theory]
 		[MemberData(nameof(TestAllOpCodeInfos_Data))]

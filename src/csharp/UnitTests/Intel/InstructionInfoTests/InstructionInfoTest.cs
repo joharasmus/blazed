@@ -8,7 +8,7 @@ using System.Diagnostics;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.InstructionInfoTests {
+namespace UnitTests.Intel.InstructionInfoTests {
 	sealed class UsedRegisterEqualityComparer : IEqualityComparer<UsedRegister> {
 		public static readonly UsedRegisterEqualityComparer Instance = new UsedRegisterEqualityComparer();
 		UsedRegisterEqualityComparer() { }

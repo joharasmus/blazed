@@ -3,8 +3,9 @@
 
 using System;
 using System.Linq;
+using UnitTests.Intel;
 
-namespace Iced.UnitTests.Intel.DecoderTests {
+namespace UnitTests.Intel.DecoderTests {
 	static class DecoderTestCases {
 		public static readonly DecoderTestCase[] TestCases16 = ReadTestCases(16);
 		public static readonly DecoderTestCase[] TestCases32 = ReadTestCases(32);

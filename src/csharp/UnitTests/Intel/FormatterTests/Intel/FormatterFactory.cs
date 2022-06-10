@@ -4,7 +4,7 @@
 #if INTEL
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Intel {
+namespace UnitTests.Intel.FormatterTests.Intel {
 	static class FormatterFactory {
 		static FormatterOptions CreateOptions() {
 			var options = FormatterOptions.CreateIntel();

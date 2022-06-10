@@ -4,7 +4,7 @@
 #if ENCODER && OPCODE_INFO
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.EncoderTests {
+namespace UnitTests.Intel.EncoderTests {
 #if MVEX
 	struct MvexTestCase {
 		public MvexEHBit EHBit;

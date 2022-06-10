@@ -7,7 +7,7 @@ using System.IO;
 using Iced.Intel;
 using SG = System.Globalization;
 
-namespace Iced.UnitTests.Intel.DecoderTests {
+namespace UnitTests.Intel.DecoderTests {
 	static class MemoryDecoderTestParser {
 		public static IEnumerable<DecoderMemoryTestCase> ReadFile(int bitness, string filename) {
 			int lineNumber = 0;

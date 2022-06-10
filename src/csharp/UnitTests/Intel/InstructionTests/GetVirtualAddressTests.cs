@@ -5,9 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Iced.Intel;
+using UnitTests.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.InstructionTests {
+namespace UnitTests.Intel.InstructionTests {
 	sealed class VARegisterValueProviderImpl : IVARegisterValueProvider, IVATryGetRegisterValueProvider {
 		readonly (Register register, int elementIndex, int elementSize, ulong value)[] results;
 

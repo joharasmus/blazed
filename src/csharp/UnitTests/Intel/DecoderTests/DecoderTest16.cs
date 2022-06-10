@@ -4,7 +4,7 @@
 using System.Collections.Generic;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.DecoderTests {
+namespace UnitTests.Intel.DecoderTests {
 	public sealed class DecoderTest16 : DecoderTest {
 		[Theory]
 		[MemberData(nameof(Data))]

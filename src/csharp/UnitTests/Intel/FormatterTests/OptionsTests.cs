@@ -6,7 +6,7 @@ using System;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	public abstract class OptionsTests {
 		protected void FormatBase(int index, OptionsInstructionInfo info, string formattedString, Formatter formatter) {
 			info.Initialize(formatter.Options);

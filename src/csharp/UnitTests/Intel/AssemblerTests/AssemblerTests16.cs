@@ -5,7 +5,7 @@
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.AssemblerTests {
+namespace UnitTests.Intel.AssemblerTests {
 	public sealed partial class AssemblerTests16 {
 		[Fact]
 		void xlatb() {

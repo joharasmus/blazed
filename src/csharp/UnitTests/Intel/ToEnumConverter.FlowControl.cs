@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryFlowControl(string value, out FlowControl flowControl) => flowControlDict.TryGetValue(value, out flowControl);
 		public static FlowControl GetFlowControl(string value) => TryFlowControl(value, out var flowControl) ? flowControl : throw new InvalidOperationException($"Invalid FlowControl value: {value}");

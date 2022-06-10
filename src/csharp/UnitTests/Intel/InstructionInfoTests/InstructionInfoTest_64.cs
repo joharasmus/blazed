@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.InstructionInfoTests {
+namespace UnitTests.Intel.InstructionInfoTests {
 	public sealed class InstructionInfoTest_64 : InstructionInfoTest {
 		[Theory]
 		[MemberData(nameof(Test64_InstructionInfo_Data))]

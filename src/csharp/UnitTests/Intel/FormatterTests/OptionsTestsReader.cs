@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	static class OptionsTestsReader {
 		public static IEnumerable<OptionsInstructionInfo> ReadFile(string filename, HashSet<int> ignored) {
 			int lineNo = 0;

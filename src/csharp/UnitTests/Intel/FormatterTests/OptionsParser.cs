@@ -4,7 +4,7 @@
 #if GAS || INTEL || MASM || NASM || FAST_FMT
 using System;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	static class OptionsParser {
 		static readonly char[] kvseps = new char[] { '=' };
 		public static (OptionsProps property, object value) ParseOption(string keyValue) {

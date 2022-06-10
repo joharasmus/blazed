@@ -5,7 +5,7 @@
 using System.Linq;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	sealed class TestSymbolResolver : ISymbolResolver {
 		readonly SymbolResolverTestCase info;
 

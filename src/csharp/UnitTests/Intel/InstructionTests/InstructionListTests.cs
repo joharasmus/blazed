@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.InstructionTests {
+namespace UnitTests.Intel.InstructionTests {
 	public sealed class InstructionListTests {
 		[Fact]
 		void Default_ctor_creates_empty_list() {

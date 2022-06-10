@@ -5,7 +5,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static class SectionFileReader {
 		public static void Read(string filename, (string sectionName, Action<string, string> handler)[] sectionInfos) {
 			(string sectionName, Action<string, string> handler) currentSectionInfo = default;

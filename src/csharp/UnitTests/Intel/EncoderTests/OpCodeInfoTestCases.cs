@@ -5,8 +5,9 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using UnitTests.Intel;
 
-namespace Iced.UnitTests.Intel.EncoderTests {
+namespace UnitTests.Intel.EncoderTests {
 	static class OpCodeInfoTestCases {
 		public static readonly OpCodeInfoTestCase[] OpCodeInfoTests = CreateOpCodeInfos();
 

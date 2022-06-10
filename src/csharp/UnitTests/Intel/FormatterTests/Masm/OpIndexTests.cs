@@ -4,7 +4,7 @@
 #if MASM
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Masm {
+namespace UnitTests.Intel.FormatterTests.Masm {
 	public sealed class OpIndexTests : FormatterTests.OpIndexTests {
 		[Fact]
 		void Test() => TestBase(FormatterFactory.Create());

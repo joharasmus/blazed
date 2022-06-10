@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static class PathUtils {
 		public static string GetTestTextFilename(string filename, params string[] directories) {
 			var baseDir = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "..", "..", "..", "..", "..", "UnitTests");

@@ -7,7 +7,7 @@ using System.Text;
 using Iced.Intel;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.InstructionInfoTests {
+namespace UnitTests.Intel.InstructionInfoTests {
 	public sealed class CodeValueTests {
 		[Fact]
 		void Make_sure_all_Code_values_are_tested() {

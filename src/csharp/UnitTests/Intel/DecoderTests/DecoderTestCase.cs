@@ -4,7 +4,7 @@
 using System;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.DecoderTests {
+namespace UnitTests.Intel.DecoderTests {
 #if MVEX
 	struct MvexDecoderInfo {
 		public bool EvictionHint;

@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryCC_b(string value, out CC_b cc_b) => cc_b_dict.TryGetValue(value, out cc_b);
 		public static CC_b GetCC_b(string value) => TryCC_b(value, out var cc_b) ? cc_b : throw new InvalidOperationException($"Invalid CC_b value: {value}");

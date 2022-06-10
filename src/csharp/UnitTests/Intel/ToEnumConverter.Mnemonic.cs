@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryMnemonic(string value, out Mnemonic mnemonic) => mnemonicDict.TryGetValue(value, out mnemonic);
 		public static Mnemonic GetMnemonic(string value) => TryMnemonic(value, out var mnemonic) ? mnemonic : throw new InvalidOperationException($"Invalid Mnemonic value: {value}");

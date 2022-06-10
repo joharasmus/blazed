@@ -4,11 +4,11 @@
 #if ENCODER && BLOCK_ENCODER && CODE_ASSEMBLER
 using System;
 using Iced.Intel;
-using Iced.UnitTests.Intel.EncoderTests;
+using UnitTests.Intel.EncoderTests;
 using Xunit;
 using static Iced.Intel.AssemblerRegisters;
 
-namespace Iced.UnitTests.Intel.AssemblerTests {
+namespace UnitTests.Intel.AssemblerTests {
 	// Make sure it can be derived
 	sealed class MyAssembler : Assembler {
 		public MyAssembler() : base(64) { }

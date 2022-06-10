@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	static class Utils {
 #if GAS || INTEL || MASM || NASM
 		public static IEnumerable<Formatter> GetAllFormatters() {

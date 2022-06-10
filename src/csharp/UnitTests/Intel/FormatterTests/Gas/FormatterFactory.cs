@@ -4,7 +4,7 @@
 #if GAS
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests.Gas {
+namespace UnitTests.Intel.FormatterTests.Gas {
 	static class FormatterFactory {
 		static FormatterOptions CreateOptions() {
 			var options = FormatterOptions.CreateGas();

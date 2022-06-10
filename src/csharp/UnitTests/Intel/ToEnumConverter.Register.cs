@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel {
+namespace UnitTests.Intel {
 	static partial class ToEnumConverter {
 		public static bool TryRegister(string value, out Register register) => registerDict.TryGetValue(value, out register);
 		public static Register GetRegister(string value) => TryRegister(value, out var register) ? register : throw new InvalidOperationException($"Invalid Register value: {value}");

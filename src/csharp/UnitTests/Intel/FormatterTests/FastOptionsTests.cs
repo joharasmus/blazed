@@ -4,7 +4,7 @@
 #if FAST_FMT
 using Iced.Intel;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	public abstract class FastOptionsTests {
 		protected void FormatBase(int index, OptionsInstructionInfo info, string formattedString, FastFormatter formatter) {
 			info.Initialize(formatter.Options);

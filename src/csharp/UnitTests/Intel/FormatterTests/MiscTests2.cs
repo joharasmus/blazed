@@ -3,10 +3,10 @@
 
 #if GAS || INTEL || MASM || NASM || FAST_FMT
 using Iced.Intel;
-using Iced.UnitTests.Intel.DecoderTests;
+using UnitTests.Intel.DecoderTests;
 using Xunit;
 
-namespace Iced.UnitTests.Intel.FormatterTests {
+namespace UnitTests.Intel.FormatterTests {
 	public sealed class MiscTests2 {
 		[Fact]
 		void Make_sure_all_Code_values_are_formatted() {

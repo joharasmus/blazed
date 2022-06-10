@@ -6,7 +6,7 @@
 #nullable enable
 
 #if ENCODER && BLOCK_ENCODER && CODE_ASSEMBLER
-namespace Iced.UnitTests.Intel.AssemblerTests {
+namespace UnitTests.Intel.AssemblerTests {
 	using Iced.Intel;
 	using Xunit;
 	using static Iced.Intel.AssemblerRegisters;
