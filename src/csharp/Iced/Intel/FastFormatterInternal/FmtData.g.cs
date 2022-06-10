@@ -8,11 +8,7 @@
 #if FAST_FMT
 namespace Iced.Intel.FastFormatterInternal {
 	static partial class FmtData {
-#if HAS_SPAN
 		static System.ReadOnlySpan<byte> GetSerializedData() =>
-#else
-		static byte[] GetSerializedData() =>
-#endif
 			new byte[] {
 				// INVALID
 				0x00,// No flags set

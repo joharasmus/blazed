@@ -118,7 +118,6 @@ namespace UnitTests.Intel.AssemblerTests {
 			TestAssemblerDeclareData(c => c.db(new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33 }), new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33 });
 		}
 
-#if HAS_SPAN
 		[Fact]
 		public void TestDeclareData_db_span() {
 			TestAssemblerDeclareData(c => c.db(Array.Empty<byte>().AsSpan()), Array.Empty<byte>());
@@ -128,7 +127,6 @@ namespace UnitTests.Intel.AssemblerTests {
 			TestAssemblerDeclareData(c => c.db(new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 }.AsSpan()), new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 });
 			TestAssemblerDeclareData(c => c.db(new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33 }.AsSpan()), new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33 });
 		}
-#endif
 
 		[Fact]
 		public void TestDeclareData_db_array_index_length() {

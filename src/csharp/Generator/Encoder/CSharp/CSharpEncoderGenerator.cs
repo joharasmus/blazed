@@ -52,11 +52,7 @@ namespace Generator.Encoder.CSharp {
 			void Generate(FileWriter writer, string name, string? define, (EnumValue opCodeOperandKind, OpHandlerKind opHandlerKind, object[] args)[] table) {
 				if (define is not null)
 					writer.WriteLineNoIndent($"#if {define}");
-				writer.WriteLineNoIndent($"#if {CSharpConstants.HasSpanDefine}");
 				writer.WriteLine($"public static System.ReadOnlySpan<byte> {name} => new byte[{table.Length}] {{");
-				writer.WriteLineNoIndent("#else");
-				writer.WriteLine($"public static readonly byte[] {name} = new byte[{table.Length}] {{");
-				writer.WriteLineNoIndent("#endif");
 				using (writer.Indent()) {
 					foreach (var info in table)
 						writer.WriteLine($"(byte){idConverter.ToDeclTypeAndValue(info.opCodeOperandKind)},");

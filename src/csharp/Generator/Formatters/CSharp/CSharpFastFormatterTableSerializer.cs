@@ -24,11 +24,7 @@ namespace Generator.Formatters.CSharp {
 			using (writer.Indent()) {
 				writer.WriteLine("static partial class FmtData {");
 				using (writer.Indent()) {
-					writer.WriteLineNoIndent($"#if {CSharpConstants.HasSpanDefine}");
 					writer.WriteLine("static System.ReadOnlySpan<byte> GetSerializedData() =>");
-					writer.WriteLineNoIndent("#else");
-					writer.WriteLine("static byte[] GetSerializedData() =>");
-					writer.WriteLineNoIndent("#endif");
 					using (writer.Indent()) {
 						writer.WriteLine("new byte[] {");
 						using (writer.Indent())

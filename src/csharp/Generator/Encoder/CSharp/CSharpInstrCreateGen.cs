@@ -592,7 +592,6 @@ namespace Generator.Encoder.CSharp {
 
 		void GenCreateDeclareDataSlice(FileWriter writer, CreateMethod method, int elemSize, EnumValue code, string methodName, string setDeclValueName) {
 			writer.WriteLine();
-			writer.WriteLineNoIndent($"#if {CSharpConstants.HasSpanDefine}");
 			WriteDocs(writer, method);
 			writer.Write($"public static Instruction {methodName}(");
 			WriteMethodDeclArgs(writer, method);
@@ -612,7 +611,6 @@ namespace Generator.Encoder.CSharp {
 				WriteMethodFooter(writer, 0);
 			}
 			writer.WriteLine("}");
-			writer.WriteLineNoIndent($"#endif");
 		}
 
 		protected override void GenCreateDeclareDataArray(FileWriter writer, CreateMethod method, DeclareDataKind kind, ArrayType arrayType) {
@@ -648,7 +646,6 @@ namespace Generator.Encoder.CSharp {
 
 				case ArrayType.ByteSlice:
 					writer.WriteLine();
-					writer.WriteLineNoIndent($"#if {CSharpConstants.HasSpanDefine}");
 					WriteDocs(writer, method);
 					writer.Write($"public static Instruction CreateDeclareWord(");
 					WriteMethodDeclArgs(writer, method);
@@ -671,7 +668,6 @@ namespace Generator.Encoder.CSharp {
 						WriteMethodFooter(writer, 0);
 					}
 					writer.WriteLine("}");
-					writer.WriteLineNoIndent($"#endif");
 					break;
 
 				case ArrayType.WordSlice:
@@ -696,7 +692,6 @@ namespace Generator.Encoder.CSharp {
 
 				case ArrayType.ByteSlice:
 					writer.WriteLine();
-					writer.WriteLineNoIndent($"#if {CSharpConstants.HasSpanDefine}");
 					WriteDocs(writer, method);
 					writer.Write($"public static Instruction CreateDeclareDword(");
 					WriteMethodDeclArgs(writer, method);
@@ -719,7 +714,6 @@ namespace Generator.Encoder.CSharp {
 						WriteMethodFooter(writer, 0);
 					}
 					writer.WriteLine("}");
-					writer.WriteLineNoIndent($"#endif");
 					break;
 
 				case ArrayType.DwordSlice:
@@ -744,7 +738,6 @@ namespace Generator.Encoder.CSharp {
 
 				case ArrayType.ByteSlice:
 					writer.WriteLine();
-					writer.WriteLineNoIndent($"#if {CSharpConstants.HasSpanDefine}");
 					WriteDocs(writer, method);
 					writer.Write($"public static Instruction CreateDeclareQword(");
 					WriteMethodDeclArgs(writer, method);
@@ -768,7 +761,6 @@ namespace Generator.Encoder.CSharp {
 						WriteMethodFooter(writer, 0);
 					}
 					writer.WriteLine("}");
-					writer.WriteLineNoIndent($"#endif");
 					break;
 
 				case ArrayType.QwordSlice:

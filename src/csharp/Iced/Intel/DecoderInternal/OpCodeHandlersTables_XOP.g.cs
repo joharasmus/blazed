@@ -8,11 +8,7 @@
 #if DECODER && !NO_XOP
 namespace Iced.Intel.DecoderInternal {
 	static partial class OpCodeHandlersTables_XOP {
-#if HAS_SPAN
 		static System.ReadOnlySpan<byte> GetSerializedTables() =>
-#else
-		static byte[] GetSerializedTables() =>
-#endif
 			new byte[] {
 				// grp_MAP9_01
 				0x01,// ArrayReference

@@ -5,13 +5,8 @@
 using System;
 
 namespace Iced.Intel.Internal {
-#if HAS_SPAN
 	ref struct DataReader {
 		readonly ReadOnlySpan<byte> data;
-#else
-	struct DataReader {
-		readonly byte[] data;
-#endif
 		readonly char[] stringData;
 		int index;
 
@@ -22,19 +17,11 @@ namespace Iced.Intel.Internal {
 
 		public readonly bool CanRead => (uint)index < (uint)data.Length;
 
-#if HAS_SPAN
 		public DataReader(ReadOnlySpan<byte> data)
-#else
-		public DataReader(byte[] data)
-#endif
 			: this(data, 0) {
 		}
 
-#if HAS_SPAN
 		public DataReader(ReadOnlySpan<byte> data, int maxStringLength) {
-#else
-		public DataReader(byte[] data, int maxStringLength) {
-#endif
 			this.data = data;
 			stringData = maxStringLength == 0 ? Array2.Empty<char>() : new char[maxStringLength];
 			index = 0;

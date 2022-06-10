@@ -10,11 +10,7 @@ namespace Iced.Intel.FormatterInternal {
 	static partial class FormatterStringsTable {
 		const int MaxStringLength = 18;
 		const int StringsCount = 1691;
-#if HAS_SPAN
 		static System.ReadOnlySpan<byte> GetSerializedStrings() =>
-#else
-		static byte[] GetSerializedStrings() =>
-#endif
 			new byte[] {
 				0x05, 0x75, 0x6E, 0x64, 0x6F, 0x63,// undoc
 				0x03, 0x6D, 0x6F, 0x76,// mov

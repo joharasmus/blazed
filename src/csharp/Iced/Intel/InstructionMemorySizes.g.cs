@@ -7,11 +7,7 @@
 
 namespace Iced.Intel {
 	static class InstructionMemorySizes {
-#if HAS_SPAN
 		internal static System.ReadOnlySpan<byte> SizesNormal => new byte[IcedConstants.CodeEnumCount] {
-#else
-		internal static readonly byte[] SizesNormal = new byte[IcedConstants.CodeEnumCount] {
-#endif
 			0,// INVALID
 			0,// DeclareByte
 			0,// DeclareWord
@@ -4848,11 +4844,7 @@ namespace Iced.Intel {
 			0,// Zero_bytes
 		};
 
-#if HAS_SPAN
 		internal static System.ReadOnlySpan<byte> SizesBcst => new byte[IcedConstants.CodeEnumCount] {
-#else
-		internal static readonly byte[] SizesBcst = new byte[IcedConstants.CodeEnumCount] {
-#endif
 			0,// INVALID
 			0,// DeclareByte
 			0,// DeclareWord

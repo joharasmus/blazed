@@ -22,7 +22,6 @@ namespace Generator {
 
 		public const string IcedUnitTestsNamespace = "UnitTests.Intel";
 
-		public const string HasSpanDefine = "HAS_SPAN";
 		public const string DecoderDefine = "DECODER";
 		public const string VexDefine = "!NO_VEX";
 		public const string XopDefine = "!NO_XOP";

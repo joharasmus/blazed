@@ -28,11 +28,7 @@ namespace Generator.Decoder.CSharp {
 				using (writer.Indent()) {
 					writer.WriteLine($"static class {ClassName} {{");
 					using (writer.Indent()) {
-						writer.WriteLineNoIndent($"#if {CSharpConstants.HasSpanDefine}");
 						writer.WriteLine($"internal static System.ReadOnlySpan<byte> SizesNormal => new byte[{icedConstants.Name(idConverter)}.{icedConstants[IcedConstants.GetEnumCountName(TypeIds.Code)].Name(idConverter)}] {{");
-						writer.WriteLineNoIndent("#else");
-						writer.WriteLine($"internal static readonly byte[] SizesNormal = new byte[{icedConstants.Name(idConverter)}.{icedConstants[IcedConstants.GetEnumCountName(TypeIds.Code)].Name(idConverter)}] {{");
-						writer.WriteLineNoIndent("#endif");
 						using (writer.Indent()) {
 							foreach (var def in defs) {
 								if (def.Memory.Value > byte.MaxValue)
@@ -47,11 +43,7 @@ namespace Generator.Decoder.CSharp {
 						}
 						writer.WriteLine("};");
 						writer.WriteLine();
-						writer.WriteLineNoIndent($"#if {CSharpConstants.HasSpanDefine}");
 						writer.WriteLine($"internal static System.ReadOnlySpan<byte> SizesBcst => new byte[{icedConstants.Name(idConverter)}.{icedConstants[IcedConstants.GetEnumCountName(TypeIds.Code)].Name(idConverter)}] {{");
-						writer.WriteLineNoIndent("#else");
-						writer.WriteLine($"internal static readonly byte[] SizesBcst = new byte[{icedConstants.Name(idConverter)}.{icedConstants[IcedConstants.GetEnumCountName(TypeIds.Code)].Name(idConverter)}] {{");
-						writer.WriteLineNoIndent("#endif");
 						using (writer.Indent()) {
 							foreach (var def in defs) {
 								if (def.MemoryBroadcast.Value > byte.MaxValue)

@@ -8,11 +8,7 @@
 #if DECODER && !NO_EVEX
 namespace Iced.Intel.DecoderInternal {
 	static partial class OpCodeHandlersTables_EVEX {
-#if HAS_SPAN
 		static System.ReadOnlySpan<byte> GetSerializedTables() =>
-#else
-		static byte[] GetSerializedTables() =>
-#endif
 			new byte[] {
 				// handlers_Grp_0F71
 				0x01,// ArrayReference

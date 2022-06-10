@@ -26,21 +26,13 @@ namespace Iced.Intel.DecoderInternal {
 		}
 	}
 
-#if HAS_SPAN
 	ref struct TableDeserializer {
-#else
-	struct TableDeserializer {
-#endif
 		DataReader reader;
 		readonly OpCodeHandlerReader handlerReader;
 		readonly List<HandlerInfo> idToHandler;
 		readonly OpCodeHandler?[] handlerArray;
 
-#if HAS_SPAN
 		public TableDeserializer(OpCodeHandlerReader handlerReader, int maxIds, ReadOnlySpan<byte> data) {
-#else
-		public TableDeserializer(OpCodeHandlerReader handlerReader, int maxIds, byte[] data) {
-#endif
 			this.handlerReader = handlerReader;
 			reader = new DataReader(data);
 			idToHandler = new List<HandlerInfo>(maxIds);

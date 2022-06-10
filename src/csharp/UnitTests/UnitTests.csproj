@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <DefineConstants Condition=" $(TargetFramework.StartsWith(netcoreapp)) ">$(DefineConstants);HAS_SPAN</DefineConstants>
+    <DefineConstants>$(DefineConstants)</DefineConstants>
   </PropertyGroup>
 
 </Project>

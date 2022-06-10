@@ -1009,11 +1009,7 @@ namespace Iced.Intel {
 			}
 		}
 
-#if HAS_SPAN
 		static ReadOnlySpan<byte> SegmentOverrides =>// Property
-#else
-		static readonly byte[] SegmentOverrides =// Field
-#endif
 			new byte[6] { 0x26, 0x2E, 0x36, 0x3E, 0x64, 0x65 };
 
 		internal void WritePrefixes(in Instruction instruction, bool canWriteF3 = true) {

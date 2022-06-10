@@ -14,11 +14,7 @@ namespace Iced.Intel {
 			regInfos[(int)Register.EIP] = new RegisterInfo(Register.EIP, Register.EIP, Register.RIP, 4);
 			regInfos[(int)Register.RIP] = new RegisterInfo(Register.RIP, Register.EIP, Register.RIP, 8);
 
-#if HAS_SPAN
 			ReadOnlySpan<byte> data = new byte[] {
-#else
-			var data = new byte[] {
-#endif
 				(byte)Register.AL, (byte)Register.R15L, (byte)Register.RAX, 1, 0,
 				(byte)Register.AX, (byte)Register.R15W, (byte)Register.RAX, 2, 0,
 				(byte)Register.EAX, (byte)Register.R15D, (byte)Register.RAX, 4, 0,

@@ -386,7 +386,6 @@ namespace Iced.Intel {
 				AddInstruction(Instruction.CreateDeclareByte(array, currentPosition, rest));
 		}
 
-#if HAS_SPAN
 		/// <summary>
 		/// Adds data
 		/// </summary>
@@ -402,7 +401,6 @@ namespace Iced.Intel {
 			if (rest > 0)
 				AddInstruction(Instruction.CreateDeclareByte(data.Slice(currentPosition, rest)));
 		}
-#endif
 
 		/// <summary>call selector:offset instruction.</summary>
 		public void call(ushort selector, uint offset) =>

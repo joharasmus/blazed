@@ -74,14 +74,12 @@ namespace Iced.Intel {
 			Array.Resize(ref buffer, newCount);
 		}
 
-#if HAS_SPAN
 		/// <summary>
 		/// Returns the current string as a span. The return value is valid until this instance gets mutated.
 		/// </summary>
 		/// <returns></returns>
 		public ReadOnlySpan<char> AsSpan() =>
 			new ReadOnlySpan<char>(buffer, 0, bufferLen);
-#endif
 
 		/// <summary>
 		/// Copies all data to <paramref name="array"/>

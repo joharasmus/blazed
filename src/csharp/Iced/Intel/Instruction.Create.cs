@@ -2528,7 +2528,6 @@ namespace Iced.Intel {
 			return instruction;
 		}
 
-#if HAS_SPAN
 		/// <summary>
 		/// Creates a <c>db</c>/<c>.byte</c> asm directive
 		/// </summary>
@@ -2547,7 +2546,6 @@ namespace Iced.Intel {
 			Debug.Assert(instruction.OpCount == 0);
 			return instruction;
 		}
-#endif
 
 		/// <summary>
 		/// Creates a <c>db</c>/<c>.byte</c> asm directive
@@ -2760,7 +2758,6 @@ namespace Iced.Intel {
 			return instruction;
 		}
 
-#if HAS_SPAN
 		/// <summary>
 		/// Creates a <c>dw</c>/<c>.word</c> asm directive
 		/// </summary>
@@ -2781,7 +2778,6 @@ namespace Iced.Intel {
 			Debug.Assert(instruction.OpCount == 0);
 			return instruction;
 		}
-#endif
 
 		/// <summary>
 		/// Creates a <c>dw</c>/<c>.word</c> asm directive
@@ -2820,7 +2816,6 @@ namespace Iced.Intel {
 			return instruction;
 		}
 
-#if HAS_SPAN
 		/// <summary>
 		/// Creates a <c>dw</c>/<c>.word</c> asm directive
 		/// </summary>
@@ -2839,7 +2834,6 @@ namespace Iced.Intel {
 			Debug.Assert(instruction.OpCount == 0);
 			return instruction;
 		}
-#endif
 
 		/// <summary>
 		/// Creates a <c>dw</c>/<c>.word</c> asm directive
@@ -2948,7 +2942,6 @@ namespace Iced.Intel {
 			return instruction;
 		}
 
-#if HAS_SPAN
 		/// <summary>
 		/// Creates a <c>dd</c>/<c>.int</c> asm directive
 		/// </summary>
@@ -2969,7 +2962,6 @@ namespace Iced.Intel {
 			Debug.Assert(instruction.OpCount == 0);
 			return instruction;
 		}
-#endif
 
 		/// <summary>
 		/// Creates a <c>dd</c>/<c>.int</c> asm directive
@@ -3008,7 +3000,6 @@ namespace Iced.Intel {
 			return instruction;
 		}
 
-#if HAS_SPAN
 		/// <summary>
 		/// Creates a <c>dd</c>/<c>.int</c> asm directive
 		/// </summary>
@@ -3027,7 +3018,6 @@ namespace Iced.Intel {
 			Debug.Assert(instruction.OpCount == 0);
 			return instruction;
 		}
-#endif
 
 		/// <summary>
 		/// Creates a <c>dd</c>/<c>.int</c> asm directive
@@ -3096,7 +3086,6 @@ namespace Iced.Intel {
 			return instruction;
 		}
 
-#if HAS_SPAN
 		/// <summary>
 		/// Creates a <c>dq</c>/<c>.quad</c> asm directive
 		/// </summary>
@@ -3118,7 +3107,6 @@ namespace Iced.Intel {
 			Debug.Assert(instruction.OpCount == 0);
 			return instruction;
 		}
-#endif
 
 		/// <summary>
 		/// Creates a <c>dq</c>/<c>.quad</c> asm directive
@@ -3158,7 +3146,6 @@ namespace Iced.Intel {
 			return instruction;
 		}
 
-#if HAS_SPAN
 		/// <summary>
 		/// Creates a <c>dq</c>/<c>.quad</c> asm directive
 		/// </summary>
@@ -3177,7 +3164,6 @@ namespace Iced.Intel {
 			Debug.Assert(instruction.OpCount == 0);
 			return instruction;
 		}
-#endif
 
 		/// <summary>
 		/// Creates a <c>dq</c>/<c>.quad</c> asm directive

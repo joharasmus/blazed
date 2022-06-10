@@ -248,11 +248,7 @@ namespace Generator.Formatters.CSharp {
 		protected override void GenerateRegisters(string[] registers) {
 			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.FormatterNamespace, "RegistersTable.cs");
 			new FileUpdater(TargetLanguage.CSharp, "Registers", filename).Generate(writer => {
-				writer.WriteLineNoIndent($"#if {CSharpConstants.HasSpanDefine}");
 				writer.WriteLine("static ReadOnlySpan<byte> GetRegistersData() =>");
-				writer.WriteLineNoIndent("#else");
-				writer.WriteLine("static byte[] GetRegistersData() =>");
-				writer.WriteLineNoIndent("#endif");
 				int maxLen = 0;
 				using (writer.Indent()) {
 					writer.WriteLine("new byte[] {");

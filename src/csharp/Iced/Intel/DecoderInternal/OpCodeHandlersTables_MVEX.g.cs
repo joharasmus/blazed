@@ -8,11 +8,7 @@
 #if DECODER && MVEX
 namespace Iced.Intel.DecoderInternal {
 	static partial class OpCodeHandlersTables_MVEX {
-#if HAS_SPAN
 		static System.ReadOnlySpan<byte> GetSerializedTables() =>
-#else
-		static byte[] GetSerializedTables() =>
-#endif
 			new byte[] {
 				// handlers_Grp_0F18
 				0x01,// ArrayReference

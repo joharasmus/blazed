@@ -8,11 +8,7 @@
 #if INTEL
 namespace Iced.Intel.IntelFormatterInternal {
 	static partial class InstrInfos {
-#if HAS_SPAN
 		static System.ReadOnlySpan<byte> GetSerializedInstrInfos() =>
-#else
-		static byte[] GetSerializedInstrInfos() =>
-#endif
 			new byte[] {
 				// INVALID
 				0x01,// Normal_1

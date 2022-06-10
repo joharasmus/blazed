@@ -7,11 +7,7 @@
 
 namespace Iced.Intel {
 	static class InstructionOpCounts {
-#if HAS_SPAN
 		internal static System.ReadOnlySpan<byte> OpCount => new byte[IcedConstants.CodeEnumCount] {
-#else
-		internal static readonly byte[] OpCount = new byte[IcedConstants.CodeEnumCount] {
-#endif
 			0,// INVALID
 			0,// DeclareByte
 			0,// DeclareWord

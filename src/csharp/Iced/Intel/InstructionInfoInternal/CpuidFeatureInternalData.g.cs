@@ -8,11 +8,7 @@
 #if INSTR_INFO
 namespace Iced.Intel.InstructionInfoInternal {
 	static partial class CpuidFeatureInternalData {
-#if HAS_SPAN
 		static System.ReadOnlySpan<byte> GetGetCpuidFeaturesData() =>
-#else
-		static byte[] GetGetCpuidFeaturesData() =>
-#endif
 			new byte[] {
 				// Header
 				0x00,

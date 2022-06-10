@@ -149,9 +149,6 @@ namespace Iced.Intel {
 #endif
 			_ = InstructionOpCounts.OpCount;
 			_ = MnemonicUtilsData.toMnemonic;
-#if !HAS_SPAN
-			_ = TupleTypeTable.tupleTypeData;
-#endif
 #if INSTR_INFO
 			_ = RegisterExtensions.RegisterInfos;
 			_ = MemorySizeExtensions.MemorySizeInfos;

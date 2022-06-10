@@ -91,7 +91,6 @@ namespace UnitTests.Intel.FormatterTests.Fast {
 			Assert.Equal(0, output.Length);
 		}
 
-#if HAS_SPAN
 		[Fact]
 		void AsSpanWorks() {
 			var output = new FastStringOutput();
@@ -106,7 +105,6 @@ namespace UnitTests.Intel.FormatterTests.Fast {
 			output.Clear();
 			Assert.Empty(output.AsSpan().ToString());
 		}
-#endif
 
 		[Theory]
 		[InlineData(0, "", "abcdefgh")]

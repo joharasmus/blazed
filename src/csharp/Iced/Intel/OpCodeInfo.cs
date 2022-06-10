@@ -156,11 +156,8 @@ namespace Iced.Intel {
 
 			string? toOpCodeStringValue = null;
 			string? toInstructionStringValue = null;
-#if HAS_SPAN
+
 			ReadOnlySpan<byte> opKinds;
-#else
-			byte[] opKinds;
-#endif
 			switch ((EncodingKind)encoding) {
 			case EncodingKind.Legacy:
 				opKinds = OpCodeOperandKinds.LegacyOpKinds;

@@ -484,10 +484,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareByte(info.data);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareByte(info.data.AsSpan());
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -507,10 +506,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareWord(info.data);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareWord(info.data.AsSpan());
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -526,10 +524,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareDword(info.data);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareDword(info.data.AsSpan());
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -543,10 +540,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareQword(info.data);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareQword(info.data.AsSpan());
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -574,10 +570,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareByte(info.data, 1, info.data.Length - 2);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareByte(info.data.AsSpan(1, info.data.Length - 2));
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -597,10 +592,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareWord(info.data, 1, info.data.Length - 2);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareWord(info.data.AsSpan(1, info.data.Length - 2));
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -616,10 +610,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareDword(info.data, 1, info.data.Length - 2);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareDword(info.data.AsSpan(1, info.data.Length - 2));
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -633,10 +626,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareQword(info.data, 1, info.data.Length - 2);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareQword(info.data.AsSpan(1, info.data.Length - 2));
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -656,10 +648,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareWord(info.data);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareWord(info.data.AsSpan());
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -675,10 +666,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareDword(info.data);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareDword(info.data.AsSpan());
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -692,10 +682,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareQword(info.data);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareQword(info.data.AsSpan());
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -715,10 +704,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareWord(info.data, 1, info.data.Length - 2);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareWord(info.data.AsSpan(1, info.data.Length - 2));
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -734,10 +722,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareDword(info.data, 1, info.data.Length - 2);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareDword(info.data.AsSpan(1, info.data.Length - 2));
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -751,10 +738,9 @@ namespace UnitTests.Intel.InstructionTests {
 				var instruction1 = info.instruction;
 				var instruction2 = Instruction.CreateDeclareQword(info.data, 1, info.data.Length - 2);
 				Assert.True(Instruction.EqualsAllBits(instruction1, instruction2));
-#if HAS_SPAN
+
 				var instr3 = Instruction.CreateDeclareQword(info.data.AsSpan(1, info.data.Length - 2));
 				Assert.True(Instruction.EqualsAllBits(instruction1, instr3));
-#endif
 			}
 		}
 
@@ -1338,11 +1324,10 @@ namespace UnitTests.Intel.InstructionTests {
 			Instruction.CreateDeclareByte(new byte[16]);
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareByte(new byte[17]));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareByte(new byte[17], 0, 17));
-#if HAS_SPAN
+
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareByte(new byte[0].AsSpan()));
 			Instruction.CreateDeclareByte(new byte[16].AsSpan());
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareByte(new byte[17].AsSpan()));
-#endif
 
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareWord(new byte[0]));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareWord(new byte[1]));
@@ -1374,7 +1359,7 @@ namespace UnitTests.Intel.InstructionTests {
 			Instruction.CreateDeclareWord(new ushort[8]);
 			Instruction.CreateDeclareWord(new byte[16]);
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareWord(new byte[17], 0, 17));
-#if HAS_SPAN
+
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareWord(new byte[0].AsSpan()));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareWord(new byte[1].AsSpan()));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareWord(new byte[3].AsSpan()));
@@ -1389,7 +1374,6 @@ namespace UnitTests.Intel.InstructionTests {
 			Instruction.CreateDeclareWord(new ushort[8].AsSpan());
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareWord(new ushort[0].AsSpan()));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareWord(new ushort[9].AsSpan()));
-#endif
 
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareDword(new byte[0]));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareDword(new byte[1]));
@@ -1427,7 +1411,7 @@ namespace UnitTests.Intel.InstructionTests {
 			Instruction.CreateDeclareDword(new uint[4]);
 			Instruction.CreateDeclareDword(new byte[16]);
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareDword(new byte[17], 0, 17));
-#if HAS_SPAN
+
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareDword(new byte[0].AsSpan()));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareDword(new byte[1].AsSpan()));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareDword(new byte[2].AsSpan()));
@@ -1446,7 +1430,6 @@ namespace UnitTests.Intel.InstructionTests {
 			Instruction.CreateDeclareDword(new uint[4].AsSpan());
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareDword(new uint[0].AsSpan()));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareDword(new uint[5].AsSpan()));
-#endif
 
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareQword(new byte[0]));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareQword(new byte[1]));
@@ -1494,7 +1477,7 @@ namespace UnitTests.Intel.InstructionTests {
 			Instruction.CreateDeclareQword(new ulong[2]);
 			Instruction.CreateDeclareQword(new byte[16]);
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareQword(new byte[17], 0, 17));
-#if HAS_SPAN
+
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareQword(new byte[0].AsSpan()));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareQword(new byte[1].AsSpan()));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareQword(new byte[2].AsSpan()));
@@ -1515,7 +1498,6 @@ namespace UnitTests.Intel.InstructionTests {
 			Instruction.CreateDeclareQword(new ulong[2].AsSpan());
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareQword(new ulong[0].AsSpan()));
 			Assert.Throws<ArgumentOutOfRangeException>(() => Instruction.CreateDeclareQword(new ulong[3].AsSpan()));
-#endif
 		}
 
 		[Fact]

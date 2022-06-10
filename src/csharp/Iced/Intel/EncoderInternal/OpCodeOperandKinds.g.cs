@@ -8,11 +8,7 @@
 #if ENCODER && OPCODE_INFO
 namespace Iced.Intel.EncoderInternal {
 	static class OpCodeOperandKinds {
-#if HAS_SPAN
 		public static System.ReadOnlySpan<byte> LegacyOpKinds => new byte[76] {
-#else
-		public static readonly byte[] LegacyOpKinds = new byte[76] {
-#endif
 			(byte)OpCodeOperandKind.None,
 			(byte)OpCodeOperandKind.farbr2_2,
 			(byte)OpCodeOperandKind.farbr4_2,
@@ -91,11 +87,7 @@ namespace Iced.Intel.EncoderInternal {
 			(byte)OpCodeOperandKind.brdisp_4,
 		};
 #if !NO_VEX
-#if HAS_SPAN
 		public static System.ReadOnlySpan<byte> VexOpKinds => new byte[39] {
-#else
-		public static readonly byte[] VexOpKinds = new byte[39] {
-#endif
 			(byte)OpCodeOperandKind.None,
 			(byte)OpCodeOperandKind.mem,
 			(byte)OpCodeOperandKind.mem_vsib32x,
@@ -138,11 +130,7 @@ namespace Iced.Intel.EncoderInternal {
 		};
 #endif
 #if !NO_XOP
-#if HAS_SPAN
 		public static System.ReadOnlySpan<byte> XopOpKinds => new byte[19] {
-#else
-		public static readonly byte[] XopOpKinds = new byte[19] {
-#endif
 			(byte)OpCodeOperandKind.None,
 			(byte)OpCodeOperandKind.r32_or_mem,
 			(byte)OpCodeOperandKind.r64_or_mem,
@@ -165,11 +153,7 @@ namespace Iced.Intel.EncoderInternal {
 		};
 #endif
 #if !NO_EVEX
-#if HAS_SPAN
 		public static System.ReadOnlySpan<byte> EvexOpKinds => new byte[32] {
-#else
-		public static readonly byte[] EvexOpKinds = new byte[32] {
-#endif
 			(byte)OpCodeOperandKind.None,
 			(byte)OpCodeOperandKind.mem,
 			(byte)OpCodeOperandKind.mem_vsib32x,
@@ -205,11 +189,7 @@ namespace Iced.Intel.EncoderInternal {
 		};
 #endif
 #if MVEX
-#if HAS_SPAN
 		public static System.ReadOnlySpan<byte> MvexOpKinds => new byte[9] {
-#else
-		public static readonly byte[] MvexOpKinds = new byte[9] {
-#endif
 			(byte)OpCodeOperandKind.None,
 			(byte)OpCodeOperandKind.mem,
 			(byte)OpCodeOperandKind.mem_vsib32z,
