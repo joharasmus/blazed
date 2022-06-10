@@ -14,9 +14,6 @@ else
 	is_windows=n
 fi
 net_tfm="net6.0"
-net_framework_tfm="net48"
-xunit_version="2.4.1"
-xunit_net_tfm_version="net472"
 configuration=Release
 full_check=y
 gen_check=y
@@ -34,7 +31,7 @@ new_func() {
 generator_check() {
 	new_func "Run generator, verify no diff"
 
-	dotnet run -c $configuration --project "$root_dir/src/csharp/Generator/Generator.csproj"
+	dotnet run -c $configuration --project "$root_dir/src/Generator/Generator.csproj"
 	git diff --exit-code
 }
 
@@ -63,20 +60,20 @@ build_features() {
 		echo
 		echo "==== TEST $features ===="
 		echo
-		dotnet build -v:m -c $configuration -p:TargetFramework=$net_tfm -p:BlazedFeatureFlags="$features" "$root_dir/src/csharp/UnitTests/UnitTests.csproj"
+		dotnet build -v:m -c $configuration -p:TargetFramework=$net_tfm -p:BlazedFeatureFlags="$features" "$root_dir/src/UnitTests/UnitTests.csproj"
 	done
 }
 
 build_test() {
 	new_func "Build, test"
 
-	dotnet build -v:m -c $configuration "$root_dir/src/csharp/Blazed.sln"
+	dotnet build -v:m -c $configuration "$root_dir/src/Blazed.sln"
 
 	if [ "$test_code" = "y" ]; then
 		echo
 		echo "==== TEST ===="
 		echo
-		if [ ! -d "$root_dir/src/csharp/UnitTests/bin/$configuration/$net_tfm" ]; then
+		if [ ! -d "$root_dir/src/UnitTests/bin/$configuration/$net_tfm" ]; then
 			echo "Invalid tfm: $net_tfm"
 			exit 1
 		fi
@@ -91,7 +88,7 @@ build_test() {
 		else
 			cov_dir="$root_dir"
 		fi
-		dotnet test -c $configuration -f $net_tfm -p:ExcludeByFile="$cov_dir/src/csharp/Blazed/**/*.g.cs" -p:ExcludeByAttribute='ObsoleteAttribute' -p:CollectCoverage=$collect_coverage -p:CoverletOutputFormat=lcov --no-build "$root_dir/src/csharp/UnitTests/UnitTests.csproj" -- RunConfiguration.NoAutoReporters=true RunConfiguration.TargetPlatform=X64
+		dotnet test -c $configuration -f $net_tfm -p:ExcludeByFile="$cov_dir/src/Blazed/**/*.g.cs" -p:ExcludeByAttribute='ObsoleteAttribute' -p:CollectCoverage=$collect_coverage -p:CoverletOutputFormat=lcov --no-build "$root_dir/src/UnitTests/UnitTests.csproj" -- RunConfiguration.NoAutoReporters=true RunConfiguration.TargetPlatform=X64
 	fi
 }
 

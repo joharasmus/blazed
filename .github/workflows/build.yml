@@ -44,10 +44,10 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: coverage.info
-          path: src/csharp/UnitTests/coverage.info
+          path: src/UnitTests/coverage.info
           if-no-files-found: error
 
       - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: src/csharp/UnitTests/coverage.info
+          files: src/UnitTests/coverage.info

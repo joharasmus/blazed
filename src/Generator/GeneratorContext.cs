@@ -60,18 +60,18 @@ namespace Generator {
 		readonly string[] langDirs;
 
 		public GeneratorDirs(string baseDir) {
-			UnitTestsDir = GetAndVerifyPath(baseDir, "src", "UnitTests");
-			GeneratorDir = GetAndVerifyPath(baseDir, "src", "csharp", "Generator");
+			UnitTestsDir = GetAndVerifyPath(baseDir, "UnitTests");
+			GeneratorDir = GetAndVerifyPath(baseDir, "src", "Generator");
 			langDirs = new string[Enum.GetValues<TargetLanguage>().Length];
 			for (int i = 0; i < langDirs.Length; i++) {
 				string path = (TargetLanguage)i switch {
 					TargetLanguage.Other => string.Empty,
-					TargetLanguage.CSharp => GetAndVerifyPath(baseDir, "src", "csharp", "Blazed"),
+					TargetLanguage.CSharp => GetAndVerifyPath(baseDir, "src", "Blazed"),
 					_ => throw new InvalidOperationException(),
 				};
 				langDirs[i] = path;
 			}
-			CSharpTestsDir = GetAndVerifyPath(baseDir, "src", "csharp", "UnitTests");
+			CSharpTestsDir = GetAndVerifyPath(baseDir, "src", "UnitTests");
 		}
 
 		static string GetAndVerifyPath(params string[] paths) {

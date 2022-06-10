@@ -121,12 +121,8 @@ Options:
     Show this message
 -l, --language <language>
     Select only this language. Multiple language options are allowed.
-    Valid languages:
+    Valid language:
         cs (C#)
-        rs (Rust)
-        rsjs (Rust + JS)
-        py (Python)
-        lua (Lua)
 --no-formatter
     Don't include any formatter
 --no-gas
@@ -295,8 +291,8 @@ Options:
 		static readonly char[] seps = new char[] { ',', ';' };
 
 		static GeneratorContext CreateGeneratorContext(GeneratorFlags flags, HashSet<string> includeCpuid, HashSet<string> excludeCpuid) {
-			var dir = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(typeof(Program).Assembly.Location)))))));
-			if (dir is null || !File.Exists(Path.Combine(dir, "src", "csharp", "Blazed.sln")))
+			var dir = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(typeof(Program).Assembly.Location))))));
+			if (dir is null || !File.Exists(Path.Combine(dir, "src", "Blazed.sln")))
 				throw new InvalidOperationException();
 			return new GeneratorContext(dir, flags, includeCpuid, excludeCpuid);
 		}
