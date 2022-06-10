@@ -3,7 +3,7 @@
 
 #if ENCODER && BLOCK_ENCODER && MVEX
 using System;
-using Iced.Intel;
+using Blazed.Intel;
 using Xunit;
 
 namespace UnitTests.Intel.EncoderTests {

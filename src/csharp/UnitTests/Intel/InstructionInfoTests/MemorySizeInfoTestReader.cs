@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using Iced.Intel;
+using Blazed.Intel;
 using UnitTests.Intel;
 
 namespace UnitTests.Intel.InstructionInfoTests {

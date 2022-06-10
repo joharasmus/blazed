@@ -4,7 +4,7 @@
 #if GAS || INTEL || MASM || NASM || FAST_FMT
 using System;
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace UnitTests.Intel.FormatterTests {
 	// GENERATOR-BEGIN: OptionsProps

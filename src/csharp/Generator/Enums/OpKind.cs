@@ -4,7 +4,7 @@
 namespace Generator.Enums {
 	[Enum("OpKind", Documentation = "Instruction operand kind", Public = true)]
 	enum OpKind {
-		[Comment("A register (#(r:Iced.Intel.Register)#).#(p:)#This operand kind uses #(P:Instruction.Op0Register)#, #(P:Instruction.Op1Register)#, #(P:Instruction.Op2Register)#, #(P:Instruction.Op3Register)# or #(P:Instruction.Op4Register)# depending on operand number. See also #(M:Instruction.GetOpRegister)#.")]
+		[Comment("A register (#(r:Blazed.Intel.Register)#).#(p:)#This operand kind uses #(P:Instruction.Op0Register)#, #(P:Instruction.Op1Register)#, #(P:Instruction.Op2Register)#, #(P:Instruction.Op3Register)# or #(P:Instruction.Op4Register)# depending on operand number. See also #(M:Instruction.GetOpRegister)#.")]
 		Register,
 		[Comment("Near 16-bit branch. This operand kind uses #(P:Instruction.NearBranch16)#")]
 		NearBranch16,

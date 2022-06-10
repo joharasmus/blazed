@@ -3,7 +3,7 @@
 
 #if INTEL
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 using Xunit;
 
 namespace UnitTests.Intel.FormatterTests.Intel {

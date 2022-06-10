@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Iced.Intel;
+using Blazed.Intel;
 using Xunit;
 
 namespace UnitTests.Intel.InstructionInfoTests {

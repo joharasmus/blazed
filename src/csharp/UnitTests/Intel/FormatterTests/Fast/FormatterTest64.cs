@@ -3,7 +3,7 @@
 
 #if FAST_FMT
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 using UnitTests.Intel.DecoderTests;
 using Xunit;
 

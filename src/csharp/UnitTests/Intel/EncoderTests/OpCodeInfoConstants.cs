@@ -4,7 +4,7 @@
 #if ENCODER && OPCODE_INFO
 using System;
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace UnitTests.Intel.EncoderTests {
 	static class OpCodeInfoDicts {

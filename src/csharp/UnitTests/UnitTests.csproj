@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Iced\Iced.csproj" />
+    <ProjectReference Include="..\Blazed\Blazed.csproj" />
   </ItemGroup>
 
 </Project>

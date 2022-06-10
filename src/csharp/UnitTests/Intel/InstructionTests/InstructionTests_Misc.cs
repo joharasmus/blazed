@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using Iced.Intel;
+using Blazed.Intel;
 using Xunit;
 
 namespace UnitTests.Intel.InstructionTests {

@@ -2,7 +2,7 @@
 // Copyright (C) 2018-present iced project and contributors
 
 #if GAS || INTEL || MASM || NASM || FAST_FMT
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace UnitTests.Intel.FormatterTests {
 	public readonly struct SymbolResolverTestCase {

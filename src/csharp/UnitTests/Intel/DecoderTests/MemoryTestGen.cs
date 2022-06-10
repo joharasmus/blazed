@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace UnitTests.Intel.DecoderTests.MemoryTestGenImpl {
 	readonly struct MemInfo : IEquatable<MemInfo> {

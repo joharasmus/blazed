@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using Iced.Intel;
+using Blazed.Intel;
 using UnitTests.Intel;
 
 namespace UnitTests.Intel.InstructionInfoTests {

@@ -3,7 +3,7 @@
 
 #if GAS || INTEL || MASM || NASM || FAST_FMT
 using System;
-using Iced.Intel;
+using Blazed.Intel;
 using Xunit;
 
 namespace UnitTests.Intel.FormatterTests {

@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace UnitTests.Intel.FormatterTests {
 	public readonly struct InstructionInfo {

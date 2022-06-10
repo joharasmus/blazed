@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace Fuzzer {
 	public sealed class EncodingTables {

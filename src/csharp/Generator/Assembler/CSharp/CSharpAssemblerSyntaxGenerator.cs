@@ -457,9 +457,9 @@ namespace Generator.Assembler.CSharp {
 				writerTests.WriteLine($"#if {CSharpConstants.CodeAssemblerDefine}");
 				writerTests.WriteLine($"namespace {CSharpConstants.IcedUnitTestsNamespace}.{assemblerTestsNameBase} {{");
 				using (writerTests.Indent()) {
-					writerTests.WriteLine("using Iced.Intel;");
+					writerTests.WriteLine("using Blazed.Intel;");
 					writerTests.WriteLine("using Xunit;");
-					writerTests.WriteLine("using static Iced.Intel.AssemblerRegisters;");
+					writerTests.WriteLine("using static Blazed.Intel.AssemblerRegisters;");
 
 					writerTests.WriteLine($"public sealed partial class {testName} : AssemblerTestsBase {{");
 					using (writerTests.Indent()) {

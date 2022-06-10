@@ -3,7 +3,7 @@
 
 #if ENCODER && BLOCK_ENCODER && CODE_ASSEMBLER
 using System;
-using Iced.Intel;
+using Blazed.Intel;
 using UnitTests.Intel.EncoderTests;
 using Xunit;
 

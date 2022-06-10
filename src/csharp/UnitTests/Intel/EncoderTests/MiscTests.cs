@@ -4,8 +4,8 @@
 #if ENCODER
 using System;
 using System.Collections.Generic;
-using Iced.Intel;
-using Iced.Intel.EncoderInternal;
+using Blazed.Intel;
+using Blazed.Intel.EncoderInternal;
 using Xunit;
 
 namespace UnitTests.Intel.EncoderTests {

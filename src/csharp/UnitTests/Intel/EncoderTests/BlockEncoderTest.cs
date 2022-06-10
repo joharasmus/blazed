@@ -4,7 +4,7 @@
 #if ENCODER && BLOCK_ENCODER
 using System;
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 using Xunit;
 
 namespace UnitTests.Intel.EncoderTests {

@@ -3,7 +3,7 @@
 
 #if ENCODER
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace UnitTests.Intel.EncoderTests {
 	sealed class CodeWriterImpl : CodeWriter {

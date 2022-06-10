@@ -2,7 +2,7 @@
 // Copyright (C) 2018-present iced project and contributors
 
 #if INSTR_INFO
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace UnitTests.Intel.InstructionInfoTests {
 	sealed class MemorySizeInfoTestCase {

@@ -3,10 +3,10 @@
 
 #if ENCODER && BLOCK_ENCODER && CODE_ASSEMBLER
 using System;
-using Iced.Intel;
+using Blazed.Intel;
 using UnitTests.Intel.EncoderTests;
 using Xunit;
-using static Iced.Intel.AssemblerRegisters;
+using static Blazed.Intel.AssemblerRegisters;
 
 namespace UnitTests.Intel.AssemblerTests {
 	public sealed class AssemblerLabelTests {

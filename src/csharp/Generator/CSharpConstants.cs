@@ -8,17 +8,17 @@ using Generator.Enums;
 
 namespace Generator {
 	static class CSharpConstants {
-		public const string IcedNamespace = "Iced.Intel";
-		public const string BlockEncoderNamespace = "Iced.Intel.BlockEncoderInternal";
-		public const string DecoderNamespace = "Iced.Intel.DecoderInternal";
-		public const string EncoderNamespace = "Iced.Intel.EncoderInternal";
-		public const string InstructionInfoNamespace = "Iced.Intel.InstructionInfoInternal";
-		public const string FormatterNamespace = "Iced.Intel.FormatterInternal";
-		public const string GasFormatterNamespace = "Iced.Intel.GasFormatterInternal";
-		public const string IntelFormatterNamespace = "Iced.Intel.IntelFormatterInternal";
-		public const string MasmFormatterNamespace = "Iced.Intel.MasmFormatterInternal";
-		public const string NasmFormatterNamespace = "Iced.Intel.NasmFormatterInternal";
-		public const string FastFormatterNamespace = "Iced.Intel.FastFormatterInternal";
+		public const string IcedNamespace = "Blazed.Intel";
+		public const string BlockEncoderNamespace = "Blazed.Intel.BlockEncoderInternal";
+		public const string DecoderNamespace = "Blazed.Intel.DecoderInternal";
+		public const string EncoderNamespace = "Blazed.Intel.EncoderInternal";
+		public const string InstructionInfoNamespace = "Blazed.Intel.InstructionInfoInternal";
+		public const string FormatterNamespace = "Blazed.Intel.FormatterInternal";
+		public const string GasFormatterNamespace = "Blazed.Intel.GasFormatterInternal";
+		public const string IntelFormatterNamespace = "Blazed.Intel.IntelFormatterInternal";
+		public const string MasmFormatterNamespace = "Blazed.Intel.MasmFormatterInternal";
+		public const string NasmFormatterNamespace = "Blazed.Intel.NasmFormatterInternal";
+		public const string FastFormatterNamespace = "Blazed.Intel.FastFormatterInternal";
 
 		public const string IcedUnitTestsNamespace = "UnitTests.Intel";
 

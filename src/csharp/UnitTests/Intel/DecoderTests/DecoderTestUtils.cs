@@ -2,7 +2,7 @@
 // Copyright (C) 2018-present iced project and contributors
 
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace UnitTests.Intel.DecoderTests {
 	public readonly struct DecoderTestInfo {

@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace UnitTests.Intel.DecoderTests {
 	// GENERATOR-BEGIN: DecoderTestText

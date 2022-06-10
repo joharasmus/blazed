@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace Fuzzer {
 	readonly struct RegisterInfo {

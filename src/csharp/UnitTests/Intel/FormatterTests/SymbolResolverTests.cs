@@ -2,7 +2,7 @@
 // Copyright (C) 2018-present iced project and contributors
 
 #if GAS || INTEL || MASM || NASM
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace UnitTests.Intel.FormatterTests {
 	public abstract class SymbolResolverTests {

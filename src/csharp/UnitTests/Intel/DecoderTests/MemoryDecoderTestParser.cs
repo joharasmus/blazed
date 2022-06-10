@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Iced.Intel;
+using Blazed.Intel;
 using SG = System.Globalization;
 
 namespace UnitTests.Intel.DecoderTests {

@@ -7,9 +7,9 @@
 
 #if ENCODER && BLOCK_ENCODER && CODE_ASSEMBLER
 namespace UnitTests.Intel.AssemblerTests {
-	using Iced.Intel;
+	using Blazed.Intel;
 	using Xunit;
-	using static Iced.Intel.AssemblerRegisters;
+	using static Blazed.Intel.AssemblerRegisters;
 	public sealed partial class AssemblerTests32 : AssemblerTestsBase {
 		public AssemblerTests32() : base(32) { }
 

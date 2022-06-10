@@ -3,7 +3,7 @@
 
 #if GAS || INTEL || MASM || NASM || FAST_FMT
 using System.Linq;
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace UnitTests.Intel.FormatterTests {
 	sealed class TestSymbolResolver : ISymbolResolver {

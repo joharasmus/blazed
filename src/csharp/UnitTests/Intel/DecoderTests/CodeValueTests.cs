@@ -3,7 +3,7 @@
 
 using System;
 using System.Text;
-using Iced.Intel;
+using Blazed.Intel;
 using Xunit;
 
 namespace UnitTests.Intel.DecoderTests {

@@ -2,9 +2,9 @@
 // Copyright (C) 2018-present iced project and contributors
 
 #if ENCODER && BLOCK_ENCODER && CODE_ASSEMBLER
-using Iced.Intel;
+using Blazed.Intel;
 using Xunit;
-using static Iced.Intel.AssemblerRegisters;
+using static Blazed.Intel.AssemblerRegisters;
 
 namespace UnitTests.Intel.AssemblerTests {
 	public class AssemblerRegisterTests {

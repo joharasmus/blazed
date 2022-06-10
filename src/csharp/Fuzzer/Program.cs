@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace Fuzzer {
 	sealed class Options {

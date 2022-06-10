@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Iced.Intel;
+using Blazed.Intel;
 using UnitTests.Intel;
 using Xunit;
 

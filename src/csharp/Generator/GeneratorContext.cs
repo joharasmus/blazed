@@ -66,7 +66,7 @@ namespace Generator {
 			for (int i = 0; i < langDirs.Length; i++) {
 				string path = (TargetLanguage)i switch {
 					TargetLanguage.Other => string.Empty,
-					TargetLanguage.CSharp => GetAndVerifyPath(baseDir, "src", "csharp", "Iced"),
+					TargetLanguage.CSharp => GetAndVerifyPath(baseDir, "src", "csharp", "Blazed"),
 					_ => throw new InvalidOperationException(),
 				};
 				langDirs[i] = path;

@@ -3,7 +3,7 @@
 
 #if INSTR_INFO
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 using Xunit;
 
 namespace UnitTests.Intel.InstructionInfoTests {

@@ -4,7 +4,7 @@
 #if INSTR_INFO
 using System;
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 using UnitTests.Intel;
 
 namespace UnitTests.Intel.InstructionInfoTests {

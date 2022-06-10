@@ -3,7 +3,7 @@
 
 using System;
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 
 namespace Fuzzer {
 	public enum CpuDecoder {

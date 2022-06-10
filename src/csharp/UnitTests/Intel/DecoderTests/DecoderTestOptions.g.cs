@@ -8,7 +8,7 @@
 #if DECODER
 using System;
 
-namespace Iced.Intel {
+namespace Blazed.Intel {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 	[Flags]
 	public enum DecoderTestOptions : uint {
