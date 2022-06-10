@@ -3,7 +3,7 @@
 
 using System;
 
-namespace IcedFuzzer {
+namespace Fuzzer {
 	enum FuzzerOperandKind {
 		None,
 		Immediate,

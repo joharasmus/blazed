@@ -3,7 +3,7 @@
 
 using System;
 
-namespace IcedFuzzer {
+namespace Fuzzer {
 	static class ThrowHelpers {
 		public static Exception Unreachable => new InvalidOperationException("Unreachable code");
 	}

@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using Iced.Intel;
 
-namespace IcedFuzzer {
+namespace Fuzzer {
 	sealed class Options {
 		public readonly OpCodeInfoOptions OpCodeInfoOptions = new OpCodeInfoOptions();
 		public bool PrintInstructions = false;

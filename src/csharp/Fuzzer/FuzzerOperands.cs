@@ -4,7 +4,7 @@
 using System;
 using Iced.Intel;
 
-namespace IcedFuzzer {
+namespace Fuzzer {
 	static class FuzzerOperands {
 		static readonly FuzzerOperand invalid = new FuzzerOperand(FuzzerOperandKind.None);
 		static readonly (FuzzerOperand op, FuzzerOperand modrmMem)[] operands = CreateOperands();

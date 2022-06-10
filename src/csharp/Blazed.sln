@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iced", "Iced\Iced.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{0990E973-7216-4968-9D54-33DCEAD123EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IcedFuzzer", "IcedFuzzer\IcedFuzzer.csproj", "{A89245C7-C09D-4297-98E5-4CD08CEDA60B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fuzzer", "Fuzzer\Fuzzer.csproj", "{A89245C7-C09D-4297-98E5-4CD08CEDA60B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

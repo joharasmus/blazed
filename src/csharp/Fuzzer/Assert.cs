@@ -4,7 +4,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace IcedFuzzer {
+namespace Fuzzer {
 	static class Assert {
 		public static void True([DoesNotReturnIf(false)] bool b) {
 			if (!b)

@@ -4,7 +4,7 @@
 using System;
 using Iced.Intel;
 
-namespace IcedFuzzer {
+namespace Fuzzer {
 	[Flags]
 	enum EncodedInfoFlags : uint {
 		None				= 0,

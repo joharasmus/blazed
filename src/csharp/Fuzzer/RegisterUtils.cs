@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-namespace IcedFuzzer {
+namespace Fuzzer {
 	static class RegisterUtils {
 		public static uint GetRegisterCount(FuzzerRegisterKind register) =>
 			register switch {
