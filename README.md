@@ -18,7 +18,7 @@ iced is a blazing fast and correct x86 (16/32/64-bit) instruction decoder, disas
 
 # Examples
 
-- .NET: [README](https://github.com/joharasmus/blazed/blob/master/src/csharp/Blazed/README.md)
+- .NET: [README](https://github.com/joharasmus/blazed/blob/master/src/Blazed/README.md)
 
 # License
 
