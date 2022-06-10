@@ -39,7 +39,7 @@ jobs:
 
       - name: Build and test
         shell: bash
-        run: ./build-dotnet --quick-check
+        run: ./build-dotnet --no-gen-check
 
       - uses: actions/upload-artifact@v3
         with:
