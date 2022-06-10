@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.1;netstandard2.0;net462</TargetFrameworks>
+    <TargetFramework>netstandard2.1</TargetFramework>
 
     <Description>x86/x64 disassembler, assembler, instruction decoder</Description>
     <Title>$(Description)</Title>
@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <DefineConstants Condition=" $(TargetFramework.StartsWith(netstandard)) AND '$(TargetFramework)' != 'netstandard2.0' ">$(DefineConstants);HAS_SPAN</DefineConstants>
+    <DefineConstants>$(DefineConstants);HAS_SPAN</DefineConstants>
   </PropertyGroup>
 
 </Project>

@@ -296,7 +296,7 @@ Options:
 
 		static GeneratorContext CreateGeneratorContext(GeneratorFlags flags, HashSet<string> includeCpuid, HashSet<string> excludeCpuid) {
 			var dir = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(typeof(Program).Assembly.Location)))))));
-			if (dir is null || !File.Exists(Path.Combine(dir, "src", "csharp", "Iced.sln")))
+			if (dir is null || !File.Exists(Path.Combine(dir, "src", "csharp", "Blazed.sln")))
 				throw new InvalidOperationException();
 			return new GeneratorContext(dir, flags, includeCpuid, excludeCpuid);
 		}
