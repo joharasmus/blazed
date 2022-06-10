@@ -5,18 +5,13 @@
 
     <Description>x86/x64 disassembler, assembler, instruction decoder</Description>
     <Title>$(Description)</Title>
-    <AssemblyTitle>Iced</AssemblyTitle>
-    <AssemblyName>Iced</AssemblyName>
-    <PackageId>Iced</PackageId>
-    <PackageProjectUrl>https://github.com/joharasmus/iced</PackageProjectUrl>
+    <AssemblyTitle>IcedSharp</AssemblyTitle>
+    <AssemblyName>IcedSharp</AssemblyName>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageVersion>$(InformationalVersion)</PackageVersion>
-    <PackageTags>disassembler;x86;x64;assembler;encoder;decoder;formatter</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <Nullable>enable</Nullable>
     <Deterministic>true</Deterministic>
-    <PackageReleaseNotes></PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
