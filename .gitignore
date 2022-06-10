@@ -3,3 +3,5 @@
 coverage.info
 /cov-out/
 *.snk
+obj/
+bin/
