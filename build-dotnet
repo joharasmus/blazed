@@ -96,7 +96,7 @@ build_features() {
 build_test() {
 	new_func "Build, test"
 
-	dotnet build -v:m -c $configuration "$root_dir/src/csharp/Iced.sln"
+	dotnet build -v:m -c $configuration "$root_dir/src/csharp/Blazed.sln"
 
 	if [ "$test_code" = "y" ]; then
 		echo
