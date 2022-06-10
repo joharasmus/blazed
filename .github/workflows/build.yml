@@ -60,4 +60,4 @@ jobs:
           gpgv codecov.SHA256SUM.sig codecov.SHA256SUM
           shasum -a 256 -c codecov.SHA256SUM
           chmod +x codecov
-          ./codecov -t "8d8d7022-caa5-4d19-b1d9-8f95a3652b33" -f "src/csharp/Iced.UnitTests/coverage.info"
+          ./codecov -t "${{secrets.CODECOV_TOKEN}}" -f "src/csharp/Iced.UnitTests/coverage.info"
