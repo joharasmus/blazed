@@ -1,6 +1,8 @@
 # iced 
-[![GitHub builds](https://github.com/joharasmus/icedSharp/workflows/GitHub%20CI/badge.svg)](https://github.com/joharasmus/icedSharp/actions) 
-[![codecov](https://codecov.io/gh/joharasmus/icedSharp/branch/master/graph/badge.svg)](https://codecov.io/gh/joharasmus/icedSharp)
+[![GitHub builds](https://github.com/joharasmus/blazed/workflows/GitHub%20CI/badge.svg)](https://github.com/joharasmus/blazed/actions) 
+[![codecov](https://codecov.io/gh/joharasmus/blazed/branch/master/graph/badge.svg)](https://codecov.io/gh/joharasmus/blazed)
+
+blazed is a freestanding fork of the "iced" project. It is very much WIP.
 
 iced is a blazing fast and correct x86 (16/32/64-bit) instruction decoder, disassembler and assembler written in C#.
 
