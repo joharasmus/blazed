@@ -1,5 +1,6 @@
-https://github.com/joharasmus/iced
-Copyright (C) 2022-present iced project and contributors
+https://github.com/joharasmus/blazed
+Copyright (C) iced project and contributors, 2018-present
+Copyright (C) joharasmus, 2022-present
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
