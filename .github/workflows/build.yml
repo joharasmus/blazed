@@ -47,7 +47,7 @@ jobs:
           path: src/csharp/Iced.UnitTests/coverage.info
           if-no-files-found: error
 
-      - uses: codecov/codecov-action@v2
+      - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: src/csharp/Iced.UnitTests/coverage.info
