@@ -5,7 +5,6 @@ root_dir=$(dirname "$0")
 root_dir=$(cd "$root_dir/" && pwd)
 if [ ! -f "$root_dir/LICENSE.txt" ]; then
 	echo "Couldn't find the root dir"
-	echo $root_dir
 	exit 1
 fi
 
@@ -23,7 +22,6 @@ configuration=Release
 full_check=y
 gen_check=y
 test_code=y
-pack_code=y
 coverage=y
 
 new_func() {
@@ -121,14 +119,6 @@ build_test() {
 		fi
 		dotnet test -c $configuration -f $net_tfm -p:Exclude='"[Iced]Iced.Intel.InstructionMemorySizes,[Iced]Iced.Intel.EncoderInternal.OpCodeHandlers,[Iced]Iced.Intel.InstructionInfoInternal.InfoHandlers,[Iced]Iced.Intel.MnemonicUtils,[Iced]Iced.Intel.InstructionOpCounts"' -p:ExcludeByFile="$cov_dir/src/csharp/Iced/**/*.g.cs" -p:ExcludeByAttribute='ObsoleteAttribute' -p:CollectCoverage=$collect_coverage -p:CoverletOutputFormat=lcov --no-build "$root_dir/src/csharp/Iced.UnitTests/Iced.UnitTests.csproj" -- RunConfiguration.NoAutoReporters=true RunConfiguration.TargetPlatform=X64
 	fi
-
-	if [ "$pack_code" = "y" ]; then
-		echo
-		echo "==== PACK ===="
-		echo
-		# Don't include the IVT in the final binary
-		dotnet pack -v:m -c $configuration -p:IcedDefineConstants="IcedNoIVT" "$root_dir/src/csharp/Iced/Iced.csproj"
-	fi
 }
 
 while [ "$#" -gt 0 ]; do
@@ -136,7 +126,6 @@ while [ "$#" -gt 0 ]; do
 	--quick-check) full_check=n ;;
 	--no-gen-check) gen_check=n ;;
 	--no-test) test_code=n ;;
-	--no-pack) pack_code=n ;;
 	--no-coverage) coverage=n ;;
 	*) echo "Unknown arg: $1"; exit 1 ;;
 	esac
