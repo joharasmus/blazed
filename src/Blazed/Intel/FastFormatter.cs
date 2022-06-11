@@ -49,7 +49,7 @@ namespace Blazed.Intel {
 			"*1", "*2", "*4", "*8",
 		};
 #if MVEX
-		static readonly string[] s_mvexRegMemConsts32 = new string[IcedConstants.MvexRegMemConvEnumCount] {
+		static readonly string[] s_mvexRegMemConsts32 = new string[BlazedConstants.MvexRegMemConvEnumCount] {
 			string.Empty,
 			string.Empty,
 			"{cdab}",
@@ -68,7 +68,7 @@ namespace Blazed.Intel {
 			"{uint16}",
 			"{sint16}",
 		};
-		static readonly string[] s_mvexRegMemConsts64 = new string[IcedConstants.MvexRegMemConvEnumCount] {
+		static readonly string[] s_mvexRegMemConsts64 = new string[BlazedConstants.MvexRegMemConvEnumCount] {
 			string.Empty,
 			string.Empty,
 			"{cdab}",
@@ -241,7 +241,7 @@ namespace Blazed.Intel {
 				
 #if MVEX
 				int mvexRmOperand;
-				if (IcedConstants.IsMvex(instruction.Code)) {
+				if (BlazedConstants.IsMvex(instruction.Code)) {
 					Debug.Assert(opCount != 0);
 					mvexRmOperand = instruction.GetOpKind(opCount - 1) == OpKind.Immediate8 ? opCount - 2 : opCount - 1;
 				}
@@ -486,7 +486,7 @@ namespace Blazed.Intel {
 						Static.Assert((int)RoundingControl.RoundDown == 2 ? 0 : -1);
 						Static.Assert((int)RoundingControl.RoundUp == 3 ? 0 : -1);
 						Static.Assert((int)RoundingControl.RoundTowardZero == 4 ? 0 : -1);
-						if (IcedConstants.IsMvex(instruction.Code) && !instruction.SuppressAllExceptions)
+						if (BlazedConstants.IsMvex(instruction.Code) && !instruction.SuppressAllExceptions)
 							output.AppendNotNull(rcStrings[(int)rc - 1]);
 						else
 							output.AppendNotNull(rcSaeStrings[(int)rc - 1]);

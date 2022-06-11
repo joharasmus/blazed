@@ -143,8 +143,8 @@ namespace UnitTests.Intel.EncoderTests {
 			Assert.Equal(tc.Op2Kind, info.GetOpKind(2));
 			Assert.Equal(tc.Op3Kind, info.GetOpKind(3));
 			Assert.Equal(tc.Op4Kind, info.GetOpKind(4));
-			Static.Assert(IcedConstants.MaxOpCount == 5 ? 0 : -1);
-			for (int i = tc.OpCount; i < IcedConstants.MaxOpCount; i++)
+			Static.Assert(BlazedConstants.MaxOpCount == 5 ? 0 : -1);
+			for (int i = tc.OpCount; i < BlazedConstants.MaxOpCount; i++)
 				Assert.Equal(OpCodeOperandKind.None, info.GetOpKind(i));
 #if MVEX
 			Assert.Equal(tc.Mvex.EHBit, info.MvexEHBit);
@@ -166,14 +166,14 @@ namespace UnitTests.Intel.EncoderTests {
 			Assert.Throws<ArgumentOutOfRangeException>(() => info.GetOpKind(int.MinValue));
 			Assert.Throws<ArgumentOutOfRangeException>(() => info.GetOpKind(-1));
 			info.GetOpKind(0);
-			info.GetOpKind(IcedConstants.MaxOpCount - 1);
-			Assert.Throws<ArgumentOutOfRangeException>(() => info.GetOpKind(IcedConstants.MaxOpCount));
+			info.GetOpKind(BlazedConstants.MaxOpCount - 1);
+			Assert.Throws<ArgumentOutOfRangeException>(() => info.GetOpKind(BlazedConstants.MaxOpCount));
 			Assert.Throws<ArgumentOutOfRangeException>(() => info.GetOpKind(int.MaxValue));
 		}
 
 		[Fact]
 		void Verify_Instruction_OpCodeInfo() {
-			for (int i = 0; i < IcedConstants.CodeEnumCount; i++) {
+			for (int i = 0; i < BlazedConstants.CodeEnumCount; i++) {
 				var code = (Code)i;
 				Instruction instruction = default;
 				instruction.Code = (Code)i;
@@ -183,7 +183,7 @@ namespace UnitTests.Intel.EncoderTests {
 
 		[Fact]
 		void Make_sure_all_Code_values_are_tested_exactly_once() {
-			var tested = new bool[IcedConstants.CodeEnumCount];
+			var tested = new bool[BlazedConstants.CodeEnumCount];
 			foreach (var info in OpCodeInfoTestCases.OpCodeInfoTests) {
 				Assert.False(tested[(int)info.Code]);
 				tested[(int)info.Code] = true;

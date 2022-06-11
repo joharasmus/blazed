@@ -7,7 +7,7 @@
 
 namespace Blazed.Intel {
 	static class InstructionOpCounts {
-		internal static System.ReadOnlySpan<byte> OpCount => new byte[IcedConstants.CodeEnumCount] {
+		internal static System.ReadOnlySpan<byte> OpCount => new byte[BlazedConstants.CodeEnumCount] {
 			0,// INVALID
 			0,// DeclareByte
 			0,// DeclareWord

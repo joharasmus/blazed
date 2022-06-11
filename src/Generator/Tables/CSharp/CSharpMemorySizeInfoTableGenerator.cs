@@ -19,7 +19,7 @@ namespace Generator.Tables.CSharp {
 
 		public void Generate() {
 			var defs = genTypes.GetObject<MemorySizeDefs>(TypeIds.MemorySizeDefs).Defs;
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "MemorySizeExtensions.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "MemorySizeExtensions.cs");
 			var sizeToIndex = new Dictionary<uint, uint>();
 			uint index = 0;
 			foreach (var size in defs.Select(a => a.Size).Distinct().OrderBy(a => a))

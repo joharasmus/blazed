@@ -14,7 +14,7 @@ namespace Blazed.Intel.GasFormatterInternal {
 		public static readonly FormatterString[] AllRegisters = GetRegistersWithPrefix();
 		static FormatterString[] GetRegistersWithPrefix() {
 			var registers = AllRegistersNaked;
-			Debug2.Assert(registers is not null);
+			Debug.Assert(registers is not null);
 			var result = new FormatterString[registers.Length];
 			for (int i = 0; i < registers.Length; i++)
 				result[i] = new FormatterString("%" + registers[i].Get(false));

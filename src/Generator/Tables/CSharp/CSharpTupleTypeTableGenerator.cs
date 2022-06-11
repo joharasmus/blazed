@@ -17,7 +17,7 @@ namespace Generator.Tables.CSharp {
 
 		public void Generate() {
 			var infos = genTypes.GetObject<TupleTypeTable>(TypeIds.TupleTypeTable).Data;
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "TupleTypeTable.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "TupleTypeTable.cs");
 			var updater = new FileUpdater(TargetLanguage.CSharp, "TupleTypeTable", filename);
 			updater.Generate(writer => WriteTable(writer, infos));
 		}

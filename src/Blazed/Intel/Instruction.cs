@@ -235,7 +235,7 @@ namespace Blazed.Intel {
 			readonly get => (Code)code;
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			set {
-				if ((uint)value >= (uint)IcedConstants.CodeEnumCount)
+				if ((uint)value >= (uint)BlazedConstants.CodeEnumCount)
 					ThrowHelper.ThrowArgumentOutOfRangeException_value();
 				code = (ushort)value;
 			}
@@ -615,7 +615,7 @@ namespace Blazed.Intel {
 		/// </summary>
 		public bool IsMvexEvictionHint {
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
-			readonly get => IcedConstants.IsMvex(Code) && (immediate & (uint)MvexInstrFlags.EvictionHint) != 0;
+			readonly get => BlazedConstants.IsMvex(Code) && (immediate & (uint)MvexInstrFlags.EvictionHint) != 0;
 			set {
 				if (value)
 					immediate |= (uint)MvexInstrFlags.EvictionHint;
@@ -634,7 +634,7 @@ namespace Blazed.Intel {
 		public MvexRegMemConv MvexRegMemConv {
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			readonly get {
-				if (!IcedConstants.IsMvex(Code))
+				if (!BlazedConstants.IsMvex(Code))
 					return MvexRegMemConv.None;
 				return (MvexRegMemConv)((immediate >> (int)MvexInstrFlags.MvexRegMemConvShift) & (uint)MvexInstrFlags.MvexRegMemConvMask);
 			}
@@ -658,7 +658,7 @@ namespace Blazed.Intel {
 			get {
 				int index = (int)Code;
 #if MVEX
-				if (IcedConstants.IsMvex((Code)index)) {
+				if (BlazedConstants.IsMvex((Code)index)) {
 					var mvex = new MvexInfo((Code)index);
 					int sss = ((int)MvexRegMemConv - (int)MvexRegMemConv.MemConvNone) & 7;
 					return (MemorySize)MvexMemorySizeLut.Data[(int)mvex.TupleTypeLutKind * 8 + sss];

@@ -98,7 +98,7 @@ namespace UnitTests.Intel.EncoderTests {
 #endif
 
 				// If it fails, add more tests above (16-bit, 32-bit, and 64-bit test cases)
-				Static.Assert(IcedConstants.EncodingKindEnumCount == 6 ? 0 : -1);
+				Static.Assert(BlazedConstants.EncodingKindEnumCount == 6 ? 0 : -1);
 			}
 		}
 
@@ -435,7 +435,7 @@ namespace UnitTests.Intel.EncoderTests {
 		void ToOpCode_throws_if_input_is_invalid() {
 			Assert.Throws<ArgumentOutOfRangeException>(() => ((Code)int.MinValue).ToOpCode());
 			Assert.Throws<ArgumentOutOfRangeException>(() => ((Code)(-1)).ToOpCode());
-			Assert.Throws<ArgumentOutOfRangeException>(() => ((Code)IcedConstants.CodeEnumCount).ToOpCode());
+			Assert.Throws<ArgumentOutOfRangeException>(() => ((Code)BlazedConstants.CodeEnumCount).ToOpCode());
 			Assert.Throws<ArgumentOutOfRangeException>(() => ((Code)int.MaxValue).ToOpCode());
 		}
 #endif

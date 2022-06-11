@@ -684,7 +684,7 @@ namespace Blazed.Intel.DecoderInternal {
 				instruction.InternalSetMvexRegMemConv(MvexRegMemConv.MemConvNone + sss);
 				decoder.ReadOpMem_VSIB(ref instruction, Register.ZMM0, mvex.GetTupleType(sss));
 				if (decoder.invalidCheckMask != 0) {
-					if ((uint)regNum == ((uint)(instruction.MemoryIndex - Register.XMM0) % (uint)IcedConstants.VMM_count))
+					if ((uint)regNum == ((uint)(instruction.MemoryIndex - Register.XMM0) % (uint)BlazedConstants.VMM_count))
 						decoder.SetInvalidInstruction();
 				}
 			}

@@ -82,7 +82,7 @@ namespace Blazed.Intel.BlockEncoderInternal {
 				return null;
 			}
 			else {
-				Debug2.Assert(pointerData is not null);
+				Debug.Assert(pointerData is not null);
 				isOriginalInstruction = false;
 				constantOffsets = default;
 				pointerData.Data = targetInstr.GetAddress();

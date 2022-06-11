@@ -12,7 +12,7 @@ namespace Blazed.Intel {
 		/// </summary>
 		/// <param name="memorySize">Memory size</param>
 		/// <returns></returns>
-		public static bool IsBroadcast(this MemorySize memorySize) => memorySize >= IcedConstants.FirstBroadcastMemorySize;
+		public static bool IsBroadcast(this MemorySize memorySize) => memorySize >= BlazedConstants.FirstBroadcastMemorySize;
 	}
 }
 #endif

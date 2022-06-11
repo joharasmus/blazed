@@ -92,7 +92,7 @@ namespace UnitTests.Intel.EncoderTests {
 							tc.Op3Kind = ToOpCodeOperandKind(opParts[3]);
 						if (opParts.Length >= 5)
 							tc.Op4Kind = ToOpCodeOperandKind(opParts[4]);
-						Static.Assert(IcedConstants.MaxOpCount == 5 ? 0 : -1);
+						Static.Assert(BlazedConstants.MaxOpCount == 5 ? 0 : -1);
 						if (opParts.Length >= 6)
 							throw new InvalidOperationException($"Invalid number of operands: '{value}'");
 						break;

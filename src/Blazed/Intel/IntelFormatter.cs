@@ -126,7 +126,7 @@ namespace Blazed.Intel {
 			"1", "2", "4", "8",
 		};
 #if MVEX
-		static readonly FormatterString[] s_mvexRegMemConsts32 = new FormatterString[IcedConstants.MvexRegMemConvEnumCount] {
+		static readonly FormatterString[] s_mvexRegMemConsts32 = new FormatterString[BlazedConstants.MvexRegMemConvEnumCount] {
 			new FormatterString(""),
 			new FormatterString(""),
 			new FormatterString("cdab"),
@@ -145,7 +145,7 @@ namespace Blazed.Intel {
 			new FormatterString("uint16"),
 			new FormatterString("sint16"),
 		};
-		static readonly FormatterString[] s_mvexRegMemConsts64 = new FormatterString[IcedConstants.MvexRegMemConvEnumCount] {
+		static readonly FormatterString[] s_mvexRegMemConsts64 = new FormatterString[BlazedConstants.MvexRegMemConvEnumCount] {
 			new FormatterString(""),
 			new FormatterString(""),
 			new FormatterString("cdab"),
@@ -482,7 +482,7 @@ namespace Blazed.Intel {
 
 #if MVEX
 			int mvexRmOperand;
-			if (IcedConstants.IsMvex(instruction.Code)) {
+			if (BlazedConstants.IsMvex(instruction.Code)) {
 				var opCount = instruction.OpCount;
 				Debug.Assert(opCount != 0);
 				mvexRmOperand = instruction.GetOpKind(opCount - 1) == OpKind.Immediate8 ? opCount - 2 : opCount - 1;
@@ -795,7 +795,7 @@ namespace Blazed.Intel {
 					Static.Assert((int)RoundingControl.RoundUp == 3 ? 0 : -1);
 					Static.Assert((int)RoundingControl.RoundTowardZero == 4 ? 0 : -1);
 					FormatterString decStr;
-					if (IcedConstants.IsMvex(instruction.Code))
+					if (BlazedConstants.IsMvex(instruction.Code))
 						decStr = instruction.SuppressAllExceptions ? rcSaeStrings[(int)rc - 1] : rcStrings[(int)rc - 1];
 					else
 						decStr = rcSaeStrings[(int)rc - 1];

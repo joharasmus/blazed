@@ -3,7 +3,7 @@
 
 using System.Runtime.CompilerServices;
 
-[assembly: IgnoresAccessChecksTo("Iced")]
+[assembly: IgnoresAccessChecksTo("Blazed")]
 
 namespace System.Runtime.CompilerServices {
 	[AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]

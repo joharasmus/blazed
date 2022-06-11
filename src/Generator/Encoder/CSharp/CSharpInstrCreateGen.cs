@@ -21,7 +21,7 @@ namespace Generator.Encoder.CSharp {
 		}
 
 		protected override (TargetLanguage language, string id, string filename) GetFileInfo() =>
-			(TargetLanguage.CSharp, "Create", CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "Instruction.Create.cs"));
+			(TargetLanguage.CSharp, "Create", CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Instruction.Create.cs"));
 
 		void WriteDocs(FileWriter writer, CreateMethod method) {
 			const string typeName = "Instruction";

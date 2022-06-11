@@ -246,7 +246,7 @@ namespace Generator.InstructionInfo {
 			((uint)a).CompareTo((uint)b);
 
 		void GenerateOpInfoX() {
-			var opInfoHashes = new HashSet<OpInfo>[IcedConstants.MaxOpCount];
+			var opInfoHashes = new HashSet<OpInfo>[BlazedConstants.MaxOpCount];
 			for (int i = 0; i < opInfoHashes.Length; i++)
 				opInfoHashes[i] = new HashSet<OpInfo>();
 			foreach (var def in defs) {
@@ -299,7 +299,7 @@ namespace Generator.InstructionInfo {
 				Array.Sort(array, (a, b) => ((uint)a).CompareTo((uint)b));
 			}
 			EnumOpInfos = new EnumType[opInfos.Length];
-			var typeIds = new TypeId[IcedConstants.MaxOpCount] {
+			var typeIds = new TypeId[BlazedConstants.MaxOpCount] {
 				TypeIds.OpInfo0,
 				TypeIds.OpInfo1,
 				TypeIds.OpInfo2,

@@ -157,9 +157,9 @@ namespace Generator.Encoder {
 				yield return Array.Empty<InstructionOperand>();
 				yield break;
 			}
-			if (IcedConstants.MaxOpCount != 5)
+			if (BlazedConstants.MaxOpCount != 5)
 				throw new InvalidOperationException();
-			var ops = new InstructionOperand[IcedConstants.MaxOpCount][];
+			var ops = new InstructionOperand[BlazedConstants.MaxOpCount][];
 			for (int i = 0; i < ops.Length; i++)
 				ops[i] = Array.Empty<InstructionOperand>();
 			for (int i = 0; i < opKinds.Length; i++)

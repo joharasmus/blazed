@@ -14,7 +14,7 @@ namespace UnitTests.Intel.DecoderTests {
 			var decoder = Decoder.Create(bitness, codeReader, options);
 			decoder.IP = ip;
 			Assert.Equal(bitness, decoder.Bitness);
-			int length = Math.Min(IcedConstants.MaxInstructionLength, codeReader.Count);
+			int length = Math.Min(BlazedConstants.MaxInstructionLength, codeReader.Count);
 			bool canRead = length < codeReader.Count;
 			return (decoder, length, canRead, codeReader);
 		}

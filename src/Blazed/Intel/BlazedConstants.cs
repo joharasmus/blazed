@@ -4,7 +4,7 @@
 using System.Runtime.CompilerServices;
 
 namespace Blazed.Intel {
-	static partial class IcedConstants {
+	static partial class BlazedConstants {
 #if MVEX
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool IsMvex(Code code) => ((uint)code - MvexStart) < MvexLength;

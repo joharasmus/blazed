@@ -188,11 +188,11 @@ namespace Generator.Encoder.CSharp {
 
 		void GenerateTables((InstructionDef def, MvexEncInfo mvex)[] mvexInfos, string define, string className, string filename) {
 			var infos = mvexInfos.Where(x => x.def.Encoding == EncodingKind.MVEX).ToArray();
-			var fullFilename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, filename);
+			var fullFilename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, filename);
 			using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(fullFilename))) {
 				writer.WriteFileHeader();
 				writer.WriteLineNoIndent($"#if {define}");
-				writer.WriteLine($"namespace {CSharpConstants.IcedNamespace} {{");
+				writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
 				using (writer.Indent()) {
 					writer.WriteLine($"static class {className} {{");
 					using (writer.Indent()) {
@@ -243,11 +243,11 @@ namespace Generator.Encoder.CSharp {
 		}
 
 		void GenerateTables((MvexTupleTypeLutKind ttLutKind, EnumValue[] enumValues)[] mvexData, string define, string className, string filename) {
-			var fullFilename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, filename);
+			var fullFilename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, filename);
 			using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(fullFilename))) {
 				writer.WriteFileHeader();
 				writer.WriteLineNoIndent($"#if {define}");
-				writer.WriteLine($"namespace {CSharpConstants.IcedNamespace} {{");
+				writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
 				using (writer.Indent()) {
 					writer.WriteLine($"static class {className} {{");
 					using (writer.Indent()) {
@@ -274,7 +274,7 @@ namespace Generator.Encoder.CSharp {
 		}
 
 		protected override void Generate((EnumValue value, uint size)[] immSizes) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "Encoder.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Encoder.cs");
 			new FileUpdater(TargetLanguage.CSharp, "ImmSizes", filename).Generate(writer => {
 				writer.WriteLine($"static readonly uint[] s_immSizes = new uint[{immSizes.Length}] {{");
 				using (writer.Indent()) {
@@ -330,13 +330,13 @@ namespace Generator.Encoder.CSharp {
 		}
 
 		protected override void GenerateVsib(EnumValue[] vsib32, EnumValue[] vsib64) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "Instruction.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Instruction.cs");
 			GenerateCases(filename, "Vsib32", vsib32, "vsib64 = false;", "return true;");
 			GenerateCases(filename, "Vsib64", vsib64, "vsib64 = true;", "return true;");
 		}
 
 		protected override void GenerateDecoderOptionsTable((EnumValue decOptionValue, EnumValue decoderOptions)[] values) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "OpCodeInfo.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "OpCodeInfo.cs");
 			new FileUpdater(TargetLanguage.CSharp, "ToDecoderOptionsTable", filename).Generate(writer => {
 				foreach (var (_, decoderOptions) in values)
 					writer.WriteLine($"{idConverter.ToDeclTypeAndValue(decoderOptions)},");

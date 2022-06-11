@@ -23,7 +23,7 @@ namespace Blazed.Intel.Internal {
 
 		public DataReader(ReadOnlySpan<byte> data, int maxStringLength) {
 			this.data = data;
-			stringData = maxStringLength == 0 ? Array2.Empty<char>() : new char[maxStringLength];
+			stringData = maxStringLength == 0 ? Array.Empty<char>() : new char[maxStringLength];
 			index = 0;
 		}
 

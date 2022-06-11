@@ -44,7 +44,7 @@ namespace Blazed.Intel.MasmFormatterInternal {
 	// GENERATOR-END: InstrOpKind
 
 	struct InstrOpInfo {
-		internal const int TEST_RegisterBits = IcedConstants.RegisterBits;
+		internal const int TEST_RegisterBits = BlazedConstants.RegisterBits;
 
 		public FormatterString Mnemonic;
 		public InstrOpInfoFlags Flags;
@@ -145,7 +145,7 @@ namespace Blazed.Intel.MasmFormatterInternal {
 		}
 
 		public InstrOpInfo(FormatterString mnemonic, in Instruction instruction, InstrOpInfoFlags flags) {
-			Static.Assert(IcedConstants.MaxOpCount == 5 ? 0 : -1);
+			Static.Assert(BlazedConstants.MaxOpCount == 5 ? 0 : -1);
 			Mnemonic = mnemonic;
 			Flags = flags;
 			Op0Kind = (InstrOpKind)instruction.Op0Kind;

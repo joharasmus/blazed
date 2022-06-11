@@ -7,7 +7,7 @@ namespace Blazed.Intel {
 	/// <summary>
 	/// Gets the available features
 	/// </summary>
-	public static class IcedFeatures {
+	public static class BlazedFeatures {
 		/// <summary>
 		/// <see langword="true"/> if the gas (AT&amp;T) formatter is available
 		/// </summary>

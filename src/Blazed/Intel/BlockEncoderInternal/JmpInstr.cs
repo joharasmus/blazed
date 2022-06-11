@@ -90,8 +90,8 @@ namespace Blazed.Intel.BlockEncoderInternal {
 			if (useNear) {
 				if (pointerData is not null)
 					pointerData.IsValid = false;
-				if (diff < (long)IcedConstants.MaxInstructionLength * sbyte.MinValue ||
-					diff > (long)IcedConstants.MaxInstructionLength * sbyte.MaxValue) {
+				if (diff < (long)BlazedConstants.MaxInstructionLength * sbyte.MinValue ||
+					diff > (long)BlazedConstants.MaxInstructionLength * sbyte.MaxValue) {
 					Done = true;
 				}
 				instrKind = InstrKind.Near;
@@ -130,7 +130,7 @@ namespace Blazed.Intel.BlockEncoderInternal {
 				return null;
 
 			case InstrKind.Long:
-				Debug2.Assert(pointerData is not null);
+				Debug.Assert(pointerData is not null);
 				isOriginalInstruction = false;
 				constantOffsets = default;
 				pointerData.Data = targetInstr.GetAddress();

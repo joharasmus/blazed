@@ -4,7 +4,7 @@
 #if INSTR_INFO
 namespace Blazed.Intel.InstructionInfoInternal {
 	struct SimpleList<T> {
-		public static readonly SimpleList<T> Empty = new SimpleList<T>(System.Array2.Empty<T>());
+		public static readonly SimpleList<T> Empty = new SimpleList<T>(System.Array.Empty<T>());
 		public T[] Array;
 		public int ValidLength;
 		public SimpleList(T[] array) {

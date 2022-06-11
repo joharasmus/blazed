@@ -297,8 +297,8 @@ namespace Blazed.Intel {
 			}
 
 			uint instrLen = (uint)currentRip - (uint)rip;
-			if (instrLen > IcedConstants.MaxInstructionLength && !handler.IsSpecialInstr)
-				ErrorMessage = $"Instruction length > {IcedConstants.MaxInstructionLength} bytes";
+			if (instrLen > BlazedConstants.MaxInstructionLength && !handler.IsSpecialInstr)
+				ErrorMessage = $"Instruction length > {BlazedConstants.MaxInstructionLength} bytes";
 			errorMessage = this.errorMessage;
 			if (errorMessage is not null) {
 				encodedLength = 0;

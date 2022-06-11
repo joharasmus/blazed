@@ -19,7 +19,7 @@ namespace Generator {
 		public static readonly TypeId TupleTypeTable = new(nameof(TupleTypeTable));
 		public static readonly TypeId OpCodeOperandKindDefs = new(nameof(OpCodeOperandKindDefs));
 
-		public static readonly TypeId IcedConstants = new(nameof(IcedConstants));
+		public static readonly TypeId BlazedConstants = new(nameof(BlazedConstants));
 		public static readonly TypeId DecoderTestParserConstants = new(nameof(DecoderTestParserConstants));
 		public static readonly TypeId DecoderConstants = new(nameof(DecoderConstants));
 		public static readonly TypeId ExportedPythonTypes = new(nameof(ExportedPythonTypes));

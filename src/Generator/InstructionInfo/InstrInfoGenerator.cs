@@ -96,7 +96,7 @@ namespace Generator.InstructionInfo {
 			GenerateStackPointerIncrementTable(stackDefs);
 
 			{
-				var shifts = new int[IcedConstants.MaxOpCount] {
+				var shifts = new int[BlazedConstants.MaxOpCount] {
 					(int)genTypes[TypeIds.InfoFlags1]["OpInfo0Shift"].Value,
 					(int)genTypes[TypeIds.InfoFlags1]["OpInfo1Shift"].Value,
 					(int)genTypes[TypeIds.InfoFlags1]["OpInfo2Shift"].Value,

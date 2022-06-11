@@ -546,7 +546,7 @@ namespace Blazed.Intel {
 				return true;
 			}
 			else {
-				assemblerResult = new AssemblerResult(Array2.Empty<BlockEncoderResult>());
+				assemblerResult = new AssemblerResult(Array.Empty<BlockEncoderResult>());
 				return false;
 			}
 		}

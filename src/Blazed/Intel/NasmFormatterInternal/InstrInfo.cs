@@ -71,7 +71,7 @@ namespace Blazed.Intel.NasmFormatterInternal {
 	// GENERATOR-END: FarMemorySizeInfo
 
 	struct InstrOpInfo {
-		internal const int TEST_RegisterBits = IcedConstants.RegisterBits;
+		internal const int TEST_RegisterBits = BlazedConstants.RegisterBits;
 
 		public FormatterString Mnemonic;
 		public InstrOpInfoFlags Flags;
@@ -178,7 +178,7 @@ namespace Blazed.Intel.NasmFormatterInternal {
 		}
 
 		public InstrOpInfo(FormatterString mnemonic, in Instruction instruction, InstrOpInfoFlags flags) {
-			Static.Assert(IcedConstants.MaxOpCount == 5 ? 0 : -1);
+			Static.Assert(BlazedConstants.MaxOpCount == 5 ? 0 : -1);
 			Mnemonic = mnemonic;
 			Flags = flags | (InstrOpInfoFlags)((uint)instruction.MemorySize << (int)InstrOpInfoFlags.MemorySizeShift);
 			Op0Kind = (InstrOpKind)instruction.Op0Kind;
@@ -1132,7 +1132,7 @@ namespace Blazed.Intel.NasmFormatterInternal {
 
 		public override void GetOpInfo(FormatterOptions options, in Instruction instruction, out InstrOpInfo info) {
 			info = new InstrOpInfo(mnemonic, instruction, flags);
-			if (IcedConstants.IsMvex(instruction.Code)) {
+			if (BlazedConstants.IsMvex(instruction.Code)) {
 				var rc = instruction.RoundingControl;
 				if (rc != RoundingControl.None) {
 					InstrOpKind rcOpKind;

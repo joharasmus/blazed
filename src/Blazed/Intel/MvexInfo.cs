@@ -26,8 +26,8 @@ namespace Blazed.Intel {
 		public bool IgnoresEvictionHint => ((MvexInfoFlags2)MvexInfoData.Data[index * MvexInfoData.StructSize + MvexInfoData.Flags2Index] & MvexInfoFlags2.IgnoresEvictionHint) != 0;
 
 		public MvexInfo(Code code) {
-			index = (int)code - (int)IcedConstants.MvexStart;
-			Debug.Assert((uint)index < IcedConstants.MvexLength);
+			index = (int)code - (int)BlazedConstants.MvexStart;
+			Debug.Assert((uint)index < BlazedConstants.MvexLength);
 		}
 		
 		public TupleType GetTupleType(int sss) => (TupleType)MvexTupleTypeLut.Data[(int)TupleTypeLutKind * 8 + sss];

@@ -22,7 +22,7 @@ namespace Blazed.Intel.BlockEncoderInternal {
 			CodeWriter = new CodeWriterImpl(codeWriter);
 			RIP = rip;
 			this.relocInfos = relocInfos;
-			instructions = Array2.Empty<Instr>();
+			instructions = Array.Empty<Instr>();
 			dataList = new List<BlockData>();
 			alignment = (uint)blockEncoder.Bitness / 8;
 			validData = new List<BlockData>();

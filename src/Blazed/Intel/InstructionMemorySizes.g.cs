@@ -7,7 +7,7 @@
 
 namespace Blazed.Intel {
 	static class InstructionMemorySizes {
-		internal static System.ReadOnlySpan<byte> SizesNormal => new byte[IcedConstants.CodeEnumCount] {
+		internal static System.ReadOnlySpan<byte> SizesNormal => new byte[BlazedConstants.CodeEnumCount] {
 			0,// INVALID
 			0,// DeclareByte
 			0,// DeclareWord
@@ -4844,7 +4844,7 @@ namespace Blazed.Intel {
 			0,// Zero_bytes
 		};
 
-		internal static System.ReadOnlySpan<byte> SizesBcst => new byte[IcedConstants.CodeEnumCount] {
+		internal static System.ReadOnlySpan<byte> SizesBcst => new byte[BlazedConstants.CodeEnumCount] {
 			0,// INVALID
 			0,// DeclareByte
 			0,// DeclareWord

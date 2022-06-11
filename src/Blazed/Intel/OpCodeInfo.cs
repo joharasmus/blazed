@@ -53,7 +53,7 @@ namespace Blazed.Intel {
 		}
 
 		internal OpCodeInfo(Code code, EncFlags1 encFlags1, EncFlags2 encFlags2, EncFlags3 encFlags3, OpCodeInfoFlags1 opcFlags1, OpCodeInfoFlags2 opcFlags2, StringBuilder sb) {
-			Debug.Assert((uint)code < (uint)IcedConstants.CodeEnumCount);
+			Debug.Assert((uint)code < (uint)BlazedConstants.CodeEnumCount);
 			Debug.Assert((uint)code <= ushort.MaxValue);
 			this.code = (ushort)code;
 			this.encFlags2 = encFlags2;

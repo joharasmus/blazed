@@ -36,8 +36,8 @@ namespace UnitTests.Intel.InstructionInfoTests {
 				throw new InvalidOperationException();
 			}
 
-			for (int i = 0; i < IcedConstants.VMM_count; i++)
-				toRegister.Add(MiscInstrInfoTestConstants.VMM_prefix + i.ToString(), IcedConstants.VMM_first + i);
+			for (int i = 0; i < BlazedConstants.VMM_count; i++)
+				toRegister.Add(MiscInstrInfoTestConstants.VMM_prefix + i.ToString(), BlazedConstants.VMM_first + i);
 
 			var filename = PathUtils.GetTestTextFilename($"InstructionInfoTest_{bitness}.txt", "InstructionInfo");
 			Debug.Assert(File.Exists(filename));
@@ -452,7 +452,7 @@ namespace UnitTests.Intel.InstructionInfoTests {
 				case OpAccess.CondWrite:
 				case OpAccess.ReadWrite:
 				case OpAccess.ReadCondWrite:
-					if (Register.XMM0 <= register && register <= IcedConstants.VMM_last && !regString.StartsWith(MiscInstrInfoTestConstants.VMM_prefix, StringComparison.OrdinalIgnoreCase))
+					if (Register.XMM0 <= register && register <= BlazedConstants.VMM_last && !regString.StartsWith(MiscInstrInfoTestConstants.VMM_prefix, StringComparison.OrdinalIgnoreCase))
 						throw new Exception($"Register {regString} is written ({access}) but {MiscInstrInfoTestConstants.VMM_prefix} pseudo register should be used instead");
 					break;
 

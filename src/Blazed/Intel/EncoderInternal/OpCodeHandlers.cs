@@ -12,7 +12,7 @@ namespace Blazed.Intel.EncoderInternal {
 			var encFlags1 = EncoderData.EncFlags1;
 			var encFlags2 = EncoderData.EncFlags2;
 			var encFlags3Data = EncoderData.EncFlags3;
-			var handlers = new OpCodeHandler[IcedConstants.CodeEnumCount];
+			var handlers = new OpCodeHandler[BlazedConstants.CodeEnumCount];
 			int i = 0;
 			var invalidHandler = new InvalidHandler();
 			for (; i < encFlags1.Length; i++) {

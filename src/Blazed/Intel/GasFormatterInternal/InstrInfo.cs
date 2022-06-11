@@ -52,7 +52,7 @@ namespace Blazed.Intel.GasFormatterInternal {
 	// GENERATOR-END: InstrOpKind
 
 	struct InstrOpInfo {
-		internal const int TEST_RegisterBits = IcedConstants.RegisterBits;
+		internal const int TEST_RegisterBits = BlazedConstants.RegisterBits;
 
 		public FormatterString Mnemonic;
 		public InstrOpInfoFlags Flags;
@@ -153,7 +153,7 @@ namespace Blazed.Intel.GasFormatterInternal {
 		}
 
 		public InstrOpInfo(FormatterString mnemonic, in Instruction instruction, InstrOpInfoFlags flags) {
-			Static.Assert(IcedConstants.MaxOpCount == 5 ? 0 : -1);
+			Static.Assert(BlazedConstants.MaxOpCount == 5 ? 0 : -1);
 			Mnemonic = mnemonic;
 			Flags = flags;
 			int opCount = instruction.OpCount;
@@ -964,7 +964,7 @@ namespace Blazed.Intel.GasFormatterInternal {
 
 		public override void GetOpInfo(FormatterOptions options, in Instruction instruction, out InstrOpInfo info) {
 			info = new InstrOpInfo(GetMnemonic(options, instruction, mnemonic, mnemonic_suffix, flags), instruction, flags);
-			if (IcedConstants.IsMvex(instruction.Code)) {
+			if (BlazedConstants.IsMvex(instruction.Code)) {
 				var rc = instruction.RoundingControl;
 				if (rc != RoundingControl.None) {
 					InstrOpKind rcOpKind;

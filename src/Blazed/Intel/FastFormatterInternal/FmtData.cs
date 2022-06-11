@@ -14,8 +14,8 @@ namespace Blazed.Intel.FastFormatterInternal {
 		static string[] ParseData(out FastFmtFlags[] outFlags) {
 			var reader = new DataReader(GetSerializedData());
 			var strings = FormatterStringsTable.GetStringsTable();
-			var mnemonics = new string[IcedConstants.CodeEnumCount];
-			var flags = new FastFmtFlags[IcedConstants.CodeEnumCount];
+			var mnemonics = new string[BlazedConstants.CodeEnumCount];
+			var flags = new FastFmtFlags[BlazedConstants.CodeEnumCount];
 
 			var ca = new char[1];
 			int prevIndex = -1;

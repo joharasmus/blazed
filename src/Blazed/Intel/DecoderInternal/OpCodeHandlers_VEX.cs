@@ -1231,7 +1231,7 @@ namespace Blazed.Intel.DecoderInternal {
 				instruction.Op1Kind = OpKind.Memory;
 				decoder.ReadOpMem_VSIB(ref instruction, vsibIndex, TupleType.N1);
 				if (decoder.invalidCheckMask != 0) {
-					uint indexNum = ((uint)(instruction.MemoryIndex - Register.XMM0) % (uint)IcedConstants.VMM_count);
+					uint indexNum = ((uint)(instruction.MemoryIndex - Register.XMM0) % (uint)BlazedConstants.VMM_count);
 					if ((uint)regNum == indexNum || decoder.state.vvvv == indexNum || (uint)regNum == decoder.state.vvvv)
 						decoder.SetInvalidInstruction();
 				}

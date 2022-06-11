@@ -10,7 +10,7 @@ namespace Blazed.Intel {
 			if (hexData is null)
 				throw new ArgumentNullException(nameof(hexData));
 			if (hexData.Length == 0)
-				return Array2.Empty<byte>();
+				return Array.Empty<byte>();
 			int len = 0;
 			for (int i = 0; i < hexData.Length; i++) {
 				if (hexData[i] != ' ')

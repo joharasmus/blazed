@@ -51,8 +51,8 @@ namespace Generator.Constants.CSharp {
 
 			var dirs = genTypes.Dirs;
 			toFullFileInfo = new Dictionary<TypeId, FullConstantsFileInfo>();
-			toFullFileInfo.Add(TypeIds.IcedConstants, new FullConstantsFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, nameof(TypeIds.IcedConstants) + ".g.cs"), CSharpConstants.IcedNamespace, partialClass: true));
-			toFullFileInfo.Add(TypeIds.DecoderConstants, new FullConstantsFileInfo(dirs.GetCSharpTestFilename("Intel", nameof(TypeIds.DecoderConstants) + ".g.cs"), CSharpConstants.IcedUnitTestsNamespace));
+			toFullFileInfo.Add(TypeIds.BlazedConstants, new FullConstantsFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.BlazedConstants) + ".g.cs"), CSharpConstants.BlazedNamespace, partialClass: true));
+			toFullFileInfo.Add(TypeIds.DecoderConstants, new FullConstantsFileInfo(dirs.GetCSharpTestFilename("Intel", nameof(TypeIds.DecoderConstants) + ".g.cs"), CSharpConstants.UnitTestsNamespace));
 
 			toPartialFileInfo = new Dictionary<TypeId, PartialConstantsFileInfo?>();
 			toPartialFileInfo.Add(TypeIds.DecoderTestParserConstants, new PartialConstantsFileInfo("DecoderTestText", dirs.GetCSharpTestFilename("Intel", "DecoderTests", "DecoderTestParser.cs")));

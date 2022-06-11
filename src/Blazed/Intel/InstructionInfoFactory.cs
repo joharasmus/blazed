@@ -186,7 +186,7 @@ namespace Blazed.Intel {
 				break;
 			}
 
-			Debug.Assert(instruction.OpCount <= IcedConstants.MaxOpCount);
+			Debug.Assert(instruction.OpCount <= BlazedConstants.MaxOpCount);
 			unsafe { info.opAccesses[0] = (byte)op0Access; }
 			var op1Info = (OpInfo1)((flags1 >> (int)InfoFlags1.OpInfo1Shift) & (uint)InfoFlags1.OpInfo1Mask);
 			unsafe { info.opAccesses[1] = (byte)OpAccesses.Op1[(int)op1Info]; }
@@ -203,7 +203,7 @@ namespace Blazed.Intel {
 			}
 			else
 				unsafe { info.opAccesses[4] = (byte)OpAccess.None; }
-			Static.Assert(IcedConstants.MaxOpCount == 5 ? 0 : -1);
+			Static.Assert(BlazedConstants.MaxOpCount == 5 ? 0 : -1);
 
 			int opCount = instruction.OpCount;
 			for (int i = 0; i < opCount; i++) {
@@ -227,8 +227,8 @@ namespace Blazed.Intel {
 						}
 						else if (i == 1 && op1Info == OpInfo1.ReadP3) {
 							var reg = instruction.Op1Register;
-							if (Register.XMM0 <= reg && reg <= IcedConstants.VMM_last) {
-								reg = IcedConstants.VMM_first + ((reg - IcedConstants.VMM_first) & ~3);
+							if (Register.XMM0 <= reg && reg <= BlazedConstants.VMM_last) {
+								reg = BlazedConstants.VMM_first + ((reg - BlazedConstants.VMM_first) & ~3);
 								for (int j = 0; j < 4; j++)
 									AddRegister(flags, reg + j, access);
 							}
@@ -2484,11 +2484,11 @@ namespace Blazed.Intel {
 				Static.Assert(OpAccess.Write + 3 == OpAccess.ReadCondWrite ? 0 : -1);
 				if ((uint)(access - OpAccess.Write) <= 3) {
 					int index;
-					Static.Assert(IcedConstants.VMM_first == Register.ZMM0 ? 0 : -1);
+					Static.Assert(BlazedConstants.VMM_first == Register.ZMM0 ? 0 : -1);
 					if ((flags & Flags.Is64Bit) != 0 && (uint)(index = reg - Register.EAX) <= (Register.R15D - Register.EAX))
 						writeReg = Register.RAX + index;
-					else if ((flags & Flags.ZeroExtVecRegs) != 0 && (uint)(index = reg - Register.XMM0) <= IcedConstants.VMM_last - Register.XMM0)
-						writeReg = Register.ZMM0 + (index % IcedConstants.VMM_count);
+					else if ((flags & Flags.ZeroExtVecRegs) != 0 && (uint)(index = reg - Register.XMM0) <= BlazedConstants.VMM_last - Register.XMM0)
+						writeReg = Register.ZMM0 + (index % BlazedConstants.VMM_count);
 					if (access != OpAccess.ReadWrite && access != OpAccess.ReadCondWrite)
 						reg = writeReg;
 				}

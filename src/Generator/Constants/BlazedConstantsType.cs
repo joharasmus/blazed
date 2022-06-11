@@ -7,7 +7,7 @@ using System.Linq;
 using Generator.Enums;
 
 namespace Generator.Constants {
-	static class IcedConstants {
+	static class BlazedConstants {
 		public const int MaxOpCount = 5;
 		public const int MaxInstructionLength = 15;
 		public const int RegisterBits = 8;
@@ -63,14 +63,14 @@ namespace Generator.Constants {
 	}
 
 	[TypeGen(TypeGenOrders.Last)]
-	sealed class IcedConstantsType : ITypeGen {
+	sealed class BlazedConstantsType : ITypeGen {
 		readonly GenTypes genTypes;
 
-		IcedConstantsType(GenTypes genTypes) => this.genTypes = genTypes;
+		BlazedConstantsType(GenTypes genTypes) => this.genTypes = genTypes;
 
 		public void Generate(GenTypes genTypes) {
-			IcedConstants.InitializeEnumCountTypes(genTypes);
-			var type = new ConstantsType(TypeIds.IcedConstants, ConstantsTypeFlags.None, default, GetConstants());
+			BlazedConstants.InitializeEnumCountTypes(genTypes);
+			var type = new ConstantsType(TypeIds.BlazedConstants, ConstantsTypeFlags.None, default, GetConstants());
 			genTypes.Add(type);
 		}
 
@@ -78,11 +78,11 @@ namespace Generator.Constants {
 			var (mvexStart, mvexLen) = GetMvexCodeValueRange();
 			var vmmFirst = Get_VMM_first().Value;
 			var vmmLast = Get_VMM_last().Value;
-			ConstantUtils.VerifyMask<Register>((1U << IcedConstants.RegisterBits) - 1);
+			ConstantUtils.VerifyMask<Register>((1U << BlazedConstants.RegisterBits) - 1);
 			var constants = new List<Constant> {
-				new Constant(ConstantKind.Index, nameof(IcedConstants.MaxOpCount), IcedConstants.MaxOpCount),
-				new Constant(ConstantKind.Index, nameof(IcedConstants.MaxInstructionLength), IcedConstants.MaxInstructionLength),
-				new Constant(ConstantKind.Int32, nameof(IcedConstants.RegisterBits), IcedConstants.RegisterBits),
+				new Constant(ConstantKind.Index, nameof(BlazedConstants.MaxOpCount), BlazedConstants.MaxOpCount),
+				new Constant(ConstantKind.Index, nameof(BlazedConstants.MaxInstructionLength), BlazedConstants.MaxInstructionLength),
+				new Constant(ConstantKind.Int32, nameof(BlazedConstants.RegisterBits), BlazedConstants.RegisterBits),
 				// This is the largest vector register. If it's VEX/EVEX, the upper bits are always cleared when writing to any sub reg, eg. YMM0
 				new Constant(ConstantKind.Register, "VMM_first", vmmFirst),
 				new Constant(ConstantKind.Register, "VMM_last", vmmLast),
@@ -92,13 +92,13 @@ namespace Generator.Constants {
 				new Constant(ConstantKind.Register, "ZMM_last", Get_VEC_last("ZMM").Value),
 				new Constant(ConstantKind.Register, "TMM_last", Get_TMM_last().Value),
 				new Constant(ConstantKind.Index, "MaxCpuidFeatureInternalValues", GetEnumCount(genTypes[TypeIds.CpuidFeatureInternal])),
-				new Constant(ConstantKind.MemorySize, IcedConstants.FirstBroadcastMemorySizeName, GetFirstBroadcastMemorySize()),
+				new Constant(ConstantKind.MemorySize, BlazedConstants.FirstBroadcastMemorySizeName, GetFirstBroadcastMemorySize()),
 				new Constant(ConstantKind.UInt32, "MvexStart", mvexStart),
 				new Constant(ConstantKind.UInt32, "MvexLength", mvexLen),
 			};
 
-			foreach (var kv in IcedConstants.GetEnumCountTypeIdsAndNames().OrderBy(kv => kv.Value, StringComparer.Ordinal))
-				constants.Add(new Constant(ConstantKind.Index, IcedConstants.GetEnumCountName(kv.Key), GetEnumCount(genTypes[kv.Key])));
+			foreach (var kv in BlazedConstants.GetEnumCountTypeIdsAndNames().OrderBy(kv => kv.Value, StringComparer.Ordinal))
+				constants.Add(new Constant(ConstantKind.Index, BlazedConstants.GetEnumCountName(kv.Key), GetEnumCount(genTypes[kv.Key])));
 
 			return constants.ToArray();
 		}

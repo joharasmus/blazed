@@ -7,7 +7,7 @@
 
 namespace Blazed.Intel {
 	static class MnemonicUtilsData {
-		internal static readonly ushort[] toMnemonic = new ushort[IcedConstants.CodeEnumCount] {
+		internal static readonly ushort[] toMnemonic = new ushort[BlazedConstants.CodeEnumCount] {
 			(ushort)Mnemonic.INVALID,// INVALID
 			(ushort)Mnemonic.Db,// DeclareByte
 			(ushort)Mnemonic.Dw,// DeclareWord

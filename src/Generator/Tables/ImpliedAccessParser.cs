@@ -23,10 +23,10 @@ namespace Generator.Tables {
 			toRegisterImplAcc = CreateEnumDict(genTypes[TypeIds.Register], ignoreCase: true);
 			toRegisterDef = genTypes.GetObject<RegisterDefs>(TypeIds.RegisterDefs).Defs.ToDictionary(a => a.Register, a => a);
 
-			uint vmmFirst = IcedConstantsType.Get_VMM_first(genTypes).Value;
-			uint vmmLast = IcedConstantsType.Get_VMM_last(genTypes).Value;
+			uint vmmFirst = BlazedConstantsType.Get_VMM_first(genTypes).Value;
+			uint vmmLast = BlazedConstantsType.Get_VMM_last(genTypes).Value;
 			uint vmmCount = vmmLast - vmmFirst + 1;
-			var tmmLast = IcedConstantsType.Get_TMM_last(genTypes);
+			var tmmLast = BlazedConstantsType.Get_TMM_last(genTypes);
 			toRegisterImplAcc.Add("tmm_last", tmmLast);
 			for (uint ri = 0; ri < vmmCount; ri++) {
 				var reg = uintToRegister[vmmFirst + ri];

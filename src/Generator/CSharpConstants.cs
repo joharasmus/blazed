@@ -8,7 +8,7 @@ using Generator.Enums;
 
 namespace Generator {
 	static class CSharpConstants {
-		public const string IcedNamespace = "Blazed.Intel";
+		public const string BlazedNamespace = "Blazed.Intel";
 		public const string BlockEncoderNamespace = "Blazed.Intel.BlockEncoderInternal";
 		public const string DecoderNamespace = "Blazed.Intel.DecoderInternal";
 		public const string EncoderNamespace = "Blazed.Intel.EncoderInternal";
@@ -20,7 +20,7 @@ namespace Generator {
 		public const string NasmFormatterNamespace = "Blazed.Intel.NasmFormatterInternal";
 		public const string FastFormatterNamespace = "Blazed.Intel.FastFormatterInternal";
 
-		public const string IcedUnitTestsNamespace = "UnitTests.Intel";
+		public const string UnitTestsNamespace = "UnitTests.Intel";
 
 		public const string DecoderDefine = "DECODER";
 		public const string VexDefine = "!NO_VEX";

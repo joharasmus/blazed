@@ -15,7 +15,7 @@ namespace UnitTests.Intel.InstructionInfoTests {
 		static readonly char[] spaceSeparator = new char[] { ' ' };
 
 		public static MemorySizeInfoTestCase[] GetTestCases() {
-			var result = new MemorySizeInfoTestCase[IcedConstants.MemorySizeEnumCount];
+			var result = new MemorySizeInfoTestCase[BlazedConstants.MemorySizeEnumCount];
 
 			var filename = PathUtils.GetTestTextFilename("MemorySizeInfo.txt", "InstructionInfo");
 			Debug.Assert(File.Exists(filename));

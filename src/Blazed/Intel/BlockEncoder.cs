@@ -110,8 +110,8 @@ namespace Blazed.Intel {
 		internal BlockEncoderResult(ulong rip, List<RelocInfo>? relocInfos, uint[]? newInstructionOffsets, ConstantOffsets[]? constantOffsets) {
 			RIP = rip;
 			RelocInfos = relocInfos;
-			NewInstructionOffsets = newInstructionOffsets ?? Array2.Empty<uint>();
-			ConstantOffsets = constantOffsets ?? Array2.Empty<ConstantOffsets>();
+			NewInstructionOffsets = newInstructionOffsets ?? Array.Empty<uint>();
+			ConstantOffsets = constantOffsets ?? Array.Empty<ConstantOffsets>();
 		}
 	}
 
@@ -352,7 +352,7 @@ namespace Blazed.Intel {
 
 		internal uint GetInstructionSize(in Instruction instruction, ulong ip) {
 			if (!nullEncoder.TryEncode(instruction, ip, out var size, out _))
-				size = IcedConstants.MaxInstructionLength;
+				size = BlazedConstants.MaxInstructionLength;
 			return size;
 		}
 	}

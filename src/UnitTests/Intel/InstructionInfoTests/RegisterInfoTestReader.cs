@@ -15,7 +15,7 @@ namespace UnitTests.Intel.InstructionInfoTests {
 		static readonly char[] spaceSeparator = new char[] { ' ' };
 
 		public static RegisterInfoTestCase[] GetTestCases() {
-			var result = new RegisterInfoTestCase[IcedConstants.RegisterEnumCount];
+			var result = new RegisterInfoTestCase[BlazedConstants.RegisterEnumCount];
 
 			var filename = PathUtils.GetTestTextFilename("RegisterInfo.txt", "InstructionInfo");
 			Debug.Assert(File.Exists(filename));

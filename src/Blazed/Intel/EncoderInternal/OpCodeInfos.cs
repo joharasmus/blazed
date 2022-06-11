@@ -9,7 +9,7 @@ namespace Blazed.Intel.EncoderInternal {
 		public static readonly OpCodeInfo[] Infos = CreateInfos();
 
 		static OpCodeInfo[] CreateInfos() {
-			var infos = new OpCodeInfo[IcedConstants.CodeEnumCount];
+			var infos = new OpCodeInfo[BlazedConstants.CodeEnumCount];
 			var encFlags1 = EncoderData.EncFlags1;
 			var encFlags2 = EncoderData.EncFlags2;
 			var encFlags3 = EncoderData.EncFlags3;

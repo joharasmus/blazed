@@ -11,7 +11,7 @@ namespace UnitTests.Intel.InstructionInfoTests {
 	public sealed class CodeValueTests {
 		[Fact]
 		void Make_sure_all_Code_values_are_tested() {
-			var tested = new bool[IcedConstants.CodeEnumCount];
+			var tested = new bool[BlazedConstants.CodeEnumCount];
 
 			foreach (var info in GetTests())
 				tested[(int)(Code)info[1]] = true;

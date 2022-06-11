@@ -273,7 +273,7 @@ namespace Blazed.Intel.FormatterInternal {
 
 		public static FormatterString[] GetRegisters() {
 			var reader = new DataReader(GetRegistersData(), MaxStringLength);
-			var strings = new FormatterString[IcedConstants.RegisterEnumCount];
+			var strings = new FormatterString[BlazedConstants.RegisterEnumCount];
 			for (int i = 0; i < strings.Length; i++)
 				strings[i] = new FormatterString(reader.ReadAsciiString());
 			if (reader.CanRead)

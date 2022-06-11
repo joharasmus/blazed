@@ -20,7 +20,7 @@ iced is a blazing fast and correct x86 (16/32/64-bit) instruction decoder, disas
 
 # Classes
 
-See below for some examples. All classes are in the `Iced.Intel` namespace.
+See below for some examples. All classes are in the `Blazed.Intel` namespace.
 
 Decoder:
 
@@ -30,7 +30,7 @@ Decoder:
     - `ByteArrayCodeReader`
     - `StreamCodeReader`
 - `ConstantOffsets`
-- `IcedFeatures.Initialize()`
+- `BlazedFeatures.Initialize()`
 
 Formatters:
 
@@ -85,7 +85,7 @@ Instruction info:
 ```cs
 using System;
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 
 static class HowTo_Disassemble {
     /*
@@ -158,8 +158,8 @@ static class HowTo_Disassemble {
 ```cs
 using System;
 using System.IO;
-using Iced.Intel;
-using static Iced.Intel.AssemblerRegisters;
+using Blazed.Intel;
+using static Blazed.Intel.AssemblerRegisters;
 
 static class HowTo_Assemble {
     /*
@@ -265,7 +265,7 @@ static class HowTo_Assemble {
 ```cs
 using System;
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 
 static class HowTo_SymbolResolver {
     sealed class SymbolResolver : ISymbolResolver {
@@ -311,7 +311,7 @@ static class HowTo_SymbolResolver {
 ```cs
 using System;
 using System.Collections.Generic;
-using Iced.Intel;
+using Blazed.Intel;
 
 static class HowTo_ColorizedText {
     public static void Example() {
@@ -377,7 +377,7 @@ static class HowTo_ColorizedText {
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Iced.Intel;
+using Blazed.Intel;
 
 static class HowTo_MoveCode {
     // Decodes instructions from some address, then encodes them starting at some
@@ -586,7 +586,7 @@ Moved code:
 
 ```cs
 using System;
-using Iced.Intel;
+using Blazed.Intel;
 
 static class HowTo_InstructionInfo {
     /*
@@ -894,7 +894,7 @@ static class HowTo_InstructionInfo {
 ```cs
 using System;
 using System.Diagnostics;
-using Iced.Intel;
+using Blazed.Intel;
 
 static class HowTo_GetVirtualAddress {
     public static void Example() {
@@ -929,7 +929,7 @@ static class HowTo_GetVirtualAddress {
 
 ```cs
 using System;
-using Iced.Intel;
+using Blazed.Intel;
 
 static class HowTo_DisassembleOldInstructions {
     /*

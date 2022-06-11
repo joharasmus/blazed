@@ -6,7 +6,7 @@
 #nullable enable
 
 namespace Blazed.Intel {
-	static partial class IcedConstants {
+	static partial class BlazedConstants {
 		internal const int MaxOpCount = 5;
 		internal const int MaxInstructionLength = 15;
 		internal const int RegisterBits = 8;

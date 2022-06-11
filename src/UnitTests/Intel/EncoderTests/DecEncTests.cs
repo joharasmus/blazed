@@ -698,7 +698,7 @@ namespace UnitTests.Intel.EncoderTests {
 		static bool TryGetSaeErInstruction(OpCodeInfo opCode, out Code newCode) {
 			if (opCode.Encoding == EncodingKind.EVEX && !(opCode.CanSuppressAllExceptions || opCode.CanUseRoundingControl)) {
 				var mnemonic = opCode.Mnemonic;
-				for (int i = (int)opCode.Code + 1, j = 1; i < IcedConstants.CodeEnumCount && j <= 2; i++, j++) {
+				for (int i = (int)opCode.Code + 1, j = 1; i < BlazedConstants.CodeEnumCount && j <= 2; i++, j++) {
 					var nextCode = (Code)i;
 					if (nextCode.Mnemonic() != mnemonic)
 						break;
@@ -718,7 +718,7 @@ namespace UnitTests.Intel.EncoderTests {
 		[Fact]
 		void Verify_tuple_type_bcst() {
 			var codeNames = ToEnumConverter.GetCodeNames();
-			for (int i = 0; i < IcedConstants.CodeEnumCount; i++) {
+			for (int i = 0; i < BlazedConstants.CodeEnumCount; i++) {
 				if (CodeUtils.IsIgnored(codeNames[i]))
 					continue;
 				var opCode = ((Code)i).ToOpCode();
@@ -1676,14 +1676,14 @@ namespace UnitTests.Intel.EncoderTests {
 		}
 		[Fact]
 		void Verify_that_test_cases_test_enough_bits() {
-			var testedInfos16 = new TestedInfo[IcedConstants.CodeEnumCount];
-			var testedInfos32 = new TestedInfo[IcedConstants.CodeEnumCount];
-			var testedInfos64 = new TestedInfo[IcedConstants.CodeEnumCount];
+			var testedInfos16 = new TestedInfo[BlazedConstants.CodeEnumCount];
+			var testedInfos32 = new TestedInfo[BlazedConstants.CodeEnumCount];
+			var testedInfos64 = new TestedInfo[BlazedConstants.CodeEnumCount];
 
-			var canUseW = new bool[IcedConstants.CodeEnumCount];
+			var canUseW = new bool[BlazedConstants.CodeEnumCount];
 			{
 				var usesW = new HashSet<(OpCodeTableKind table, uint opCode)>();
-				for (int i = 0; i < IcedConstants.CodeEnumCount; i++) {
+				for (int i = 0; i < BlazedConstants.CodeEnumCount; i++) {
 					var code = (Code)i;
 					var opCode = code.ToOpCode();
 					if (opCode.Encoding != EncodingKind.Legacy)
@@ -1691,7 +1691,7 @@ namespace UnitTests.Intel.EncoderTests {
 					if (opCode.OperandSize != 0)
 						usesW.Add((opCode.Table, opCode.OpCode));
 				}
-				for (int i = 0; i < IcedConstants.CodeEnumCount; i++) {
+				for (int i = 0; i < BlazedConstants.CodeEnumCount; i++) {
 					var code = (Code)i;
 					var opCode = code.ToOpCode();
 					switch (opCode.Encoding) {
@@ -2032,7 +2032,7 @@ namespace UnitTests.Intel.EncoderTests {
 					_ => throw new InvalidOperationException(),
 				};
 
-				for (int i = 0; i < IcedConstants.CodeEnumCount; i++) {
+				for (int i = 0; i < BlazedConstants.CodeEnumCount; i++) {
 					if (CodeUtils.IsIgnored(codeNames[i]))
 						continue;
 					var code = (Code)i;
@@ -2738,7 +2738,7 @@ namespace UnitTests.Intel.EncoderTests {
 			foreach (var code in DecoderTestUtils.NotDecoded64Only)
 				hash64.Add(code);
 			var codeNames = ToEnumConverter.GetCodeNames();
-			for (int i = 0; i < IcedConstants.CodeEnumCount; i++) {
+			for (int i = 0; i < BlazedConstants.CodeEnumCount; i++) {
 				if (CodeUtils.IsIgnored(codeNames[i]))
 					continue;
 				var code = (Code)i;
@@ -2763,7 +2763,7 @@ namespace UnitTests.Intel.EncoderTests {
 
 		[Fact]
 		void Verify_can_only_decode_in_correct_mode() {
-			var extraBytes = new string('0', (IcedConstants.MaxInstructionLength - 1) * 2);
+			var extraBytes = new string('0', (BlazedConstants.MaxInstructionLength - 1) * 2);
 			foreach (var info in DecoderTestUtils.GetDecoderTests(includeOtherTests: false, includeInvalid: false)) {
 				var opCode = info.Code.ToOpCode();
 				var newHexBytes = info.HexBytes + extraBytes;
@@ -2952,7 +2952,7 @@ namespace UnitTests.Intel.EncoderTests {
 
 		[Fact]
 		void Verify_regonly_or_regmemonly_mod_bits() {
-			var extraBytes = new string('0', (IcedConstants.MaxInstructionLength - 1) * 2);
+			var extraBytes = new string('0', (BlazedConstants.MaxInstructionLength - 1) * 2);
 			foreach (var info in DecoderTestUtils.GetDecoderTests(includeOtherTests: false, includeInvalid: false)) {
 				var opCode = info.Code.ToOpCode();
 				if (!IsRegOnlyOrRegMemOnlyModRM(opCode))
@@ -3045,7 +3045,7 @@ namespace UnitTests.Intel.EncoderTests {
 
 		[Fact]
 		void Disable_decoder_option_disables_instruction() {
-			var extraBytes = new string('0', (IcedConstants.MaxInstructionLength - 1) * 2);
+			var extraBytes = new string('0', (BlazedConstants.MaxInstructionLength - 1) * 2);
 			foreach (var info in DecoderTestUtils.GetDecoderTests(includeOtherTests: false, includeInvalid: false)) {
 				if (info.Options == DecoderOptions.None)
 					continue;

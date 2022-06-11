@@ -276,7 +276,7 @@ namespace Blazed.Intel {
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal uint ReadByte() {
 			uint instrLen = state.zs.instructionLength;
-			if (instrLen < IcedConstants.MaxInstructionLength) {
+			if (instrLen < BlazedConstants.MaxInstructionLength) {
 				uint b = (uint)reader.ReadByte();
 				Debug.Assert(b <= byte.MaxValue || b > int.MaxValue);
 				if (b <= byte.MaxValue) {
@@ -351,7 +351,7 @@ namespace Blazed.Intel {
 
 			instruction.InternalCodeSize = defaultCodeSize;
 			uint instrLen = state.zs.instructionLength;
-			Debug.Assert(0 <= instrLen && instrLen <= IcedConstants.MaxInstructionLength);// Could be 0 if there were no bytes available
+			Debug.Assert(0 <= instrLen && instrLen <= BlazedConstants.MaxInstructionLength);// Could be 0 if there were no bytes available
 			instruction.Length = (int)instrLen;
 			var ip = instructionPointer;
 			ip += instrLen;

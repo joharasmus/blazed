@@ -58,12 +58,12 @@ namespace Generator.Assembler.CSharp {
 			};
 
 		protected override void GenerateRegisters((RegisterKind kind, RegisterDef[] regs)[] regGroups) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "Assembler", "AssemblerRegisters.g.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Assembler", "AssemblerRegisters.g.cs");
 			using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(filename))) {
 				writer.WriteFileHeader();
 				writer.WriteLineNoIndent($"#if {CSharpConstants.CodeAssemblerDefine}");
 
-				writer.WriteLine($"namespace {CSharpConstants.IcedNamespace} {{");
+				writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
 				writer.WriteLine(CSharpConstants.PragmaMissingDocsDisable);
 				using (writer.Indent()) {
 					writer.WriteLine("public static partial class AssemblerRegisters {");
@@ -82,7 +82,7 @@ namespace Generator.Assembler.CSharp {
 		}
 
 		protected override void GenerateRegisterClasses(RegisterClassInfo[] infos) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "Assembler", "AssemblerRegister.g.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Assembler", "AssemblerRegister.g.cs");
 			using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(filename))) {
 				writer.WriteFileHeader();
 				writer.WriteLineNoIndent($"#if {CSharpConstants.CodeAssemblerDefine}");
@@ -91,7 +91,7 @@ namespace Generator.Assembler.CSharp {
 				writer.WriteLine("using System.ComponentModel;");
 				writer.WriteLine();
 
-				writer.WriteLine($"namespace {CSharpConstants.IcedNamespace} {{");
+				writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
 				using (writer.Indent()) {
 					var regNoneName = idConverter.ToDeclTypeAndValue(registerType[nameof(Register.None)]);
 					var registerTypeName = registerType.Name(idConverter);
@@ -334,14 +334,14 @@ namespace Generator.Assembler.CSharp {
 		}
 
 		protected override void GenerateMemorySizeFunctions(MemorySizeFuncInfo[] infos) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "Assembler", "AssemblerRegisters2.g.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Assembler", "AssemblerRegisters2.g.cs");
 			using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(filename))) {
 				writer.WriteFileHeader();
 				writer.WriteLineNoIndent($"#if {CSharpConstants.CodeAssemblerDefine}");
 
 				var regNoneStr = idConverter.ToDeclTypeAndValue(registerType[nameof(Register.None)]);
 
-				writer.WriteLine($"namespace {CSharpConstants.IcedNamespace} {{");
+				writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
 				using (writer.Indent()) {
 					writer.WriteLine("/// <summary>");
 					writer.WriteLine("/// Registers used for <see cref=\"Assembler\"/>. ");
@@ -378,11 +378,11 @@ namespace Generator.Assembler.CSharp {
 		}
 
 		void GenerateCode(OpCodeInfoGroup[] groups) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "Assembler", "Assembler.g.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Assembler", "Assembler.g.cs");
 			using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(filename))) {
 				writer.WriteFileHeader();
 				writer.WriteLineNoIndent($"#if {CSharpConstants.CodeAssemblerDefine}");
-				writer.WriteLine($"namespace {CSharpConstants.IcedNamespace} {{");
+				writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
 				using (writer.Indent()) {
 					writer.WriteLine("public partial class Assembler {");
 					using (writer.Indent()) {
@@ -455,7 +455,7 @@ namespace Generator.Assembler.CSharp {
 			using (var writerTests = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(filenameTests))) {
 				writerTests.WriteFileHeader();
 				writerTests.WriteLine($"#if {CSharpConstants.CodeAssemblerDefine}");
-				writerTests.WriteLine($"namespace {CSharpConstants.IcedUnitTestsNamespace}.{assemblerTestsNameBase} {{");
+				writerTests.WriteLine($"namespace {CSharpConstants.UnitTestsNamespace}.{assemblerTestsNameBase} {{");
 				using (writerTests.Indent()) {
 					writerTests.WriteLine("using Blazed.Intel;");
 					writerTests.WriteLine("using Xunit;");

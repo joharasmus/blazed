@@ -265,7 +265,7 @@ namespace UnitTests.Intel.InstructionTests {
 			instruction.SuppressAllExceptions = true;
 			Assert.True(instruction.SuppressAllExceptions);
 
-			for (int i = 0; i <= IcedConstants.MaxInstructionLength; i++) {
+			for (int i = 0; i <= BlazedConstants.MaxInstructionLength; i++) {
 				instruction.Length = i;
 				Assert.Equal(i, instruction.Length);
 			}
@@ -284,9 +284,9 @@ namespace UnitTests.Intel.InstructionTests {
 				Assert.Equal(code, instruction.Code);
 			}
 			Assert.Throws<ArgumentOutOfRangeException>(() => instruction.Code = (Code)(-1));
-			Assert.Throws<ArgumentOutOfRangeException>(() => instruction.Code = (Code)IcedConstants.CodeEnumCount);
+			Assert.Throws<ArgumentOutOfRangeException>(() => instruction.Code = (Code)BlazedConstants.CodeEnumCount);
 
-			Static.Assert(IcedConstants.MaxOpCount == 5 ? 0 : -1);
+			Static.Assert(BlazedConstants.MaxOpCount == 5 ? 0 : -1);
 			foreach (var opKind in GetOpKindValues()) {
 				instruction.Op0Kind = opKind;
 				Assert.Equal(opKind, instruction.Op0Kind);
@@ -513,27 +513,27 @@ namespace UnitTests.Intel.InstructionTests {
 		}
 
 		static IEnumerable<CodeSize> GetCodeSizeValues() {
-			for (int i = 0; i < IcedConstants.CodeSizeEnumCount; i++) {
+			for (int i = 0; i < BlazedConstants.CodeSizeEnumCount; i++) {
 				yield return (CodeSize)i;
 			}
 		}
 		static IEnumerable<Code> GetCodeValues() {
-			for (int i = 0; i < IcedConstants.CodeEnumCount; i++) {
+			for (int i = 0; i < BlazedConstants.CodeEnumCount; i++) {
 				yield return (Code)i;
 			}
 		}
 		static IEnumerable<OpKind> GetOpKindValues() {
-			for (int i = 0; i < IcedConstants.OpKindEnumCount; i++) {
+			for (int i = 0; i < BlazedConstants.OpKindEnumCount; i++) {
 				yield return (OpKind)i;
 			}
 		}
 		static IEnumerable<Register> GetRegisterValues() {
-			for (int i = 0; i < IcedConstants.RegisterEnumCount; i++) {
+			for (int i = 0; i < BlazedConstants.RegisterEnumCount; i++) {
 				yield return (Register)i;
 			}
 		}
 		static IEnumerable<RoundingControl> GetRoundingControlValues() {
-			for (int i = 0; i < IcedConstants.RoundingControlEnumCount; i++) {
+			for (int i = 0; i < BlazedConstants.RoundingControlEnumCount; i++) {
 				yield return (RoundingControl)i;
 			}
 		}

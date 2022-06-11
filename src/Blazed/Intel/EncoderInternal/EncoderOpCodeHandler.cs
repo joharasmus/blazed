@@ -39,7 +39,7 @@ namespace Blazed.Intel.EncoderInternal {
 	sealed class InvalidHandler : OpCodeHandler {
 		internal const string ERROR_MESSAGE = "Can't encode an invalid instruction";
 
-		public InvalidHandler() : base(EncFlags2.None, EncFlags3.Bit16or32 | EncFlags3.Bit64, false, null, Array2.Empty<Op>()) { }
+		public InvalidHandler() : base(EncFlags2.None, EncFlags3.Bit16or32 | EncFlags3.Bit64, false, null, Array.Empty<Op>()) { }
 
 		public override void Encode(Encoder encoder, in Instruction instruction) =>
 			encoder.ErrorMessage = ERROR_MESSAGE;
@@ -50,7 +50,7 @@ namespace Blazed.Intel.EncoderInternal {
 		readonly int maxLength;
 
 		public DeclareDataHandler(Code code)
-			: base(EncFlags2.None, EncFlags3.Bit16or32 | EncFlags3.Bit64, true, null, Array2.Empty<Op>()) {
+			: base(EncFlags2.None, EncFlags3.Bit16or32 | EncFlags3.Bit64, true, null, Array.Empty<Op>()) {
 			elemLength = code switch {
 				Code.DeclareByte => 1,
 				Code.DeclareWord => 2,
@@ -75,7 +75,7 @@ namespace Blazed.Intel.EncoderInternal {
 
 	sealed class ZeroBytesHandler : OpCodeHandler {
 		public ZeroBytesHandler(Code code)
-			: base(EncFlags2.None, EncFlags3.Bit16or32 | EncFlags3.Bit64, true, null, Array2.Empty<Op>()) {
+			: base(EncFlags2.None, EncFlags3.Bit16or32 | EncFlags3.Bit64, true, null, Array.Empty<Op>()) {
 		}
 
 		public override void Encode(Encoder encoder, in Instruction instruction) {
@@ -105,7 +105,7 @@ namespace Blazed.Intel.EncoderInternal {
 			}
 			if (op0 != 0)
 				return new Op[] { OpHandlerData.LegacyOps[op0 - 1] };
-			return Array2.Empty<Op>();
+			return Array.Empty<Op>();
 		}
 
 		public LegacyHandler(EncFlags1 encFlags1, EncFlags2 encFlags2, EncFlags3 encFlags3)
@@ -204,7 +204,7 @@ namespace Blazed.Intel.EncoderInternal {
 			}
 			if (op0 != 0)
 				return new Op[] { OpHandlerData.VexOps[op0 - 1] };
-			return Array2.Empty<Op>();
+			return Array.Empty<Op>();
 		}
 
 		public VexHandler(EncFlags1 encFlags1, EncFlags2 encFlags2, EncFlags3 encFlags3)
@@ -291,7 +291,7 @@ namespace Blazed.Intel.EncoderInternal {
 			}
 			if (op0 != 0)
 				return new Op[] { OpHandlerData.XopOps[op0 - 1] };
-			return Array2.Empty<Op>();
+			return Array.Empty<Op>();
 		}
 
 		public XopHandler(EncFlags1 encFlags1, EncFlags2 encFlags2, EncFlags3 encFlags3)
@@ -366,7 +366,7 @@ namespace Blazed.Intel.EncoderInternal {
 			}
 			if (op0 != 0)
 				return new Op[] { OpHandlerData.EvexOps[op0 - 1] };
-			return Array2.Empty<Op>();
+			return Array.Empty<Op>();
 		}
 
 		static readonly TryConvertToDisp8N tryConvertToDisp8N = TryConvertToDisp8NImpl.TryConvertToDisp8N;
@@ -519,7 +519,7 @@ namespace Blazed.Intel.EncoderInternal {
 			}
 			if (op0 != 0)
 				return new Op[] { OpHandlerData.MvexOps[op0 - 1] };
-			return Array2.Empty<Op>();
+			return Array.Empty<Op>();
 		}
 
 		static readonly TryConvertToDisp8N tryConvertToDisp8N = TryConvertToDisp8NImpl.TryConvertToDisp8N;

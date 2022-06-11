@@ -43,7 +43,7 @@ namespace Generator.Formatters.CSharp {
 		}
 
 		void GenerateGas(MemorySizeDef[] defs) {
-			var icedConstants = genTypes.GetConstantsType(TypeIds.IcedConstants);
+			var blazedConstants = genTypes.GetConstantsType(TypeIds.BlazedConstants);
 			var broadcastToKindValues = genTypes[TypeIds.BroadcastToKind].Values;
 			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.GasFormatterNamespace, "MemorySizes.cs");
 			new FileUpdater(TargetLanguage.CSharp, "ConstData", filename).Generate(writer => {
@@ -60,7 +60,7 @@ namespace Generator.Formatters.CSharp {
 				}
 			});
 			new FileUpdater(TargetLanguage.CSharp, "BcstTo", filename).Generate(writer => {
-				int first = (int)icedConstants[IcedConstants.FirstBroadcastMemorySizeName].ValueUInt64;
+				int first = (int)blazedConstants[BlazedConstants.FirstBroadcastMemorySizeName].ValueUInt64;
 				for (int i = first; i < defs.Length; i++) {
 					writer.WriteByte(checked((byte)defs[i].BroadcastToKind.Value));
 					writer.WriteLine();
@@ -122,7 +122,7 @@ namespace Generator.Formatters.CSharp {
 				foreach (var kw in intelKeywords) {
 					writer.Write($"0x{kw.Value:X2} => ");
 					if ((IntelMemoryKeywords)kw.Value == IntelMemoryKeywords.None)
-						writer.WriteLine("Array2.Empty<FormatterString>(),");
+						writer.WriteLine("Array.Empty<FormatterString>(),");
 					else
 						writer.WriteLine($"{kw.RawName},");
 				}
@@ -180,7 +180,7 @@ namespace Generator.Formatters.CSharp {
 				foreach (var kw in masmKeywords) {
 					writer.Write($"0x{kw.Value:X2} => ");
 					if ((MasmMemoryKeywords)kw.Value == MasmMemoryKeywords.None)
-						writer.WriteLine("Array2.Empty<FormatterString>(),");
+						writer.WriteLine("Array.Empty<FormatterString>(),");
 					else
 						writer.WriteLine($"{kw.RawName},");
 				}
@@ -188,7 +188,7 @@ namespace Generator.Formatters.CSharp {
 		}
 
 		void GenerateNasm(MemorySizeDef[] defs) {
-			var icedConstants = genTypes.GetConstantsType(TypeIds.IcedConstants);
+			var blazedConstants = genTypes.GetConstantsType(TypeIds.BlazedConstants);
 			var broadcastToKindValues = genTypes[TypeIds.BroadcastToKind].Values;
 			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.NasmFormatterNamespace, "MemorySizes.cs");
 			var nasmKeywords = genTypes[TypeIds.NasmMemoryKeywords].Values;
@@ -217,7 +217,7 @@ namespace Generator.Formatters.CSharp {
 				}
 			});
 			new FileUpdater(TargetLanguage.CSharp, "BcstTo", filename).Generate(writer => {
-				int first = (int)icedConstants[IcedConstants.FirstBroadcastMemorySizeName].ValueUInt64;
+				int first = (int)blazedConstants[BlazedConstants.FirstBroadcastMemorySizeName].ValueUInt64;
 				for (int i = first; i < defs.Length; i++) {
 					writer.WriteByte(checked((byte)defs[i].BroadcastToKind.Value));
 					writer.WriteLine();

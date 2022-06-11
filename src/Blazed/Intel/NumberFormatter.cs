@@ -90,7 +90,7 @@ namespace Blazed.Intel {
 				}
 			}
 
-			bool useDigitSep = digitGroupSize > 0 && !string2.IsNullOrEmpty(digitSeparator);
+			bool useDigitSep = digitGroupSize > 0 && !string.IsNullOrEmpty(digitSeparator);
 			var divs = NumberFormatter.divs;
 			for (int i = 0; i < digits; i++) {
 				int index = digits - i - 1;
@@ -130,7 +130,7 @@ namespace Blazed.Intel {
 					sb.Append(prefix);
 			}
 
-			bool useDigitSep = digitGroupSize > 0 && !string2.IsNullOrEmpty(digitSeparator);
+			bool useDigitSep = digitGroupSize > 0 && !string.IsNullOrEmpty(digitSeparator);
 			for (int i = 0; i < digits; i++) {
 				int index = digits - i - 1;
 				int digit = index >= 22 ? 0 : (int)((value >> index * 3) & 7);
@@ -152,7 +152,7 @@ namespace Blazed.Intel {
 				}
 			}
 
-			bool useDigitSep = digitGroupSize > 0 && !string2.IsNullOrEmpty(digitSeparator);
+			bool useDigitSep = digitGroupSize > 0 && !string.IsNullOrEmpty(digitSeparator);
 			for (int i = 0; i < digits; i++) {
 				int index = digits - i - 1;
 				int digit = index >= 64 ? 0 : (int)((value >> index) & 1);

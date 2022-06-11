@@ -54,21 +54,21 @@ namespace Blazed.Intel {
 		/// </summary>
 		/// <param name="register">Register</param>
 		/// <returns></returns>
-		public static bool IsXMM(this Register register) => Register.XMM0 <= register && register <= IcedConstants.XMM_last;
+		public static bool IsXMM(this Register register) => Register.XMM0 <= register && register <= BlazedConstants.XMM_last;
 
 		/// <summary>
 		/// Checks if it's a 256-bit vector register (<c>YMM0</c>-<c>YMM31</c>)
 		/// </summary>
 		/// <param name="register">Register</param>
 		/// <returns></returns>
-		public static bool IsYMM(this Register register) => Register.YMM0 <= register && register <= IcedConstants.YMM_last;
+		public static bool IsYMM(this Register register) => Register.YMM0 <= register && register <= BlazedConstants.YMM_last;
 
 		/// <summary>
 		/// Checks if it's a 512-bit vector register (<c>ZMM0</c>-<c>ZMM31</c>)
 		/// </summary>
 		/// <param name="register">Register</param>
 		/// <returns></returns>
-		public static bool IsZMM(this Register register) => Register.ZMM0 <= register && register <= IcedConstants.ZMM_last;
+		public static bool IsZMM(this Register register) => Register.ZMM0 <= register && register <= BlazedConstants.ZMM_last;
 
 		/// <summary>
 		/// Checks if it's <c>EIP</c>/<c>RIP</c>
@@ -131,14 +131,14 @@ namespace Blazed.Intel {
 		/// </summary>
 		/// <param name="register">Register</param>
 		/// <returns></returns>
-		public static bool IsTMM(this Register register) => Register.TMM0 <= register && register <= IcedConstants.TMM_last;
+		public static bool IsTMM(this Register register) => Register.TMM0 <= register && register <= BlazedConstants.TMM_last;
 
 		/// <summary>
 		/// Checks if it's an <c>XMM</c>, <c>YMM</c> or <c>ZMM</c> register
 		/// </summary>
 		/// <param name="register">Register</param>
 		/// <returns></returns>
-		public static bool IsVectorRegister(this Register register) => Register.XMM0 <= register && register <= IcedConstants.VMM_last;
+		public static bool IsVectorRegister(this Register register) => Register.XMM0 <= register && register <= BlazedConstants.VMM_last;
 	}
 }
 #endif

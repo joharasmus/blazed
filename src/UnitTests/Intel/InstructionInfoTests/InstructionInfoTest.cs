@@ -148,8 +148,8 @@ namespace UnitTests.Intel.InstructionInfoTests {
 				new HashSet<UsedRegister>(GetUsedRegisters(testCase.UsedRegisters), UsedRegisterEqualityComparer.Instance),
 				new HashSet<UsedRegister>(GetUsedRegisters(info.GetUsedRegisters()), UsedRegisterEqualityComparer.Instance));
 
-			Static.Assert(IcedConstants.MaxOpCount == 5 ? 0 : -1);
-			Debug.Assert(instruction.OpCount <= IcedConstants.MaxOpCount);
+			Static.Assert(BlazedConstants.MaxOpCount == 5 ? 0 : -1);
+			Debug.Assert(instruction.OpCount <= BlazedConstants.MaxOpCount);
 			for (int i = 0; i < instruction.OpCount; i++) {
 				switch (i) {
 				case 0:
@@ -176,7 +176,7 @@ namespace UnitTests.Intel.InstructionInfoTests {
 					throw new InvalidOperationException();
 				}
 			}
-			for (int i = instruction.OpCount; i < IcedConstants.MaxOpCount; i++)
+			for (int i = instruction.OpCount; i < BlazedConstants.MaxOpCount; i++)
 				Assert.Equal(OpAccess.None, info.GetOpAccess(i));
 
 			var info2 = new InstructionInfoFactory().GetInfo(instruction, InstructionInfoOptions.None);
@@ -201,9 +201,9 @@ namespace UnitTests.Intel.InstructionInfoTests {
 			Assert.Equal(testCase.Encoding, instruction.Encoding);
 #if MVEX
 			if (instruction.Encoding == EncodingKind.MVEX)
-				Assert.True(IcedConstants.IsMvex(instruction.Code));
+				Assert.True(BlazedConstants.IsMvex(instruction.Code));
 			else
-				Assert.False(IcedConstants.IsMvex(instruction.Code));
+				Assert.False(BlazedConstants.IsMvex(instruction.Code));
 #endif
 			Assert.Equal(testCase.CpuidFeatures, instruction.CpuidFeatures);
 			Assert.Equal(testCase.FlowControl, instruction.FlowControl);
@@ -322,12 +322,12 @@ namespace UnitTests.Intel.InstructionInfoTests {
 					if (hash.Contains(Register.AX + index))
 						continue;
 				}
-				else if (Register.YMM0 <= reg && reg <= IcedConstants.YMM_last) {
+				else if (Register.YMM0 <= reg && reg <= BlazedConstants.YMM_last) {
 					index = reg - Register.YMM0;
 					if (hash.Contains(Register.ZMM0 + index))
 						continue;
 				}
-				else if (Register.XMM0 <= reg && reg <= IcedConstants.XMM_last) {
+				else if (Register.XMM0 <= reg && reg <= BlazedConstants.XMM_last) {
 					index = reg - Register.XMM0;
 					if (hash.Contains(Register.ZMM0 + index))
 						continue;
@@ -371,11 +371,11 @@ namespace UnitTests.Intel.InstructionInfoTests {
 			if (Register.AL <= reg && reg <= Register.R15L)
 				return 3;
 
-			if (Register.ZMM0 <= reg && reg <= IcedConstants.ZMM_last)
+			if (Register.ZMM0 <= reg && reg <= BlazedConstants.ZMM_last)
 				return 4;
-			if (Register.YMM0 <= reg && reg <= IcedConstants.YMM_last)
+			if (Register.YMM0 <= reg && reg <= BlazedConstants.YMM_last)
 				return 5;
-			if (Register.XMM0 <= reg && reg <= IcedConstants.XMM_last)
+			if (Register.XMM0 <= reg && reg <= BlazedConstants.XMM_last)
 				return 6;
 
 			return -1;

@@ -38,7 +38,7 @@ namespace UnitTests.Intel.DecoderTests {
 			const byte T16 = 0x01;
 			const byte T32 = 0x02;
 			const byte T64 = 0x04;
-			var tested = new byte[IcedConstants.CodeEnumCount];
+			var tested = new byte[BlazedConstants.CodeEnumCount];
 			tested[(int)Code.INVALID] = T16 | T32 | T64;
 
 			foreach (var info in DecoderTestUtils.GetDecoderTests(includeOtherTests: false, includeInvalid: false)) {

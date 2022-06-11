@@ -8,7 +8,7 @@ using Blazed.Intel;
 
 namespace UnitTests.Intel.InstructionInfoTests {
 	public sealed class InstructionInfoTestCase {
-		public InstructionInfoTestCase() => Static.Assert(IcedConstants.MaxOpCount == 5 ? 0 : -1);
+		public InstructionInfoTestCase() => Static.Assert(BlazedConstants.MaxOpCount == 5 ? 0 : -1);
 		public ulong IP = 0;
 		public EncodingKind Encoding = EncodingKind.Legacy;
 		public CpuidFeature[] CpuidFeatures = Array.Empty<CpuidFeature>();

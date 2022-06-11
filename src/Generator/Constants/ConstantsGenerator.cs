@@ -11,7 +11,7 @@ namespace Generator.Constants {
 
 		public void Generate() {
 			var allConstants = new ConstantsType[] {
-				genTypes.GetConstantsType(TypeIds.IcedConstants),
+				genTypes.GetConstantsType(TypeIds.BlazedConstants),
 				genTypes.GetConstantsType(TypeIds.DecoderTestParserConstants),
 				genTypes.GetConstantsType(TypeIds.DecoderConstants),
 				genTypes.GetConstantsType(TypeIds.InstructionInfoKeys),

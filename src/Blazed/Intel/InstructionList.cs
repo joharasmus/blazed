@@ -70,7 +70,7 @@ namespace Blazed.Intel {
 		/// <summary>
 		/// Constructor
 		/// </summary>
-		public InstructionList() => elements = Array2.Empty<Instruction>();
+		public InstructionList() => elements = Array.Empty<Instruction>();
 
 		/// <summary>
 		/// Constructor
@@ -79,7 +79,7 @@ namespace Blazed.Intel {
 		public InstructionList(int capacity) {
 			if (capacity < 0)
 				ThrowHelper.ThrowArgumentOutOfRangeException_capacity();
-			elements = capacity == 0 ? Array2.Empty<Instruction>() : new Instruction[capacity];
+			elements = capacity == 0 ? Array.Empty<Instruction>() : new Instruction[capacity];
 		}
 
 		/// <summary>
@@ -91,7 +91,7 @@ namespace Blazed.Intel {
 				ThrowHelper.ThrowArgumentNullException_list();
 			int length = list.count;
 			if (length == 0)
-				elements = Array2.Empty<Instruction>();
+				elements = Array.Empty<Instruction>();
 			else {
 				var elements = new Instruction[length];
 				this.elements = elements;
@@ -110,7 +110,7 @@ namespace Blazed.Intel {
 			if (collection is ICollection<Instruction> coll) {
 				int count = coll.Count;
 				if (count == 0)
-					elements = Array2.Empty<Instruction>();
+					elements = Array.Empty<Instruction>();
 				else {
 					var elements = new Instruction[count];
 					this.elements = elements;
@@ -119,7 +119,7 @@ namespace Blazed.Intel {
 				}
 			}
 			else {
-				elements = Array2.Empty<Instruction>();
+				elements = Array.Empty<Instruction>();
 				foreach (var elem in collection)
 					Add(elem);
 			}
@@ -567,7 +567,7 @@ namespace Blazed.Intel {
 		public Instruction[] ToArray() {
 			int count = this.count;
 			if (count == 0)
-				return Array2.Empty<Instruction>();
+				return Array.Empty<Instruction>();
 			var res = new Instruction[count];
 			Array.Copy(elements, 0, res, 0, res.Length);
 			return res;

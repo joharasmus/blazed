@@ -173,7 +173,7 @@ namespace Generator.InstructionInfo.CSharp {
 		}
 
 		protected override void GenerateImpliedAccesses(ImpliedAccessesDef[] defs) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "InstructionInfoFactory.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "InstructionInfoFactory.cs");
 			new FileUpdater(TargetLanguage.CSharp, "ImpliedAccessHandler", filename).Generate(writer => GenerateImpliedAccesses(writer, defs));
 		}
 
@@ -405,27 +405,27 @@ namespace Generator.InstructionInfo.CSharp {
 		}
 
 		protected override void GenerateIgnoresSegmentTable((EncodingKind encoding, InstructionDef[] defs)[] defs) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "CodeExtensions.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "CodeExtensions.cs");
 			GenerateTable(defs, "IgnoresSegmentTable", filename);
 		}
 
 		protected override void GenerateIgnoresIndexTable((EncodingKind encoding, InstructionDef[] defs)[] defs) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "CodeExtensions.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "CodeExtensions.cs");
 			GenerateTable(defs, "IgnoresIndexTable", filename);
 		}
 
 		protected override void GenerateTileStrideIndexTable((EncodingKind encoding, InstructionDef[] defs)[] defs) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "CodeExtensions.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "CodeExtensions.cs");
 			GenerateTable(defs, "TileStrideIndexTable", filename);
 		}
 
 		protected override void GenerateIsStringOpTable((EncodingKind encoding, InstructionDef[] defs)[] defs) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "InstructionInfoExtensions.1.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "InstructionInfoExtensions.1.cs");
 			GenerateTable(defs, "IsStringOpTable", filename);
 		}
 
 		protected override void GenerateFpuStackIncrementInfoTable((FpuStackInfo info, InstructionDef[] defs)[] tdefs) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "Instruction.Info.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Instruction.Info.cs");
 			new FileUpdater(TargetLanguage.CSharp, "FpuStackIncrementInfoTable", filename).Generate(writer => {
 				foreach (var (info, defs) in tdefs) {
 					foreach (var def in defs)
@@ -440,7 +440,7 @@ namespace Generator.InstructionInfo.CSharp {
 		}
 
 		protected override void GenerateStackPointerIncrementTable((EncodingKind encoding, StackInfo info, InstructionDef[] defs)[] tdefs) {
-			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, "Instruction.Info.cs");
+			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Instruction.Info.cs");
 			new FileUpdater(TargetLanguage.CSharp, "StackPointerIncrementTable", filename).Generate(writer => {
 				foreach (var (encoding, info, defs) in tdefs) {
 					var feature = CSharpConstants.GetDefine(encoding);

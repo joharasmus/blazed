@@ -17,17 +17,17 @@ namespace Generator.Decoder.CSharp {
 		}
 
 		public void Generate() {
-			var icedConstants = genTypes.GetConstantsType(TypeIds.IcedConstants);
+			var blazedConstants = genTypes.GetConstantsType(TypeIds.BlazedConstants);
 			var defs = genTypes.GetObject<InstructionDefs>(TypeIds.InstructionDefs).Defs;
 			const string ClassName = "InstructionOpCounts";
-			using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(CSharpConstants.GetFilename(genTypes, CSharpConstants.IcedNamespace, ClassName + ".g.cs")))) {
+			using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, ClassName + ".g.cs")))) {
 				writer.WriteFileHeader();
 
-				writer.WriteLine($"namespace {CSharpConstants.IcedNamespace} {{");
+				writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
 				using (writer.Indent()) {
 					writer.WriteLine($"static class {ClassName} {{");
 					using (writer.Indent()) {
-						writer.WriteLine($"internal static System.ReadOnlySpan<byte> OpCount => new byte[{icedConstants.Name(idConverter)}.{icedConstants[IcedConstants.GetEnumCountName(TypeIds.Code)].Name(idConverter)}] {{");
+						writer.WriteLine($"internal static System.ReadOnlySpan<byte> OpCount => new byte[{blazedConstants.Name(idConverter)}.{blazedConstants[BlazedConstants.GetEnumCountName(TypeIds.Code)].Name(idConverter)}] {{");
 						using (writer.Indent()) {
 							foreach (var def in defs)
 								writer.WriteLine($"{def.OpCount},// {def.Code.Name(idConverter)}");

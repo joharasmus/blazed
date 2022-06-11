@@ -14,7 +14,7 @@ namespace Blazed.Intel {
 	public struct InstructionInfo {
 		internal SimpleList<UsedRegister> usedRegisters;
 		internal SimpleList<UsedMemory> usedMemoryLocations;
-		internal unsafe fixed byte opAccesses[IcedConstants.MaxOpCount];
+		internal unsafe fixed byte opAccesses[BlazedConstants.MaxOpCount];
 
 		internal InstructionInfo(bool dummy) {
 			usedRegisters = new SimpleList<UsedRegister>(new UsedRegister[InstrInfoConstants.DefaultUsedRegisterCollCapacity]);
@@ -25,7 +25,7 @@ namespace Blazed.Intel {
 				opAccesses[2] = 0;
 				opAccesses[3] = 0;
 				opAccesses[4] = 0;
-				Static.Assert(IcedConstants.MaxOpCount == 5 ? 0 : -1);
+				Static.Assert(BlazedConstants.MaxOpCount == 5 ? 0 : -1);
 			}
 		}
 
