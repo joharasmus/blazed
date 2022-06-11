@@ -10,7 +10,7 @@ namespace Generator.Formatters.CSharp {
 		readonly string @namespace;
 
 		public CSharpFormatterTableSerializer(FmtInstructionDef[] defs, EnumType ctorKindEnum, string define, string @namespace)
-			: base(defs, CSharpIdentifierConverter.Create(), ctorKindEnum["Previous"]) {
+			: base(defs, ctorKindEnum["Previous"]) {
 			this.define = define;
 			this.@namespace = @namespace;
 		}

@@ -8,11 +8,9 @@ using Generator.IO;
 namespace Generator.Decoder.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class EnumHashTableGen {
-		readonly IdentifierConverter idConverter;
 		readonly GeneratorContext generatorContext;
 
 		public EnumHashTableGen(GeneratorContext generatorContext) {
-			idConverter = CSharpIdentifierConverter.Create();
 			this.generatorContext = generatorContext;
 		}
 
@@ -56,7 +54,7 @@ namespace Generator.Decoder.CSharp {
 		}
 
 		void WriteHash(FileWriter writer, bool lowerCase, EnumType enumType) {
-			var enumStr = enumType.Name(idConverter);
+			var enumStr = enumType.Name();
 			var enumValues = enumType.Values.Where(a => !a.DeprecatedInfo.IsDeprecatedAndRenamed).ToArray();
 			writer.WriteLine($"new Dictionary<string, {enumStr}>({enumValues.Length}, StringComparer.Ordinal) {{");
 			using (writer.Indent()) {
@@ -66,7 +64,7 @@ namespace Generator.Decoder.CSharp {
 					var key = value.RawName;
 					if (lowerCase)
 						key = key.ToLowerInvariant();
-					writer.WriteLine($"{{ \"{key}\", {idConverter.ToDeclTypeAndValue(value)} }},");
+					writer.WriteLine($"{{ \"{key}\", {IdentifierConverter.ToDeclTypeAndValue(value)} }},");
 				}
 			}
 			writer.WriteLine("};");

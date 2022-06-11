@@ -22,12 +22,10 @@ namespace Generator.Formatters {
 
 	abstract class FormatterTableSerializer : IFormatterTableSerializer {
 		protected readonly FmtInstructionDef[] defs;
-		protected readonly IdentifierConverter idConverter;
 		readonly EnumValue previousCtorKind;
 
-		protected FormatterTableSerializer(FmtInstructionDef[] defs, IdentifierConverter idConverter, EnumValue previousCtorKind) {
+		protected FormatterTableSerializer(FmtInstructionDef[] defs, EnumValue previousCtorKind) {
 			this.defs = defs;
-			this.idConverter = idConverter;
 			this.previousCtorKind = previousCtorKind;
 		}
 
@@ -61,7 +59,7 @@ namespace Generator.Formatters {
 
 				if (index != 0)
 					writer.WriteLine();
-				writer.WriteCommentLine(code.ToStringValue(idConverter));
+				writer.WriteCommentLine(code.ToStringValue());
 
 				bool isSame = i > 0 && IsSame(defs[i - 1], def);
 				if (isSame)
@@ -72,9 +70,9 @@ namespace Generator.Formatters {
 					throw new InvalidOperationException();
 				writer.WriteByte((byte)(ctorKind.Value | (hasVPrefix ? 0x80U : 0)));
 				if (hasVPrefix)
-					writer.WriteCommentLine($"'v', {ctorKind.ToStringValue(idConverter)}");
+					writer.WriteCommentLine($"'v', {ctorKind.ToStringValue()}");
 				else
-					writer.WriteCommentLine($"{ctorKind.ToStringValue(idConverter)}");
+					writer.WriteCommentLine($"{ctorKind.ToStringValue()}");
 				if (isSame)
 					continue;
 
@@ -114,49 +112,49 @@ namespace Generator.Formatters {
 						var typeId = enumValue.DeclaringType.TypeId;
 						if (typeId == TypeIds.GasInstrOpInfoFlags) {
 							writer.WriteCompressedUInt32(enumValue.Value);
-							writer.WriteCommentLine($"0x{enumValue.Value:X} = {enumValue.ToStringValue(idConverter)}");
+							writer.WriteCommentLine($"0x{enumValue.Value:X} = {enumValue.ToStringValue()}");
 						}
 						else if (typeId == TypeIds.IntelInstrOpInfoFlags) {
 							writer.WriteCompressedUInt32(enumValue.Value);
-							writer.WriteCommentLine($"0x{enumValue.Value:X} = {enumValue.ToStringValue(idConverter)}");
+							writer.WriteCommentLine($"0x{enumValue.Value:X} = {enumValue.ToStringValue()}");
 						}
 						else if (typeId == TypeIds.MasmInstrOpInfoFlags) {
 							writer.WriteCompressedUInt32(enumValue.Value);
-							writer.WriteCommentLine($"0x{enumValue.Value:X} = {enumValue.ToStringValue(idConverter)}");
+							writer.WriteCommentLine($"0x{enumValue.Value:X} = {enumValue.ToStringValue()}");
 						}
 						else if (typeId == TypeIds.NasmInstrOpInfoFlags) {
 							writer.WriteCompressedUInt32(enumValue.Value);
-							writer.WriteCommentLine($"0x{enumValue.Value:X} = {enumValue.ToStringValue(idConverter)}");
+							writer.WriteCommentLine($"0x{enumValue.Value:X} = {enumValue.ToStringValue()}");
 						}
 						else if (typeId == TypeIds.PseudoOpsKind) {
 							if (enumValue.Value > byte.MaxValue)
 								throw new InvalidOperationException();
 							writer.WriteByte((byte)enumValue.Value);
-							writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+							writer.WriteCommentLine(enumValue.ToStringValue());
 						}
 						else if (typeId == TypeIds.CodeSize) {
 							if (enumValue.Value > byte.MaxValue)
 								throw new InvalidOperationException();
 							writer.WriteByte((byte)enumValue.Value);
-							writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+							writer.WriteCommentLine(enumValue.ToStringValue());
 						}
 						else if (typeId == TypeIds.Register) {
 							if (enumValue.Value > byte.MaxValue)
 								throw new InvalidOperationException();
 							writer.WriteByte((byte)enumValue.Value);
-							writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+							writer.WriteCommentLine(enumValue.ToStringValue());
 						}
 						else if (typeId == TypeIds.MemorySize) {
 							if (enumValue.Value > byte.MaxValue)
 								throw new InvalidOperationException();
 							writer.WriteByte((byte)enumValue.Value);
-							writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+							writer.WriteCommentLine(enumValue.ToStringValue());
 						}
 						else if (typeId == TypeIds.NasmSignExtendInfo) {
 							if (enumValue.Value > byte.MaxValue)
 								throw new InvalidOperationException();
 							writer.WriteByte((byte)enumValue.Value);
-							writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+							writer.WriteCommentLine(enumValue.ToStringValue());
 						}
 						else
 							throw new InvalidOperationException();

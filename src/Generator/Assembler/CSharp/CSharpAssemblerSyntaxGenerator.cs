@@ -14,7 +14,6 @@ using Generator.Tables;
 namespace Generator.Assembler.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class CSharpAssemblerSyntaxGenerator : AssemblerSyntaxGenerator {
-		readonly IdentifierConverter idConverter;
 		readonly CSharpDocCommentWriter docWriter;
 		readonly EnumType registerType;
 		readonly EnumType memoryOperandSizeType;
@@ -28,8 +27,7 @@ namespace Generator.Assembler.CSharp {
 
 		public CSharpAssemblerSyntaxGenerator(GeneratorContext generatorContext)
 			: base(generatorContext.Types) {
-			idConverter = CSharpIdentifierConverter.Create();
-			docWriter = new CSharpDocCommentWriter(idConverter);
+			docWriter = new CSharpDocCommentWriter();
 			registerType = genTypes[TypeIds.Register];
 			memoryOperandSizeType = genTypes[TypeIds.CodeAsmMemoryOperandSize];
 		}
@@ -71,7 +69,7 @@ namespace Generator.Assembler.CSharp {
 						foreach (var regDef in regGroups.SelectMany(a => a.regs)) {
 							var asmRegName = GetAsmRegisterName(regDef);
 							var registerTypeName = $"AssemblerRegister{GetRegisterSuffix(regDef)}";
-							writer.WriteLine($"public static readonly {registerTypeName} {asmRegName} = new {registerTypeName}({idConverter.ToDeclTypeAndValue(regDef.Register)});");
+							writer.WriteLine($"public static readonly {registerTypeName} {asmRegName} = new {registerTypeName}({IdentifierConverter.ToDeclTypeAndValue(regDef.Register)});");
 						}
 					}
 					writer.WriteLine("}");
@@ -93,9 +91,9 @@ namespace Generator.Assembler.CSharp {
 
 				writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
 				using (writer.Indent()) {
-					var regNoneName = idConverter.ToDeclTypeAndValue(registerType[nameof(Register.None)]);
-					var registerTypeName = registerType.Name(idConverter);
-					var memOpNoneName = idConverter.ToDeclTypeAndValue(memoryOperandSizeType[nameof(MemoryOperandSize.None)]);
+					var regNoneName = IdentifierConverter.ToDeclTypeAndValue(registerType[nameof(Register.None)]);
+					var registerTypeName = registerType.Name();
+					var memOpNoneName = IdentifierConverter.ToDeclTypeAndValue(memoryOperandSizeType[nameof(MemoryOperandSize.None)]);
 					for (int i = 0; i < infos.Length; i++) {
 						var reg = infos[i];
 						var className = $"AssemblerRegister{GetRegisterSuffix(reg.Kind)}";
@@ -339,7 +337,7 @@ namespace Generator.Assembler.CSharp {
 				writer.WriteFileHeader();
 				writer.WriteLineNoIndent($"#if {CSharpConstants.CodeAssemblerDefine}");
 
-				var regNoneStr = idConverter.ToDeclTypeAndValue(registerType[nameof(Register.None)]);
+				var regNoneStr = IdentifierConverter.ToDeclTypeAndValue(registerType[nameof(Register.None)]);
 
 				writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
 				using (writer.Indent()) {
@@ -358,7 +356,7 @@ namespace Generator.Assembler.CSharp {
 							writer.WriteLine("/// <summary>");
 							writer.WriteLine($"/// {doc}");
 							writer.WriteLine("/// </summary>");
-							var enumValueStr = idConverter.ToDeclTypeAndValue(memoryOperandSizeType[info.Size.ToString()]);
+							var enumValueStr = IdentifierConverter.ToDeclTypeAndValue(memoryOperandSizeType[info.Size.ToString()]);
 							if (info.IsBroadcast)
 								writer.WriteLine($"public static readonly AssemblerMemoryOperandFactory {name} = new AssemblerMemoryOperandFactory({enumValueStr}, {regNoneStr}, AssemblerOperandFlags.Broadcast);");
 							else
@@ -392,7 +390,7 @@ namespace Generator.Assembler.CSharp {
 								writer.WriteLine();
 							methodSep = true;
 							var renderArgs = GetRenderArgs(group);
-							var methodName = idConverter.Method(group.Name);
+							var methodName = IdentifierConverter.Method(group.Name);
 							GenerateAssemblerCode(writer, methodName, group, renderArgs);
 						}
 
@@ -684,7 +682,7 @@ namespace Generator.Assembler.CSharp {
 				else {
 					string codeExpr;
 					if (group.RootOpCodeNode.Def is InstructionDef def)
-						codeExpr = idConverter.ToDeclTypeAndValue(def.Code);
+						codeExpr = IdentifierConverter.ToDeclTypeAndValue(def.Code);
 					else {
 						codeExpr = "code";
 						writer.WriteLine($"Code {codeExpr};");
@@ -731,7 +729,7 @@ namespace Generator.Assembler.CSharp {
 
 		void RenderTests(int bitness, FileWriter writer, OpCodeInfoGroup group, RenderArg[] renderArgs) {
 			var fullMethodName = new StringBuilder();
-			fullMethodName.Append(idConverter.Method(group.Name));
+			fullMethodName.Append(IdentifierConverter.Method(group.Name));
 			foreach (var renderArg in renderArgs) {
 				fullMethodName.Append('_');
 				fullMethodName.Append(GetTestMethodArgName(renderArg.Kind));
@@ -817,7 +815,7 @@ namespace Generator.Assembler.CSharp {
 		bool GenerateTestAssemblerForOpCode(FileWriter writer, int bitness, OpCodeInfoGroup group, TestArgValues args,
 			OpCodeArgFlags contextFlags, InstructionDef def) {
 			if (!IsBitnessSupported(bitness, def.Flags1)) {
-				writer.WriteLine($"// Skipping {def.Code.Name(idConverter)} - Not supported by current bitness");
+				writer.WriteLine($"// Skipping {def.Code.Name()} - Not supported by current bitness");
 				return false;
 			}
 
@@ -828,7 +826,7 @@ namespace Generator.Assembler.CSharp {
 			if ((group.Flags & OpCodeArgFlags.HasSpecialInstructionEncoding) != 0)
 				withArgs.Add(bitness.ToString(CultureInfo.InvariantCulture));
 			else
-				withArgs.Add(idConverter.ToDeclTypeAndValue(def.Code));
+				withArgs.Add(IdentifierConverter.ToDeclTypeAndValue(def.Code));
 			for (var i = 0; i < args.Args.Count; i++) {
 				var argKind = group.Signature.GetArgKind(i);
 				var asmArg = args.GetArgValue(argBitness, i)?.AsmStr;
@@ -842,7 +840,7 @@ namespace Generator.Assembler.CSharp {
 
 				if ((def.Flags1 & InstructionDefFlags1.OpMaskRegister) != 0 && i == 0) {
 					asmArg += ".k1";
-					var opMask = idConverter.ToDeclTypeAndValue(GetRegisterDef(Register.K1).Register);
+					var opMask = IdentifierConverter.ToDeclTypeAndValue(GetRegisterDef(Register.K1).Register);
 					withFns.Add(("ApplyK(", $", {opMask})"));
 				}
 
@@ -861,15 +859,15 @@ namespace Generator.Assembler.CSharp {
 				withFnName = "CreateBranch";
 			else
 				withFnName = "Create";
-			var asmName = idConverter.Method(group.Name);
+			var asmName = IdentifierConverter.Method(group.Name);
 			var asmArgsStr = string.Join(", ", asmArgs);
 			var instrFlags = GetInstrTestFlags(def, group, contextFlags);
 			var testInstrFlagsStr = instrFlags.Count > 0 ?
-				$", {string.Join(" | ", instrFlags.Select(x => idConverter.ToDeclTypeAndValue(x)))}" : string.Empty;
+				$", {string.Join(" | ", instrFlags.Select(x => IdentifierConverter.ToDeclTypeAndValue(x)))}" : string.Empty;
 			var decoderOptions = GetDecoderOptions(bitness, def);
 			string decoderOptionsStr;
 			if (decoderOptions.Count != 0) {
-				var options = string.Join(" | ", decoderOptions.Select(x => idConverter.ToDeclTypeAndValue(x)));
+				var options = string.Join(" | ", decoderOptions.Select(x => IdentifierConverter.ToDeclTypeAndValue(x)));
 				decoderOptionsStr = $", decoderOptions: {options}";
 			}
 			else
@@ -889,7 +887,7 @@ namespace Generator.Assembler.CSharp {
 			if (node.Def is InstructionDef def) {
 				if (isLeaf)
 					writer.Write("code = ");
-				writer.Write($"Code.{def.Code.Name(idConverter)}");
+				writer.Write($"Code.{def.Code.Name()}");
 				if (isLeaf)
 					writer.WriteLine(";");
 			}
@@ -1004,10 +1002,10 @@ namespace Generator.Assembler.CSharp {
 		}
 
 		string GetRegisterString(string fieldName) =>
-			idConverter.ToDeclTypeAndValue(registerType[fieldName]);
+			IdentifierConverter.ToDeclTypeAndValue(registerType[fieldName]);
 
 		string GetMemOpSizeString(string fieldName) =>
-			idConverter.ToDeclTypeAndValue(memoryOperandSizeType[fieldName]);
+			IdentifierConverter.ToDeclTypeAndValue(memoryOperandSizeType[fieldName]);
 
 		protected override TestArgValueBitness MemToTestArgValue(MemorySizeFuncInfo size, int bitness, ulong address) {
 			var memName = GetName(size);
@@ -1049,14 +1047,14 @@ namespace Generator.Assembler.CSharp {
 			sb.Append(']');
 			var asmStr = sb.ToString();
 
-			var baseStr = idConverter.ToDeclTypeAndValue(GetRegisterDef(@base).Register);
-			var indexStr = idConverter.ToDeclTypeAndValue(GetRegisterDef(index).Register);
+			var baseStr = IdentifierConverter.ToDeclTypeAndValue(GetRegisterDef(@base).Register);
+			var indexStr = IdentifierConverter.ToDeclTypeAndValue(GetRegisterDef(index).Register);
 			var displStr = displ < 0 ?
 				"-0x" + (-displ).ToString("X", CultureInfo.InvariantCulture) :
 				"0x" + displ.ToString("X", CultureInfo.InvariantCulture);
 			var displSize = displ == 0 ? "0" : "1";
 			var isBcstStr = size.IsBroadcast ? "true" : "false";
-			var regNoneStr = idConverter.ToDeclTypeAndValue(GetRegisterDef(Register.None).Register);
+			var regNoneStr = IdentifierConverter.ToDeclTypeAndValue(GetRegisterDef(Register.None).Register);
 			var withStr = $"new MemoryOperand({baseStr}, {indexStr}, {scale}, {displStr}, {displSize}, {isBcstStr}, {regNoneStr})";
 
 			return new(asmStr, withStr);
@@ -1065,7 +1063,7 @@ namespace Generator.Assembler.CSharp {
 		protected override TestArgValueBitness RegToTestArgValue(Register register) {
 			var regDef = GetRegisterDef(register);
 			var asmReg = GetAsmRegisterName(regDef);
-			var withReg = idConverter.ToDeclTypeAndValue(regDef.Register);
+			var withReg = IdentifierConverter.ToDeclTypeAndValue(regDef.Register);
 			return new(asmReg, withReg);
 		}
 

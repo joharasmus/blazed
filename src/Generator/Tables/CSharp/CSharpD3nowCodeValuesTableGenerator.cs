@@ -8,10 +8,9 @@ using Generator.IO;
 namespace Generator.Tables.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class CSharpD3nowCodeValuesTableGenerator : D3nowCodeValuesTableGenerator {
-		readonly IdentifierConverter idConverter;
 
 		public CSharpD3nowCodeValuesTableGenerator(GeneratorContext generatorContext)
-			: base(generatorContext.Types) => idConverter = CSharpIdentifierConverter.Create();
+			: base(generatorContext.Types) { }
 
 		protected override void Generate((int index, EnumValue enumValue)[] infos) {
 			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.DecoderNamespace, "OpCodeHandlers_D3NOW.cs");
@@ -21,7 +20,7 @@ namespace Generator.Tables.CSharp {
 
 		void WriteTable(FileWriter writer, (int index, EnumValue enumValue)[] infos) {
 			foreach (var info in infos.OrderByDescending(a => a.index))
-				writer.WriteLine($"result[0x{info.index:X2}] = {idConverter.ToDeclTypeAndValue(info.enumValue)};");
+				writer.WriteLine($"result[0x{info.index:X2}] = {IdentifierConverter.ToDeclTypeAndValue(info.enumValue)};");
 		}
 	}
 }

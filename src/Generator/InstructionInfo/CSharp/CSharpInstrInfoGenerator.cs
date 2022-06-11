@@ -14,7 +14,6 @@ using Generator.Tables;
 namespace Generator.InstructionInfo.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class CSharpInstrInfoGenerator : InstrInfoGenerator {
-		readonly IdentifierConverter idConverter;
 		readonly CSharpEnumsGenerator enumGenerator;
 		readonly CSharpConstantsGenerator constantsGenerator;
 		readonly EnumType opAccessType;
@@ -23,7 +22,6 @@ namespace Generator.InstructionInfo.CSharp {
 
 		public CSharpInstrInfoGenerator(GeneratorContext generatorContext)
 			: base(generatorContext.Types) {
-			idConverter = CSharpIdentifierConverter.Create();
 			enumGenerator = new CSharpEnumsGenerator(generatorContext);
 			constantsGenerator = new CSharpConstantsGenerator(generatorContext);
 			opAccessType = genTypes[TypeIds.OpAccess];
@@ -46,7 +44,7 @@ namespace Generator.InstructionInfo.CSharp {
 						writer.WriteLine($"internal static readonly uint[] Data = new uint[{infos.Length * 2}] {{");
 						using (writer.Indent()) {
 							foreach (var info in infos)
-								writer.WriteLine($"0x{info.dword1:X8}, 0x{info.dword2:X8},// {info.def.Code.Name(idConverter)}");
+								writer.WriteLine($"0x{info.dword1:X8}, 0x{info.dword2:X8},// {info.def.Code.Name()}");
 						}
 						writer.WriteLine("};");
 					}
@@ -78,7 +76,7 @@ namespace Generator.InstructionInfo.CSharp {
 							var rflags = info.rflags;
 							if (rflags.Length != infos[0].rflags.Length)
 								throw new InvalidOperationException();
-							var name = idConverter.Field("flags" + info.name[0..1].ToUpperInvariant() + info.name[1..]);
+							var name = IdentifierConverter.Field("flags" + info.name[0..1].ToUpperInvariant() + info.name[1..]);
 							writer.WriteLine($"public static readonly ushort[] {name} = new ushort[{rflags.Length}] {{");
 							using (writer.Indent()) {
 								for (int i = 0; i < rflags.Length; i++) {
@@ -86,7 +84,7 @@ namespace Generator.InstructionInfo.CSharp {
 									uint value = (uint)rfl;
 									if (value > ushort.MaxValue)
 										throw new InvalidOperationException();
-									writer.WriteLine($"0x{value:X4},// {enumValues[i].Name(idConverter)}");
+									writer.WriteLine($"0x{value:X4},// {enumValues[i].Name()}");
 								}
 							}
 							writer.WriteLine("};");
@@ -131,7 +129,7 @@ namespace Generator.InstructionInfo.CSharp {
 											throw new InvalidOperationException();
 										writer.WriteByte((byte)f.Value);
 									}
-									writer.WriteCommentLine(info.cpuidInternal.Name(idConverter));
+									writer.WriteCommentLine(info.cpuidInternal.Name());
 								}
 							}
 							writer.WriteLine("};");
@@ -158,14 +156,14 @@ namespace Generator.InstructionInfo.CSharp {
 				throw new InvalidOperationException();
 
 			var indexes = new int[] { 1, 2 };
-			var opAccessTypeStr = genTypes[TypeIds.OpAccess].Name(idConverter);
+			var opAccessTypeStr = genTypes[TypeIds.OpAccess].Name();
 			foreach (var index in indexes) {
 				var opInfo = opInfos[index];
 				writer.WriteLine($"public static readonly {opAccessTypeStr}[] Op{index} = new {opAccessTypeStr}[{opInfo.Values.Length}] {{");
 				using (writer.Indent()) {
 					foreach (var value in opInfo.Values) {
 						var v = ToOpAccess(value);
-						writer.WriteLine($"{idConverter.ToDeclTypeAndValue(v)},");
+						writer.WriteLine($"{IdentifierConverter.ToDeclTypeAndValue(v)},");
 					}
 				}
 				writer.WriteLine("};");
@@ -386,7 +384,7 @@ namespace Generator.InstructionInfo.CSharp {
 		string GetOpAccessString(OpAccess access) => GetEnumName(opAccessType[access.ToString()]);
 		string GetCodeSizeString(CodeSize codeSize) => GetEnumName(codeSizeType[codeSize.ToString()]);
 
-		string GetEnumName(EnumValue value) => value.DeclaringType.Name(idConverter) + "." + value.Name(idConverter);
+		string GetEnumName(EnumValue value) => value.DeclaringType.Name() + "." + value.Name();
 
 		void GenerateTable((EncodingKind encoding, InstructionDef[] defs)[] tdefs, string id, string filename) {
 			new FileUpdater(TargetLanguage.CSharp, id, filename).Generate(writer => {
@@ -395,7 +393,7 @@ namespace Generator.InstructionInfo.CSharp {
 					if (feature is not null)
 						writer.WriteLineNoIndent($"#if {feature}");
 					foreach (var def in defs)
-						writer.WriteLine($"case {idConverter.ToDeclTypeAndValue(def.Code)}:");
+						writer.WriteLine($"case {IdentifierConverter.ToDeclTypeAndValue(def.Code)}:");
 					using (writer.Indent())
 						writer.WriteLine("return true;");
 					if (feature is not null)
@@ -429,7 +427,7 @@ namespace Generator.InstructionInfo.CSharp {
 			new FileUpdater(TargetLanguage.CSharp, "FpuStackIncrementInfoTable", filename).Generate(writer => {
 				foreach (var (info, defs) in tdefs) {
 					foreach (var def in defs)
-						writer.WriteLine($"case {idConverter.ToDeclTypeAndValue(def.Code)}:");
+						writer.WriteLine($"case {IdentifierConverter.ToDeclTypeAndValue(def.Code)}:");
 					using (writer.Indent()) {
 						var conditionalStr = info.Conditional ? "true" : "false";
 						var writesTopStr = info.WritesTop ? "true" : "false";
@@ -447,7 +445,7 @@ namespace Generator.InstructionInfo.CSharp {
 					if (feature is not null)
 						writer.WriteLineNoIndent($"#if {feature}");
 					foreach (var def in defs)
-						writer.WriteLine($"case {idConverter.ToDeclTypeAndValue(def.Code)}:");
+						writer.WriteLine($"case {IdentifierConverter.ToDeclTypeAndValue(def.Code)}:");
 					using (writer.Indent()) {
 						switch (info.Kind) {
 						case StackInfoKind.Increment:

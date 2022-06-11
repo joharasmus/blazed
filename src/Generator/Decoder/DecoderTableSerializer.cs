@@ -118,13 +118,11 @@ namespace Generator.Decoder {
 
 		readonly GenTypes genTypes;
 		protected readonly DecoderTableSerializerInfo info;
-		protected readonly IdentifierConverter idConverter;
 		readonly Dictionary<IEnumValue, (int codeIndex, int codeLen)> enumValueInfo;
 		readonly Dictionary<string, Info> infos;
 
-		protected DecoderTableSerializer(GenTypes genTypes, IdentifierConverter idConverter, DecoderTableSerializerInfo info) {
+		protected DecoderTableSerializer(GenTypes genTypes, DecoderTableSerializerInfo info) {
 			this.genTypes = genTypes;
-			this.idConverter = idConverter;
 			this.info = info;
 			enumValueInfo = CreateEnumValueInfo(genTypes);
 			infos = new Dictionary<string, Info>(StringComparer.Ordinal);
@@ -179,7 +177,7 @@ namespace Generator.Decoder {
 			if ((uint)enumValue.Value > byte.MaxValue)
 				throw new InvalidOperationException();
 			writer.WriteByte((byte)enumValue.Value);
-			writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+			writer.WriteCommentLine(enumValue.ToStringValue());
 		}
 
 		static void Write(FileWriter writer, uint value) {
@@ -441,55 +439,55 @@ namespace Generator.Decoder {
 				var typeId = enumValue.DeclaringType.TypeId;
 				if (typeId == TypeIds.Code) {
 					writer.WriteCompressedUInt32(enumValue.Value);
-					writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+					writer.WriteCommentLine(enumValue.ToStringValue());
 				}
 				else if (typeId == TypeIds.Register) {
 					if ((uint)enumValue.Value > byte.MaxValue)
 						throw new InvalidOperationException();
 					writer.WriteByte((byte)enumValue.Value);
-					writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+					writer.WriteCommentLine(enumValue.ToStringValue());
 				}
 				else if (typeId == TypeIds.DecoderOptions) {
 					writer.WriteCompressedUInt32((uint)enumValue.Value);
-					writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+					writer.WriteCommentLine(enumValue.ToStringValue());
 				}
 				else if (typeId == TypeIds.HandlerFlags) {
 					writer.WriteCompressedUInt32((uint)enumValue.Value);
-					writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+					writer.WriteCommentLine(enumValue.ToStringValue());
 				}
 				else if (typeId == TypeIds.TupleType) {
 					if ((uint)enumValue.Value > byte.MaxValue)
 						throw new InvalidOperationException();
 					writer.WriteByte((byte)enumValue.Value);
-					writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+					writer.WriteCommentLine(enumValue.ToStringValue());
 				}
 				else if (typeId == TypeIds.LegacyOpCodeHandlerKind) {
 					if ((uint)enumValue.Value > byte.MaxValue)
 						throw new InvalidOperationException();
 					writer.WriteByte((byte)enumValue.Value);
-					writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+					writer.WriteCommentLine(enumValue.ToStringValue());
 				}
 				else if (typeId == TypeIds.VexOpCodeHandlerKind) {
 					if ((uint)enumValue.Value > byte.MaxValue)
 						throw new InvalidOperationException();
 					writer.WriteByte((byte)enumValue.Value);
-					writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+					writer.WriteCommentLine(enumValue.ToStringValue());
 				}
 				else if (typeId == TypeIds.EvexOpCodeHandlerKind) {
 					if ((uint)enumValue.Value > byte.MaxValue)
 						throw new InvalidOperationException();
 					writer.WriteByte((byte)enumValue.Value);
-					writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+					writer.WriteCommentLine(enumValue.ToStringValue());
 				}
 				else if (typeId == TypeIds.MvexOpCodeHandlerKind) {
 					if ((uint)enumValue.Value > byte.MaxValue)
 						throw new InvalidOperationException();
 					writer.WriteByte((byte)enumValue.Value);
-					writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+					writer.WriteCommentLine(enumValue.ToStringValue());
 				}
 				else if (typeId == TypeIds.LegacyHandlerFlags) {
 					writer.WriteCompressedUInt32((uint)enumValue.Value);
-					writer.WriteCommentLine(enumValue.ToStringValue(idConverter));
+					writer.WriteCommentLine(enumValue.ToStringValue());
 				}
 				else
 					throw new InvalidOperationException();

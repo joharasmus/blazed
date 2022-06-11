@@ -51,7 +51,6 @@ namespace Generator {
 	}
 
 	sealed class CommandLineOptions {
-		public readonly HashSet<TargetLanguage> Languages = new() { };
 		public GeneratorFlags GeneratorFlags = GeneratorFlags.None;
 		public readonly HashSet<string> IncludeCpuid = new(StringComparer.OrdinalIgnoreCase);
 		public readonly HashSet<string> ExcludeCpuid = new(StringComparer.OrdinalIgnoreCase);

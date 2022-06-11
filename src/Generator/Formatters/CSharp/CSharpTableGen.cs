@@ -13,10 +13,9 @@ using Generator.Tables;
 namespace Generator.Formatters.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class CSharpTableGen : TableGen {
-		readonly IdentifierConverter idConverter;
 
 		public CSharpTableGen(GeneratorContext generatorContext)
-			: base(generatorContext.Types) => idConverter = CSharpIdentifierConverter.Create();
+			: base(generatorContext.Types) { }
 
 		protected override void Generate(MemorySizeDef[] defs) {
 			GenerateFast(defs);
@@ -84,8 +83,8 @@ namespace Generator.Formatters.CSharp {
 			const int BroadcastToKindShift = 5;
 			const int MemoryKeywordsMask = 0x1F;
 			new FileUpdater(TargetLanguage.CSharp, "ConstData", filename).Generate(writer => {
-				writer.WriteLine($"const int {idConverter.Constant(nameof(BroadcastToKindShift))} = {BroadcastToKindShift};");
-				writer.WriteLine($"const int {idConverter.Constant(nameof(MemoryKeywordsMask))} = {MemoryKeywordsMask};");
+				writer.WriteLine($"const int {IdentifierConverter.Constant(nameof(BroadcastToKindShift))} = {BroadcastToKindShift};");
+				writer.WriteLine($"const int {IdentifierConverter.Constant(nameof(MemoryKeywordsMask))} = {MemoryKeywordsMask};");
 				var created = new HashSet<string>(StringComparer.Ordinal);
 				foreach (var keywords in intelKeywords.Select(a => a.RawName)) {
 					if (keywords == nameof(IntelMemoryKeywords.None))
@@ -148,8 +147,8 @@ namespace Generator.Formatters.CSharp {
 			const int SizeKindShift = 5;
 			const int MemoryKeywordsMask = 0x1F;
 			new FileUpdater(TargetLanguage.CSharp, "ConstData", filename).Generate(writer => {
-				writer.WriteLine($"const int {idConverter.Constant(nameof(SizeKindShift))} = {SizeKindShift};");
-				writer.WriteLine($"const int {idConverter.Constant(nameof(MemoryKeywordsMask))} = {MemoryKeywordsMask};");
+				writer.WriteLine($"const int {IdentifierConverter.Constant(nameof(SizeKindShift))} = {SizeKindShift};");
+				writer.WriteLine($"const int {IdentifierConverter.Constant(nameof(MemoryKeywordsMask))} = {MemoryKeywordsMask};");
 				var created = new HashSet<string>(StringComparer.Ordinal);
 				foreach (var keywords in masmKeywords.Select(a => a.RawName).Concat(new[] { "mmword_ptr" })) {
 					if (keywords == nameof(MasmMemoryKeywords.None))
@@ -276,9 +275,9 @@ namespace Generator.Formatters.CSharp {
 					if (info.code.Length == 0)
 						continue;
 					foreach (var c in info.code)
-						writer.WriteLine($"case {idConverter.ToDeclTypeAndValue(c)}:");
+						writer.WriteLine($"case {IdentifierConverter.ToDeclTypeAndValue(c)}:");
 					using (writer.Indent())
-						writer.WriteLine($"return {idConverter.ToDeclTypeAndValue(info.flowCtrl)};");
+						writer.WriteLine($"return {IdentifierConverter.ToDeclTypeAndValue(info.flowCtrl)};");
 				}
 			});
 		}

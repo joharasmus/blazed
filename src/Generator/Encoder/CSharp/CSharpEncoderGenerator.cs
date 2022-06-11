@@ -11,12 +11,10 @@ using Generator.Tables;
 namespace Generator.Encoder.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class CSharpEncoderGenerator : EncoderGenerator {
-		readonly IdentifierConverter idConverter;
 		readonly CSharpEnumsGenerator enumGenerator;
 
 		public CSharpEncoderGenerator(GeneratorContext generatorContext)
 			: base(generatorContext.Types) {
-			idConverter = CSharpIdentifierConverter.Create();
 			enumGenerator = new CSharpEnumsGenerator(generatorContext);
 		}
 
@@ -55,7 +53,7 @@ namespace Generator.Encoder.CSharp {
 				writer.WriteLine($"public static System.ReadOnlySpan<byte> {name} => new byte[{table.Length}] {{");
 				using (writer.Indent()) {
 					foreach (var info in table)
-						writer.WriteLine($"(byte){idConverter.ToDeclTypeAndValue(info.opCodeOperandKind)},");
+						writer.WriteLine($"(byte){IdentifierConverter.ToDeclTypeAndValue(info.opCodeOperandKind)},");
 				}
 				writer.WriteLine("};");
 				if (define is not null)
@@ -86,7 +84,7 @@ namespace Generator.Encoder.CSharp {
 			}
 
 			void Generate(FileWriter writer, string name, string? define, (EnumValue opCodeOperandKind, OpHandlerKind opHandlerKind, object[] args)[] table) {
-				var declTypeStr = genTypes[TypeIds.OpCodeOperandKind].Name(idConverter);
+				var declTypeStr = genTypes[TypeIds.OpCodeOperandKind].Name();
 				if (table[0].opHandlerKind != OpHandlerKind.None)
 					throw new InvalidOperationException();
 				if (define is not null)
@@ -104,7 +102,7 @@ namespace Generator.Encoder.CSharp {
 								writer.Write(", ");
 							switch (ctorArgs[j]) {
 							case EnumValue value:
-								writer.Write(idConverter.ToDeclTypeAndValue(value));
+								writer.Write(IdentifierConverter.ToDeclTypeAndValue(value));
 								break;
 							case int value:
 								writer.Write(value.ToString());
@@ -173,7 +171,7 @@ namespace Generator.Encoder.CSharp {
 								writer.WriteLine($"new uint[{defs.Length}] {{");
 								using (writer.Indent()) {
 									foreach (var vinfo in info.values)
-										writer.WriteLine($"0x{vinfo.value:X8},// {vinfo.def.Code.Name(idConverter)}");
+										writer.WriteLine($"0x{vinfo.value:X8},// {vinfo.def.Code.Name()}");
 								}
 								writer.WriteLine("};");
 							}
@@ -230,7 +228,7 @@ namespace Generator.Encoder.CSharp {
 										writer.Write(" ");
 									writer.Write($"0x{data[i]:X02},");
 								}
-								writer.WriteLine($"// {idConverter.ToDeclTypeAndValue(def.Code)}");
+								writer.WriteLine($"// {IdentifierConverter.ToDeclTypeAndValue(def.Code)}");
 							}
 						}
 						writer.WriteLine("};");
@@ -255,12 +253,12 @@ namespace Generator.Encoder.CSharp {
 						using (writer.Indent()) {
 							foreach (var (ttLutKind, enumValues) in mvexData) {
 								var ttLutKindValue = genTypes[TypeIds.MvexTupleTypeLutKind][ttLutKind.ToString()];
-								writer.WriteLine($"// {idConverter.ToDeclTypeAndValue(ttLutKindValue)}");
+								writer.WriteLine($"// {IdentifierConverter.ToDeclTypeAndValue(ttLutKindValue)}");
 								for (int i = 0; i < enumValues.Length; i++) {
 									var enumValue = enumValues[i];
 									if (enumValue.Value > byte.MaxValue)
 										throw new InvalidOperationException();
-									writer.WriteLine($"(byte){idConverter.ToDeclTypeAndValue(enumValue)},// {i}");
+									writer.WriteLine($"(byte){IdentifierConverter.ToDeclTypeAndValue(enumValue)},// {i}");
 								}
 							}
 						}
@@ -279,7 +277,7 @@ namespace Generator.Encoder.CSharp {
 				writer.WriteLine($"static readonly uint[] s_immSizes = new uint[{immSizes.Length}] {{");
 				using (writer.Indent()) {
 					foreach (var info in immSizes)
-						writer.WriteLine($"{info.size},// {info.value.Name(idConverter)}");
+						writer.WriteLine($"{info.size},// {info.value.Name()}");
 				}
 				writer.WriteLine("};");
 			});
@@ -290,7 +288,7 @@ namespace Generator.Encoder.CSharp {
 				if (codeValues.Length == 0)
 					return;
 				foreach (var value in codeValues)
-					writer.WriteLine($"case {idConverter.ToDeclTypeAndValue(value)}:");
+					writer.WriteLine($"case {IdentifierConverter.ToDeclTypeAndValue(value)}:");
 				using (writer.Indent()) {
 					foreach (var statement in statements)
 						writer.WriteLine(statement);
@@ -302,7 +300,7 @@ namespace Generator.Encoder.CSharp {
 		void GenerateNotInstrCases(string filename, string id, (EnumValue code, string result)[] notInstrStrings) =>
 			new FileUpdater(TargetLanguage.CSharp, id, filename).Generate(writer => {
 				foreach (var info in notInstrStrings)
-					writer.WriteLine($"{idConverter.ToDeclTypeAndValue(info.code)} => \"{info.result}\",");
+					writer.WriteLine($"{IdentifierConverter.ToDeclTypeAndValue(info.code)} => \"{info.result}\",");
 			});
 
 		protected override void GenerateInstructionFormatter((EnumValue code, string result)[] notInstrStrings) {
@@ -339,7 +337,7 @@ namespace Generator.Encoder.CSharp {
 			var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "OpCodeInfo.cs");
 			new FileUpdater(TargetLanguage.CSharp, "ToDecoderOptionsTable", filename).Generate(writer => {
 				foreach (var (_, decoderOptions) in values)
-					writer.WriteLine($"{idConverter.ToDeclTypeAndValue(decoderOptions)},");
+					writer.WriteLine($"{IdentifierConverter.ToDeclTypeAndValue(decoderOptions)},");
 			});
 		}
 
@@ -351,7 +349,7 @@ namespace Generator.Encoder.CSharp {
 					if (feature is not null)
 						writer.WriteLineNoIndent($"#if {feature}");
 					foreach (var def in info.defs)
-						writer.WriteLine($"case {idConverter.ToDeclTypeAndValue(def.Code)}:");
+						writer.WriteLine($"case {IdentifierConverter.ToDeclTypeAndValue(def.Code)}:");
 					using (writer.Indent()) {
 						foreach (var op in info.Ops) {
 							writer.WriteLine("WriteOpSeparator();");

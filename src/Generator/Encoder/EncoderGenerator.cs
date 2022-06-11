@@ -500,7 +500,7 @@ namespace Generator.Encoder {
 			};
 		}
 
-		protected void WriteFlags(FileWriter writer, IdentifierConverter idConverter, InstructionDefFlags1 prefixes, (EnumValue value, InstructionDefFlags1 flag)[] flagsInfos, string orSep, string enumItemSep, bool forceConstant) {
+		protected void WriteFlags(FileWriter writer, InstructionDefFlags1 prefixes, (EnumValue value, InstructionDefFlags1 flag)[] flagsInfos, string orSep, string enumItemSep, bool forceConstant) {
 			bool printed = false;
 			foreach (var info in flagsInfos) {
 				if ((prefixes & info.flag) != 0) {
@@ -508,19 +508,19 @@ namespace Generator.Encoder {
 					if (printed)
 						writer.Write(orSep);
 					printed = true;
-					WriteEnum(writer, idConverter, info.value, enumItemSep, forceConstant);
+					WriteEnum(writer, info.value, enumItemSep, forceConstant);
 				}
 			}
 			if (!printed) {
 				var value = genTypes[TypeIds.EncFlags2][nameof(EncFlags2.None)];
-				WriteEnum(writer, idConverter, value, enumItemSep, forceConstant);
+				WriteEnum(writer, value, enumItemSep, forceConstant);
 			}
 			if (prefixes != 0)
 				throw new InvalidOperationException();
 
-			static void WriteEnum(FileWriter writer, IdentifierConverter idConverter, EnumValue value, string enumItemSep, bool forceConstant) {
-				var name = forceConstant ? idConverter.Constant(value.RawName) : value.Name(idConverter);
-				writer.Write($"{value.DeclaringType.Name(idConverter)}{enumItemSep}{name}");
+			static void WriteEnum(FileWriter writer, EnumValue value, string enumItemSep, bool forceConstant) {
+				var name = forceConstant ? IdentifierConverter.Constant(value.RawName) : value.Name();
+				writer.Write($"{value.DeclaringType.Name()}{enumItemSep}{name}");
 			}
 		}
 	}

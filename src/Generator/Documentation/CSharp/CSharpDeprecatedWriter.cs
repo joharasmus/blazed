@@ -7,16 +7,14 @@ using Generator.IO;
 
 namespace Generator.Documentation.CSharp {
 	sealed class CSharpDeprecatedWriter : DeprecatedWriter {
-		readonly IdentifierConverter idConverter;
 
-		public CSharpDeprecatedWriter(IdentifierConverter idConverter) =>
-			this.idConverter = idConverter;
+		public CSharpDeprecatedWriter() { }
 
 		public override void WriteDeprecated(FileWriter writer, EnumValue value) {
 			if (value.DeprecatedInfo.IsDeprecated) {
 				if (value.DeprecatedInfo.NewName is not null) {
 					var newValue = value.DeclaringType[value.DeprecatedInfo.NewName];
-					WriteDeprecated(writer, newValue.Name(idConverter), value.DeprecatedInfo.Description, value.DeprecatedInfo.IsError, true);
+					WriteDeprecated(writer, newValue.Name(), value.DeprecatedInfo.Description, value.DeprecatedInfo.IsError, true);
 				}
 				else
 					WriteDeprecated(writer, null, value.DeprecatedInfo.Description, value.DeprecatedInfo.IsError, true);
@@ -27,7 +25,7 @@ namespace Generator.Documentation.CSharp {
 			if (value.DeprecatedInfo.IsDeprecated) {
 				if (value.DeprecatedInfo.NewName is not null) {
 					var newValue = value.DeclaringType[value.DeprecatedInfo.NewName];
-					WriteDeprecated(writer, newValue.Name(idConverter), value.DeprecatedInfo.Description, value.DeprecatedInfo.IsError, true);
+					WriteDeprecated(writer, newValue.Name(), value.DeprecatedInfo.Description, value.DeprecatedInfo.IsError, true);
 				}
 				else
 					WriteDeprecated(writer, null, value.DeprecatedInfo.Description, value.DeprecatedInfo.IsError, true);

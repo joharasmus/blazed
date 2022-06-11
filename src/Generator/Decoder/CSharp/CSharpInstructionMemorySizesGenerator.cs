@@ -9,11 +9,9 @@ using Generator.Tables;
 namespace Generator.Decoder.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class CSharpInstructionMemorySizesGenerator {
-		readonly IdentifierConverter idConverter;
 		readonly GenTypes genTypes;
 
 		public CSharpInstructionMemorySizesGenerator(GeneratorContext generatorContext) {
-			idConverter = CSharpIdentifierConverter.Create();
 			genTypes = generatorContext.Types;
 		}
 
@@ -28,7 +26,7 @@ namespace Generator.Decoder.CSharp {
 				using (writer.Indent()) {
 					writer.WriteLine($"static class {ClassName} {{");
 					using (writer.Indent()) {
-						writer.WriteLine($"internal static System.ReadOnlySpan<byte> SizesNormal => new byte[{blazedConstants.Name(idConverter)}.{blazedConstants[BlazedConstants.GetEnumCountName(TypeIds.Code)].Name(idConverter)}] {{");
+						writer.WriteLine($"internal static System.ReadOnlySpan<byte> SizesNormal => new byte[{blazedConstants.Name()}.{blazedConstants[BlazedConstants.GetEnumCountName(TypeIds.Code)].Name()}] {{");
 						using (writer.Indent()) {
 							foreach (var def in defs) {
 								if (def.Memory.Value > byte.MaxValue)
@@ -37,13 +35,13 @@ namespace Generator.Decoder.CSharp {
 								if (def.Memory.Value == 0)
 									value = "0";
 								else
-									value = $"(byte){idConverter.ToDeclTypeAndValue(def.Memory)}";
-								writer.WriteLine($"{value},// {def.Code.Name(idConverter)}");
+									value = $"(byte){IdentifierConverter.ToDeclTypeAndValue(def.Memory)}";
+								writer.WriteLine($"{value},// {def.Code.Name()}");
 							}
 						}
 						writer.WriteLine("};");
 						writer.WriteLine();
-						writer.WriteLine($"internal static System.ReadOnlySpan<byte> SizesBcst => new byte[{blazedConstants.Name(idConverter)}.{blazedConstants[BlazedConstants.GetEnumCountName(TypeIds.Code)].Name(idConverter)}] {{");
+						writer.WriteLine($"internal static System.ReadOnlySpan<byte> SizesBcst => new byte[{blazedConstants.Name()}.{blazedConstants[BlazedConstants.GetEnumCountName(TypeIds.Code)].Name()}] {{");
 						using (writer.Indent()) {
 							foreach (var def in defs) {
 								if (def.MemoryBroadcast.Value > byte.MaxValue)
@@ -52,8 +50,8 @@ namespace Generator.Decoder.CSharp {
 								if (def.MemoryBroadcast.Value == 0)
 									value = "0";
 								else
-									value = $"(byte){idConverter.ToDeclTypeAndValue(def.MemoryBroadcast)}";
-								writer.WriteLine($"{value},// {def.Code.Name(idConverter)}");
+									value = $"(byte){IdentifierConverter.ToDeclTypeAndValue(def.MemoryBroadcast)}";
+								writer.WriteLine($"{value},// {def.Code.Name()}");
 							}
 						}
 						writer.WriteLine("};");

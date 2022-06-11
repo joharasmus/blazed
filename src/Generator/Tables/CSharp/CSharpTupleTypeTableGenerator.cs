@@ -7,11 +7,9 @@ using Generator.IO;
 namespace Generator.Tables.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class CSharpTupleTypeTableGenerator {
-		readonly IdentifierConverter idConverter;
 		readonly GenTypes genTypes;
 
 		public CSharpTupleTypeTableGenerator(GeneratorContext generatorContext) {
-			idConverter = CSharpIdentifierConverter.Create();
 			genTypes = generatorContext.Types;
 		}
 
@@ -24,7 +22,7 @@ namespace Generator.Tables.CSharp {
 
 		void WriteTable(FileWriter writer, TupleTypeInfo[] infos) {
 			foreach (var info in infos) {
-				writer.WriteCommentLine(idConverter.ToDeclTypeAndValue(info.Value));
+				writer.WriteCommentLine(IdentifierConverter.ToDeclTypeAndValue(info.Value));
 				if (info.N > byte.MaxValue)
 					throw new InvalidOperationException();
 				if (info.Nbcst > byte.MaxValue)

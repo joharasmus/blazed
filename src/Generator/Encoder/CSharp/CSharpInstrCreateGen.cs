@@ -11,13 +11,11 @@ using Generator.IO;
 namespace Generator.Encoder.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class CSharpInstrCreateGen : InstrCreateGen {
-		readonly IdentifierConverter idConverter;
 		readonly CSharpDocCommentWriter docWriter;
 
 		public CSharpInstrCreateGen(GeneratorContext generatorContext)
 			: base(generatorContext.Types) {
-			idConverter = CSharpIdentifierConverter.Create();
-			docWriter = new CSharpDocCommentWriter(idConverter);
+			docWriter = new CSharpDocCommentWriter();
 		}
 
 		protected override (TargetLanguage language, string id, string filename) GetFileInfo() =>
@@ -32,7 +30,7 @@ namespace Generator.Encoder.CSharp {
 			docWriter.WriteLine(writer, "</summary>");
 			for (int i = 0; i < method.Args.Count; i++) {
 				var arg = method.Args[i];
-				docWriter.Write($"<param name=\"{idConverter.Argument(arg.Name)}\">");
+				docWriter.Write($"<param name=\"{IdentifierConverter.Argument(arg.Name)}\">");
 				docWriter.WriteDoc(writer, arg.Doc, typeName);
 				docWriter.WriteLine(writer, "</param>");
 			}
@@ -47,13 +45,13 @@ namespace Generator.Encoder.CSharp {
 				comma = true;
 				switch (arg.Type) {
 				case MethodArgType.Code:
-					writer.Write(codeType.Name(idConverter));
+					writer.Write(codeType.Name());
 					break;
 				case MethodArgType.Register:
-					writer.Write(genTypes[TypeIds.Register].Name(idConverter));
+					writer.Write(genTypes[TypeIds.Register].Name());
 					break;
 				case MethodArgType.RepPrefixKind:
-					writer.Write(genTypes[TypeIds.RepPrefixKind].Name(idConverter));
+					writer.Write(genTypes[TypeIds.RepPrefixKind].Name());
 					break;
 				case MethodArgType.Memory:
 					writer.Write("in MemoryOperand");
@@ -119,10 +117,10 @@ namespace Generator.Encoder.CSharp {
 					throw new InvalidOperationException();
 				}
 				writer.Write(" ");
-				writer.Write(idConverter.Argument(arg.Name));
+				writer.Write(IdentifierConverter.Argument(arg.Name));
 				switch (arg.DefaultValue) {
 				case EnumValue enumValue:
-					writer.Write($" = {idConverter.ToDeclTypeAndValue(enumValue)}");
+					writer.Write($" = {IdentifierConverter.ToDeclTypeAndValue(enumValue)}");
 					break;
 				case null:
 					break;
@@ -137,13 +135,13 @@ namespace Generator.Encoder.CSharp {
 			var args = method.Args;
 			if (args.Count == 0 || args[0].Type != MethodArgType.Code)
 				throw new InvalidOperationException();
-			var codeName = idConverter.Argument(args[0].Name);
+			var codeName = IdentifierConverter.Argument(args[0].Name);
 			writer.WriteLine($"instruction.Code = {codeName};");
 		}
 
 		void WriteInitializeInstruction(FileWriter writer, EnumValue code) {
 			writer.WriteLine("Instruction instruction = default;");
-			writer.WriteLine($"instruction.Code = {idConverter.ToDeclTypeAndValue(code)};");
+			writer.WriteLine($"instruction.Code = {IdentifierConverter.ToDeclTypeAndValue(code)};");
 		}
 
 		static void WriteMethodFooter(FileWriter writer, int args) {
@@ -160,8 +158,8 @@ namespace Generator.Encoder.CSharp {
 			using (writer.Indent()) {
 				WriteInitializeInstruction(writer, method);
 				var args = method.Args;
-				var registerStr = idConverter.ToDeclTypeAndValue(genTypes[TypeIds.OpKind][nameof(OpKind.Register)]);
-				var memoryStr = idConverter.ToDeclTypeAndValue(genTypes[TypeIds.OpKind][nameof(OpKind.Memory)]);
+				var registerStr = IdentifierConverter.ToDeclTypeAndValue(genTypes[TypeIds.OpKind][nameof(OpKind.Register)]);
+				var memoryStr = IdentifierConverter.ToDeclTypeAndValue(genTypes[TypeIds.OpKind][nameof(OpKind.Memory)]);
 				bool multipleInts = args.Where(a => a.Type == MethodArgType.Int32 || a.Type == MethodArgType.UInt32).Count() > 1;
 				for (int i = 1; i < args.Count; i++) {
 					int op = i - 1;
@@ -171,12 +169,12 @@ namespace Generator.Encoder.CSharp {
 					case MethodArgType.Register:
 						writer.WriteLine($"Static.Assert({registerStr} == 0 ? 0 : -1);");
 						writer.WriteLine($"//instruction.Op{op}Kind = {registerStr};");
-						writer.WriteLine($"instruction.Op{op}Register = {idConverter.Argument(arg.Name)};");
+						writer.WriteLine($"instruction.Op{op}Register = {IdentifierConverter.Argument(arg.Name)};");
 						break;
 
 					case MethodArgType.Memory:
 						writer.WriteLine($"instruction.Op{op}Kind = {memoryStr};");
-						writer.WriteLine($"InitMemoryOperand(ref instruction, {idConverter.Argument(arg.Name)});");
+						writer.WriteLine($"InitMemoryOperand(ref instruction, {IdentifierConverter.Argument(arg.Name)});");
 						break;
 
 					case MethodArgType.Int32:
@@ -184,7 +182,7 @@ namespace Generator.Encoder.CSharp {
 					case MethodArgType.Int64:
 					case MethodArgType.UInt64:
 						var methodName = arg.Type == MethodArgType.Int32 || arg.Type == MethodArgType.Int64 ? "InitializeSignedImmediate" : "InitializeUnsignedImmediate";
-						writer.WriteLine($"{methodName}(ref instruction, {op}, {idConverter.Argument(arg.Name)});");
+						writer.WriteLine($"{methodName}(ref instruction, {op}, {IdentifierConverter.Argument(arg.Name)});");
 						break;
 
 					case MethodArgType.Code:
@@ -225,8 +223,8 @@ namespace Generator.Encoder.CSharp {
 			using (writer.Indent()) {
 				WriteInitializeInstruction(writer, method);
 				writer.WriteLine();
-				writer.WriteLine($"instruction.Op0Kind = GetNearBranchOpKind({idConverter.Argument(method.Args[0].Name)}, 0);");
-				writer.WriteLine($"instruction.NearBranch64 = {idConverter.Argument(method.Args[1].Name)};");
+				writer.WriteLine($"instruction.Op0Kind = GetNearBranchOpKind({IdentifierConverter.Argument(method.Args[0].Name)}, 0);");
+				writer.WriteLine($"instruction.NearBranch64 = {IdentifierConverter.Argument(method.Args[1].Name)};");
 				WriteMethodFooter(writer, 1);
 			}
 			writer.WriteLine("}");
@@ -242,9 +240,9 @@ namespace Generator.Encoder.CSharp {
 			using (writer.Indent()) {
 				WriteInitializeInstruction(writer, method);
 				writer.WriteLine();
-				writer.WriteLine($"instruction.Op0Kind = GetFarBranchOpKind({idConverter.Argument(method.Args[0].Name)}, 0);");
-				writer.WriteLine($"instruction.FarBranchSelector = {idConverter.Argument(method.Args[1].Name)};");
-				writer.WriteLine($"instruction.FarBranch32 = {idConverter.Argument(method.Args[2].Name)};");
+				writer.WriteLine($"instruction.Op0Kind = GetFarBranchOpKind({IdentifierConverter.Argument(method.Args[0].Name)}, 0);");
+				writer.WriteLine($"instruction.FarBranchSelector = {IdentifierConverter.Argument(method.Args[1].Name)};");
+				writer.WriteLine($"instruction.FarBranch32 = {IdentifierConverter.Argument(method.Args[2].Name)};");
 				WriteMethodFooter(writer, 1);
 			}
 			writer.WriteLine("}");
@@ -259,29 +257,29 @@ namespace Generator.Encoder.CSharp {
 			writer.WriteLine(") {");
 			using (writer.Indent()) {
 				writer.WriteLine("Instruction instruction = default;");
-				var bitnessName = idConverter.Argument(method.Args[0].Name);
+				var bitnessName = IdentifierConverter.Argument(method.Args[0].Name);
 				writer.WriteLine($"switch ({bitnessName}) {{");
 				writer.WriteLine($"case 16:");
 				using (writer.Indent()) {
-					writer.WriteLine($"instruction.Code = {idConverter.ToDeclTypeAndValue(codeType[nameof(Code.Xbegin_rel16)])};");
-					writer.WriteLine($"instruction.Op0Kind = {idConverter.ToDeclTypeAndValue(genTypes[TypeIds.OpKind][nameof(OpKind.NearBranch32)])};");
-					writer.WriteLine($"instruction.NearBranch32 = (uint){idConverter.Argument(method.Args[1].Name)};");
+					writer.WriteLine($"instruction.Code = {IdentifierConverter.ToDeclTypeAndValue(codeType[nameof(Code.Xbegin_rel16)])};");
+					writer.WriteLine($"instruction.Op0Kind = {IdentifierConverter.ToDeclTypeAndValue(genTypes[TypeIds.OpKind][nameof(OpKind.NearBranch32)])};");
+					writer.WriteLine($"instruction.NearBranch32 = (uint){IdentifierConverter.Argument(method.Args[1].Name)};");
 					writer.WriteLine($"break;");
 				}
 				writer.WriteLine();
 				writer.WriteLine($"case 32:");
 				using (writer.Indent()) {
-					writer.WriteLine($"instruction.Code = {idConverter.ToDeclTypeAndValue(codeType[nameof(Code.Xbegin_rel32)])};");
-					writer.WriteLine($"instruction.Op0Kind = {idConverter.ToDeclTypeAndValue(genTypes[TypeIds.OpKind][nameof(OpKind.NearBranch32)])};");
-					writer.WriteLine($"instruction.NearBranch32 = (uint){idConverter.Argument(method.Args[1].Name)};");
+					writer.WriteLine($"instruction.Code = {IdentifierConverter.ToDeclTypeAndValue(codeType[nameof(Code.Xbegin_rel32)])};");
+					writer.WriteLine($"instruction.Op0Kind = {IdentifierConverter.ToDeclTypeAndValue(genTypes[TypeIds.OpKind][nameof(OpKind.NearBranch32)])};");
+					writer.WriteLine($"instruction.NearBranch32 = (uint){IdentifierConverter.Argument(method.Args[1].Name)};");
 					writer.WriteLine($"break;");
 				}
 				writer.WriteLine();
 				writer.WriteLine($"case 64:");
 				using (writer.Indent()) {
-					writer.WriteLine($"instruction.Code = {idConverter.ToDeclTypeAndValue(codeType[nameof(Code.Xbegin_rel32)])};");
-					writer.WriteLine($"instruction.Op0Kind = {idConverter.ToDeclTypeAndValue(genTypes[TypeIds.OpKind][nameof(OpKind.NearBranch64)])};");
-					writer.WriteLine($"instruction.NearBranch64 = {idConverter.Argument(method.Args[1].Name)};");
+					writer.WriteLine($"instruction.Code = {IdentifierConverter.ToDeclTypeAndValue(codeType[nameof(Code.Xbegin_rel32)])};");
+					writer.WriteLine($"instruction.Op0Kind = {IdentifierConverter.ToDeclTypeAndValue(genTypes[TypeIds.OpKind][nameof(OpKind.NearBranch64)])};");
+					writer.WriteLine($"instruction.NearBranch64 = {IdentifierConverter.Argument(method.Args[1].Name)};");
 					writer.WriteLine($"break;");
 				}
 				writer.WriteLine();
@@ -295,12 +293,12 @@ namespace Generator.Encoder.CSharp {
 		}
 
 		static void WriteComma(FileWriter writer) => writer.Write(", ");
-		void Write(FileWriter writer, EnumValue value) => writer.Write(idConverter.ToDeclTypeAndValue(value));
-		void Write(FileWriter writer, MethodArg arg) => writer.Write(idConverter.Argument(arg.Name));
+		void Write(FileWriter writer, EnumValue value) => writer.Write(IdentifierConverter.ToDeclTypeAndValue(value));
+		void Write(FileWriter writer, MethodArg arg) => writer.Write(IdentifierConverter.Argument(arg.Name));
 
 		protected override void GenCreateString_Reg_SegRSI(FileWriter writer, CreateMethod method, StringMethodKind kind, string methodBaseName, EnumValue code, EnumValue register) {
 			WriteDocs(writer, method);
-			var methodName = idConverter.Method("Create" + methodBaseName);
+			var methodName = IdentifierConverter.Method("Create" + methodBaseName);
 			writer.Write($"public static Instruction {methodName}(");
 			WriteMethodDeclArgs(writer, method);
 			writer.WriteLine(") =>");
@@ -344,7 +342,7 @@ namespace Generator.Encoder.CSharp {
 
 		protected override void GenCreateString_Reg_ESRDI(FileWriter writer, CreateMethod method, StringMethodKind kind, string methodBaseName, EnumValue code, EnumValue register) {
 			WriteDocs(writer, method);
-			var methodName = idConverter.Method("Create" + methodBaseName);
+			var methodName = IdentifierConverter.Method("Create" + methodBaseName);
 			writer.Write($"public static Instruction {methodName}(");
 			WriteMethodDeclArgs(writer, method);
 			writer.WriteLine(") =>");
@@ -384,7 +382,7 @@ namespace Generator.Encoder.CSharp {
 
 		protected override void GenCreateString_ESRDI_Reg(FileWriter writer, CreateMethod method, StringMethodKind kind, string methodBaseName, EnumValue code, EnumValue register) {
 			WriteDocs(writer, method);
-			var methodName = idConverter.Method("Create" + methodBaseName);
+			var methodName = IdentifierConverter.Method("Create" + methodBaseName);
 			writer.Write($"public static Instruction {methodName}(");
 			WriteMethodDeclArgs(writer, method);
 			writer.WriteLine(") =>");
@@ -424,7 +422,7 @@ namespace Generator.Encoder.CSharp {
 
 		protected override void GenCreateString_SegRSI_ESRDI(FileWriter writer, CreateMethod method, StringMethodKind kind, string methodBaseName, EnumValue code) {
 			WriteDocs(writer, method);
-			var methodName = idConverter.Method("Create" + methodBaseName);
+			var methodName = IdentifierConverter.Method("Create" + methodBaseName);
 			writer.Write($"public static Instruction {methodName}(");
 			WriteMethodDeclArgs(writer, method);
 			writer.WriteLine(") =>");
@@ -464,7 +462,7 @@ namespace Generator.Encoder.CSharp {
 
 		protected override void GenCreateString_ESRDI_SegRSI(FileWriter writer, CreateMethod method, StringMethodKind kind, string methodBaseName, EnumValue code) {
 			WriteDocs(writer, method);
-			var methodName = idConverter.Method("Create" + methodBaseName);
+			var methodName = IdentifierConverter.Method("Create" + methodBaseName);
 			writer.Write($"public static Instruction {methodName}(");
 			WriteMethodDeclArgs(writer, method);
 			writer.WriteLine(") =>");
@@ -504,7 +502,7 @@ namespace Generator.Encoder.CSharp {
 
 		protected override void GenCreateMaskmov(FileWriter writer, CreateMethod method, string methodBaseName, EnumValue code) {
 			WriteDocs(writer, method);
-			var methodName = idConverter.Method("Create" + methodBaseName);
+			var methodName = IdentifierConverter.Method("Create" + methodBaseName);
 			writer.Write($"public static Instruction {methodName}(");
 			WriteMethodDeclArgs(writer, method);
 			writer.WriteLine(") =>");
@@ -568,7 +566,7 @@ namespace Generator.Encoder.CSharp {
 				writer.WriteLine($"instruction.InternalDeclareDataCount = {method.Args.Count};");
 				writer.WriteLine();
 				for (int i = 0; i < method.Args.Count; i++)
-					writer.WriteLine($"instruction.{setValueName}({i}, {idConverter.Argument(method.Args[i].Name)});");
+					writer.WriteLine($"instruction.{setValueName}({i}, {IdentifierConverter.Argument(method.Args[i].Name)});");
 				WriteMethodFooter(writer, 0);
 			}
 			writer.WriteLine("}");
@@ -581,7 +579,7 @@ namespace Generator.Encoder.CSharp {
 			WriteMethodDeclArgs(writer, method);
 			writer.WriteLine(") {");
 			using (writer.Indent()) {
-				var dataName = idConverter.Argument(method.Args[0].Name);
+				var dataName = IdentifierConverter.Argument(method.Args[0].Name);
 				writer.WriteLine($"if ({dataName} is null)");
 				using (writer.Indent())
 					writer.WriteLine($"ThrowHelper.ThrowArgumentNullException_{dataName}();");
@@ -597,7 +595,7 @@ namespace Generator.Encoder.CSharp {
 			WriteMethodDeclArgs(writer, method);
 			writer.WriteLine(") {");
 			using (writer.Indent()) {
-				var dataName = idConverter.Argument(method.Args[0].Name);
+				var dataName = IdentifierConverter.Argument(method.Args[0].Name);
 				writer.WriteLine($"if ((uint){dataName}.Length - 1 > {16 / elemSize} - 1)");
 				using (writer.Indent())
 					writer.WriteLine($"ThrowHelper.ThrowArgumentOutOfRangeException_{dataName}();");
@@ -651,7 +649,7 @@ namespace Generator.Encoder.CSharp {
 					WriteMethodDeclArgs(writer, method);
 					writer.WriteLine(") {");
 					using (writer.Indent()) {
-						var dataName = idConverter.Argument(method.Args[0].Name);
+						var dataName = IdentifierConverter.Argument(method.Args[0].Name);
 						writer.WriteLine($"if ((uint){dataName}.Length - 1 > 16 - 1 || ((uint){dataName}.Length & 1) != 0)");
 						using (writer.Indent())
 							writer.WriteLine($"ThrowHelper.ThrowArgumentOutOfRangeException_{dataName}();");
@@ -697,7 +695,7 @@ namespace Generator.Encoder.CSharp {
 					WriteMethodDeclArgs(writer, method);
 					writer.WriteLine(") {");
 					using (writer.Indent()) {
-						var dataName = idConverter.Argument(method.Args[0].Name);
+						var dataName = IdentifierConverter.Argument(method.Args[0].Name);
 						writer.WriteLine($"if ((uint){dataName}.Length - 1 > 16 - 1 || ((uint){dataName}.Length & 3) != 0)");
 						using (writer.Indent())
 							writer.WriteLine($"ThrowHelper.ThrowArgumentOutOfRangeException_{dataName}();");
@@ -743,7 +741,7 @@ namespace Generator.Encoder.CSharp {
 					WriteMethodDeclArgs(writer, method);
 					writer.WriteLine(") {");
 					using (writer.Indent()) {
-						var dataName = idConverter.Argument(method.Args[0].Name);
+						var dataName = IdentifierConverter.Argument(method.Args[0].Name);
 						writer.WriteLine($"if ((uint){dataName}.Length - 1 > 16 - 1 || ((uint){dataName}.Length & 7) != 0)");
 						using (writer.Indent())
 							writer.WriteLine($"ThrowHelper.ThrowArgumentOutOfRangeException_{dataName}();");
@@ -784,9 +782,9 @@ namespace Generator.Encoder.CSharp {
 			WriteMethodDeclArgs(writer, method);
 			writer.WriteLine(") {");
 			using (writer.Indent()) {
-				var dataName = idConverter.Argument(method.Args[0].Name);
-				var indexName = idConverter.Argument(method.Args[1].Name);
-				var lengthName = idConverter.Argument(method.Args[2].Name);
+				var dataName = IdentifierConverter.Argument(method.Args[0].Name);
+				var indexName = IdentifierConverter.Argument(method.Args[1].Name);
+				var lengthName = IdentifierConverter.Argument(method.Args[2].Name);
 				writer.WriteLine($"if ({dataName} is null)");
 				using (writer.Indent())
 					writer.WriteLine($"ThrowHelper.ThrowArgumentNullException_{dataName}();");
@@ -831,9 +829,9 @@ namespace Generator.Encoder.CSharp {
 					WriteMethodDeclArgs(writer, method);
 					writer.WriteLine(") {");
 					using (writer.Indent()) {
-						dataName = idConverter.Argument(method.Args[0].Name);
-						indexName = idConverter.Argument(method.Args[1].Name);
-						lengthName = idConverter.Argument(method.Args[2].Name);
+						dataName = IdentifierConverter.Argument(method.Args[0].Name);
+						indexName = IdentifierConverter.Argument(method.Args[1].Name);
+						lengthName = IdentifierConverter.Argument(method.Args[2].Name);
 						writer.WriteLine($"if ({dataName} is null)");
 						using (writer.Indent())
 							writer.WriteLine($"ThrowHelper.ThrowArgumentNullException_{dataName}();");
@@ -876,9 +874,9 @@ namespace Generator.Encoder.CSharp {
 					WriteMethodDeclArgs(writer, method);
 					writer.WriteLine(") {");
 					using (writer.Indent()) {
-						dataName = idConverter.Argument(method.Args[0].Name);
-						indexName = idConverter.Argument(method.Args[1].Name);
-						lengthName = idConverter.Argument(method.Args[2].Name);
+						dataName = IdentifierConverter.Argument(method.Args[0].Name);
+						indexName = IdentifierConverter.Argument(method.Args[1].Name);
+						lengthName = IdentifierConverter.Argument(method.Args[2].Name);
 						writer.WriteLine($"if ({dataName} is null)");
 						using (writer.Indent())
 							writer.WriteLine($"ThrowHelper.ThrowArgumentNullException_{dataName}();");
@@ -921,9 +919,9 @@ namespace Generator.Encoder.CSharp {
 					WriteMethodDeclArgs(writer, method);
 					writer.WriteLine(") {");
 					using (writer.Indent()) {
-						dataName = idConverter.Argument(method.Args[0].Name);
-						indexName = idConverter.Argument(method.Args[1].Name);
-						lengthName = idConverter.Argument(method.Args[2].Name);
+						dataName = IdentifierConverter.Argument(method.Args[0].Name);
+						indexName = IdentifierConverter.Argument(method.Args[1].Name);
+						lengthName = IdentifierConverter.Argument(method.Args[2].Name);
 						writer.WriteLine($"if ({dataName} is null)");
 						using (writer.Indent())
 							writer.WriteLine($"ThrowHelper.ThrowArgumentNullException_{dataName}();");

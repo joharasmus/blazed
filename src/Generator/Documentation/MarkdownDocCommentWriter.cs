@@ -8,7 +8,6 @@ using Generator.IO;
 
 namespace Generator.Documentation {
 	abstract class MarkdownDocCommentWriter : DocCommentWriter {
-		readonly IdentifierConverter idConverter;
 		readonly string enumSeparator;
 		readonly string fieldSeparator;
 		readonly string propertySeparator;
@@ -22,10 +21,9 @@ namespace Generator.Documentation {
 		readonly string emptyLineComment;
 		readonly string lineComment;
 
-		protected MarkdownDocCommentWriter(IdentifierConverter idConverter, string enumSeparator, string fieldSeparator, string propertySeparator,
+		protected MarkdownDocCommentWriter(string enumSeparator, string fieldSeparator, string propertySeparator,
 				string methodSeparator, string emptyLineComment, string lineComment, bool supportsRefs,
 				Dictionary<string, (string type, bool isKeyword)> toTypeInfo) {
-			this.idConverter = idConverter;
 			this.enumSeparator = enumSeparator;
 			this.fieldSeparator = fieldSeparator;
 			this.propertySeparator = propertySeparator;
@@ -135,7 +133,7 @@ namespace Generator.Documentation {
 					if (!toTypeInfo.TryGetValue(info.value, out var typeInfo))
 						throw new InvalidOperationException($"Unknown type '{info.value}, comment: {documentation}");
 					sb.Append('`');
-					sb.Append(idConverter.Type(typeInfo.type));
+					sb.Append(typeInfo.type);
 					sb.Append('`');
 					if (!string.IsNullOrEmpty(info.value2))
 						throw new InvalidOperationException();
@@ -143,7 +141,7 @@ namespace Generator.Documentation {
 				case TokenKind.Type:
 					AddRefBracket(sb2, '[');
 					sb2.Append('`');
-					t = RemoveNamespace(idConverter.Type(info.value));
+					t = RemoveNamespace(info.value);
 					sb2.Append(t);
 					sb2.Append('`');
 					AddRefBracket(sb2, ']');
@@ -156,12 +154,12 @@ namespace Generator.Documentation {
 				case TokenKind.FieldReference:
 					AddRefBracket(sb2, '[');
 					sb2.Append('`');
-					t = idConverter.Type(info.value);
+					t = info.value;
 					if (info.value != typeName) {
 						sb2.Append(t);
 						sb2.Append(info.kind == TokenKind.EnumFieldReference ? enumSeparator : fieldSeparator);
 					}
-					m = info.kind == TokenKind.EnumFieldReference ? idConverter.EnumField(info.value2) : idConverter.Field(info.value2);
+					m = info.kind == TokenKind.EnumFieldReference ? IdentifierConverter.EnumField(info.value2) : IdentifierConverter.Field(info.value2);
 					sb2.Append(m);
 					sb2.Append('`');
 					AddRefBracket(sb2, ']');
@@ -171,12 +169,12 @@ namespace Generator.Documentation {
 				case TokenKind.Property:
 					AddRefBracket(sb2, '[');
 					sb2.Append('`');
-					t = idConverter.Type(info.value);
+					t = info.value;
 					if (info.value != typeName) {
 						sb2.Append(t);
 						sb2.Append(propertySeparator);
 					}
-					m = idConverter.PropertyDoc(info.value2);
+					m = info.value2;
 					sb2.Append(m);
 					sb2.Append('`');
 					AddRefBracket(sb2, ']');
@@ -186,12 +184,12 @@ namespace Generator.Documentation {
 				case TokenKind.Method:
 					AddRefBracket(sb2, '[');
 					sb2.Append('`');
-					t = idConverter.Type(info.value);
+					t = info.value;
 					if (info.value != typeName) {
 						sb2.Append(t);
 						sb2.Append(methodSeparator);
 					}
-					m = idConverter.MethodDoc(TranslateMethodName(info.value2));
+					m = TranslateMethodName(info.value2);
 					sb2.Append(m);
 					sb2.Append('`');
 					AddRefBracket(sb2, ']');

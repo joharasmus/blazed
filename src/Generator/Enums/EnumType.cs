@@ -17,7 +17,7 @@ namespace Generator.Enums {
 	sealed class EnumType {
 		public TypeId TypeId { get; }
 		public string RawName { get; }
-		public string Name(IdentifierConverter idConverter) => idConverter.Type(RawName);
+		public string Name() => RawName;
 		public LanguageDocumentation Documentation { get; }
 		public EnumValue[] Values => values;
 		EnumValue[] values;
@@ -140,7 +140,7 @@ namespace Generator.Enums {
 	interface IEnumValue {
 		EnumType DeclaringType { get; }
 		uint Value { get; }
-		string ToStringValue(IdentifierConverter idConverter);
+		string ToStringValue();
 	}
 
 	sealed class OrEnumValue : IEnumValue {
@@ -149,12 +149,12 @@ namespace Generator.Enums {
 
 		public EnumType DeclaringType { get; }
 		public uint Value { get; }
-		public string ToStringValue(IdentifierConverter idConverter) {
+		public string ToStringValue() {
 			var sb = new StringBuilder();
 			foreach (var value in values) {
 				if (sb.Length > 0)
 					sb.Append(", ");
-				sb.Append(value.Name(idConverter));
+				sb.Append(value.Name());
 			}
 			return sb.ToString();
 		}
@@ -198,8 +198,8 @@ namespace Generator.Enums {
 		public EnumType DeclaringType { get; set; }
 		public uint Value { get; set; }
 		public string RawName { get; }
-		public string Name(IdentifierConverter idConverter) => idConverter.EnumField(RawName);
-		public string ToStringValue(IdentifierConverter idConverter) => idConverter.EnumField(RawName);
+		public string Name() => IdentifierConverter.EnumField(RawName);
+		public string ToStringValue() => IdentifierConverter.EnumField(RawName);
 		public LanguageDocumentation Documentation { get; internal set; }
 		public DeprecatedInfo DeprecatedInfo { get; }
 

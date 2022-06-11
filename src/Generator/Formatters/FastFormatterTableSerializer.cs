@@ -22,11 +22,9 @@ namespace Generator.Formatters {
 
 	abstract class FastFormatterTableSerializer : IFormatterTableSerializer {
 		readonly FastFmtInstructionDef[] defs;
-		readonly IdentifierConverter idConverter;
 
-		protected FastFormatterTableSerializer(FastFmtInstructionDef[] defs, IdentifierConverter idConverter) {
+		protected FastFormatterTableSerializer(FastFmtInstructionDef[] defs) {
 			this.defs = defs;
-			this.idConverter = idConverter;
 		}
 
 		public abstract string GetFilename(GenTypes genTypes);
@@ -60,7 +58,7 @@ namespace Generator.Formatters {
 
 				if (index != 0)
 					writer.WriteLine();
-				writer.WriteCommentLine(code.ToStringValue(idConverter));
+				writer.WriteCommentLine(code.ToStringValue());
 
 				var mnemonic = def.Mnemonic;
 				uint mnemonicStringIndex = stringsTable.GetIndex(mnemonic, optimize: true, out var hasVPrefix);
@@ -88,8 +86,8 @@ namespace Generator.Formatters {
 				writer.WriteByte((byte)flagsValue);
 				string comment = flagsValues.Count switch {
 					0 => "No flags set",
-					1 => flagsValues[0].ToStringValue(idConverter),
-					_ => new OrEnumValue(fastFmtFlags, flagsValues.ToArray()).ToStringValue(idConverter),
+					1 => flagsValues[0].ToStringValue(),
+					_ => new OrEnumValue(fastFmtFlags, flagsValues.ToArray()).ToStringValue(),
 				};
 				writer.WriteCommentLine(comment);
 

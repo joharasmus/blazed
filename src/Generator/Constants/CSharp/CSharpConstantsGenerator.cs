@@ -11,7 +11,6 @@ using Generator.IO;
 namespace Generator.Constants.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class CSharpConstantsGenerator : ConstantsGenerator {
-		readonly IdentifierConverter idConverter;
 		readonly Dictionary<TypeId, FullConstantsFileInfo> toFullFileInfo;
 		readonly Dictionary<TypeId, PartialConstantsFileInfo?> toPartialFileInfo;
 		readonly CSharpDocCommentWriter docWriter;
@@ -45,9 +44,8 @@ namespace Generator.Constants.CSharp {
 
 		public CSharpConstantsGenerator(GeneratorContext generatorContext)
 			: base(generatorContext.Types) {
-			idConverter = CSharpIdentifierConverter.Create();
-			docWriter = new CSharpDocCommentWriter(idConverter);
-			deprecatedWriter = new CSharpDeprecatedWriter(idConverter);
+			docWriter = new CSharpDocCommentWriter();
+			deprecatedWriter = new CSharpDeprecatedWriter();
 
 			var dirs = genTypes.Dirs;
 			toFullFileInfo = new Dictionary<TypeId, FullConstantsFileInfo>();
@@ -99,7 +97,7 @@ namespace Generator.Constants.CSharp {
 			docWriter.WriteSummary(writer, constantsType.Documentation.GetComment(TargetLanguage.CSharp), constantsType.RawName);
 			var pub = constantsType.IsPublic ? "public " : string.Empty;
 			var partial = isPartialClass ? " partial" : string.Empty;
-			writer.WriteLine($"{pub}static{partial} class {constantsType.Name(idConverter)} {{");
+			writer.WriteLine($"{pub}static{partial} class {constantsType.Name()} {{");
 
 			using (writer.Indent()) {
 				foreach (var constant in constantsType.Constants) {
@@ -109,7 +107,7 @@ namespace Generator.Constants.CSharp {
 					writer.Write("const ");
 					writer.Write(GetType(constant.Kind));
 					writer.Write(" ");
-					writer.Write(constant.Name(idConverter));
+					writer.Write(constant.Name());
 					writer.Write(" = ");
 					writer.Write(GetValue(constant));
 					writer.WriteLine(";");
@@ -126,7 +124,7 @@ namespace Generator.Constants.CSharp {
 				ConstantKind.Int32 or ConstantKind.Index => "int",
 				ConstantKind.UInt32 => "uint",
 				ConstantKind.UInt64 => "ulong",
-				ConstantKind.Register or ConstantKind.MemorySize => EnumUtils.GetEnumType(genTypes, kind).Name(idConverter),
+				ConstantKind.Register or ConstantKind.MemorySize => EnumUtils.GetEnumType(genTypes, kind).Name(),
 				_ => throw new InvalidOperationException(),
 			};
 
@@ -171,7 +169,7 @@ namespace Generator.Constants.CSharp {
 		string GetValueString(Constant constant) {
 			var enumType = EnumUtils.GetEnumType(genTypes, constant.Kind);
 			var enumValue = enumType.Values.First(a => a.Value == constant.ValueUInt64);
-			return idConverter.ToDeclTypeAndValue(enumValue);
+			return IdentifierConverter.ToDeclTypeAndValue(enumValue);
 		}
 	}
 }

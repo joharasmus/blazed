@@ -240,11 +240,5 @@ namespace Generator {
 			}
 			throw new InvalidOperationException($"{id} doesn't exist");
 		}
-
-		public EnumValue[] GetKeptCodeValues(params Code[] values) {
-			var origCode = GetObject<EnumValue[]>(TypeIds.OrigCodeValues);
-			var removed = GetObject<HashSet<EnumValue>>(TypeIds.RemovedCodeValues);
-			return values.Select(a => origCode[(int)a]).Where(a => !removed.Contains(a)).ToArray();
-		}
 	}
 }

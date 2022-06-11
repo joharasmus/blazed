@@ -14,7 +14,7 @@ namespace Generator.Constants {
 	sealed class ConstantsType {
 		public TypeId TypeId { get; }
 		public string RawName { get; }
-		public string Name(IdentifierConverter idConverter) => idConverter.Type(RawName);
+		public string Name() => RawName;
 		public LanguageDocumentation Documentation { get; }
 		public bool IsPublic { get; }
 		public Constant[] Constants { get; }
@@ -73,7 +73,7 @@ namespace Generator.Constants {
 	sealed class Constant {
 		public ConstantKind Kind { get; }
 		public string RawName { get; }
-		public string Name(IdentifierConverter idConverter) => idConverter.Constant(RawName);
+		public string Name() => IdentifierConverter.Constant(RawName);
 		public LanguageDocumentation Documentation { get; }
 		public DeprecatedInfo DeprecatedInfo { get; }
 		public ulong ValueUInt64 { get; }

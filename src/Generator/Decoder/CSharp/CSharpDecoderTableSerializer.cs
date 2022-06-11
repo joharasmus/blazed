@@ -8,7 +8,7 @@ namespace Generator.Decoder.CSharp {
 		public string ClassName { get; }
 
 		public CSharpDecoderTableSerializer(GenTypes genTypes, string className, DecoderTableSerializerInfo info)
-			: base(genTypes, CSharpIdentifierConverter.Create(), info) => ClassName = className;
+			: base(genTypes, info) => ClassName = className;
 
 		public void Serialize(FileWriter writer) {
 			writer.WriteFileHeader();
@@ -27,7 +27,7 @@ namespace Generator.Decoder.CSharp {
 
 					writer.WriteLine($"const int MaxIdNames = {info.TablesToSerialize.Length};");
 					foreach (var name in info.TableIndexNames) {
-						var constName = idConverter.Constant($"{name}Index");
+						var constName = IdentifierConverter.Constant($"{name}Index");
 						writer.WriteLine($"const uint {constName} = {GetInfo(name).Index};");
 					}
 

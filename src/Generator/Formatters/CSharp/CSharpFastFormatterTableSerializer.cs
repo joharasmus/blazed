@@ -9,7 +9,7 @@ namespace Generator.Formatters.CSharp {
 		readonly string @namespace;
 
 		public CSharpFastFormatterTableSerializer(FastFmtInstructionDef[] defs, string define, string @namespace)
-			: base(defs, CSharpIdentifierConverter.Create()) {
+			: base(defs) {
 			this.define = define;
 			this.@namespace = @namespace;
 		}

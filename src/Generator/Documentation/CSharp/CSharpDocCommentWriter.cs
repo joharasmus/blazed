@@ -9,7 +9,6 @@ using Generator.IO;
 
 namespace Generator.Documentation.CSharp {
 	sealed class CSharpDocCommentWriter : DocCommentWriter {
-		readonly IdentifierConverter idConverter;
 		readonly StringBuilder sb;
 
 		static readonly Dictionary<string, (string type, bool isKeyword)> toTypeInfo = new(StringComparer.Ordinal) {
@@ -37,9 +36,8 @@ namespace Generator.Documentation.CSharp {
 			{ "u512", ("uint512", false) },
 		};
 
-		public CSharpDocCommentWriter(IdentifierConverter idConverter) {
-			this.idConverter = idConverter;
-			sb = new StringBuilder();
+		public CSharpDocCommentWriter() {
+			sb = new();
 		}
 
 		string GetStringAndReset() {
@@ -116,12 +114,12 @@ namespace Generator.Documentation.CSharp {
 						throw new InvalidOperationException($"Unknown type '{info.value}, comment: {documentation}");
 					if (typeInfo.isKeyword) {
 						sb.Append("<see cref=\"");
-						sb.Append(Escape(idConverter.Type(typeInfo.type)));
+						sb.Append(Escape(typeInfo.type));
 						sb.Append("\"/>");
 					}
 					else {
 						sb.Append("<c>");
-						sb.Append(Escape(idConverter.Type(typeInfo.type)));
+						sb.Append(Escape(typeInfo.type));
 						sb.Append("</c>");
 					}
 					if (!string.IsNullOrEmpty(info.value2))
@@ -129,7 +127,7 @@ namespace Generator.Documentation.CSharp {
 					break;
 				case TokenKind.Type:
 					sb.Append("<see cref=\"");
-					sb.Append(Escape(idConverter.Type(info.value)));
+					sb.Append(Escape(info.value));
 					sb.Append("\"/>");
 					if (!string.IsNullOrEmpty(info.value2))
 						throw new InvalidOperationException();
@@ -138,28 +136,28 @@ namespace Generator.Documentation.CSharp {
 				case TokenKind.FieldReference:
 					sb.Append("<see cref=\"");
 					if (info.value != typeName) {
-						sb.Append(Escape(idConverter.Type(info.value)));
+						sb.Append(Escape(info.value));
 						sb.Append('.');
 					}
-					sb.Append(Escape(idConverter.EnumField(info.value2)));
+					sb.Append(Escape(IdentifierConverter.EnumField(info.value2)));
 					sb.Append("\"/>");
 					break;
 				case TokenKind.Property:
 					sb.Append("<see cref=\"");
 					if (info.value != typeName) {
-						sb.Append(Escape(idConverter.Type(info.value)));
+						sb.Append(Escape(info.value));
 						sb.Append('.');
 					}
-					sb.Append(Escape(idConverter.PropertyDoc(info.value2)));
+					sb.Append(Escape(info.value2));
 					sb.Append("\"/>");
 					break;
 				case TokenKind.Method:
 					sb.Append("<see cref=\"");
 					if (info.value != typeName) {
-						sb.Append(Escape(idConverter.Type(info.value)));
+						sb.Append(Escape(info.value));
 						sb.Append('.');
 					}
-					sb.Append(Escape(idConverter.MethodDoc(info.value2)));
+					sb.Append(Escape(info.value2));
 					sb.Append("\"/>");
 					break;
 				default:

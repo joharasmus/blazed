@@ -9,7 +9,6 @@ using Generator.IO;
 namespace Generator.Enums.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class CSharpEnumsGenerator : EnumsGenerator {
-		readonly IdentifierConverter idConverter;
 		readonly Dictionary<TypeId, FullEnumFileInfo?> toFullFileInfo;
 		readonly Dictionary<TypeId, PartialEnumFileInfo?> toPartialFileInfo;
 		readonly CSharpDocCommentWriter docWriter;
@@ -43,9 +42,8 @@ namespace Generator.Enums.CSharp {
 
 		public CSharpEnumsGenerator(GeneratorContext generatorContext)
 			: base(generatorContext.Types) {
-			idConverter = CSharpIdentifierConverter.Create();
-			docWriter = new CSharpDocCommentWriter(idConverter);
-			deprecatedWriter = new CSharpDeprecatedWriter(idConverter);
+			docWriter = new CSharpDocCommentWriter();
+			deprecatedWriter = new CSharpDeprecatedWriter();
 
 			var dirs = genTypes.Dirs;
 			toFullFileInfo = new();
@@ -197,18 +195,18 @@ namespace Generator.Enums.CSharp {
 				writer.WriteLine("[Flags]");
 			var pub = enumType.IsPublic ? "public " : string.Empty;
 			var theBaseType = baseType is not null ? $" : {baseType}" : string.Empty;
-			writer.WriteLine($"{pub}enum {enumType.Name(idConverter)}{theBaseType} {{");
+			writer.WriteLine($"{pub}enum {enumType.Name()}{theBaseType} {{");
 			using (writer.Indent()) {
 				uint expectedValue = 0;
 				foreach (var value in enumType.Values) {
 					docWriter.WriteSummary(writer, value.Documentation.GetComment(TargetLanguage.CSharp), enumType.RawName);
 					deprecatedWriter.WriteDeprecated(writer, value);
 					if (enumType.IsFlags)
-						writer.WriteLine($"{value.Name(idConverter)} = 0x{value.Value:X8},");
+						writer.WriteLine($"{value.Name()} = 0x{value.Value:X8},");
 					else if (expectedValue != value.Value || enumType.IsPublic)
-						writer.WriteLine($"{value.Name(idConverter)} = {value.Value},");
+						writer.WriteLine($"{value.Name()} = {value.Value},");
 					else
-						writer.WriteLine($"{value.Name(idConverter)},");
+						writer.WriteLine($"{value.Name()},");
 					expectedValue = value.Value + 1;
 				}
 			}

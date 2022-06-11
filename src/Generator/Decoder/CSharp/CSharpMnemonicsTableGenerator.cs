@@ -9,11 +9,9 @@ using Generator.Tables;
 namespace Generator.Decoder.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class CSharpMnemonicsTableGenerator {
-		readonly IdentifierConverter idConverter;
 		readonly GenTypes genTypes;
 
 		public CSharpMnemonicsTableGenerator(GeneratorContext generatorContext) {
-			idConverter = CSharpIdentifierConverter.Create();
 			genTypes = generatorContext.Types;
 		}
 
@@ -28,12 +26,12 @@ namespace Generator.Decoder.CSharp {
 				using (writer.Indent()) {
 					writer.WriteLine($"static class {ClassName} {{");
 					using (writer.Indent()) {
-						writer.WriteLine($"internal static readonly ushort[] toMnemonic = new ushort[{blazedConstants.Name(idConverter)}.{blazedConstants[BlazedConstants.GetEnumCountName(TypeIds.Code)].Name(idConverter)}] {{");
+						writer.WriteLine($"internal static readonly ushort[] toMnemonic = new ushort[{blazedConstants.Name()}.{blazedConstants[BlazedConstants.GetEnumCountName(TypeIds.Code)].Name()}] {{");
 						using (writer.Indent()) {
 							foreach (var def in defs) {
 								if (def.Mnemonic.Value > ushort.MaxValue)
 									throw new InvalidOperationException();
-								writer.WriteLine($"(ushort){idConverter.ToDeclTypeAndValue(def.Mnemonic)},// {def.Code.Name(idConverter)}");
+								writer.WriteLine($"(ushort){IdentifierConverter.ToDeclTypeAndValue(def.Mnemonic)},// {def.Code.Name()}");
 							}
 						}
 						writer.WriteLine("};");

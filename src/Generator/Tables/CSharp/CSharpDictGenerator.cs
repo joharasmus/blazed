@@ -8,11 +8,9 @@ using Generator.IO;
 namespace Generator.Tables.CSharp {
 	[Generator(TargetLanguage.CSharp)]
 	sealed class CSharpDictGenerator {
-		readonly IdentifierConverter idConverter;
 		readonly GeneratorContext generatorContext;
 
 		public CSharpDictGenerator(GeneratorContext generatorContext) {
-			idConverter = CSharpIdentifierConverter.Create();
 			this.generatorContext = generatorContext;
 		}
 
@@ -44,11 +42,11 @@ namespace Generator.Tables.CSharp {
 		}
 
 		void WriteDict(FileWriter writer, (string name, EnumValue value)[] constants, string fieldName, bool publicField = true) {
-			var declTypeStr = constants[0].value.DeclaringType.Name(idConverter);
+			var declTypeStr = constants[0].value.DeclaringType.Name();
 			writer.WriteLine($"{(publicField ? "internal " : string.Empty)}static readonly Dictionary<string, {declTypeStr}> {fieldName} = new Dictionary<string, {declTypeStr}>({constants.Length}, StringComparer.Ordinal) {{");
 			using (writer.Indent()) {
 				foreach (var constant in constants)
-					writer.WriteLine($"{{ \"{constant.name}\", {idConverter.ToDeclTypeAndValue(constant.value)} }},");
+					writer.WriteLine($"{{ \"{constant.name}\", {IdentifierConverter.ToDeclTypeAndValue(constant.value)} }},");
 			}
 			writer.WriteLine("};");
 		}
