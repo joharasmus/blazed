@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazed", "Blazed\Blazed.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{0990E973-7216-4968-9D54-33DCEAD123EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fuzzer", "Fuzzer\Fuzzer.csproj", "{A89245C7-C09D-4297-98E5-4CD08CEDA60B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{0990E973-7216-4968-9D54-33DCEAD123EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0990E973-7216-4968-9D54-33DCEAD123EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0990E973-7216-4968-9D54-33DCEAD123EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A89245C7-C09D-4297-98E5-4CD08CEDA60B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A89245C7-C09D-4297-98E5-4CD08CEDA60B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A89245C7-C09D-4297-98E5-4CD08CEDA60B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A89245C7-C09D-4297-98E5-4CD08CEDA60B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
