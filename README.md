@@ -16,9 +16,7 @@ iced is a blazing fast and correct x86 (16/32/64-bit) instruction decoder, disas
 - 👍 The encoder can be used to re-encode decoded instructions at any address
 - 👍 API to get instruction info, eg. read/written registers, memory and rflags bits; CPUID feature flag, control flow info, etc
 
-# Examples
-
-- .NET: [README](https://github.com/joharasmus/blazed/blob/master/src/Blazed/README.md)
+[README](https://github.com/joharasmus/blazed/blob/master/src/Blazed/README.md)
 
 # License
 
