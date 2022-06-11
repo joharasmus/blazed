@@ -55,7 +55,7 @@ namespace Generator {
 	}
 
 	sealed class CommandLineOptions {
-		public readonly HashSet<TargetLanguage> Languages = new();
+		public readonly HashSet<TargetLanguage> Languages = new() { };
 		public GeneratorFlags GeneratorFlags = GeneratorFlags.None;
 		public readonly HashSet<string> IncludeCpuid = new(StringComparer.OrdinalIgnoreCase);
 		public readonly HashSet<string> ExcludeCpuid = new(StringComparer.OrdinalIgnoreCase);
@@ -78,7 +78,7 @@ namespace Generator {
 
 				// It's not much of an improvement in speed at the moment.
 				// Group by lang since different lang gens don't write to the same files.
-				Parallel.ForEach(Filter(GetGenerators(), options).GroupBy(a => a.Language).Select(a => a.ToArray()), genInfos => {
+				Parallel.ForEach(Filter(GetGenerators()).GroupBy(a => a.Language).Select(a => a.ToArray()), genInfos => {
 					foreach (var genInfo in genInfos)
 						genInfo.Invoke(generatorContext);
 				});
@@ -92,21 +92,8 @@ namespace Generator {
 			}
 		}
 
-		static IEnumerable<GeneratorInfo> Filter(List<GeneratorInfo> genInfos, CommandLineOptions options) {
-			var okLang = new bool[Enum.GetValues<TargetLanguage>().Length];
-			if (options.Languages.Count == 0) {
-				for (int i = 0; i < okLang.Length; i++)
-					okLang[i] = true;
-			}
-			else {
-				foreach (var lang in options.Languages)
-					okLang[(int)lang] = true;
-			}
-
+		static IEnumerable<GeneratorInfo> Filter(List<GeneratorInfo> genInfos) {
 			foreach (var genInfo in genInfos) {
-				if (!okLang[(int)genInfo.Language])
-					continue;
-
 				yield return genInfo;
 			}
 		}
@@ -119,10 +106,6 @@ Options:
 
 -h, --help
     Show this message
--l, --language <language>
-    Select only this language. Multiple language options are allowed.
-    Valid language:
-        cs (C#)
 --no-formatter
     Don't include any formatter
 --no-gas
@@ -163,31 +146,16 @@ Options:
 			if (Enum.GetValues<TargetLanguage>().Length != 2)
 				throw new InvalidOperationException("Enum updated, update help message and this method");
 			options = new CommandLineOptions();
+
 			for (int i = 0; i < args.Length; i++) {
 				var arg = args[i];
 				var value = i + 1 < args.Length ? args[i + 1] : null;
+
 				switch (arg) {
 				case "-h":
 				case "--help":
 					error = string.Empty;
 					return false;
-
-				case "-l":
-				case "--language":
-					if (value is null) {
-						error = "Missing language";
-						return false;
-					}
-					i++;
-					switch (value.ToLowerInvariant()) {
-					case "cs":
-						options.Languages.Add(TargetLanguage.CSharp);
-						break;
-					default:
-						error = $"Unknown language: {value}";
-						return false;
-					}
-					break;
 
 				case "--no-formatter":
 					options.GeneratorFlags |= GeneratorFlags.NoFormatter;
