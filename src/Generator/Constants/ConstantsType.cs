@@ -73,7 +73,7 @@ namespace Generator.Constants {
 	sealed class Constant {
 		public ConstantKind Kind { get; }
 		public string RawName { get; }
-		public string Name() => IdentifierConverter.Constant(RawName);
+		public string Name() => IdentifierConverter.Escape(RawName);
 		public LanguageDocumentation Documentation { get; }
 		public DeprecatedInfo DeprecatedInfo { get; }
 		public ulong ValueUInt64 { get; }

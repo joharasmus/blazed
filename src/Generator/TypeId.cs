@@ -3,37 +3,21 @@
 
 using System;
 
-namespace Generator {
-	readonly struct TypeId : IEquatable<TypeId> {
-		public string Id1 => id1;
+namespace Generator; 
+readonly struct TypeId : IEquatable<TypeId> {
 
-		readonly string id1;
-		readonly string id2;
+	readonly string id1;
 
-		public TypeId(string id1) {
-			this.id1 = id1;
-			id2 = string.Empty;
-		}
+	public TypeId(string id1) => this.id1 = id1;
 
-		public TypeId(string id1, string id2) {
-			this.id1 = id1;
-			this.id2 = id2;
-		}
+	public static bool operator ==(TypeId left, TypeId right) => left.Equals(right);
+	public static bool operator !=(TypeId left, TypeId right) => !left.Equals(right);
 
-		public static bool operator ==(TypeId left, TypeId right) => left.Equals(right);
-		public static bool operator !=(TypeId left, TypeId right) => !left.Equals(right);
+	public bool Equals(TypeId other) => id1 == other.id1;
 
-		public bool Equals(TypeId other) =>
-			id1 == other.id1 &&
-			id2 == other.id2;
+	public override bool Equals(object? obj) => obj is TypeId other && Equals(other);
 
-		public override bool Equals(object? obj) =>
-			obj is TypeId other && Equals(other);
-
-		public override int GetHashCode() =>
-			HashCode.Combine(StringComparer.Ordinal.GetHashCode(id1 ?? string.Empty),
-				StringComparer.Ordinal.GetHashCode(id2 ?? string.Empty));
-
-		public override string ToString() => string.IsNullOrEmpty(id2) ? id1 : $"{id1} {id2}";
-	}
+	public override int GetHashCode() => StringComparer.Ordinal.GetHashCode(id1 ?? string.Empty);
+	
+	public override string ToString() => id1;
 }

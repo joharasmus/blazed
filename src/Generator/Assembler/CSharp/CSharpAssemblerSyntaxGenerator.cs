@@ -390,7 +390,7 @@ namespace Generator.Assembler.CSharp {
 								writer.WriteLine();
 							methodSep = true;
 							var renderArgs = GetRenderArgs(group);
-							var methodName = IdentifierConverter.Method(group.Name);
+							var methodName = IdentifierConverter.Escape(group.Name);
 							GenerateAssemblerCode(writer, methodName, group, renderArgs);
 						}
 
@@ -729,7 +729,7 @@ namespace Generator.Assembler.CSharp {
 
 		void RenderTests(int bitness, FileWriter writer, OpCodeInfoGroup group, RenderArg[] renderArgs) {
 			var fullMethodName = new StringBuilder();
-			fullMethodName.Append(IdentifierConverter.Method(group.Name));
+			fullMethodName.Append(IdentifierConverter.Escape(group.Name));
 			foreach (var renderArg in renderArgs) {
 				fullMethodName.Append('_');
 				fullMethodName.Append(GetTestMethodArgName(renderArg.Kind));
@@ -859,7 +859,7 @@ namespace Generator.Assembler.CSharp {
 				withFnName = "CreateBranch";
 			else
 				withFnName = "Create";
-			var asmName = IdentifierConverter.Method(group.Name);
+			var asmName = IdentifierConverter.Escape(group.Name);
 			var asmArgsStr = string.Join(", ", asmArgs);
 			var instrFlags = GetInstrTestFlags(def, group, contextFlags);
 			var testInstrFlagsStr = instrFlags.Count > 0 ?

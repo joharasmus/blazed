@@ -42,10 +42,10 @@ namespace Generator.Tables.CSharp {
 				}
 			});
 			new FileUpdater(TargetLanguage.CSharp, "ConstData", filename).Generate(writer => {
-				writer.WriteLine($"const ushort {IdentifierConverter.Constant(nameof(IsSigned))} = {IsSigned};");
-				writer.WriteLine($"const uint {IdentifierConverter.Constant(nameof(SizeMask))} = {SizeMask};");
-				writer.WriteLine($"const int {IdentifierConverter.Constant(nameof(SizeShift))} = {SizeShift};");
-				writer.WriteLine($"const int {IdentifierConverter.Constant(nameof(ElemSizeShift))} = {ElemSizeShift};");
+				writer.WriteLine($"const ushort {IdentifierConverter.Escape(nameof(IsSigned))} = {IsSigned};");
+				writer.WriteLine($"const uint {IdentifierConverter.Escape(nameof(SizeMask))} = {SizeMask};");
+				writer.WriteLine($"const int {IdentifierConverter.Escape(nameof(SizeShift))} = {SizeShift};");
+				writer.WriteLine($"const int {IdentifierConverter.Escape(nameof(ElemSizeShift))} = {ElemSizeShift};");
 				writer.WriteLine("var sizes = new ushort[] {");
 				using (writer.Indent()) {
 					foreach (var size in sizeToIndex.Select(a => a.Key).OrderBy(a => a))

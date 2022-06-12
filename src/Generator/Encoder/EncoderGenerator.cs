@@ -519,7 +519,7 @@ namespace Generator.Encoder {
 				throw new InvalidOperationException();
 
 			static void WriteEnum(FileWriter writer, EnumValue value, string enumItemSep, bool forceConstant) {
-				var name = forceConstant ? IdentifierConverter.Constant(value.RawName) : value.Name();
+				var name = forceConstant ? IdentifierConverter.Escape(value.RawName) : value.Name();
 				writer.Write($"{value.DeclaringType.Name()}{enumItemSep}{name}");
 			}
 		}

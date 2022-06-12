@@ -198,8 +198,8 @@ namespace Generator.Enums {
 		public EnumType DeclaringType { get; set; }
 		public uint Value { get; set; }
 		public string RawName { get; }
-		public string Name() => IdentifierConverter.EnumField(RawName);
-		public string ToStringValue() => IdentifierConverter.EnumField(RawName);
+		public string Name() => IdentifierConverter.Escape(RawName);
+		public string ToStringValue() => IdentifierConverter.Escape(RawName);
 		public LanguageDocumentation Documentation { get; internal set; }
 		public DeprecatedInfo DeprecatedInfo { get; }
 

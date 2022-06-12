@@ -27,7 +27,7 @@ namespace Generator.Decoder.CSharp {
 
 					writer.WriteLine($"const int MaxIdNames = {info.TablesToSerialize.Length};");
 					foreach (var name in info.TableIndexNames) {
-						var constName = IdentifierConverter.Constant($"{name}Index");
+						var constName = IdentifierConverter.Escape($"{name}Index");
 						writer.WriteLine($"const uint {constName} = {GetInfo(name).Index};");
 					}
 

@@ -159,7 +159,7 @@ namespace Generator.Documentation {
 						sb2.Append(t);
 						sb2.Append(info.kind == TokenKind.EnumFieldReference ? enumSeparator : fieldSeparator);
 					}
-					m = info.kind == TokenKind.EnumFieldReference ? IdentifierConverter.EnumField(info.value2) : IdentifierConverter.Field(info.value2);
+					m = IdentifierConverter.Escape(info.value2);
 					sb2.Append(m);
 					sb2.Append('`');
 					AddRefBracket(sb2, ']');

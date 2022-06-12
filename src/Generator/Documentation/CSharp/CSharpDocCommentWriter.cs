@@ -139,7 +139,7 @@ namespace Generator.Documentation.CSharp {
 						sb.Append(Escape(info.value));
 						sb.Append('.');
 					}
-					sb.Append(Escape(IdentifierConverter.EnumField(info.value2)));
+					sb.Append(Escape(IdentifierConverter.Escape(info.value2)));
 					sb.Append("\"/>");
 					break;
 				case TokenKind.Property:

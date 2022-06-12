@@ -83,8 +83,8 @@ namespace Generator.Formatters.CSharp {
 			const int BroadcastToKindShift = 5;
 			const int MemoryKeywordsMask = 0x1F;
 			new FileUpdater(TargetLanguage.CSharp, "ConstData", filename).Generate(writer => {
-				writer.WriteLine($"const int {IdentifierConverter.Constant(nameof(BroadcastToKindShift))} = {BroadcastToKindShift};");
-				writer.WriteLine($"const int {IdentifierConverter.Constant(nameof(MemoryKeywordsMask))} = {MemoryKeywordsMask};");
+				writer.WriteLine($"const int {IdentifierConverter.Escape(nameof(BroadcastToKindShift))} = {BroadcastToKindShift};");
+				writer.WriteLine($"const int {IdentifierConverter.Escape(nameof(MemoryKeywordsMask))} = {MemoryKeywordsMask};");
 				var created = new HashSet<string>(StringComparer.Ordinal);
 				foreach (var keywords in intelKeywords.Select(a => a.RawName)) {
 					if (keywords == nameof(IntelMemoryKeywords.None))
@@ -147,8 +147,8 @@ namespace Generator.Formatters.CSharp {
 			const int SizeKindShift = 5;
 			const int MemoryKeywordsMask = 0x1F;
 			new FileUpdater(TargetLanguage.CSharp, "ConstData", filename).Generate(writer => {
-				writer.WriteLine($"const int {IdentifierConverter.Constant(nameof(SizeKindShift))} = {SizeKindShift};");
-				writer.WriteLine($"const int {IdentifierConverter.Constant(nameof(MemoryKeywordsMask))} = {MemoryKeywordsMask};");
+				writer.WriteLine($"const int {IdentifierConverter.Escape(nameof(SizeKindShift))} = {SizeKindShift};");
+				writer.WriteLine($"const int {IdentifierConverter.Escape(nameof(MemoryKeywordsMask))} = {MemoryKeywordsMask};");
 				var created = new HashSet<string>(StringComparer.Ordinal);
 				foreach (var keywords in masmKeywords.Select(a => a.RawName).Concat(new[] { "mmword_ptr" })) {
 					if (keywords == nameof(MasmMemoryKeywords.None))
