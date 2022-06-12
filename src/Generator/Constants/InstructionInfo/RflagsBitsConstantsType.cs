@@ -4,16 +4,16 @@
 using System;
 using System.Linq;
 
-namespace Generator.Constants.InstructionInfo {
-	[TypeGen(TypeGenOrders.NoDeps)]
-	sealed class RflagsBitsConstantsType {
-		RflagsBitsConstantsType(GenTypes genTypes) {
-			var type = new ConstantsType(TypeIds.RflagsBitsConstants, ConstantsTypeFlags.None, default, GetConstants());
-			genTypes.Add(type);
-		}
+namespace Generator.Constants.InstructionInfo;
 
-		static Constant[] GetConstants() =>
-			typeof(RflagsBitsConstants).GetFields().Where(a => a.IsLiteral).OrderBy(a => a.MetadataToken).
-				Select(a => new Constant(ConstantKind.Char, a.Name, (char)(a.GetRawConstantValue() ?? throw new InvalidOperationException()))).ToArray();
+[TypeGen(TypeGenOrders.NoDeps)]
+sealed class RflagsBitsConstantsType {
+	RflagsBitsConstantsType(GenTypes genTypes) {
+		var type = new ConstantsType(TypeIds.RflagsBitsConstants, ConstantsTypeFlags.None, default, GetConstants());
+		genTypes.Add(type);
 	}
+
+	static Constant[] GetConstants() =>
+		typeof(RflagsBitsConstants).GetFields().Where(a => a.IsLiteral).OrderBy(a => a.MetadataToken).
+			Select(a => new Constant(ConstantKind.Char, a.Name, (char)(a.GetRawConstantValue() ?? throw new InvalidOperationException()))).ToArray();
 }

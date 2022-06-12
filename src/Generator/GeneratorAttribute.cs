@@ -3,13 +3,13 @@
 
 using System;
 
-namespace Generator {
-	[AttributeUsage(AttributeTargets.Class)]
-	sealed class GeneratorAttribute : Attribute {
-		public TargetLanguage Language { get; }
+namespace Generator;
 
-		public GeneratorAttribute(TargetLanguage language) {
-			Language = language;
-		}
+[AttributeUsage(AttributeTargets.Class)]
+sealed class GeneratorAttribute : Attribute {
+	public TargetLanguage Language { get; }
+
+	public GeneratorAttribute(TargetLanguage language) {
+		Language = language;
 	}
 }

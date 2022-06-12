@@ -5,37 +5,37 @@ using Generator.Constants;
 using Generator.IO;
 using Generator.Tables;
 
-namespace Generator.Decoder.CSharp {
-	[Generator(TargetLanguage.CSharp)]
-	sealed class CSharpInstructionOpCountsGenerator {
-		readonly GenTypes genTypes;
+namespace Generator.Decoder.CSharp;
 
-		public CSharpInstructionOpCountsGenerator(GeneratorContext generatorContext) {
-			genTypes = generatorContext.Types;
-		}
+[Generator(TargetLanguage.CSharp)]
+sealed class CSharpInstructionOpCountsGenerator {
+	readonly GenTypes genTypes;
 
-		public void Generate() {
-			var blazedConstants = genTypes.GetConstantsType(TypeIds.BlazedConstants);
-			var defs = genTypes.GetObject<InstructionDefs>(TypeIds.InstructionDefs).Defs;
-			const string ClassName = "InstructionOpCounts";
-			using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, ClassName + ".g.cs")))) {
-				writer.WriteFileHeader();
+	public CSharpInstructionOpCountsGenerator(GeneratorContext generatorContext) {
+		genTypes = generatorContext.Types;
+	}
 
-				writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
+	public void Generate() {
+		var blazedConstants = genTypes.GetConstantsType(TypeIds.BlazedConstants);
+		var defs = genTypes.GetObject<InstructionDefs>(TypeIds.InstructionDefs).Defs;
+		const string ClassName = "InstructionOpCounts";
+		using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, ClassName + ".g.cs")))) {
+			writer.WriteFileHeader();
+
+			writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
+			using (writer.Indent()) {
+				writer.WriteLine($"static class {ClassName} {{");
 				using (writer.Indent()) {
-					writer.WriteLine($"static class {ClassName} {{");
+					writer.WriteLine($"internal static System.ReadOnlySpan<byte> OpCount => new byte[{blazedConstants.Name()}.{blazedConstants[BlazedConstants.GetEnumCountName(TypeIds.Code)].Name()}] {{");
 					using (writer.Indent()) {
-						writer.WriteLine($"internal static System.ReadOnlySpan<byte> OpCount => new byte[{blazedConstants.Name()}.{blazedConstants[BlazedConstants.GetEnumCountName(TypeIds.Code)].Name()}] {{");
-						using (writer.Indent()) {
-							foreach (var def in defs)
-								writer.WriteLine($"{def.OpCount},// {def.Code.Name()}");
-						}
-						writer.WriteLine("};");
+						foreach (var def in defs)
+							writer.WriteLine($"{def.OpCount},// {def.Code.Name()}");
 					}
-					writer.WriteLine("}");
+					writer.WriteLine("};");
 				}
 				writer.WriteLine("}");
 			}
+			writer.WriteLine("}");
 		}
 	}
 }

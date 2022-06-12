@@ -4,25 +4,25 @@
 using System;
 using System.Linq;
 
-namespace Generator {
-	static class ConstantUtils {
-		public static (uint mask, uint bits) GetMaskBits(uint max) {
-			if (max == 0)
-				return (1, 1);
-			uint mask = 0;
-			uint bits = 0;
-			while (max != 0) {
-				max >>= 1;
-				mask = (mask << 1) | 1;
-				bits++;
-			}
-			return (mask, bits);
-		}
+namespace Generator;
 
-		public static void VerifyMask<T>(uint mask) where T : struct, Enum {
-			var max = Enum.GetValues<T>().Select(a => Convert.ToUInt32(a)).Max();
-			if (GetMaskBits(max).mask != mask)
-				throw new InvalidOperationException();
+static class ConstantUtils {
+	public static (uint mask, uint bits) GetMaskBits(uint max) {
+		if (max == 0)
+			return (1, 1);
+		uint mask = 0;
+		uint bits = 0;
+		while (max != 0) {
+			max >>= 1;
+			mask = (mask << 1) | 1;
+			bits++;
 		}
+		return (mask, bits);
+	}
+
+	public static void VerifyMask<T>(uint mask) where T : struct, Enum {
+		var max = Enum.GetValues<T>().Select(a => Convert.ToUInt32(a)).Max();
+		if (GetMaskBits(max).mask != mask)
+			throw new InvalidOperationException();
 	}
 }

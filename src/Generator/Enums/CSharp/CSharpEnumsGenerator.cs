@@ -43,7 +43,7 @@ namespace Generator.Enums.CSharp {
 		public CSharpEnumsGenerator(GeneratorContext generatorContext)
 			: base(generatorContext.Types) {
 			docWriter = new CSharpDocCommentWriter();
-			deprecatedWriter = new CSharpDeprecatedWriter();
+			deprecatedWriter = new DeprecatedWriter();
 
 			var dirs = genTypes.Dirs;
 			toFullFileInfo = new();
