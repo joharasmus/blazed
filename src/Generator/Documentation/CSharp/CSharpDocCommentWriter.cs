@@ -37,9 +37,7 @@ sealed class CSharpDocCommentWriter : DocCommentWriter {
 		{ "u512", ("uint512", false) },
 	};
 
-	public CSharpDocCommentWriter() {
-		sb = new();
-	}
+	public CSharpDocCommentWriter() => sb = new();
 
 	string GetStringAndReset() {
 		while (sb.Length > 0 && char.IsWhiteSpace(sb[^1]))

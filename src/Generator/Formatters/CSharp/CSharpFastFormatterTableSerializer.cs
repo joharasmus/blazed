@@ -3,39 +3,39 @@
 
 using Generator.IO;
 
-namespace Generator.Formatters.CSharp {
-	sealed class CSharpFastFormatterTableSerializer : FastFormatterTableSerializer {
-		readonly string define;
-		readonly string @namespace;
+namespace Generator.Formatters.CSharp;
 
-		public CSharpFastFormatterTableSerializer(FastFmtInstructionDef[] defs, string define, string @namespace)
-			: base(defs) {
-			this.define = define;
-			this.@namespace = @namespace;
-		}
+sealed class CSharpFastFormatterTableSerializer : FastFormatterTableSerializer {
+	readonly string define;
+	readonly string @namespace;
 
-		public override string GetFilename(GenTypes genTypes) =>
-			CSharpConstants.GetFilename(genTypes, @namespace, "FmtData.g.cs");
+	public CSharpFastFormatterTableSerializer(FastFmtInstructionDef[] defs, string define, string @namespace)
+		: base(defs) {
+		this.define = define;
+		this.@namespace = @namespace;
+	}
 
-		public override void Serialize(GenTypes genTypes, FileWriter writer, StringsTable stringsTable) {
-			writer.WriteFileHeader();
-			writer.WriteLineNoIndent($"#if {define}");
-			writer.WriteLine($"namespace {@namespace} {{");
+	public override string GetFilename(GenTypes genTypes) =>
+		CSharpConstants.GetFilename(genTypes, @namespace, "FmtData.g.cs");
+
+	public override void Serialize(GenTypes genTypes, FileWriter writer, StringsTable stringsTable) {
+		writer.WriteFileHeader();
+		writer.WriteLineNoIndent($"#if {define}");
+		writer.WriteLine($"namespace {@namespace} {{");
+		using (writer.Indent()) {
+			writer.WriteLine("static partial class FmtData {");
 			using (writer.Indent()) {
-				writer.WriteLine("static partial class FmtData {");
+				writer.WriteLine("static System.ReadOnlySpan<byte> GetSerializedData() =>");
 				using (writer.Indent()) {
-					writer.WriteLine("static System.ReadOnlySpan<byte> GetSerializedData() =>");
-					using (writer.Indent()) {
-						writer.WriteLine("new byte[] {");
-						using (writer.Indent())
-							SerializeTable(genTypes, writer, stringsTable);
-						writer.WriteLine("};");
-					}
+					writer.WriteLine("new byte[] {");
+					using (writer.Indent())
+						SerializeTable(genTypes, writer, stringsTable);
+					writer.WriteLine("};");
 				}
-				writer.WriteLine("}");
 			}
 			writer.WriteLine("}");
-			writer.WriteLineNoIndent("#endif");
 		}
+		writer.WriteLine("}");
+		writer.WriteLineNoIndent("#endif");
 	}
 }

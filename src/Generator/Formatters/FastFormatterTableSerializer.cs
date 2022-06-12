@@ -7,98 +7,96 @@ using Generator.Enums;
 using Generator.Enums.Formatter.Fast;
 using Generator.IO;
 
-namespace Generator.Formatters {
-	sealed class FastFmtInstructionDef {
-		public readonly EnumValue Code;
-		public readonly string Mnemonic;
-		public readonly IEnumValue Flags;
+namespace Generator.Formatters;
 
-		public FastFmtInstructionDef(EnumValue code, string mnemonic, IEnumValue flags) {
-			Code = code;
-			Mnemonic = mnemonic;
-			Flags = flags;
+sealed class FastFmtInstructionDef {
+	public readonly EnumValue Code;
+	public readonly string Mnemonic;
+	public readonly IEnumValue Flags;
+
+	public FastFmtInstructionDef(EnumValue code, string mnemonic, IEnumValue flags) {
+		Code = code;
+		Mnemonic = mnemonic;
+		Flags = flags;
+	}
+}
+
+abstract class FastFormatterTableSerializer : IFormatterTableSerializer {
+	readonly FastFmtInstructionDef[] defs;
+
+	protected FastFormatterTableSerializer(FastFmtInstructionDef[] defs) => this.defs = defs;
+
+	public abstract string GetFilename(GenTypes genTypes);
+
+	public void Initialize(GenTypes genTypes, StringsTable stringsTable) {
+		var expectedLength = genTypes[TypeIds.Code].Values.Length;
+		if (defs.Length != expectedLength)
+			throw new InvalidOperationException($"Found {defs.Length} elements, expected {expectedLength}");
+		for (int i = 0; i < defs.Length; i++) {
+			var def = defs[i];
+			stringsTable.Add((uint)i, def.Mnemonic, true);
 		}
 	}
 
-	abstract class FastFormatterTableSerializer : IFormatterTableSerializer {
-		readonly FastFmtInstructionDef[] defs;
+	public abstract void Serialize(GenTypes genTypes, FileWriter writer, StringsTable stringsTable);
 
-		protected FastFormatterTableSerializer(FastFmtInstructionDef[] defs) {
-			this.defs = defs;
-		}
+	protected void SerializeTable(GenTypes genTypes, FileWriter writer, StringsTable stringsTable) {
+		var fastFmtFlags = genTypes[TypeIds.FastFmtFlags];
+		var hasVPrefixEnum = fastFmtFlags[nameof(FastFmtFlags.HasVPrefix)];
+		var sameAsPrevEnum = fastFmtFlags[nameof(FastFmtFlags.SameAsPrev)];
 
-		public abstract string GetFilename(GenTypes genTypes);
+		var flagsValues = new List<EnumValue>();
+		int index = -1;
+		uint prevMnemonicStringIndex = uint.MaxValue;
+		foreach (var def in defs) {
+			index++;
+			var code = def.Code;
+			if (code.Value != (uint)index)
+				throw new InvalidOperationException();
+			flagsValues.Clear();
 
-		public void Initialize(GenTypes genTypes, StringsTable stringsTable) {
-			var expectedLength = genTypes[TypeIds.Code].Values.Length;
-			if (defs.Length != expectedLength)
-				throw new InvalidOperationException($"Found {defs.Length} elements, expected {expectedLength}");
-			for (int i = 0; i < defs.Length; i++) {
-				var def = defs[i];
-				stringsTable.Add((uint)i, def.Mnemonic, true);
+			if (index != 0)
+				writer.WriteLine();
+			writer.WriteCommentLine(code.ToStringValue());
+
+			var mnemonic = def.Mnemonic;
+			uint mnemonicStringIndex = stringsTable.GetIndex(mnemonic, optimize: true, out var hasVPrefix);
+			var flags = def.Flags;
+			if (hasVPrefix)
+				flagsValues.Add(hasVPrefixEnum);
+			bool isSame = false;
+			if (mnemonicStringIndex == prevMnemonicStringIndex) {
+				isSame = true;
+				flagsValues.Add(sameAsPrevEnum);
 			}
-		}
 
-		public abstract void Serialize(GenTypes genTypes, FileWriter writer, StringsTable stringsTable);
+			if (def.Flags is EnumValue flags2)
+				flagsValues.Add(flags2);
+			else if (def.Flags is OrEnumValue flags3)
+				flagsValues.AddRange(flags3.Values);
+			else
+				throw new InvalidOperationException();
 
-		protected void SerializeTable(GenTypes genTypes, FileWriter writer, StringsTable stringsTable) {
-			var fastFmtFlags = genTypes[TypeIds.FastFmtFlags];
-			var hasVPrefixEnum = fastFmtFlags[nameof(FastFmtFlags.HasVPrefix)];
-			var sameAsPrevEnum = fastFmtFlags[nameof(FastFmtFlags.SameAsPrev)];
+			uint flagsValue = 0;
+			foreach (var enumValue in flagsValues)
+				flagsValue |= enumValue.Value;
+			if (flagsValue > byte.MaxValue)
+				throw new InvalidOperationException();
+			writer.WriteByte((byte)flagsValue);
+			string comment = flagsValues.Count switch {
+				0 => "No flags set",
+				1 => flagsValues[0].ToStringValue(),
+				_ => new OrEnumValue(fastFmtFlags, flagsValues.ToArray()).ToStringValue(),
+			};
+			writer.WriteCommentLine(comment);
 
-			var flagsValues = new List<EnumValue>();
-			int index = -1;
-			uint prevMnemonicStringIndex = uint.MaxValue;
-			foreach (var def in defs) {
-				index++;
-				var code = def.Code;
-				if (code.Value != (uint)index)
-					throw new InvalidOperationException();
-				flagsValues.Clear();
-
-				if (index != 0)
-					writer.WriteLine();
-				writer.WriteCommentLine(code.ToStringValue());
-
-				var mnemonic = def.Mnemonic;
-				uint mnemonicStringIndex = stringsTable.GetIndex(mnemonic, optimize: true, out var hasVPrefix);
-				var flags = def.Flags;
-				if (hasVPrefix)
-					flagsValues.Add(hasVPrefixEnum);
-				bool isSame = false;
-				if (mnemonicStringIndex == prevMnemonicStringIndex) {
-					isSame = true;
-					flagsValues.Add(sameAsPrevEnum);
-				}
-
-				if (def.Flags is EnumValue flags2)
-					flagsValues.Add(flags2);
-				else if (def.Flags is OrEnumValue flags3)
-					flagsValues.AddRange(flags3.Values);
-				else
-					throw new InvalidOperationException();
-
-				uint flagsValue = 0;
-				foreach (var enumValue in flagsValues)
-					flagsValue |= enumValue.Value;
-				if (flagsValue > byte.MaxValue)
-					throw new InvalidOperationException();
-				writer.WriteByte((byte)flagsValue);
-				string comment = flagsValues.Count switch {
-					0 => "No flags set",
-					1 => flagsValues[0].ToStringValue(),
-					_ => new OrEnumValue(fastFmtFlags, flagsValues.ToArray()).ToStringValue(),
-				};
-				writer.WriteCommentLine(comment);
-
-				// We save 4KB (11,595 -> 7,435 bytes)
-				if (!isSame) {
-					writer.WriteCompressedUInt32(mnemonicStringIndex);
-					writer.WriteCommentLine($"{mnemonicStringIndex} = \"{mnemonic}\"");
-				}
-
-				prevMnemonicStringIndex = mnemonicStringIndex;
+			// We save 4KB (11,595 -> 7,435 bytes)
+			if (!isSame) {
+				writer.WriteCompressedUInt32(mnemonicStringIndex);
+				writer.WriteCommentLine($"{mnemonicStringIndex} = \"{mnemonic}\"");
 			}
+
+			prevMnemonicStringIndex = mnemonicStringIndex;
 		}
 	}
 }

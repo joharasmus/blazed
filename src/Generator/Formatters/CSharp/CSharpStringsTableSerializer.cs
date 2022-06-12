@@ -4,51 +4,51 @@
 using System;
 using Generator.IO;
 
-namespace Generator.Formatters.CSharp {
-	struct CSharpStringsTableSerializer {
-		readonly StringsTable stringsTable;
-		readonly string @namespace;
-		readonly string className;
-		readonly string preprocessorExpr;
+namespace Generator.Formatters.CSharp;
 
-		public CSharpStringsTableSerializer(StringsTable stringsTable, string @namespace, string className, string preprocessorExpr) {
-			this.stringsTable = stringsTable;
-			this.@namespace = @namespace;
-			this.className = className;
-			this.preprocessorExpr = preprocessorExpr;
-		}
+struct CSharpStringsTableSerializer {
+	readonly StringsTable stringsTable;
+	readonly string @namespace;
+	readonly string className;
+	readonly string preprocessorExpr;
 
-		public void Serialize(FileWriter writer) {
-			if (!stringsTable.IsFrozen)
-				throw new InvalidOperationException();
+	public CSharpStringsTableSerializer(StringsTable stringsTable, string @namespace, string className, string preprocessorExpr) {
+		this.stringsTable = stringsTable;
+		this.@namespace = @namespace;
+		this.className = className;
+		this.preprocessorExpr = preprocessorExpr;
+	}
 
-			var sortedInfos = stringsTable.Infos;
-			int maxStringLength = 0;
-			foreach (var info in sortedInfos)
-				maxStringLength = Math.Max(maxStringLength, info.String.Length);
+	public void Serialize(FileWriter writer) {
+		if (!stringsTable.IsFrozen)
+			throw new InvalidOperationException();
 
-			writer.WriteFileHeader();
-			if (preprocessorExpr is not null)
-				writer.WriteLineNoIndent($"#if {preprocessorExpr}");
-			writer.WriteLine($"namespace {@namespace} {{");
+		var sortedInfos = stringsTable.Infos;
+		int maxStringLength = 0;
+		foreach (var info in sortedInfos)
+			maxStringLength = Math.Max(maxStringLength, info.String.Length);
+
+		writer.WriteFileHeader();
+		if (preprocessorExpr is not null)
+			writer.WriteLineNoIndent($"#if {preprocessorExpr}");
+		writer.WriteLine($"namespace {@namespace} {{");
+		using (writer.Indent()) {
+			writer.WriteLine($"static partial class {className} {{");
 			using (writer.Indent()) {
-				writer.WriteLine($"static partial class {className} {{");
+				writer.WriteLine($"const int MaxStringLength = {maxStringLength};");
+				writer.WriteLine($"const int StringsCount = {sortedInfos.Length};");
+				writer.WriteLine("static System.ReadOnlySpan<byte> GetSerializedStrings() =>");
 				using (writer.Indent()) {
-					writer.WriteLine($"const int MaxStringLength = {maxStringLength};");
-					writer.WriteLine($"const int StringsCount = {sortedInfos.Length};");
-					writer.WriteLine("static System.ReadOnlySpan<byte> GetSerializedStrings() =>");
-					using (writer.Indent()) {
-						writer.WriteLine("new byte[] {");
-						using (writer.Indent())
-							StringsTableSerializerUtils.SerializeTable(writer, sortedInfos);
-						writer.WriteLine("};");
-					}
+					writer.WriteLine("new byte[] {");
+					using (writer.Indent())
+						StringsTableSerializerUtils.SerializeTable(writer, sortedInfos);
+					writer.WriteLine("};");
 				}
-				writer.WriteLine("}");
 			}
 			writer.WriteLine("}");
-			if (preprocessorExpr is not null)
-				writer.WriteLineNoIndent("#endif");
 		}
+		writer.WriteLine("}");
+		if (preprocessorExpr is not null)
+			writer.WriteLineNoIndent("#endif");
 	}
 }
