@@ -607,7 +607,6 @@ namespace Generator.Tables {
 		public readonly OpInfo[] OpInfo;
 		public readonly EnumValue[] OpInfoEnum;
 
-		public readonly FmtInstructionDef Intel;
 		public readonly FmtInstructionDef Masm;
 		public readonly FmtInstructionDef Nasm;
 
@@ -624,7 +623,7 @@ namespace Generator.Tables {
 			BranchKind branchKind, StackInfo stackInfo, int fpuStackIncrement,
 			RflagsBits read, RflagsBits undefined, RflagsBits written, RflagsBits cleared, RflagsBits set,
 			EnumValue[] cpuid, string[] cpuidFeatureStrings, OpInfo[] opInfo,
-			FmtInstructionDef intel, FmtInstructionDef masm, FmtInstructionDef nasm,
+			FmtInstructionDef masm, FmtInstructionDef nasm,
 			string? asmMnemonic) {
 			Code = code;
 			OpCodeString = opCodeString;
@@ -674,7 +673,6 @@ namespace Generator.Tables {
 			OpInfo = opInfo;
 			OpInfoEnum = new EnumValue[opInfo.Length];
 
-			Intel = intel;
 			Masm = masm;
 			Nasm = nasm;
 

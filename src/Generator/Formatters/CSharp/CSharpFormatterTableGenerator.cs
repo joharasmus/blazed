@@ -15,9 +15,7 @@ sealed class CSharpFormatterTableGenerator {
 
 	public void Generate() {
 		var serializers = new List<IFormatterTableSerializer>();
-		
-		if (genTypes.Options.HasIntelFormatter)
-			serializers.Add(new CSharpFormatterTableSerializer(genTypes.GetObject<Intel.CtorInfos>(TypeIds.IntelCtorInfos).Infos, genTypes[TypeIds.IntelCtorKind], CSharpConstants.IntelFormatterDefine, CSharpConstants.IntelFormatterNamespace));
+
 		if (genTypes.Options.HasMasmFormatter)
 			serializers.Add(new CSharpFormatterTableSerializer(genTypes.GetObject<Masm.CtorInfos>(TypeIds.MasmCtorInfos).Infos, genTypes[TypeIds.MasmCtorKind], CSharpConstants.MasmFormatterDefine, CSharpConstants.MasmFormatterNamespace));
 		if (genTypes.Options.HasNasmFormatter)

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if INTEL || MASM || NASM
+#if MASM || NASM
 using Blazed.Intel;
 using UnitTests.Intel.DecoderTests;
 using Xunit;
@@ -56,8 +56,6 @@ namespace UnitTests.Intel.FormatterTests {
 #if MASM
 			expected = "add dh,cl";
 #elif NASM
-			expected = "add dh,cl";
-#elif INTEL
 			expected = "add dh,cl";
 #else
 #error No formatter

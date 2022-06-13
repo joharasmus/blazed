@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if INTEL || MASM || NASM
+#if MASM || NASM
 namespace Blazed.Intel {
 	/// <summary>
 	/// Used by a <see cref="Formatter"/> to write all text

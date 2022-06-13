@@ -102,8 +102,6 @@ Options:
     Show this message
 --no-formatter
     Don't include any formatter
---no-intel
-    Don't include the Intel (XED) formatter
 --no-masm
     Don't include the masm formatter
 --no-nasm
@@ -148,10 +146,6 @@ Options:
 
 			case "--no-formatter":
 				options.GeneratorFlags |= GeneratorFlags.NoFormatter;
-				break;
-
-			case "--no-intel":
-				options.GeneratorFlags |= GeneratorFlags.NoIntelFormatter;
 				break;
 
 			case "--no-masm":

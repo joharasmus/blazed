@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if INTEL || MASM || NASM
+#if MASM || NASM
 using System;
 
 namespace Blazed.Intel {
@@ -356,14 +356,14 @@ namespace Blazed.Intel {
 		/// <summary>
 		/// Hex number prefix or <see langword="null"/>/empty string, eg. "0x"
 		/// <br/>
-		/// Default: <see langword="null"/> (masm/nasm/intel)
+		/// Default: <see langword="null"/>
 		/// </summary>
 		public string? HexPrefix { get; set; }
 
 		/// <summary>
 		/// Hex number suffix or <see langword="null"/>/empty string, eg. "h"
 		/// <br/>
-		/// Default: <c>"h"</c> (masm/nasm/intel)
+		/// Default: <c>"h"</c>
 		/// </summary>
 		public string? HexSuffix { get; set; }
 
@@ -406,14 +406,14 @@ namespace Blazed.Intel {
 		/// <summary>
 		/// Octal number prefix or <see langword="null"/>/empty string
 		/// <br/>
-		/// Default: <see langword="null"/> (masm/nasm/intel)
+		/// Default: <see langword="null"/>
 		/// </summary>
 		public string? OctalPrefix { get; set; }
 
 		/// <summary>
 		/// Octal number suffix or <see langword="null"/>/empty string
 		/// <br/>
-		/// Default: <c>"o"</c> (masm/nasm/intel)
+		/// Default: <c>"o"</c>
 		/// </summary>
 		public string? OctalSuffix { get; set; }
 
@@ -431,14 +431,14 @@ namespace Blazed.Intel {
 		/// <summary>
 		/// Binary number prefix or <see langword="null"/>/empty string
 		/// <br/>
-		/// Default: <see langword="null"/> (masm/nasm/intel)
+		/// Default: <see langword="null"/>
 		/// </summary>
 		public string? BinaryPrefix { get; set; }
 
 		/// <summary>
 		/// Binary number suffix or <see langword="null"/>/empty string
 		/// <br/>
-		/// Default: <c>"b"</c> (masm/nasm/intel)
+		/// Default: <c>"b"</c>
 		/// </summary>
 		public string? BinarySuffix { get; set; }
 
@@ -1064,19 +1064,6 @@ namespace Blazed.Intel {
 			}
 		}
 		CC_g cc_g = CC_g.g;
-
-#if INTEL
-		/// <summary>
-		/// Creates Intel (XED) formatter options
-		/// </summary>
-		/// <returns></returns>
-		public static FormatterOptions CreateIntel() =>
-			new FormatterOptions {
-				HexSuffix = "h",
-				OctalSuffix = "o",
-				BinarySuffix = "b",
-			};
-#endif
 
 #if MASM
 		/// <summary>

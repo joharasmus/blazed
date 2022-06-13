@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if INTEL || MASM || NASM
+#if MASM || NASM
 using System;
 
 namespace UnitTests.Intel.FormatterTests {
@@ -78,7 +78,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.NumberBase:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetNumberBase(valueStr);
 #else
 				value = new object();			
@@ -86,7 +86,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.CC_b:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetCC_b(valueStr);
 #else
 				value = new object();			
@@ -94,7 +94,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.CC_ae:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetCC_ae(valueStr);
 #else
 				value = new object();			
@@ -102,7 +102,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.CC_e:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetCC_e(valueStr);
 #else
 				value = new object();			
@@ -110,7 +110,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.CC_ne:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetCC_ne(valueStr);
 #else
 				value = new object();			
@@ -118,7 +118,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.CC_be:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetCC_be(valueStr);
 #else
 				value = new object();			
@@ -126,7 +126,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.CC_a:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetCC_a(valueStr);
 #else
 				value = new object();			
@@ -134,7 +134,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.CC_p:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetCC_p(valueStr);
 #else
 				value = new object();			
@@ -142,7 +142,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.CC_np:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetCC_np(valueStr);
 #else
 				value = new object();			
@@ -150,7 +150,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.CC_l:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetCC_l(valueStr);
 #else
 				value = new object();			
@@ -158,7 +158,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.CC_ge:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetCC_ge(valueStr);
 #else
 				value = new object();			
@@ -166,7 +166,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.CC_le:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetCC_le(valueStr);
 #else
 				value = new object();			
@@ -174,7 +174,7 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.CC_g:
-#if INTEL || MASM || NASM
+#if MASM || NASM
 				value = ToEnumConverter.GetCC_g(valueStr);
 #else
 				value = new object();			

@@ -15,7 +15,6 @@ static class CSharpConstants {
 	public const string EncoderNamespace = "Blazed.Intel.EncoderInternal";
 	public const string InstructionInfoNamespace = "Blazed.Intel.InstructionInfoInternal";
 	public const string FormatterNamespace = "Blazed.Intel.FormatterInternal";
-	public const string IntelFormatterNamespace = "Blazed.Intel.IntelFormatterInternal";
 	public const string MasmFormatterNamespace = "Blazed.Intel.MasmFormatterInternal";
 	public const string NasmFormatterNamespace = "Blazed.Intel.NasmFormatterInternal";
 
@@ -39,9 +38,7 @@ static class CSharpConstants {
 	public const string DecoderOrEncoderDefine = "DECODER || ENCODER";
 	public const string DecoderOrEncoderOrOpCodeInfoDefine = "DECODER || ENCODER || (ENCODER && OPCODE_INFO)";
 	public const string DecoderOrEncoderOrInstrInfoOrOpCodeInfoDefine = "DECODER || ENCODER || INSTR_INFO || (ENCODER && OPCODE_INFO)";
-	public const string AnyFormatterDefine = "INTEL || MASM || NASM";
-	public const string IntelNasmFormatterDefine = "INTEL || NASM";
-	public const string IntelFormatterDefine = "INTEL";
+	public const string AnyFormatterDefine = "MASM || NASM";
 	public const string MasmFormatterDefine = "MASM";
 	public const string NasmFormatterDefine = "NASM";
 

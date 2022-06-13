@@ -55,8 +55,6 @@ enum DecoderOptions {
 	Cyrix_DMI				= 0x00400000,
 	[Comment("Decode Centaur #(c:ALTINST)#")]
 	ALTINST					= 0x00800000,
-	[Comment("Decode Intel Knights Corner instructions",
-		Rust = "Decode Intel Knights Corner instructions (requires the #(c:mvex)# feature)",
-		RustJS = "Decode Intel Knights Corner instructions (requires the #(c:mvex)# feature)")]
+	[Comment("Decode Intel Knights Corner instructions")]
 	KNC						= 0x01000000,
 }

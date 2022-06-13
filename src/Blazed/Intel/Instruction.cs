@@ -1660,10 +1660,6 @@ namespace Blazed.Intel {
 			var output = new StringOutput();
 			new NasmFormatter().Format(this, output);
 			return output.ToString();
-#elif INTEL
-			var output = new StringOutput();
-			new IntelFormatter().Format(this, output);
-			return output.ToString();
 #else
 			return base.ToString() ?? string.Empty;
 #endif

@@ -40,10 +40,8 @@ namespace Generator.Tables {
 		readonly Dictionary<string, EnumValue> toMemorySize;
 		readonly Dictionary<string, EnumValue> toRegisterIgnoreCase;
 		readonly Dictionary<OpKindKey, OpCodeOperandKindDef> toOpCodeOperandKindDef;
-		readonly EnumType intelCtorKind;
 		readonly EnumType masmCtorKind;
 		readonly EnumType nasmCtorKind;
-		readonly EnumType intelInstrOpInfoFlags;
 		readonly EnumType masmInstrOpInfoFlags;
 		readonly EnumType nasmInstrOpInfoFlags;
 		readonly EnumType registerType;
@@ -151,10 +149,8 @@ namespace Generator.Tables {
 			var opKindDefs = genTypes.GetObject<OpCodeOperandKindDefs>(TypeIds.OpCodeOperandKindDefs).Defs;
 			toOpCodeOperandKindDef = opKindDefs.ToDictionary(a => new OpKindKey(a), a => a);
 
-			intelCtorKind = genTypes[TypeIds.IntelCtorKind];
 			masmCtorKind = genTypes[TypeIds.MasmCtorKind];
 			nasmCtorKind = genTypes[TypeIds.NasmCtorKind];
-			intelInstrOpInfoFlags = genTypes[TypeIds.IntelInstrOpInfoFlags];
 			masmInstrOpInfoFlags = genTypes[TypeIds.MasmInstrOpInfoFlags];
 			nasmInstrOpInfoFlags = genTypes[TypeIds.NasmInstrOpInfoFlags];
 			registerType = genTypes[TypeIds.Register];
@@ -1353,7 +1349,6 @@ namespace Generator.Tables {
 					}
 					break;
 
-				case "intel":
 				case "masm":
 				case "nasm":
 					fmtKeyValues.Add((lineKey, lineValue, lineIndex));
@@ -1389,17 +1384,6 @@ namespace Generator.Tables {
 			// The formatters depend on some other lines so parse the formatter lines later
 			foreach (var (key, value, fmtLineIndex) in fmtKeyValues) {
 				switch (key) {
-				case "intel":
-					if (state.Intel is not null) {
-						Error(fmtLineIndex, $"Duplicate {key}");
-						return false;
-					}
-					if (!TryReadIntelFmt(value, state, out state.Intel, out error)) {
-						Error(fmtLineIndex, error);
-						return false;
-					}
-					break;
-
 				case "masm":
 					if (state.Masm is not null) {
 						Error(fmtLineIndex, $"Duplicate {key}");
@@ -1663,10 +1647,6 @@ namespace Generator.Tables {
 
 			var fmtMnemonic = state.MnemonicStr.ToLowerInvariant();
 			PseudoOpsKind? pseudoOp = state.PseudoOpsKind is null ? null : (PseudoOpsKind)state.PseudoOpsKind.Value;
-			if (!TryCreateIntelDef(state, state.Code, fmtMnemonic, pseudoOp, state.Intel ?? new IntelState(), out var intelDef, out error)) {
-				Error(state.LineIndex, "(intel) " + error);
-				return false;
-			}
 			if (!TryCreateMasmDef(state, state.Code, fmtMnemonic, pseudoOp, state.Masm ?? new MasmState(), out var masmDef, out error)) {
 				Error(state.LineIndex, "(masm) " + error);
 				return false;
@@ -1699,7 +1679,7 @@ namespace Generator.Tables {
 				pseudoOp, state.Encoding, state.Cflow, state.ConditionCode, state.BranchKind, state.StackInfo, state.FpuStackIncrement,
 				state.RflagsRead, state.RflagsUndefined, state.RflagsWritten, state.RflagsCleared, state.RflagsSet,
 				state.Cpuid, cpuidFeatureStrings, state.OpAccess,
-				intelDef, masmDef, nasmDef,
+				masmDef, nasmDef,
 				state.AsmMnemonic);
 			defLineIndex = state.LineIndex;
 			return true;
@@ -1891,337 +1871,6 @@ namespace Generator.Tables {
 				error = "flags=xxx isn't supported";
 				return false;
 			}
-		}
-
-		bool TryReadIntelFmt(string data, InstructionDefState def, [NotNullWhen(true)] out IntelState? state, [NotNullWhen(false)] out string? error) {
-			state = null;
-
-			var parser = new FmtLineParser(data);
-			var result = new IntelState();
-			foreach (var (key, value) in parser.GetKeyValues()) {
-				switch (key) {
-				case "mnemonic":
-					if (value == string.Empty) {
-						error = $"Missing {key} value";
-						return false;
-					}
-					if (result.Mnemonic is not null) {
-						error = $"Duplicate {key} value";
-						return false;
-					}
-					result.Mnemonic = value;
-					break;
-
-				case "flags":
-					if (value == string.Empty) {
-						error = $"Missing {key} value";
-						return false;
-					}
-					foreach (var fl in value.Split(';', StringSplitOptions.RemoveEmptyEntries)) {
-						switch (fl) {
-						case "force-size=always":
-							result.Flags.Add(intelInstrOpInfoFlags[nameof(Enums.Formatter.Intel.InstrOpInfoFlags.ShowNoMemSize_ForceSize)]);
-							result.Flags.Add(intelInstrOpInfoFlags[nameof(Enums.Formatter.Intel.InstrOpInfoFlags.ShowMinMemSize_ForceSize)]);
-							break;
-						case "force-size=default":
-							result.Flags.Add(intelInstrOpInfoFlags[nameof(Enums.Formatter.Intel.InstrOpInfoFlags.ShowNoMemSize_ForceSize)]);
-							break;
-						case "mem-size=ignore":
-							result.Flags.Add(intelInstrOpInfoFlags[nameof(Enums.Formatter.Intel.InstrOpInfoFlags.MemSize_Nothing)]);
-							break;
-						case "short":
-							result.Flags.Add(intelInstrOpInfoFlags[nameof(Enums.Formatter.Intel.InstrOpInfoFlags.BranchSizeInfo_Short)]);
-							break;
-						case "far":
-							result.Flags.Add(intelInstrOpInfoFlags[nameof(Enums.Formatter.Intel.InstrOpInfoFlags.FarMnemonic)]);
-							break;
-						case "o64":
-							result.Flags.Add(intelInstrOpInfoFlags[nameof(Enums.Formatter.Intel.InstrOpInfoFlags.OpSize64)]);
-							break;
-						case "ignore-index":
-							result.Flags.Add(intelInstrOpInfoFlags[nameof(Enums.Formatter.Intel.InstrOpInfoFlags.IgnoreIndexReg)]);
-							break;
-						default:
-							error = $"Unknown value {fl}";
-							return false;
-						}
-					}
-					break;
-
-				default:
-					error = $"Unknown key `{key}`";
-					return false;
-				}
-			}
-
-			if (parser.TryGetNext(out var ctorKindStr)) {
-				int addressSize;
-				int operandSize;
-				int ccIndex;
-				bool isPseudo;
-				switch (ctorKindStr) {
-				case "asz":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.asz)];
-					if (!def.TryGetAddressSize(out addressSize, out error))
-						return false;
-					result.Args.Add(addressSize);
-					break;
-
-				case "bcst":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.bcst)];
-					result.Args.Add(CreateFlagsEnum(intelInstrOpInfoFlags, result.GetUsedFlags()));
-					break;
-
-				case "bnd":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.bnd)];
-					result.Args.Add(CreateFlagsEnum(intelInstrOpInfoFlags, result.GetUsedFlags()));
-					break;
-
-				case "cc":
-					if (!TryGetCcMnemonics(def, out ccIndex, out var extraMnemonics, out error))
-						return false;
-					result.CtorKind = extraMnemonics.Length switch {
-						0 => intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.CC_1)],
-						1 => intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.CC_2)],
-						2 => intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.CC_3)],
-						_ => throw new InvalidOperationException(),
-					};
-					result.Args.AddRange(extraMnemonics);
-					result.Args.Add(ccIndex);
-					break;
-
-				case "decl":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.DeclareData)];
-					break;
-
-				case "invlpga":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.invlpga)];
-					if (!def.TryGetAddressSize(out addressSize, out error))
-						return false;
-					result.Args.Add(addressSize);
-					break;
-
-				case "imul":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.imul)];
-					break;
-
-				case "maskmovq":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.maskmovq)];
-					break;
-
-				case "osz-mem-2":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.memsize)];
-					int osz;
-					if (parser.TryGetNext(out var next)) {
-						if (next == "16")
-							osz = 16;
-						else {
-							error = $"Unknown arg `{next}`";
-							return false;
-						}
-					}
-					else
-						osz = 32 | 64;
-					result.Args.Add(osz);
-					break;
-
-				case "movabs":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.movabs)];
-					break;
-
-				case "nop":
-					if (!def.TryGetOperandSize(out operandSize, out error))
-						return false;
-					switch (operandSize) {
-					case 16:
-						result.Args.Add(16);
-						result.Args.Add(registerType[nameof(Register.AX)]);
-						break;
-					case 32:
-						result.Args.Add(32 | 64);
-						result.Args.Add(registerType[nameof(Register.EAX)]);
-						break;
-					case 64:
-						result.Args.Add(0);
-						result.Args.Add(registerType[nameof(Register.RAX)]);
-						break;
-					default:
-						throw new InvalidOperationException();
-					}
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.nop)];
-					break;
-
-				case "kmask-op":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.opmask_op)];
-					break;
-
-				case "osz-bnd":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.os_bnd)];
-					result.Args.Add(def.GetOperandSize(64));
-					break;
-
-				case "loop":
-					if (!def.TryGetAddressSize(out addressSize, out error))
-						return false;
-					var rcxReg = addressSize switch {
-						16 => registerType[nameof(Register.CX)],
-						32 => registerType[nameof(Register.ECX)],
-						64 => registerType[nameof(Register.RCX)],
-						_ => throw new InvalidOperationException(),
-					};
-					if (TryGetLoopCcMnemonics(def, out ccIndex, out var extraLoopMnemonic)) {
-						result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.os_loopcc)];
-						result.Args.Add(extraLoopMnemonic);
-						result.Args.Add(ccIndex);
-					}
-					else
-						result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.os_loop)];
-					result.Args.Add(def.GetOperandSize(64));
-					result.Args.Add(rcxReg);
-					break;
-
-				case "osz":
-					result.Args.Add(def.GetOperandSize(64));
-					if (result.Flags.Count > 0) {
-						result.Args.Add(CreateFlagsEnum(intelInstrOpInfoFlags, result.GetUsedFlags()));
-						result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.os3)];
-					}
-					else
-						result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.os2)];
-					break;
-
-				case "reg":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.reg)];
-					if (!parser.TryGet(1, out var strings, out error))
-						return false;
-					if (!TryGetValue(toRegisterIgnoreCase, strings[0], out var enumValue, out error))
-						return false;
-					result.Args.Add(enumValue);
-					break;
-
-				case "reg16":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.Reg16)];
-					break;
-
-				case "reg32":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.Reg32)];
-					break;
-
-				case "st1":
-					if (!TryGetIsPseudoArg(parser, out isPseudo, out error))
-						return false;
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.ST_STi)];
-					result.Args.Add(isPseudo);
-					break;
-
-				case "st2":
-					if (!TryGetIsPseudoArg(parser, out isPseudo, out error))
-						return false;
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.STi_ST)];
-					result.Args.Add(isPseudo);
-					break;
-
-				case "add-st1":
-					if (!TryGetIsLoadArg(parser, out var isLoad, out error))
-						return false;
-					result.Args.Add(CreateFlagsEnum(intelInstrOpInfoFlags, result.GetUsedFlags()));
-					if (isLoad) {
-						result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.ST1_3)];
-						result.Args.Add(isLoad);
-					}
-					else
-						result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.ST1_2)];
-					break;
-
-				case "add-st2":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.ST2)];
-					result.Args.Add(CreateFlagsEnum(intelInstrOpInfoFlags, result.GetUsedFlags()));
-					break;
-
-				case "ignore-first":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.StringIg0)];
-					break;
-
-				case "ignore-last":
-					result.CtorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.StringIg1)];
-					break;
-
-				default:
-					error = $"Unknown value `{ctorKindStr}`";
-					return false;
-				}
-			}
-
-			var garbage = parser.GetRest();
-			if (garbage.Length > 0) {
-				error = $"Extra args: `{string.Join(' ', garbage)}`";
-				return false;
-			}
-
-			state = result;
-			error = null;
-			return true;
-		}
-
-		bool TryCreateIntelDef(InstructionDefState def, EnumValue code, string defaultMnemonic, PseudoOpsKind? pseudoOp, IntelState state, [NotNullWhen(true)] out FmtInstructionDef? intelDef, [NotNullWhen(false)] out string? error) {
-			intelDef = null;
-
-			var mnemonic = state.Mnemonic ?? defaultMnemonic;
-			var ctorKind = state.CtorKind;
-			if (ctorKind is null) {
-				if (state.Args.Count > 0)
-					throw new InvalidOperationException();
-
-				if (def.PseudoOpsKind is not null) {
-					state.Args.Add(def.PseudoOpsKind);
-					if (pseudoOp == PseudoOpsKind.pclmulqdq || pseudoOp == PseudoOpsKind.vpclmulqdq)
-						ctorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.pclmulqdq)];
-					else
-						ctorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.pops)];
-				}
-				else if (def.BranchKind == BranchKind.JccShort || def.BranchKind == BranchKind.JccNear) {
-					int ccIndex = (int)(def.OpCode.OpCode & 0x0F);
-					var extraMnemonics = jccOtherMnemonics[ccIndex];
-					if (def.BranchKind == BranchKind.JccShort)
-						state.Flags.Add(intelInstrOpInfoFlags[nameof(Enums.Formatter.Intel.InstrOpInfoFlags.BranchSizeInfo_Short)]);
-					if (state.Flags.Count > 0) {
-						ctorKind = extraMnemonics.Length switch {
-							0 => intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.os_jcc_b_1)],
-							1 => intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.os_jcc_b_2)],
-							2 => intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.os_jcc_b_3)],
-							_ => throw new InvalidOperationException(),
-						};
-					}
-					else {
-						ctorKind = extraMnemonics.Length switch {
-							0 => intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.os_jcc_a_1)],
-							1 => intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.os_jcc_a_2)],
-							2 => intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.os_jcc_a_3)],
-							_ => throw new InvalidOperationException(),
-						};
-					}
-					state.Args.AddRange(extraMnemonics);
-					state.Args.Add(ccIndex);
-					state.Args.Add(def.GetOperandSize(64));
-					if (state.Flags.Count > 0)
-						state.Args.Add(CreateFlagsEnum(intelInstrOpInfoFlags, state.GetUsedFlags()));
-				}
-				else {
-					if (state.Flags.Count > 0) {
-						ctorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.Normal_2)];
-						state.Args.Add(CreateFlagsEnum(intelInstrOpInfoFlags, state.GetUsedFlags()));
-					}
-					else
-						ctorKind = intelCtorKind[nameof(Enums.Formatter.Intel.CtorKind.Normal_1)];
-				}
-			}
-
-			if (!state.UsedFlags && !VerifyNoFlags(state, out error))
-				return false;
-
-			intelDef = new FmtInstructionDef(code, mnemonic, ctorKind, state.Args.ToArray());
-			error = null;
-			return true;
 		}
 
 		static bool TryGetCharArg(FmtLineParser parser, out char c, [NotNullWhen(false)] out string? error) {
@@ -3262,8 +2911,6 @@ namespace Generator.Tables {
 			return Flags;
 		}
 	}
-	sealed class IntelState : FmtState {
-	}
 	sealed class MasmState : FmtState {
 	}
 	sealed class NasmState : FmtState {
@@ -3311,7 +2958,6 @@ namespace Generator.Tables {
 		public EnumValue? MemorySize_Broadcast;
 		public MvexInstructionInfo Mvex;
 		public OpCodeDef OpCode;
-		public IntelState? Intel;
 		public MasmState? Masm;
 		public NasmState? Nasm;
 		public string? AsmMnemonic;

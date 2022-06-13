@@ -111,11 +111,7 @@ abstract class FormatterTableSerializer : IFormatterTableSerializer {
 
 				case IEnumValue enumValue:
 					var typeId = enumValue.DeclaringType.TypeId;
-					if (typeId == TypeIds.IntelInstrOpInfoFlags) {
-						writer.WriteCompressedUInt32(enumValue.Value);
-						writer.WriteCommentLine($"0x{enumValue.Value:X} = {enumValue.ToStringValue()}");
-					}
-					else if (typeId == TypeIds.MasmInstrOpInfoFlags) {
+					if (typeId == TypeIds.MasmInstrOpInfoFlags) {
 						writer.WriteCompressedUInt32(enumValue.Value);
 						writer.WriteCommentLine($"0x{enumValue.Value:X} = {enumValue.ToStringValue()}");
 					}

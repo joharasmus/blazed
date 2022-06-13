@@ -1,18 +1,15 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if INTEL || MASM || NASM
+#if MASM || NASM
 using System;
 using System.Collections.Generic;
 using Blazed.Intel;
 
 namespace UnitTests.Intel.FormatterTests {
 	static class Utils {
-#if INTEL || MASM || NASM
+#if MASM || NASM
 		public static IEnumerable<Formatter> GetAllFormatters() {
-#if INTEL
-			yield return new IntelFormatter();
-#endif
 #if MASM
 			yield return new MasmFormatter();
 #endif

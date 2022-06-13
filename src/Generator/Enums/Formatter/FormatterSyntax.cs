@@ -4,10 +4,8 @@
 using System;
 
 namespace Generator.Enums.Formatter {
-	[Enum("FormatterSyntax", Documentation = "Formatter syntax (Intel XED, masm, nasm)", Public = true)]
+	[Enum("FormatterSyntax", Documentation = "Formatter syntax (masm, nasm)", Public = true)]
 	enum FormatterSyntax {
-		[Comment("Intel XED")]
-		Intel,
 		[Comment("masm")]
 		Masm,
 		[Comment("nasm")]

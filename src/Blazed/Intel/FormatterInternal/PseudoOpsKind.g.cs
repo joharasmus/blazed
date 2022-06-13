@@ -5,7 +5,7 @@
 
 #nullable enable
 
-#if INTEL || MASM || NASM
+#if MASM || NASM
 namespace Blazed.Intel.FormatterInternal {
 	enum PseudoOpsKind {
 		cmpps,

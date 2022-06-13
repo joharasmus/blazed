@@ -19,70 +19,8 @@ sealed class CSharpTableGen : TableGen {
 		: base(generatorContext.Types) { }
 
 	protected override void Generate(MemorySizeDef[] defs) {
-		GenerateIntel(defs);
 		GenerateMasm(defs);
 		GenerateNasm(defs);
-	}
-
-	void GenerateIntel(MemorySizeDef[] defs) {
-		var broadcastToKindValues = genTypes[TypeIds.BroadcastToKind].Values;
-		var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.IntelFormatterNamespace, "MemorySizes.cs");
-		var intelKeywords = genTypes[TypeIds.IntelMemoryKeywords].Values;
-		const int BroadcastToKindShift = 5;
-		const int MemoryKeywordsMask = 0x1F;
-		new FileUpdater(TargetLanguage.CSharp, "ConstData", filename).Generate(writer => {
-			writer.WriteLine($"const int {IdentifierConverter.Escape(nameof(BroadcastToKindShift))} = {BroadcastToKindShift};");
-			writer.WriteLine($"const int {IdentifierConverter.Escape(nameof(MemoryKeywordsMask))} = {MemoryKeywordsMask};");
-			var created = new HashSet<string>(StringComparer.Ordinal);
-			foreach (var keywords in intelKeywords.Select(a => a.RawName)) {
-				if (keywords == nameof(IntelMemoryKeywords.None))
-					continue;
-				var parts = keywords.Split('_');
-				foreach (var kw in parts) {
-					if (created.Add(kw))
-						writer.WriteLine($"var {EscapeKeyword(kw)} = new FormatterString(\"{kw}\");");
-				}
-				writer.WriteLine($"var {keywords} = new[] {{ {string.Join(", ", parts.Select(a => EscapeKeyword(a)))} }};");
-			}
-			foreach (var bcst in broadcastToKindValues) {
-				if ((BroadcastToKind)bcst.Value == BroadcastToKind.None)
-					writer.WriteLine($"var empty = new FormatterString(\"\");");
-				else {
-					var name = bcst.RawName;
-					if (!name.StartsWith("b", StringComparison.Ordinal))
-						throw new InvalidOperationException();
-					var s = name[1..];
-					writer.WriteLine($"var {name} = new FormatterString(\"{s}\");");
-				}
-			}
-		});
-		new FileUpdater(TargetLanguage.CSharp, "MemorySizes", filename).Generate(writer => {
-			foreach (var def in defs) {
-				uint value = def.Intel.Value | (def.BroadcastToKind.Value << BroadcastToKindShift);
-				if (value > 0xFF || def.Intel.Value > MemoryKeywordsMask)
-					throw new InvalidOperationException();
-				writer.WriteByte(checked((byte)value));
-				writer.WriteLine();
-			}
-		});
-		new FileUpdater(TargetLanguage.CSharp, "MemoryKeywordsSwitch", filename).Generate(writer => {
-			foreach (var kw in intelKeywords) {
-				writer.Write($"0x{kw.Value:X2} => ");
-				if ((IntelMemoryKeywords)kw.Value == IntelMemoryKeywords.None)
-					writer.WriteLine("Array.Empty<FormatterString>(),");
-				else
-					writer.WriteLine($"{kw.RawName},");
-			}
-		});
-		new FileUpdater(TargetLanguage.CSharp, "BroadcastToKindSwitch", filename).Generate(writer => {
-			foreach (var bcst in broadcastToKindValues) {
-				writer.Write($"0x{bcst.Value:X2} => ");
-				if ((BroadcastToKind)bcst.Value == BroadcastToKind.None)
-					writer.WriteLine("empty,");
-				else
-					writer.WriteLine($"{bcst.RawName},");
-			}
-		});
 	}
 
 	void GenerateMasm(MemorySizeDef[] defs) {

@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if INTEL || MASM || NASM
+#if MASM || NASM
 using System.Diagnostics;
 
 namespace Blazed.Intel.FormatterInternal {
 	readonly struct FormatterString {
 		readonly string lower;
-#if INTEL || MASM || NASM
+#if MASM || NASM
 		readonly string upper;
 #endif
 
@@ -16,7 +16,7 @@ namespace Blazed.Intel.FormatterInternal {
 		public FormatterString(string lower) {
 			Debug.Assert(lower.ToLowerInvariant() == lower);
 			this.lower = lower;
-#if INTEL || MASM || NASM
+#if MASM || NASM
 			upper = string.Intern(lower.ToUpperInvariant());
 #endif
 		}
@@ -28,7 +28,7 @@ namespace Blazed.Intel.FormatterInternal {
 			return res;
 		}
 
-#if INTEL || MASM || NASM
+#if MASM || NASM
 		public string Get(bool upper) =>
 			upper ? this.upper : lower;
 #endif

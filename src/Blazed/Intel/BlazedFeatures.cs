@@ -10,19 +10,6 @@ namespace Blazed.Intel {
 	public static class BlazedFeatures {
 
 		/// <summary>
-		/// <see langword="true"/> if the Intel (xed) formatter is available
-		/// </summary>
-		public static bool HasIntelFormatter {
-			get {
-#if INTEL
-				return true;
-#else
-				return false;
-#endif
-			}
-		}
-
-		/// <summary>
 		/// <see langword="true"/> if the masm formatter is available
 		/// </summary>
 		public static bool HasMasmFormatter {

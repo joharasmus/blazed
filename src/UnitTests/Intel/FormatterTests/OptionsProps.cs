@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if INTEL || MASM || NASM
+#if MASM || NASM
 using System;
 using System.Collections.Generic;
 using Blazed.Intel;
@@ -84,7 +84,7 @@ namespace UnitTests.Intel.FormatterTests {
 			return options;
 		}
 
-#if INTEL || MASM || NASM
+#if MASM || NASM
 		public static void Initialize(FormatterOptions options, OptionsProps property, object value) {
 			switch (property) {
 			case OptionsProps.AddLeadingZeroToHexNumbers: options.AddLeadingZeroToHexNumbers = (bool)value; break;
@@ -189,7 +189,7 @@ namespace UnitTests.Intel.FormatterTests {
 			DecoderOptions = OptionsPropsUtils.GetDecoderOptions(properties);
 		}
 
-#if INTEL || MASM || NASM
+#if MASM || NASM
 		internal void Initialize(FormatterOptions options) => OptionsPropsUtils.Initialize(options, properties);
 #endif
 
