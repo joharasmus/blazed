@@ -72,9 +72,6 @@ namespace UnitTests.Intel.FormatterTests.Nasm {
 			Assert.Equal(CC_le.le, options.CC_le);
 			Assert.Equal(CC_g.g, options.CC_g);
 			Assert.False(options.ShowUselessPrefixes);
-			Assert.True(options.MasmAddDsPrefix32);
-			Assert.True(options.MasmSymbolDisplInBrackets);
-			Assert.True(options.MasmDisplInBrackets);
 			Assert.False(options.NasmShowSignExtendedImmediateSize);
 		}
 

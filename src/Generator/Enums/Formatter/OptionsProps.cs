@@ -22,7 +22,6 @@ namespace Generator.Enums.Formatter {
 		HexSuffix,
 		IP,
 		LeadingZeros,
-		MasmAddDsPrefix32,
 		MemorySizeOptions,
 		NasmShowSignExtendedImmediateSize,
 		NumberBase,

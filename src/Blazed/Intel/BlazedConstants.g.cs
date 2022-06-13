@@ -41,7 +41,7 @@ namespace Blazed.Intel {
 		internal const int DecoratorKindEnumCount = 6;
 		internal const int EncodingKindEnumCount = 6;
 		internal const int FlowControlEnumCount = 10;
-		internal const int FormatterSyntaxEnumCount = 2;
+		internal const int FormatterSyntaxEnumCount = 1;
 		internal const int FormatterTextKindEnumCount = 16;
 		internal const int MandatoryPrefixEnumCount = 5;
 		internal const int MemorySizeEnumCount = 160;

@@ -102,8 +102,6 @@ Options:
     Show this message
 --no-formatter
     Don't include any formatter
---no-masm
-    Don't include the masm formatter
 --no-nasm
     Don't include the nasm formatter
 --no-vex
@@ -146,14 +144,6 @@ Options:
 
 			case "--no-formatter":
 				options.GeneratorFlags |= GeneratorFlags.NoFormatter;
-				break;
-
-			case "--no-masm":
-				options.GeneratorFlags |= GeneratorFlags.NoMasmFormatter;
-				break;
-
-			case "--no-nasm":
-				options.GeneratorFlags |= GeneratorFlags.NoNasmFormatter;
 				break;
 
 			case "--no-vex":

@@ -27,9 +27,6 @@ namespace Generator.Tables.CSharp {
 				WriteDict(writer, EncoderConstants.MandatoryPrefixTable(genTypes), "ToMandatoryPrefix");
 				WriteDict(writer, EncoderConstants.OpCodeTableKindTable(genTypes), "ToOpCodeTableKind");
 			});
-			new FileUpdater(TargetLanguage.CSharp, "Dicts", dirs.GetCSharpTestFilename("Intel", "FormatterTests", "Masm", "SymbolOptionsTests.cs")).Generate(writer => {
-				WriteDict(writer, MasmSymbolOptionsConstants.SymbolTestFlagsTable(genTypes), "ToSymbolTestFlags");
-			});
 			new FileUpdater(TargetLanguage.CSharp, "Dicts", dirs.GetCSharpTestFilename("Intel", "FormatterTests", "MnemonicOptionsTestsReader.cs")).Generate(writer => {
 				WriteDict(writer, FormatMnemonicOptionsConstants.FormatMnemonicOptionsTable(genTypes), "ToFormatMnemonicOptions");
 			});

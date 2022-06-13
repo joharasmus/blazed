@@ -5,7 +5,7 @@
 
 #nullable enable
 
-#if MASM || NASM
+#if NASM
 namespace Blazed.Intel {
 	/// <summary>Formatter text kind</summary>
 	public enum FormatterTextKind {

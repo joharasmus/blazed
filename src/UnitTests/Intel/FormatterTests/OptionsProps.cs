@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if MASM || NASM
+#if NASM
 using System;
 using System.Collections.Generic;
 using Blazed.Intel;
@@ -28,7 +28,6 @@ namespace UnitTests.Intel.FormatterTests {
 		HexSuffix,
 		IP,
 		LeadingZeros,
-		MasmAddDsPrefix32,
 		MemorySizeOptions,
 		NasmShowSignExtendedImmediateSize,
 		NumberBase,
@@ -84,7 +83,7 @@ namespace UnitTests.Intel.FormatterTests {
 			return options;
 		}
 
-#if MASM || NASM
+#if NASM
 		public static void Initialize(FormatterOptions options, OptionsProps property, object value) {
 			switch (property) {
 			case OptionsProps.AddLeadingZeroToHexNumbers: options.AddLeadingZeroToHexNumbers = (bool)value; break;
@@ -104,7 +103,6 @@ namespace UnitTests.Intel.FormatterTests {
 			case OptionsProps.HexPrefix: options.HexPrefix = (string)value; break;
 			case OptionsProps.HexSuffix: options.HexSuffix = (string)value; break;
 			case OptionsProps.LeadingZeros: options.LeadingZeros = (bool)value; break;
-			case OptionsProps.MasmAddDsPrefix32: options.MasmAddDsPrefix32 = (bool)value; break;
 			case OptionsProps.MemorySizeOptions: options.MemorySizeOptions = (MemorySizeOptions)value; break;
 			case OptionsProps.NasmShowSignExtendedImmediateSize: options.NasmShowSignExtendedImmediateSize = (bool)value; break;
 			case OptionsProps.NumberBase: options.NumberBase = (NumberBase)value; break;
@@ -189,7 +187,7 @@ namespace UnitTests.Intel.FormatterTests {
 			DecoderOptions = OptionsPropsUtils.GetDecoderOptions(properties);
 		}
 
-#if MASM || NASM
+#if NASM
 		internal void Initialize(FormatterOptions options) => OptionsPropsUtils.Initialize(options, properties);
 #endif
 

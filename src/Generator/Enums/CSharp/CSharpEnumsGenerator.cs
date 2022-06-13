@@ -68,9 +68,7 @@ sealed class CSharpEnumsGenerator : EnumsGenerator {
 		toFullFileInfo.Add(TypeIds.TupleType, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.TupleType) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.DecoderOrEncoderOrOpCodeInfoDefine));
 		toFullFileInfo.Add(TypeIds.VexOpCodeHandlerKind, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.DecoderNamespace, nameof(TypeIds.VexOpCodeHandlerKind) + ".g.cs"), CSharpConstants.DecoderNamespace, CSharpConstants.DecoderVexOrXopDefine, baseType: "byte"));
 		toFullFileInfo.Add(TypeIds.Mnemonic, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.Mnemonic) + ".g.cs"), CSharpConstants.BlazedNamespace));
-		toFullFileInfo.Add(TypeIds.MasmCtorKind, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.MasmFormatterNamespace, "CtorKind.g.cs"), CSharpConstants.MasmFormatterNamespace, CSharpConstants.MasmFormatterDefine));
 		toFullFileInfo.Add(TypeIds.NasmCtorKind, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.NasmFormatterNamespace, "CtorKind.g.cs"), CSharpConstants.NasmFormatterNamespace, CSharpConstants.NasmFormatterDefine));
-		toFullFileInfo.Add(TypeIds.MasmInstrOpInfoFlags, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.MasmFormatterNamespace, "InstrOpInfoFlags.g.cs"), CSharpConstants.MasmFormatterNamespace, CSharpConstants.MasmFormatterDefine, "ushort"));
 		toFullFileInfo.Add(TypeIds.NasmSignExtendInfo, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.NasmFormatterNamespace, "SignExtendInfo.g.cs"), CSharpConstants.NasmFormatterNamespace, CSharpConstants.NasmFormatterDefine));
 		toFullFileInfo.Add(TypeIds.NasmSizeOverride, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.NasmFormatterNamespace, "SizeOverride.g.cs"), CSharpConstants.NasmFormatterNamespace, CSharpConstants.NasmFormatterDefine));
 		toFullFileInfo.Add(TypeIds.NasmBranchSizeInfo, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.NasmFormatterNamespace, "BranchSizeInfo.g.cs"), CSharpConstants.NasmFormatterNamespace, CSharpConstants.NasmFormatterDefine));
@@ -121,8 +119,6 @@ sealed class CSharpEnumsGenerator : EnumsGenerator {
 		toPartialFileInfo.Add(TypeIds.MvexOpCodeTable, new PartialEnumFileInfo("MvexOpCodeTable", CSharpConstants.GetFilename(genTypes, CSharpConstants.EncoderNamespace, "Enums.cs"), null));
 
 		toPartialFileInfo.Add(TypeIds.FormatterFlowControl, new PartialEnumFileInfo("FormatterFlowControl", CSharpConstants.GetFilename(genTypes, CSharpConstants.FormatterNamespace, "FormatterUtils.cs"), null));
-		toPartialFileInfo.Add(TypeIds.MasmInstrOpKind, new PartialEnumFileInfo("InstrOpKind", CSharpConstants.GetFilename(genTypes, CSharpConstants.MasmFormatterNamespace, "InstrInfo.cs"), "byte"));
-		toPartialFileInfo.Add(TypeIds.MasmSymbolTestFlags, new PartialEnumFileInfo("SymbolTestFlags", dirs.GetCSharpTestFilename("Intel", "FormatterTests", "Masm", "SymbolOptionsTests.cs"), null));
 		toPartialFileInfo.Add(TypeIds.NasmInstrOpKind, new PartialEnumFileInfo("InstrOpKind", CSharpConstants.GetFilename(genTypes, CSharpConstants.NasmFormatterNamespace, "InstrInfo.cs"), "byte"));
 		toPartialFileInfo.Add(TypeIds.NasmMemorySizeInfo, new PartialEnumFileInfo("MemorySizeInfo", CSharpConstants.GetFilename(genTypes, CSharpConstants.NasmFormatterNamespace, "InstrInfo.cs"), null));
 		toPartialFileInfo.Add(TypeIds.NasmFarMemorySizeInfo, new PartialEnumFileInfo("FarMemorySizeInfo", CSharpConstants.GetFilename(genTypes, CSharpConstants.NasmFormatterNamespace, "InstrInfo.cs"), null));

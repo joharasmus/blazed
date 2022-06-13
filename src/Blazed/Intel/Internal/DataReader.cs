@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if INSTR_INFO || DECODER || MASM || NASM
+#if INSTR_INFO || DECODER ||NASM
 using System;
 
 namespace Blazed.Intel.Internal {

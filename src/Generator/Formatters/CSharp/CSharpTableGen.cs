@@ -2,8 +2,6 @@
 // Copyright (C) 2018-present iced project and contributors
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using Generator.Constants;
 using Generator.Enums;
@@ -19,57 +17,7 @@ sealed class CSharpTableGen : TableGen {
 		: base(generatorContext.Types) { }
 
 	protected override void Generate(MemorySizeDef[] defs) {
-		GenerateMasm(defs);
 		GenerateNasm(defs);
-	}
-
-	void GenerateMasm(MemorySizeDef[] defs) {
-		var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.MasmFormatterNamespace, "MemorySizes.cs");
-		var masmKeywords = genTypes[TypeIds.MasmMemoryKeywords].Values;
-		var sizeToIndex = new Dictionary<uint, uint>();
-		uint index = 0;
-		foreach (var size in defs.Select(a => a.Size).Distinct().OrderBy(a => a))
-			sizeToIndex[size] = index++;
-		const int SizeKindShift = 5;
-		const int MemoryKeywordsMask = 0x1F;
-		new FileUpdater(TargetLanguage.CSharp, "ConstData", filename).Generate(writer => {
-			writer.WriteLine($"const int {IdentifierConverter.Escape(nameof(SizeKindShift))} = {SizeKindShift};");
-			writer.WriteLine($"const int {IdentifierConverter.Escape(nameof(MemoryKeywordsMask))} = {MemoryKeywordsMask};");
-			var created = new HashSet<string>(StringComparer.Ordinal);
-			foreach (var keywords in masmKeywords.Select(a => a.RawName).Concat(new[] { "mmword_ptr" })) {
-				if (keywords == nameof(MasmMemoryKeywords.None))
-					continue;
-				var parts = keywords.Split('_');
-				foreach (var kw in parts) {
-					if (created.Add(kw))
-						writer.WriteLine($"var {EscapeKeyword(kw)} = new FormatterString(\"{kw}\");");
-				}
-				writer.WriteLine($"var {keywords} = new[] {{ {string.Join(", ", parts.Select(a => EscapeKeyword(a)))} }};");
-			}
-			writer.WriteLine("var sizes = new ushort[] {");
-			using (writer.Indent()) {
-				foreach (var size in sizeToIndex.Select(a => a.Key).OrderBy(a => a))
-					writer.WriteLine($"{size},");
-			}
-			writer.WriteLine("};");
-		});
-		new FileUpdater(TargetLanguage.CSharp, "MemorySizes", filename).Generate(writer => {
-			foreach (var def in defs) {
-				uint value = def.Masm.Value | (sizeToIndex[def.Size] << SizeKindShift);
-				if (value > 0xFFFF || def.Masm.Value > MemoryKeywordsMask)
-					throw new InvalidOperationException();
-				writer.WriteLine($"0x{value:X4},");
-			}
-		});
-		new FileUpdater(TargetLanguage.CSharp, "MemoryKeywordsSwitch", filename).Generate(writer => {
-			foreach (var kw in masmKeywords) {
-				writer.Write($"0x{kw.Value:X2} => ");
-				if ((MasmMemoryKeywords)kw.Value == MasmMemoryKeywords.None)
-					writer.WriteLine("Array.Empty<FormatterString>(),");
-				else
-					writer.WriteLine($"{kw.RawName},");
-			}
-		});
 	}
 
 	void GenerateNasm(MemorySizeDef[] defs) {

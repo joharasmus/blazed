@@ -7,9 +7,9 @@ blazed is a freestanding fork of the "iced" project. It is very much WIP.
 iced is a blazing fast and correct x86 (16/32/64-bit) instruction decoder, disassembler and assembler written in C#.
 
 - 👍 Supports all Intel and AMD instructions
-- 👍 Correct: All instructions are tested and iced has been tested against other disassemblers/assemblers (xed, objdump, masm, dumpbin, nasm, ndisasm)
+- 👍 Correct: All instructions are tested and iced has been tested against other disassemblers/assemblers (objdump, dumpbin, nasm, ndisasm)
 - 👍 100% C# code
-- 👍 The formatter supports masm and nasm and there are many options to customize the output
+- 👍 The formatter supports nasm and there are many options to customize the output
 - 👍 The decoder decodes >90 MB/s
 - 👍 Small decoded instructions, only 40 bytes and the decoder doesn't allocate any memory
 - 👍 Create instructions with [code assembler](#assemble-instructions), eg. `asm.mov(eax, edx)`
@@ -35,7 +35,6 @@ Decoder:
 Formatters:
 
 - `Formatter`
-    - `MasmFormatter`
     - `NasmFormatter`
 - `FormatterOptions`
 - `FormatterOutput`
@@ -114,7 +113,7 @@ static class HowTo_Disassemble {
         while (decoder.IP < endRip)
             instructions.Add(decoder.Decode());
 
-        // Formatters: Masm* and Nasm*.
+        // Formatters: NasmFormatter
         var formatter = new NasmFormatter();
         formatter.Options.DigitSeparator = "`";
         formatter.Options.FirstOperandCharIndex = 10;
@@ -314,7 +313,7 @@ static class HowTo_ColorizedText {
         var decoder = Decoder.Create(exampleCodeBitness, codeReader);
         decoder.IP = exampleCodeRIP;
 
-        var formatter = new MasmFormatter();
+        var formatter = new NasmFormatter();
         var output = new FormatterOutputImpl();
         foreach (var instr in decoder) {
             output.List.Clear();

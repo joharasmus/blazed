@@ -1652,11 +1652,7 @@ namespace Blazed.Intel {
 		/// <returns></returns>
 		public override readonly string ToString() {
 			// If the order of #if/elif checks gets updated, also update the `Instruction_ToString()` test method
-#if MASM
-			var output = new StringOutput();
-			new MasmFormatter().Format(this, output);
-			return output.ToString();
-#elif NASM
+#if NASM
 			var output = new StringOutput();
 			new NasmFormatter().Format(this, output);
 			return output.ToString();

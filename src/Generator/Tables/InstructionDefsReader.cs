@@ -40,9 +40,7 @@ namespace Generator.Tables {
 		readonly Dictionary<string, EnumValue> toMemorySize;
 		readonly Dictionary<string, EnumValue> toRegisterIgnoreCase;
 		readonly Dictionary<OpKindKey, OpCodeOperandKindDef> toOpCodeOperandKindDef;
-		readonly EnumType masmCtorKind;
 		readonly EnumType nasmCtorKind;
-		readonly EnumType masmInstrOpInfoFlags;
 		readonly EnumType nasmInstrOpInfoFlags;
 		readonly EnumType registerType;
 		readonly EnumType codeSizeType;
@@ -149,9 +147,7 @@ namespace Generator.Tables {
 			var opKindDefs = genTypes.GetObject<OpCodeOperandKindDefs>(TypeIds.OpCodeOperandKindDefs).Defs;
 			toOpCodeOperandKindDef = opKindDefs.ToDictionary(a => new OpKindKey(a), a => a);
 
-			masmCtorKind = genTypes[TypeIds.MasmCtorKind];
 			nasmCtorKind = genTypes[TypeIds.NasmCtorKind];
-			masmInstrOpInfoFlags = genTypes[TypeIds.MasmInstrOpInfoFlags];
 			nasmInstrOpInfoFlags = genTypes[TypeIds.NasmInstrOpInfoFlags];
 			registerType = genTypes[TypeIds.Register];
 			codeSizeType = genTypes[TypeIds.CodeSize];
@@ -1349,7 +1345,6 @@ namespace Generator.Tables {
 					}
 					break;
 
-				case "masm":
 				case "nasm":
 					fmtKeyValues.Add((lineKey, lineValue, lineIndex));
 					break;
@@ -1384,16 +1379,6 @@ namespace Generator.Tables {
 			// The formatters depend on some other lines so parse the formatter lines later
 			foreach (var (key, value, fmtLineIndex) in fmtKeyValues) {
 				switch (key) {
-				case "masm":
-					if (state.Masm is not null) {
-						Error(fmtLineIndex, $"Duplicate {key}");
-						return false;
-					}
-					if (!TryReadMasmFmt(value, state, out state.Masm, out error)) {
-						Error(fmtLineIndex, error);
-						return false;
-					}
-					break;
 
 				case "nasm":
 					if (state.Nasm is not null) {
@@ -1647,10 +1632,6 @@ namespace Generator.Tables {
 
 			var fmtMnemonic = state.MnemonicStr.ToLowerInvariant();
 			PseudoOpsKind? pseudoOp = state.PseudoOpsKind is null ? null : (PseudoOpsKind)state.PseudoOpsKind.Value;
-			if (!TryCreateMasmDef(state, state.Code, fmtMnemonic, pseudoOp, state.Masm ?? new MasmState(), out var masmDef, out error)) {
-				Error(state.LineIndex, "(masm) " + error);
-				return false;
-			}
 			if (!TryCreateNasmDef(state, state.Code, fmtMnemonic, pseudoOp, state.Nasm ?? new NasmState(), out var nasmDef, out error)) {
 				Error(state.LineIndex, "(nasm) " + error);
 				return false;
@@ -1679,8 +1660,7 @@ namespace Generator.Tables {
 				pseudoOp, state.Encoding, state.Cflow, state.ConditionCode, state.BranchKind, state.StackInfo, state.FpuStackIncrement,
 				state.RflagsRead, state.RflagsUndefined, state.RflagsWritten, state.RflagsCleared, state.RflagsSet,
 				state.Cpuid, cpuidFeatureStrings, state.OpAccess,
-				masmDef, nasmDef,
-				state.AsmMnemonic);
+				nasmDef, state.AsmMnemonic);
 			defLineIndex = state.LineIndex;
 			return true;
 		}
@@ -1886,429 +1866,6 @@ namespace Generator.Tables {
 			}
 
 			c = next[0];
-			error = null;
-			return true;
-		}
-
-		bool TryReadMasmFmt(string data, InstructionDefState def, [NotNullWhen(true)] out MasmState? state, [NotNullWhen(false)] out string? error) {
-			state = null;
-
-			var parser = new FmtLineParser(data);
-			var result = new MasmState();
-			foreach (var (key, value) in parser.GetKeyValues()) {
-				switch (key) {
-				case "mnemonic":
-					if (value == string.Empty) {
-						error = $"Missing {key} value";
-						return false;
-					}
-					if (result.Mnemonic is not null) {
-						error = $"Duplicate {key} value";
-						return false;
-					}
-					result.Mnemonic = value;
-					break;
-
-				case "flags":
-					if (value == string.Empty) {
-						error = $"Missing {key} value";
-						return false;
-					}
-					foreach (var fl in value.Split(';', StringSplitOptions.RemoveEmptyEntries)) {
-						switch (fl) {
-						case "force-size=always":
-							result.Flags.Add(masmInstrOpInfoFlags[nameof(Enums.Formatter.Masm.InstrOpInfoFlags.ShowNoMemSize_ForceSize)]);
-							result.Flags.Add(masmInstrOpInfoFlags[nameof(Enums.Formatter.Masm.InstrOpInfoFlags.ShowMinMemSize_ForceSize)]);
-							break;
-						case "force-size=default":
-							result.Flags.Add(masmInstrOpInfoFlags[nameof(Enums.Formatter.Masm.InstrOpInfoFlags.ShowNoMemSize_ForceSize)]);
-							break;
-						case "mem-size=mmx":
-							result.Flags.Add(masmInstrOpInfoFlags[nameof(Enums.Formatter.Masm.InstrOpInfoFlags.MemSize_Mmx)]);
-							break;
-						case "mem-size=dorq":
-							result.Flags.Add(masmInstrOpInfoFlags[nameof(Enums.Formatter.Masm.InstrOpInfoFlags.MemSize_DwordOrQword)]);
-							break;
-						case "mem-size=normal":
-							result.Flags.Add(masmInstrOpInfoFlags[nameof(Enums.Formatter.Masm.InstrOpInfoFlags.MemSize_Normal)]);
-							break;
-						default:
-							error = $"Unknown value {fl}";
-							return false;
-						}
-					}
-					break;
-
-				default:
-					error = $"Unknown key `{key}`";
-					return false;
-				}
-			}
-
-			if (parser.TryGetNext(out var ctorKindStr)) {
-				char c;
-				int addressSize;
-				int operandSize;
-				int ccIndex;
-				string? next;
-				string[]? args;
-				bool isPseudo;
-				CodeSize codeSize;
-				switch (ctorKindStr) {
-				case "ignore-const10":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.AamAad)];
-					break;
-
-				case "asz-string-ax":
-				case "asz-string-ay":
-				case "asz-string-dx":
-				case "asz-string-xy":
-				case "asz-string-ya":
-				case "asz-string-yd":
-				case "asz-string-yx":
-					result.CtorKind = ctorKindStr switch {
-						"asz-string-ax" => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.AX)],
-						"asz-string-ay" => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.AY)],
-						"asz-string-dx" => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.DX)],
-						"asz-string-xy" => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.XY)],
-						"asz-string-ya" => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.YA)],
-						"asz-string-yd" => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.YD)],
-						"asz-string-yx" => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.YX)],
-						_ => throw new InvalidOperationException(),
-					};
-					if (!TryGetCharArg(parser, out c, out error))
-						return false;
-					result.Args.Add(c);
-					break;
-
-				case "bnd":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.bnd)];
-					result.Args.Add(CreateFlagsEnum(masmInstrOpInfoFlags, result.GetUsedFlags()));
-					break;
-
-				case "cc":
-					if (!TryGetCcMnemonics(def, out ccIndex, out var extraMnemonics, out error))
-						return false;
-					if (result.Flags.Count > 0) {
-						result.CtorKind = extraMnemonics.Length switch {
-							0 => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.CCb_1)],
-							1 => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.CCb_2)],
-							2 => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.CCb_3)],
-							_ => throw new InvalidOperationException(),
-						};
-					}
-					else {
-						result.CtorKind = extraMnemonics.Length switch {
-							0 => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.CCa_1)],
-							1 => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.CCa_2)],
-							2 => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.CCa_3)],
-							_ => throw new InvalidOperationException(),
-						};
-					}
-					result.Args.AddRange(extraMnemonics);
-					result.Args.Add(ccIndex);
-					if (result.Flags.Count > 0)
-						result.Args.Add(CreateFlagsEnum(masmInstrOpInfoFlags, result.GetUsedFlags()));
-					break;
-
-				case "decl":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.DeclareData)];
-					break;
-
-				case "gidt":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.fword)];
-					switch (def.GetOperandSize(64)) {
-					case 16:
-						result.Args.Add('w');
-						result.Args.Add(codeSizeType[nameof(CodeSize.Code16)]);
-						break;
-					case 32:
-						result.Args.Add('d');
-						result.Args.Add(codeSizeType[nameof(CodeSize.Code32)]);
-						break;
-					case 64:
-						result.Args.Add('q');
-						result.Args.Add(codeSizeType[nameof(CodeSize.Code64)]);
-						break;
-					default:
-						throw new InvalidOperationException();
-					}
-					result.Args.Add(CreateFlagsEnum(masmInstrOpInfoFlags, result.GetUsedFlags()));
-					break;
-
-				case "imul":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.imul)];
-					break;
-
-				case "int3":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.Int3)];
-					break;
-
-				case "invlpga":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.invlpga)];
-					if (!def.TryGetAddressSize(out addressSize, out error))
-						return false;
-					result.Args.Add(addressSize);
-					break;
-
-				case "loop1":
-					if (!TryGetCharArg(parser, out c, out _))
-						c = '\0';
-					if (TryGetLoopCcMnemonics(def, out ccIndex, out next)) {
-						if (c != '\0')
-							next += c;
-						result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.Loopcc1)];
-						result.Args.Add(next);
-						result.Args.Add(ccIndex);
-					}
-					else
-						throw new InvalidOperationException();
-					break;
-
-				case "loop2":
-					if (!def.TryGetAddressSize(out addressSize, out error))
-						return false;
-					if (TryGetLoopCcMnemonics(def, out ccIndex, out next)) {
-						result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.Loopcc2)];
-						result.Args.Add(next);
-						switch (addressSize) {
-						case 16:
-							result.Args.Add('w');
-							result.Args.Add(ccIndex);
-							result.Args.Add(codeSizeType[nameof(CodeSize.Code16)]);
-							break;
-						case 32:
-							result.Args.Add('d');
-							result.Args.Add(ccIndex);
-							result.Args.Add(codeSizeType[nameof(CodeSize.Code32)]);
-							break;
-						case 64:
-							result.Args.Add('q');
-							result.Args.Add(ccIndex);
-							result.Args.Add(codeSizeType[nameof(CodeSize.Code64)]);
-							break;
-						default:
-							throw new InvalidOperationException();
-						}
-					}
-					else
-						throw new InvalidOperationException();
-					break;
-
-				case "maskmovq":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.maskmovq)];
-					result.Args.Add(CreateFlagsEnum(masmInstrOpInfoFlags, result.GetUsedFlags()));
-					break;
-
-				case "osz-mem-2":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.memsize)];
-					int osz;
-					if (parser.TryGetNext(out next)) {
-						if (next == "16")
-							osz = 16;
-						else {
-							error = $"Unknown arg `{next}`";
-							return false;
-						}
-					}
-					else
-						osz = 32 | 64;
-					result.Args.Add(osz);
-					break;
-
-				case "monitor":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.monitor)];
-					if (!def.TryGetAddressSize(out addressSize, out error))
-						return false;
-					switch (addressSize) {
-					case 16:
-						result.Args.Add(registerType[nameof(Register.AX)]);
-						result.Args.Add(registerType[nameof(Register.ECX)]);
-						result.Args.Add(registerType[nameof(Register.EDX)]);
-						break;
-					case 32:
-						result.Args.Add(registerType[nameof(Register.EAX)]);
-						result.Args.Add(registerType[nameof(Register.ECX)]);
-						result.Args.Add(registerType[nameof(Register.EDX)]);
-						break;
-					case 64:
-						result.Args.Add(registerType[nameof(Register.RAX)]);
-						result.Args.Add(registerType[nameof(Register.RCX)]);
-						result.Args.Add(registerType[nameof(Register.RDX)]);
-						break;
-					default:
-						throw new InvalidOperationException();
-					}
-					break;
-
-				case "mwait":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.mwait)];
-					break;
-
-				case "mwaitx":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.mwaitx)];
-					break;
-
-				case "nop":
-					if (!def.TryGetOperandSize(out operandSize, out error))
-						return false;
-					switch (operandSize) {
-					case 16:
-						result.Args.Add(16);
-						result.Args.Add(registerType[nameof(Register.AX)]);
-						break;
-					case 32:
-						result.Args.Add(32 | 64);
-						result.Args.Add(registerType[nameof(Register.EAX)]);
-						break;
-					case 64:
-						result.Args.Add(0);
-						result.Args.Add(registerType[nameof(Register.RAX)]);
-						break;
-					default:
-						throw new InvalidOperationException();
-					}
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.nop)];
-					break;
-
-				case "osz-suffix-1":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.OpSize_1)];
-					codeSize = def.OpCode.OperandSize == CodeSize.Unknown ? CodeSize.Code64 : def.OpCode.OperandSize;
-					result.Args.Add(codeSizeType[codeSize.ToString()]);
-					break;
-
-				case "osz-suffix-1-loop":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.OpSize_2)];
-					codeSize = def.OpCode.AddressSize == CodeSize.Unknown ? CodeSize.Code64 : def.OpCode.AddressSize;
-					switch (codeSize) {
-					case CodeSize.Code16: result.Args.Add('w'); break;
-					case CodeSize.Code32: result.Args.Add('d'); break;
-					case CodeSize.Code64: result.Args.Add('q'); break;
-					default: throw new InvalidOperationException();
-					}
-					result.Args.Add(codeSizeType[codeSize.ToString()]);
-					break;
-
-				case "osz-suffix-2":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.OpSize2)];
-					if (!parser.TryGet(3, out args, out error))
-						return false;
-					result.Args.AddRange(args);
-					result.Args.Add((def.Flags1 & InstructionDefFlags1.Bnd) != 0);
-					break;
-
-				case "xmm0":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.pblendvb)];
-					break;
-
-				case "reg":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.reg)];
-					if (!parser.TryGet(1, out var strings, out error))
-						return false;
-					if (!TryGetValue(toRegisterIgnoreCase, strings[0], out var enumValue, out error))
-						return false;
-					result.Args.Add(enumValue);
-					break;
-
-				case "reg16":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.Reg16)];
-					result.Args.Add(CreateFlagsEnum(masmInstrOpInfoFlags, result.GetUsedFlags()));
-					break;
-
-				case "reg32":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.Reg32)];
-					result.Args.Add(CreateFlagsEnum(masmInstrOpInfoFlags, result.GetUsedFlags()));
-					break;
-
-				case "reverse":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.reverse)];
-					break;
-
-				case "st1":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.ST_STi)];
-					break;
-
-				case "st2":
-					if (!TryGetIsPseudoArg(parser, out isPseudo, out error))
-						return false;
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.STi_ST)];
-					result.Args.Add(isPseudo);
-					break;
-
-				case "st1-ignore-st1":
-					if (!TryGetIsPseudoArg(parser, out isPseudo, out error))
-						return false;
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.STIG1)];
-					result.Args.Add(isPseudo);
-					break;
-
-				case "xlat":
-					result.CtorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.XLAT)];
-					break;
-
-				default:
-					error = $"Unknown value `{ctorKindStr}`";
-					return false;
-				}
-			}
-
-			var garbage = parser.GetRest();
-			if (garbage.Length > 0) {
-				error = $"Extra args: `{string.Join(' ', garbage)}`";
-				return false;
-			}
-
-			state = result;
-			error = null;
-			return true;
-		}
-
-		bool TryCreateMasmDef(InstructionDefState def, EnumValue code, string defaultMnemonic, PseudoOpsKind? pseudoOp, MasmState state, [NotNullWhen(true)] out FmtInstructionDef? masmDef, [NotNullWhen(false)] out string? error) {
-			masmDef = null;
-
-			var mnemonic = state.Mnemonic ?? defaultMnemonic;
-			var ctorKind = state.CtorKind;
-			if (ctorKind is null) {
-				if (state.Args.Count > 0)
-					throw new InvalidOperationException();
-
-				if (def.PseudoOpsKind is not null) {
-					state.Args.Add(def.PseudoOpsKind);
-					if (pseudoOp == PseudoOpsKind.pclmulqdq || pseudoOp == PseudoOpsKind.vpclmulqdq)
-						ctorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.pclmulqdq)];
-					else if (state.Flags.Count > 0) {
-						ctorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.pops_3)];
-						state.Args.Add(CreateFlagsEnum(masmInstrOpInfoFlags, state.GetUsedFlags()));
-					}
-					else
-						ctorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.pops_2)];
-				}
-				else if (def.BranchKind == BranchKind.JccShort || def.BranchKind == BranchKind.JccNear) {
-					int ccIndex = (int)(def.OpCode.OpCode & 0x0F);
-					var extraMnemonics = jccOtherMnemonics[ccIndex];
-					ctorKind = extraMnemonics.Length switch {
-						0 => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.jcc_1)],
-						1 => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.jcc_2)],
-						2 => masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.jcc_3)],
-						_ => throw new InvalidOperationException(),
-					};
-					state.Args.AddRange(extraMnemonics);
-					state.Args.Add(ccIndex);
-				}
-				else {
-					if (state.Flags.Count > 0) {
-						ctorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.Normal_2)];
-						state.Args.Add(CreateFlagsEnum(masmInstrOpInfoFlags, state.GetUsedFlags()));
-					}
-					else
-						ctorKind = masmCtorKind[nameof(Enums.Formatter.Masm.CtorKind.Normal_1)];
-				}
-			}
-
-			if (!state.UsedFlags && !VerifyNoFlags(state, out error))
-				return false;
-
-			masmDef = new FmtInstructionDef(code, mnemonic, ctorKind, state.Args.ToArray());
 			error = null;
 			return true;
 		}
@@ -2911,8 +2468,6 @@ namespace Generator.Tables {
 			return Flags;
 		}
 	}
-	sealed class MasmState : FmtState {
-	}
 	sealed class NasmState : FmtState {
 		public bool UnknownMemSize;
 		public bool NoSignExtend;
@@ -2958,7 +2513,6 @@ namespace Generator.Tables {
 		public EnumValue? MemorySize_Broadcast;
 		public MvexInstructionInfo Mvex;
 		public OpCodeDef OpCode;
-		public MasmState? Masm;
 		public NasmState? Nasm;
 		public string? AsmMnemonic;
 

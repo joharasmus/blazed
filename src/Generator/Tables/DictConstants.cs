@@ -5,7 +5,6 @@ using Generator.Constants.Encoder;
 using Generator.Enums;
 using Generator.Enums.Encoder;
 using Generator.Enums.Formatter;
-using Generator.Enums.Formatter.Masm;
 using Generator.Enums.InstructionInfo;
 
 namespace Generator.Tables {
@@ -82,19 +81,6 @@ namespace Generator.Tables {
 				(OpCodeInfoConstants.Table_MAP8, genTypes[TypeIds.OpCodeTableKind][nameof(OpCodeTableKind.MAP8)]),
 				(OpCodeInfoConstants.Table_MAP9, genTypes[TypeIds.OpCodeTableKind][nameof(OpCodeTableKind.MAP9)]),
 				(OpCodeInfoConstants.Table_MAP10, genTypes[TypeIds.OpCodeTableKind][nameof(OpCodeTableKind.MAP10)]),
-			};
-	}
-
-	static class MasmSymbolOptionsConstants {
-		public static (string value, EnumValue flags)[] SymbolTestFlagsTable(GenTypes genTypes) =>
-			new (string value, EnumValue flags)[] {
-				("sym", genTypes[TypeIds.MasmSymbolTestFlags][nameof(SymbolTestFlags.Symbol)]),
-				("signed", genTypes[TypeIds.MasmSymbolTestFlags][nameof(SymbolTestFlags.Signed)]),
-				("symbr", genTypes[TypeIds.MasmSymbolTestFlags][nameof(SymbolTestFlags.SymbolDisplInBrackets)]),
-				("displbr", genTypes[TypeIds.MasmSymbolTestFlags][nameof(SymbolTestFlags.DisplInBrackets)]),
-				("rip", genTypes[TypeIds.MasmSymbolTestFlags][nameof(SymbolTestFlags.Rip)]),
-				("disp0", genTypes[TypeIds.MasmSymbolTestFlags][nameof(SymbolTestFlags.ShowZeroDisplacements)]),
-				("nods32", genTypes[TypeIds.MasmSymbolTestFlags][nameof(SymbolTestFlags.NoAddDsPrefix32)]),
 			};
 	}
 

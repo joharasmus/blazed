@@ -15,29 +15,6 @@ namespace Generator.Tables {
 		b1to32,
 	}
 
-	[Enum("MemoryKeywords", "MasmMemoryKeywords")]
-	enum MasmMemoryKeywords {
-		None,
-		byte_ptr,
-		dword_bcst,
-		dword_ptr,
-		fpuenv14_ptr,
-		fpuenv28_ptr,
-		fpustate108_ptr,
-		fpustate94_ptr,
-		fword_ptr,
-		oword_ptr,
-		qword_bcst,
-		qword_ptr,
-		tbyte_ptr,
-		word_ptr,
-		xmmword_ptr,
-		ymmword_ptr,
-		zmmword_ptr,
-		mem384_ptr,
-		word_bcst,
-	}
-
 	[Enum("MemoryKeywords", "NasmMemoryKeywords")]
 	enum NasmMemoryKeywords {
 		None,
@@ -72,18 +49,19 @@ namespace Generator.Tables {
 		public readonly MemorySizeDefFlags Flags;
 		public bool IsSigned => (Flags & MemorySizeDefFlags.Signed) != 0;
 		public readonly EnumValue BroadcastToKind;
-		public readonly EnumValue Masm;
 		public readonly EnumValue Nasm;
 
-		public MemorySizeDef(EnumValue memorySize, uint size, EnumValue elementType, uint elementSize, MemorySizeDefFlags flags,
-			EnumValue broadcastToKind, EnumValue masm, EnumValue nasm) {
+		public MemorySizeDef(
+			EnumValue memorySize, uint size, 
+			EnumValue elementType, uint elementSize, 
+			MemorySizeDefFlags flags,
+			EnumValue broadcastToKind, EnumValue nasm) {
 			MemorySize = memorySize;
 			Size = size;
 			ElementType = elementType;
 			ElementSize = elementSize;
 			Flags = flags;
 			BroadcastToKind = broadcastToKind;
-			Masm = masm;
 			Nasm = nasm;
 		}
 	}

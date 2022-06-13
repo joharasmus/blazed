@@ -4,12 +4,9 @@
 using System;
 
 namespace Generator.Enums.Formatter {
-	[Enum("FormatterSyntax", Documentation = "Formatter syntax (masm, nasm)", Public = true)]
+	[Enum("FormatterSyntax", Documentation = "Formatter syntax (nasm)", Public = true)]
 	enum FormatterSyntax {
-		[Comment("masm")]
-		Masm,
 		[Comment("nasm")]
-		Nasm,
-		// This enum only contains entries for formatters that implement the Formatter iface/trait
+		Nasm
 	}
 }

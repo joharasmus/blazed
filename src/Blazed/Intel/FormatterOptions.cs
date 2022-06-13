@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if MASM || NASM
+#if NASM
 using System;
 
 namespace Blazed.Intel {
@@ -38,9 +38,6 @@ namespace Blazed.Intel {
 			ShowBranchSize					= 0x00800000,
 			UsePseudoOps					= 0x01000000,
 			ShowSymbolAddress				= 0x02000000,
-			MasmAddDsPrefix32				= 0x20000000,
-			MasmSymbolDisplInBrackets		= 0x40000000,
-			MasmDisplInBrackets				= 0x80000000,
 		}
 
 		[Flags]
@@ -61,8 +58,7 @@ namespace Blazed.Intel {
 			flags1 = Flags1.UppercaseHex | Flags1.SmallHexNumbersInDecimal |
 				Flags1.AddLeadingZeroToHexNumbers | Flags1.BranchLeadingZeros |
 				Flags1.SignedMemoryDisplacements | Flags1.ShowBranchSize |
-				Flags1.UsePseudoOps | Flags1.MasmAddDsPrefix32 |
-				Flags1.MasmSymbolDisplInBrackets | Flags1.MasmDisplInBrackets;
+				Flags1.UsePseudoOps;
 			flags2 = Flags2.None;
 		}
 
@@ -772,63 +768,6 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// (masm only): Add a <c>DS</c> segment override even if it's not present. Used if it's 16/32-bit code and mem op is a displ
-		/// <br/>
-		/// Default: <see langword="true"/>
-		/// <br/>
-		/// <see langword="true"/>: <c>mov eax,ds:[12345678]</c>
-		/// <br/>
-		/// <see langword="false"/>: <c>mov eax,[12345678]</c>
-		/// </summary>
-		public bool MasmAddDsPrefix32 {
-			get => (flags1 & Flags1.MasmAddDsPrefix32) != 0;
-			set {
-				if (value)
-					flags1 |= Flags1.MasmAddDsPrefix32;
-				else
-					flags1 &= ~Flags1.MasmAddDsPrefix32;
-			}
-		}
-
-		/// <summary>
-		/// (masm only): Show symbols in brackets
-		/// <br/>
-		/// Default: <see langword="true"/>
-		/// <br/>
-		/// <see langword="true"/>: <c>[ecx+symbol]</c> / <c>[symbol]</c>
-		/// <br/>
-		/// <see langword="false"/>: <c>symbol[ecx]</c> / <c>symbol</c>
-		/// </summary>
-		public bool MasmSymbolDisplInBrackets {
-			get => (flags1 & Flags1.MasmSymbolDisplInBrackets) != 0;
-			set {
-				if (value)
-					flags1 |= Flags1.MasmSymbolDisplInBrackets;
-				else
-					flags1 &= ~Flags1.MasmSymbolDisplInBrackets;
-			}
-		}
-
-		/// <summary>
-		/// (masm only): Show displacements in brackets
-		/// <br/>
-		/// Default: <see langword="true"/>
-		/// <br/>
-		/// <see langword="true"/>: <c>[ecx+1234h]</c>
-		/// <br/>
-		/// <see langword="false"/>: <c>1234h[ecx]</c>
-		/// </summary>
-		public bool MasmDisplInBrackets {
-			get => (flags1 & Flags1.MasmDisplInBrackets) != 0;
-			set {
-				if (value)
-					flags1 |= Flags1.MasmDisplInBrackets;
-				else
-					flags1 &= ~Flags1.MasmDisplInBrackets;
-			}
-		}
-
-		/// <summary>
 		/// (nasm only): Shows <c>BYTE</c>, <c>WORD</c>, <c>DWORD</c> or <c>QWORD</c> if it's a sign extended immediate operand value
 		/// <br/>
 		/// Default: <see langword="false"/>
@@ -1064,19 +1003,6 @@ namespace Blazed.Intel {
 			}
 		}
 		CC_g cc_g = CC_g.g;
-
-#if MASM
-		/// <summary>
-		/// Creates masm formatter options
-		/// </summary>
-		/// <returns></returns>
-		public static FormatterOptions CreateMasm() =>
-			new FormatterOptions {
-				HexSuffix = "h",
-				OctalSuffix = "o",
-				BinarySuffix = "b",
-			};
-#endif
 
 #if NASM
 		/// <summary>

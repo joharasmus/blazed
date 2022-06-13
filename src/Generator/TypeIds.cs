@@ -8,7 +8,6 @@ static class TypeIds {
 	public static readonly TypeId InstructionDefs = new(nameof(InstructionDefs));
 	public static readonly TypeId EncoderTypes = new(nameof(EncoderTypes));
 	public static readonly TypeId InstrInfoTypes = new(nameof(InstrInfoTypes));
-	public static readonly TypeId MasmCtorInfos = new(nameof(MasmCtorInfos));
 	public static readonly TypeId NasmCtorInfos = new(nameof(NasmCtorInfos));
 	public static readonly TypeId MemorySizeDefs = new(nameof(MemorySizeDefs));
 	public static readonly TypeId RegisterDefs = new(nameof(RegisterDefs));
@@ -34,7 +33,6 @@ static class TypeIds {
 	public static readonly TypeId LegacyHandlerFlags = new(nameof(LegacyHandlerFlags));
 	public static readonly TypeId MemorySize = new(nameof(MemorySize));
 	public static readonly TypeId BroadcastToKind = new(nameof(BroadcastToKind));
-	public static readonly TypeId MasmMemoryKeywords = new(nameof(MasmMemoryKeywords));
 	public static readonly TypeId NasmMemoryKeywords = new(nameof(NasmMemoryKeywords));
 	public static readonly TypeId LegacyOpCodeHandlerKind = new(nameof(LegacyOpCodeHandlerKind));
 	public static readonly TypeId PseudoOpsKind = new(nameof(PseudoOpsKind));
@@ -45,9 +43,7 @@ static class TypeIds {
 	public static readonly TypeId TupleType = new(nameof(TupleType));
 	public static readonly TypeId VexOpCodeHandlerKind = new(nameof(VexOpCodeHandlerKind));
 	public static readonly TypeId Mnemonic = new(nameof(Mnemonic));
-	public static readonly TypeId MasmCtorKind = new(nameof(MasmCtorKind));
 	public static readonly TypeId NasmCtorKind = new(nameof(NasmCtorKind));
-	public static readonly TypeId MasmInstrOpInfoFlags = new(nameof(MasmInstrOpInfoFlags));
 	public static readonly TypeId NasmSignExtendInfo = new(nameof(NasmSignExtendInfo));
 	public static readonly TypeId NasmSizeOverride = new(nameof(NasmSizeOverride));
 	public static readonly TypeId NasmBranchSizeInfo = new(nameof(NasmBranchSizeInfo));
@@ -123,11 +119,9 @@ static class TypeIds {
 	public static readonly TypeId NumberKind = new(nameof(NumberKind));
 	public static readonly TypeId FormatterTextKind = new(nameof(FormatterTextKind));
 	public static readonly TypeId SymbolFlags = new(nameof(SymbolFlags));
-	public static readonly TypeId MasmInstrOpKind = new(nameof(MasmInstrOpKind));
 	public static readonly TypeId NasmInstrOpKind = new(nameof(NasmInstrOpKind));
 	public static readonly TypeId FormatterFlowControl = new(nameof(FormatterFlowControl));
 	public static readonly TypeId OptionsProps = new(nameof(OptionsProps));
-	public static readonly TypeId MasmSymbolTestFlags = new(nameof(MasmSymbolTestFlags));
 	public static readonly TypeId FormatterSyntax = new(nameof(FormatterSyntax));
 	public static readonly TypeId CC_b = new(nameof(CC_b));
 	public static readonly TypeId CC_ae = new(nameof(CC_ae));

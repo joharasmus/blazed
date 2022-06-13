@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if MASM || NASM
+#if NASM
 using Blazed.Intel;
 using UnitTests.Intel.DecoderTests;
 using Xunit;
@@ -51,15 +51,7 @@ namespace UnitTests.Intel.FormatterTests {
 		void Instruction_ToString() {
 			var decoder = Decoder.Create(64, new byte[] { 0x00, 0xCE }, DecoderOptions.None);
 			var instr = decoder.Decode();
-			string expected;
-			// The order of #if/elif must be the same as in Instruction.ToString()
-#if MASM
-			expected = "add dh,cl";
-#elif NASM
-			expected = "add dh,cl";
-#else
-#error No formatter
-#endif
+			string expected = "add dh,cl";
 			var actual = instr.ToString();
 			Assert.Equal(expected, actual);
 		}
