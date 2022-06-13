@@ -38,7 +38,6 @@ Formatters:
     - `MasmFormatter`
     - `NasmFormatter`
     - `IntelFormatter`
-    - `FastFormatter`
 - `FormatterOptions`
 - `FormatterOutput`
     - `StringOutput`
@@ -117,8 +116,6 @@ static class HowTo_Disassemble {
             instructions.Add(decoder.Decode());
 
         // Formatters: Masm*, Nasm* and Intel* (XED).
-        // There's also `FastFormatter` which is ~2x faster. Use it if formatting speed is more
-        // important than being able to re-assemble formatted instructions.
         var formatter = new NasmFormatter();
         formatter.Options.DigitSeparator = "`";
         formatter.Options.FirstOperandCharIndex = 10;

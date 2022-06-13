@@ -13,6 +13,5 @@ namespace Generator.Enums.Formatter {
 		[Comment("nasm")]
 		Nasm,
 		// This enum only contains entries for formatters that implement the Formatter iface/trait
-		// so it doesn't include fast fmt.
 	}
 }

@@ -19,26 +19,9 @@ sealed class CSharpTableGen : TableGen {
 		: base(generatorContext.Types) { }
 
 	protected override void Generate(MemorySizeDef[] defs) {
-		GenerateFast(defs);
 		GenerateIntel(defs);
 		GenerateMasm(defs);
 		GenerateNasm(defs);
-	}
-
-	void GenerateFast(MemorySizeDef[] defs) {
-		var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.FastFormatterNamespace, "MemorySizes.cs");
-		new FileUpdater(TargetLanguage.CSharp, "MemorySizes", filename).Generate(writer => {
-			foreach (var def in defs) {
-				writer.WriteByte(checked((byte)def.Fast.Value));
-				writer.WriteLine();
-			}
-		});
-		new FileUpdater(TargetLanguage.CSharp, "Switch", filename).Generate(writer => {
-			foreach (var kw in defs.Select(a => a.Fast).Distinct().OrderBy(a => a.Value)) {
-				var s = (FastMemoryKeywords)kw.Value == FastMemoryKeywords.None ? string.Empty : (kw.RawName + "_").Replace('_', ' ');
-				writer.WriteLine($"{kw.Value} => \"{s}\",");
-			}
-		});
 	}
 
 	void GenerateIntel(MemorySizeDef[] defs) {

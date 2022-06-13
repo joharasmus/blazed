@@ -40,7 +40,6 @@ namespace Generator.Tables {
 		readonly Dictionary<string, EnumValue> toMemorySize;
 		readonly Dictionary<string, EnumValue> toRegisterIgnoreCase;
 		readonly Dictionary<OpKindKey, OpCodeOperandKindDef> toOpCodeOperandKindDef;
-		readonly EnumType fastFmtFlags;
 		readonly EnumType intelCtorKind;
 		readonly EnumType masmCtorKind;
 		readonly EnumType nasmCtorKind;
@@ -152,7 +151,6 @@ namespace Generator.Tables {
 			var opKindDefs = genTypes.GetObject<OpCodeOperandKindDefs>(TypeIds.OpCodeOperandKindDefs).Defs;
 			toOpCodeOperandKindDef = opKindDefs.ToDictionary(a => new OpKindKey(a), a => a);
 
-			fastFmtFlags = genTypes[TypeIds.FastFmtFlags];
 			intelCtorKind = genTypes[TypeIds.IntelCtorKind];
 			masmCtorKind = genTypes[TypeIds.MasmCtorKind];
 			nasmCtorKind = genTypes[TypeIds.NasmCtorKind];
@@ -1355,7 +1353,6 @@ namespace Generator.Tables {
 					}
 					break;
 
-				case "fast":
 				case "intel":
 				case "masm":
 				case "nasm":
@@ -1392,17 +1389,6 @@ namespace Generator.Tables {
 			// The formatters depend on some other lines so parse the formatter lines later
 			foreach (var (key, value, fmtLineIndex) in fmtKeyValues) {
 				switch (key) {
-				case "fast":
-					if (state.FastInfo is not null) {
-						Error(fmtLineIndex, $"Duplicate {key}");
-						return false;
-					}
-					if (!TryReadFastFmt(value, out state.FastInfo, out error)) {
-						Error(fmtLineIndex, error);
-						return false;
-					}
-					break;
-
 				case "intel":
 					if (state.Intel is not null) {
 						Error(fmtLineIndex, $"Duplicate {key}");
@@ -1677,10 +1663,6 @@ namespace Generator.Tables {
 
 			var fmtMnemonic = state.MnemonicStr.ToLowerInvariant();
 			PseudoOpsKind? pseudoOp = state.PseudoOpsKind is null ? null : (PseudoOpsKind)state.PseudoOpsKind.Value;
-			if (!TryCreateFastDef(state.Code, fmtMnemonic, pseudoOp, state.FastInfo ?? new FastState(), out var fastDef, out error)) {
-				Error(state.LineIndex, "(fast) " + error);
-				return false;
-			}
 			if (!TryCreateIntelDef(state, state.Code, fmtMnemonic, pseudoOp, state.Intel ?? new IntelState(), out var intelDef, out error)) {
 				Error(state.LineIndex, "(intel) " + error);
 				return false;
@@ -1717,7 +1699,7 @@ namespace Generator.Tables {
 				pseudoOp, state.Encoding, state.Cflow, state.ConditionCode, state.BranchKind, state.StackInfo, state.FpuStackIncrement,
 				state.RflagsRead, state.RflagsUndefined, state.RflagsWritten, state.RflagsCleared, state.RflagsSet,
 				state.Cpuid, cpuidFeatureStrings, state.OpAccess,
-				fastDef, intelDef, masmDef, nasmDef,
+				intelDef, masmDef, nasmDef,
 				state.AsmMnemonic);
 			defLineIndex = state.LineIndex;
 			return true;
@@ -1909,78 +1891,6 @@ namespace Generator.Tables {
 				error = "flags=xxx isn't supported";
 				return false;
 			}
-		}
-
-		bool TryReadFastFmt(string data, [NotNullWhen(true)] out FastState? state, [NotNullWhen(false)] out string? error) {
-			state = null;
-
-			var parser = new FmtLineParser(data);
-			var result = new FastState();
-			foreach (var (key, value) in parser.GetKeyValues()) {
-				switch (key) {
-				case "mnemonic":
-					if (value == string.Empty) {
-						error = $"Missing {key} value";
-						return false;
-					}
-					if (result.Mnemonic is not null) {
-						error = $"Duplicate {key} value";
-						return false;
-					}
-					result.Mnemonic = value;
-					break;
-
-				case "flags":
-					if (value == string.Empty) {
-						error = $"Missing {key} value";
-						return false;
-					}
-					foreach (var fl in value.Split(';', StringSplitOptions.RemoveEmptyEntries)) {
-						switch (fl) {
-						case "force-size=always":
-							result.Flags.Add(fastFmtFlags[nameof(Enums.Formatter.Fast.FastFmtFlags.ForceMemSize)]);
-							break;
-
-						default:
-							error = $"Unknown value {fl}";
-							return false;
-						}
-					}
-					break;
-
-				default:
-					error = $"Unknown key `{key}`";
-					return false;
-				}
-			}
-
-			var garbage = parser.GetRest();
-			if (garbage.Length > 0) {
-				error = $"Extra args: `{string.Join(' ', garbage)}`";
-				return false;
-			}
-
-			state = result;
-			error = null;
-			return true;
-		}
-
-		bool TryCreateFastDef(EnumValue code, string defaultMnemonic, PseudoOpsKind? pseudoOp, FastState state, [NotNullWhen(true)] out FastFmtInstructionDef? fastDef, [NotNullWhen(false)] out string? error) {
-			var mnemonic = state.Mnemonic ?? defaultMnemonic;
-			if (pseudoOp is PseudoOpsKind pseudoOp2) {
-				var name = pseudoOp2.ToString();
-				// We only store 8 bits per Code value and we don't have enough bits left for all pseudo ops
-				if (pseudoOp2 > PseudoOpsKind.vpcmpd6) {
-					// If it fails, we can remove the above if check and block. C#/Rust fast fmt code should be updated too.
-					if (fastFmtFlags.Values.Any(x => x.RawName == name))
-						throw new InvalidOperationException();
-					name = nameof(PseudoOpsKind.vpcmpd6);
-				}
-				state.Flags.Add(fastFmtFlags[name]);
-			}
-			fastDef = new FastFmtInstructionDef(code, mnemonic, new OrEnumValue(fastFmtFlags, state.Flags.ToArray()));
-			error = null;
-			return true;
 		}
 
 		bool TryReadIntelFmt(string data, InstructionDefState def, [NotNullWhen(true)] out IntelState? state, [NotNullWhen(false)] out string? error) {
@@ -3340,10 +3250,6 @@ namespace Generator.Tables {
 		}
 	}
 
-	sealed class FastState {
-		public string? Mnemonic;
-		public List<EnumValue> Flags = new();
-	}
 	abstract class FmtState {
 		public string? Mnemonic;
 		public List<EnumValue> Flags = new();
@@ -3405,7 +3311,6 @@ namespace Generator.Tables {
 		public EnumValue? MemorySize_Broadcast;
 		public MvexInstructionInfo Mvex;
 		public OpCodeDef OpCode;
-		public FastState? FastInfo;
 		public IntelState? Intel;
 		public MasmState? Masm;
 		public NasmState? Nasm;

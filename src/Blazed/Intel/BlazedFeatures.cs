@@ -49,19 +49,6 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// <see langword="true"/> if the fast formatter is available
-		/// </summary>
-		public static bool HasFastFormatter {
-			get {
-#if FAST_FMT
-				return true;
-#else
-				return false;
-#endif
-			}
-		}
-
-		/// <summary>
 		/// <see langword="true"/> if the decoder is available
 		/// </summary>
 		public static bool HasDecoder {

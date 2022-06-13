@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if INTEL || MASM || NASM || FAST_FMT
+#if INTEL || MASM || NASM
 using System.Diagnostics;
 
 namespace Blazed.Intel.FormatterInternal {
@@ -31,10 +31,6 @@ namespace Blazed.Intel.FormatterInternal {
 #if INTEL || MASM || NASM
 		public string Get(bool upper) =>
 			upper ? this.upper : lower;
-#endif
-
-#if FAST_FMT
-		public string Lower => lower;
 #endif
 	}
 }

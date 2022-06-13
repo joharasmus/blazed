@@ -79,7 +79,6 @@ sealed class CSharpEnumsGenerator : EnumsGenerator {
 		toFullFileInfo.Add(TypeIds.NasmSizeOverride, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.NasmFormatterNamespace, "SizeOverride.g.cs"), CSharpConstants.NasmFormatterNamespace, CSharpConstants.NasmFormatterDefine));
 		toFullFileInfo.Add(TypeIds.NasmBranchSizeInfo, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.NasmFormatterNamespace, "BranchSizeInfo.g.cs"), CSharpConstants.NasmFormatterNamespace, CSharpConstants.NasmFormatterDefine));
 		toFullFileInfo.Add(TypeIds.NasmInstrOpInfoFlags, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.NasmFormatterNamespace, "InstrOpInfoFlags.g.cs"), CSharpConstants.NasmFormatterNamespace, CSharpConstants.NasmFormatterDefine, "uint"));
-		toFullFileInfo.Add(TypeIds.FastFmtFlags, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.FastFormatterNamespace, "FastFmtFlags.g.cs"), CSharpConstants.FastFormatterNamespace, CSharpConstants.FastFormatterDefine, "byte"));
 		toFullFileInfo.Add(TypeIds.RoundingControl, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.RoundingControl) + ".g.cs"), CSharpConstants.BlazedNamespace));
 		toFullFileInfo.Add(TypeIds.OpKind, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.OpKind) + ".g.cs"), CSharpConstants.BlazedNamespace));
 		toFullFileInfo.Add(TypeIds.InstrScale, null);

@@ -12,7 +12,6 @@ namespace Generator.Tables {
 		readonly string filename;
 		readonly Dictionary<string, EnumValue> toMemorySize;
 		readonly Dictionary<string, EnumValue> toBroadcastToKind;
-		readonly Dictionary<string, EnumValue> toFastMemoryKeywords;
 		readonly Dictionary<string, EnumValue> toIntelMemoryKeywords;
 		readonly Dictionary<string, EnumValue> toMasmMemoryKeywords;
 		readonly Dictionary<string, EnumValue> toNasmMemoryKeywords;
@@ -24,7 +23,6 @@ namespace Generator.Tables {
 
 			toMemorySize = CreateEnumDict(genTypes[TypeIds.MemorySize]);
 			toBroadcastToKind = CreateEnumDict(genTypes[TypeIds.BroadcastToKind]);
-			toFastMemoryKeywords = CreateEnumDict(genTypes[TypeIds.FastMemoryKeywords]);
 			toIntelMemoryKeywords = CreateEnumDict(genTypes[TypeIds.IntelMemoryKeywords]);
 			toMasmMemoryKeywords = CreateEnumDict(genTypes[TypeIds.MasmMemoryKeywords]);
 			toNasmMemoryKeywords = CreateEnumDict(genTypes[TypeIds.NasmMemoryKeywords]);
@@ -50,7 +48,6 @@ namespace Generator.Tables {
 				var memSize = toMemorySize[parts[1]];
 				var elemMemSize = toMemorySize[parts[2]];
 				var bcst = toBroadcastToKind[parts[3]];
-				var fast = toFastMemoryKeywords[parts[4]];
 				var intel = toIntelMemoryKeywords[parts[5]];
 				var masm = toMasmMemoryKeywords[parts[6]];
 				var nasm = toNasmMemoryKeywords[parts[7]];
@@ -66,7 +63,7 @@ namespace Generator.Tables {
 				if (!createdDefs.Remove(memSize))
 					throw new InvalidOperationException($"Duplicate MemorySize def on line {i + 1}");
 
-				var def = new MemorySizeDef(memSize, size, elemMemSize, 0, flags, bcst, fast, intel, masm, nasm);
+				var def = new MemorySizeDef(memSize, size, elemMemSize, 0, flags, bcst, intel, masm, nasm);
 				defs.Add(def);
 			}
 
@@ -77,7 +74,7 @@ namespace Generator.Tables {
 			for (int i = 0; i < defs.Count; i++) {
 				var def = defs[i];
 				var elemDef = toDef[def.ElementType];
-				var newDef = new MemorySizeDef(def.MemorySize, def.Size, def.ElementType, elemDef.Size, def.Flags, def.BroadcastToKind, def.Fast, def.Intel, def.Masm, def.Nasm);
+				var newDef = new MemorySizeDef(def.MemorySize, def.Size, def.ElementType, elemDef.Size, def.Flags, def.BroadcastToKind, def.Intel, def.Masm, def.Nasm);
 				defs[i] = newDef;
 			}
 

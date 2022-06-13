@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if INTEL || MASM || NASM || FAST_FMT
+#if INTEL || MASM || NASM
 using System;
 using System.Collections.Generic;
 using Blazed.Intel;
@@ -159,93 +159,6 @@ namespace UnitTests.Intel.FormatterTests {
 		}
 #endif
 
-#if FAST_FMT
-		public static void Initialize(FastFormatterOptions options, OptionsProps property, object value) {
-			switch (property) {
-			case OptionsProps.AddLeadingZeroToHexNumbers:
-			case OptionsProps.AlwaysShowScale:
-			case OptionsProps.BinaryDigitGroupSize:
-			case OptionsProps.BinaryPrefix:
-			case OptionsProps.BinarySuffix:
-			case OptionsProps.BranchLeadingZeros:
-			case OptionsProps.DecimalDigitGroupSize:
-			case OptionsProps.DecimalPrefix:
-			case OptionsProps.DecimalSuffix:
-			case OptionsProps.DigitSeparator:
-			case OptionsProps.DisplacementLeadingZeros:
-			case OptionsProps.FirstOperandCharIndex:
-			case OptionsProps.HexDigitGroupSize:
-			case OptionsProps.LeadingZeros:
-			case OptionsProps.MasmAddDsPrefix32:
-			case OptionsProps.NasmShowSignExtendedImmediateSize:
-			case OptionsProps.NumberBase:
-			case OptionsProps.OctalDigitGroupSize:
-			case OptionsProps.OctalPrefix:
-			case OptionsProps.OctalSuffix:
-			case OptionsProps.PreferST0:
-			case OptionsProps.ScaleBeforeIndex:
-			case OptionsProps.ShowBranchSize:
-			case OptionsProps.ShowZeroDisplacements:
-			case OptionsProps.SignedImmediateOperands:
-			case OptionsProps.SignedMemoryDisplacements:
-			case OptionsProps.SmallHexNumbersInDecimal:
-			case OptionsProps.SpaceAfterMemoryBracket:
-			case OptionsProps.SpaceBetweenMemoryAddOperators:
-			case OptionsProps.SpaceBetweenMemoryMulOperators:
-			case OptionsProps.TabSize:
-			case OptionsProps.UppercaseAll:
-			case OptionsProps.UppercaseDecorators:
-			case OptionsProps.UppercaseKeywords:
-			case OptionsProps.UppercaseMnemonics:
-			case OptionsProps.UppercasePrefixes:
-			case OptionsProps.UppercaseRegisters:
-			case OptionsProps.CC_b:
-			case OptionsProps.CC_ae:
-			case OptionsProps.CC_e:
-			case OptionsProps.CC_ne:
-			case OptionsProps.CC_be:
-			case OptionsProps.CC_a:
-			case OptionsProps.CC_p:
-			case OptionsProps.CC_np:
-			case OptionsProps.CC_l:
-			case OptionsProps.CC_ge:
-			case OptionsProps.CC_le:
-			case OptionsProps.CC_g:
-			case OptionsProps.ShowUselessPrefixes:
-				break;
-
-			case OptionsProps.AlwaysShowSegmentRegister: options.AlwaysShowSegmentRegister = (bool)value; break;
-			case OptionsProps.RipRelativeAddresses: options.RipRelativeAddresses = (bool)value; break;
-			case OptionsProps.ShowSymbolAddress: options.ShowSymbolAddress = (bool)value; break;
-			case OptionsProps.SpaceAfterOperandSeparator: options.SpaceAfterOperandSeparator = (bool)value; break;
-			case OptionsProps.UppercaseHex: options.UppercaseHex = (bool)value; break;
-			case OptionsProps.UsePseudoOps: options.UsePseudoOps = (bool)value; break;
-			case OptionsProps.MemorySizeOptions: options.AlwaysShowMemorySize = (MemorySizeOptions)value == MemorySizeOptions.Always; break;
-
-			case OptionsProps.HexPrefix:
-				if ((string)value == "0x")
-					options.UseHexPrefix = true;
-				break;
-
-			case OptionsProps.HexSuffix:
-				if ((string)value == "h")
-					options.UseHexPrefix = false;
-				break;
-
-			case OptionsProps.IP:
-			case OptionsProps.DecoderOptions:
-				break;
-
-			default: throw new InvalidOperationException();
-			}
-		}
-
-		public static void Initialize(FastFormatterOptions options, IEnumerable<(OptionsProps property, object value)> properties) {
-			foreach (var info in properties)
-				Initialize(options, info.property, info.value);
-		}
-#endif
-
 		public static void Initialize(Decoder decoder, OptionsProps property, object value) {
 			switch (property) {
 			case OptionsProps.IP:
@@ -278,10 +191,6 @@ namespace UnitTests.Intel.FormatterTests {
 
 #if INTEL || MASM || NASM
 		internal void Initialize(FormatterOptions options) => OptionsPropsUtils.Initialize(options, properties);
-#endif
-
-#if FAST_FMT
-		internal void Initialize(FastFormatterOptions options) => OptionsPropsUtils.Initialize(options, properties);
 #endif
 
 		internal void Initialize(Decoder decoder) => OptionsPropsUtils.Initialize(decoder, properties);

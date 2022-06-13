@@ -22,8 +22,6 @@ sealed class CSharpFormatterTableGenerator {
 			serializers.Add(new CSharpFormatterTableSerializer(genTypes.GetObject<Masm.CtorInfos>(TypeIds.MasmCtorInfos).Infos, genTypes[TypeIds.MasmCtorKind], CSharpConstants.MasmFormatterDefine, CSharpConstants.MasmFormatterNamespace));
 		if (genTypes.Options.HasNasmFormatter)
 			serializers.Add(new CSharpFormatterTableSerializer(genTypes.GetObject<Nasm.CtorInfos>(TypeIds.NasmCtorInfos).Infos, genTypes[TypeIds.NasmCtorKind], CSharpConstants.NasmFormatterDefine, CSharpConstants.NasmFormatterNamespace));
-		if (genTypes.Options.HasFastFormatter)
-			serializers.Add(new CSharpFastFormatterTableSerializer(genTypes.GetObject<Fast.FmtTblInfos>(TypeIds.FastFmtTblInfos).Infos, CSharpConstants.FastFormatterDefine, CSharpConstants.FastFormatterNamespace));
 
 		var stringsTable = new StringsTable();
 

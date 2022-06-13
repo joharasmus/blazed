@@ -5,7 +5,6 @@
 INSTRUCTION: <invalid> | <invalid> | INTEL8086
 	mnemonic: INVALID
 	flags: no-instr cflow=ex asm-ig
-	fast: mnemonic=(bad)
 	intel: mnemonic=(bad)
 	masm: mnemonic=(bad)
 	nasm: mnemonic=(bad)
@@ -1633,7 +1632,6 @@ INSTRUCTION: 80 /0 ib | ADD r/m8, imm8 | INTEL8086
 	ops: rw=rm r=imm | UInt8
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1644,7 +1642,6 @@ INSTRUCTION: 80 /1 ib | OR r/m8, imm8 | INTEL8086
 	ops: rw=rm r=imm | UInt8
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1655,7 +1652,6 @@ INSTRUCTION: 80 /2 ib | ADC r/m8, imm8 | INTEL8086
 	ops: rw=rm r=imm | UInt8
 	rflags: r=c w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1666,7 +1662,6 @@ INSTRUCTION: 80 /3 ib | SBB r/m8, imm8 | INTEL8086
 	ops: rw=rm r=imm | UInt8
 	rflags: r=c w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1677,7 +1672,6 @@ INSTRUCTION: 80 /4 ib | AND r/m8, imm8 | INTEL8086
 	ops: rw=rm r=imm | UInt8
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1688,7 +1682,6 @@ INSTRUCTION: 80 /5 ib | SUB r/m8, imm8 | INTEL8086
 	ops: rw=rm r=imm | UInt8
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1699,7 +1692,6 @@ INSTRUCTION: 80 /6 ib | XOR r/m8, imm8 | INTEL8086
 	ops: rw=rm r=imm | UInt8
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1709,7 +1701,6 @@ END
 INSTRUCTION: 80 /7 ib | CMP r/m8, imm8 | INTEL8086
 	ops: r=rm r=imm | UInt8
 	rflags: w=oszacp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1720,7 +1711,6 @@ INSTRUCTION: o16 81 /0 iw | ADD r/m16, imm16 | INTEL8086
 	ops: rw=rm r=imm | UInt16
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1731,7 +1721,6 @@ INSTRUCTION: o32 81 /0 id | ADD r/m32, imm32 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1742,7 +1731,6 @@ INSTRUCTION: o64 81 /0 id | ADD r/m64, imm32 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: w=oszacp
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -1753,7 +1741,6 @@ INSTRUCTION: o16 81 /1 iw | OR r/m16, imm16 | INTEL8086
 	ops: rw=rm r=imm | UInt16
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1764,7 +1751,6 @@ INSTRUCTION: o32 81 /1 id | OR r/m32, imm32 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1775,7 +1761,6 @@ INSTRUCTION: o64 81 /1 id | OR r/m64, imm32 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: u=a w=szp 0=oc
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -1786,7 +1771,6 @@ INSTRUCTION: o16 81 /2 iw | ADC r/m16, imm16 | INTEL8086
 	ops: rw=rm r=imm | UInt16
 	rflags: r=c w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1797,7 +1781,6 @@ INSTRUCTION: o32 81 /2 id | ADC r/m32, imm32 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	rflags: r=c w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1808,7 +1791,6 @@ INSTRUCTION: o64 81 /2 id | ADC r/m64, imm32 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: r=c w=oszacp
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -1819,7 +1801,6 @@ INSTRUCTION: o16 81 /3 iw | SBB r/m16, imm16 | INTEL8086
 	ops: rw=rm r=imm | UInt16
 	rflags: r=c w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1830,7 +1811,6 @@ INSTRUCTION: o32 81 /3 id | SBB r/m32, imm32 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	rflags: r=c w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1841,7 +1821,6 @@ INSTRUCTION: o64 81 /3 id | SBB r/m64, imm32 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: r=c w=oszacp
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -1852,7 +1831,6 @@ INSTRUCTION: o16 81 /4 iw | AND r/m16, imm16 | INTEL8086
 	ops: rw=rm r=imm | UInt16
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1863,7 +1841,6 @@ INSTRUCTION: o32 81 /4 id | AND r/m32, imm32 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1874,7 +1851,6 @@ INSTRUCTION: o64 81 /4 id | AND r/m64, imm32 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: u=a w=szp 0=oc
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -1885,7 +1861,6 @@ INSTRUCTION: o16 81 /5 iw | SUB r/m16, imm16 | INTEL8086
 	ops: rw=rm r=imm | UInt16
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1896,7 +1871,6 @@ INSTRUCTION: o32 81 /5 id | SUB r/m32, imm32 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1907,7 +1881,6 @@ INSTRUCTION: o64 81 /5 id | SUB r/m64, imm32 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: w=oszacp
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -1918,7 +1891,6 @@ INSTRUCTION: o16 81 /6 iw | XOR r/m16, imm16 | INTEL8086
 	ops: rw=rm r=imm | UInt16
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1929,7 +1901,6 @@ INSTRUCTION: o32 81 /6 id | XOR r/m32, imm32 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1940,7 +1911,6 @@ INSTRUCTION: o64 81 /6 id | XOR r/m64, imm32 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: u=a w=szp 0=oc
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -1950,7 +1920,6 @@ END
 INSTRUCTION: o16 81 /7 iw | CMP r/m16, imm16 | INTEL8086
 	ops: r=rm r=imm | UInt16
 	rflags: w=oszacp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1960,7 +1929,6 @@ END
 INSTRUCTION: o32 81 /7 id | CMP r/m32, imm32 | INTEL386
 	ops: r=rm r=imm | UInt32
 	rflags: w=oszacp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1971,7 +1939,6 @@ INSTRUCTION: o64 81 /7 id | CMP r/m64, imm32 | X64
 	ops: r=rm r=imm;64 | UInt64
 	rflags: w=oszacp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -1983,7 +1950,6 @@ INSTRUCTION: 82 /0 ib | ADD r/m8, imm8 | INTEL8086
 	code-suffix: 82
 	rflags: w=oszacp
 	flags: 16 32 lock xacquire xrelease asm-ig
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -1995,7 +1961,6 @@ INSTRUCTION: 82 /1 ib | OR r/m8, imm8 | INTEL8086
 	code-suffix: 82
 	rflags: u=a w=szp 0=oc
 	flags: 16 32 lock xacquire xrelease asm-ig
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -2007,7 +1972,6 @@ INSTRUCTION: 82 /2 ib | ADC r/m8, imm8 | INTEL8086
 	code-suffix: 82
 	rflags: r=c w=oszacp
 	flags: 16 32 lock xacquire xrelease asm-ig
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -2019,7 +1983,6 @@ INSTRUCTION: 82 /3 ib | SBB r/m8, imm8 | INTEL8086
 	code-suffix: 82
 	rflags: r=c w=oszacp
 	flags: 16 32 lock xacquire xrelease asm-ig
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -2031,7 +1994,6 @@ INSTRUCTION: 82 /4 ib | AND r/m8, imm8 | INTEL8086
 	code-suffix: 82
 	rflags: u=a w=szp 0=oc
 	flags: 16 32 lock xacquire xrelease asm-ig
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -2043,7 +2005,6 @@ INSTRUCTION: 82 /5 ib | SUB r/m8, imm8 | INTEL8086
 	code-suffix: 82
 	rflags: w=oszacp
 	flags: 16 32 lock xacquire xrelease asm-ig
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -2055,7 +2016,6 @@ INSTRUCTION: 82 /6 ib | XOR r/m8, imm8 | INTEL8086
 	code-suffix: 82
 	rflags: u=a w=szp 0=oc
 	flags: 16 32 lock xacquire xrelease asm-ig
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -2067,7 +2027,6 @@ INSTRUCTION: 82 /7 ib | CMP r/m8, imm8 | INTEL8086
 	code-suffix: 82
 	rflags: w=oszacp
 	flags: 16 32 asm-ig
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -2078,7 +2037,6 @@ INSTRUCTION: o16 83 /0 ib | ADD r/m16, imm8 | INTEL8086
 	ops: rw=rm r=imm;16 | UInt16
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2089,7 +2047,6 @@ INSTRUCTION: o32 83 /0 ib | ADD r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm;32 | UInt32
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2100,7 +2057,6 @@ INSTRUCTION: o64 83 /0 ib | ADD r/m64, imm8 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: w=oszacp
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2111,7 +2067,6 @@ INSTRUCTION: o16 83 /1 ib | OR r/m16, imm8 | INTEL8086
 	ops: rw=rm r=imm;16 | UInt16
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2122,7 +2077,6 @@ INSTRUCTION: o32 83 /1 ib | OR r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm;32 | UInt32
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2133,7 +2087,6 @@ INSTRUCTION: o64 83 /1 ib | OR r/m64, imm8 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: u=a w=szp 0=oc
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2144,7 +2097,6 @@ INSTRUCTION: o16 83 /2 ib | ADC r/m16, imm8 | INTEL8086
 	ops: rw=rm r=imm;16 | UInt16
 	rflags: r=c w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2155,7 +2107,6 @@ INSTRUCTION: o32 83 /2 ib | ADC r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm;32 | UInt32
 	rflags: r=c w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2166,7 +2117,6 @@ INSTRUCTION: o64 83 /2 ib | ADC r/m64, imm8 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: r=c w=oszacp
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2177,7 +2127,6 @@ INSTRUCTION: o16 83 /3 ib | SBB r/m16, imm8 | INTEL8086
 	ops: rw=rm r=imm;16 | UInt16
 	rflags: r=c w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2188,7 +2137,6 @@ INSTRUCTION: o32 83 /3 ib | SBB r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm;32 | UInt32
 	rflags: r=c w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2199,7 +2147,6 @@ INSTRUCTION: o64 83 /3 ib | SBB r/m64, imm8 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: r=c w=oszacp
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2210,7 +2157,6 @@ INSTRUCTION: o16 83 /4 ib | AND r/m16, imm8 | INTEL8086
 	ops: rw=rm r=imm;16 | UInt16
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2221,7 +2167,6 @@ INSTRUCTION: o32 83 /4 ib | AND r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm;32 | UInt32
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2232,7 +2177,6 @@ INSTRUCTION: o64 83 /4 ib | AND r/m64, imm8 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: u=a w=szp 0=oc
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2243,7 +2187,6 @@ INSTRUCTION: o16 83 /5 ib | SUB r/m16, imm8 | INTEL8086
 	ops: rw=rm r=imm;16 | UInt16
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2254,7 +2197,6 @@ INSTRUCTION: o32 83 /5 ib | SUB r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm;32 | UInt32
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2265,7 +2207,6 @@ INSTRUCTION: o64 83 /5 ib | SUB r/m64, imm8 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: w=oszacp
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2276,7 +2217,6 @@ INSTRUCTION: o16 83 /6 ib | XOR r/m16, imm8 | INTEL8086
 	ops: rw=rm r=imm;16 | UInt16
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2287,7 +2227,6 @@ INSTRUCTION: o32 83 /6 ib | XOR r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm;32 | UInt32
 	rflags: u=a w=szp 0=oc
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2298,7 +2237,6 @@ INSTRUCTION: o64 83 /6 ib | XOR r/m64, imm8 | X64
 	ops: rw=rm r=imm;64 | UInt64
 	rflags: u=a w=szp 0=oc
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2308,7 +2246,6 @@ END
 INSTRUCTION: o16 83 /7 ib | CMP r/m16, imm8 | INTEL8086
 	ops: r=rm r=imm;16 | UInt16
 	rflags: w=oszacp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2318,7 +2255,6 @@ END
 INSTRUCTION: o32 83 /7 ib | CMP r/m32, imm8 | INTEL386
 	ops: r=rm r=imm;32 | UInt32
 	rflags: w=oszacp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2329,7 +2265,6 @@ INSTRUCTION: o64 83 /7 ib | CMP r/m64, imm8 | X64
 	ops: r=rm r=imm;64 | UInt64
 	rflags: w=oszacp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx
@@ -2507,7 +2442,6 @@ INSTRUCTION: o16 8F /0 | POP r/m16 | INTEL8086
 	ops: w=rm | UInt16
 	implied: pop-rm=2
 	flags: sp=pop;2
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -2518,7 +2452,6 @@ INSTRUCTION: o32 8F /0 | POP r/m32 | INTEL386
 	ops: w=rm | UInt32
 	implied: pop-rm=4
 	flags: 16 32 sp=pop;4
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -2529,7 +2462,6 @@ INSTRUCTION: o64 8F /0 | POP r/m64 | X64
 	ops: w=rm | UInt64
 	implied: pop-rm=8
 	flags: 64 sp=pop;8 do64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3026,7 +2958,6 @@ INSTRUCTION: C0 /0 ib | ROL r/m8, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt8
 	implied: shift-mask=0x1F
 	rflags: u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3037,7 +2968,6 @@ INSTRUCTION: C0 /1 ib | ROR r/m8, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt8
 	implied: shift-mask=0x1F
 	rflags: u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3048,7 +2978,6 @@ INSTRUCTION: C0 /2 ib | RCL r/m8, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt8
 	implied: shift-mask-1F-mod=9
 	rflags: r=c u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3059,7 +2988,6 @@ INSTRUCTION: C0 /3 ib | RCR r/m8, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt8
 	implied: shift-mask-1F-mod=9
 	rflags: r=c u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3070,7 +2998,6 @@ INSTRUCTION: C0 /4 ib | SHL r/m8, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt8
 	implied: shift-mask=0x1F
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3081,7 +3008,6 @@ INSTRUCTION: C0 /5 ib | SHR r/m8, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt8
 	implied: shift-mask=0x1F
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3092,7 +3018,6 @@ INSTRUCTION: C0 /6 ib | SAL r/m8, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt8
 	implied: shift-mask=0x1F
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: mnemonic=shl flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3103,7 +3028,6 @@ INSTRUCTION: C0 /7 ib | SAR r/m8, imm8 | INTEL186
 	ops: rw=rm r=imm | Int8
 	implied: shift-mask=0x1F
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3114,7 +3038,6 @@ INSTRUCTION: o16 C1 /0 ib | ROL r/m16, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt16
 	implied: shift-mask=0x1F
 	rflags: u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3125,7 +3048,6 @@ INSTRUCTION: o32 C1 /0 ib | ROL r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	implied: shift-mask=0x1F
 	rflags: u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3137,7 +3059,6 @@ INSTRUCTION: o64 C1 /0 ib | ROL r/m64, imm8 | X64
 	implied: shift-mask=0x3F
 	rflags: u=o w=c
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3148,7 +3069,6 @@ INSTRUCTION: o16 C1 /1 ib | ROR r/m16, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt16
 	implied: shift-mask=0x1F
 	rflags: u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3159,7 +3079,6 @@ INSTRUCTION: o32 C1 /1 ib | ROR r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	implied: shift-mask=0x1F
 	rflags: u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3171,7 +3090,6 @@ INSTRUCTION: o64 C1 /1 ib | ROR r/m64, imm8 | X64
 	implied: shift-mask=0x3F
 	rflags: u=o w=c
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3182,7 +3100,6 @@ INSTRUCTION: o16 C1 /2 ib | RCL r/m16, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt16
 	implied: shift-mask-1F-mod=17
 	rflags: r=c u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3193,7 +3110,6 @@ INSTRUCTION: o32 C1 /2 ib | RCL r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	implied: shift-mask=0x1F
 	rflags: r=c u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3205,7 +3121,6 @@ INSTRUCTION: o64 C1 /2 ib | RCL r/m64, imm8 | X64
 	implied: shift-mask=0x3F
 	rflags: r=c u=o w=c
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3216,7 +3131,6 @@ INSTRUCTION: o16 C1 /3 ib | RCR r/m16, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt16
 	implied: shift-mask-1F-mod=17
 	rflags: r=c u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3227,7 +3141,6 @@ INSTRUCTION: o32 C1 /3 ib | RCR r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	implied: shift-mask=0x1F
 	rflags: r=c u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3239,7 +3152,6 @@ INSTRUCTION: o64 C1 /3 ib | RCR r/m64, imm8 | X64
 	implied: shift-mask=0x3F
 	rflags: r=c u=o w=c
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3250,7 +3162,6 @@ INSTRUCTION: o16 C1 /4 ib | SHL r/m16, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt16
 	implied: shift-mask=0x1F
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3261,7 +3172,6 @@ INSTRUCTION: o32 C1 /4 ib | SHL r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	implied: shift-mask=0x1F
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3273,7 +3183,6 @@ INSTRUCTION: o64 C1 /4 ib | SHL r/m64, imm8 | X64
 	implied: shift-mask=0x3F
 	rflags: u=oa w=szcp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3284,7 +3193,6 @@ INSTRUCTION: o16 C1 /5 ib | SHR r/m16, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt16
 	implied: shift-mask=0x1F
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3295,7 +3203,6 @@ INSTRUCTION: o32 C1 /5 ib | SHR r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	implied: shift-mask=0x1F
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3307,7 +3214,6 @@ INSTRUCTION: o64 C1 /5 ib | SHR r/m64, imm8 | X64
 	implied: shift-mask=0x3F
 	rflags: u=oa w=szcp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3318,7 +3224,6 @@ INSTRUCTION: o16 C1 /6 ib | SAL r/m16, imm8 | INTEL186
 	ops: rw=rm r=imm | UInt16
 	implied: shift-mask=0x1F
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: mnemonic=shl flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3329,7 +3234,6 @@ INSTRUCTION: o32 C1 /6 ib | SAL r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	implied: shift-mask=0x1F
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: mnemonic=shl flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3341,7 +3245,6 @@ INSTRUCTION: o64 C1 /6 ib | SAL r/m64, imm8 | X64
 	implied: shift-mask=0x3F
 	rflags: u=oa w=szcp
 	flags: 64
-	fast: flags=force-size=always
 	intel: mnemonic=shl flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3352,7 +3255,6 @@ INSTRUCTION: o16 C1 /7 ib | SAR r/m16, imm8 | INTEL186
 	ops: rw=rm r=imm | Int16
 	implied: shift-mask=0x1F
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3363,7 +3265,6 @@ INSTRUCTION: o32 C1 /7 ib | SAR r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm | Int32
 	implied: shift-mask=0x1F
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3375,7 +3276,6 @@ INSTRUCTION: o64 C1 /7 ib | SAR r/m64, imm8 | X64
 	implied: shift-mask=0x3F
 	rflags: u=oa w=szcp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3484,7 +3384,6 @@ END
 INSTRUCTION: C6 /0 ib | MOV r/m8, imm8 | INTEL8086
 	ops: w=rm r=imm | UInt8
 	flags: xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3500,7 +3399,6 @@ END
 INSTRUCTION: o16 C7 /0 iw | MOV r/m16, imm16 | INTEL8086
 	ops: w=rm r=imm | UInt16
 	flags: xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3510,7 +3408,6 @@ END
 INSTRUCTION: o32 C7 /0 id | MOV r/m32, imm32 | INTEL386
 	ops: w=rm r=imm | UInt32
 	flags: xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3520,7 +3417,6 @@ END
 INSTRUCTION: o64 C7 /0 id | MOV r/m64, imm32 | X64
 	ops: w=rm r=imm;64 | UInt64
 	flags: 64 xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always sx2
@@ -3631,7 +3527,6 @@ INSTRUCTION: o64 CA iw | RETF imm16 | X64
 	implied: pop=2x8
 	code-mnemonic: retfq
 	flags: 64 sp=pop_imm16;16 cflow=ret no-in-sgx tsx-impl-abort
-	fast: mnemonic=retfq
 	intel: mnemonic=ret flags=far;o64
 	masm: mnemonic=retfq osz-suffix-2 retf retf retfq
 	nasm: osz-suffix-3
@@ -3662,7 +3557,6 @@ INSTRUCTION: o64 CB | RETF | X64
 	implied: pop=2x8
 	code-mnemonic: retfq
 	flags: 64 sp=pop;16 cflow=ret no-in-sgx tsx-impl-abort
-	fast: mnemonic=retfq
 	intel: mnemonic=ret flags=far;o64
 	masm: mnemonic=retfq osz-suffix-2 retf retf retfq
 	nasm: osz-suffix-3
@@ -3721,7 +3615,6 @@ END
 INSTRUCTION: D0 /0 | ROL r/m8, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt8
 	rflags: w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3731,7 +3624,6 @@ END
 INSTRUCTION: D0 /1 | ROR r/m8, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt8
 	rflags: w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3741,7 +3633,6 @@ END
 INSTRUCTION: D0 /2 | RCL r/m8, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt8
 	rflags: r=c w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3751,7 +3642,6 @@ END
 INSTRUCTION: D0 /3 | RCR r/m8, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt8
 	rflags: r=c w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3761,7 +3651,6 @@ END
 INSTRUCTION: D0 /4 | SHL r/m8, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt8
 	rflags: u=a w=oszcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3771,7 +3660,6 @@ END
 INSTRUCTION: D0 /5 | SHR r/m8, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt8
 	rflags: u=a w=oszcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3781,7 +3669,6 @@ END
 INSTRUCTION: D0 /6 | SAL r/m8, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt8
 	rflags: u=a w=oszcp
-	fast: flags=force-size=always
 	intel: mnemonic=shl flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3791,7 +3678,6 @@ END
 INSTRUCTION: D0 /7 | SAR r/m8, 1 | INTEL8086
 	ops: rw=rm r=c:1 | Int8
 	rflags: u=a w=oszcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3801,7 +3687,6 @@ END
 INSTRUCTION: o16 D1 /0 | ROL r/m16, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt16
 	rflags: w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3811,7 +3696,6 @@ END
 INSTRUCTION: o32 D1 /0 | ROL r/m32, 1 | INTEL386
 	ops: rw=rm r=c:1 | UInt32
 	rflags: w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3822,7 +3706,6 @@ INSTRUCTION: o64 D1 /0 | ROL r/m64, 1 | X64
 	ops: rw=rm r=c:1 | UInt64
 	rflags: w=oc
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3832,7 +3715,6 @@ END
 INSTRUCTION: o16 D1 /1 | ROR r/m16, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt16
 	rflags: w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3842,7 +3724,6 @@ END
 INSTRUCTION: o32 D1 /1 | ROR r/m32, 1 | INTEL386
 	ops: rw=rm r=c:1 | UInt32
 	rflags: w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3853,7 +3734,6 @@ INSTRUCTION: o64 D1 /1 | ROR r/m64, 1 | X64
 	ops: rw=rm r=c:1 | UInt64
 	rflags: w=oc
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3863,7 +3743,6 @@ END
 INSTRUCTION: o16 D1 /2 | RCL r/m16, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt16
 	rflags: r=c w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3873,7 +3752,6 @@ END
 INSTRUCTION: o32 D1 /2 | RCL r/m32, 1 | INTEL386
 	ops: rw=rm r=c:1 | UInt32
 	rflags: r=c w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3884,7 +3762,6 @@ INSTRUCTION: o64 D1 /2 | RCL r/m64, 1 | X64
 	ops: rw=rm r=c:1 | UInt64
 	rflags: r=c w=oc
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3894,7 +3771,6 @@ END
 INSTRUCTION: o16 D1 /3 | RCR r/m16, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt16
 	rflags: r=c w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3904,7 +3780,6 @@ END
 INSTRUCTION: o32 D1 /3 | RCR r/m32, 1 | INTEL386
 	ops: rw=rm r=c:1 | UInt32
 	rflags: r=c w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3915,7 +3790,6 @@ INSTRUCTION: o64 D1 /3 | RCR r/m64, 1 | X64
 	ops: rw=rm r=c:1 | UInt64
 	rflags: r=c w=oc
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3925,7 +3799,6 @@ END
 INSTRUCTION: o16 D1 /4 | SHL r/m16, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt16
 	rflags: u=a w=oszcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3935,7 +3808,6 @@ END
 INSTRUCTION: o32 D1 /4 | SHL r/m32, 1 | INTEL386
 	ops: rw=rm r=c:1 | UInt32
 	rflags: u=a w=oszcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3946,7 +3818,6 @@ INSTRUCTION: o64 D1 /4 | SHL r/m64, 1 | X64
 	ops: rw=rm r=c:1 | UInt64
 	rflags: u=a w=oszcp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3956,7 +3827,6 @@ END
 INSTRUCTION: o16 D1 /5 | SHR r/m16, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt16
 	rflags: u=a w=oszcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3966,7 +3836,6 @@ END
 INSTRUCTION: o32 D1 /5 | SHR r/m32, 1 | INTEL386
 	ops: rw=rm r=c:1 | UInt32
 	rflags: u=a w=oszcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3977,7 +3846,6 @@ INSTRUCTION: o64 D1 /5 | SHR r/m64, 1 | X64
 	ops: rw=rm r=c:1 | UInt64
 	rflags: u=a w=oszcp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3987,7 +3855,6 @@ END
 INSTRUCTION: o16 D1 /6 | SAL r/m16, 1 | INTEL8086
 	ops: rw=rm r=c:1 | UInt16
 	rflags: u=a w=oszcp
-	fast: flags=force-size=always
 	intel: mnemonic=shl flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -3997,7 +3864,6 @@ END
 INSTRUCTION: o32 D1 /6 | SAL r/m32, 1 | INTEL386
 	ops: rw=rm r=c:1 | UInt32
 	rflags: u=a w=oszcp
-	fast: flags=force-size=always
 	intel: mnemonic=shl flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4008,7 +3874,6 @@ INSTRUCTION: o64 D1 /6 | SAL r/m64, 1 | X64
 	ops: rw=rm r=c:1 | UInt64
 	rflags: u=a w=oszcp
 	flags: 64
-	fast: flags=force-size=always
 	intel: mnemonic=shl flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4018,7 +3883,6 @@ END
 INSTRUCTION: o16 D1 /7 | SAR r/m16, 1 | INTEL8086
 	ops: rw=rm r=c:1 | Int16
 	rflags: u=a w=oszcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4028,7 +3892,6 @@ END
 INSTRUCTION: o32 D1 /7 | SAR r/m32, 1 | INTEL386
 	ops: rw=rm r=c:1 | Int32
 	rflags: u=a w=oszcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4039,7 +3902,6 @@ INSTRUCTION: o64 D1 /7 | SAR r/m64, 1 | X64
 	ops: rw=rm r=c:1 | Int64
 	rflags: u=a w=oszcp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4049,7 +3911,6 @@ END
 INSTRUCTION: D2 /0 | ROL r/m8, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt8
 	rflags: u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4059,7 +3920,6 @@ END
 INSTRUCTION: D2 /1 | ROR r/m8, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt8
 	rflags: u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4069,7 +3929,6 @@ END
 INSTRUCTION: D2 /2 | RCL r/m8, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt8
 	rflags: r=c u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4079,7 +3938,6 @@ END
 INSTRUCTION: D2 /3 | RCR r/m8, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt8
 	rflags: r=c u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4089,7 +3947,6 @@ END
 INSTRUCTION: D2 /4 | SHL r/m8, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt8
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4099,7 +3956,6 @@ END
 INSTRUCTION: D2 /5 | SHR r/m8, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt8
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4109,7 +3965,6 @@ END
 INSTRUCTION: D2 /6 | SAL r/m8, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt8
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: mnemonic=shl flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4119,7 +3974,6 @@ END
 INSTRUCTION: D2 /7 | SAR r/m8, CL | INTEL8086
 	ops: rw=rm r=r:cl | Int8
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4129,7 +3983,6 @@ END
 INSTRUCTION: o16 D3 /0 | ROL r/m16, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt16
 	rflags: u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4139,7 +3992,6 @@ END
 INSTRUCTION: o32 D3 /0 | ROL r/m32, CL | INTEL386
 	ops: rw=rm r=r:cl | UInt32
 	rflags: u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4150,7 +4002,6 @@ INSTRUCTION: o64 D3 /0 | ROL r/m64, CL | X64
 	ops: rw=rm r=r:cl | UInt64
 	rflags: u=o w=c
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4160,7 +4011,6 @@ END
 INSTRUCTION: o16 D3 /1 | ROR r/m16, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt16
 	rflags: u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4170,7 +4020,6 @@ END
 INSTRUCTION: o32 D3 /1 | ROR r/m32, CL | INTEL386
 	ops: rw=rm r=r:cl | UInt32
 	rflags: u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4181,7 +4030,6 @@ INSTRUCTION: o64 D3 /1 | ROR r/m64, CL | X64
 	ops: rw=rm r=r:cl | UInt64
 	rflags: u=o w=c
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4191,7 +4039,6 @@ END
 INSTRUCTION: o16 D3 /2 | RCL r/m16, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt16
 	rflags: r=c u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4201,7 +4048,6 @@ END
 INSTRUCTION: o32 D3 /2 | RCL r/m32, CL | INTEL386
 	ops: rw=rm r=r:cl | UInt32
 	rflags: r=c u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4212,7 +4058,6 @@ INSTRUCTION: o64 D3 /2 | RCL r/m64, CL | X64
 	ops: rw=rm r=r:cl | UInt64
 	rflags: r=c u=o w=c
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4222,7 +4067,6 @@ END
 INSTRUCTION: o16 D3 /3 | RCR r/m16, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt16
 	rflags: r=c u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4232,7 +4076,6 @@ END
 INSTRUCTION: o32 D3 /3 | RCR r/m32, CL | INTEL386
 	ops: rw=rm r=r:cl | UInt32
 	rflags: r=c u=o w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4243,7 +4086,6 @@ INSTRUCTION: o64 D3 /3 | RCR r/m64, CL | X64
 	ops: rw=rm r=r:cl | UInt64
 	rflags: r=c u=o w=c
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4253,7 +4095,6 @@ END
 INSTRUCTION: o16 D3 /4 | SHL r/m16, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt16
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4263,7 +4104,6 @@ END
 INSTRUCTION: o32 D3 /4 | SHL r/m32, CL | INTEL386
 	ops: rw=rm r=r:cl | UInt32
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4274,7 +4114,6 @@ INSTRUCTION: o64 D3 /4 | SHL r/m64, CL | X64
 	ops: rw=rm r=r:cl | UInt64
 	rflags: u=oa w=szcp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4284,7 +4123,6 @@ END
 INSTRUCTION: o16 D3 /5 | SHR r/m16, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt16
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4294,7 +4132,6 @@ END
 INSTRUCTION: o32 D3 /5 | SHR r/m32, CL | INTEL386
 	ops: rw=rm r=r:cl | UInt32
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4305,7 +4142,6 @@ INSTRUCTION: o64 D3 /5 | SHR r/m64, CL | X64
 	ops: rw=rm r=r:cl | UInt64
 	rflags: u=oa w=szcp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4315,7 +4151,6 @@ END
 INSTRUCTION: o16 D3 /6 | SAL r/m16, CL | INTEL8086
 	ops: rw=rm r=r:cl | UInt16
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: mnemonic=shl flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4325,7 +4160,6 @@ END
 INSTRUCTION: o32 D3 /6 | SAL r/m32, CL | INTEL386
 	ops: rw=rm r=r:cl | UInt32
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: mnemonic=shl flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4336,7 +4170,6 @@ INSTRUCTION: o64 D3 /6 | SAL r/m64, CL | X64
 	ops: rw=rm r=r:cl | UInt64
 	rflags: u=oa w=szcp
 	flags: 64
-	fast: flags=force-size=always
 	intel: mnemonic=shl flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4346,7 +4179,6 @@ END
 INSTRUCTION: o16 D3 /7 | SAR r/m16, CL | INTEL8086
 	ops: rw=rm r=r:cl | Int16
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4356,7 +4188,6 @@ END
 INSTRUCTION: o32 D3 /7 | SAR r/m32, CL | INTEL386
 	ops: rw=rm r=r:cl | Int32
 	rflags: u=oa w=szcp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4367,7 +4198,6 @@ INSTRUCTION: o64 D3 /7 | SAR r/m64, CL | X64
 	ops: rw=rm r=r:cl | Int64
 	rflags: u=oa w=szcp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4406,7 +4236,6 @@ INSTRUCTION: D7 | XLATB [m8] | INTEL8086
 	implied: rw=al
 	code-mnemonic: xlat
 	flags: asm-ig
-	fast: mnemonic=xlat
 	intel: mnemonic=xlat flags=ignore-index
 	masm: mnemonic=xlat xlat
 	nasm: xlat
@@ -4419,7 +4248,6 @@ INSTRUCTION: D8 /0 | FADD m32fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4432,7 +4260,6 @@ INSTRUCTION: D8 /1 | FMUL m32fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4445,7 +4272,6 @@ INSTRUCTION: D8 /2 | FCOM m32fp | FPU
 	code-memory-size-suffix: fp
 	rflags: 0=1 w=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4458,7 +4284,6 @@ INSTRUCTION: D8 /3 | FCOMP m32fp | FPU
 	code-memory-size-suffix: fp
 	rflags: 0=1 w=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4471,7 +4296,6 @@ INSTRUCTION: D8 /4 | FSUB m32fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4484,7 +4308,6 @@ INSTRUCTION: D8 /5 | FSUBR m32fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4497,7 +4320,6 @@ INSTRUCTION: D8 /6 | FDIV m32fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4510,7 +4332,6 @@ INSTRUCTION: D8 /7 | FDIVR m32fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4602,7 +4423,6 @@ INSTRUCTION: D9 /0 | FLD m32fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: fpu-push=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1 load
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4615,7 +4435,6 @@ INSTRUCTION: D9 /2 | FST m32fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4628,7 +4447,6 @@ INSTRUCTION: D9 /3 | FSTP m32fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4640,7 +4458,6 @@ INSTRUCTION: o16 D9 /4 | FLDENV m14byte | FPU
 	code-memory-size: 14byte
 	rflags: w=0123
 	flags: writes-fpu-top tsx-impl-abort
-	fast: flags=force-size=always
 	intel: osz-mem-2 16
 	masm: osz-mem-2 16
 	nasm: flags=mem-size=ignore osz-mem-2
@@ -4652,7 +4469,6 @@ INSTRUCTION: o32 D9 /4 | FLDENV m28byte | FPU387
 	code-memory-size: 28byte
 	rflags: w=0123
 	flags: writes-fpu-top tsx-impl-abort
-	fast: flags=force-size=always
 	intel: osz-mem-2
 	masm: osz-mem-2
 	nasm: flags=mem-size=ignore osz-mem-2
@@ -4672,7 +4488,6 @@ INSTRUCTION: o16 D9 /6 | FNSTENV m14byte | FPU
 	code-memory-size: 14byte
 	rflags: r=0123 u=0123
 	flags: tsx-impl-abort no-wait
-	fast: flags=force-size=always
 	intel: osz-mem-2 16
 	masm: osz-mem-2 16
 	nasm: flags=mem-size=ignore osz-mem-2
@@ -4684,7 +4499,6 @@ INSTRUCTION: 9B o16 D9 /6 | FSTENV m14byte | FPU
 	code-memory-size: 14byte
 	rflags: r=0123 u=0123
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: osz-mem-2 16
 	masm: osz-mem-2 16
 	nasm: flags=mem-size=ignore osz-mem-2
@@ -4696,7 +4510,6 @@ INSTRUCTION: o32 D9 /6 | FNSTENV m28byte | FPU387
 	code-memory-size: 28byte
 	rflags: r=0123 u=0123
 	flags: tsx-impl-abort no-wait
-	fast: flags=force-size=always
 	intel: osz-mem-2
 	masm: osz-mem-2
 	nasm: flags=mem-size=ignore osz-mem-2
@@ -4708,7 +4521,6 @@ INSTRUCTION: 9B o32 D9 /6 | FSTENV m28byte | FPU387
 	code-memory-size: 28byte
 	rflags: r=0123 u=0123
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: osz-mem-2
 	masm: osz-mem-2
 	nasm: flags=mem-size=ignore osz-mem-2
@@ -4763,7 +4575,6 @@ INSTRUCTION: D9 D8+i | FSTPNCE ST(i) | FPU
 	implied: r=st0
 	rflags: w=1 u=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: mnemonic=fstp
 	intel: add-st2
 	masm: mnemonic=fstp
 END
@@ -4955,7 +4766,6 @@ INSTRUCTION: DA /0 | FIADD m32int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4968,7 +4778,6 @@ INSTRUCTION: DA /1 | FIMUL m32int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4981,7 +4790,6 @@ INSTRUCTION: DA /2 | FICOM m32int | FPU
 	code-memory-size-suffix: int
 	rflags: 0=1 w=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -4994,7 +4802,6 @@ INSTRUCTION: DA /3 | FICOMP m32int | FPU
 	code-memory-size-suffix: int
 	rflags: 0=1 w=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5007,7 +4814,6 @@ INSTRUCTION: DA /4 | FISUB m32int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5020,7 +4826,6 @@ INSTRUCTION: DA /5 | FISUBR m32int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5033,7 +4838,6 @@ INSTRUCTION: DA /6 | FIDIV m32int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5046,7 +4850,6 @@ INSTRUCTION: DA /7 | FIDIVR m32int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5105,7 +4908,6 @@ INSTRUCTION: DB /0 | FILD m32int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: fpu-push=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1 load
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5118,7 +4920,6 @@ INSTRUCTION: DB /1 | FISTTP m32int | FPU SSE3
 	code-memory-size-suffix: int
 	rflags: 0=1 u=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5131,7 +4932,6 @@ INSTRUCTION: DB /2 | FIST m32int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5144,7 +4944,6 @@ INSTRUCTION: DB /3 | FISTP m32int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5156,7 +4955,6 @@ INSTRUCTION: DB /5 | FLD m80fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: fpu-push=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1 load
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5169,7 +4967,6 @@ INSTRUCTION: DB /7 | FSTP m80fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5309,7 +5106,6 @@ INSTRUCTION: DC /0 | FADD m64fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5322,7 +5118,6 @@ INSTRUCTION: DC /1 | FMUL m64fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5335,7 +5130,6 @@ INSTRUCTION: DC /2 | FCOM m64fp | FPU
 	code-memory-size-suffix: fp
 	rflags: 0=1 w=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5348,7 +5142,6 @@ INSTRUCTION: DC /3 | FCOMP m64fp | FPU
 	code-memory-size-suffix: fp
 	rflags: 0=1 w=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5361,7 +5154,6 @@ INSTRUCTION: DC /4 | FSUB m64fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5374,7 +5166,6 @@ INSTRUCTION: DC /5 | FSUBR m64fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5387,7 +5178,6 @@ INSTRUCTION: DC /6 | FDIV m64fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5400,7 +5190,6 @@ INSTRUCTION: DC /7 | FDIVR m64fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5494,7 +5283,6 @@ INSTRUCTION: DD /0 | FLD m64fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: fpu-push=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1 load
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5507,7 +5295,6 @@ INSTRUCTION: DD /1 | FISTTP m64int | FPU SSE3
 	code-memory-size-suffix: int
 	rflags: 0=1 u=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5520,7 +5307,6 @@ INSTRUCTION: DD /2 | FST m64fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5533,7 +5319,6 @@ INSTRUCTION: DD /3 | FSTP m64fp | FPU
 	code-memory-size-suffix: fp
 	rflags: w=1 u=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5546,7 +5331,6 @@ INSTRUCTION: o16 DD /4 | FRSTOR m94byte | FPU
 	code-memory-size: 94byte
 	rflags: w=0123
 	flags: writes-fpu-top tsx-impl-abort
-	fast: flags=force-size=always
 	intel: osz-mem-2 16
 	masm: osz-mem-2 16
 	nasm: flags=mem-size=ignore osz-mem-2
@@ -5559,7 +5343,6 @@ INSTRUCTION: o32 DD /4 | FRSTOR m108byte | FPU387
 	code-memory-size: 108byte
 	rflags: w=0123
 	flags: writes-fpu-top tsx-impl-abort
-	fast: flags=force-size=always
 	intel: osz-mem-2
 	masm: osz-mem-2
 	nasm: flags=mem-size=ignore osz-mem-2
@@ -5572,7 +5355,6 @@ INSTRUCTION: o16 DD /6 | FNSAVE m94byte | FPU
 	code-memory-size: 94byte
 	rflags: r=0123 0=0123
 	flags: writes-fpu-top tsx-impl-abort no-wait
-	fast: flags=force-size=always
 	intel: osz-mem-2 16
 	masm: osz-mem-2 16
 	nasm: flags=mem-size=ignore osz-mem-2
@@ -5585,7 +5367,6 @@ INSTRUCTION: 9B o16 DD /6 | FSAVE m94byte | FPU
 	code-memory-size: 94byte
 	rflags: r=0123 0=0123
 	flags: writes-fpu-top tsx-impl-abort
-	fast: flags=force-size=always
 	intel: osz-mem-2 16
 	masm: osz-mem-2 16
 	nasm: flags=mem-size=ignore osz-mem-2
@@ -5598,7 +5379,6 @@ INSTRUCTION: o32 DD /6 | FNSAVE m108byte | FPU387
 	code-memory-size: 108byte
 	rflags: r=0123 0=0123
 	flags: writes-fpu-top tsx-impl-abort no-wait
-	fast: flags=force-size=always
 	intel: osz-mem-2
 	masm: osz-mem-2
 	nasm: flags=mem-size=ignore osz-mem-2
@@ -5611,7 +5391,6 @@ INSTRUCTION: 9B o32 DD /6 | FSAVE m108byte | FPU387
 	code-memory-size: 108byte
 	rflags: r=0123 0=0123
 	flags: writes-fpu-top tsx-impl-abort
-	fast: flags=force-size=always
 	intel: osz-mem-2
 	masm: osz-mem-2
 	nasm: flags=mem-size=ignore osz-mem-2
@@ -5696,7 +5475,6 @@ INSTRUCTION: DE /0 | FIADD m16int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5709,7 +5487,6 @@ INSTRUCTION: DE /1 | FIMUL m16int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5722,7 +5499,6 @@ INSTRUCTION: DE /2 | FICOM m16int | FPU
 	code-memory-size-suffix: int
 	rflags: 0=1 w=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5735,7 +5511,6 @@ INSTRUCTION: DE /3 | FICOMP m16int | FPU
 	code-memory-size-suffix: int
 	rflags: 0=1 w=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5748,7 +5523,6 @@ INSTRUCTION: DE /4 | FISUB m16int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5761,7 +5535,6 @@ INSTRUCTION: DE /5 | FISUBR m16int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5774,7 +5547,6 @@ INSTRUCTION: DE /6 | FIDIV m16int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5787,7 +5559,6 @@ INSTRUCTION: DE /7 | FIDIVR m16int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5877,7 +5648,6 @@ INSTRUCTION: DF /0 | FILD m16int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: fpu-push=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1 load
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5890,7 +5660,6 @@ INSTRUCTION: DF /1 | FISTTP m16int | FPU SSE3
 	code-memory-size-suffix: int
 	rflags: 0=1 u=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5903,7 +5672,6 @@ INSTRUCTION: DF /2 | FIST m16int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5916,7 +5684,6 @@ INSTRUCTION: DF /3 | FISTP m16int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5928,7 +5695,6 @@ INSTRUCTION: DF /4 | FBLD m80bcd | FPU
 	code-memory-size-suffix: bcd
 	rflags: w=1 u=023
 	flags: fpu-push=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=default add-st1 load
 	masm: flags=force-size=default
 	nasm: flags=force-size=default
@@ -5940,7 +5706,6 @@ INSTRUCTION: DF /5 | FILD m64int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: fpu-push=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st1 load
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -5953,7 +5718,6 @@ INSTRUCTION: DF /6 | FBSTP m80bcd | FPU
 	code-memory-size-suffix: bcd
 	rflags: w=1 u=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=default add-st2
 	masm: flags=force-size=default
 	nasm: flags=force-size=default
@@ -5966,7 +5730,6 @@ INSTRUCTION: DF /7 | FISTP m64int | FPU
 	code-memory-size-suffix: int
 	rflags: w=1 u=023
 	flags: fpu-pop=1 tsx-impl-abort
-	fast: flags=force-size=always
 	intel: flags=force-size=always add-st2
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6115,7 +5878,6 @@ INSTRUCTION: a32 o64 E0 cb | LOOPNE rel8 | X64
 	code-suffix: 64_ECX
 	rflags: r=z
 	flags: 64 cc=ne br=loop cflow=br-cond intel-fo64 do64 asm-ig
-	fast: mnemonic=loopned
 	intel: loop
 	masm: mnemonic=loopned loop1 d
 	nasm: loop
@@ -6200,7 +5962,6 @@ INSTRUCTION: a32 o64 E1 cb | LOOPE rel8 | X64
 	code-suffix: 64_ECX
 	rflags: r=z
 	flags: 64 cc=e br=loop cflow=br-cond intel-fo64 do64 asm-ig
-	fast: mnemonic=looped
 	intel: loop
 	masm: mnemonic=looped loop1 d
 	nasm: loop
@@ -6280,7 +6041,6 @@ INSTRUCTION: a32 o64 E2 cb | LOOP rel8 | X64
 	implied: rw=ecx
 	code-suffix: 64_ECX
 	flags: 64 br=loop cflow=br-cond intel-fo64 do64 asm-ig
-	fast: mnemonic=loopd
 	intel: loop
 	masm: mnemonic=loopd
 	nasm: loop
@@ -6574,7 +6334,6 @@ END
 INSTRUCTION: F6 /0 ib | TEST r/m8, imm8 | INTEL8086
 	ops: r=rm r=imm | UInt8
 	rflags: u=a w=szp 0=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6586,7 +6345,6 @@ INSTRUCTION: F6 /1 ib | TEST r/m8, imm8 | INTEL8086
 	code-suffix: F6r1
 	rflags: u=a w=szp 0=oc
 	flags: asm-ig
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6596,7 +6354,6 @@ END
 INSTRUCTION: F6 /2 | NOT r/m8 | INTEL8086
 	ops: rw=rm | UInt8
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6607,7 +6364,6 @@ INSTRUCTION: F6 /3 | NEG r/m8 | INTEL8086
 	ops: rw=rm | Int8
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6618,7 +6374,6 @@ INSTRUCTION: F6 /4 | MUL r/m8 | INTEL8086
 	ops: r=rm | UInt8
 	implied: r=al w=ax
 	rflags: u=szap w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6629,7 +6384,6 @@ INSTRUCTION: F6 /5 | IMUL r/m8 | INTEL8086
 	ops: r=rm | Int8
 	implied: r=al w=ax
 	rflags: u=szap w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6640,7 +6394,6 @@ INSTRUCTION: F6 /6 | DIV r/m8 | INTEL8086
 	ops: r=rm | UInt8
 	implied: rw=ax
 	rflags: u=oszacp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6651,7 +6404,6 @@ INSTRUCTION: F6 /7 | IDIV r/m8 | INTEL8086
 	ops: r=rm | Int8
 	implied: rw=ax
 	rflags: u=oszacp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6661,7 +6413,6 @@ END
 INSTRUCTION: o16 F7 /0 iw | TEST r/m16, imm16 | INTEL8086
 	ops: r=rm r=imm | UInt16
 	rflags: u=a w=szp 0=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6671,7 +6422,6 @@ END
 INSTRUCTION: o32 F7 /0 id | TEST r/m32, imm32 | INTEL386
 	ops: r=rm r=imm | UInt32
 	rflags: u=a w=szp 0=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6682,7 +6432,6 @@ INSTRUCTION: o64 F7 /0 id | TEST r/m64, imm32 | X64
 	ops: r=rm r=imm;64 | UInt64
 	rflags: u=a w=szp 0=oc
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always;no-sx sx
@@ -6694,7 +6443,6 @@ INSTRUCTION: o16 F7 /1 iw | TEST r/m16, imm16 | INTEL8086
 	code-suffix: F7r1
 	rflags: u=a w=szp 0=oc
 	flags: asm-ig
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6706,7 +6454,6 @@ INSTRUCTION: o32 F7 /1 id | TEST r/m32, imm32 | INTEL386
 	code-suffix: F7r1
 	rflags: u=a w=szp 0=oc
 	flags: asm-ig
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6718,7 +6465,6 @@ INSTRUCTION: o64 F7 /1 id | TEST r/m64, imm32 | X64
 	code-suffix: F7r1
 	rflags: u=a w=szp 0=oc
 	flags: 64 asm-ig
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always;no-sx sx
@@ -6728,7 +6474,6 @@ END
 INSTRUCTION: o16 F7 /2 | NOT r/m16 | INTEL8086
 	ops: rw=rm | UInt16
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6738,7 +6483,6 @@ END
 INSTRUCTION: o32 F7 /2 | NOT r/m32 | INTEL386
 	ops: rw=rm | UInt32
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6748,7 +6492,6 @@ END
 INSTRUCTION: o64 F7 /2 | NOT r/m64 | X64
 	ops: rw=rm | UInt64
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6759,7 +6502,6 @@ INSTRUCTION: o16 F7 /3 | NEG r/m16 | INTEL8086
 	ops: rw=rm | Int16
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6770,7 +6512,6 @@ INSTRUCTION: o32 F7 /3 | NEG r/m32 | INTEL386
 	ops: rw=rm | Int32
 	rflags: w=oszacp
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6781,7 +6522,6 @@ INSTRUCTION: o64 F7 /3 | NEG r/m64 | X64
 	ops: rw=rm | Int64
 	rflags: w=oszacp
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6792,7 +6532,6 @@ INSTRUCTION: o16 F7 /4 | MUL r/m16 | INTEL8086
 	ops: r=rm | UInt16
 	implied: rw=ax w=dx
 	rflags: u=szap w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6803,7 +6542,6 @@ INSTRUCTION: o32 F7 /4 | MUL r/m32 | INTEL386
 	ops: r=rm | UInt32
 	implied: rw=eax w=edx
 	rflags: u=szap w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6815,7 +6553,6 @@ INSTRUCTION: o64 F7 /4 | MUL r/m64 | X64
 	implied: rw=rax w=rdx
 	rflags: u=szap w=oc
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6826,7 +6563,6 @@ INSTRUCTION: o16 F7 /5 | IMUL r/m16 | INTEL8086
 	ops: r=rm | Int16
 	implied: rw=ax w=dx
 	rflags: u=szap w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6837,7 +6573,6 @@ INSTRUCTION: o32 F7 /5 | IMUL r/m32 | INTEL386
 	ops: r=rm | Int32
 	implied: rw=eax w=edx
 	rflags: u=szap w=oc
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6849,7 +6584,6 @@ INSTRUCTION: o64 F7 /5 | IMUL r/m64 | X64
 	implied: rw=rax w=rdx
 	rflags: u=szap w=oc
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6860,7 +6594,6 @@ INSTRUCTION: o16 F7 /6 | DIV r/m16 | INTEL8086
 	ops: r=rm | UInt16
 	implied: rw=ax;dx
 	rflags: u=oszacp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6871,7 +6604,6 @@ INSTRUCTION: o32 F7 /6 | DIV r/m32 | INTEL386
 	ops: r=rm | UInt32
 	implied: rw=eax;edx
 	rflags: u=oszacp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6883,7 +6615,6 @@ INSTRUCTION: o64 F7 /6 | DIV r/m64 | X64
 	implied: rw=rax;rdx
 	rflags: u=oszacp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6894,7 +6625,6 @@ INSTRUCTION: o16 F7 /7 | IDIV r/m16 | INTEL8086
 	ops: r=rm | Int16
 	implied: rw=ax;dx
 	rflags: u=oszacp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6905,7 +6635,6 @@ INSTRUCTION: o32 F7 /7 | IDIV r/m32 | INTEL386
 	ops: r=rm | Int32
 	implied: rw=eax;edx
 	rflags: u=oszacp
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6917,7 +6646,6 @@ INSTRUCTION: o64 F7 /7 | IDIV r/m64 | X64
 	implied: rw=rax;rdx
 	rflags: u=oszacp
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6962,7 +6690,6 @@ INSTRUCTION: FE /0 | INC r/m8 | INTEL8086
 	ops: rw=rm | UInt8
 	rflags: w=oszap
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6973,7 +6700,6 @@ INSTRUCTION: FE /1 | DEC r/m8 | INTEL8086
 	ops: rw=rm | UInt8
 	rflags: w=oszap
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6984,7 +6710,6 @@ INSTRUCTION: o16 FF /0 | INC r/m16 | INTEL8086
 	ops: rw=rm | UInt16
 	rflags: w=oszap
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -6995,7 +6720,6 @@ INSTRUCTION: o32 FF /0 | INC r/m32 | INTEL386
 	ops: rw=rm | UInt32
 	rflags: w=oszap
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -7006,7 +6730,6 @@ INSTRUCTION: o64 FF /0 | INC r/m64 | X64
 	ops: rw=rm | UInt64
 	rflags: w=oszap
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -7017,7 +6740,6 @@ INSTRUCTION: o16 FF /1 | DEC r/m16 | INTEL8086
 	ops: rw=rm | UInt16
 	rflags: w=oszap
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -7028,7 +6750,6 @@ INSTRUCTION: o32 FF /1 | DEC r/m32 | INTEL386
 	ops: rw=rm | UInt32
 	rflags: w=oszap
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -7039,7 +6760,6 @@ INSTRUCTION: o64 FF /1 | DEC r/m64 | X64
 	ops: rw=rm | UInt64
 	rflags: w=oszap
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -7050,7 +6770,6 @@ INSTRUCTION: o16 FF /2 | CALL r/m16 | INTEL8086
 	ops: r=rm | WordOffset
 	implied: push=1x2
 	flags: sp=push;2 br=call-near-indirect cflow=call-ind bnd notrack cet-tracked no-intel-dec64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bnd
 	masm: flags=force-size=always bnd
 	nasm: flags=force-size=always bnd
@@ -7061,7 +6780,6 @@ INSTRUCTION: o32 FF /2 | CALL r/m32 | INTEL386
 	ops: r=rm | DwordOffset
 	implied: push=1x4
 	flags: 16 32 sp=push;4 br=call-near-indirect cflow=call-ind bnd notrack cet-tracked
-	fast: flags=force-size=always
 	intel: flags=force-size=always bnd
 	masm: flags=force-size=always bnd
 	nasm: flags=force-size=always bnd
@@ -7072,7 +6790,6 @@ INSTRUCTION: o64 FF /2 | CALL r/m64 | X64
 	ops: r=rm | QwordOffset
 	implied: push=1x8
 	flags: 64 sp=push;8 br=call-near-indirect cflow=call-ind bnd notrack cet-tracked intel-fo64 do64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bnd
 	masm: flags=force-size=always bnd
 	nasm: flags=force-size=always bnd
@@ -7085,7 +6802,6 @@ INSTRUCTION: o16 FF /3 | CALL m16:16 | INTEL8086
 	code-memory-size: 1616
 	# VM exit if task switch
 	flags: sp=push;4 br=call-far-indirect cflow=call-ind cet-tracked intel-may-vm-exit no-in-sgx amd-may-vm-exit tsx-impl-abort
-	fast: mnemonic=callf flags=force-size=always
 	intel: flags=force-size=always;far
 	masm: flags=force-size=always
 	nasm: far-mem
@@ -7098,7 +6814,6 @@ INSTRUCTION: o32 FF /3 | CALL m16:32 | INTEL386
 	code-memory-size: 1632
 	# VM exit if task switch
 	flags: sp=push;8 br=call-far-indirect cflow=call-ind cet-tracked intel-may-vm-exit no-in-sgx amd-may-vm-exit tsx-impl-abort
-	fast: mnemonic=callf flags=force-size=always
 	intel: flags=force-size=always;far
 	masm: flags=force-size=always
 	nasm: far-mem
@@ -7111,7 +6826,6 @@ INSTRUCTION: o64 FF /3 | CALL m16:64 | X64
 	code-memory-size: 1664
 	# VM exit if task switch
 	flags: 64 sp=push;16 br=call-far-indirect cflow=call-ind cet-tracked no-amd-dec intel-may-vm-exit no-in-sgx tsx-impl-abort
-	fast: mnemonic=callf flags=force-size=always
 	intel: flags=force-size=always;far
 	masm: flags=force-size=always
 	nasm: far-mem
@@ -7121,7 +6835,6 @@ END
 INSTRUCTION: o16 FF /4 | JMP r/m16 | INTEL8086
 	ops: r=rm | WordOffset
 	flags: bnd notrack br=jmp-near-indirect cflow=br-ind cet-tracked no-intel-dec64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bnd
 	masm: flags=force-size=always bnd
 	nasm: flags=force-size=always bnd
@@ -7131,7 +6844,6 @@ END
 INSTRUCTION: o32 FF /4 | JMP r/m32 | INTEL386
 	ops: r=rm | DwordOffset
 	flags: 16 32 br=jmp-near-indirect cflow=br-ind bnd notrack cet-tracked
-	fast: flags=force-size=always
 	intel: flags=force-size=always bnd
 	masm: flags=force-size=always bnd
 	nasm: flags=force-size=always bnd
@@ -7141,7 +6853,6 @@ END
 INSTRUCTION: o64 FF /4 | JMP r/m64 | X64
 	ops: r=rm | QwordOffset
 	flags: 64 br=jmp-near-indirect cflow=br-ind bnd notrack cet-tracked intel-fo64 do64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bnd
 	masm: flags=force-size=always bnd
 	nasm: flags=force-size=always bnd
@@ -7153,7 +6864,6 @@ INSTRUCTION: o16 FF /5 | JMP m16:16 | INTEL8086
 	code-memory-size: 1616
 	# VM exit if task switch
 	flags: br=jmp-far-indirect cflow=br-ind cet-tracked intel-may-vm-exit no-in-sgx amd-may-vm-exit tsx-impl-abort
-	fast: mnemonic=jmpf flags=force-size=always
 	intel: flags=force-size=always;far
 	masm: flags=force-size=always
 	nasm: far-mem
@@ -7165,7 +6875,6 @@ INSTRUCTION: o32 FF /5 | JMP m16:32 | INTEL386
 	code-memory-size: 1632
 	# VM exit if task switch
 	flags: br=jmp-far-indirect cflow=br-ind cet-tracked intel-may-vm-exit no-in-sgx amd-may-vm-exit tsx-impl-abort
-	fast: mnemonic=jmpf flags=force-size=always
 	intel: flags=force-size=always;far
 	masm: flags=force-size=always
 	nasm: far-mem
@@ -7177,7 +6886,6 @@ INSTRUCTION: o64 FF /5 | JMP m16:64 | X64
 	code-memory-size: 1664
 	# VM exit if task switch
 	flags: 64 br=jmp-far-indirect cflow=br-ind no-amd-dec cet-tracked intel-may-vm-exit no-in-sgx tsx-impl-abort
-	fast: mnemonic=jmpf flags=force-size=always
 	intel: flags=force-size=always;far
 	masm: flags=force-size=always
 	nasm: far-mem
@@ -7188,7 +6896,6 @@ INSTRUCTION: o16 FF /6 | PUSH r/m16 | INTEL8086
 	ops: r=rm | UInt16
 	implied: push=1x2
 	flags: sp=push;2
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -7199,7 +6906,6 @@ INSTRUCTION: o32 FF /6 | PUSH r/m32 | INTEL386
 	ops: r=rm | UInt32
 	implied: push=1x4
 	flags: 16 32 sp=push;4
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -7210,7 +6916,6 @@ INSTRUCTION: o64 FF /6 | PUSH r/m64 | X64
 	ops: r=rm | UInt64
 	implied: push=1x8
 	flags: 64 sp=push;8 do64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -7392,7 +7097,6 @@ END
 INSTRUCTION: o16 0F 00 /6 | JMPE r/m16 | IA64
 	ops: r=rm | WordOffset
 	flags: 16 32 dec-opt=Jmpe br=jmpe-near-indirect cflow=br-ind
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -7402,7 +7106,6 @@ END
 INSTRUCTION: o32 0F 00 /6 | JMPE r/m32 | IA64
 	ops: r=rm | DwordOffset
 	flags: 16 32 dec-opt=Jmpe br=jmpe-near-indirect cflow=br-ind
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -8094,7 +7797,6 @@ END
 INSTRUCTION: 0F 05 | LOADALL | INTEL286_ONLY
 	code-mnemonic: loadall286
 	flags: 16 32 dec-opt=Loadall286 cpl0 save-restore asm-ig
-	fast: mnemonic=loadall286
 	intel: mnemonic=loadall286
 	masm: mnemonic=loadall286
 	nasm: mnemonic=loadall286
@@ -8119,7 +7821,6 @@ INSTRUCTION: 0F 07 | LOADALL | INTEL386_ONLY
 	implied: r=es;edi
 	code-mnemonic: loadall386
 	flags: 16 32 dec-opt=Loadall386 cpl0 save-restore
-	fast: mnemonic=loadall386
 	intel: mnemonic=loadall386
 	masm: mnemonic=loadall386
 END
@@ -8175,7 +7876,6 @@ INSTRUCTION: o16 0F 0D /r | RESERVEDNOP r/m16, r16 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt16
 	code-suffix: 0F0D
 	flags: nop res-nop asm=reservednop_0f0d
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -8186,7 +7886,6 @@ INSTRUCTION: o32 0F 0D /r | RESERVEDNOP r/m32, r32 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt32
 	code-suffix: 0F0D
 	flags: nop res-nop asm=reservednop_0f0d
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -8197,7 +7896,6 @@ INSTRUCTION: o64 0F 0D /r | RESERVEDNOP r/m64, r64 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt64
 	code-suffix: 0F0D
 	flags: 64 nop res-nop asm=reservednop_0f0d
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -8909,7 +8607,6 @@ INSTRUCTION: o16 0F 18 /r | RESERVEDNOP r/m16, r16 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt16
 	code-suffix: 0F18
 	flags: nop res-nop asm=reservednop_0f18
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -8920,7 +8617,6 @@ INSTRUCTION: o32 0F 18 /r | RESERVEDNOP r/m32, r32 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt32
 	code-suffix: 0F18
 	flags: nop res-nop asm=reservednop_0f18
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -8931,7 +8627,6 @@ INSTRUCTION: o64 0F 18 /r | RESERVEDNOP r/m64, r64 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt64
 	code-suffix: 0F18
 	flags: 64 nop res-nop asm=reservednop_0f18
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -8942,7 +8637,6 @@ INSTRUCTION: o16 0F 19 /r | RESERVEDNOP r/m16, r16 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt16
 	code-suffix: 0F19
 	flags: nop res-nop asm=reservednop_0f19
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -8953,7 +8647,6 @@ INSTRUCTION: o32 0F 19 /r | RESERVEDNOP r/m32, r32 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt32
 	code-suffix: 0F19
 	flags: nop res-nop asm=reservednop_0f19
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -8964,7 +8657,6 @@ INSTRUCTION: o64 0F 19 /r | RESERVEDNOP r/m64, r64 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt64
 	code-suffix: 0F19
 	flags: 64 nop res-nop asm=reservednop_0f19
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -8975,7 +8667,6 @@ INSTRUCTION: o16 0F 1A /r | RESERVEDNOP r/m16, r16 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt16
 	code-suffix: 0F1A
 	flags: nop res-nop asm=reservednop_0f1a
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -8986,7 +8677,6 @@ INSTRUCTION: o32 0F 1A /r | RESERVEDNOP r/m32, r32 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt32
 	code-suffix: 0F1A
 	flags: nop res-nop asm=reservednop_0f1a
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -8997,7 +8687,6 @@ INSTRUCTION: o64 0F 1A /r | RESERVEDNOP r/m64, r64 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt64
 	code-suffix: 0F1A
 	flags: 64 nop res-nop asm=reservednop_0f1a
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9008,7 +8697,6 @@ INSTRUCTION: o16 0F 1B /r | RESERVEDNOP r/m16, r16 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt16
 	code-suffix: 0F1B
 	flags: nop res-nop asm=reservednop_0f1b
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9019,7 +8707,6 @@ INSTRUCTION: o32 0F 1B /r | RESERVEDNOP r/m32, r32 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt32
 	code-suffix: 0F1B
 	flags: nop res-nop asm=reservednop_0f1b
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9030,7 +8717,6 @@ INSTRUCTION: o64 0F 1B /r | RESERVEDNOP r/m64, r64 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt64
 	code-suffix: 0F1B
 	flags: 64 nop res-nop asm=reservednop_0f1b
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9041,7 +8727,6 @@ INSTRUCTION: o16 0F 1C /r | RESERVEDNOP r/m16, r16 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt16
 	code-suffix: 0F1C
 	flags: nop res-nop asm=reservednop_0f1c
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9052,7 +8737,6 @@ INSTRUCTION: o32 0F 1C /r | RESERVEDNOP r/m32, r32 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt32
 	code-suffix: 0F1C
 	flags: nop res-nop asm=reservednop_0f1c
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9063,7 +8747,6 @@ INSTRUCTION: o64 0F 1C /r | RESERVEDNOP r/m64, r64 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt64
 	code-suffix: 0F1C
 	flags: 64 nop res-nop asm=reservednop_0f1c
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9074,7 +8757,6 @@ INSTRUCTION: o16 0F 1D /r | RESERVEDNOP r/m16, r16 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt16
 	code-suffix: 0F1D
 	flags: nop res-nop asm=reservednop_0f1d
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9085,7 +8767,6 @@ INSTRUCTION: o32 0F 1D /r | RESERVEDNOP r/m32, r32 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt32
 	code-suffix: 0F1D
 	flags: nop res-nop asm=reservednop_0f1d
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9096,7 +8777,6 @@ INSTRUCTION: o64 0F 1D /r | RESERVEDNOP r/m64, r64 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt64
 	code-suffix: 0F1D
 	flags: 64 nop res-nop asm=reservednop_0f1d
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9107,7 +8787,6 @@ INSTRUCTION: o16 0F 1E /r | RESERVEDNOP r/m16, r16 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt16
 	code-suffix: 0F1E
 	flags: nop res-nop asm=reservednop_0f1e
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9118,7 +8797,6 @@ INSTRUCTION: o32 0F 1E /r | RESERVEDNOP r/m32, r32 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt32
 	code-suffix: 0F1E
 	flags: nop res-nop asm=reservednop_0f1e
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9129,7 +8807,6 @@ INSTRUCTION: o64 0F 1E /r | RESERVEDNOP r/m64, r64 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt64
 	code-suffix: 0F1E
 	flags: 64 nop res-nop asm=reservednop_0f1e
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9140,7 +8817,6 @@ INSTRUCTION: o16 0F 1F /r | RESERVEDNOP r/m16, r16 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt16
 	code-suffix: 0F1F
 	flags: nop res-nop asm=reservednop_0f1f
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9151,7 +8827,6 @@ INSTRUCTION: o32 0F 1F /r | RESERVEDNOP r/m32, r32 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt32
 	code-suffix: 0F1F
 	flags: nop res-nop asm=reservednop_0f1f
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9162,7 +8837,6 @@ INSTRUCTION: o64 0F 1F /r | RESERVEDNOP r/m64, r64 | MULTIBYTENOP
 	ops: n=rm n=reg | UInt64
 	code-suffix: 0F1F
 	flags: 64 nop res-nop asm=reservednop_0f1f
-	fast: mnemonic=nop
 	intel: mnemonic=nop
 	masm: mnemonic=nop
 	nasm: mnemonic=nop
@@ -9347,7 +9021,6 @@ END
 INSTRUCTION: o16 0F 1F /0 | NOP r/m16 | MULTIBYTENOP
 	ops: n=rm | UInt16
 	flags: nop
-	fast: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
 END
@@ -9356,7 +9029,6 @@ END
 INSTRUCTION: o32 0F 1F /0 | NOP r/m32 | MULTIBYTENOP
 	ops: n=rm | UInt32
 	flags: nop
-	fast: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
 END
@@ -9365,7 +9037,6 @@ END
 INSTRUCTION: o64 0F 1F /0 | NOP r/m64 | MULTIBYTENOP
 	ops: n=rm | UInt64
 	flags: 64 nop
-	fast: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
 END
@@ -9582,7 +9253,6 @@ END
 # Code: Cvtsi2ss_xmm_rm32
 INSTRUCTION: F3 0F 2A /r | CVTSI2SS xmm1, r/m32 | SSE
 	ops: rw=reg r=rm | Int32
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -9592,7 +9262,6 @@ END
 INSTRUCTION: F3 o64 0F 2A /r | CVTSI2SS xmm1, r/m64 | SSE
 	ops: rw=reg r=rm | Int64
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -9602,7 +9271,6 @@ END
 INSTRUCTION: VEX.LIG.F3.0F.W0 2A /r | VCVTSI2SS xmm1, xmm2, r/m32 | AVX
 	ops: w=reg r=vvvv r=rm | Int32
 	flags: wig32
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -9612,7 +9280,6 @@ END
 INSTRUCTION: VEX.LIG.F3.0F.W1 2A /r | VCVTSI2SS xmm1, xmm2, r/m64 | AVX
 	ops: w=reg r=vvvv r=rm | Int64
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -9622,7 +9289,6 @@ END
 INSTRUCTION: EVEX.LIG.F3.0F.W0 2A /r | VCVTSI2SS xmm1, xmm2, r/m32{er} | AVX512F | N4
 	ops: w=reg r=vvvv r=rm | Int32
 	flags: wig32
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -9632,7 +9298,6 @@ END
 INSTRUCTION: EVEX.LIG.F3.0F.W1 2A /r | VCVTSI2SS xmm1, xmm2, r/m64{er} | AVX512F | N8
 	ops: w=reg r=vvvv r=rm | Int64
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -9641,7 +9306,6 @@ END
 # Code: Cvtsi2sd_xmm_rm32
 INSTRUCTION: F2 0F 2A /r | CVTSI2SD xmm1, r/m32 | SSE2
 	ops: rw=reg r=rm | Int32
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -9651,7 +9315,6 @@ END
 INSTRUCTION: F2 o64 0F 2A /r | CVTSI2SD xmm1, r/m64 | SSE2
 	ops: rw=reg r=rm | Int64
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -9661,7 +9324,6 @@ END
 INSTRUCTION: VEX.LIG.F2.0F.W0 2A /r | VCVTSI2SD xmm1, xmm2, r/m32 | AVX
 	ops: w=reg r=vvvv r=rm | Int32
 	flags: wig32
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -9671,7 +9333,6 @@ END
 INSTRUCTION: VEX.LIG.F2.0F.W1 2A /r | VCVTSI2SD xmm1, xmm2, r/m64 | AVX
 	ops: w=reg r=vvvv r=rm | Int64
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -9681,7 +9342,6 @@ END
 INSTRUCTION: EVEX.LIG.F2.0F.W0 2A /r | VCVTSI2SD xmm1, xmm2, r/m32{er} | AVX512F | N4
 	ops: w=reg r=vvvv r=rm | Int32
 	flags: wig32 ignore-er
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -9691,7 +9351,6 @@ END
 INSTRUCTION: EVEX.LIG.F2.0F.W1 2A /r | VCVTSI2SD xmm1, xmm2, r/m64{er} | AVX512F | N8
 	ops: w=reg r=vvvv r=rm | Int64
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -11489,7 +11148,6 @@ END
 # Code: VEX_Vcvtpd2ps_xmm_xmmm128
 INSTRUCTION: VEX.128.66.0F.WIG 5A /r | VCVTPD2PS xmm1, xmm2/m128 | AVX
 	ops: w=reg r=rm | Packed128_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -11498,7 +11156,6 @@ END
 # Code: VEX_Vcvtpd2ps_xmm_ymmm256
 INSTRUCTION: VEX.256.66.0F.WIG 5A /r | VCVTPD2PS xmm1, ymm2/m256 | AVX
 	ops: w=reg r=rm | Packed256_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -11507,7 +11164,6 @@ END
 # Code: EVEX_Vcvtpd2ps_xmm_k1z_xmmm128b64
 INSTRUCTION: EVEX.128.66.0F.W1 5A /r | VCVTPD2PS xmm1 {k1}{z}, xmm2/m128/m64bcst | AVX512VL AVX512F | N16b8
 	ops: w=reg r=rm | Packed128_Float64 Broadcast128_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -11516,7 +11172,6 @@ END
 # Code: EVEX_Vcvtpd2ps_xmm_k1z_ymmm256b64
 INSTRUCTION: EVEX.256.66.0F.W1 5A /r | VCVTPD2PS xmm1 {k1}{z}, ymm2/m256/m64bcst | AVX512VL AVX512F | N32b8
 	ops: w=reg r=rm | Packed256_Float64 Broadcast256_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -11602,7 +11257,6 @@ END
 # Code: EVEX_Vcvtqq2ps_xmm_k1z_xmmm128b64
 INSTRUCTION: EVEX.128.0F.W1 5B /r | VCVTQQ2PS xmm1 {k1}{z}, xmm2/m128/m64bcst | AVX512VL AVX512DQ | N16b8
 	ops: w=reg r=rm | Packed128_Int64 Broadcast128_Int64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -11611,7 +11265,6 @@ END
 # Code: EVEX_Vcvtqq2ps_xmm_k1z_ymmm256b64
 INSTRUCTION: EVEX.256.0F.W1 5B /r | VCVTQQ2PS xmm1 {k1}{z}, ymm2/m256/m64bcst | AVX512VL AVX512DQ | N32b8
 	ops: w=reg r=rm | Packed256_Int64 Broadcast256_Int64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -13467,7 +13120,6 @@ END
 # Code: EVEX_Vcvttpd2udq_xmm_k1z_xmmm128b64
 INSTRUCTION: EVEX.128.0F.W1 78 /r | VCVTTPD2UDQ xmm1 {k1}{z}, xmm2/m128/m64bcst | AVX512VL AVX512F | N16b8
 	ops: w=reg r=rm | Packed128_Float64 Broadcast128_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -13476,7 +13128,6 @@ END
 # Code: EVEX_Vcvttpd2udq_xmm_k1z_ymmm256b64
 INSTRUCTION: EVEX.256.0F.W1 78 /r | VCVTTPD2UDQ xmm1 {k1}{z}, ymm2/m256/m64bcst | AVX512VL AVX512F | N32b8
 	ops: w=reg r=rm | Packed256_Float64 Broadcast256_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -13596,7 +13247,6 @@ END
 # Code: EVEX_Vcvtpd2udq_xmm_k1z_xmmm128b64
 INSTRUCTION: EVEX.128.0F.W1 79 /r | VCVTPD2UDQ xmm1 {k1}{z}, xmm2/m128/m64bcst | AVX512VL AVX512F | N16b8
 	ops: w=reg r=rm | Packed128_Float64 Broadcast128_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -13605,7 +13255,6 @@ END
 # Code: EVEX_Vcvtpd2udq_xmm_k1z_ymmm256b64
 INSTRUCTION: EVEX.256.0F.W1 79 /r | VCVTPD2UDQ xmm1 {k1}{z}, ymm2/m256/m64bcst | AVX512VL AVX512F | N32b8
 	ops: w=reg r=rm | Packed256_Float64 Broadcast256_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -13776,7 +13425,6 @@ END
 # Code: EVEX_Vcvtuqq2ps_xmm_k1z_xmmm128b64
 INSTRUCTION: EVEX.128.F2.0F.W1 7A /r | VCVTUQQ2PS xmm1 {k1}{z}, xmm2/m128/m64bcst | AVX512VL AVX512DQ | N16b8
 	ops: w=reg r=rm | Packed128_UInt64 Broadcast128_UInt64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -13785,7 +13433,6 @@ END
 # Code: EVEX_Vcvtuqq2ps_xmm_k1z_ymmm256b64
 INSTRUCTION: EVEX.256.F2.0F.W1 7A /r | VCVTUQQ2PS xmm1 {k1}{z}, ymm2/m256/m64bcst | AVX512VL AVX512DQ | N32b8
 	ops: w=reg r=rm | Packed256_UInt64 Broadcast256_UInt64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -13834,7 +13481,6 @@ END
 INSTRUCTION: EVEX.LIG.F3.0F.W0 7B /r | VCVTUSI2SS xmm1, xmm2, r/m32{er} | AVX512F | N4
 	ops: w=reg r=vvvv r=rm | UInt32
 	flags: wig32
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -13844,7 +13490,6 @@ END
 INSTRUCTION: EVEX.LIG.F3.0F.W1 7B /r | VCVTUSI2SS xmm1, xmm2, r/m64{er} | AVX512F | N8
 	ops: w=reg r=vvvv r=rm | UInt64
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -13854,7 +13499,6 @@ END
 INSTRUCTION: EVEX.LIG.F2.0F.W0 7B /r | VCVTUSI2SD xmm1, xmm2, r/m32{er} | AVX512F | N4
 	ops: w=reg r=vvvv r=rm | UInt32
 	flags: wig32 ignore-er
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -13864,7 +13508,6 @@ END
 INSTRUCTION: EVEX.LIG.F2.0F.W1 7B /r | VCVTUSI2SD xmm1, xmm2, r/m64{er} | AVX512F | N8
 	ops: w=reg r=vvvv r=rm | UInt64
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -15301,7 +14944,6 @@ INSTRUCTION: 0F A6 /r | CMPXCHG r/m8, r8 | INTEL486_A_ONLY
 	code-mnemonic: cmpxchg486
 	rflags: w=oszacp
 	flags: 16 32 dec-opt=Cmpxchg486A asm-ig
-	fast: mnemonic=cmpxchg486
 	intel: mnemonic=cmpxchg486
 	masm: mnemonic=cmpxchg486
 	nasm: mnemonic=cmpxchg486
@@ -15314,7 +14956,6 @@ INSTRUCTION: o16 0F A7 /r | CMPXCHG r/m16, r16 | INTEL486_A_ONLY
 	code-mnemonic: cmpxchg486
 	rflags: w=oszacp
 	flags: 16 32 dec-opt=Cmpxchg486A asm-ig
-	fast: mnemonic=cmpxchg486
 	intel: mnemonic=cmpxchg486
 	masm: mnemonic=cmpxchg486
 	nasm: mnemonic=cmpxchg486
@@ -15327,7 +14968,6 @@ INSTRUCTION: o32 0F A7 /r | CMPXCHG r/m32, r32 | INTEL486_A_ONLY
 	code-mnemonic: cmpxchg486
 	rflags: w=oszacp
 	flags: 16 32 dec-opt=Cmpxchg486A asm-ig
-	fast: mnemonic=cmpxchg486
 	intel: mnemonic=cmpxchg486
 	masm: mnemonic=cmpxchg486
 	nasm: mnemonic=cmpxchg486
@@ -15587,7 +15227,6 @@ END
 INSTRUCTION: F3 0F AE /4 | PTWRITE r/m32 | PTWRITE
 	ops: r=rm | UInt32
 	flags: no-66
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -15597,7 +15236,6 @@ END
 INSTRUCTION: F3 o64 0F AE /4 | PTWRITE r/m64 | PTWRITE
 	ops: r=rm | UInt64
 	flags: 64 no-66
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16042,7 +15680,6 @@ END
 # Code: Movzx_r16_rm8
 INSTRUCTION: o16 0F B6 /r | MOVZX r16, r/m8 | INTEL386
 	ops: w=reg r=rm | UInt8
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16051,7 +15688,6 @@ END
 # Code: Movzx_r32_rm8
 INSTRUCTION: o32 0F B6 /r | MOVZX r32, r/m8 | INTEL386
 	ops: w=reg r=rm | UInt8
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16061,7 +15697,6 @@ END
 INSTRUCTION: o64 0F B6 /r | MOVZX r64, r/m8 | X64
 	ops: w=reg r=rm | UInt8
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16070,7 +15705,6 @@ END
 # Code: Movzx_r16_rm16
 INSTRUCTION: o16 0F B7 /r | MOVZX r16, r/m16 | INTEL386
 	ops: w=reg r=rm | UInt16
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16079,7 +15713,6 @@ END
 # Code: Movzx_r32_rm16
 INSTRUCTION: o32 0F B7 /r | MOVZX r32, r/m16 | INTEL386
 	ops: w=reg r=rm | UInt16
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16089,7 +15722,6 @@ END
 INSTRUCTION: o64 0F B7 /r | MOVZX r64, r/m16 | X64
 	ops: w=reg r=rm | UInt16
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16150,7 +15782,6 @@ END
 INSTRUCTION: o16 0F BA /4 ib | BT r/m16, imm8 | INTEL386
 	ops: r=rm r=imm | UInt16
 	rflags: u=osap w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16160,7 +15791,6 @@ END
 INSTRUCTION: o32 0F BA /4 ib | BT r/m32, imm8 | INTEL386
 	ops: r=rm r=imm | UInt32
 	rflags: u=osap w=c
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16171,7 +15801,6 @@ INSTRUCTION: o64 0F BA /4 ib | BT r/m64, imm8 | X64
 	ops: r=rm r=imm | UInt64
 	rflags: u=osap w=c
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16182,7 +15811,6 @@ INSTRUCTION: o16 0F BA /5 ib | BTS r/m16, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt16
 	rflags: u=osap w=c
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16193,7 +15821,6 @@ INSTRUCTION: o32 0F BA /5 ib | BTS r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	rflags: u=osap w=c
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16204,7 +15831,6 @@ INSTRUCTION: o64 0F BA /5 ib | BTS r/m64, imm8 | X64
 	ops: rw=rm r=imm | UInt64
 	rflags: u=osap w=c
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16215,7 +15841,6 @@ INSTRUCTION: o16 0F BA /6 ib | BTR r/m16, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt16
 	rflags: u=osap w=c
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16226,7 +15851,6 @@ INSTRUCTION: o32 0F BA /6 ib | BTR r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	rflags: u=osap w=c
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16237,7 +15861,6 @@ INSTRUCTION: o64 0F BA /6 ib | BTR r/m64, imm8 | X64
 	ops: rw=rm r=imm | UInt64
 	rflags: u=osap w=c
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16248,7 +15871,6 @@ INSTRUCTION: o16 0F BA /7 ib | BTC r/m16, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt16
 	rflags: u=osap w=c
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16259,7 +15881,6 @@ INSTRUCTION: o32 0F BA /7 ib | BTC r/m32, imm8 | INTEL386
 	ops: rw=rm r=imm | UInt32
 	rflags: u=osap w=c
 	flags: lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16270,7 +15891,6 @@ INSTRUCTION: o64 0F BA /7 ib | BTC r/m64, imm8 | X64
 	ops: rw=rm r=imm | UInt64
 	rflags: u=osap w=c
 	flags: 64 lock xacquire xrelease
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16376,7 +15996,6 @@ END
 # Code: Movsx_r16_rm8
 INSTRUCTION: o16 0F BE /r | MOVSX r16, r/m8 | INTEL386
 	ops: w=reg r=rm | Int8
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16385,7 +16004,6 @@ END
 # Code: Movsx_r32_rm8
 INSTRUCTION: o32 0F BE /r | MOVSX r32, r/m8 | INTEL386
 	ops: w=reg r=rm | Int8
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16395,7 +16013,6 @@ END
 INSTRUCTION: o64 0F BE /r | MOVSX r64, r/m8 | X64
 	ops: w=reg r=rm | Int8
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16404,7 +16021,6 @@ END
 # Code: Movsx_r16_rm16
 INSTRUCTION: o16 0F BF /r | MOVSX r16, r/m16 | INTEL386
 	ops: w=reg r=rm | Int16
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16413,7 +16029,6 @@ END
 # Code: Movsx_r32_rm16
 INSTRUCTION: o32 0F BF /r | MOVSX r32, r/m16 | INTEL386
 	ops: w=reg r=rm | Int16
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -16423,7 +16038,6 @@ END
 INSTRUCTION: o64 0F BF /r | MOVSX r64, r/m16 | X64
 	ops: w=reg r=rm | Int16
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -17829,7 +17443,6 @@ END
 # Code: VEX_Vcvttpd2dq_xmm_xmmm128
 INSTRUCTION: VEX.128.66.0F.WIG E6 /r | VCVTTPD2DQ xmm1, xmm2/m128 | AVX
 	ops: w=reg r=rm | Packed128_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -17838,7 +17451,6 @@ END
 # Code: VEX_Vcvttpd2dq_xmm_ymmm256
 INSTRUCTION: VEX.256.66.0F.WIG E6 /r | VCVTTPD2DQ xmm1, ymm2/m256 | AVX
 	ops: w=reg r=rm | Packed256_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -17847,7 +17459,6 @@ END
 # Code: EVEX_Vcvttpd2dq_xmm_k1z_xmmm128b64
 INSTRUCTION: EVEX.128.66.0F.W1 E6 /r | VCVTTPD2DQ xmm1 {k1}{z}, xmm2/m128/m64bcst | AVX512VL AVX512F | N16b8
 	ops: w=reg r=rm | Packed128_Float64 Broadcast128_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -17856,7 +17467,6 @@ END
 # Code: EVEX_Vcvttpd2dq_xmm_k1z_ymmm256b64
 INSTRUCTION: EVEX.256.66.0F.W1 E6 /r | VCVTTPD2DQ xmm1 {k1}{z}, ymm2/m256/m64bcst | AVX512VL AVX512F | N32b8
 	ops: w=reg r=rm | Packed256_Float64 Broadcast256_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -17928,7 +17538,6 @@ END
 # Code: VEX_Vcvtpd2dq_xmm_xmmm128
 INSTRUCTION: VEX.128.F2.0F.WIG E6 /r | VCVTPD2DQ xmm1, xmm2/m128 | AVX
 	ops: w=reg r=rm | Packed128_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -17937,7 +17546,6 @@ END
 # Code: VEX_Vcvtpd2dq_xmm_ymmm256
 INSTRUCTION: VEX.256.F2.0F.WIG E6 /r | VCVTPD2DQ xmm1, ymm2/m256 | AVX
 	ops: w=reg r=rm | Packed256_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -17946,7 +17554,6 @@ END
 # Code: EVEX_Vcvtpd2dq_xmm_k1z_xmmm128b64
 INSTRUCTION: EVEX.128.F2.0F.W1 E6 /r | VCVTPD2DQ xmm1 {k1}{z}, xmm2/m128/m64bcst | AVX512VL AVX512F | N16b8
 	ops: w=reg r=rm | Packed128_Float64 Broadcast128_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -17955,7 +17562,6 @@ END
 # Code: EVEX_Vcvtpd2dq_xmm_k1z_ymmm256b64
 INSTRUCTION: EVEX.256.F2.0F.W1 E6 /r | VCVTPD2DQ xmm1 {k1}{z}, ymm2/m256/m64bcst | AVX512VL AVX512F | N32b8
 	ops: w=reg r=rm | Packed256_Float64 Broadcast256_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -22246,7 +21852,6 @@ END
 # Code: EVEX_Vcvtneps2bf16_xmm_k1z_xmmm128b32
 INSTRUCTION: EVEX.128.F3.0F38.W0 72 /r | VCVTNEPS2BF16 xmm1 {k1}{z}, xmm2/m128/m32bcst | AVX512VL AVX512_BF16 | N16b4
 	ops: w=reg r=rm | Packed128_Float32 Broadcast128_Float32
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -22255,7 +21860,6 @@ END
 # Code: EVEX_Vcvtneps2bf16_xmm_k1z_ymmm256b32
 INSTRUCTION: EVEX.256.F3.0F38.W0 72 /r | VCVTNEPS2BF16 xmm1 {k1}{z}, ymm2/m256/m32bcst | AVX512VL AVX512_BF16 | N32b4
 	ops: w=reg r=rm | Packed256_Float32 Broadcast256_Float32
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -24930,7 +24534,6 @@ END
 # Code: Crc32_r32_rm8
 INSTRUCTION: F2 0F 38 F0 /r | CRC32 r32, r/m8 | SSE4_2
 	ops: rw=reg r=rm | UInt8
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -24940,7 +24543,6 @@ END
 INSTRUCTION: F2 o64 0F 38 F0 /r | CRC32 r64, r/m8 | SSE4_2
 	ops: rw=reg r=rm | UInt8
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -24967,7 +24569,6 @@ END
 # Code: Crc32_r32_rm16
 INSTRUCTION: o16 F2 0F 38 F1 /r | CRC32 r32, r/m16 | SSE4_2
 	ops: rw=reg r=rm | UInt16
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -24976,7 +24577,6 @@ END
 # Code: Crc32_r32_rm32
 INSTRUCTION: o32 F2 0F 38 F1 /r | CRC32 r32, r/m32 | SSE4_2
 	ops: rw=reg r=rm | UInt32
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -24986,7 +24586,6 @@ END
 INSTRUCTION: F2 o64 0F 38 F1 /r | CRC32 r64, r/m64 | SSE4_2
 	ops: rw=reg r=rm | UInt64
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -26835,7 +26434,6 @@ END
 INSTRUCTION: EVEX.128.66.0F3A.W0 66 /r ib | VFPCLASSPS k2 {k1}, xmm2/m128/m32bcst, imm8 | AVX512VL AVX512DQ | N16b4
 	ops: w=reg r=rm r=imm | Packed128_Float32 Broadcast128_Float32
 	flags: implied-z
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -26845,7 +26443,6 @@ END
 INSTRUCTION: EVEX.256.66.0F3A.W0 66 /r ib | VFPCLASSPS k2 {k1}, ymm2/m256/m32bcst, imm8 | AVX512VL AVX512DQ | N32b4
 	ops: w=reg r=rm r=imm | Packed256_Float32 Broadcast256_Float32
 	flags: implied-z
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -26855,7 +26452,6 @@ END
 INSTRUCTION: EVEX.512.66.0F3A.W0 66 /r ib | VFPCLASSPS k2 {k1}, zmm2/m512/m32bcst, imm8 | AVX512DQ | N64b4
 	ops: w=reg r=rm r=imm | Packed512_Float32 Broadcast512_Float32
 	flags: implied-z
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -26865,7 +26461,6 @@ END
 INSTRUCTION: EVEX.128.66.0F3A.W1 66 /r ib | VFPCLASSPD k2 {k1}, xmm2/m128/m64bcst, imm8 | AVX512VL AVX512DQ | N16b8
 	ops: w=reg r=rm r=imm | Packed128_Float64 Broadcast128_Float64
 	flags: implied-z
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -26875,7 +26470,6 @@ END
 INSTRUCTION: EVEX.256.66.0F3A.W1 66 /r ib | VFPCLASSPD k2 {k1}, ymm2/m256/m64bcst, imm8 | AVX512VL AVX512DQ | N32b8
 	ops: w=reg r=rm r=imm | Packed256_Float64 Broadcast256_Float64
 	flags: implied-z
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -26885,7 +26479,6 @@ END
 INSTRUCTION: EVEX.512.66.0F3A.W1 66 /r ib | VFPCLASSPD k2 {k1}, zmm2/m512/m64bcst, imm8 | AVX512DQ | N64b8
 	ops: w=reg r=rm r=imm | Packed512_Float64 Broadcast512_Float64
 	flags: implied-z
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29046,7 +28639,6 @@ END
 # Code: EVEX_Vcvtdq2ph_xmm_k1z_xmmm128b32
 INSTRUCTION: EVEX.128.MAP5.W0 5B /r | VCVTDQ2PH xmm1 {k1}{z}, xmm2/m128/m32bcst | AVX512VL AVX512_FP16 | N16b4
 	ops: w=reg r=rm | Packed128_Int32 Broadcast128_Int32
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29055,7 +28647,6 @@ END
 # Code: EVEX_Vcvtdq2ph_xmm_k1z_ymmm256b32
 INSTRUCTION: EVEX.256.MAP5.W0 5B /r | VCVTDQ2PH xmm1 {k1}{z}, ymm2/m256/m32bcst | AVX512VL AVX512_FP16 | N32b4
 	ops: w=reg r=rm | Packed256_Int32 Broadcast256_Int32
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29070,7 +28661,6 @@ END
 # Code: EVEX_Vcvtpd2ph_xmm_k1z_xmmm128b64
 INSTRUCTION: EVEX.128.66.MAP5.W1 5A /r | VCVTPD2PH xmm1 {k1}{z}, xmm2/m128/m64bcst | AVX512VL AVX512_FP16 | N16b8
 	ops: w=reg r=rm | Packed128_Float64 Broadcast128_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29079,7 +28669,6 @@ END
 # Code: EVEX_Vcvtpd2ph_xmm_k1z_ymmm256b64
 INSTRUCTION: EVEX.256.66.MAP5.W1 5A /r | VCVTPD2PH xmm1 {k1}{z}, ymm2/m256/m64bcst | AVX512VL AVX512_FP16 | N32b8
 	ops: w=reg r=rm | Packed256_Float64 Broadcast256_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29088,7 +28677,6 @@ END
 # Code: EVEX_Vcvtpd2ph_xmm_k1z_zmmm512b64_er
 INSTRUCTION: EVEX.512.66.MAP5.W1 5A /r | VCVTPD2PH xmm1 {k1}{z}, zmm2/m512/m64bcst{er} | AVX512_FP16 | N64b8
 	ops: w=reg r=rm | Packed512_Float64 Broadcast512_Float64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -29241,7 +28829,6 @@ END
 # Code: EVEX_Vcvtps2phx_xmm_k1z_xmmm128b32
 INSTRUCTION: EVEX.128.66.MAP5.W0 1D /r | VCVTPS2PHX xmm1 {k1}{z}, xmm2/m128/m32bcst | AVX512VL AVX512_FP16 | N16b4
 	ops: w=reg r=rm | Packed128_Float32 Broadcast128_Float32
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29250,7 +28837,6 @@ END
 # Code: EVEX_Vcvtps2phx_xmm_k1z_ymmm256b32
 INSTRUCTION: EVEX.256.66.MAP5.W0 1D /r | VCVTPS2PHX xmm1 {k1}{z}, ymm2/m256/m32bcst | AVX512VL AVX512_FP16 | N32b4
 	ops: w=reg r=rm | Packed256_Float32 Broadcast256_Float32
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29265,7 +28851,6 @@ END
 # Code: EVEX_Vcvtqq2ph_xmm_k1z_xmmm128b64
 INSTRUCTION: EVEX.128.MAP5.W1 5B /r | VCVTQQ2PH xmm1 {k1}{z}, xmm2/m128/m64bcst | AVX512VL AVX512_FP16 | N16b8
 	ops: w=reg r=rm | Packed128_Int64 Broadcast128_Int64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29274,7 +28859,6 @@ END
 # Code: EVEX_Vcvtqq2ph_xmm_k1z_ymmm256b64
 INSTRUCTION: EVEX.256.MAP5.W1 5B /r | VCVTQQ2PH xmm1 {k1}{z}, ymm2/m256/m64bcst | AVX512VL AVX512_FP16 | N32b8
 	ops: w=reg r=rm | Packed256_Int64 Broadcast256_Int64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29283,7 +28867,6 @@ END
 # Code: EVEX_Vcvtqq2ph_xmm_k1z_zmmm512b64_er
 INSTRUCTION: EVEX.512.MAP5.W1 5B /r | VCVTQQ2PH xmm1 {k1}{z}, zmm2/m512/m64bcst{er} | AVX512_FP16 | N64b8
 	ops: w=reg r=rm | Packed512_Int64 Broadcast512_Int64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -29339,7 +28922,6 @@ END
 INSTRUCTION: EVEX.LIG.F3.MAP5.W0 2A /r | VCVTSI2SH xmm1, xmm2, r/m32{er} | AVX512_FP16 | N4
 	ops: w=reg r=vvvv r=rm | Int32
 	flags: wig32
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -29349,7 +28931,6 @@ END
 INSTRUCTION: EVEX.LIG.F3.MAP5.W1 2A /r | VCVTSI2SH xmm1, xmm2, r/m64{er} | AVX512_FP16 | N8
 	ops: w=reg r=vvvv r=rm | Int64
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -29494,7 +29075,6 @@ END
 # Code: EVEX_Vcvtudq2ph_xmm_k1z_xmmm128b32
 INSTRUCTION: EVEX.128.F2.MAP5.W0 7A /r | VCVTUDQ2PH xmm1 {k1}{z}, xmm2/m128/m32bcst | AVX512VL AVX512_FP16 | N16b4
 	ops: w=reg r=rm | Packed128_UInt32 Broadcast128_UInt32
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29503,7 +29083,6 @@ END
 # Code: EVEX_Vcvtudq2ph_xmm_k1z_ymmm256b32
 INSTRUCTION: EVEX.256.F2.MAP5.W0 7A /r | VCVTUDQ2PH xmm1 {k1}{z}, ymm2/m256/m32bcst | AVX512VL AVX512_FP16 | N32b4
 	ops: w=reg r=rm | Packed256_UInt32 Broadcast256_UInt32
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29518,7 +29097,6 @@ END
 # Code: EVEX_Vcvtuqq2ph_xmm_k1z_xmmm128b64
 INSTRUCTION: EVEX.128.F2.MAP5.W1 7A /r | VCVTUQQ2PH xmm1 {k1}{z}, xmm2/m128/m64bcst | AVX512VL AVX512_FP16 | N16b8
 	ops: w=reg r=rm | Packed128_UInt64 Broadcast128_UInt64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29527,7 +29105,6 @@ END
 # Code: EVEX_Vcvtuqq2ph_xmm_k1z_ymmm256b64
 INSTRUCTION: EVEX.256.F2.MAP5.W1 7A /r | VCVTUQQ2PH xmm1 {k1}{z}, ymm2/m256/m64bcst | AVX512VL AVX512_FP16 | N32b8
 	ops: w=reg r=rm | Packed256_UInt64 Broadcast256_UInt64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -29536,7 +29113,6 @@ END
 # Code: EVEX_Vcvtuqq2ph_xmm_k1z_zmmm512b64_er
 INSTRUCTION: EVEX.512.F2.MAP5.W1 7A /r | VCVTUQQ2PH xmm1 {k1}{z}, zmm2/m512/m64bcst{er} | AVX512_FP16 | N64b8
 	ops: w=reg r=rm | Packed512_UInt64 Broadcast512_UInt64
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -29546,7 +29122,6 @@ END
 INSTRUCTION: EVEX.LIG.F3.MAP5.W0 7B /r | VCVTUSI2SH xmm1, xmm2, r/m32{er} | AVX512_FP16 | N4
 	ops: w=reg r=vvvv r=rm | UInt32
 	flags: wig32
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -29556,7 +29131,6 @@ END
 INSTRUCTION: EVEX.LIG.F3.MAP5.W1 7B /r | VCVTUSI2SH xmm1, xmm2, r/m64{er} | AVX512_FP16 | N8
 	ops: w=reg r=vvvv r=rm | UInt64
 	flags: 64
-	fast: flags=force-size=always
 	intel: flags=force-size=always
 	masm: flags=force-size=always
 	nasm: flags=force-size=always
@@ -30049,7 +29623,6 @@ END
 INSTRUCTION: EVEX.128.0F3A.W0 66 /r ib | VFPCLASSPH k1 {k2}, xmm2/m128/m16bcst, imm8 | AVX512VL AVX512_FP16 | N16b2
 	ops: w=reg r=rm r=imm | Packed128_Float16 Broadcast128_Float16
 	flags: implied-z
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -30059,7 +29632,6 @@ END
 INSTRUCTION: EVEX.256.0F3A.W0 66 /r ib | VFPCLASSPH k1 {k2}, ymm2/m256/m16bcst, imm8 | AVX512VL AVX512_FP16 | N32b2
 	ops: w=reg r=rm r=imm | Packed256_Float16 Broadcast256_Float16
 	flags: implied-z
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst
@@ -30069,7 +29641,6 @@ END
 INSTRUCTION: EVEX.512.0F3A.W0 66 /r ib | VFPCLASSPH k1 {k2}, zmm2/m512/m16bcst, imm8 | AVX512_FP16 | N64b2
 	ops: w=reg r=rm r=imm | Packed512_Float16 Broadcast512_Float16
 	flags: implied-z
-	fast: flags=force-size=always
 	intel: flags=force-size=always bcst
 	masm: flags=force-size=always
 	nasm: flags=force-size=always bcst

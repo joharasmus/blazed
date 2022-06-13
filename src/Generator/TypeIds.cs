@@ -11,7 +11,6 @@ static class TypeIds {
 	public static readonly TypeId IntelCtorInfos = new(nameof(IntelCtorInfos));
 	public static readonly TypeId MasmCtorInfos = new(nameof(MasmCtorInfos));
 	public static readonly TypeId NasmCtorInfos = new(nameof(NasmCtorInfos));
-	public static readonly TypeId FastFmtTblInfos = new(nameof(FastFmtTblInfos));
 	public static readonly TypeId MemorySizeDefs = new(nameof(MemorySizeDefs));
 	public static readonly TypeId RegisterDefs = new(nameof(RegisterDefs));
 	public static readonly TypeId DecoderTables = new(nameof(DecoderTables));
@@ -36,7 +35,6 @@ static class TypeIds {
 	public static readonly TypeId LegacyHandlerFlags = new(nameof(LegacyHandlerFlags));
 	public static readonly TypeId MemorySize = new(nameof(MemorySize));
 	public static readonly TypeId BroadcastToKind = new(nameof(BroadcastToKind));
-	public static readonly TypeId FastMemoryKeywords = new(nameof(FastMemoryKeywords));
 	public static readonly TypeId IntelMemoryKeywords = new(nameof(IntelMemoryKeywords));
 	public static readonly TypeId MasmMemoryKeywords = new(nameof(MasmMemoryKeywords));
 	public static readonly TypeId NasmMemoryKeywords = new(nameof(NasmMemoryKeywords));
@@ -62,7 +60,6 @@ static class TypeIds {
 	public static readonly TypeId NasmInstrOpInfoFlags = new(nameof(NasmInstrOpInfoFlags));
 	public static readonly TypeId NasmMemorySizeInfo = new(nameof(NasmMemorySizeInfo));
 	public static readonly TypeId NasmFarMemorySizeInfo = new(nameof(NasmFarMemorySizeInfo));
-	public static readonly TypeId FastFmtFlags = new(nameof(FastFmtFlags));
 	public static readonly TypeId RoundingControl = new(nameof(RoundingControl));
 	public static readonly TypeId OpKind = new(nameof(OpKind));
 	public static readonly TypeId InstrScale = new(nameof(InstrScale));

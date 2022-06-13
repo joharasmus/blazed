@@ -108,8 +108,6 @@ Options:
     Don't include the masm formatter
 --no-nasm
     Don't include the nasm formatter
---no-fast-fmt
-    Don't include the fast formatter
 --no-vex
     Don't include VEX instructions
 --no-evex
@@ -162,10 +160,6 @@ Options:
 
 			case "--no-nasm":
 				options.GeneratorFlags |= GeneratorFlags.NoNasmFormatter;
-				break;
-
-			case "--no-fast-fmt":
-				options.GeneratorFlags |= GeneratorFlags.NoFastFormatter;
 				break;
 
 			case "--no-vex":
