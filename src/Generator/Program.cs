@@ -101,9 +101,7 @@ Options:
 -h, --help
     Show this message
 --no-formatter
-    Don't include any formatter
---no-nasm
-    Don't include the nasm formatter
+    Don't include the formatter
 --no-vex
     Don't include VEX instructions
 --no-evex

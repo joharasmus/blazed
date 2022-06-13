@@ -5,8 +5,7 @@
 
 #nullable enable
 
-#if NASM
-namespace Blazed.Intel.NasmFormatterInternal {
+namespace Blazed.Intel.FormatterInternal {
 	static partial class InstrInfos {
 		static System.ReadOnlySpan<byte> GetSerializedInstrInfos() =>
 			new byte[] {
@@ -18799,4 +18798,3 @@ namespace Blazed.Intel.NasmFormatterInternal {
 			};
 	}
 }
-#endif

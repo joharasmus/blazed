@@ -5,7 +5,6 @@
 
 #nullable enable
 
-#if NASM
 namespace Blazed.Intel {
 	/// <summary>Memory size options used by the formatters</summary>
 	public enum MemorySizeOptions {
@@ -19,4 +18,3 @@ namespace Blazed.Intel {
 		Never = 3,
 	}
 }
-#endif

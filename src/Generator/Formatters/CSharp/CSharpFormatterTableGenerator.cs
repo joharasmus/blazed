@@ -16,8 +16,8 @@ sealed class CSharpFormatterTableGenerator {
 	public void Generate() {
 		var serializers = new List<IFormatterTableSerializer>();
 
-		if (genTypes.Options.HasNasmFormatter)
-			serializers.Add(new CSharpFormatterTableSerializer(genTypes.GetObject<Nasm.CtorInfos>(TypeIds.NasmCtorInfos).Infos, genTypes[TypeIds.NasmCtorKind], CSharpConstants.NasmFormatterDefine, CSharpConstants.NasmFormatterNamespace));
+		if (genTypes.Options.HasFormatter)
+			serializers.Add(new CSharpFormatterTableSerializer(genTypes.GetObject<CtorInfos>(TypeIds.CtorInfos).Infos, genTypes[TypeIds.CtorKind], CSharpConstants.FormatterNamespace));
 
 		var stringsTable = new StringsTable();
 
@@ -28,7 +28,7 @@ sealed class CSharpFormatterTableGenerator {
 
 		const string FormatterStringsTableName = "FormatterStringsTable";
 		using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(CSharpConstants.GetFilename(genTypes, CSharpConstants.FormatterNamespace, FormatterStringsTableName + ".g.cs")))) {
-			var serializer = new CSharpStringsTableSerializer(stringsTable, CSharpConstants.FormatterNamespace, FormatterStringsTableName, CSharpConstants.AnyFormatterDefine);
+			var serializer = new CSharpStringsTableSerializer(stringsTable, CSharpConstants.FormatterNamespace, FormatterStringsTableName);
 			serializer.Serialize(writer);
 		}
 

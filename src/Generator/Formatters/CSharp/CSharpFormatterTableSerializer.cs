@@ -7,21 +7,16 @@ using Generator.IO;
 namespace Generator.Formatters.CSharp;
 
 sealed class CSharpFormatterTableSerializer : FormatterTableSerializer {
-	readonly string define;
 	readonly string @namespace;
 
-	public CSharpFormatterTableSerializer(FmtInstructionDef[] defs, EnumType ctorKindEnum, string define, string @namespace)
-		: base(defs, ctorKindEnum["Previous"]) {
-		this.define = define;
-		this.@namespace = @namespace;
-	}
+	public CSharpFormatterTableSerializer(FmtInstructionDef[] defs, EnumType ctorKindEnum, string @namespace)
+		: base(defs, ctorKindEnum["Previous"]) => this.@namespace = @namespace;
 
 	public override string GetFilename(GenTypes genTypes) =>
 		CSharpConstants.GetFilename(genTypes, @namespace, "InstrInfos.g.cs");
 
 	public override void Serialize(GenTypes genTypes, FileWriter writer, StringsTable stringsTable) {
 		writer.WriteFileHeader();
-		writer.WriteLineNoIndent($"#if {define}");
 		writer.WriteLine($"namespace {@namespace} {{");
 		using (writer.Indent()) {
 			writer.WriteLine("static partial class InstrInfos {");
@@ -37,6 +32,5 @@ sealed class CSharpFormatterTableSerializer : FormatterTableSerializer {
 			writer.WriteLine("}");
 		}
 		writer.WriteLine("}");
-		writer.WriteLineNoIndent("#endif");
 	}
 }

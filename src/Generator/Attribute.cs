@@ -49,10 +49,6 @@ readonly struct DeprecatedInfo {
 sealed class CommentAttribute : Attribute {
 	public string Comment { get; }
 	public string? CSharp { get; set; }
-	public string? Rust { get; set; }
-	public string? RustJS { get; set; }
-	public string? Python { get; set; }
-	public string? Lua { get; set; }
 	public CommentAttribute(string comment) => Comment = comment ?? throw new InvalidOperationException();
 
 	public static LanguageDocumentation GetDocumentation(MemberInfo member) {

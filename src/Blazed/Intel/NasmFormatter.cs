@@ -6,7 +6,6 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Blazed.Intel.FormatterInternal;
-using Blazed.Intel.NasmFormatterInternal;
 
 namespace Blazed.Intel {
 	/// <summary>
@@ -971,7 +970,7 @@ namespace Blazed.Intel {
 				else {
 					Debug.Assert(indexReg == Register.None);
 					baseReg = Register.None;
-					flags = (flags & ~(InstrOpInfoFlags)((uint)InstrOpInfoFlags.MemorySizeInfoMask << (int)InstrOpInfoFlags.MemorySizeInfoShift)) | (InstrOpInfoFlags)((int)NasmFormatterInternal.MemorySizeInfo.Dword << (int)InstrOpInfoFlags.MemorySizeInfoShift);
+					flags = (flags & ~(InstrOpInfoFlags)((uint)InstrOpInfoFlags.MemorySizeInfoMask << (int)InstrOpInfoFlags.MemorySizeInfoShift)) | (InstrOpInfoFlags)((int)FormatterInternal.MemorySizeInfo.Dword << (int)InstrOpInfoFlags.MemorySizeInfoShift);
 					addRelKeyword = true;
 				}
 				displSize = 4;

@@ -8,13 +8,13 @@ namespace Generator.Enums {
 	enum Code {
 		[Comment("It's an invalid instruction, eg. it's a new unknown instruction, garbage or there's not enough bytes to decode the instruction etc.")]
 		INVALID,
-		[Comment("A #(c:db)#/#(c:.byte)# asm directive that can store 1-16 bytes")]
+		[Comment("A #(c:db)#/#(c:.byte)# Asm directive that can store 1-16 bytes")]
 		DeclareByte,
-		[Comment("A #(c:dw)#/#(c:.word)# asm directive that can store 1-8 words")]
+		[Comment("A #(c:dw)#/#(c:.word)# Asm directive that can store 1-8 words")]
 		DeclareWord,
-		[Comment("A #(c:dd)#/#(c:.int)# asm directive that can store 1-4 dwords")]
+		[Comment("A #(c:dd)#/#(c:.int)# Asm directive that can store 1-4 dwords")]
 		DeclareDword,
-		[Comment("A #(c:dq)#/#(c:.quad)# asm directive that can store 1-2 qwords")]
+		[Comment("A #(c:dq)#/#(c:.quad)# Asm directive that can store 1-2 qwords")]
 		DeclareQword,
 		Add_rm8_r8,
 		Add_rm16_r16,

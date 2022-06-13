@@ -5,7 +5,6 @@
 
 #nullable enable
 
-#if NASM
 namespace Blazed.Intel {
 	/// <summary>Formatter text kind</summary>
 	public enum FormatterTextKind {
@@ -43,4 +42,3 @@ namespace Blazed.Intel {
 		Function = 15,
 	}
 }
-#endif

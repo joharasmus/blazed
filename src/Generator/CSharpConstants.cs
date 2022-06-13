@@ -15,7 +15,6 @@ static class CSharpConstants {
 	public const string EncoderNamespace = "Blazed.Intel.EncoderInternal";
 	public const string InstructionInfoNamespace = "Blazed.Intel.InstructionInfoInternal";
 	public const string FormatterNamespace = "Blazed.Intel.FormatterInternal";
-	public const string NasmFormatterNamespace = "Blazed.Intel.NasmFormatterInternal";
 
 	public const string UnitTestsNamespace = "UnitTests.Intel";
 
@@ -37,8 +36,6 @@ static class CSharpConstants {
 	public const string DecoderOrEncoderDefine = "DECODER || ENCODER";
 	public const string DecoderOrEncoderOrOpCodeInfoDefine = "DECODER || ENCODER || (ENCODER && OPCODE_INFO)";
 	public const string DecoderOrEncoderOrInstrInfoOrOpCodeInfoDefine = "DECODER || ENCODER || INSTR_INFO || (ENCODER && OPCODE_INFO)";
-	public const string AnyFormatterDefine = "NASM";
-	public const string NasmFormatterDefine = "NASM";
 
 	public const string PragmaMissingDocsDisable = "#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member";
 	public const string PragmaMissingDocsRestore = "#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member";

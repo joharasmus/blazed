@@ -5,8 +5,7 @@
 
 #nullable enable
 
-#if NASM
-namespace Blazed.Intel.NasmFormatterInternal {
+namespace Blazed.Intel.FormatterInternal {
 	enum SignExtendInfo {
 		None,
 		Sex1to2,
@@ -17,4 +16,3 @@ namespace Blazed.Intel.NasmFormatterInternal {
 		Sex4,
 	}
 }
-#endif

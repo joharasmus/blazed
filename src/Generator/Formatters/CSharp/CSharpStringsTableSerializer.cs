@@ -10,13 +10,11 @@ struct CSharpStringsTableSerializer {
 	readonly StringsTable stringsTable;
 	readonly string @namespace;
 	readonly string className;
-	readonly string preprocessorExpr;
 
-	public CSharpStringsTableSerializer(StringsTable stringsTable, string @namespace, string className, string preprocessorExpr) {
+	public CSharpStringsTableSerializer(StringsTable stringsTable, string @namespace, string className) {
 		this.stringsTable = stringsTable;
 		this.@namespace = @namespace;
 		this.className = className;
-		this.preprocessorExpr = preprocessorExpr;
 	}
 
 	public void Serialize(FileWriter writer) {
@@ -29,8 +27,6 @@ struct CSharpStringsTableSerializer {
 			maxStringLength = Math.Max(maxStringLength, info.String.Length);
 
 		writer.WriteFileHeader();
-		if (preprocessorExpr is not null)
-			writer.WriteLineNoIndent($"#if {preprocessorExpr}");
 		writer.WriteLine($"namespace {@namespace} {{");
 		using (writer.Indent()) {
 			writer.WriteLine($"static partial class {className} {{");
@@ -48,7 +44,5 @@ struct CSharpStringsTableSerializer {
 			writer.WriteLine("}");
 		}
 		writer.WriteLine("}");
-		if (preprocessorExpr is not null)
-			writer.WriteLineNoIndent("#endif");
 	}
 }

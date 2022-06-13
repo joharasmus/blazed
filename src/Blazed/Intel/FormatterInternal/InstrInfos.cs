@@ -6,7 +6,7 @@ using System;
 using Blazed.Intel.FormatterInternal;
 using Blazed.Intel.Internal;
 
-namespace Blazed.Intel.NasmFormatterInternal {
+namespace Blazed.Intel.FormatterInternal {
 	static partial class InstrInfos {
 		public static readonly InstrInfo[] AllInfos = ReadInfos();
 

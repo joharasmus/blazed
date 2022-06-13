@@ -17,17 +17,13 @@ sealed class CSharpTableGen : TableGen {
 		: base(generatorContext.Types) { }
 
 	protected override void Generate(MemorySizeDef[] defs) {
-		GenerateNasm(defs);
-	}
-
-	void GenerateNasm(MemorySizeDef[] defs) {
 		var blazedConstants = genTypes.GetConstantsType(TypeIds.BlazedConstants);
 		var broadcastToKindValues = genTypes[TypeIds.BroadcastToKind].Values;
-		var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.NasmFormatterNamespace, "MemorySizes.cs");
-		var nasmKeywords = genTypes[TypeIds.NasmMemoryKeywords].Values;
+		var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.FormatterNamespace, "MemorySizes.cs");
+		var asmKeywords = genTypes[TypeIds.MemoryKeywords].Values;
 		new FileUpdater(TargetLanguage.CSharp, "ConstData", filename).Generate(writer => {
-			foreach (var kw in nasmKeywords) {
-				if ((NasmMemoryKeywords)kw.Value == NasmMemoryKeywords.None)
+			foreach (var kw in asmKeywords) {
+				if ((MemoryKeywords)kw.Value == MemoryKeywords.None)
 					continue;
 				writer.WriteLine($"var {EscapeKeyword(kw.RawName)} = new FormatterString(\"{kw.RawName}\");");
 			}
@@ -45,7 +41,7 @@ sealed class CSharpTableGen : TableGen {
 		});
 		new FileUpdater(TargetLanguage.CSharp, "MemorySizes", filename).Generate(writer => {
 			foreach (var def in defs) {
-				writer.WriteByte(checked((byte)def.Nasm.Value));
+				writer.WriteByte(checked((byte)def.Asm.Value));
 				writer.WriteLine();
 			}
 		});
@@ -57,9 +53,9 @@ sealed class CSharpTableGen : TableGen {
 			}
 		});
 		new FileUpdater(TargetLanguage.CSharp, "MemoryKeywordsSwitch", filename).Generate(writer => {
-			foreach (var kw in nasmKeywords) {
+			foreach (var kw in asmKeywords) {
 				writer.Write($"0x{kw.Value:X2} => ");
-				if ((NasmMemoryKeywords)kw.Value == NasmMemoryKeywords.None)
+				if ((MemoryKeywords)kw.Value == MemoryKeywords.None)
 					writer.WriteLine("empty,");
 				else
 					writer.WriteLine($"{EscapeKeyword(kw.RawName)},");

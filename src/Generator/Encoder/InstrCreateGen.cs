@@ -481,10 +481,10 @@ abstract class InstrCreateGen {
 	}
 
 	static class DeclareConsts {
-		public const string dbDoc = "Creates a #(c:db)#/#(c:.byte)# asm directive";
-		public const string dwDoc = "Creates a #(c:dw)#/#(c:.word)# asm directive";
-		public const string ddDoc = "Creates a #(c:dd)#/#(c:.int)# asm directive";
-		public const string dqDoc = "Creates a #(c:dq)#/#(c:.quad)# asm directive";
+		public const string dbDoc = "Creates a #(c:db)#/#(c:.byte)# Asm directive";
+		public const string dwDoc = "Creates a #(c:dw)#/#(c:.word)# Asm directive";
+		public const string ddDoc = "Creates a #(c:dd)#/#(c:.int)# Asm directive";
+		public const string dqDoc = "Creates a #(c:dq)#/#(c:.quad)# Asm directive";
 		public const string dataArgName = "data";
 		public const string dataArgDoc = "Data";
 		public const string indexArgName = "index";

@@ -11,7 +11,7 @@ sealed class FileUpdater {
 	readonly string id;
 	readonly string filename;
 	readonly string prefix;
-
+	
 	public FileUpdater(TargetLanguage targetLanguage, string id, string filename, string prefix = "// ") {
 		this.targetLanguage = targetLanguage;
 		this.id = id;

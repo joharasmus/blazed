@@ -3,11 +3,11 @@
 
 using System.Linq;
 
-namespace Generator.Enums.Formatter.Nasm {
+namespace Generator.Enums.Formatter {
 	[TypeGen(TypeGenOrders.NoDeps)]
 	sealed class InstrOpKindEnum {
 		InstrOpKindEnum(GenTypes genTypes) {
-			var enumType = new EnumType("InstrOpKind", TypeIds.NasmInstrOpKind, default, GetValues(genTypes), EnumTypeFlags.NoInitialize);
+			var enumType = new EnumType("InstrOpKind", TypeIds.InstrOpKind, default, GetValues(genTypes), EnumTypeFlags.NoInitialize);
 			genTypes.Add(enumType);
 		}
 

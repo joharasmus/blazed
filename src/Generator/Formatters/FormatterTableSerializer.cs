@@ -111,7 +111,7 @@ abstract class FormatterTableSerializer : IFormatterTableSerializer {
 
 				case IEnumValue enumValue:
 					var typeId = enumValue.DeclaringType.TypeId;
-					if (typeId == TypeIds.NasmInstrOpInfoFlags) {
+					if (typeId == TypeIds.InstrOpInfoFlags) {
 						writer.WriteCompressedUInt32(enumValue.Value);
 						writer.WriteCommentLine($"0x{enumValue.Value:X} = {enumValue.ToStringValue()}");
 					}
@@ -139,7 +139,7 @@ abstract class FormatterTableSerializer : IFormatterTableSerializer {
 						writer.WriteByte((byte)enumValue.Value);
 						writer.WriteCommentLine(enumValue.ToStringValue());
 					}
-					else if (typeId == TypeIds.NasmSignExtendInfo) {
+					else if (typeId == TypeIds.SignExtendInfo) {
 						if (enumValue.Value > byte.MaxValue)
 							throw new InvalidOperationException();
 						writer.WriteByte((byte)enumValue.Value);

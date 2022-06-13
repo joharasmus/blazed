@@ -5,10 +5,9 @@
 
 #nullable enable
 
-#if NASM
 using System;
 
-namespace Blazed.Intel.NasmFormatterInternal {
+namespace Blazed.Intel.FormatterInternal {
 	[Flags]
 	enum InstrOpInfoFlags : uint {
 		None = 0x00000000,
@@ -43,4 +42,3 @@ namespace Blazed.Intel.NasmFormatterInternal {
 		MemorySizeMask = 0x000000FF,
 	}
 }
-#endif

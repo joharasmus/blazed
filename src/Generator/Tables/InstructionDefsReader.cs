@@ -40,8 +40,8 @@ namespace Generator.Tables {
 		readonly Dictionary<string, EnumValue> toMemorySize;
 		readonly Dictionary<string, EnumValue> toRegisterIgnoreCase;
 		readonly Dictionary<OpKindKey, OpCodeOperandKindDef> toOpCodeOperandKindDef;
-		readonly EnumType nasmCtorKind;
-		readonly EnumType nasmInstrOpInfoFlags;
+		readonly EnumType ctorKind;
+		readonly EnumType instrOpInfoFlags;
 		readonly EnumType registerType;
 		readonly EnumType codeSizeType;
 		readonly EnumType signExtendInfoType;
@@ -68,7 +68,7 @@ namespace Generator.Tables {
 			"cflow",
 			"dec-opt",
 			"pseudo",
-			"asm",
+			"Asm",
 		};
 
 		readonly struct OpKindKey : IEquatable<OpKindKey> {
@@ -147,11 +147,11 @@ namespace Generator.Tables {
 			var opKindDefs = genTypes.GetObject<OpCodeOperandKindDefs>(TypeIds.OpCodeOperandKindDefs).Defs;
 			toOpCodeOperandKindDef = opKindDefs.ToDictionary(a => new OpKindKey(a), a => a);
 
-			nasmCtorKind = genTypes[TypeIds.NasmCtorKind];
-			nasmInstrOpInfoFlags = genTypes[TypeIds.NasmInstrOpInfoFlags];
+			ctorKind = genTypes[TypeIds.CtorKind];
+			instrOpInfoFlags = genTypes[TypeIds.InstrOpInfoFlags];
 			registerType = genTypes[TypeIds.Register];
 			codeSizeType = genTypes[TypeIds.CodeSize];
-			signExtendInfoType = genTypes[TypeIds.NasmSignExtendInfo];
+			signExtendInfoType = genTypes[TypeIds.SignExtendInfo];
 			flowControlType = genTypes[TypeIds.FlowControl];
 
 			toCpuidFeatureString = CreateCpuidFeatureStrings(genTypes);
@@ -823,7 +823,7 @@ namespace Generator.Tables {
 							}
 							break;
 
-						case "asm":
+						case "Asm":
 							if (state.AsmMnemonic is not null) {
 								Error(lineIndex, $"Duplicate {newKey}");
 								return false;
@@ -831,11 +831,11 @@ namespace Generator.Tables {
 							state.AsmMnemonic = newValue;
 							break;
 
-						case "asm-ig":
+						case "Asm-ig":
 							state.Flags3 |= InstructionDefFlags3.AsmIgnore;
 							break;
 
-						case "asm-ig-mem":
+						case "Asm-ig-mem":
 							state.Flags3 |= InstructionDefFlags3.AsmIgnoreMemory;
 							break;
 
@@ -1376,26 +1376,27 @@ namespace Generator.Tables {
 			if (isPriv)
 				state.Flags3 |= InstructionDefFlags3.Privileged;
 
-			// The formatters depend on some other lines so parse the formatter lines later
-			foreach (var (key, value, fmtLineIndex) in fmtKeyValues) {
-				switch (key) {
+			// The formatter depend on some other lines so parse the formatter lines later
 
-				case "nasm":
-					if (state.Nasm is not null) {
-						Error(fmtLineIndex, $"Duplicate {key}");
-						return false;
-					}
-					if (!TryReadNasmFmt(value, state, out state.Nasm, out error)) {
-						Error(fmtLineIndex, error);
-						return false;
-					}
-					break;
+			if(fmtKeyValues.Count > 0) {
+				var (lang, val, fmtLineIndex) = fmtKeyValues[0];
 
-				default:
-					Error(fmtLineIndex, $"Unknown key `{key}`");
+				if (lang != "nasm") {
+					Error(fmtLineIndex, $"Unknown key `{lang}`");
+					return false;
+				}
+
+				if (state.FmtState is not null) {
+					Error(fmtLineIndex, $"Duplicate {lang}");
+					return false;
+				}
+
+				if (!TryReadFmt(val, state, out state.FmtState, out error)) {
+					Error(fmtLineIndex, error);
 					return false;
 				}
 			}
+
 
 			if (state.InstrStrFmtOption == InstrStrFmtOption.None) {
 				int mm1Index = instrStr.IndexOf("mm1", StringComparison.Ordinal);
@@ -1632,7 +1633,7 @@ namespace Generator.Tables {
 
 			var fmtMnemonic = state.MnemonicStr.ToLowerInvariant();
 			PseudoOpsKind? pseudoOp = state.PseudoOpsKind is null ? null : (PseudoOpsKind)state.PseudoOpsKind.Value;
-			if (!TryCreateNasmDef(state, state.Code, fmtMnemonic, pseudoOp, state.Nasm ?? new NasmState(), out var nasmDef, out error)) {
+			if (!TryCreateInstrDef(state, state.Code, fmtMnemonic, pseudoOp, state.FmtState ?? new FmtState(), out var fmtInstrDef, out error)) {
 				Error(state.LineIndex, "(nasm) " + error);
 				return false;
 			}
@@ -1660,7 +1661,7 @@ namespace Generator.Tables {
 				pseudoOp, state.Encoding, state.Cflow, state.ConditionCode, state.BranchKind, state.StackInfo, state.FpuStackIncrement,
 				state.RflagsRead, state.RflagsUndefined, state.RflagsWritten, state.RflagsCleared, state.RflagsSet,
 				state.Cpuid, cpuidFeatureStrings, state.OpAccess,
-				nasmDef, state.AsmMnemonic);
+				fmtInstrDef, state.AsmMnemonic);
 			defLineIndex = state.LineIndex;
 			return true;
 		}
@@ -1796,17 +1797,17 @@ namespace Generator.Tables {
 
 			EnumValue value;
 			if (noSignExtend)
-				value = signExtendInfoType[nameof(Enums.Formatter.Nasm.SignExtendInfo.None)];
+				value = signExtendInfoType[nameof(SignExtendInfo.None)];
 			else {
 				var lastDef = def.OpKinds[^1];
 				var immTuple = lastDef.OperandEncoding == OperandEncoding.Immediate ? (lastDef.ImmediateSize, lastDef.ImmediateSignExtSize) : (-1, -1);
 				switch (immTuple) {
-				case (16, 16): value = signExtendInfoType[nameof(Enums.Formatter.Nasm.SignExtendInfo.Sex2)]; break;
-				case (32, 32): value = signExtendInfoType[nameof(Enums.Formatter.Nasm.SignExtendInfo.Sex4)]; break;
-				case (8, 16): value = signExtendInfoType[nameof(Enums.Formatter.Nasm.SignExtendInfo.Sex1to2)]; break;
-				case (8, 32): value = signExtendInfoType[nameof(Enums.Formatter.Nasm.SignExtendInfo.Sex1to4)]; break;
-				case (8, 64): value = signExtendInfoType[nameof(Enums.Formatter.Nasm.SignExtendInfo.Sex1to8)]; break;
-				case (32, 64): value = signExtendInfoType[nameof(Enums.Formatter.Nasm.SignExtendInfo.Sex4to8)]; break;
+				case (16, 16): value = signExtendInfoType[nameof(SignExtendInfo.Sex2)]; break;
+				case (32, 32): value = signExtendInfoType[nameof(SignExtendInfo.Sex4)]; break;
+				case (8, 16): value = signExtendInfoType[nameof(SignExtendInfo.Sex1to2)]; break;
+				case (8, 32): value = signExtendInfoType[nameof(SignExtendInfo.Sex1to4)]; break;
+				case (8, 64): value = signExtendInfoType[nameof(SignExtendInfo.Sex1to8)]; break;
+				case (32, 64): value = signExtendInfoType[nameof(SignExtendInfo.Sex4to8)]; break;
 				default:
 					enumValue = null;
 					error = "Instruction's last operand isn't a sign-extended immediate";
@@ -1870,11 +1871,11 @@ namespace Generator.Tables {
 			return true;
 		}
 
-		bool TryReadNasmFmt(string data, InstructionDefState def, [NotNullWhen(true)] out NasmState? state, [NotNullWhen(false)] out string? error) {
+		bool TryReadFmt(string data, InstructionDefState def, [NotNullWhen(true)] out FmtState? state, [NotNullWhen(false)] out string? error) {
 			state = null;
 
 			var parser = new FmtLineParser(data);
-			var result = new NasmState();
+			var result = new FmtState();
 			foreach (var (key, value) in parser.GetKeyValues()) {
 				switch (key) {
 				case "mnemonic":
@@ -1897,14 +1898,14 @@ namespace Generator.Tables {
 					foreach (var fl in value.Split(';', StringSplitOptions.RemoveEmptyEntries)) {
 						switch (fl) {
 						case "force-size=always":
-							result.Flags.Add(nasmInstrOpInfoFlags[nameof(Enums.Formatter.Nasm.InstrOpInfoFlags.ShowNoMemSize_ForceSize)]);
-							result.Flags.Add(nasmInstrOpInfoFlags[nameof(Enums.Formatter.Nasm.InstrOpInfoFlags.ShowMinMemSize_ForceSize)]);
+							result.Flags.Add(instrOpInfoFlags[nameof(InstrOpInfoFlags.ShowNoMemSize_ForceSize)]);
+							result.Flags.Add(instrOpInfoFlags[nameof(InstrOpInfoFlags.ShowMinMemSize_ForceSize)]);
 							break;
 						case "force-size=default":
-							result.Flags.Add(nasmInstrOpInfoFlags[nameof(Enums.Formatter.Nasm.InstrOpInfoFlags.ShowNoMemSize_ForceSize)]);
+							result.Flags.Add(instrOpInfoFlags[nameof(InstrOpInfoFlags.ShowNoMemSize_ForceSize)]);
 							break;
 						case "mem-size=ignore":
-							result.Flags.Add(nasmInstrOpInfoFlags[nameof(Enums.Formatter.Nasm.InstrOpInfoFlags.MemSize_Nothing)]);
+							result.Flags.Add(instrOpInfoFlags[nameof(InstrOpInfoFlags.MemSize_Nothing)]);
 							break;
 						case "mem-size=unknown":
 							result.UnknownMemSize = true;
@@ -1913,10 +1914,10 @@ namespace Generator.Tables {
 							result.NoSignExtend = true;
 							break;
 						case "short":
-							result.Flags.Add(nasmInstrOpInfoFlags[nameof(Enums.Formatter.Nasm.InstrOpInfoFlags.BranchSizeInfo_Short)]);
+							result.Flags.Add(instrOpInfoFlags[nameof(InstrOpInfoFlags.BranchSizeInfo_Short)]);
 							break;
 						case "o64":
-							result.Flags.Add(nasmInstrOpInfoFlags[nameof(Enums.Formatter.Nasm.InstrOpInfoFlags.OpSize64)]);
+							result.Flags.Add(instrOpInfoFlags[nameof(InstrOpInfoFlags.OpSize64)]);
 							break;
 						default:
 							error = $"Unknown value {fl}";
@@ -1941,33 +1942,33 @@ namespace Generator.Tables {
 				EnumValue? enumValue;
 				switch (ctorKindStr) {
 				case "ignore-const10":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.AamAad)];
+					result.CtorKind = ctorKind[nameof(CtorKind.AamAad)];
 					break;
 
 				case "asz":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.asz)];
+					result.CtorKind = ctorKind[nameof(CtorKind.asz)];
 					if (!def.TryGetAddressSize(out addressSize, out error))
 						return false;
 					result.Args.Add(addressSize);
 					break;
 
 				case "bcst":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.bcst)];
-					result.Args.Add(CreateFlagsEnum(nasmInstrOpInfoFlags, result.GetUsedFlags()));
+					result.CtorKind = ctorKind[nameof(CtorKind.bcst)];
+					result.Args.Add(CreateFlagsEnum(instrOpInfoFlags, result.GetUsedFlags()));
 					break;
 
 				case "bnd":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.bnd)];
-					result.Args.Add(CreateFlagsEnum(nasmInstrOpInfoFlags, result.GetUsedFlags()));
+					result.CtorKind = ctorKind[nameof(CtorKind.bnd)];
+					result.Args.Add(CreateFlagsEnum(instrOpInfoFlags, result.GetUsedFlags()));
 					break;
 
 				case "cc":
 					if (!TryGetCcMnemonics(def, out ccIndex, out var extraMnemonics, out error))
 						return false;
 					result.CtorKind = extraMnemonics.Length switch {
-						0 => nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.CC_1)],
-						1 => nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.CC_2)],
-						2 => nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.CC_3)],
+						0 => ctorKind[nameof(CtorKind.CC_1)],
+						1 => ctorKind[nameof(CtorKind.CC_2)],
+						2 => ctorKind[nameof(CtorKind.CC_3)],
 						_ => throw new InvalidOperationException(),
 					};
 					result.Args.AddRange(extraMnemonics);
@@ -1975,43 +1976,43 @@ namespace Generator.Tables {
 					break;
 
 				case "decl":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.DeclareData)];
+					result.CtorKind = ctorKind[nameof(CtorKind.DeclareData)];
 					break;
 
 				case "far":
 					if (!def.TryGetOperandSize(out operandSize, out error))
 						return false;
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.far)];
+					result.CtorKind = ctorKind[nameof(CtorKind.far)];
 					result.Args.Add(operandSize);
 					break;
 
 				case "far-mem":
 					if (!def.TryGetOperandSize(out operandSize, out error))
 						return false;
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.far_mem)];
+					result.CtorKind = ctorKind[nameof(CtorKind.far_mem)];
 					result.Args.Add(operandSize);
 					break;
 
 				case "imul":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.imul)];
+					result.CtorKind = ctorKind[nameof(CtorKind.imul)];
 					if (!TryGetSignExtendInfo(def, result.NoSignExtend, out enumValue, out error))
 						return false;
 					result.Args.Add(enumValue);
 					break;
 
 				case "invlpga":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.invlpga)];
+					result.CtorKind = ctorKind[nameof(CtorKind.invlpga)];
 					if (!def.TryGetAddressSize(out addressSize, out error))
 						return false;
 					result.Args.Add(addressSize);
 					break;
 
 				case "maskmovq":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.maskmovq)];
+					result.CtorKind = ctorKind[nameof(CtorKind.maskmovq)];
 					break;
 
 				case "movabs":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.movabs)];
+					result.CtorKind = ctorKind[nameof(CtorKind.movabs)];
 					break;
 
 				case "nop":
@@ -2033,24 +2034,24 @@ namespace Generator.Tables {
 					default:
 						throw new InvalidOperationException();
 					}
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.nop)];
+					result.CtorKind = ctorKind[nameof(CtorKind.nop)];
 					break;
 
 				case "osz-suffix-1":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.OpSize)];
+					result.CtorKind = ctorKind[nameof(CtorKind.OpSize)];
 					var codeSize = def.OpCode.OperandSize == CodeSize.Unknown ? CodeSize.Code64 : def.OpCode.OperandSize;
 					result.Args.Add(codeSizeType[codeSize.ToString()]);
 					break;
 
 				case "osz-suffix-2":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.OpSize2_bnd)];
+					result.CtorKind = ctorKind[nameof(CtorKind.OpSize2_bnd)];
 					if (!parser.TryGet(3, out args, out error))
 						return false;
 					result.Args.AddRange(args);
 					break;
 
 				case "osz-suffix-3":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.OpSize3)];
+					result.CtorKind = ctorKind[nameof(CtorKind.OpSize3)];
 					switch (def.GetOperandSize(64)) {
 					case 16:
 						result.Args.Add('w');
@@ -2072,15 +2073,15 @@ namespace Generator.Tables {
 				case "osz":
 					result.Args.Add(def.GetOperandSize(64));
 					if (result.Flags.Count > 0) {
-						result.Args.Add(CreateFlagsEnum(nasmInstrOpInfoFlags, result.GetUsedFlags()));
-						result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_3)];
+						result.Args.Add(CreateFlagsEnum(instrOpInfoFlags, result.GetUsedFlags()));
+						result.CtorKind = ctorKind[nameof(CtorKind.os_3)];
 					}
 					else
-						result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_2)];
+						result.CtorKind = ctorKind[nameof(CtorKind.os_2)];
 					break;
 
 				case "osz-call":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_call)];
+					result.CtorKind = ctorKind[nameof(CtorKind.os_call)];
 					result.Args.Add(def.GetOperandSize(64));
 					result.Args.Add((def.Flags1 & InstructionDefFlags1.Bnd) != 0);
 					break;
@@ -2095,36 +2096,36 @@ namespace Generator.Tables {
 						_ => throw new InvalidOperationException(),
 					};
 					if (TryGetLoopCcMnemonics(def, out ccIndex, out var extraLoopMnemonic)) {
-						result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_loopcc)];
+						result.CtorKind = ctorKind[nameof(CtorKind.os_loopcc)];
 						result.Args.Add(extraLoopMnemonic);
 						result.Args.Add(ccIndex);
 					}
 					else
-						result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_loop)];
+						result.CtorKind = ctorKind[nameof(CtorKind.os_loop)];
 					result.Args.Add(def.GetOperandSize(64));
 					result.Args.Add(rcxReg);
 					break;
 
 				case "osz-mem-1":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_mem)];
+					result.CtorKind = ctorKind[nameof(CtorKind.os_mem)];
 					result.Args.Add(def.GetOperandSize(64));
 					break;
 
 				case "osz-mem-2":
 					if (!def.TryGetOperandSize(out operandSize, out error))
 						return false;
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_mem2)];
+					result.CtorKind = ctorKind[nameof(CtorKind.os_mem2)];
 					result.Args.Add(operandSize == 16 ? 16 : 32 | 64);
-					result.Args.Add(CreateFlagsEnum(nasmInstrOpInfoFlags, result.GetUsedFlags()));
+					result.Args.Add(CreateFlagsEnum(instrOpInfoFlags, result.GetUsedFlags()));
 					break;
 
 				case "osz-reg16":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_mem_reg16)];
+					result.CtorKind = ctorKind[nameof(CtorKind.os_mem_reg16)];
 					result.Args.Add(def.GetOperandSize(64));
 					break;
 
 				case "xmm0":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.pblendvb)];
+					result.CtorKind = ctorKind[nameof(CtorKind.pblendvb)];
 					if (result.UnknownMemSize)
 						result.Args.Add(memorySizeUnknown);
 					else {
@@ -2137,7 +2138,7 @@ namespace Generator.Tables {
 					break;
 
 				case "sx-push-imm8":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.push_imm8)];
+					result.CtorKind = ctorKind[nameof(CtorKind.push_imm8)];
 					if (!TryGetSignExtendInfo(def, result.NoSignExtend, out enumValue, out error))
 						return false;
 					result.Args.Add(def.GetOperandSize(64));
@@ -2145,7 +2146,7 @@ namespace Generator.Tables {
 					break;
 
 				case "sx-push-imm":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.push_imm)];
+					result.CtorKind = ctorKind[nameof(CtorKind.push_imm)];
 					if (!TryGetSignExtendInfo(def, result.NoSignExtend, out enumValue, out error))
 						return false;
 					result.Args.Add(def.GetOperandSize(64));
@@ -2153,21 +2154,21 @@ namespace Generator.Tables {
 					break;
 
 				case "reg16":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.Reg16)];
+					result.CtorKind = ctorKind[nameof(CtorKind.Reg16)];
 					break;
 
 				case "reg32":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.Reg32)];
+					result.CtorKind = ctorKind[nameof(CtorKind.Reg32)];
 					break;
 
 				case "reverse":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.reverse)];
+					result.CtorKind = ctorKind[nameof(CtorKind.reverse)];
 					break;
 
 				case "st1":
 					if (!TryGetIsPseudoArg(parser, out isPseudo, out error))
 						return false;
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.STIG1)];
+					result.CtorKind = ctorKind[nameof(CtorKind.STIG1)];
 					result.Args.Add(isPseudo);
 					break;
 
@@ -2178,14 +2179,14 @@ namespace Generator.Tables {
 					}
 					switch (next) {
 					case "pseudo":
-						result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.STIG2_2a)];
+						result.CtorKind = ctorKind[nameof(CtorKind.STIG2_2a)];
 						result.Args.Add(true);
 						break;
 
 					case "to":
-						result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.STIG2_2b)];
-						result.Flags.Add(nasmInstrOpInfoFlags[nameof(Enums.Formatter.Nasm.InstrOpInfoFlags.RegisterTo)]);
-						result.Args.Add(CreateFlagsEnum(nasmInstrOpInfoFlags, result.GetUsedFlags()));
+						result.CtorKind = ctorKind[nameof(CtorKind.STIG2_2b)];
+						result.Flags.Add(instrOpInfoFlags[nameof(InstrOpInfoFlags.RegisterTo)]);
+						result.Args.Add(CreateFlagsEnum(instrOpInfoFlags, result.GetUsedFlags()));
 						break;
 
 					default:
@@ -2197,26 +2198,26 @@ namespace Generator.Tables {
 				case "sx":
 					if (!TryGetSignExtendInfo(def, result.NoSignExtend, out enumValue, out error))
 						return false;
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.SignExt_3)];
+					result.CtorKind = ctorKind[nameof(CtorKind.SignExt_3)];
 					result.Args.Add(enumValue);
-					result.Args.Add(CreateFlagsEnum(nasmInstrOpInfoFlags, result.GetUsedFlags()));
+					result.Args.Add(CreateFlagsEnum(instrOpInfoFlags, result.GetUsedFlags()));
 					break;
 
 				case "sx2":
 					if (!TryGetSignExtendInfo(def, result.NoSignExtend, out enumValue, out error))
 						return false;
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.SignExt_4)];
-					result.Args.Add(signExtendInfoType[nameof(Enums.Formatter.Nasm.SignExtendInfo.Sex4)]);
+					result.CtorKind = ctorKind[nameof(CtorKind.SignExt_4)];
+					result.Args.Add(signExtendInfoType[nameof(SignExtendInfo.Sex4)]);
 					result.Args.Add(enumValue);
-					result.Args.Add(CreateFlagsEnum(nasmInstrOpInfoFlags, result.GetUsedFlags()));
+					result.Args.Add(CreateFlagsEnum(instrOpInfoFlags, result.GetUsedFlags()));
 					break;
 
 				case "asz-string":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.String)];
+					result.CtorKind = ctorKind[nameof(CtorKind.String)];
 					break;
 
 				case "xlat":
-					result.CtorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.XLAT)];
+					result.CtorKind = ctorKind[nameof(CtorKind.XLAT)];
 					break;
 
 				default:
@@ -2236,8 +2237,8 @@ namespace Generator.Tables {
 			return true;
 		}
 
-		bool TryCreateNasmDef(InstructionDefState def, EnumValue code, string defaultMnemonic, PseudoOpsKind? pseudoOp, NasmState state, [NotNullWhen(true)] out FmtInstructionDef? nasmDef, [NotNullWhen(false)] out string? error) {
-			nasmDef = null;
+		bool TryCreateInstrDef(InstructionDefState def, EnumValue code, string defaultMnemonic, PseudoOpsKind? pseudoOp, FmtState state, [NotNullWhen(true)] out FmtInstructionDef? fmtInstrDef, [NotNullWhen(false)] out string? error) {
+			fmtInstrDef = null;
 
 			var mnemonic = state.Mnemonic ?? defaultMnemonic;
 			var ctorKind = state.CtorKind;
@@ -2248,9 +2249,9 @@ namespace Generator.Tables {
 				if (def.PseudoOpsKind is not null) {
 					state.Args.Add(def.PseudoOpsKind);
 					if (pseudoOp == PseudoOpsKind.pclmulqdq || pseudoOp == PseudoOpsKind.vpclmulqdq)
-						ctorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.pclmulqdq)];
+						ctorKind = this.ctorKind[nameof(CtorKind.pclmulqdq)];
 					else
-						ctorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.pops)];
+						ctorKind = this.ctorKind[nameof(CtorKind.pops)];
 				}
 				else if ((def.Flags1 & InstructionDefFlags1.RoundingControl) != 0) {
 					if (def.OpKinds.Length == 0) {
@@ -2261,18 +2262,18 @@ namespace Generator.Tables {
 						(lastDef.Register == Register.EAX || lastDef.Register == Register.RAX) ? def.OpKinds.Length - 1 : def.OpKinds.Length;
 					state.Args.Add(erIndex);
 					if (state.Flags.Count != 0) {
-						ctorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.er_3)];
-						state.Args.Add(CreateFlagsEnum(nasmInstrOpInfoFlags, state.GetUsedFlags()));
+						ctorKind = this.ctorKind[nameof(CtorKind.er_3)];
+						state.Args.Add(CreateFlagsEnum(instrOpInfoFlags, state.GetUsedFlags()));
 					}
 					else
-						ctorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.er_2)];
+						ctorKind = this.ctorKind[nameof(CtorKind.er_2)];
 				}
 				else if ((def.Flags1 & InstructionDefFlags1.SuppressAllExceptions) != 0) {
 					if (def.OpKinds.Length == 0) {
 						error = "Instruction has no operands";
 						return false;
 					}
-					ctorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.sae)];
+					ctorKind = this.ctorKind[nameof(CtorKind.sae)];
 					var saeIndex = def.OpKinds[^1].OperandEncoding == OperandEncoding.Immediate ? def.OpKinds.Length - 1 : def.OpKinds.Length;
 					state.Args.Add(saeIndex);
 				}
@@ -2280,20 +2281,20 @@ namespace Generator.Tables {
 					int ccIndex = (int)(def.OpCode.OpCode & 0x0F);
 					var extraMnemonics = jccOtherMnemonics[ccIndex];
 					if (def.BranchKind == BranchKind.JccShort)
-						state.Flags.Add(nasmInstrOpInfoFlags[nameof(Enums.Formatter.Nasm.InstrOpInfoFlags.BranchSizeInfo_Short)]);
+						state.Flags.Add(instrOpInfoFlags[nameof(InstrOpInfoFlags.BranchSizeInfo_Short)]);
 					if (state.Flags.Count > 0) {
 						ctorKind = extraMnemonics.Length switch {
-							0 => nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_jcc_b_1)],
-							1 => nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_jcc_b_2)],
-							2 => nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_jcc_b_3)],
+							0 => this.ctorKind[nameof(CtorKind.os_jcc_b_1)],
+							1 => this.ctorKind[nameof(CtorKind.os_jcc_b_2)],
+							2 => this.ctorKind[nameof(CtorKind.os_jcc_b_3)],
 							_ => throw new InvalidOperationException(),
 						};
 					}
 					else {
 						ctorKind = extraMnemonics.Length switch {
-							0 => nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_jcc_a_1)],
-							1 => nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_jcc_a_2)],
-							2 => nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.os_jcc_a_3)],
+							0 => this.ctorKind[nameof(CtorKind.os_jcc_a_1)],
+							1 => this.ctorKind[nameof(CtorKind.os_jcc_a_2)],
+							2 => this.ctorKind[nameof(CtorKind.os_jcc_a_3)],
 							_ => throw new InvalidOperationException(),
 						};
 					}
@@ -2301,22 +2302,22 @@ namespace Generator.Tables {
 					state.Args.Add(ccIndex);
 					state.Args.Add(def.GetOperandSize(64));
 					if (state.Flags.Count > 0)
-						state.Args.Add(CreateFlagsEnum(nasmInstrOpInfoFlags, state.GetUsedFlags()));
+						state.Args.Add(CreateFlagsEnum(instrOpInfoFlags, state.GetUsedFlags()));
 				}
 				else {
 					if (state.Flags.Count > 0) {
-						ctorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.Normal_2)];
-						state.Args.Add(CreateFlagsEnum(nasmInstrOpInfoFlags, state.GetUsedFlags()));
+						ctorKind = this.ctorKind[nameof(CtorKind.Normal_2)];
+						state.Args.Add(CreateFlagsEnum(instrOpInfoFlags, state.GetUsedFlags()));
 					}
 					else
-						ctorKind = nasmCtorKind[nameof(Enums.Formatter.Nasm.CtorKind.Normal_1)];
+						ctorKind = this.ctorKind[nameof(CtorKind.Normal_1)];
 				}
 			}
 
 			if (!state.UsedFlags && !VerifyNoFlags(state, out error))
 				return false;
 
-			nasmDef = new FmtInstructionDef(code, mnemonic, ctorKind, state.Args.ToArray());
+			fmtInstrDef = new FmtInstructionDef(code, mnemonic, ctorKind, state.Args.ToArray());
 			error = null;
 			return true;
 		}
@@ -2456,21 +2457,19 @@ namespace Generator.Tables {
 		}
 	}
 
-	abstract class FmtState {
+	class FmtState {
 		public string? Mnemonic;
 		public List<EnumValue> Flags = new();
 		public EnumValue? CtorKind;
 		public List<object> Args = new();
+		public bool UnknownMemSize;
+		public bool NoSignExtend;
 
 		public bool UsedFlags;
 		public List<EnumValue> GetUsedFlags() {
 			UsedFlags = true;
 			return Flags;
 		}
-	}
-	sealed class NasmState : FmtState {
-		public bool UnknownMemSize;
-		public bool NoSignExtend;
 	}
 
 	sealed class InstructionDefState {
@@ -2513,7 +2512,7 @@ namespace Generator.Tables {
 		public EnumValue? MemorySize_Broadcast;
 		public MvexInstructionInfo Mvex;
 		public OpCodeDef OpCode;
-		public NasmState? Nasm;
+		public FmtState? FmtState;
 		public string? AsmMnemonic;
 
 		public InstructionDefState(int lineIndex, string opCodeStr, string instrStr, EnumValue[] cpuid, EnumValue tupleType, EnumValue encoding) {

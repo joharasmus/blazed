@@ -12,7 +12,7 @@ namespace Generator.Tables {
 		readonly string filename;
 		readonly Dictionary<string, EnumValue> toMemorySize;
 		readonly Dictionary<string, EnumValue> toBroadcastToKind;
-		readonly Dictionary<string, EnumValue> toNasmMemoryKeywords;
+		readonly Dictionary<string, EnumValue> toMemoryKeywords;
 		readonly HashSet<EnumValue> createdDefs;
 
 		public MemorySizeDefsReader(GenTypes genTypes, string filename) {
@@ -21,7 +21,7 @@ namespace Generator.Tables {
 
 			toMemorySize = CreateEnumDict(genTypes[TypeIds.MemorySize]);
 			toBroadcastToKind = CreateEnumDict(genTypes[TypeIds.BroadcastToKind]);
-			toNasmMemoryKeywords = CreateEnumDict(genTypes[TypeIds.NasmMemoryKeywords]);
+			toMemoryKeywords = CreateEnumDict(genTypes[TypeIds.MemoryKeywords]);
 		}
 
 		static Dictionary<string, EnumValue> CreateEnumDict(EnumType enumType, bool ignoreCase = false) =>
@@ -44,7 +44,7 @@ namespace Generator.Tables {
 				var memSize = toMemorySize[parts[1]];
 				var elemMemSize = toMemorySize[parts[2]];
 				var bcst = toBroadcastToKind[parts[3]];
-				var nasm = toNasmMemoryKeywords[parts[7]];
+				var asm = toMemoryKeywords[parts[7]];
 				var flags = MemorySizeDefFlags.None;
 				foreach (var value in parts[8].Split(' ', StringSplitOptions.RemoveEmptyEntries)) {
 					flags |= value switch {
@@ -57,7 +57,7 @@ namespace Generator.Tables {
 				if (!createdDefs.Remove(memSize))
 					throw new InvalidOperationException($"Duplicate MemorySize def on line {i + 1}");
 
-				var def = new MemorySizeDef(memSize, size, elemMemSize, 0, flags, bcst, nasm);
+				var def = new MemorySizeDef(memSize, size, elemMemSize, 0, flags, bcst, asm);
 				defs.Add(def);
 			}
 
@@ -68,7 +68,7 @@ namespace Generator.Tables {
 			for (int i = 0; i < defs.Count; i++) {
 				var def = defs[i];
 				var elemDef = toDef[def.ElementType];
-				var newDef = new MemorySizeDef(def.MemorySize, def.Size, def.ElementType, elemDef.Size, def.Flags, def.BroadcastToKind, def.Nasm);
+				var newDef = new MemorySizeDef(def.MemorySize, def.Size, def.ElementType, elemDef.Size, def.Flags, def.BroadcastToKind, def.Asm);
 				defs[i] = newDef;
 			}
 

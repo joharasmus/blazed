@@ -15,8 +15,8 @@ namespace Generator.Tables {
 		b1to32,
 	}
 
-	[Enum("MemoryKeywords", "NasmMemoryKeywords")]
-	enum NasmMemoryKeywords {
+	[Enum("MemoryKeywords", "MemoryKeywords")]
+	enum MemoryKeywords {
 		None,
 		@byte,
 		dword,
@@ -49,20 +49,20 @@ namespace Generator.Tables {
 		public readonly MemorySizeDefFlags Flags;
 		public bool IsSigned => (Flags & MemorySizeDefFlags.Signed) != 0;
 		public readonly EnumValue BroadcastToKind;
-		public readonly EnumValue Nasm;
+		public readonly EnumValue Asm;
 
 		public MemorySizeDef(
 			EnumValue memorySize, uint size, 
 			EnumValue elementType, uint elementSize, 
 			MemorySizeDefFlags flags,
-			EnumValue broadcastToKind, EnumValue nasm) {
+			EnumValue broadcastToKind, EnumValue asm) {
 			MemorySize = memorySize;
 			Size = size;
 			ElementType = elementType;
 			ElementSize = elementSize;
 			Flags = flags;
 			BroadcastToKind = broadcastToKind;
-			Nasm = nasm;
+			Asm = asm;
 		}
 	}
 }

@@ -5,8 +5,7 @@
 
 #nullable enable
 
-#if NASM
-namespace Blazed.Intel.NasmFormatterInternal {
+namespace Blazed.Intel.FormatterInternal {
 	enum CtorKind {
 		Previous,
 		Normal_1,
@@ -63,4 +62,3 @@ namespace Blazed.Intel.NasmFormatterInternal {
 		reverse,
 	}
 }
-#endif

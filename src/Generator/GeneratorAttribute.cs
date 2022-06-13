@@ -9,7 +9,5 @@ namespace Generator;
 sealed class GeneratorAttribute : Attribute {
 	public TargetLanguage Language { get; }
 
-	public GeneratorAttribute(TargetLanguage language) {
-		Language = language;
-	}
+	public GeneratorAttribute(TargetLanguage language) => Language = language;
 }

@@ -414,7 +414,7 @@ sealed class CSharpAssemblerSyntaxGenerator : AssemblerSyntaxGenerator {
 				bool isUnsafe = type == "float" || type == "double";
 				for (int i = 1; i <= argCount; i++) {
 					writer.WriteLine();
-					docWriter.WriteSummary(writer, $"Creates a {name} asm directive with the type {type}.", "");
+					docWriter.WriteSummary(writer, $"Creates a {name} Asm directive with the type {type}.", "");
 					writer.Write($"public {(isUnsafe ? "unsafe " : "")}void {name}(");
 					for (int j = 0; j < i; j++) {
 						if (j > 0) writer.Write(", ");
@@ -495,7 +495,7 @@ sealed class CSharpAssemblerSyntaxGenerator : AssemblerSyntaxGenerator {
 			for (var typeIndex = 0; typeIndex < types.Length; typeIndex++) {
 				var type = types[typeIndex];
 				for (int i = 1; i <= argCount; i++) {
-					docWriter.WriteSummary(writer, $"Creates a {name} asm directive with the type {type}.", "");
+					docWriter.WriteSummary(writer, $"Creates a {name} Asm directive with the type {type}.", "");
 					writer.WriteLine("[Fact]");
 					writer.WriteLine($"public void TestDeclareData_{name}_{type}_{i}() {{");
 					using (writer.Indent()) {

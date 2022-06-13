@@ -5,16 +5,11 @@
 
 #nullable enable
 
-#if NASM
-namespace Blazed.Intel.NasmFormatterInternal {
-	enum BranchSizeInfo {
+namespace Blazed.Intel.FormatterInternal {
+	enum SizeOverride {
 		None,
-		Near,
-		NearWord,
-		NearDword,
-		Word,
-		Dword,
-		Short,
+		Size16,
+		Size32,
+		Size64,
 	}
 }
-#endif

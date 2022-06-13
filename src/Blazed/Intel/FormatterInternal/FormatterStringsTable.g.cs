@@ -5,7 +5,6 @@
 
 #nullable enable
 
-#if NASM
 namespace Blazed.Intel.FormatterInternal {
 	static partial class FormatterStringsTable {
 		const int MaxStringLength = 18;
@@ -1640,4 +1639,3 @@ namespace Blazed.Intel.FormatterInternal {
 			};
 	}
 }
-#endif

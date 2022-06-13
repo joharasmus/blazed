@@ -11,7 +11,6 @@ namespace Generator;
 enum GeneratorFlags {
 	None				= 0,
 	NoFormatter			= 0x0000_0001,
-	NoNasmFormatter		= 0x0000_0010,
 	NoVEX				= 0x0000_0040,
 	NoEVEX				= 0x0000_0080,
 	NoXOP				= 0x0000_0100,
@@ -20,7 +19,7 @@ enum GeneratorFlags {
 }
 
 sealed class GeneratorOptions {
-	public bool HasNasmFormatter { get; }
+	public bool HasFormatter { get; }
 	public bool IncludeVEX { get; }
 	public bool IncludeEVEX { get; }
 	public bool IncludeXOP { get; }
@@ -30,7 +29,7 @@ sealed class GeneratorOptions {
 	public HashSet<string> ExcludeCpuid { get; }
 
 	public GeneratorOptions(GeneratorFlags flags, HashSet<string> includeCpuid, HashSet<string> excludeCpuid) {
-		HasNasmFormatter = (flags & GeneratorFlags.NoNasmFormatter) == 0 && (flags & GeneratorFlags.NoFormatter) == 0;
+		HasFormatter = (flags & GeneratorFlags.NoFormatter) == 0;
 		IncludeVEX = (flags & GeneratorFlags.NoVEX) == 0;
 		IncludeEVEX = (flags & GeneratorFlags.NoEVEX) == 0;
 		IncludeXOP = (flags & GeneratorFlags.NoXOP) == 0;
