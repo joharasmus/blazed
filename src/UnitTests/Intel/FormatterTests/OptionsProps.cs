@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if GAS || INTEL || MASM || NASM || FAST_FMT
+#if INTEL || MASM || NASM || FAST_FMT
 using System;
 using System.Collections.Generic;
 using Blazed.Intel;
@@ -23,9 +23,6 @@ namespace UnitTests.Intel.FormatterTests {
 		DigitSeparator,
 		DisplacementLeadingZeros,
 		FirstOperandCharIndex,
-		GasNakedRegisters,
-		GasShowMnemonicSizeSuffix,
-		GasSpaceAfterMemoryOperandComma,
 		HexDigitGroupSize,
 		HexPrefix,
 		HexSuffix,
@@ -87,7 +84,7 @@ namespace UnitTests.Intel.FormatterTests {
 			return options;
 		}
 
-#if GAS || INTEL || MASM || NASM
+#if INTEL || MASM || NASM
 		public static void Initialize(FormatterOptions options, OptionsProps property, object value) {
 			switch (property) {
 			case OptionsProps.AddLeadingZeroToHexNumbers: options.AddLeadingZeroToHexNumbers = (bool)value; break;
@@ -103,9 +100,6 @@ namespace UnitTests.Intel.FormatterTests {
 			case OptionsProps.DigitSeparator: options.DigitSeparator = (string)value; break;
 			case OptionsProps.DisplacementLeadingZeros: options.DisplacementLeadingZeros = (bool)value; break;
 			case OptionsProps.FirstOperandCharIndex: options.FirstOperandCharIndex = (int)value; break;
-			case OptionsProps.GasNakedRegisters: options.GasNakedRegisters = (bool)value; break;
-			case OptionsProps.GasShowMnemonicSizeSuffix: options.GasShowMnemonicSizeSuffix = (bool)value; break;
-			case OptionsProps.GasSpaceAfterMemoryOperandComma: options.GasSpaceAfterMemoryOperandComma = (bool)value; break;
 			case OptionsProps.HexDigitGroupSize: options.HexDigitGroupSize = (int)value; break;
 			case OptionsProps.HexPrefix: options.HexPrefix = (string)value; break;
 			case OptionsProps.HexSuffix: options.HexSuffix = (string)value; break;
@@ -180,9 +174,6 @@ namespace UnitTests.Intel.FormatterTests {
 			case OptionsProps.DigitSeparator:
 			case OptionsProps.DisplacementLeadingZeros:
 			case OptionsProps.FirstOperandCharIndex:
-			case OptionsProps.GasNakedRegisters:
-			case OptionsProps.GasShowMnemonicSizeSuffix:
-			case OptionsProps.GasSpaceAfterMemoryOperandComma:
 			case OptionsProps.HexDigitGroupSize:
 			case OptionsProps.LeadingZeros:
 			case OptionsProps.MasmAddDsPrefix32:
@@ -285,7 +276,7 @@ namespace UnitTests.Intel.FormatterTests {
 			DecoderOptions = OptionsPropsUtils.GetDecoderOptions(properties);
 		}
 
-#if GAS || INTEL || MASM || NASM
+#if INTEL || MASM || NASM
 		internal void Initialize(FormatterOptions options) => OptionsPropsUtils.Initialize(options, properties);
 #endif
 

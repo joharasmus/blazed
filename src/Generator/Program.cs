@@ -93,8 +93,7 @@ static class Program {
 		}
 	}
 
-	static void Help() {
-		Console.WriteLine(@"
+	static void Help() => Console.WriteLine(@"
 Generates code and data
 
 Options:
@@ -103,8 +102,6 @@ Options:
     Show this message
 --no-formatter
     Don't include any formatter
---no-gas
-    Don't include the gas (AT&T) formatter
 --no-intel
     Don't include the Intel (XED) formatter
 --no-masm
@@ -135,7 +132,6 @@ Options:
 --exclude-cpuid <name>
     Don't include instructions with CPUID feature <name>, ;-separated. See CpuidFeature enum
 ");
-	}
 
 	static bool TryParseCommandLine(string[] args, [NotNullWhen(true)] out CommandLineOptions? options, [NotNullWhen(false)] out string? error) {
 		if (Enum.GetValues<TargetLanguage>().Length != 2)
@@ -154,10 +150,6 @@ Options:
 
 			case "--no-formatter":
 				options.GeneratorFlags |= GeneratorFlags.NoFormatter;
-				break;
-
-			case "--no-gas":
-				options.GeneratorFlags |= GeneratorFlags.NoGasFormatter;
 				break;
 
 			case "--no-intel":

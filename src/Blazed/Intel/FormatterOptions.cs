@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if GAS || INTEL || MASM || NASM
+#if INTEL || MASM || NASM
 using System;
 
 namespace Blazed.Intel {
@@ -38,9 +38,6 @@ namespace Blazed.Intel {
 			ShowBranchSize					= 0x00800000,
 			UsePseudoOps					= 0x01000000,
 			ShowSymbolAddress				= 0x02000000,
-			GasNakedRegisters				= 0x04000000,
-			GasShowMnemonicSizeSuffix		= 0x08000000,
-			GasSpaceAfterMemoryOperandComma	= 0x10000000,
 			MasmAddDsPrefix32				= 0x20000000,
 			MasmSymbolDisplInBrackets		= 0x40000000,
 			MasmDisplInBrackets				= 0x80000000,
@@ -359,14 +356,14 @@ namespace Blazed.Intel {
 		/// <summary>
 		/// Hex number prefix or <see langword="null"/>/empty string, eg. "0x"
 		/// <br/>
-		/// Default: <see langword="null"/> (masm/nasm/intel), <c>"0x"</c> (gas)
+		/// Default: <see langword="null"/> (masm/nasm/intel)
 		/// </summary>
 		public string? HexPrefix { get; set; }
 
 		/// <summary>
 		/// Hex number suffix or <see langword="null"/>/empty string, eg. "h"
 		/// <br/>
-		/// Default: <c>"h"</c> (masm/nasm/intel), <see langword="null"/> (gas)
+		/// Default: <c>"h"</c> (masm/nasm/intel)
 		/// </summary>
 		public string? HexSuffix { get; set; }
 
@@ -409,14 +406,14 @@ namespace Blazed.Intel {
 		/// <summary>
 		/// Octal number prefix or <see langword="null"/>/empty string
 		/// <br/>
-		/// Default: <see langword="null"/> (masm/nasm/intel), <c>"0"</c> (gas)
+		/// Default: <see langword="null"/> (masm/nasm/intel)
 		/// </summary>
 		public string? OctalPrefix { get; set; }
 
 		/// <summary>
 		/// Octal number suffix or <see langword="null"/>/empty string
 		/// <br/>
-		/// Default: <c>"o"</c> (masm/nasm/intel), <see langword="null"/> (gas)
+		/// Default: <c>"o"</c> (masm/nasm/intel)
 		/// </summary>
 		public string? OctalSuffix { get; set; }
 
@@ -434,14 +431,14 @@ namespace Blazed.Intel {
 		/// <summary>
 		/// Binary number prefix or <see langword="null"/>/empty string
 		/// <br/>
-		/// Default: <see langword="null"/> (masm/nasm/intel), <c>"0b"</c> (gas)
+		/// Default: <see langword="null"/> (masm/nasm/intel)
 		/// </summary>
 		public string? BinaryPrefix { get; set; }
 
 		/// <summary>
 		/// Binary number suffix or <see langword="null"/>/empty string
 		/// <br/>
-		/// Default: <c>"b"</c> (masm/nasm/intel), <see langword="null"/> (gas)
+		/// Default: <c>"b"</c> (masm/nasm/intel)
 		/// </summary>
 		public string? BinarySuffix { get; set; }
 
@@ -685,7 +682,6 @@ namespace Blazed.Intel {
 
 		/// <summary>
 		/// Options that control if the memory size (eg. <c>DWORD PTR</c>) is shown or not.
-		/// This is ignored by the gas (AT&amp;T) formatter.
 		/// <br/>
 		/// Default: <see cref="Intel.MemorySizeOptions.Default"/>
 		/// </summary>
@@ -772,63 +768,6 @@ namespace Blazed.Intel {
 					flags1 |= Flags1.ShowSymbolAddress;
 				else
 					flags1 &= ~Flags1.ShowSymbolAddress;
-			}
-		}
-
-		/// <summary>
-		/// (gas only): If <see langword="true"/>, the formatter doesn't add <c>%</c> to registers
-		/// <br/>
-		/// Default: <see langword="false"/>
-		/// <br/>
-		/// <see langword="true"/>: <c>mov eax,ecx</c>
-		/// <br/>
-		/// <see langword="false"/>: <c>mov %eax,%ecx</c>
-		/// </summary>
-		public bool GasNakedRegisters {
-			get => (flags1 & Flags1.GasNakedRegisters) != 0;
-			set {
-				if (value)
-					flags1 |= Flags1.GasNakedRegisters;
-				else
-					flags1 &= ~Flags1.GasNakedRegisters;
-			}
-		}
-
-		/// <summary>
-		/// (gas only): Shows the mnemonic size suffix even when not needed
-		/// <br/>
-		/// Default: <see langword="false"/>
-		/// <br/>
-		/// <see langword="true"/>: <c>movl %eax,%ecx</c>
-		/// <br/>
-		/// <see langword="false"/>: <c>mov %eax,%ecx</c>
-		/// </summary>
-		public bool GasShowMnemonicSizeSuffix {
-			get => (flags1 & Flags1.GasShowMnemonicSizeSuffix) != 0;
-			set {
-				if (value)
-					flags1 |= Flags1.GasShowMnemonicSizeSuffix;
-				else
-					flags1 &= ~Flags1.GasShowMnemonicSizeSuffix;
-			}
-		}
-
-		/// <summary>
-		/// (gas only): Add a space after the comma if it's a memory operand
-		/// <br/>
-		/// Default: <see langword="false"/>
-		/// <br/>
-		/// <see langword="true"/>: <c>(%eax, %ecx, 2)</c>
-		/// <br/>
-		/// <see langword="false"/>: <c>(%eax,%ecx,2)</c>
-		/// </summary>
-		public bool GasSpaceAfterMemoryOperandComma {
-			get => (flags1 & Flags1.GasSpaceAfterMemoryOperandComma) != 0;
-			set {
-				if (value)
-					flags1 |= Flags1.GasSpaceAfterMemoryOperandComma;
-				else
-					flags1 &= ~Flags1.GasSpaceAfterMemoryOperandComma;
 			}
 		}
 
@@ -1125,19 +1064,6 @@ namespace Blazed.Intel {
 			}
 		}
 		CC_g cc_g = CC_g.g;
-
-#if GAS
-		/// <summary>
-		/// Creates GNU assembler (AT&amp;T) formatter options
-		/// </summary>
-		/// <returns></returns>
-		public static FormatterOptions CreateGas() =>
-			new FormatterOptions {
-				HexPrefix = "0x",
-				OctalPrefix = "0",
-				BinaryPrefix = "0b",
-			};
-#endif
 
 #if INTEL
 		/// <summary>

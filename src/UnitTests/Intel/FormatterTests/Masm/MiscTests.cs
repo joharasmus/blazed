@@ -72,9 +72,6 @@ namespace UnitTests.Intel.FormatterTests.Masm {
 			Assert.Equal(CC_le.le, options.CC_le);
 			Assert.Equal(CC_g.g, options.CC_g);
 			Assert.False(options.ShowUselessPrefixes);
-			Assert.False(options.GasNakedRegisters);
-			Assert.False(options.GasShowMnemonicSizeSuffix);
-			Assert.False(options.GasSpaceAfterMemoryOperandComma);
 			Assert.True(options.MasmAddDsPrefix32);
 			Assert.True(options.MasmSymbolDisplInBrackets);
 			Assert.True(options.MasmDisplInBrackets);

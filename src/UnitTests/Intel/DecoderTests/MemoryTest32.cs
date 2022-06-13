@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using Blazed.Intel;
 using Xunit;
 
-namespace UnitTests.Intel.DecoderTests {
-	public sealed class MemoryTest32 : DecoderTest {
-		[Theory]
-		[MemberData(nameof(Test32_DecodeMemOps_as16_Data))]
-		void Test32_DecodeMemOps(string hexBytes, Code code, DecoderMemoryTestCase tc) =>
-			DecodeMemOpsBase(32, hexBytes, code, tc);
-		public static IEnumerable<object[]> Test32_DecodeMemOps_as16_Data => GetMemOpsData(32);
-	}
+namespace UnitTests.Intel.DecoderTests;
+
+public sealed class MemoryTest32 : DecoderTest {
+	[Theory]
+	[MemberData(nameof(Test32_DecodeMemOps_as16_Data))]
+	void Test32_DecodeMemOps(string hexBytes, Code code, DecoderMemoryTestCase tc) =>
+		DecodeMemOpsBase(32, hexBytes, code, tc);
+	public static IEnumerable<object[]> Test32_DecodeMemOps_as16_Data => GetMemOpsData(32);
 }

@@ -7,24 +7,24 @@ using System.IO;
 using Blazed.Intel;
 using UnitTests.Intel;
 
-namespace UnitTests.Intel.DecoderTests {
-	static class CodeValueReader {
-		public static HashSet<Code> Read(string name) {
-			var filename = PathUtils.GetTestTextFilename(name, "Decoder");
-			int lineNumber = 0;
-			var hash = new HashSet<Code>();
-			foreach (var line in File.ReadLines(filename)) {
-				lineNumber++;
-				if (line.Length == 0 || line[0] == '#')
-					continue;
-				var value = line.Trim();
-				if (CodeUtils.IsIgnored(value))
-					continue;
-				if (!ToEnumConverter.TryCode(value, out var code))
-					throw new InvalidOperationException($"Error parsing Code file '{filename}', line {lineNumber}: Invalid value: {value}");
-				hash.Add(code);
-			}
-			return hash;
+namespace UnitTests.Intel.DecoderTests;
+
+static class CodeValueReader {
+	public static HashSet<Code> Read(string name) {
+		var filename = PathUtils.GetTestTextFilename(name, "Decoder");
+		int lineNumber = 0;
+		var hash = new HashSet<Code>();
+		foreach (var line in File.ReadLines(filename)) {
+			lineNumber++;
+			if (line.Length == 0 || line[0] == '#')
+				continue;
+			var value = line.Trim();
+			if (CodeUtils.IsIgnored(value))
+				continue;
+			if (!ToEnumConverter.TryCode(value, out var code))
+				throw new InvalidOperationException($"Error parsing Code file '{filename}', line {lineNumber}: Invalid value: {value}");
+			hash.Add(code);
 		}
+		return hash;
 	}
 }

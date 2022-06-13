@@ -8,18 +8,6 @@ namespace Blazed.Intel {
 	/// Gets the available features
 	/// </summary>
 	public static class BlazedFeatures {
-		/// <summary>
-		/// <see langword="true"/> if the gas (AT&amp;T) formatter is available
-		/// </summary>
-		public static bool HasGasFormatter {
-			get {
-#if GAS
-				return true;
-#else
-				return false;
-#endif
-			}
-		}
 
 		/// <summary>
 		/// <see langword="true"/> if the Intel (xed) formatter is available

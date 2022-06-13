@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if GAS || INTEL || MASM || NASM || FAST_FMT
+#if INTEL || MASM || NASM || FAST_FMT
 using Blazed.Intel;
 using UnitTests.Intel.DecoderTests;
 using Xunit;
@@ -59,8 +59,6 @@ namespace UnitTests.Intel.FormatterTests {
 			expected = "add dh,cl";
 #elif INTEL
 			expected = "add dh,cl";
-#elif GAS
-			expected = "add %cl,%dh";
 #elif FAST_FMT
 			expected = "add dh,cl";
 #else

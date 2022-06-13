@@ -41,11 +41,9 @@ namespace Generator.Tables {
 		readonly Dictionary<string, EnumValue> toRegisterIgnoreCase;
 		readonly Dictionary<OpKindKey, OpCodeOperandKindDef> toOpCodeOperandKindDef;
 		readonly EnumType fastFmtFlags;
-		readonly EnumType gasCtorKind;
 		readonly EnumType intelCtorKind;
 		readonly EnumType masmCtorKind;
 		readonly EnumType nasmCtorKind;
-		readonly EnumType gasInstrOpInfoFlags;
 		readonly EnumType intelInstrOpInfoFlags;
 		readonly EnumType masmInstrOpInfoFlags;
 		readonly EnumType nasmInstrOpInfoFlags;
@@ -155,11 +153,9 @@ namespace Generator.Tables {
 			toOpCodeOperandKindDef = opKindDefs.ToDictionary(a => new OpKindKey(a), a => a);
 
 			fastFmtFlags = genTypes[TypeIds.FastFmtFlags];
-			gasCtorKind = genTypes[TypeIds.GasCtorKind];
 			intelCtorKind = genTypes[TypeIds.IntelCtorKind];
 			masmCtorKind = genTypes[TypeIds.MasmCtorKind];
 			nasmCtorKind = genTypes[TypeIds.NasmCtorKind];
-			gasInstrOpInfoFlags = genTypes[TypeIds.GasInstrOpInfoFlags];
 			intelInstrOpInfoFlags = genTypes[TypeIds.IntelInstrOpInfoFlags];
 			masmInstrOpInfoFlags = genTypes[TypeIds.MasmInstrOpInfoFlags];
 			nasmInstrOpInfoFlags = genTypes[TypeIds.NasmInstrOpInfoFlags];
@@ -1360,7 +1356,6 @@ namespace Generator.Tables {
 					break;
 
 				case "fast":
-				case "gas":
 				case "intel":
 				case "masm":
 				case "nasm":
@@ -1403,17 +1398,6 @@ namespace Generator.Tables {
 						return false;
 					}
 					if (!TryReadFastFmt(value, out state.FastInfo, out error)) {
-						Error(fmtLineIndex, error);
-						return false;
-					}
-					break;
-
-				case "gas":
-					if (state.Gas is not null) {
-						Error(fmtLineIndex, $"Duplicate {key}");
-						return false;
-					}
-					if (!TryReadGasFmt(value, state, out state.Gas, out error)) {
 						Error(fmtLineIndex, error);
 						return false;
 					}
@@ -1697,10 +1681,6 @@ namespace Generator.Tables {
 				Error(state.LineIndex, "(fast) " + error);
 				return false;
 			}
-			if (!TryCreateGasDef(state, state.Code, fmtMnemonic, pseudoOp, state.Gas ?? new GasState(), out var gasDef, out error)) {
-				Error(state.LineIndex, "(gas) " + error);
-				return false;
-			}
 			if (!TryCreateIntelDef(state, state.Code, fmtMnemonic, pseudoOp, state.Intel ?? new IntelState(), out var intelDef, out error)) {
 				Error(state.LineIndex, "(intel) " + error);
 				return false;
@@ -1737,7 +1717,7 @@ namespace Generator.Tables {
 				pseudoOp, state.Encoding, state.Cflow, state.ConditionCode, state.BranchKind, state.StackInfo, state.FpuStackIncrement,
 				state.RflagsRead, state.RflagsUndefined, state.RflagsWritten, state.RflagsCleared, state.RflagsSet,
 				state.Cpuid, cpuidFeatureStrings, state.OpAccess,
-				fastDef, gasDef, intelDef, masmDef, nasmDef,
+				fastDef, intelDef, masmDef, nasmDef,
 				state.AsmMnemonic);
 			defLineIndex = state.LineIndex;
 			return true;
@@ -1920,17 +1900,6 @@ namespace Generator.Tables {
 		static bool TryGetIsLoadArg(FmtLineParser parser, out bool isPseudo, [NotNullWhen(false)] out string? error) =>
 			TryGetBooleanArg(parser, "load", out isPseudo, out error);
 
-		static bool VerifyNoSuffix(GasState state, [NotNullWhen(false)] out string? error) {
-			if (state.Suffix is null) {
-				error = null;
-				return true;
-			}
-			else {
-				error = "suffix=X isn't supported";
-				return false;
-			}
-		}
-
 		static bool VerifyNoFlags(FmtState state, [NotNullWhen(false)] out string? error) {
 			if (state.Flags.Count == 0) {
 				error = null;
@@ -2010,388 +1979,6 @@ namespace Generator.Tables {
 				state.Flags.Add(fastFmtFlags[name]);
 			}
 			fastDef = new FastFmtInstructionDef(code, mnemonic, new OrEnumValue(fastFmtFlags, state.Flags.ToArray()));
-			error = null;
-			return true;
-		}
-
-		bool TryReadGasFmt(string data, InstructionDefState def, [NotNullWhen(true)] out GasState? state, [NotNullWhen(false)] out string? error) {
-			state = null;
-
-			var parser = new FmtLineParser(data);
-			var result = new GasState();
-			foreach (var (key, value) in parser.GetKeyValues()) {
-				switch (key) {
-				case "mnemonic":
-					if (value == string.Empty) {
-						error = $"Missing {key} value";
-						return false;
-					}
-					if (result.Mnemonic is not null) {
-						error = $"Duplicate {key} value";
-						return false;
-					}
-					result.Mnemonic = value;
-					break;
-
-				case "flags":
-					if (value == string.Empty) {
-						error = $"Missing {key} value";
-						return false;
-					}
-					foreach (var fl in value.Split(';', StringSplitOptions.RemoveEmptyEntries)) {
-						switch (fl) {
-						case "keep-op-order":
-							result.Flags.Add(gasInstrOpInfoFlags[nameof(Enums.Formatter.Gas.InstrOpInfoFlags.KeepOperandOrder)]);
-							break;
-						case "force-mem-suffix":
-							result.Flags.Add(gasInstrOpInfoFlags[nameof(Enums.Formatter.Gas.InstrOpInfoFlags.MnemonicSuffixIfMem)]);
-							break;
-						case "indirect":
-							result.Flags.Add(gasInstrOpInfoFlags[nameof(Enums.Formatter.Gas.InstrOpInfoFlags.IndirectOperand)]);
-							break;
-						case "o64":
-							result.Flags.Add(gasInstrOpInfoFlags[nameof(Enums.Formatter.Gas.InstrOpInfoFlags.OpSize64)]);
-							break;
-						case "force-suffix":
-							result.ForceSuffix = true;
-							break;
-						case "ignore-index":
-							result.Flags.Add(gasInstrOpInfoFlags[nameof(Enums.Formatter.Gas.InstrOpInfoFlags.IgnoreIndexReg)]);
-							break;
-						case "osz-is-byte-directive":
-							result.Flags.Add(gasInstrOpInfoFlags[nameof(Enums.Formatter.Gas.InstrOpInfoFlags.OpSizeIsByteDirective)]);
-							break;
-						default:
-							error = $"Unknown value {fl}";
-							return false;
-						}
-					}
-					break;
-
-				case "suffix":
-					if (value == string.Empty) {
-						error = $"Missing {key} value";
-						return false;
-					}
-					if (result.Suffix is not null) {
-						error = $"Duplicate {key} value";
-						return false;
-					}
-					if (value.Length != 1) {
-						error = $"Expected one character suffix `{value}`";
-						return false;
-					}
-					result.Suffix = value[0];
-					break;
-
-				default:
-					error = $"Unknown key `{key}`";
-					return false;
-				}
-			}
-
-			if (parser.TryGetNext(out var ctorKindStr)) {
-				int addressSize;
-				int operandSize;
-				int ccIndex;
-				string[]? args;
-				bool isPseudo;
-				switch (ctorKindStr) {
-				case "ignore-const10":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.AamAad)];
-					break;
-
-				case "asz":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.asz)];
-					if (!def.TryGetAddressSize(out addressSize, out error))
-						return false;
-					result.Args.Add(addressSize);
-					break;
-
-				case "bnd":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.bnd)];
-					result.Args.Add(result.GetUsedSuffix());
-					result.Args.Add(CreateFlagsEnum(gasInstrOpInfoFlags, result.GetUsedFlags()));
-					break;
-
-				case "cc":
-					if (!TryGetCcMnemonics(def, out ccIndex, out var extraMnemonics, out error))
-						return false;
-					result.CtorKind = extraMnemonics.Length switch {
-						0 => gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.CC_1)],
-						1 => gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.CC_2)],
-						2 => gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.CC_3)],
-						_ => throw new InvalidOperationException(),
-					};
-					result.Args.AddRange(extraMnemonics);
-					result.Args.Add(result.GetUsedSuffix());
-					result.Args.Add(ccIndex);
-					break;
-
-				case "decl":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.DeclareData)];
-					break;
-
-				case "far":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.far)];
-					if (!def.TryGetOperandSize(out operandSize, out error))
-						return false;
-					result.Args.Add(result.GetUsedSuffix());
-					result.Args.Add(operandSize);
-					break;
-
-				case "imul":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.imul)];
-					result.Args.Add(result.GetUsedSuffix());
-					break;
-
-				case "maskmovq":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.maskmovq)];
-					break;
-
-				case "movabs":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.movabs)];
-					result.Args.Add(result.GetUsedSuffix());
-					result.Args.Add("movabs");
-					break;
-
-				case "nop":
-					if (!def.TryGetOperandSize(out operandSize, out error))
-						return false;
-					switch (operandSize) {
-					case 16:
-						result.Args.Add(16);
-						result.Args.Add(registerType[nameof(Register.AX)]);
-						break;
-					case 32:
-						result.Args.Add(32 | 64);
-						result.Args.Add(registerType[nameof(Register.EAX)]);
-						break;
-					case 64:
-						result.Args.Add(0);
-						result.Args.Add(registerType[nameof(Register.RAX)]);
-						break;
-					default:
-						throw new InvalidOperationException();
-					}
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.nop)];
-					break;
-
-				case "mem16":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.mem16)];
-					result.Args.Add(result.GetUsedSuffix());
-					break;
-
-				case "osz-suffix-1":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.OpSize)];
-					var codeSize = def.OpCode.OperandSize == CodeSize.Unknown ? CodeSize.Code64 : def.OpCode.OperandSize;
-					result.Args.Add(codeSizeType[codeSize.ToString()]);
-					break;
-
-				case "osz-suffix-2":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.OpSize2_bnd)];
-					if (!parser.TryGet(3, out args, out error))
-						return false;
-					result.Args.AddRange(args);
-					break;
-
-				case "osz-suffix-3":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.OpSize3)];
-					args = parser.GetRest();
-					if (args.Length == 0) {
-						error = "Expected at least one argument";
-						return false;
-					}
-					uint osz = 0;
-					foreach (var arg in args) {
-						if (!ParserUtils.TryParseUInt32(arg, out var value, out error))
-							return false;
-						osz |= value;
-					}
-					result.Args.Add(result.GetUsedSuffix());
-					result.Args.Add((int)osz);
-					break;
-
-				case "osz":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.os)];
-					result.Args.Add(def.GetOperandSize(64));
-					result.Args.Add((def.Flags1 & InstructionDefFlags1.Bnd) != 0);
-					result.Args.Add(CreateFlagsEnum(gasInstrOpInfoFlags, result.GetUsedFlags()));
-					break;
-
-				case "loop":
-					if (!def.TryGetAddressSize(out addressSize, out error))
-						return false;
-					if (TryGetLoopCcMnemonics(def, out ccIndex, out var extraLoopMnemonic)) {
-						result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.os_loopcc)];
-						result.Args.Add(extraLoopMnemonic);
-						result.Args.Add(result.GetUsedSuffix());
-						result.Args.Add(ccIndex);
-					}
-					else {
-						result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.os_loop)];
-						result.Args.Add(result.GetUsedSuffix());
-					}
-					result.Args.Add(def.GetOperandSize(64));
-					result.Args.Add(addressSize);
-					break;
-
-				case "osz-mem-2":
-					if (!def.TryGetOperandSize(out operandSize, out error))
-						return false;
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.os_mem2)];
-					result.Args.Add(result.GetUsedSuffix());
-					result.Args.Add(operandSize == 16 ? 16 : 32 | 64);
-					break;
-
-				case "osz-suffix-4":
-					result.Args.Add(result.GetUsedSuffix());
-					result.Args.Add(def.GetOperandSize(64));
-					result.Args.Add((def.Flags1 & InstructionDefFlags1.Bnd) != 0);
-					if (result.Flags.Count > 0) {
-						result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.os2_4)];
-						result.Args.Add(CreateFlagsEnum(gasInstrOpInfoFlags, result.GetUsedFlags()));
-					}
-					else
-						result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.os2_3)];
-					break;
-
-				case "xmm0":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.pblendvb)];
-					break;
-
-				case "reg16":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.Reg16)];
-					break;
-
-				case "reg32":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.Reg32)];
-					break;
-
-				case "st1":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.ST_STi)];
-					break;
-
-				case "st2":
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.STi_ST)];
-					if (!TryGetIsPseudoArg(parser, out isPseudo, out error))
-						return false;
-					result.Args.Add(isPseudo);
-					break;
-
-				case "st1-ignore-st1":
-					if (!TryGetIsPseudoArg(parser, out isPseudo, out error))
-						return false;
-					result.CtorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.STIG1)];
-					result.Args.Add(isPseudo);
-					break;
-
-				default:
-					error = $"Unknown value `{ctorKindStr}`";
-					return false;
-				}
-			}
-
-			var garbage = parser.GetRest();
-			if (garbage.Length > 0) {
-				error = $"Extra args: `{string.Join(' ', garbage)}`";
-				return false;
-			}
-
-			state = result;
-			error = null;
-			return true;
-		}
-
-		bool TryCreateGasDef(InstructionDefState def, EnumValue code, string defaultMnemonic, PseudoOpsKind? pseudoOp, GasState state, [NotNullWhen(true)] out FmtInstructionDef? gasDef, [NotNullWhen(false)] out string? error) {
-			gasDef = null;
-
-			var mnemonic = state.Mnemonic ?? defaultMnemonic;
-			var ctorKind = state.CtorKind;
-			if (ctorKind is null) {
-				if (state.Args.Count > 0)
-					throw new InvalidOperationException();
-
-				if (def.PseudoOpsKind is not null) {
-					state.Args.Add(def.PseudoOpsKind);
-					if (pseudoOp == PseudoOpsKind.pclmulqdq || pseudoOp == PseudoOpsKind.vpclmulqdq)
-						ctorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.pclmulqdq)];
-					else {
-						ctorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.pops)];
-						state.Args.Add((def.Flags1 & InstructionDefFlags1.SuppressAllExceptions) != 0);
-					}
-				}
-				else if ((def.Flags1 & InstructionDefFlags1.RoundingControl) != 0) {
-					if (def.OpKinds.Length == 0) {
-						error = "Instruction has no operands";
-						return false;
-					}
-					int erIndex = def.OpKinds[^1] is var lastDef && lastDef.OperandEncoding == OperandEncoding.RegMemModrmRm &&
-						(lastDef.Register == Register.EAX || lastDef.Register == Register.RAX) ? 1 : 0;
-					if (state.Flags.Count != 0 || state.Suffix != null) {
-						ctorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.er_4)];
-						state.Args.Add(state.GetUsedSuffix());
-						state.Args.Add(erIndex);
-						state.Args.Add(CreateFlagsEnum(gasInstrOpInfoFlags, state.GetUsedFlags()));
-					}
-					else {
-						ctorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.er_2)];
-						state.Args.Add(erIndex);
-					}
-				}
-				else if ((def.Flags1 & InstructionDefFlags1.SuppressAllExceptions) != 0) {
-					if (def.OpKinds.Length == 0) {
-						error = "Instruction has no operands";
-						return false;
-					}
-					ctorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.sae)];
-					var saeIndex = def.OpKinds[^1].OperandEncoding == OperandEncoding.Immediate ? 1 : 0;
-					state.Args.Add(saeIndex);
-				}
-				else if (def.BranchKind == BranchKind.JccShort || def.BranchKind == BranchKind.JccNear) {
-					int ccIndex = (int)(def.OpCode.OpCode & 0x0F);
-					var extraMnemonics = jccOtherMnemonics[ccIndex];
-					ctorKind = extraMnemonics.Length switch {
-						0 => gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.os_jcc_1)],
-						1 => gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.os_jcc_2)],
-						2 => gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.os_jcc_3)],
-						_ => throw new InvalidOperationException(),
-					};
-					state.Args.AddRange(extraMnemonics);
-					state.Args.Add(ccIndex);
-					state.Args.Add(def.GetOperandSize(64));
-				}
-				else {
-					if (state.ForceSuffix) {
-						ctorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.Normal_2c)];
-						state.Args.Add(state.GetUsedSuffix());
-					}
-					else if (state.Suffix is not null) {
-						state.Args.Add(state.GetUsedSuffix());
-						if (state.Flags.Count > 0) {
-							ctorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.Normal_3)];
-							state.Args.Add(CreateFlagsEnum(gasInstrOpInfoFlags, state.GetUsedFlags()));
-						}
-						else
-							ctorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.Normal_2a)];
-					}
-					else {
-						if (state.Flags.Count > 0) {
-							ctorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.Normal_2b)];
-							state.Args.Add(CreateFlagsEnum(gasInstrOpInfoFlags, state.GetUsedFlags()));
-						}
-						else
-							ctorKind = gasCtorKind[nameof(Enums.Formatter.Gas.CtorKind.Normal_1)];
-					}
-				}
-			}
-
-			if (!state.UsedSuffix && !VerifyNoSuffix(state, out error))
-				return false;
-			if (!state.UsedFlags && !VerifyNoFlags(state, out error))
-				return false;
-
-			gasDef = new FmtInstructionDef(code, mnemonic, ctorKind, state.Args.ToArray());
 			error = null;
 			return true;
 		}
@@ -3769,17 +3356,6 @@ namespace Generator.Tables {
 			return Flags;
 		}
 	}
-	sealed class GasState : FmtState {
-		public char? Suffix;
-		public bool ForceSuffix;
-
-		public bool UsedSuffix;
-
-		public char GetUsedSuffix() {
-			UsedSuffix = true;
-			return Suffix.GetValueOrDefault();
-		}
-	}
 	sealed class IntelState : FmtState {
 	}
 	sealed class MasmState : FmtState {
@@ -3830,7 +3406,6 @@ namespace Generator.Tables {
 		public MvexInstructionInfo Mvex;
 		public OpCodeDef OpCode;
 		public FastState? FastInfo;
-		public GasState? Gas;
 		public IntelState? Intel;
 		public MasmState? Masm;
 		public NasmState? Nasm;

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if GAS || INTEL || MASM || NASM
+#if INTEL || MASM || NASM
 using System;
 using System.Collections.Generic;
 using Blazed.Intel;
@@ -294,9 +294,6 @@ namespace UnitTests.Intel.FormatterTests {
 			Assert.Equal(CC_le.le, options.CC_le);
 			Assert.Equal(CC_g.g, options.CC_g);
 			Assert.False(options.ShowUselessPrefixes);
-			Assert.False(options.GasNakedRegisters);
-			Assert.False(options.GasShowMnemonicSizeSuffix);
-			Assert.False(options.GasSpaceAfterMemoryOperandComma);
 			Assert.True(options.MasmAddDsPrefix32);
 			Assert.True(options.MasmSymbolDisplInBrackets);
 			Assert.True(options.MasmDisplInBrackets);

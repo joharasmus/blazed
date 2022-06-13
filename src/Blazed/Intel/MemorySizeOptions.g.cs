@@ -5,7 +5,7 @@
 
 #nullable enable
 
-#if GAS || INTEL || MASM || NASM || FAST_FMT
+#if INTEL || MASM || NASM || FAST_FMT
 namespace Blazed.Intel {
 	/// <summary>Memory size options used by the formatters</summary>
 	public enum MemorySizeOptions {

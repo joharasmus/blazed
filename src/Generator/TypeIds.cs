@@ -8,7 +8,6 @@ static class TypeIds {
 	public static readonly TypeId InstructionDefs = new(nameof(InstructionDefs));
 	public static readonly TypeId EncoderTypes = new(nameof(EncoderTypes));
 	public static readonly TypeId InstrInfoTypes = new(nameof(InstrInfoTypes));
-	public static readonly TypeId GasCtorInfos = new(nameof(GasCtorInfos));
 	public static readonly TypeId IntelCtorInfos = new(nameof(IntelCtorInfos));
 	public static readonly TypeId MasmCtorInfos = new(nameof(MasmCtorInfos));
 	public static readonly TypeId NasmCtorInfos = new(nameof(NasmCtorInfos));
@@ -50,12 +49,9 @@ static class TypeIds {
 	public static readonly TypeId TupleType = new(nameof(TupleType));
 	public static readonly TypeId VexOpCodeHandlerKind = new(nameof(VexOpCodeHandlerKind));
 	public static readonly TypeId Mnemonic = new(nameof(Mnemonic));
-	public static readonly TypeId GasCtorKind = new(nameof(GasCtorKind));
 	public static readonly TypeId IntelCtorKind = new(nameof(IntelCtorKind));
 	public static readonly TypeId MasmCtorKind = new(nameof(MasmCtorKind));
 	public static readonly TypeId NasmCtorKind = new(nameof(NasmCtorKind));
-	public static readonly TypeId GasSizeOverride = new(nameof(GasSizeOverride));
-	public static readonly TypeId GasInstrOpInfoFlags = new(nameof(GasInstrOpInfoFlags));
 	public static readonly TypeId IntelSizeOverride = new(nameof(IntelSizeOverride));
 	public static readonly TypeId IntelBranchSizeInfo = new(nameof(IntelBranchSizeInfo));
 	public static readonly TypeId IntelInstrOpInfoFlags = new(nameof(IntelInstrOpInfoFlags));
@@ -136,7 +132,6 @@ static class TypeIds {
 	public static readonly TypeId NumberKind = new(nameof(NumberKind));
 	public static readonly TypeId FormatterTextKind = new(nameof(FormatterTextKind));
 	public static readonly TypeId SymbolFlags = new(nameof(SymbolFlags));
-	public static readonly TypeId GasInstrOpKind = new(nameof(GasInstrOpKind));
 	public static readonly TypeId IntelInstrOpKind = new(nameof(IntelInstrOpKind));
 	public static readonly TypeId MasmInstrOpKind = new(nameof(MasmInstrOpKind));
 	public static readonly TypeId NasmInstrOpKind = new(nameof(NasmInstrOpKind));

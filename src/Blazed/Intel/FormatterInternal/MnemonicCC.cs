@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if GAS || INTEL || MASM || NASM
+#if INTEL || MASM || NASM
 using System;
 using System.Diagnostics;
 

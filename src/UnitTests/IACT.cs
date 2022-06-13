@@ -5,10 +5,10 @@ using System.Runtime.CompilerServices;
 
 [assembly: IgnoresAccessChecksTo("Blazed")]
 
-namespace System.Runtime.CompilerServices {
-	[AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
-	sealed class IgnoresAccessChecksToAttribute : Attribute {
-		public IgnoresAccessChecksToAttribute(string assemblyName) => AssemblyName = assemblyName;
-		public string AssemblyName { get; }
-	}
+namespace System.Runtime.CompilerServices;
+
+[AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
+sealed class IgnoresAccessChecksToAttribute : Attribute {
+	public IgnoresAccessChecksToAttribute(string assemblyName) => AssemblyName = assemblyName;
+	public string AssemblyName { get; }
 }

@@ -20,7 +20,6 @@ sealed class CSharpTableGen : TableGen {
 
 	protected override void Generate(MemorySizeDef[] defs) {
 		GenerateFast(defs);
-		GenerateGas(defs);
 		GenerateIntel(defs);
 		GenerateMasm(defs);
 		GenerateNasm(defs);
@@ -38,41 +37,6 @@ sealed class CSharpTableGen : TableGen {
 			foreach (var kw in defs.Select(a => a.Fast).Distinct().OrderBy(a => a.Value)) {
 				var s = (FastMemoryKeywords)kw.Value == FastMemoryKeywords.None ? string.Empty : (kw.RawName + "_").Replace('_', ' ');
 				writer.WriteLine($"{kw.Value} => \"{s}\",");
-			}
-		});
-	}
-
-	void GenerateGas(MemorySizeDef[] defs) {
-		var blazedConstants = genTypes.GetConstantsType(TypeIds.BlazedConstants);
-		var broadcastToKindValues = genTypes[TypeIds.BroadcastToKind].Values;
-		var filename = CSharpConstants.GetFilename(genTypes, CSharpConstants.GasFormatterNamespace, "MemorySizes.cs");
-		new FileUpdater(TargetLanguage.CSharp, "ConstData", filename).Generate(writer => {
-			foreach (var bcst in broadcastToKindValues) {
-				if ((BroadcastToKind)bcst.Value == BroadcastToKind.None)
-					writer.WriteLine($"var empty = new FormatterString(\"\");");
-				else {
-					var name = bcst.RawName;
-					if (!name.StartsWith("b", StringComparison.Ordinal))
-						throw new InvalidOperationException();
-					var s = name[1..];
-					writer.WriteLine($"var {name} = new FormatterString(\"{s}\");");
-				}
-			}
-		});
-		new FileUpdater(TargetLanguage.CSharp, "BcstTo", filename).Generate(writer => {
-			int first = (int)blazedConstants[BlazedConstants.FirstBroadcastMemorySizeName].ValueUInt64;
-			for (int i = first; i < defs.Length; i++) {
-				writer.WriteByte(checked((byte)defs[i].BroadcastToKind.Value));
-				writer.WriteLine();
-			}
-		});
-		new FileUpdater(TargetLanguage.CSharp, "BroadcastToKindSwitch", filename).Generate(writer => {
-			foreach (var bcst in broadcastToKindValues) {
-				writer.Write($"0x{bcst.Value:X2} => ");
-				if ((BroadcastToKind)bcst.Value == BroadcastToKind.None)
-					writer.WriteLine("empty,");
-				else
-					writer.WriteLine($"{bcst.RawName},");
 			}
 		});
 	}

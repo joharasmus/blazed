@@ -1,18 +1,15 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if GAS || INTEL || MASM || NASM || FAST_FMT
+#if INTEL || MASM || NASM || FAST_FMT
 using System;
 using System.Collections.Generic;
 using Blazed.Intel;
 
 namespace UnitTests.Intel.FormatterTests {
 	static class Utils {
-#if GAS || INTEL || MASM || NASM
+#if INTEL || MASM || NASM
 		public static IEnumerable<Formatter> GetAllFormatters() {
-#if GAS
-			yield return new GasFormatter();
-#endif
 #if INTEL
 			yield return new IntelFormatter();
 #endif

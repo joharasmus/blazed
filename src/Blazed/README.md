@@ -7,9 +7,9 @@ blazed is a freestanding fork of the "iced" project. It is very much WIP.
 iced is a blazing fast and correct x86 (16/32/64-bit) instruction decoder, disassembler and assembler written in C#.
 
 - 👍 Supports all Intel and AMD instructions
-- 👍 Correct: All instructions are tested and iced has been tested against other disassemblers/assemblers (xed, gas, objdump, masm, dumpbin, nasm, ndisasm)
+- 👍 Correct: All instructions are tested and iced has been tested against other disassemblers/assemblers (xed, objdump, masm, dumpbin, nasm, ndisasm)
 - 👍 100% C# code
-- 👍 The formatter supports masm, nasm, gas (AT&T), Intel (XED) and there are many options to customize the output
+- 👍 The formatter supports masm, nasm, Intel (XED) and there are many options to customize the output
 - 👍 The decoder decodes >90 MB/s
 - 👍 Small decoded instructions, only 40 bytes and the decoder doesn't allocate any memory
 - 👍 Create instructions with [code assembler](#assemble-instructions), eg. `asm.mov(eax, edx)`
@@ -37,7 +37,6 @@ Formatters:
 - `Formatter`
     - `MasmFormatter`
     - `NasmFormatter`
-    - `GasFormatter`
     - `IntelFormatter`
     - `FastFormatter`
 - `FormatterOptions`
@@ -117,7 +116,7 @@ static class HowTo_Disassemble {
         while (decoder.IP < endRip)
             instructions.Add(decoder.Decode());
 
-        // Formatters: Masm*, Nasm*, Gas* (AT&T) and Intel* (XED).
+        // Formatters: Masm*, Nasm* and Intel* (XED).
         // There's also `FastFormatter` which is ~2x faster. Use it if formatting speed is more
         // important than being able to re-assemble formatted instructions.
         var formatter = new NasmFormatter();
@@ -297,10 +296,10 @@ static class HowTo_SymbolResolver {
         var decoder = Decoder.Create(64, new ByteArrayCodeReader("488B8AA55AA55A"));
         decoder.Decode(out var instr);
 
-        var formatter = new GasFormatter(symbolResolver);
+        var formatter = new NasmFormatter(symbolResolver);
         var output = new StringOutput();
         formatter.Format(instr, output);
-        // Prints: mov my_data(%rdx),%rcx
+        // Prints:
         Console.WriteLine(output.ToStringAndReset());
     }
 }
