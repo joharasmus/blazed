@@ -1,13 +1,11 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using Xunit;
 
-namespace UnitTests.Intel.FormatterTests.Nasm {
-	public sealed class OpIndexTests : FormatterTests.OpIndexTests {
+namespace UnitTests.Intel.FormatterTests {
+	public sealed class OpIndexTests2 : OpIndexTests {
 		[Fact]
 		void Test() => TestBase(FormatterFactory.Create());
 	}
 }
-#endif

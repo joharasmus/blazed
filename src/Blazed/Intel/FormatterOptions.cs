@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System;
 
 namespace Blazed.Intel {
@@ -43,7 +42,7 @@ namespace Blazed.Intel {
 		[Flags]
 		enum Flags2 : uint {
 			None							= 0,
-			NasmShowSignExtendedImmediateSize=0x00000001,
+			ShowSignExtendedImmediateSize	= 0x00000001,
 			PreferST0						= 0x00000002,
 			ShowUselessPrefixes				= 0x00000004,
 		}
@@ -768,7 +767,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// (nasm only): Shows <c>BYTE</c>, <c>WORD</c>, <c>DWORD</c> or <c>QWORD</c> if it's a sign extended immediate operand value
+		/// Shows <c>BYTE</c>, <c>WORD</c>, <c>DWORD</c> or <c>QWORD</c> if it's a sign extended immediate operand value
 		/// <br/>
 		/// Default: <see langword="false"/>
 		/// <br/>
@@ -776,32 +775,13 @@ namespace Blazed.Intel {
 		/// <br/>
 		/// <see langword="false"/>: <c>or rcx,-1</c>
 		/// </summary>
-		public bool NasmShowSignExtendedImmediateSize {
-			get => (flags2 & Flags2.NasmShowSignExtendedImmediateSize) != 0;
+		public bool ShowSignExtendedImmediateSize {
+			get => (flags2 & Flags2.ShowSignExtendedImmediateSize) != 0;
 			set {
 				if (value)
-					flags2 |= Flags2.NasmShowSignExtendedImmediateSize;
+					flags2 |= Flags2.ShowSignExtendedImmediateSize;
 				else
-					flags2 &= ~Flags2.NasmShowSignExtendedImmediateSize;
-			}
-		}
-
-		/// <summary>
-		/// Use <c>st(0)</c> instead of <c>st</c> if <c>st</c> can be used. Ignored by the nasm formatter.
-		/// <br/>
-		/// Default: <see langword="false"/>
-		/// <br/>
-		/// <see langword="true"/>: <c>fadd st(0),st(3)</c>
-		/// <br/>
-		/// <see langword="false"/>: <c>fadd st,st(3)</c>
-		/// </summary>
-		public bool PreferST0 {
-			get => (flags2 & Flags2.PreferST0) != 0;
-			set {
-				if (value)
-					flags2 |= Flags2.PreferST0;
-				else
-					flags2 &= ~Flags2.PreferST0;
+					flags2 &= ~Flags2.ShowSignExtendedImmediateSize;
 			}
 		}
 
@@ -1004,18 +984,16 @@ namespace Blazed.Intel {
 		}
 		CC_g cc_g = CC_g.g;
 
-#if NASM
 		/// <summary>
-		/// Creates nasm formatter options
+		/// Creates (nasm) formatter options
 		/// </summary>
 		/// <returns></returns>
-		public static FormatterOptions CreateNasm() =>
-			new FormatterOptions {
+		public static FormatterOptions CreateFormatterOptions() =>
+			new() {
 				HexSuffix = "h",
 				OctalSuffix = "o",
 				BinarySuffix = "b",
 			};
-#endif
 	}
 
 	// GENERATOR-BEGIN: NumberBase
@@ -1169,4 +1147,3 @@ namespace Blazed.Intel {
 	}
 	// GENERATOR-END: CC_g
 }
-#endif

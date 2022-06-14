@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System;
 using System.Collections.Generic;
 using Blazed.Intel;
@@ -280,7 +279,6 @@ namespace UnitTests.Intel.FormatterTests {
 			Assert.True(options.ShowBranchSize);
 			Assert.True(options.UsePseudoOps);
 			Assert.False(options.ShowSymbolAddress);
-			Assert.False(options.PreferST0);
 			Assert.Equal(CC_b.b, options.CC_b);
 			Assert.Equal(CC_ae.ae, options.CC_ae);
 			Assert.Equal(CC_e.e, options.CC_e);
@@ -294,7 +292,7 @@ namespace UnitTests.Intel.FormatterTests {
 			Assert.Equal(CC_le.le, options.CC_le);
 			Assert.Equal(CC_g.g, options.CC_g);
 			Assert.False(options.ShowUselessPrefixes);
-			Assert.False(options.NasmShowSignExtendedImmediateSize);
+			Assert.False(options.ShowSignExtendedImmediateSize);
 		}
 
 		[Fact]
@@ -314,4 +312,3 @@ namespace UnitTests.Intel.FormatterTests {
 		}
 	}
 }
-#endif

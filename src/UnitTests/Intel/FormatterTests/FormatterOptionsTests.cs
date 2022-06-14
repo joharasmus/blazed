@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,4 +16,3 @@ namespace UnitTests.Intel.FormatterTests {
 		}
 	}
 }
-#endif

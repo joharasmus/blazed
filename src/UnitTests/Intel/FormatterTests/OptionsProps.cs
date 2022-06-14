@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System;
 using System.Collections.Generic;
 using Blazed.Intel;
@@ -29,7 +28,6 @@ namespace UnitTests.Intel.FormatterTests {
 		IP,
 		LeadingZeros,
 		MemorySizeOptions,
-		NasmShowSignExtendedImmediateSize,
 		NumberBase,
 		OctalDigitGroupSize,
 		OctalPrefix,
@@ -38,6 +36,7 @@ namespace UnitTests.Intel.FormatterTests {
 		RipRelativeAddresses,
 		ScaleBeforeIndex,
 		ShowBranchSize,
+		ShowSignExtendedImmediateSize,
 		ShowSymbolAddress,
 		ShowZeroDisplacements,
 		SignedImmediateOperands,
@@ -82,8 +81,6 @@ namespace UnitTests.Intel.FormatterTests {
 			}
 			return options;
 		}
-
-#if NASM
 		public static void Initialize(FormatterOptions options, OptionsProps property, object value) {
 			switch (property) {
 			case OptionsProps.AddLeadingZeroToHexNumbers: options.AddLeadingZeroToHexNumbers = (bool)value; break;
@@ -104,12 +101,11 @@ namespace UnitTests.Intel.FormatterTests {
 			case OptionsProps.HexSuffix: options.HexSuffix = (string)value; break;
 			case OptionsProps.LeadingZeros: options.LeadingZeros = (bool)value; break;
 			case OptionsProps.MemorySizeOptions: options.MemorySizeOptions = (MemorySizeOptions)value; break;
-			case OptionsProps.NasmShowSignExtendedImmediateSize: options.NasmShowSignExtendedImmediateSize = (bool)value; break;
+			case OptionsProps.ShowSignExtendedImmediateSize: options.ShowSignExtendedImmediateSize = (bool)value; break;
 			case OptionsProps.NumberBase: options.NumberBase = (NumberBase)value; break;
 			case OptionsProps.OctalDigitGroupSize: options.OctalDigitGroupSize = (int)value; break;
 			case OptionsProps.OctalPrefix: options.OctalPrefix = (string)value; break;
 			case OptionsProps.OctalSuffix: options.OctalSuffix = (string)value; break;
-			case OptionsProps.PreferST0: options.PreferST0 = (bool)value; break;
 			case OptionsProps.RipRelativeAddresses: options.RipRelativeAddresses = (bool)value; break;
 			case OptionsProps.ScaleBeforeIndex: options.ScaleBeforeIndex = (bool)value; break;
 			case OptionsProps.ShowBranchSize: options.ShowBranchSize = (bool)value; break;
@@ -155,7 +151,6 @@ namespace UnitTests.Intel.FormatterTests {
 			foreach (var info in properties)
 				Initialize(options, info.property, info.value);
 		}
-#endif
 
 		public static void Initialize(Decoder decoder, OptionsProps property, object value) {
 			switch (property) {
@@ -187,11 +182,8 @@ namespace UnitTests.Intel.FormatterTests {
 			DecoderOptions = OptionsPropsUtils.GetDecoderOptions(properties);
 		}
 
-#if NASM
 		internal void Initialize(FormatterOptions options) => OptionsPropsUtils.Initialize(options, properties);
-#endif
 
 		internal void Initialize(Decoder decoder) => OptionsPropsUtils.Initialize(decoder, properties);
 	}
 }
-#endif

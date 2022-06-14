@@ -1,17 +1,15 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System.Collections.Generic;
 using Blazed.Intel;
-using UnitTests.Intel;
 using Xunit;
 
-namespace UnitTests.Intel.FormatterTests.Nasm {
-	public sealed class MiscTests {
+namespace UnitTests.Intel.FormatterTests {
+	public sealed class MiscTests3 {
 		[Fact]
 		void Verify_default_formatter_options() {
-			var options = FormatterOptions.CreateNasm();
+			var options = FormatterOptions.CreateFormatterOptions();
 			Assert.False(options.UppercasePrefixes);
 			Assert.False(options.UppercaseMnemonics);
 			Assert.False(options.UppercaseRegisters);
@@ -58,7 +56,6 @@ namespace UnitTests.Intel.FormatterTests.Nasm {
 			Assert.True(options.ShowBranchSize);
 			Assert.True(options.UsePseudoOps);
 			Assert.False(options.ShowSymbolAddress);
-			Assert.False(options.PreferST0);
 			Assert.Equal(CC_b.b, options.CC_b);
 			Assert.Equal(CC_ae.ae, options.CC_ae);
 			Assert.Equal(CC_e.e, options.CC_e);
@@ -72,7 +69,7 @@ namespace UnitTests.Intel.FormatterTests.Nasm {
 			Assert.Equal(CC_le.le, options.CC_le);
 			Assert.Equal(CC_g.g, options.CC_g);
 			Assert.False(options.ShowUselessPrefixes);
-			Assert.False(options.NasmShowSignExtendedImmediateSize);
+			Assert.False(options.ShowSignExtendedImmediateSize);
 		}
 
 		[Theory]
@@ -93,17 +90,16 @@ namespace UnitTests.Intel.FormatterTests.Nasm {
 		}
 		public static IEnumerable<object[]> FormatMnemonicOptions_Data {
 			get {
-				var filename = PathUtils.GetTestTextFilename("MnemonicOptions.txt", "Formatter", "Nasm");
+				var filename = PathUtils.GetTestTextFilename("MnemonicOptions.txt", "Formatter");
 				foreach (var tc in MnemonicOptionsTestsReader.ReadFile(filename))
 					yield return new object[6] { tc.HexBytes, tc.Code, tc.Bitness, tc.IP, tc.FormattedString, tc.Flags };
 			}
 		}
 
 		[Fact]
-		void TestFormattingWithDefaultFormatterCtor() => FormatterTestUtils.TestFormatterDoesNotThrow(new NasmFormatter());
+		void TestFormattingWithDefaultFormatterCtor() => FormatterTestUtils.TestFormatterDoesNotThrow(new Formatter());
 
 		[Fact]
-		void TestFormattingWithDefaultFormatterCtor2() => FormatterTestUtils.TestFormatterDoesNotThrow(new NasmFormatter((ISymbolResolver)null));
+		void TestFormattingWithDefaultFormatterCtor2() => FormatterTestUtils.TestFormatterDoesNotThrow(new Formatter((ISymbolResolver)null));
 	}
 }
-#endif

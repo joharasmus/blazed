@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System;
 using System.Collections.Generic;
 using Blazed.Intel;
@@ -24,4 +23,3 @@ static partial class ToEnumConverter {
 		};
 		// GENERATOR-END: MemorySizeOptionsHash
 }
-#endif

@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -100,9 +99,9 @@ namespace UnitTests.Intel.FormatterTests {
 			}
 		}
 
-		public static IEnumerable<object[]> GetFormatData(int bitness, string formatterDir, string formattedStringsFile, bool isMisc = false) {
+		public static IEnumerable<object[]> GetFormatData(int bitness, string formattedStringsFile, bool isMisc = false) {
 			var data = GetInstructionInfos(bitness, isMisc);
-			var formattedStrings = FileUtils.ReadRawStrings(Path.Combine(formatterDir, $"Test{bitness}_{formattedStringsFile}")).ToArray();
+			var formattedStrings = FileUtils.ReadRawStrings($"Test{bitness}_{formattedStringsFile}").ToArray();
 			return GetFormatData(data.infos, data.ignored, formattedStrings);
 		}
 
@@ -116,8 +115,8 @@ namespace UnitTests.Intel.FormatterTests {
 			return res;
 		}
 
-		public static IEnumerable<object[]> GetFormatData(int bitness, (string hexBytes, Instruction instruction)[] infos, string formatterDir, string formattedStringsFile) {
-			var formattedStrings = FileUtils.ReadRawStrings(Path.Combine(formatterDir, $"Test{bitness}_{formattedStringsFile}")).ToArray();
+		public static IEnumerable<object[]> GetFormatData(int bitness, (string hexBytes, Instruction instruction)[] infos, string formattedStringsFile) {
+			var formattedStrings = FileUtils.ReadRawStrings($"Test{bitness}_{formattedStringsFile}").ToArray();
 			return GetFormatData(infos, formattedStrings);
 		}
 
@@ -131,4 +130,3 @@ namespace UnitTests.Intel.FormatterTests {
 		}
 	}
 }
-#endif

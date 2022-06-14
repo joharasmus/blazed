@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System;
 using Blazed.Intel;
 using Xunit;
@@ -42,4 +41,3 @@ namespace UnitTests.Intel.FormatterTests {
 		}
 	}
 }
-#endif

@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System;
 using System.Collections.Generic;
 using UnitTests.Intel.FormatterTests;
@@ -35,7 +34,6 @@ static partial class ToEnumConverter {
 			{ "IP", OptionsProps.IP },
 			{ "LeadingZeros", OptionsProps.LeadingZeros },
 			{ "MemorySizeOptions", OptionsProps.MemorySizeOptions },
-			{ "NasmShowSignExtendedImmediateSize", OptionsProps.NasmShowSignExtendedImmediateSize },
 			{ "NumberBase", OptionsProps.NumberBase },
 			{ "OctalDigitGroupSize", OptionsProps.OctalDigitGroupSize },
 			{ "OctalPrefix", OptionsProps.OctalPrefix },
@@ -44,6 +42,7 @@ static partial class ToEnumConverter {
 			{ "RipRelativeAddresses", OptionsProps.RipRelativeAddresses },
 			{ "ScaleBeforeIndex", OptionsProps.ScaleBeforeIndex },
 			{ "ShowBranchSize", OptionsProps.ShowBranchSize },
+			{ "ShowSignExtendedImmediateSize", OptionsProps.ShowSignExtendedImmediateSize },
 			{ "ShowSymbolAddress", OptionsProps.ShowSymbolAddress },
 			{ "ShowZeroDisplacements", OptionsProps.ShowZeroDisplacements },
 			{ "SignedImmediateOperands", OptionsProps.SignedImmediateOperands },
@@ -79,4 +78,3 @@ static partial class ToEnumConverter {
 		};
 		// GENERATOR-END: OptionsPropsHash
 }
-#endif

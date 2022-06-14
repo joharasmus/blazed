@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System;
 
 namespace UnitTests.Intel.FormatterTests {
@@ -21,7 +20,7 @@ namespace UnitTests.Intel.FormatterTests {
 			case OptionsProps.BranchLeadingZeros:
 			case OptionsProps.DisplacementLeadingZeros:
 			case OptionsProps.LeadingZeros:
-			case OptionsProps.NasmShowSignExtendedImmediateSize:
+			case OptionsProps.ShowSignExtendedImmediateSize:
 			case OptionsProps.PreferST0:
 			case OptionsProps.RipRelativeAddresses:
 			case OptionsProps.ScaleBeforeIndex:
@@ -77,107 +76,55 @@ namespace UnitTests.Intel.FormatterTests {
 				break;
 
 			case OptionsProps.NumberBase:
-#if NASM
-				value = ToEnumConverter.GetNumberBase(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetNumberBase(valueStr);			
 				break;
 
 			case OptionsProps.CC_b:
-#if NASM
-				value = ToEnumConverter.GetCC_b(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetCC_b(valueStr);				
 				break;
 
 			case OptionsProps.CC_ae:
-#if NASM
-				value = ToEnumConverter.GetCC_ae(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetCC_ae(valueStr);				
 				break;
 
 			case OptionsProps.CC_e:
-#if NASM
-				value = ToEnumConverter.GetCC_e(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetCC_e(valueStr);				
 				break;
 
 			case OptionsProps.CC_ne:
-#if NASM
-				value = ToEnumConverter.GetCC_ne(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetCC_ne(valueStr);				
 				break;
 
 			case OptionsProps.CC_be:
-#if NASM
-				value = ToEnumConverter.GetCC_be(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetCC_be(valueStr);				
 				break;
 
 			case OptionsProps.CC_a:
-#if NASM
-				value = ToEnumConverter.GetCC_a(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetCC_a(valueStr);					
 				break;
 
 			case OptionsProps.CC_p:
-#if NASM
-				value = ToEnumConverter.GetCC_p(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetCC_p(valueStr);				
 				break;
 
 			case OptionsProps.CC_np:
-#if NASM
-				value = ToEnumConverter.GetCC_np(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetCC_np(valueStr);					
 				break;
 
 			case OptionsProps.CC_l:
-#if NASM
-				value = ToEnumConverter.GetCC_l(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetCC_l(valueStr);			
 				break;
 
 			case OptionsProps.CC_ge:
-#if NASM
-				value = ToEnumConverter.GetCC_ge(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetCC_ge(valueStr);					
 				break;
 
 			case OptionsProps.CC_le:
-#if NASM
-				value = ToEnumConverter.GetCC_le(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetCC_le(valueStr);				
 				break;
 
 			case OptionsProps.CC_g:
-#if NASM
-				value = ToEnumConverter.GetCC_g(valueStr);
-#else
-				value = new object();			
-#endif			
+				value = ToEnumConverter.GetCC_g(valueStr);				
 				break;
 
 			case OptionsProps.DecoderOptions:
@@ -191,4 +138,3 @@ namespace UnitTests.Intel.FormatterTests {
 		}
 	}
 }
-#endif

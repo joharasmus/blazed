@@ -1,13 +1,12 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using Blazed.Intel;
 
-namespace UnitTests.Intel.FormatterTests.Nasm {
+namespace UnitTests.Intel.FormatterTests {
 	static class FormatterFactory {
 		static FormatterOptions CreateOptions() {
-			var options = FormatterOptions.CreateNasm();
+			var options = FormatterOptions.CreateFormatterOptions();
 			options.UppercaseHex = false;
 			options.HexPrefix = "0x";
 			options.HexSuffix = null;
@@ -18,63 +17,63 @@ namespace UnitTests.Intel.FormatterTests.Nasm {
 			return options;
 		}
 
-		public static NasmFormatter Create_MemDefault() {
+		public static Formatter Create_MemDefault() {
 			var options = CreateOptions();
 			options.MemorySizeOptions = MemorySizeOptions.Default;
-			options.NasmShowSignExtendedImmediateSize = true;
+			options.ShowSignExtendedImmediateSize = true;
 			options.ShowBranchSize = false;
 			options.RipRelativeAddresses = true;
 			options.SignedImmediateOperands = false;
 			options.SpaceAfterOperandSeparator = false;
-			return new NasmFormatter(options);
+			return new Formatter(options);
 		}
 
-		public static NasmFormatter Create_MemAlways() {
+		public static Formatter Create_MemAlways() {
 			var options = CreateOptions();
 			options.MemorySizeOptions = MemorySizeOptions.Always;
-			options.NasmShowSignExtendedImmediateSize = true;
+			options.ShowSignExtendedImmediateSize = true;
 			options.ShowBranchSize = true;
 			options.RipRelativeAddresses = false;
 			options.SignedImmediateOperands = true;
 			options.SpaceAfterOperandSeparator = true;
-			return new NasmFormatter(options);
+			return new Formatter(options);
 		}
 
-		public static NasmFormatter Create_MemMinimum() {
+		public static Formatter Create_MemMinimum() {
 			var options = CreateOptions();
 			options.MemorySizeOptions = MemorySizeOptions.Minimal;
-			options.NasmShowSignExtendedImmediateSize = true;
+			options.ShowSignExtendedImmediateSize = true;
 			options.ShowBranchSize = true;
 			options.RipRelativeAddresses = false;
 			options.SignedImmediateOperands = true;
 			options.SpaceAfterOperandSeparator = true;
-			return new NasmFormatter(options);
+			return new Formatter(options);
 		}
 
-		public static NasmFormatter Create() {
+		public static Formatter Create() {
 			var options = CreateOptions();
 			options.MemorySizeOptions = MemorySizeOptions.Default;
-			options.NasmShowSignExtendedImmediateSize = true;
+			options.ShowSignExtendedImmediateSize = true;
 			options.ShowBranchSize = false;
 			options.RipRelativeAddresses = true;
-			return new NasmFormatter(options);
+			return new Formatter(options);
 		}
 
-		public static NasmFormatter Create_Options() {
+		public static Formatter Create_Options() {
 			var options = CreateOptions();
 			options.MemorySizeOptions = MemorySizeOptions.Default;
-			options.NasmShowSignExtendedImmediateSize = false;
+			options.ShowSignExtendedImmediateSize = false;
 			options.ShowBranchSize = false;
 			options.RipRelativeAddresses = true;
-			return new NasmFormatter(options);
+			return new Formatter(options);
 		}
 
-		public static NasmFormatter Create_Registers() {
+		public static Formatter Create_Registers() {
 			var options = CreateOptions();
-			return new NasmFormatter(options);
+			return new Formatter(options);
 		}
 
-		public static NasmFormatter Create_Numbers() {
+		public static Formatter Create_Numbers() {
 			var options = CreateOptions();
 			options.UppercaseHex = true;
 			options.HexPrefix = null;
@@ -83,17 +82,16 @@ namespace UnitTests.Intel.FormatterTests.Nasm {
 			options.OctalSuffix = null;
 			options.BinaryPrefix = null;
 			options.BinarySuffix = null;
-			return new NasmFormatter(options);
+			return new Formatter(options);
 		}
 
 		public static (Formatter formatter, ISymbolResolver symbolResolver) Create_Resolver(ISymbolResolver symbolResolver) {
 			var options = CreateOptions();
 			options.MemorySizeOptions = MemorySizeOptions.Default;
-			options.NasmShowSignExtendedImmediateSize = false;
+			options.ShowSignExtendedImmediateSize = false;
 			options.ShowBranchSize = false;
 			options.RipRelativeAddresses = true;
-			return (new NasmFormatter(options, symbolResolver), symbolResolver);
+			return (new Formatter(options, symbolResolver), symbolResolver);
 		}
 	}
 }
-#endif

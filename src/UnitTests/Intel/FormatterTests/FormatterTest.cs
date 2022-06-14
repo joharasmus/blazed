@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using Blazed.Intel;
 
 namespace UnitTests.Intel.FormatterTests {
@@ -13,4 +12,3 @@ namespace UnitTests.Intel.FormatterTests {
 			FormatterTestUtils.FormatTest(instruction, formattedString, formatter);
 	}
 }
-#endif

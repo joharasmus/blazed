@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 namespace Blazed.Intel {
 	/// <summary>
 	/// Used by a <see cref="Formatter"/> to write all text
@@ -209,4 +208,3 @@ namespace Blazed.Intel {
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 	// GENERATOR-END: NumberKind
 }
-#endif

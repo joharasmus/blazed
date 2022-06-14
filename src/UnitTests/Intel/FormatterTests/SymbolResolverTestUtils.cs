@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,9 +8,9 @@ using System.Linq;
 
 namespace UnitTests.Intel.FormatterTests {
 	static class SymbolResolverTestUtils {
-		public static IEnumerable<object[]> GetFormatData(string formatterDir, string formattedStringsFile) {
+		public static IEnumerable<object[]> GetFormatData(string formattedStringsFile) {
 			var (infos, ignored) = SymbolResolverTestInfos.AllInfos;
-			var formattedStrings = FileUtils.ReadRawStrings(Path.Combine(formatterDir, formattedStringsFile)).ToArray();
+			var formattedStrings = FileUtils.ReadRawStrings(formattedStringsFile).ToArray();
 			formattedStrings = Utils.Filter(formattedStrings, ignored);
 			if (infos.Length != formattedStrings.Length)
 				throw new ArgumentException($"(infos.Length) {infos.Length} != (formattedStrings.Length) {formattedStrings.Length} . infos[0].HexBytes = {(infos.Length == 0 ? "<EMPTY>" : infos[0].HexBytes)} & formattedStrings[0] = {(formattedStrings.Length == 0 ? "<EMPTY>" : formattedStrings[0])}");
@@ -22,4 +21,3 @@ namespace UnitTests.Intel.FormatterTests {
 		}
 	}
 }
-#endif

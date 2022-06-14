@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,8 +10,8 @@ using Xunit;
 
 namespace UnitTests.Intel.FormatterTests {
 	public abstract class RegisterTests {
-		protected static IEnumerable<object[]> GetFormatData(string formatterDir, string formattedRegistersFile) {
-			var formattedRegisters = FileUtils.ReadRawStrings(Path.Combine(formatterDir, formattedRegistersFile)).ToArray();
+		protected static IEnumerable<object[]> GetFormatData(string formattedRegistersFile) {
+			var formattedRegisters = FileUtils.ReadRawStrings(formattedRegistersFile).ToArray();
 			if (BlazedConstants.RegisterEnumCount != formattedRegisters.Length)
 				throw new ArgumentException($"({nameof(BlazedConstants.RegisterEnumCount)}) {BlazedConstants.RegisterEnumCount} != (formattedRegisters.Length) {formattedRegisters.Length}");
 			var res = new object[formattedRegisters.Length][];
@@ -39,4 +38,3 @@ namespace UnitTests.Intel.FormatterTests {
 		}
 	}
 }
-#endif

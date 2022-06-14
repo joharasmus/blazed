@@ -9,7 +9,7 @@ iced is a blazing fast and correct x86 (16/32/64-bit) instruction decoder, disas
 - 👍 Supports all Intel and AMD instructions
 - 👍 Correct: All instructions are tested and iced has been tested against other disassemblers/assemblers (objdump, dumpbin, nasm, ndisasm)
 - 👍 100% C# code
-- 👍 The formatter supports nasm and there are many options to customize the output
+- 👍 The formatter supports nasm-style syntax and there are many options to customize the output
 - 👍 The decoder decodes >90 MB/s
 - 👍 Small decoded instructions, only 40 bytes and the decoder doesn't allocate any memory
 - 👍 Create instructions with [code assembler](#assemble-instructions), eg. `asm.mov(eax, edx)`
@@ -35,7 +35,6 @@ Decoder:
 Formatters:
 
 - `Formatter`
-    - `NasmFormatter`
 - `FormatterOptions`
 - `FormatterOutput`
     - `StringOutput`
@@ -113,8 +112,7 @@ static class HowTo_Disassemble {
         while (decoder.IP < endRip)
             instructions.Add(decoder.Decode());
 
-        // Formatters: NasmFormatter
-        var formatter = new NasmFormatter();
+        var formatter = new Formatter();
         formatter.Options.DigitSeparator = "`";
         formatter.Options.FirstOperandCharIndex = 10;
         var output = new StringOutput();
@@ -291,7 +289,7 @@ static class HowTo_SymbolResolver {
         var decoder = Decoder.Create(64, new ByteArrayCodeReader("488B8AA55AA55A"));
         decoder.Decode(out var instr);
 
-        var formatter = new NasmFormatter(symbolResolver);
+        var formatter = new Formatter(symbolResolver);
         var output = new StringOutput();
         formatter.Format(instr, output);
         // Prints:
@@ -313,7 +311,7 @@ static class HowTo_ColorizedText {
         var decoder = Decoder.Create(exampleCodeBitness, codeReader);
         decoder.IP = exampleCodeRIP;
 
-        var formatter = new NasmFormatter();
+        var formatter = new Formatter();
         var output = new FormatterOutputImpl();
         foreach (var instr in decoder) {
             output.List.Clear();
@@ -518,7 +516,7 @@ Moved code:
 
         // Disassemble it
         Console.WriteLine("Original + patched code:");
-        var formatter = new NasmFormatter();
+        var formatter = new Formatter();
         var output = new StringOutput();
         codeReader = new ByteArrayCodeReader(exampleCode);
         decoder = Decoder.Create(exampleCodeBitness, codeReader);
@@ -547,7 +545,7 @@ Moved code:
         Disassemble(newCode, relocatedBaseAddress);
     }
     static void Disassemble(byte[] data, ulong ip) {
-        var formatter = new NasmFormatter();
+        var formatter = new Formatter();
         var output = new StringOutput();
         var codeReader = new ByteArrayCodeReader(data);
         var decoder = Decoder.Create(exampleCodeBitness, codeReader);
@@ -972,7 +970,7 @@ static class HowTo_DisassembleOldInstructions {
         var decoder = Decoder.Create(32, codeReader, decoderOptions);
         decoder.IP = 0x731E_0A03;
 
-        var formatter = new NasmFormatter();
+        var formatter = new Formatter();
         formatter.Options.SpaceAfterOperandSeparator = true;
         var output = new StringOutput();
 

@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2018-present iced project and contributors
 
-#if NASM
 using System;
 using Blazed.Intel.FormatterInternal;
 
@@ -199,4 +198,3 @@ namespace Blazed.Intel {
 		static readonly FormatterString[] vpcmpuq_pseudo_ops;
 	}
 }
-#endif

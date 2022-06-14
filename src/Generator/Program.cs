@@ -6,9 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using Generator.Enums.InstructionInfo;
 
 namespace Generator; 
@@ -45,8 +43,11 @@ sealed class GeneratorInfo {
 	}
 
 	public void Invoke(GeneratorContext generatorContext) {
+
 		var instance = ctor.Invoke(new[] { generatorContext }) ?? throw new InvalidOperationException();
-		method.Invoke(instance, null);
+		var flag = BindingFlags.Default;
+		method.Invoke(instance, flag, null, null, null);
+		return;
 	}
 }
 
@@ -69,14 +70,14 @@ static class Program {
 			}
 
 			var generatorContext = CreateGeneratorContext(options.GeneratorFlags, options.IncludeCpuid, options.ExcludeCpuid);
+
 			CodeComments.AddComments(generatorContext.Types);
 
-			// It's not much of an improvement in speed at the moment.
-			// Group by lang since different lang gens don't write to the same files.
-			Parallel.ForEach(Filter(GetGenerators()).GroupBy(a => a.Language).Select(a => a.ToArray()), genInfos => {
-				foreach (var genInfo in genInfos)
-					genInfo.Invoke(generatorContext);
-			});
+			var generatorInfos = GetGenerators();
+			foreach(var genInfo in generatorInfos) {
+				genInfo.Invoke(generatorContext);
+				Console.WriteLine($"{genInfo.TypeName} has executed successfully.");
+			}
 
 			return 0;
 		}
@@ -84,12 +85,6 @@ static class Program {
 			Console.WriteLine(ex.ToString());
 			Debug.Fail("Exception:\n\n" + ex.ToString());
 			return 1;
-		}
-	}
-
-	static IEnumerable<GeneratorInfo> Filter(List<GeneratorInfo> genInfos) {
-		foreach (var genInfo in genInfos) {
-			yield return genInfo;
 		}
 	}
 
