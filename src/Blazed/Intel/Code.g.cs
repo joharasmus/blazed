@@ -10,13 +10,13 @@ namespace Blazed.Intel {
 	public enum Code {
 		/// <summary>It&apos;s an invalid instruction, eg. it&apos;s a new unknown instruction, garbage or there&apos;s not enough bytes to decode the instruction etc.</summary>
 		INVALID = 0,
-		/// <summary>A <c>db</c>/<c>.byte</c> asm directive that can store 1-16 bytes</summary>
+		/// <summary>A <c>db</c>/<c>.byte</c> Asm directive that can store 1-16 bytes</summary>
 		DeclareByte = 1,
-		/// <summary>A <c>dw</c>/<c>.word</c> asm directive that can store 1-8 words</summary>
+		/// <summary>A <c>dw</c>/<c>.word</c> Asm directive that can store 1-8 words</summary>
 		DeclareWord = 2,
-		/// <summary>A <c>dd</c>/<c>.int</c> asm directive that can store 1-4 dwords</summary>
+		/// <summary>A <c>dd</c>/<c>.int</c> Asm directive that can store 1-4 dwords</summary>
 		DeclareDword = 3,
-		/// <summary>A <c>dq</c>/<c>.quad</c> asm directive that can store 1-2 qwords</summary>
+		/// <summary>A <c>dq</c>/<c>.quad</c> Asm directive that can store 1-2 qwords</summary>
 		DeclareQword = 4,
 		/// <summary><c>ADD r/m8, r8</c><br/>
 		/// <br/>

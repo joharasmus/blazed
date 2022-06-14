@@ -68,7 +68,7 @@ namespace Generator.Tables {
 			"cflow",
 			"dec-opt",
 			"pseudo",
-			"Asm",
+			"asm",
 		};
 
 		readonly struct OpKindKey : IEquatable<OpKindKey> {
@@ -823,7 +823,7 @@ namespace Generator.Tables {
 							}
 							break;
 
-						case "Asm":
+						case "asm":
 							if (state.AsmMnemonic is not null) {
 								Error(lineIndex, $"Duplicate {newKey}");
 								return false;
@@ -831,11 +831,11 @@ namespace Generator.Tables {
 							state.AsmMnemonic = newValue;
 							break;
 
-						case "Asm-ig":
+						case "asm-ig":
 							state.Flags3 |= InstructionDefFlags3.AsmIgnore;
 							break;
 
-						case "Asm-ig-mem":
+						case "asm-ig-mem":
 							state.Flags3 |= InstructionDefFlags3.AsmIgnoreMemory;
 							break;
 

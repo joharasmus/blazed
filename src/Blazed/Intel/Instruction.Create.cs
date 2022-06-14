@@ -2049,7 +2049,7 @@ namespace Blazed.Intel {
 			CreateMaskmov(Code.VEX_Vmaskmovdqu_rDI_xmm_xmm, addressSize, register1, register2, segmentPrefix);
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		public static Instruction CreateDeclareByte(byte b0) {
@@ -2064,7 +2064,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2081,7 +2081,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2100,7 +2100,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2121,7 +2121,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2144,7 +2144,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2169,7 +2169,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2196,7 +2196,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2225,7 +2225,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2256,7 +2256,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2289,7 +2289,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2324,7 +2324,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2361,7 +2361,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2400,7 +2400,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2441,7 +2441,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2484,7 +2484,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="b0">Byte 0</param>
 		/// <param name="b1">Byte 1</param>
@@ -2529,7 +2529,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareByte(ReadOnlySpan<byte> data) {
@@ -2548,7 +2548,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareByte(byte[] data) {
@@ -2558,7 +2558,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>db</c>/<c>.byte</c> asm directive
+		/// Creates a <c>db</c>/<c>.byte</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		/// <param name="index">Start index</param>
@@ -2583,7 +2583,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="w0">Word 0</param>
 		public static Instruction CreateDeclareWord(ushort w0) {
@@ -2598,7 +2598,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="w0">Word 0</param>
 		/// <param name="w1">Word 1</param>
@@ -2615,7 +2615,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="w0">Word 0</param>
 		/// <param name="w1">Word 1</param>
@@ -2634,7 +2634,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="w0">Word 0</param>
 		/// <param name="w1">Word 1</param>
@@ -2655,7 +2655,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="w0">Word 0</param>
 		/// <param name="w1">Word 1</param>
@@ -2678,7 +2678,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="w0">Word 0</param>
 		/// <param name="w1">Word 1</param>
@@ -2703,7 +2703,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="w0">Word 0</param>
 		/// <param name="w1">Word 1</param>
@@ -2730,7 +2730,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="w0">Word 0</param>
 		/// <param name="w1">Word 1</param>
@@ -2759,7 +2759,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareWord(ReadOnlySpan<byte> data) {
@@ -2780,7 +2780,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareWord(byte[] data) {
@@ -2790,7 +2790,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		/// <param name="index">Start index</param>
@@ -2817,7 +2817,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareWord(ReadOnlySpan<ushort> data) {
@@ -2836,7 +2836,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareWord(ushort[] data) {
@@ -2846,7 +2846,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dw</c>/<c>.word</c> asm directive
+		/// Creates a <c>dw</c>/<c>.word</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		/// <param name="index">Start index</param>
@@ -2871,7 +2871,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dd</c>/<c>.int</c> asm directive
+		/// Creates a <c>dd</c>/<c>.int</c> Asm directive
 		/// </summary>
 		/// <param name="d0">Dword 0</param>
 		public static Instruction CreateDeclareDword(uint d0) {
@@ -2886,7 +2886,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dd</c>/<c>.int</c> asm directive
+		/// Creates a <c>dd</c>/<c>.int</c> Asm directive
 		/// </summary>
 		/// <param name="d0">Dword 0</param>
 		/// <param name="d1">Dword 1</param>
@@ -2903,7 +2903,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dd</c>/<c>.int</c> asm directive
+		/// Creates a <c>dd</c>/<c>.int</c> Asm directive
 		/// </summary>
 		/// <param name="d0">Dword 0</param>
 		/// <param name="d1">Dword 1</param>
@@ -2922,7 +2922,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dd</c>/<c>.int</c> asm directive
+		/// Creates a <c>dd</c>/<c>.int</c> Asm directive
 		/// </summary>
 		/// <param name="d0">Dword 0</param>
 		/// <param name="d1">Dword 1</param>
@@ -2943,7 +2943,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dd</c>/<c>.int</c> asm directive
+		/// Creates a <c>dd</c>/<c>.int</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareDword(ReadOnlySpan<byte> data) {
@@ -2964,7 +2964,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dd</c>/<c>.int</c> asm directive
+		/// Creates a <c>dd</c>/<c>.int</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareDword(byte[] data) {
@@ -2974,7 +2974,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dd</c>/<c>.int</c> asm directive
+		/// Creates a <c>dd</c>/<c>.int</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		/// <param name="index">Start index</param>
@@ -3001,7 +3001,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dd</c>/<c>.int</c> asm directive
+		/// Creates a <c>dd</c>/<c>.int</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareDword(ReadOnlySpan<uint> data) {
@@ -3020,7 +3020,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dd</c>/<c>.int</c> asm directive
+		/// Creates a <c>dd</c>/<c>.int</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareDword(uint[] data) {
@@ -3030,7 +3030,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dd</c>/<c>.int</c> asm directive
+		/// Creates a <c>dd</c>/<c>.int</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		/// <param name="index">Start index</param>
@@ -3055,7 +3055,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dq</c>/<c>.quad</c> asm directive
+		/// Creates a <c>dq</c>/<c>.quad</c> Asm directive
 		/// </summary>
 		/// <param name="q0">Qword 0</param>
 		public static Instruction CreateDeclareQword(ulong q0) {
@@ -3070,7 +3070,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dq</c>/<c>.quad</c> asm directive
+		/// Creates a <c>dq</c>/<c>.quad</c> Asm directive
 		/// </summary>
 		/// <param name="q0">Qword 0</param>
 		/// <param name="q1">Qword 1</param>
@@ -3087,7 +3087,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dq</c>/<c>.quad</c> asm directive
+		/// Creates a <c>dq</c>/<c>.quad</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareQword(ReadOnlySpan<byte> data) {
@@ -3109,7 +3109,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dq</c>/<c>.quad</c> asm directive
+		/// Creates a <c>dq</c>/<c>.quad</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareQword(byte[] data) {
@@ -3119,7 +3119,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dq</c>/<c>.quad</c> asm directive
+		/// Creates a <c>dq</c>/<c>.quad</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		/// <param name="index">Start index</param>
@@ -3147,7 +3147,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dq</c>/<c>.quad</c> asm directive
+		/// Creates a <c>dq</c>/<c>.quad</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareQword(ReadOnlySpan<ulong> data) {
@@ -3166,7 +3166,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dq</c>/<c>.quad</c> asm directive
+		/// Creates a <c>dq</c>/<c>.quad</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		public static Instruction CreateDeclareQword(ulong[] data) {
@@ -3176,7 +3176,7 @@ namespace Blazed.Intel {
 		}
 
 		/// <summary>
-		/// Creates a <c>dq</c>/<c>.quad</c> asm directive
+		/// Creates a <c>dq</c>/<c>.quad</c> Asm directive
 		/// </summary>
 		/// <param name="data">Data</param>
 		/// <param name="index">Start index</param>
