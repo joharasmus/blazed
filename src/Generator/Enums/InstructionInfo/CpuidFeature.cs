@@ -290,8 +290,6 @@ namespace Generator.Enums.InstructionInfo {
 		CYRIX_SHR,
 		[Comment("Cyrix DDI instructions: #(c:BB0_Reset)#, #(c:BB1_Reset)#, #(c:CPU_READ)#, #(c:CPU_WRITE)# (MediaGX, GXm, GXLV, GX1)")]
 		CYRIX_DDI,
-		[Comment("Cyrix AND CPUID.80000001H:EDX.EMMI[bit 24]")]
-		CYRIX_EMMI,
 		[Comment("CPUID.0C0000000H:EAX >= 0C0000001H AND CPUID.0C0000001H:EDX.AIS[Bits 1:0] = 11B ([0] = exists, [1] = enabled)")]
 		CENTAUR_AIS,
 		[Comment("MOV to/from TR (80386, Intel486, Cyrix, Geode)")]

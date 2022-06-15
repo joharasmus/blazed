@@ -295,42 +295,40 @@ namespace Blazed.Intel {
 		CYRIX_SHR = 141,
 		/// <summary>Cyrix DDI instructions: <c>BB0_Reset</c>, <c>BB1_Reset</c>, <c>CPU_READ</c>, <c>CPU_WRITE</c> (MediaGX, GXm, GXLV, GX1)</summary>
 		CYRIX_DDI = 142,
-		/// <summary>Cyrix AND CPUID.80000001H:EDX.EMMI[bit 24]</summary>
-		CYRIX_EMMI = 143,
 		/// <summary>CPUID.0C0000000H:EAX &gt;= 0C0000001H AND CPUID.0C0000001H:EDX.AIS[Bits 1:0] = 11B ([0] = exists, [1] = enabled)</summary>
-		CENTAUR_AIS = 144,
+		CENTAUR_AIS = 143,
 		/// <summary>MOV to/from TR (80386, Intel486, Cyrix, Geode)</summary>
-		MOV_TR = 145,
+		MOV_TR = 144,
 		/// <summary><c>RSM</c> instruction (some 386s, some 486s, Pentium and later)</summary>
-		SMM = 146,
+		SMM = 145,
 		/// <summary>CPUID.(EAX=??H, ECX=?H):???.????[bit ??]</summary>
-		TDX = 147,
+		TDX = 146,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):ECX.KL[bit 23]</summary>
-		KL = 148,
+		KL = 147,
 		/// <summary>CPUID.19H:EBX.AESKLE[bit 0]</summary>
-		AESKLE = 149,
+		AESKLE = 148,
 		/// <summary>CPUID.19H:EBX.WIDE_KL[bit 2]</summary>
-		WIDE_KL = 150,
+		WIDE_KL = 149,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.UINTR[bit 5]</summary>
-		UINTR = 151,
+		UINTR = 150,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.HRESET[bit 22]</summary>
-		HRESET = 152,
+		HRESET = 151,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.AVX-VNNI[bit 4]</summary>
-		AVX_VNNI = 153,
+		AVX_VNNI = 152,
 		/// <summary>CPUID.0C0000000H:EAX &gt;= 0C0000001H AND CPUID.0C0000001H:EDX.GMI[Bits 5:4] = 11B ([4] = exists, [5] = enabled)</summary>
-		PADLOCK_GMI = 154,
+		PADLOCK_GMI = 153,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.FRED[bit 17]</summary>
-		FRED = 155,
+		FRED = 154,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.LKGS[bit 18]</summary>
-		LKGS = 156,
+		LKGS = 155,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.AVX512-FP16[bit 23]</summary>
-		AVX512_FP16 = 157,
+		AVX512_FP16 = 156,
 		/// <summary>Undocumented Intel <c>RDUDBG</c> and <c>WRUDBG</c> instructions</summary>
-		UDBG = 158,
+		UDBG = 157,
 		/// <summary>Intel Knights Corner</summary>
-		KNC = 159,
+		KNC = 158,
 		/// <summary>Undocumented instruction</summary>
-		PADLOCK_UNDOC = 160,
+		PADLOCK_UNDOC = 159,
 	}
 }
 #endif

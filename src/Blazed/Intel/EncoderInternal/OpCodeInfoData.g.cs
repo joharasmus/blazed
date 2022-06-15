@@ -12,7 +12,7 @@ namespace Blazed.Intel.EncoderInternal {
 		internal static readonly uint[] OpcFlags2 = GetOpcFlags2();
 
 		static uint[] GetOpcFlags1() =>
-			new uint[4832] {
+			new uint[4820] {
 				0x00000000,// INVALID
 				0x00000000,// DeclareByte
 				0x00000000,// DeclareWord
@@ -4266,18 +4266,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x00808001,// Cpu_write
 				0x00808001,// Cpu_read
 				0x00200000,// Altinst
-				0x00800000,// Paveb_mm_mmm64
-				0x00800000,// Paddsiw_mm_mmm64
-				0x00800000,// Pmagw_mm_mmm64
-				0x00800000,// Pdistib_mm_m64
-				0x00800000,// Psubsiw_mm_mmm64
-				0x00800000,// Pmvzb_mm_m64
-				0x00800000,// Pmulhrw_mm_mmm64
-				0x00800000,// Pmvnzb_mm_m64
-				0x00800000,// Pmvlzb_mm_m64
-				0x00800000,// Pmvgezb_mm_m64
-				0x00800000,// Pmulhriw_mm_mmm64
-				0x00800000,// Pmachriw_mm_m64
 				0x00800000,// Cyrix_D9D7
 				0x00800000,// Cyrix_D9E2
 				0x00800000,// Ftstp
@@ -4848,7 +4836,7 @@ namespace Blazed.Intel.EncoderInternal {
 			};
 
 		static uint[] GetOpcFlags2() =>
-			new uint[4832] {
+			new uint[4820] {
 				0x1E003FFF,// INVALID
 				0x1E003FFF,// DeclareByte
 				0x1E003FFF,// DeclareWord
@@ -9102,18 +9090,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x0A003E7B,// Cpu_write
 				0x0A003E7B,// Cpu_read
 				0x0A003FFF,// Altinst
-				0x6A003FFF,// Paveb_mm_mmm64
-				0x6A003FFF,// Paddsiw_mm_mmm64
-				0x6A003FFF,// Pmagw_mm_mmm64
-				0x6A003FFF,// Pdistib_mm_m64
-				0x6A003FFF,// Psubsiw_mm_mmm64
-				0x6A003FFF,// Pmvzb_mm_m64
-				0x6A003FFF,// Pmulhrw_mm_mmm64
-				0x6A003FFF,// Pmvnzb_mm_m64
-				0x6A003FFF,// Pmvlzb_mm_m64
-				0x6A003FFF,// Pmvgezb_mm_m64
-				0x6A003FFF,// Pmulhriw_mm_mmm64
-				0x6A003FFF,// Pmachriw_mm_m64
 				0x0A003FFF,// Cyrix_D9D7
 				0x0A003FFF,// Cyrix_D9E2
 				0x0A003FFF,// Ftstp

@@ -7564,16 +7564,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void paddsiw_mm_mm() {
-			TestAssembler(c => c.paddsiw(mm2, mm3), Instruction.Create(Code.Paddsiw_mm_mmm64, Register.MM2, Register.MM3), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void paddsiw_mm_m() {
-			TestAssembler(c => c.paddsiw(mm2, __qword_ptr[si]), Instruction.Create(Code.Paddsiw_mm_mmm64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
 		public void paddsw_mm_mm() {
 			TestAssembler(c => c.paddsw(mm2, mm3), Instruction.Create(Code.Paddsw_mm_mmm64, Register.MM2, Register.MM3));
 		}
@@ -7736,16 +7726,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		[Fact]
 		public void pause() {
 			TestAssembler(c => c.pause(), Instruction.Create(Code.Pause));
-		}
-
-		[Fact]
-		public void paveb_mm_mm() {
-			TestAssembler(c => c.paveb(mm2, mm3), Instruction.Create(Code.Paveb_mm_mmm64, Register.MM2, Register.MM3), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void paveb_mm_m() {
-			TestAssembler(c => c.paveb(mm2, __qword_ptr[si]), Instruction.Create(Code.Paveb_mm_mmm64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
 		}
 
 		[Fact]
@@ -8126,11 +8106,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		[Fact]
 		public void pdep_r32_r32_m() {
 			TestAssembler(c => c.pdep(edx, ebx, __dword_ptr[si]), Instruction.Create(Code.VEX_Pdep_r32_r32_rm32, Register.EDX, Register.EBX, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)));
-		}
-
-		[Fact]
-		public void pdistib_mm_m() {
-			TestAssembler(c => c.pdistib(mm2, __[si]), Instruction.Create(Code.Pdistib_mm_m64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
 		}
 
 		[Fact]
@@ -8654,11 +8629,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void pmachriw_mm_m() {
-			TestAssembler(c => c.pmachriw(mm2, __[si]), Instruction.Create(Code.Pmachriw_mm_m64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
 		public void pmaddubsw_mm_mm() {
 			TestAssembler(c => c.pmaddubsw(mm2, mm3), Instruction.Create(Code.Pmaddubsw_mm_mmm64, Register.MM2, Register.MM3));
 		}
@@ -8696,16 +8666,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		[Fact]
 		public void pmaddwd_xmm_m() {
 			TestAssembler(c => c.pmaddwd(xmm2, __xmmword_ptr[si]), Instruction.Create(Code.Pmaddwd_xmm_xmmm128, Register.XMM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)));
-		}
-
-		[Fact]
-		public void pmagw_mm_mm() {
-			TestAssembler(c => c.pmagw(mm2, mm3), Instruction.Create(Code.Pmagw_mm_mmm64, Register.MM2, Register.MM3), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void pmagw_mm_m() {
-			TestAssembler(c => c.pmagw(mm2, __qword_ptr[si]), Instruction.Create(Code.Pmagw_mm_mmm64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
 		}
 
 		[Fact]
@@ -9009,16 +8969,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void pmulhriw_mm_mm() {
-			TestAssembler(c => c.pmulhriw(mm2, mm3), Instruction.Create(Code.Pmulhriw_mm_mmm64, Register.MM2, Register.MM3), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void pmulhriw_mm_m() {
-			TestAssembler(c => c.pmulhriw(mm2, __qword_ptr[si]), Instruction.Create(Code.Pmulhriw_mm_mmm64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
 		public void pmulhrsw_mm_mm() {
 			TestAssembler(c => c.pmulhrsw(mm2, mm3), Instruction.Create(Code.Pmulhrsw_mm_mmm64, Register.MM2, Register.MM3));
 		}
@@ -9046,16 +8996,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		[Fact]
 		public void pmulhrw_mm_m() {
 			TestAssembler(c => c.pmulhrw(mm2, __qword_ptr[si]), Instruction.Create(Code.D3NOW_Pmulhrw_mm_mmm64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)));
-		}
-
-		[Fact]
-		public void pmulhrw_cyrix_mm_mm() {
-			TestAssembler(c => c.pmulhrw_cyrix(mm2, mm3), Instruction.Create(Code.Pmulhrw_mm_mmm64, Register.MM2, Register.MM3), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void pmulhrw_cyrix_mm_m() {
-			TestAssembler(c => c.pmulhrw_cyrix(mm2, __qword_ptr[si]), Instruction.Create(Code.Pmulhrw_mm_mmm64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
 		}
 
 		[Fact]
@@ -9146,26 +9086,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		[Fact]
 		public void pmuludq_xmm_m() {
 			TestAssembler(c => c.pmuludq(xmm2, __xmmword_ptr[si]), Instruction.Create(Code.Pmuludq_xmm_xmmm128, Register.XMM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)));
-		}
-
-		[Fact]
-		public void pmvgezb_mm_m() {
-			TestAssembler(c => c.pmvgezb(mm2, __[si]), Instruction.Create(Code.Pmvgezb_mm_m64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void pmvlzb_mm_m() {
-			TestAssembler(c => c.pmvlzb(mm2, __[si]), Instruction.Create(Code.Pmvlzb_mm_m64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void pmvnzb_mm_m() {
-			TestAssembler(c => c.pmvnzb(mm2, __[si]), Instruction.Create(Code.Pmvnzb_mm_m64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void pmvzb_mm_m() {
-			TestAssembler(c => c.pmvzb(mm2, __[si]), Instruction.Create(Code.Pmvzb_mm_m64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
 		}
 
 		[Fact]
@@ -9909,16 +9829,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		[Fact]
 		public void psubsb_xmm_m() {
 			TestAssembler(c => c.psubsb(xmm2, __xmmword_ptr[si]), Instruction.Create(Code.Psubsb_xmm_xmmm128, Register.XMM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)));
-		}
-
-		[Fact]
-		public void psubsiw_mm_mm() {
-			TestAssembler(c => c.psubsiw(mm2, mm3), Instruction.Create(Code.Psubsiw_mm_mmm64, Register.MM2, Register.MM3), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void psubsiw_mm_m() {
-			TestAssembler(c => c.psubsiw(mm2, __qword_ptr[si]), Instruction.Create(Code.Psubsiw_mm_mmm64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
 		}
 
 		[Fact]

@@ -4154,7 +4154,8 @@ static class DecoderTable_Legacy {
 						invalid,
 						invalid,
 					},
-					new object[] { P_Q, code[nameof(Code.Paveb_mm_mmm64)] }, options[nameof(DecoderOptions.Cyrix)]
+					invalid,
+					options[nameof(DecoderOptions.Cyrix)]
 				},
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,
@@ -4163,7 +4164,8 @@ static class DecoderTable_Legacy {
 						new object[] { VW_2, code[nameof(Code.Sqrtss_xmm_xmmm32)] },
 						new object[] { VW_2, code[nameof(Code.Sqrtsd_xmm_xmmm64)] }
 					},
-					new object[] { P_Q, code[nameof(Code.Paddsiw_mm_mmm64)] }, options[nameof(DecoderOptions.Cyrix)]
+					invalid, 
+					options[nameof(DecoderOptions.Cyrix)]
 				},
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,
@@ -4172,7 +4174,8 @@ static class DecoderTable_Legacy {
 						new object[] { VW_2, code[nameof(Code.Rsqrtss_xmm_xmmm32)] },
 						invalid,
 					},
-					new object[] { P_Q, code[nameof(Code.Pmagw_mm_mmm64)] }, options[nameof(DecoderOptions.Cyrix)]
+					invalid, 
+					options[nameof(DecoderOptions.Cyrix)]
 				},
 				new object[] { MandatoryPrefix,
 					new object[] { VW_2, code[nameof(Code.Rcpps_xmm_xmmm128)] },
@@ -4187,10 +4190,8 @@ static class DecoderTable_Legacy {
 						invalid,
 						invalid,
 					},
-					new object[] { RM,
-						invalid,
-						new object[] { P_Q, code[nameof(Code.Pdistib_mm_m64)] }
-					}, options[nameof(DecoderOptions.Cyrix)]
+					invalid,
+					options[nameof(DecoderOptions.Cyrix)]
 				},
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,
@@ -4199,7 +4200,8 @@ static class DecoderTable_Legacy {
 						invalid,
 						invalid,
 					},
-					new object[] { P_Q, code[nameof(Code.Psubsiw_mm_mmm64)] }, options[nameof(DecoderOptions.Cyrix)]
+					invalid, 
+					options[nameof(DecoderOptions.Cyrix)]
 				},
 				new object[] { MandatoryPrefix,
 					new object[] { VW_2, code[nameof(Code.Orps_xmm_xmmm128)] },
@@ -4222,10 +4224,8 @@ static class DecoderTable_Legacy {
 						new object[] { VW_2, code[nameof(Code.Addss_xmm_xmmm32)] },
 						new object[] { VW_2, code[nameof(Code.Addsd_xmm_xmmm64)] }
 					},
-					new object[] { RM,
-						invalid,
-						new object[] { P_Q, code[nameof(Code.Pmvzb_mm_m64)] }
-					}, options[nameof(DecoderOptions.Cyrix)]
+					invalid,
+					options[nameof(DecoderOptions.Cyrix)]
 				},
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,
@@ -4234,7 +4234,8 @@ static class DecoderTable_Legacy {
 						new object[] { VW_2, code[nameof(Code.Mulss_xmm_xmmm32)] },
 						new object[] { VW_2, code[nameof(Code.Mulsd_xmm_xmmm64)] }
 					},
-					new object[] { P_Q, code[nameof(Code.Pmulhrw_mm_mmm64)] }, options[nameof(DecoderOptions.Cyrix)]
+					invalid, 
+					options[nameof(DecoderOptions.Cyrix)]
 				},
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,
@@ -4243,10 +4244,8 @@ static class DecoderTable_Legacy {
 						new object[] { VW_2, code[nameof(Code.Cvtss2sd_xmm_xmmm32)] },
 						new object[] { VW_2, code[nameof(Code.Cvtsd2ss_xmm_xmmm64)] }
 					},
-					new object[] { RM,
-						invalid,
-						new object[] { P_Q, code[nameof(Code.Pmvnzb_mm_m64)] }
-					}, options[nameof(DecoderOptions.Cyrix)]
+					invalid, 
+					options[nameof(DecoderOptions.Cyrix)]
 				},
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,
@@ -4255,10 +4254,8 @@ static class DecoderTable_Legacy {
 						new object[] { VW_2, code[nameof(Code.Cvttps2dq_xmm_xmmm128)] },
 						invalid,
 					},
-					new object[] { RM,
-						invalid,
-						new object[] { P_Q, code[nameof(Code.Pmvlzb_mm_m64)] }
-					}, options[nameof(DecoderOptions.Cyrix)]
+					invalid,
+					options[nameof(DecoderOptions.Cyrix)]
 				},
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,
@@ -4267,10 +4264,8 @@ static class DecoderTable_Legacy {
 						new object[] { VW_2, code[nameof(Code.Subss_xmm_xmmm32)] },
 						new object[] { VW_2, code[nameof(Code.Subsd_xmm_xmmm64)] }
 					},
-					new object[] { RM,
-						invalid,
-						new object[] { P_Q, code[nameof(Code.Pmvgezb_mm_m64)] }
-					}, options[nameof(DecoderOptions.Cyrix)]
+					invalid,
+					options[nameof(DecoderOptions.Cyrix)]
 				},
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,
@@ -4279,7 +4274,8 @@ static class DecoderTable_Legacy {
 						new object[] { VW_2, code[nameof(Code.Minss_xmm_xmmm32)] },
 						new object[] { VW_2, code[nameof(Code.Minsd_xmm_xmmm64)] }
 					},
-					new object[] { P_Q, code[nameof(Code.Pmulhriw_mm_mmm64)] }, options[nameof(DecoderOptions.Cyrix)]
+					invalid,
+					options[nameof(DecoderOptions.Cyrix)]
 				},
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,
@@ -4288,10 +4284,8 @@ static class DecoderTable_Legacy {
 						new object[] { VW_2, code[nameof(Code.Divss_xmm_xmmm32)] },
 						new object[] { VW_2, code[nameof(Code.Divsd_xmm_xmmm64)] }
 					},
-					new object[] { RM,
-						invalid,
-						new object[] { P_Q, code[nameof(Code.Pmachriw_mm_m64)] }
-					}, options[nameof(DecoderOptions.Cyrix)]
+					invalid,
+					options[nameof(DecoderOptions.Cyrix)]
 				},
 				new object[] { MandatoryPrefix,
 					new object[] { VW_2, code[nameof(Code.Maxps_xmm_xmmm128)] },

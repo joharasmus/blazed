@@ -4261,18 +4261,6 @@ namespace Blazed.Intel {
 			0,// Cpu_write
 			0,// Cpu_read
 			0,// Altinst
-			(byte)MemorySize.Packed64_UInt8,// Paveb_mm_mmm64
-			(byte)MemorySize.Packed64_Int16,// Paddsiw_mm_mmm64
-			(byte)MemorySize.Packed64_UInt16,// Pmagw_mm_mmm64
-			(byte)MemorySize.Packed64_UInt8,// Pdistib_mm_m64
-			(byte)MemorySize.Packed64_Int16,// Psubsiw_mm_mmm64
-			(byte)MemorySize.Packed64_UInt8,// Pmvzb_mm_m64
-			(byte)MemorySize.Packed64_Int16,// Pmulhrw_mm_mmm64
-			(byte)MemorySize.Packed64_UInt8,// Pmvnzb_mm_m64
-			(byte)MemorySize.Packed64_Int8,// Pmvlzb_mm_m64
-			(byte)MemorySize.Packed64_Int8,// Pmvgezb_mm_m64
-			(byte)MemorySize.Packed64_Int16,// Pmulhriw_mm_mmm64
-			(byte)MemorySize.Packed64_UInt16,// Pmachriw_mm_m64
 			0,// Cyrix_D9D7
 			0,// Cyrix_D9E2
 			0,// Ftstp
@@ -9096,18 +9084,6 @@ namespace Blazed.Intel {
 			0,// Cpu_write
 			0,// Cpu_read
 			0,// Altinst
-			0,// Paveb_mm_mmm64
-			0,// Paddsiw_mm_mmm64
-			0,// Pmagw_mm_mmm64
-			0,// Pdistib_mm_m64
-			0,// Psubsiw_mm_mmm64
-			0,// Pmvzb_mm_m64
-			0,// Pmulhrw_mm_mmm64
-			0,// Pmvnzb_mm_m64
-			0,// Pmvlzb_mm_m64
-			0,// Pmvgezb_mm_m64
-			0,// Pmulhriw_mm_mmm64
-			0,// Pmachriw_mm_m64
 			0,// Cyrix_D9D7
 			0,// Cyrix_D9E2
 			0,// Ftstp

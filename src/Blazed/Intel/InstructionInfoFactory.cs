@@ -1483,15 +1483,6 @@ namespace Blazed.Intel {
 					AddRegister(flags, Register.EAX, OpAccess.Write);
 				}
 				break;
-			case ImpliedAccess.t_emmiW:
-				CommandEmmi(instruction, flags, OpAccess.Write);
-				break;
-			case ImpliedAccess.t_emmiRW:
-				CommandEmmi(instruction, flags, OpAccess.ReadWrite);
-				break;
-			case ImpliedAccess.t_emmiR:
-				CommandEmmi(instruction, flags, OpAccess.Read);
-				break;
 			case ImpliedAccess.t_CRrcx_CRrdx_CRr8_CRr9_RWrax:
 				if ((flags & Flags.NoRegisterUsage) == 0) {
 					AddRegister(flags, Register.RCX, OpAccess.CondRead);

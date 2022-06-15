@@ -171,7 +171,6 @@ namespace Blazed.Intel.InstructionInfoInternal {
 		CYRIX_SMINT_0F7E,
 		CYRIX_SHR,
 		CYRIX_DDI,
-		CYRIX_EMMI,
 		CENTAUR_AIS,
 		MOV_TR,
 		SMM,

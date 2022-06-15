@@ -4261,18 +4261,6 @@ namespace Blazed.Intel {
 			0,// Cpu_write
 			0,// Cpu_read
 			0,// Altinst
-			2,// Paveb_mm_mmm64
-			2,// Paddsiw_mm_mmm64
-			2,// Pmagw_mm_mmm64
-			2,// Pdistib_mm_m64
-			2,// Psubsiw_mm_mmm64
-			2,// Pmvzb_mm_m64
-			2,// Pmulhrw_mm_mmm64
-			2,// Pmvnzb_mm_m64
-			2,// Pmvlzb_mm_m64
-			2,// Pmvgezb_mm_m64
-			2,// Pmulhriw_mm_mmm64
-			2,// Pmachriw_mm_m64
 			0,// Cyrix_D9D7
 			0,// Cyrix_D9E2
 			0,// Ftstp

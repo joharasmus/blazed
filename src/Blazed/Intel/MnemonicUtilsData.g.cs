@@ -4261,18 +4261,6 @@ namespace Blazed.Intel {
 			(ushort)Mnemonic.Cpu_write,// Cpu_write
 			(ushort)Mnemonic.Cpu_read,// Cpu_read
 			(ushort)Mnemonic.Altinst,// Altinst
-			(ushort)Mnemonic.Paveb,// Paveb_mm_mmm64
-			(ushort)Mnemonic.Paddsiw,// Paddsiw_mm_mmm64
-			(ushort)Mnemonic.Pmagw,// Pmagw_mm_mmm64
-			(ushort)Mnemonic.Pdistib,// Pdistib_mm_m64
-			(ushort)Mnemonic.Psubsiw,// Psubsiw_mm_mmm64
-			(ushort)Mnemonic.Pmvzb,// Pmvzb_mm_m64
-			(ushort)Mnemonic.Pmulhrw,// Pmulhrw_mm_mmm64
-			(ushort)Mnemonic.Pmvnzb,// Pmvnzb_mm_m64
-			(ushort)Mnemonic.Pmvlzb,// Pmvlzb_mm_m64
-			(ushort)Mnemonic.Pmvgezb,// Pmvgezb_mm_m64
-			(ushort)Mnemonic.Pmulhriw,// Pmulhriw_mm_mmm64
-			(ushort)Mnemonic.Pmachriw,// Pmachriw_mm_m64
 			(ushort)Mnemonic.Undoc,// Cyrix_D9D7
 			(ushort)Mnemonic.Undoc,// Cyrix_D9E2
 			(ushort)Mnemonic.Ftstp,// Ftstp
