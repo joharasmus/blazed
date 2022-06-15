@@ -677,8 +677,6 @@ rdshr edx
 wrshr dword [eax]
 wrshr edx
 smint
-dmint
-rdm
 svdc tword [eax], cs
 rsdc cs, tword [eax]
 svldt tword [eax]

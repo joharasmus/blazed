@@ -5,7 +5,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Nullable>enable</Nullable>
     <Features>strict</Features>
-    <BlazedFeatureFlags>DECODER;ENCODER;BLOCK_ENCODER;CODE_ASSEMBLER;OPCODE_INFO;INSTR_INFO;INTEL;MVEX</BlazedFeatureFlags>
+    <BlazedFeatureFlags>DECODER;ENCODER;BLOCK_ENCODER;CODE_ASSEMBLER;OPCODE_INFO;INSTR_INFO;MVEX</BlazedFeatureFlags>
     <DefineConstants>$(BlazedFeatureFlags)</DefineConstants>
   </PropertyGroup>
 

@@ -32,8 +32,8 @@ namespace Blazed.Intel.InstructionInfoInternal {
 				0x00,
 				0x00,
 				0x00,
-				0x08,
-				0x08,
+				0x04,
+				0x04,
 
 				0x00,// INTEL8086
 				0x01,// INTEL8086_ONLY
@@ -199,25 +199,24 @@ namespace Blazed.Intel.InstructionInfoInternal {
 				0x8D,// CYRIX_SHR
 				0x8E,// CYRIX_DDI
 				0x8F,// CYRIX_EMMI
-				0x90,// CYRIX_DMI
-				0x91,// CENTAUR_AIS
-				0x92,// MOV_TR
-				0x93,// SMM
-				0x94,// TDX
-				0x95,// KL
-				0x96,// AESKLE
-				0x96, 0x97,// AESKLE_and_WIDE_KL
-				0x98,// UINTR
-				0x99,// HRESET
-				0x9A,// AVX_VNNI
-				0x9B,// PADLOCK_GMI
-				0x9C,// FRED
-				0x9D,// LKGS
-				0x9E,// AVX512_FP16
-				0x21, 0x9E,// AVX512VL_and_AVX512_FP16
-				0x9F,// UDBG
-				0xA0,// KNC
-				0xA1,// PADLOCK_UNDOC
+				0x90,// CENTAUR_AIS
+				0x91,// MOV_TR
+				0x92,// SMM
+				0x93,// TDX
+				0x94,// KL
+				0x95,// AESKLE
+				0x95, 0x96,// AESKLE_and_WIDE_KL
+				0x97,// UINTR
+				0x98,// HRESET
+				0x99,// AVX_VNNI
+				0x9A,// PADLOCK_GMI
+				0x9B,// FRED
+				0x9C,// LKGS
+				0x9D,// AVX512_FP16
+				0x21, 0x9D,// AVX512VL_and_AVX512_FP16
+				0x9E,// UDBG
+				0x9F,// KNC
+				0xA0,// PADLOCK_UNDOC
 			};
 	}
 }

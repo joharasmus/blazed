@@ -17,9 +17,9 @@ namespace Blazed.Intel {
 		internal const Register YMM_last = Register.YMM31;
 		internal const Register ZMM_last = Register.ZMM31;
 		internal const Register TMM_last = Register.TMM7;
-		internal const int MaxCpuidFeatureInternalValues = 183;
+		internal const int MaxCpuidFeatureInternalValues = 182;
 		internal const MemorySize FirstBroadcastMemorySize = MemorySize.Broadcast32_Float16;
-		internal const uint MvexStart = 4611;
+		internal const uint MvexStart = 4609;
 		internal const uint MvexLength = 207;
 		internal const int CC_a_EnumCount = 2;
 		internal const int CC_ae_EnumCount = 3;
@@ -33,10 +33,10 @@ namespace Blazed.Intel {
 		internal const int CC_ne_EnumCount = 2;
 		internal const int CC_np_EnumCount = 2;
 		internal const int CC_p_EnumCount = 2;
-		internal const int CodeEnumCount = 4834;
+		internal const int CodeEnumCount = 4832;
 		internal const int CodeSizeEnumCount = 4;
 		internal const int ConditionCodeEnumCount = 17;
-		internal const int CpuidFeatureEnumCount = 162;
+		internal const int CpuidFeatureEnumCount = 161;
 		internal const int DecoderErrorEnumCount = 3;
 		internal const int DecoratorKindEnumCount = 6;
 		internal const int EncodingKindEnumCount = 6;
@@ -45,7 +45,7 @@ namespace Blazed.Intel {
 		internal const int MandatoryPrefixEnumCount = 5;
 		internal const int MemorySizeEnumCount = 160;
 		internal const int MemorySizeOptionsEnumCount = 4;
-		internal const int MnemonicEnumCount = 1838;
+		internal const int MnemonicEnumCount = 1836;
 		internal const int MvexConvFnEnumCount = 13;
 		internal const int MvexEHBitEnumCount = 3;
 		internal const int MvexRegMemConvEnumCount = 17;

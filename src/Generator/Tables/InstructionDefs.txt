@@ -25702,17 +25702,6 @@ INSTRUCTION: 0F 38 | SMINT | CYRIX_SMINT
 	flags: 16 32 dec-opt=Cyrix cpl0 cflow=int
 END
 
-# Code: Dmint
-INSTRUCTION: 0F 39 | DMINT | CYRIX_DMI
-	flags: 16 32 dec-opt=Cyrix_DMI cpl0 cflow=int
-END
-
-# Code: Rdm
-INSTRUCTION: 0F 3A | RDM | CYRIX_DMI
-	rflags: w=oszacpdiA
-	flags: 16 32 dec-opt=Cyrix_DMI cpl0 save-restore cflow=ret
-END
-
 # Code: Svdc_m80_Sreg
 INSTRUCTION: 0F 78 /r | SVDC m80, Sreg | CYRIX_SMM
 	# Some CPUs only allow this instruction when in SMM (eg. Cyrix 6x86, Cyrix III)

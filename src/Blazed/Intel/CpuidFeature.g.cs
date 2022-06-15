@@ -297,42 +297,40 @@ namespace Blazed.Intel {
 		CYRIX_DDI = 142,
 		/// <summary>Cyrix AND CPUID.80000001H:EDX.EMMI[bit 24]</summary>
 		CYRIX_EMMI = 143,
-		/// <summary>Cyrix DMI instructions: <c>DMINT</c>, <c>RDM</c> (AMD Geode GX/LX)</summary>
-		CYRIX_DMI = 144,
 		/// <summary>CPUID.0C0000000H:EAX &gt;= 0C0000001H AND CPUID.0C0000001H:EDX.AIS[Bits 1:0] = 11B ([0] = exists, [1] = enabled)</summary>
-		CENTAUR_AIS = 145,
+		CENTAUR_AIS = 144,
 		/// <summary>MOV to/from TR (80386, Intel486, Cyrix, Geode)</summary>
-		MOV_TR = 146,
+		MOV_TR = 145,
 		/// <summary><c>RSM</c> instruction (some 386s, some 486s, Pentium and later)</summary>
-		SMM = 147,
+		SMM = 146,
 		/// <summary>CPUID.(EAX=??H, ECX=?H):???.????[bit ??]</summary>
-		TDX = 148,
+		TDX = 147,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):ECX.KL[bit 23]</summary>
-		KL = 149,
+		KL = 148,
 		/// <summary>CPUID.19H:EBX.AESKLE[bit 0]</summary>
-		AESKLE = 150,
+		AESKLE = 149,
 		/// <summary>CPUID.19H:EBX.WIDE_KL[bit 2]</summary>
-		WIDE_KL = 151,
+		WIDE_KL = 150,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.UINTR[bit 5]</summary>
-		UINTR = 152,
+		UINTR = 151,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.HRESET[bit 22]</summary>
-		HRESET = 153,
+		HRESET = 152,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.AVX-VNNI[bit 4]</summary>
-		AVX_VNNI = 154,
+		AVX_VNNI = 153,
 		/// <summary>CPUID.0C0000000H:EAX &gt;= 0C0000001H AND CPUID.0C0000001H:EDX.GMI[Bits 5:4] = 11B ([4] = exists, [5] = enabled)</summary>
-		PADLOCK_GMI = 155,
+		PADLOCK_GMI = 154,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.FRED[bit 17]</summary>
-		FRED = 156,
+		FRED = 155,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.LKGS[bit 18]</summary>
-		LKGS = 157,
+		LKGS = 156,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.AVX512-FP16[bit 23]</summary>
-		AVX512_FP16 = 158,
+		AVX512_FP16 = 157,
 		/// <summary>Undocumented Intel <c>RDUDBG</c> and <c>WRUDBG</c> instructions</summary>
-		UDBG = 159,
+		UDBG = 158,
 		/// <summary>Intel Knights Corner</summary>
-		KNC = 160,
+		KNC = 159,
 		/// <summary>Undocumented instruction</summary>
-		PADLOCK_UNDOC = 161,
+		PADLOCK_UNDOC = 160,
 	}
 }
 #endif

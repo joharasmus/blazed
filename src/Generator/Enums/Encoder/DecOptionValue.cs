@@ -11,7 +11,6 @@ namespace Generator.Enums.Encoder {
 		Cl1invmb,
 		Cmpxchg486A,
 		Cyrix,
-		Cyrix_DMI,
 		Cyrix_SMINT_0F7E,
 		Jmpe,
 		Loadall286,

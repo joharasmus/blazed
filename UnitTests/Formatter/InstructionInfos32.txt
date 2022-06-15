@@ -677,8 +677,6 @@ F2 0F 01 E9, Xresldtrk
 0F37 00, Wrshr_rm32, Cyrix
 0F37 C2, Wrshr_rm32, Cyrix
 0F38, Smint, Cyrix
-0F39, Dmint, Cyrix_DMI
-0F3A, Rdm, Cyrix_DMI
 0F78 08, Svdc_m80_Sreg, Cyrix
 0F79 08, Rsdc_Sreg_m80, Cyrix
 0F7A 00, Svldt_m80, Cyrix

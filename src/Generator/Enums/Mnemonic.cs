@@ -1572,8 +1572,6 @@ namespace Generator.Enums {
 		Rdshr,
 		Wrshr,
 		Smint,
-		Dmint,
-		Rdm,
 		Svdc,
 		Rsdc,
 		Svldt,

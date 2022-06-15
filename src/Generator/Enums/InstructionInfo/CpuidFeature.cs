@@ -292,8 +292,6 @@ namespace Generator.Enums.InstructionInfo {
 		CYRIX_DDI,
 		[Comment("Cyrix AND CPUID.80000001H:EDX.EMMI[bit 24]")]
 		CYRIX_EMMI,
-		[Comment("Cyrix DMI instructions: #(c:DMINT)#, #(c:RDM)# (AMD Geode GX/LX)")]
-		CYRIX_DMI,
 		[Comment("CPUID.0C0000000H:EAX >= 0C0000001H AND CPUID.0C0000001H:EDX.AIS[Bits 1:0] = 11B ([0] = exists, [1] = enabled)")]
 		CENTAUR_AIS,
 		[Comment("MOV to/from TR (80386, Intel486, Cyrix, Geode)")]

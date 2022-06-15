@@ -3187,11 +3187,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void dmint() {
-			TestAssembler(c => c.dmint(), Instruction.Create(Code.Dmint), decoderOptions: DecoderOptions.Cyrix_DMI);
-		}
-
-		[Fact]
 		public void dppd_xmm_xmm_i() {
 			TestAssembler(c => c.dppd(xmm2, xmm3, -5), Instruction.Create(Code.Dppd_xmm_xmmm128_imm8, Register.XMM2, Register.XMM3, -5));
 		}
@@ -10782,11 +10777,6 @@ namespace UnitTests.Intel.AssemblerTests {
 					TestAssembler(c => c.rcr(__zmmword_ptr[edx], (byte)2), Instruction.Create(Code.Rcr_rm8_imm8, new MemoryOperand(Register.EDX, Register.None, 1, 0x0, 0, false, Register.None), 2U));
 				});
 			}
-		}
-
-		[Fact]
-		public void rdm() {
-			TestAssembler(c => c.rdm(), Instruction.Create(Code.Rdm), decoderOptions: DecoderOptions.Cyrix_DMI);
 		}
 
 		[Fact]

@@ -4249,8 +4249,6 @@ namespace Blazed.Intel {
 			1,// Rdshr_rm32
 			1,// Wrshr_rm32
 			0,// Smint
-			0,// Dmint
-			0,// Rdm
 			2,// Svdc_m80_Sreg
 			2,// Rsdc_Sreg_m80
 			1,// Svldt_m80

@@ -4252,8 +4252,6 @@ namespace Generator.Enums {
 		Rdshr_rm32,
 		Wrshr_rm32,
 		Smint,
-		Dmint,
-		Rdm,
 		Svdc_m80_Sreg,
 		Rsdc_Sreg_m80,
 		Svldt_m80,

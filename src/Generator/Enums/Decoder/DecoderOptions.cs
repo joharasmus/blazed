@@ -51,8 +51,6 @@ enum DecoderOptions {
 	Cyrix					= 0x00100000,
 	[Comment("Decode Cyrix #(c:SMINT 0F7E)# (Cyrix 6x86 or earlier)")]
 	Cyrix_SMINT_0F7E		= 0x00200000,
-	[Comment("Decode Cyrix #(c:DMI)# instructions (AMD Geode GX/LX)")]
-	Cyrix_DMI				= 0x00400000,
 	[Comment("Decode Centaur #(c:ALTINST)#")]
 	ALTINST					= 0x00800000,
 	[Comment("Decode Intel Knights Corner instructions")]

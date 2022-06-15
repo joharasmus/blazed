@@ -929,7 +929,6 @@ static class HowTo_DisassembleOldInstructions {
 731E0A03 bndmov bnd1, [eax]
 731E0A07 mov tr3, esi
 731E0A0A rdshr [eax]
-731E0A0D dmint
 731E0A0F svdc [eax], cs
 731E0A12 cpu_read
 731E0A14 pmvzb mm1, [eax]
@@ -944,8 +943,6 @@ static class HowTo_DisassembleOldInstructions {
             0x0F, 0x26, 0xDE,
             // rdshr [eax]
             0x0F, 0x36, 0x00,
-            // dmint
-            0x0F, 0x39,
             // svdc [eax],cs
             0x0F, 0x78, 0x08,
             // cpu_read
@@ -965,7 +962,7 @@ static class HowTo_DisassembleOldInstructions {
         // enabled by default. Some newer instructions also use the same opcodes as
         // some of these old instructions.
         const DecoderOptions decoderOptions = DecoderOptions.MPX | DecoderOptions.MovTr |
-            DecoderOptions.Cyrix | DecoderOptions.Cyrix_DMI | DecoderOptions.ALTINST;
+            DecoderOptions.Cyrix | DecoderOptions.ALTINST;
         var codeReader = new ByteArrayCodeReader(codeBytes);
         var decoder = Decoder.Create(32, codeReader, decoderOptions);
         decoder.IP = 0x731E_0A03;

@@ -4249,8 +4249,6 @@ namespace Blazed.Intel {
 			(byte)MemorySize.UInt32,// Rdshr_rm32
 			(byte)MemorySize.UInt32,// Wrshr_rm32
 			0,// Smint
-			0,// Dmint
-			0,// Rdm
 			(byte)MemorySize.SegmentDescSelector,// Svdc_m80_Sreg
 			(byte)MemorySize.SegmentDescSelector,// Rsdc_Sreg_m80
 			(byte)MemorySize.SegmentDescSelector,// Svldt_m80
@@ -9086,8 +9084,6 @@ namespace Blazed.Intel {
 			0,// Rdshr_rm32
 			0,// Wrshr_rm32
 			0,// Smint
-			0,// Dmint
-			0,// Rdm
 			0,// Svdc_m80_Sreg
 			0,// Rsdc_Sreg_m80
 			0,// Svldt_m80

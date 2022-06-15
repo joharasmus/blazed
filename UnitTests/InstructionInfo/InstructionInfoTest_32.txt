@@ -1695,10 +1695,6 @@ C7 F8 5AA51234, Xbegin_rel32, Legacy, RTM, flow=XbeginXabortXend op0=r cw=eax
 0F37 C2, Wrshr_rm32, Legacy, CYRIX_SHR, priv op0=r r=edx decopt=Cyrix
 # smint
 0F38, Smint, Legacy, CYRIX_SMINT, priv flow=Interrupt decopt=Cyrix
-# dmint
-0F39, Dmint, Legacy, CYRIX_DMI, priv flow=Interrupt decopt=Cyrix_DMI
-# rdm
-0F3A, Rdm, Legacy, CYRIX_DMI, priv save-restore fw=acopszidA flow=Return decopt=Cyrix_DMI
 # svdc [eax],cs
 0F78 08, Svdc_m80_Sreg, Legacy, CYRIX_SMM, priv op0=w op1=r r=cs r=ds r=eax wm=ds:eax;SegmentDescSelector decopt=Cyrix
 # rsdc cs,[eax]

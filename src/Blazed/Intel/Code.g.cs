@@ -33906,22 +33906,6 @@ namespace Blazed.Intel {
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
 		Smint = 4240,
-		/// <summary><c>DMINT</c><br/>
-		/// <br/>
-		/// <c>0F 39</c><br/>
-		/// <br/>
-		/// <c>AMD Geode GX/LX</c><br/>
-		/// <br/>
-		/// <c>16/32-bit</c></summary>
-		Dmint = 4241,
-		/// <summary><c>RDM</c><br/>
-		/// <br/>
-		/// <c>0F 3A</c><br/>
-		/// <br/>
-		/// <c>AMD Geode GX/LX</c><br/>
-		/// <br/>
-		/// <c>16/32-bit</c></summary>
-		Rdm = 4242,
 		/// <summary><c>SVDC m80, Sreg</c><br/>
 		/// <br/>
 		/// <c>0F 78 /r</c><br/>
@@ -33929,7 +33913,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Svdc_m80_Sreg = 4243,
+		Svdc_m80_Sreg = 4241,
 		/// <summary><c>RSDC Sreg, m80</c><br/>
 		/// <br/>
 		/// <c>0F 79 /r</c><br/>
@@ -33937,7 +33921,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Rsdc_Sreg_m80 = 4244,
+		Rsdc_Sreg_m80 = 4242,
 		/// <summary><c>SVLDT m80</c><br/>
 		/// <br/>
 		/// <c>0F 7A /0</c><br/>
@@ -33945,7 +33929,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Svldt_m80 = 4245,
+		Svldt_m80 = 4243,
 		/// <summary><c>RSLDT m80</c><br/>
 		/// <br/>
 		/// <c>0F 7B /0</c><br/>
@@ -33953,7 +33937,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Rsldt_m80 = 4246,
+		Rsldt_m80 = 4244,
 		/// <summary><c>SVTS m80</c><br/>
 		/// <br/>
 		/// <c>0F 7C /0</c><br/>
@@ -33961,7 +33945,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Svts_m80 = 4247,
+		Svts_m80 = 4245,
 		/// <summary><c>RSTS m80</c><br/>
 		/// <br/>
 		/// <c>0F 7D /0</c><br/>
@@ -33969,7 +33953,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Rsts_m80 = 4248,
+		Rsts_m80 = 4246,
 		/// <summary><c>SMINT</c><br/>
 		/// <br/>
 		/// <c>0F 7E</c><br/>
@@ -33977,7 +33961,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix 6x86 or earlier</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Smint_0F7E = 4249,
+		Smint_0F7E = 4247,
 		/// <summary><c>BB0_RESET</c><br/>
 		/// <br/>
 		/// <c>0F 3A</c><br/>
@@ -33985,7 +33969,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix MediaGX, GXm, GXLV, GX1</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Bb0_reset = 4250,
+		Bb0_reset = 4248,
 		/// <summary><c>BB1_RESET</c><br/>
 		/// <br/>
 		/// <c>0F 3B</c><br/>
@@ -33993,7 +33977,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix MediaGX, GXm, GXLV, GX1</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Bb1_reset = 4251,
+		Bb1_reset = 4249,
 		/// <summary><c>CPU_WRITE</c><br/>
 		/// <br/>
 		/// <c>0F 3C</c><br/>
@@ -34001,7 +33985,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix MediaGX, GXm, GXLV, GX1</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Cpu_write = 4252,
+		Cpu_write = 4250,
 		/// <summary><c>CPU_READ</c><br/>
 		/// <br/>
 		/// <c>0F 3D</c><br/>
@@ -34009,7 +33993,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix MediaGX, GXm, GXLV, GX1</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Cpu_read = 4253,
+		Cpu_read = 4251,
 		/// <summary><c>ALTINST</c><br/>
 		/// <br/>
 		/// <c>0F 3F</c><br/>
@@ -34017,7 +34001,7 @@ namespace Blazed.Intel {
 		/// <c>Centaur AIS</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Altinst = 4254,
+		Altinst = 4252,
 		/// <summary><c>PAVEB mm, mm/m64</c><br/>
 		/// <br/>
 		/// <c>0F 50 /r</c><br/>
@@ -34025,7 +34009,7 @@ namespace Blazed.Intel {
 		/// <c>CYRIX_EMMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Paveb_mm_mmm64 = 4255,
+		Paveb_mm_mmm64 = 4253,
 		/// <summary><c>PADDSIW mm, mm/m64</c><br/>
 		/// <br/>
 		/// <c>0F 51 /r</c><br/>
@@ -34033,7 +34017,7 @@ namespace Blazed.Intel {
 		/// <c>CYRIX_EMMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Paddsiw_mm_mmm64 = 4256,
+		Paddsiw_mm_mmm64 = 4254,
 		/// <summary><c>PMAGW mm, mm/m64</c><br/>
 		/// <br/>
 		/// <c>0F 52 /r</c><br/>
@@ -34041,7 +34025,7 @@ namespace Blazed.Intel {
 		/// <c>CYRIX_EMMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Pmagw_mm_mmm64 = 4257,
+		Pmagw_mm_mmm64 = 4255,
 		/// <summary><c>PDISTIB mm, m64</c><br/>
 		/// <br/>
 		/// <c>0F 54 /r</c><br/>
@@ -34049,7 +34033,7 @@ namespace Blazed.Intel {
 		/// <c>CYRIX_EMMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Pdistib_mm_m64 = 4258,
+		Pdistib_mm_m64 = 4256,
 		/// <summary><c>PSUBSIW mm, mm/m64</c><br/>
 		/// <br/>
 		/// <c>0F 55 /r</c><br/>
@@ -34057,7 +34041,7 @@ namespace Blazed.Intel {
 		/// <c>CYRIX_EMMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Psubsiw_mm_mmm64 = 4259,
+		Psubsiw_mm_mmm64 = 4257,
 		/// <summary><c>PMVZB mm, m64</c><br/>
 		/// <br/>
 		/// <c>0F 58 /r</c><br/>
@@ -34065,7 +34049,7 @@ namespace Blazed.Intel {
 		/// <c>CYRIX_EMMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Pmvzb_mm_m64 = 4260,
+		Pmvzb_mm_m64 = 4258,
 		/// <summary><c>PMULHRW mm, mm/m64</c><br/>
 		/// <br/>
 		/// <c>0F 59 /r</c><br/>
@@ -34073,7 +34057,7 @@ namespace Blazed.Intel {
 		/// <c>CYRIX_EMMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Pmulhrw_mm_mmm64 = 4261,
+		Pmulhrw_mm_mmm64 = 4259,
 		/// <summary><c>PMVNZB mm, m64</c><br/>
 		/// <br/>
 		/// <c>0F 5A /r</c><br/>
@@ -34081,7 +34065,7 @@ namespace Blazed.Intel {
 		/// <c>CYRIX_EMMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Pmvnzb_mm_m64 = 4262,
+		Pmvnzb_mm_m64 = 4260,
 		/// <summary><c>PMVLZB mm, m64</c><br/>
 		/// <br/>
 		/// <c>0F 5B /r</c><br/>
@@ -34089,7 +34073,7 @@ namespace Blazed.Intel {
 		/// <c>CYRIX_EMMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Pmvlzb_mm_m64 = 4263,
+		Pmvlzb_mm_m64 = 4261,
 		/// <summary><c>PMVGEZB mm, m64</c><br/>
 		/// <br/>
 		/// <c>0F 5C /r</c><br/>
@@ -34097,7 +34081,7 @@ namespace Blazed.Intel {
 		/// <c>CYRIX_EMMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Pmvgezb_mm_m64 = 4264,
+		Pmvgezb_mm_m64 = 4262,
 		/// <summary><c>PMULHRIW mm, mm/m64</c><br/>
 		/// <br/>
 		/// <c>0F 5D /r</c><br/>
@@ -34105,7 +34089,7 @@ namespace Blazed.Intel {
 		/// <c>CYRIX_EMMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Pmulhriw_mm_mmm64 = 4265,
+		Pmulhriw_mm_mmm64 = 4263,
 		/// <summary><c>PMACHRIW mm, m64</c><br/>
 		/// <br/>
 		/// <c>0F 5E /r</c><br/>
@@ -34113,7 +34097,7 @@ namespace Blazed.Intel {
 		/// <c>CYRIX_EMMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Pmachriw_mm_m64 = 4266,
+		Pmachriw_mm_m64 = 4264,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>D9 D7</c><br/>
@@ -34121,7 +34105,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Cyrix_D9D7 = 4267,
+		Cyrix_D9D7 = 4265,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>D9 E2</c><br/>
@@ -34129,7 +34113,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Cyrix_D9E2 = 4268,
+		Cyrix_D9E2 = 4266,
 		/// <summary><c>FTSTP</c><br/>
 		/// <br/>
 		/// <c>D9 E6</c><br/>
@@ -34137,7 +34121,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Ftstp = 4269,
+		Ftstp = 4267,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>D9 E7</c><br/>
@@ -34145,7 +34129,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Cyrix_D9E7 = 4270,
+		Cyrix_D9E7 = 4268,
 		/// <summary><c>FRINT2</c><br/>
 		/// <br/>
 		/// <c>DB FC</c><br/>
@@ -34153,7 +34137,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Frint2 = 4271,
+		Frint2 = 4269,
 		/// <summary><c>FRICHOP</c><br/>
 		/// <br/>
 		/// <c>DD FC</c><br/>
@@ -34161,7 +34145,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Frichop = 4272,
+		Frichop = 4270,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>DE D8</c><br/>
@@ -34169,7 +34153,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Cyrix_DED8 = 4273,
+		Cyrix_DED8 = 4271,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>DE DA</c><br/>
@@ -34177,7 +34161,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Cyrix_DEDA = 4274,
+		Cyrix_DEDA = 4272,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>DE DC</c><br/>
@@ -34185,7 +34169,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Cyrix_DEDC = 4275,
+		Cyrix_DEDC = 4273,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>DE DD</c><br/>
@@ -34193,7 +34177,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Cyrix_DEDD = 4276,
+		Cyrix_DEDD = 4274,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>DE DE</c><br/>
@@ -34201,7 +34185,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Cyrix_DEDE = 4277,
+		Cyrix_DEDE = 4275,
 		/// <summary><c>FRINEAR</c><br/>
 		/// <br/>
 		/// <c>DF FC</c><br/>
@@ -34209,7 +34193,7 @@ namespace Blazed.Intel {
 		/// <c>Cyrix, AMD Geode GX/LX</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Frinear = 4278,
+		Frinear = 4276,
 		/// <summary><c>TDCALL</c><br/>
 		/// <br/>
 		/// <c>66 0F 01 CC</c><br/>
@@ -34217,7 +34201,7 @@ namespace Blazed.Intel {
 		/// <c>TDX</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Tdcall = 4279,
+		Tdcall = 4277,
 		/// <summary><c>SEAMRET</c><br/>
 		/// <br/>
 		/// <c>66 0F 01 CD</c><br/>
@@ -34225,7 +34209,7 @@ namespace Blazed.Intel {
 		/// <c>TDX</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Seamret = 4280,
+		Seamret = 4278,
 		/// <summary><c>SEAMOPS</c><br/>
 		/// <br/>
 		/// <c>66 0F 01 CE</c><br/>
@@ -34233,7 +34217,7 @@ namespace Blazed.Intel {
 		/// <c>TDX</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Seamops = 4281,
+		Seamops = 4279,
 		/// <summary><c>SEAMCALL</c><br/>
 		/// <br/>
 		/// <c>66 0F 01 CF</c><br/>
@@ -34241,7 +34225,7 @@ namespace Blazed.Intel {
 		/// <c>TDX</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Seamcall = 4282,
+		Seamcall = 4280,
 		/// <summary><c>AESENCWIDE128KL m384, &lt;XMM0-7&gt;</c><br/>
 		/// <br/>
 		/// <c>F3 0F 38 D8 !(11):000:bbb</c><br/>
@@ -34249,7 +34233,7 @@ namespace Blazed.Intel {
 		/// <c>AESKLE and WIDE_KL</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Aesencwide128kl_m384 = 4283,
+		Aesencwide128kl_m384 = 4281,
 		/// <summary><c>AESDECWIDE128KL m384, &lt;XMM0-7&gt;</c><br/>
 		/// <br/>
 		/// <c>F3 0F 38 D8 !(11):001:bbb</c><br/>
@@ -34257,7 +34241,7 @@ namespace Blazed.Intel {
 		/// <c>AESKLE and WIDE_KL</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Aesdecwide128kl_m384 = 4284,
+		Aesdecwide128kl_m384 = 4282,
 		/// <summary><c>AESENCWIDE256KL m512, &lt;XMM0-7&gt;</c><br/>
 		/// <br/>
 		/// <c>F3 0F 38 D8 !(11):010:bbb</c><br/>
@@ -34265,7 +34249,7 @@ namespace Blazed.Intel {
 		/// <c>AESKLE and WIDE_KL</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Aesencwide256kl_m512 = 4285,
+		Aesencwide256kl_m512 = 4283,
 		/// <summary><c>AESDECWIDE256KL m512, &lt;XMM0-7&gt;</c><br/>
 		/// <br/>
 		/// <c>F3 0F 38 D8 !(11):011:bbb</c><br/>
@@ -34273,7 +34257,7 @@ namespace Blazed.Intel {
 		/// <c>AESKLE and WIDE_KL</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Aesdecwide256kl_m512 = 4286,
+		Aesdecwide256kl_m512 = 4284,
 		/// <summary><c>LOADIWKEY xmm1, xmm2, &lt;EAX&gt;, &lt;XMM0&gt;</c><br/>
 		/// <br/>
 		/// <c>F3 0F 38 DC 11:rrr:bbb</c><br/>
@@ -34281,7 +34265,7 @@ namespace Blazed.Intel {
 		/// <c>KL</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Loadiwkey_xmm_xmm = 4287,
+		Loadiwkey_xmm_xmm = 4285,
 		/// <summary><c>AESENC128KL xmm, m384</c><br/>
 		/// <br/>
 		/// <c>F3 0F 38 DC !(11):rrr:bbb</c><br/>
@@ -34289,7 +34273,7 @@ namespace Blazed.Intel {
 		/// <c>AESKLE</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Aesenc128kl_xmm_m384 = 4288,
+		Aesenc128kl_xmm_m384 = 4286,
 		/// <summary><c>AESDEC128KL xmm, m384</c><br/>
 		/// <br/>
 		/// <c>F3 0F 38 DD !(11):rrr:bbb</c><br/>
@@ -34297,7 +34281,7 @@ namespace Blazed.Intel {
 		/// <c>AESKLE</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Aesdec128kl_xmm_m384 = 4289,
+		Aesdec128kl_xmm_m384 = 4287,
 		/// <summary><c>AESENC256KL xmm, m512</c><br/>
 		/// <br/>
 		/// <c>F3 0F 38 DE !(11):rrr:bbb</c><br/>
@@ -34305,7 +34289,7 @@ namespace Blazed.Intel {
 		/// <c>AESKLE</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Aesenc256kl_xmm_m512 = 4290,
+		Aesenc256kl_xmm_m512 = 4288,
 		/// <summary><c>AESDEC256KL xmm, m512</c><br/>
 		/// <br/>
 		/// <c>F3 0F 38 DF !(11):rrr:bbb</c><br/>
@@ -34313,7 +34297,7 @@ namespace Blazed.Intel {
 		/// <c>AESKLE</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Aesdec256kl_xmm_m512 = 4291,
+		Aesdec256kl_xmm_m512 = 4289,
 		/// <summary><c>ENCODEKEY128 r32, r32, &lt;XMM0-2&gt;, &lt;XMM4-6&gt;</c><br/>
 		/// <br/>
 		/// <c>F3 0F 38 FA 11:rrr:bbb</c><br/>
@@ -34321,7 +34305,7 @@ namespace Blazed.Intel {
 		/// <c>AESKLE</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Encodekey128_r32_r32 = 4292,
+		Encodekey128_r32_r32 = 4290,
 		/// <summary><c>ENCODEKEY256 r32, r32, &lt;XMM0-6&gt;</c><br/>
 		/// <br/>
 		/// <c>F3 0F 38 FB 11:rrr:bbb</c><br/>
@@ -34329,7 +34313,7 @@ namespace Blazed.Intel {
 		/// <c>AESKLE</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Encodekey256_r32_r32 = 4293,
+		Encodekey256_r32_r32 = 4291,
 		/// <summary><c>VBROADCASTSS xmm1, xmm2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.66.0F38.W0 18 /r</c><br/>
@@ -34337,7 +34321,7 @@ namespace Blazed.Intel {
 		/// <c>AVX2</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		VEX_Vbroadcastss_xmm_xmm = 4294,
+		VEX_Vbroadcastss_xmm_xmm = 4292,
 		/// <summary><c>VBROADCASTSS ymm1, xmm2</c><br/>
 		/// <br/>
 		/// <c>VEX.256.66.0F38.W0 18 /r</c><br/>
@@ -34345,7 +34329,7 @@ namespace Blazed.Intel {
 		/// <c>AVX2</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		VEX_Vbroadcastss_ymm_xmm = 4295,
+		VEX_Vbroadcastss_ymm_xmm = 4293,
 		/// <summary><c>VBROADCASTSD ymm1, xmm2</c><br/>
 		/// <br/>
 		/// <c>VEX.256.66.0F38.W0 19 /r</c><br/>
@@ -34353,7 +34337,7 @@ namespace Blazed.Intel {
 		/// <c>AVX2</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		VEX_Vbroadcastsd_ymm_xmm = 4296,
+		VEX_Vbroadcastsd_ymm_xmm = 4294,
 		/// <summary><c>VMGEXIT</c><br/>
 		/// <br/>
 		/// <c>F2 0F 01 D9</c><br/>
@@ -34361,7 +34345,7 @@ namespace Blazed.Intel {
 		/// <c>SEV-ES</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Vmgexit_F2 = 4297,
+		Vmgexit_F2 = 4295,
 		/// <summary><c>UIRET</c><br/>
 		/// <br/>
 		/// <c>F3 0F 01 EC</c><br/>
@@ -34369,7 +34353,7 @@ namespace Blazed.Intel {
 		/// <c>UINTR</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Uiret = 4298,
+		Uiret = 4296,
 		/// <summary><c>TESTUI</c><br/>
 		/// <br/>
 		/// <c>F3 0F 01 ED</c><br/>
@@ -34377,7 +34361,7 @@ namespace Blazed.Intel {
 		/// <c>UINTR</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Testui = 4299,
+		Testui = 4297,
 		/// <summary><c>CLUI</c><br/>
 		/// <br/>
 		/// <c>F3 0F 01 EE</c><br/>
@@ -34385,7 +34369,7 @@ namespace Blazed.Intel {
 		/// <c>UINTR</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Clui = 4300,
+		Clui = 4298,
 		/// <summary><c>STUI</c><br/>
 		/// <br/>
 		/// <c>F3 0F 01 EF</c><br/>
@@ -34393,7 +34377,7 @@ namespace Blazed.Intel {
 		/// <c>UINTR</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Stui = 4301,
+		Stui = 4299,
 		/// <summary><c>SENDUIPI r64</c><br/>
 		/// <br/>
 		/// <c>F3 0F C7 /6</c><br/>
@@ -34401,7 +34385,7 @@ namespace Blazed.Intel {
 		/// <c>UINTR</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Senduipi_r64 = 4302,
+		Senduipi_r64 = 4300,
 		/// <summary><c>HRESET imm8, &lt;EAX&gt;</c><br/>
 		/// <br/>
 		/// <c>F3 0F 3A F0 C0 ib</c><br/>
@@ -34409,7 +34393,7 @@ namespace Blazed.Intel {
 		/// <c>HRESET</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Hreset_imm8 = 4303,
+		Hreset_imm8 = 4301,
 		/// <summary><c>VPDPBUSD xmm1, xmm2, xmm3/m128</c><br/>
 		/// <br/>
 		/// <c>VEX.128.66.0F38.W0 50 /r</c><br/>
@@ -34417,7 +34401,7 @@ namespace Blazed.Intel {
 		/// <c>AVX-VNNI</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		VEX_Vpdpbusd_xmm_xmm_xmmm128 = 4304,
+		VEX_Vpdpbusd_xmm_xmm_xmmm128 = 4302,
 		/// <summary><c>VPDPBUSD ymm1, ymm2, ymm3/m256</c><br/>
 		/// <br/>
 		/// <c>VEX.256.66.0F38.W0 50 /r</c><br/>
@@ -34425,7 +34409,7 @@ namespace Blazed.Intel {
 		/// <c>AVX-VNNI</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		VEX_Vpdpbusd_ymm_ymm_ymmm256 = 4305,
+		VEX_Vpdpbusd_ymm_ymm_ymmm256 = 4303,
 		/// <summary><c>VPDPBUSDS xmm1, xmm2, xmm3/m128</c><br/>
 		/// <br/>
 		/// <c>VEX.128.66.0F38.W0 51 /r</c><br/>
@@ -34433,7 +34417,7 @@ namespace Blazed.Intel {
 		/// <c>AVX-VNNI</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		VEX_Vpdpbusds_xmm_xmm_xmmm128 = 4306,
+		VEX_Vpdpbusds_xmm_xmm_xmmm128 = 4304,
 		/// <summary><c>VPDPBUSDS ymm1, ymm2, ymm3/m256</c><br/>
 		/// <br/>
 		/// <c>VEX.256.66.0F38.W0 51 /r</c><br/>
@@ -34441,7 +34425,7 @@ namespace Blazed.Intel {
 		/// <c>AVX-VNNI</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		VEX_Vpdpbusds_ymm_ymm_ymmm256 = 4307,
+		VEX_Vpdpbusds_ymm_ymm_ymmm256 = 4305,
 		/// <summary><c>VPDPWSSD xmm1, xmm2, xmm3/m128</c><br/>
 		/// <br/>
 		/// <c>VEX.128.66.0F38.W0 52 /r</c><br/>
@@ -34449,7 +34433,7 @@ namespace Blazed.Intel {
 		/// <c>AVX-VNNI</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		VEX_Vpdpwssd_xmm_xmm_xmmm128 = 4308,
+		VEX_Vpdpwssd_xmm_xmm_xmmm128 = 4306,
 		/// <summary><c>VPDPWSSD ymm1, ymm2, ymm3/m256</c><br/>
 		/// <br/>
 		/// <c>VEX.256.66.0F38.W0 52 /r</c><br/>
@@ -34457,7 +34441,7 @@ namespace Blazed.Intel {
 		/// <c>AVX-VNNI</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		VEX_Vpdpwssd_ymm_ymm_ymmm256 = 4309,
+		VEX_Vpdpwssd_ymm_ymm_ymmm256 = 4307,
 		/// <summary><c>VPDPWSSDS xmm1, xmm2, xmm3/m128</c><br/>
 		/// <br/>
 		/// <c>VEX.128.66.0F38.W0 53 /r</c><br/>
@@ -34465,7 +34449,7 @@ namespace Blazed.Intel {
 		/// <c>AVX-VNNI</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		VEX_Vpdpwssds_xmm_xmm_xmmm128 = 4310,
+		VEX_Vpdpwssds_xmm_xmm_xmmm128 = 4308,
 		/// <summary><c>VPDPWSSDS ymm1, ymm2, ymm3/m256</c><br/>
 		/// <br/>
 		/// <c>VEX.256.66.0F38.W0 53 /r</c><br/>
@@ -34473,7 +34457,7 @@ namespace Blazed.Intel {
 		/// <c>AVX-VNNI</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		VEX_Vpdpwssds_ymm_ymm_ymmm256 = 4311,
+		VEX_Vpdpwssds_ymm_ymm_ymmm256 = 4309,
 		/// <summary><c>CCS_HASH</c><br/>
 		/// <br/>
 		/// <c>a16 F3 0F A6 E8</c><br/>
@@ -34481,7 +34465,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_GMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Ccs_hash_16 = 4312,
+		Ccs_hash_16 = 4310,
 		/// <summary><c>CCS_HASH</c><br/>
 		/// <br/>
 		/// <c>a32 F3 0F A6 E8</c><br/>
@@ -34489,7 +34473,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_GMI</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Ccs_hash_32 = 4313,
+		Ccs_hash_32 = 4311,
 		/// <summary><c>CCS_HASH</c><br/>
 		/// <br/>
 		/// <c>a64 F3 0F A6 E8</c><br/>
@@ -34497,7 +34481,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_GMI</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Ccs_hash_64 = 4314,
+		Ccs_hash_64 = 4312,
 		/// <summary><c>CCS_ENCRYPT</c><br/>
 		/// <br/>
 		/// <c>a16 F3 0F A7 F0</c><br/>
@@ -34505,7 +34489,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_GMI</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Ccs_encrypt_16 = 4315,
+		Ccs_encrypt_16 = 4313,
 		/// <summary><c>CCS_ENCRYPT</c><br/>
 		/// <br/>
 		/// <c>a32 F3 0F A7 F0</c><br/>
@@ -34513,7 +34497,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_GMI</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Ccs_encrypt_32 = 4316,
+		Ccs_encrypt_32 = 4314,
 		/// <summary><c>CCS_ENCRYPT</c><br/>
 		/// <br/>
 		/// <c>a64 F3 0F A7 F0</c><br/>
@@ -34521,7 +34505,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_GMI</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Ccs_encrypt_64 = 4317,
+		Ccs_encrypt_64 = 4315,
 		/// <summary><c>LKGS r/m16</c><br/>
 		/// <br/>
 		/// <c>o16 F2 0F 00 /6</c><br/>
@@ -34529,7 +34513,7 @@ namespace Blazed.Intel {
 		/// <c>LKGS</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Lkgs_rm16 = 4318,
+		Lkgs_rm16 = 4316,
 		/// <summary><c>LKGS r32/m16</c><br/>
 		/// <br/>
 		/// <c>o32 F2 0F 00 /6</c><br/>
@@ -34537,7 +34521,7 @@ namespace Blazed.Intel {
 		/// <c>LKGS</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Lkgs_r32m16 = 4319,
+		Lkgs_r32m16 = 4317,
 		/// <summary><c>LKGS r64/m16</c><br/>
 		/// <br/>
 		/// <c>F2 o64 0F 00 /6</c><br/>
@@ -34545,7 +34529,7 @@ namespace Blazed.Intel {
 		/// <c>LKGS</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Lkgs_r64m16 = 4320,
+		Lkgs_r64m16 = 4318,
 		/// <summary><c>ERETU</c><br/>
 		/// <br/>
 		/// <c>F3 0F 01 CA</c><br/>
@@ -34553,7 +34537,7 @@ namespace Blazed.Intel {
 		/// <c>FRED</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Eretu = 4321,
+		Eretu = 4319,
 		/// <summary><c>ERETS</c><br/>
 		/// <br/>
 		/// <c>F2 0F 01 CA</c><br/>
@@ -34561,7 +34545,7 @@ namespace Blazed.Intel {
 		/// <c>FRED</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Erets = 4322,
+		Erets = 4320,
 		/// <summary><c>VADDPH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 58 /r</c><br/>
@@ -34569,7 +34553,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vaddph_xmm_k1z_xmm_xmmm128b16 = 4323,
+		EVEX_Vaddph_xmm_k1z_xmm_xmmm128b16 = 4321,
 		/// <summary><c>VADDPH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 58 /r</c><br/>
@@ -34577,7 +34561,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vaddph_ymm_k1z_ymm_ymmm256b16 = 4324,
+		EVEX_Vaddph_ymm_k1z_ymm_ymmm256b16 = 4322,
 		/// <summary><c>VADDPH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 58 /r</c><br/>
@@ -34585,7 +34569,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vaddph_zmm_k1z_zmm_zmmm512b16_er = 4325,
+		EVEX_Vaddph_zmm_k1z_zmm_zmmm512b16_er = 4323,
 		/// <summary><c>VADDSH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 58 /r</c><br/>
@@ -34593,7 +34577,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vaddsh_xmm_k1z_xmm_xmmm16_er = 4326,
+		EVEX_Vaddsh_xmm_k1z_xmm_xmmm16_er = 4324,
 		/// <summary><c>VCMPPH k1 {k2}, xmm2, xmm3/m128/m16bcst, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.0F3A.W0 C2 /r ib</c><br/>
@@ -34601,7 +34585,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcmpph_kr_k1_xmm_xmmm128b16_imm8 = 4327,
+		EVEX_Vcmpph_kr_k1_xmm_xmmm128b16_imm8 = 4325,
 		/// <summary><c>VCMPPH k1 {k2}, ymm2, ymm3/m256/m16bcst, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.0F3A.W0 C2 /r ib</c><br/>
@@ -34609,7 +34593,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcmpph_kr_k1_ymm_ymmm256b16_imm8 = 4328,
+		EVEX_Vcmpph_kr_k1_ymm_ymmm256b16_imm8 = 4326,
 		/// <summary><c>VCMPPH k1 {k2}, zmm2, zmm3/m512/m16bcst{sae}, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.0F3A.W0 C2 /r ib</c><br/>
@@ -34617,7 +34601,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcmpph_kr_k1_zmm_zmmm512b16_imm8_sae = 4329,
+		EVEX_Vcmpph_kr_k1_zmm_zmmm512b16_imm8_sae = 4327,
 		/// <summary><c>VCMPSH k1 {k2}, xmm2, xmm3/m16{sae}, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.0F3A.W0 C2 /r ib</c><br/>
@@ -34625,7 +34609,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcmpsh_kr_k1_xmm_xmmm16_imm8_sae = 4330,
+		EVEX_Vcmpsh_kr_k1_xmm_xmmm16_imm8_sae = 4328,
 		/// <summary><c>VCOMISH xmm1, xmm2/m16{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.MAP5.W0 2F /r</c><br/>
@@ -34633,7 +34617,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcomish_xmm_xmmm16_sae = 4331,
+		EVEX_Vcomish_xmm_xmmm16_sae = 4329,
 		/// <summary><c>VCVTDQ2PH xmm1 {k1}{z}, xmm2/m128/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 5B /r</c><br/>
@@ -34641,7 +34625,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtdq2ph_xmm_k1z_xmmm128b32 = 4332,
+		EVEX_Vcvtdq2ph_xmm_k1z_xmmm128b32 = 4330,
 		/// <summary><c>VCVTDQ2PH xmm1 {k1}{z}, ymm2/m256/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 5B /r</c><br/>
@@ -34649,7 +34633,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtdq2ph_xmm_k1z_ymmm256b32 = 4333,
+		EVEX_Vcvtdq2ph_xmm_k1z_ymmm256b32 = 4331,
 		/// <summary><c>VCVTDQ2PH ymm1 {k1}{z}, zmm2/m512/m32bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 5B /r</c><br/>
@@ -34657,7 +34641,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtdq2ph_ymm_k1z_zmmm512b32_er = 4334,
+		EVEX_Vcvtdq2ph_ymm_k1z_zmmm512b32_er = 4332,
 		/// <summary><c>VCVTPD2PH xmm1 {k1}{z}, xmm2/m128/m64bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W1 5A /r</c><br/>
@@ -34665,7 +34649,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtpd2ph_xmm_k1z_xmmm128b64 = 4335,
+		EVEX_Vcvtpd2ph_xmm_k1z_xmmm128b64 = 4333,
 		/// <summary><c>VCVTPD2PH xmm1 {k1}{z}, ymm2/m256/m64bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP5.W1 5A /r</c><br/>
@@ -34673,7 +34657,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtpd2ph_xmm_k1z_ymmm256b64 = 4336,
+		EVEX_Vcvtpd2ph_xmm_k1z_ymmm256b64 = 4334,
 		/// <summary><c>VCVTPD2PH xmm1 {k1}{z}, zmm2/m512/m64bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP5.W1 5A /r</c><br/>
@@ -34681,7 +34665,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtpd2ph_xmm_k1z_zmmm512b64_er = 4337,
+		EVEX_Vcvtpd2ph_xmm_k1z_zmmm512b64_er = 4335,
 		/// <summary><c>VCVTPH2DQ xmm1 {k1}{z}, xmm2/m64/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W0 5B /r</c><br/>
@@ -34689,7 +34673,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2dq_xmm_k1z_xmmm64b16 = 4338,
+		EVEX_Vcvtph2dq_xmm_k1z_xmmm64b16 = 4336,
 		/// <summary><c>VCVTPH2DQ ymm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP5.W0 5B /r</c><br/>
@@ -34697,7 +34681,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2dq_ymm_k1z_xmmm128b16 = 4339,
+		EVEX_Vcvtph2dq_ymm_k1z_xmmm128b16 = 4337,
 		/// <summary><c>VCVTPH2DQ zmm1 {k1}{z}, ymm2/m256/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP5.W0 5B /r</c><br/>
@@ -34705,7 +34689,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2dq_zmm_k1z_ymmm256b16_er = 4340,
+		EVEX_Vcvtph2dq_zmm_k1z_ymmm256b16_er = 4338,
 		/// <summary><c>VCVTPH2PD xmm1 {k1}{z}, xmm2/m32/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 5A /r</c><br/>
@@ -34713,7 +34697,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2pd_xmm_k1z_xmmm32b16 = 4341,
+		EVEX_Vcvtph2pd_xmm_k1z_xmmm32b16 = 4339,
 		/// <summary><c>VCVTPH2PD ymm1 {k1}{z}, xmm2/m64/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 5A /r</c><br/>
@@ -34721,7 +34705,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2pd_ymm_k1z_xmmm64b16 = 4342,
+		EVEX_Vcvtph2pd_ymm_k1z_xmmm64b16 = 4340,
 		/// <summary><c>VCVTPH2PD zmm1 {k1}{z}, xmm2/m128/m16bcst{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 5A /r</c><br/>
@@ -34729,7 +34713,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2pd_zmm_k1z_xmmm128b16_sae = 4343,
+		EVEX_Vcvtph2pd_zmm_k1z_xmmm128b16_sae = 4341,
 		/// <summary><c>VCVTPH2PSX xmm1 {k1}{z}, xmm2/m64/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 13 /r</c><br/>
@@ -34737,7 +34721,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2psx_xmm_k1z_xmmm64b16 = 4344,
+		EVEX_Vcvtph2psx_xmm_k1z_xmmm64b16 = 4342,
 		/// <summary><c>VCVTPH2PSX ymm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 13 /r</c><br/>
@@ -34745,7 +34729,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2psx_ymm_k1z_xmmm128b16 = 4345,
+		EVEX_Vcvtph2psx_ymm_k1z_xmmm128b16 = 4343,
 		/// <summary><c>VCVTPH2PSX zmm1 {k1}{z}, ymm2/m256/m16bcst{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 13 /r</c><br/>
@@ -34753,7 +34737,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2psx_zmm_k1z_ymmm256b16_sae = 4346,
+		EVEX_Vcvtph2psx_zmm_k1z_ymmm256b16_sae = 4344,
 		/// <summary><c>VCVTPH2QQ xmm1 {k1}{z}, xmm2/m32/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W0 7B /r</c><br/>
@@ -34761,7 +34745,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2qq_xmm_k1z_xmmm32b16 = 4347,
+		EVEX_Vcvtph2qq_xmm_k1z_xmmm32b16 = 4345,
 		/// <summary><c>VCVTPH2QQ ymm1 {k1}{z}, xmm2/m64/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP5.W0 7B /r</c><br/>
@@ -34769,7 +34753,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2qq_ymm_k1z_xmmm64b16 = 4348,
+		EVEX_Vcvtph2qq_ymm_k1z_xmmm64b16 = 4346,
 		/// <summary><c>VCVTPH2QQ zmm1 {k1}{z}, xmm2/m128/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP5.W0 7B /r</c><br/>
@@ -34777,7 +34761,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2qq_zmm_k1z_xmmm128b16_er = 4349,
+		EVEX_Vcvtph2qq_zmm_k1z_xmmm128b16_er = 4347,
 		/// <summary><c>VCVTPH2UDQ xmm1 {k1}{z}, xmm2/m64/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 79 /r</c><br/>
@@ -34785,7 +34769,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2udq_xmm_k1z_xmmm64b16 = 4350,
+		EVEX_Vcvtph2udq_xmm_k1z_xmmm64b16 = 4348,
 		/// <summary><c>VCVTPH2UDQ ymm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 79 /r</c><br/>
@@ -34793,7 +34777,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2udq_ymm_k1z_xmmm128b16 = 4351,
+		EVEX_Vcvtph2udq_ymm_k1z_xmmm128b16 = 4349,
 		/// <summary><c>VCVTPH2UDQ zmm1 {k1}{z}, ymm2/m256/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 79 /r</c><br/>
@@ -34801,7 +34785,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2udq_zmm_k1z_ymmm256b16_er = 4352,
+		EVEX_Vcvtph2udq_zmm_k1z_ymmm256b16_er = 4350,
 		/// <summary><c>VCVTPH2UQQ xmm1 {k1}{z}, xmm2/m32/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W0 79 /r</c><br/>
@@ -34809,7 +34793,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2uqq_xmm_k1z_xmmm32b16 = 4353,
+		EVEX_Vcvtph2uqq_xmm_k1z_xmmm32b16 = 4351,
 		/// <summary><c>VCVTPH2UQQ ymm1 {k1}{z}, xmm2/m64/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP5.W0 79 /r</c><br/>
@@ -34817,7 +34801,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2uqq_ymm_k1z_xmmm64b16 = 4354,
+		EVEX_Vcvtph2uqq_ymm_k1z_xmmm64b16 = 4352,
 		/// <summary><c>VCVTPH2UQQ zmm1 {k1}{z}, xmm2/m128/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP5.W0 79 /r</c><br/>
@@ -34825,7 +34809,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2uqq_zmm_k1z_xmmm128b16_er = 4355,
+		EVEX_Vcvtph2uqq_zmm_k1z_xmmm128b16_er = 4353,
 		/// <summary><c>VCVTPH2UW xmm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 7D /r</c><br/>
@@ -34833,7 +34817,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2uw_xmm_k1z_xmmm128b16 = 4356,
+		EVEX_Vcvtph2uw_xmm_k1z_xmmm128b16 = 4354,
 		/// <summary><c>VCVTPH2UW ymm1 {k1}{z}, ymm2/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 7D /r</c><br/>
@@ -34841,7 +34825,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2uw_ymm_k1z_ymmm256b16 = 4357,
+		EVEX_Vcvtph2uw_ymm_k1z_ymmm256b16 = 4355,
 		/// <summary><c>VCVTPH2UW zmm1 {k1}{z}, zmm2/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 7D /r</c><br/>
@@ -34849,7 +34833,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2uw_zmm_k1z_zmmm512b16_er = 4358,
+		EVEX_Vcvtph2uw_zmm_k1z_zmmm512b16_er = 4356,
 		/// <summary><c>VCVTPH2W xmm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W0 7D /r</c><br/>
@@ -34857,7 +34841,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2w_xmm_k1z_xmmm128b16 = 4359,
+		EVEX_Vcvtph2w_xmm_k1z_xmmm128b16 = 4357,
 		/// <summary><c>VCVTPH2W ymm1 {k1}{z}, ymm2/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP5.W0 7D /r</c><br/>
@@ -34865,7 +34849,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2w_ymm_k1z_ymmm256b16 = 4360,
+		EVEX_Vcvtph2w_ymm_k1z_ymmm256b16 = 4358,
 		/// <summary><c>VCVTPH2W zmm1 {k1}{z}, zmm2/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP5.W0 7D /r</c><br/>
@@ -34873,7 +34857,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtph2w_zmm_k1z_zmmm512b16_er = 4361,
+		EVEX_Vcvtph2w_zmm_k1z_zmmm512b16_er = 4359,
 		/// <summary><c>VCVTPS2PHX xmm1 {k1}{z}, xmm2/m128/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W0 1D /r</c><br/>
@@ -34881,7 +34865,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtps2phx_xmm_k1z_xmmm128b32 = 4362,
+		EVEX_Vcvtps2phx_xmm_k1z_xmmm128b32 = 4360,
 		/// <summary><c>VCVTPS2PHX xmm1 {k1}{z}, ymm2/m256/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP5.W0 1D /r</c><br/>
@@ -34889,7 +34873,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtps2phx_xmm_k1z_ymmm256b32 = 4363,
+		EVEX_Vcvtps2phx_xmm_k1z_ymmm256b32 = 4361,
 		/// <summary><c>VCVTPS2PHX ymm1 {k1}{z}, zmm2/m512/m32bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP5.W0 1D /r</c><br/>
@@ -34897,7 +34881,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtps2phx_ymm_k1z_zmmm512b32_er = 4364,
+		EVEX_Vcvtps2phx_ymm_k1z_zmmm512b32_er = 4362,
 		/// <summary><c>VCVTQQ2PH xmm1 {k1}{z}, xmm2/m128/m64bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W1 5B /r</c><br/>
@@ -34905,7 +34889,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtqq2ph_xmm_k1z_xmmm128b64 = 4365,
+		EVEX_Vcvtqq2ph_xmm_k1z_xmmm128b64 = 4363,
 		/// <summary><c>VCVTQQ2PH xmm1 {k1}{z}, ymm2/m256/m64bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W1 5B /r</c><br/>
@@ -34913,7 +34897,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtqq2ph_xmm_k1z_ymmm256b64 = 4366,
+		EVEX_Vcvtqq2ph_xmm_k1z_ymmm256b64 = 4364,
 		/// <summary><c>VCVTQQ2PH xmm1 {k1}{z}, zmm2/m512/m64bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W1 5B /r</c><br/>
@@ -34921,7 +34905,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtqq2ph_xmm_k1z_zmmm512b64_er = 4367,
+		EVEX_Vcvtqq2ph_xmm_k1z_zmmm512b64_er = 4365,
 		/// <summary><c>VCVTSD2SH xmm1 {k1}{z}, xmm2, xmm3/m64{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F2.MAP5.W1 5A /r</c><br/>
@@ -34929,7 +34913,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtsd2sh_xmm_k1z_xmm_xmmm64_er = 4368,
+		EVEX_Vcvtsd2sh_xmm_k1z_xmm_xmmm64_er = 4366,
 		/// <summary><c>VCVTSH2SD xmm1 {k1}{z}, xmm2, xmm3/m16{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 5A /r</c><br/>
@@ -34937,7 +34921,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtsh2sd_xmm_k1z_xmm_xmmm16_sae = 4369,
+		EVEX_Vcvtsh2sd_xmm_k1z_xmm_xmmm16_sae = 4367,
 		/// <summary><c>VCVTSH2SI r32, xmm1/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 2D /r</c><br/>
@@ -34945,7 +34929,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtsh2si_r32_xmmm16_er = 4370,
+		EVEX_Vcvtsh2si_r32_xmmm16_er = 4368,
 		/// <summary><c>VCVTSH2SI r64, xmm1/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W1 2D /r</c><br/>
@@ -34953,7 +34937,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		EVEX_Vcvtsh2si_r64_xmmm16_er = 4371,
+		EVEX_Vcvtsh2si_r64_xmmm16_er = 4369,
 		/// <summary><c>VCVTSH2SS xmm1 {k1}{z}, xmm2, xmm3/m16{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.MAP6.W0 13 /r</c><br/>
@@ -34961,7 +34945,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtsh2ss_xmm_k1z_xmm_xmmm16_sae = 4372,
+		EVEX_Vcvtsh2ss_xmm_k1z_xmm_xmmm16_sae = 4370,
 		/// <summary><c>VCVTSH2USI r32, xmm1/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 79 /r</c><br/>
@@ -34969,7 +34953,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtsh2usi_r32_xmmm16_er = 4373,
+		EVEX_Vcvtsh2usi_r32_xmmm16_er = 4371,
 		/// <summary><c>VCVTSH2USI r64, xmm1/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W1 79 /r</c><br/>
@@ -34977,7 +34961,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		EVEX_Vcvtsh2usi_r64_xmmm16_er = 4374,
+		EVEX_Vcvtsh2usi_r64_xmmm16_er = 4372,
 		/// <summary><c>VCVTSI2SH xmm1, xmm2, r/m32{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 2A /r</c><br/>
@@ -34985,7 +34969,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtsi2sh_xmm_xmm_rm32_er = 4375,
+		EVEX_Vcvtsi2sh_xmm_xmm_rm32_er = 4373,
 		/// <summary><c>VCVTSI2SH xmm1, xmm2, r/m64{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W1 2A /r</c><br/>
@@ -34993,7 +34977,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		EVEX_Vcvtsi2sh_xmm_xmm_rm64_er = 4376,
+		EVEX_Vcvtsi2sh_xmm_xmm_rm64_er = 4374,
 		/// <summary><c>VCVTSS2SH xmm1 {k1}{z}, xmm2, xmm3/m32{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.MAP5.W0 1D /r</c><br/>
@@ -35001,7 +34985,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtss2sh_xmm_k1z_xmm_xmmm32_er = 4377,
+		EVEX_Vcvtss2sh_xmm_k1z_xmm_xmmm32_er = 4375,
 		/// <summary><c>VCVTTPH2DQ xmm1 {k1}{z}, xmm2/m64/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.F3.MAP5.W0 5B /r</c><br/>
@@ -35009,7 +34993,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2dq_xmm_k1z_xmmm64b16 = 4378,
+		EVEX_Vcvttph2dq_xmm_k1z_xmmm64b16 = 4376,
 		/// <summary><c>VCVTTPH2DQ ymm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.F3.MAP5.W0 5B /r</c><br/>
@@ -35017,7 +35001,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2dq_ymm_k1z_xmmm128b16 = 4379,
+		EVEX_Vcvttph2dq_ymm_k1z_xmmm128b16 = 4377,
 		/// <summary><c>VCVTTPH2DQ zmm1 {k1}{z}, ymm2/m256/m16bcst{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.F3.MAP5.W0 5B /r</c><br/>
@@ -35025,7 +35009,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2dq_zmm_k1z_ymmm256b16_sae = 4380,
+		EVEX_Vcvttph2dq_zmm_k1z_ymmm256b16_sae = 4378,
 		/// <summary><c>VCVTTPH2QQ xmm1 {k1}{z}, xmm2/m32/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W0 7A /r</c><br/>
@@ -35033,7 +35017,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2qq_xmm_k1z_xmmm32b16 = 4381,
+		EVEX_Vcvttph2qq_xmm_k1z_xmmm32b16 = 4379,
 		/// <summary><c>VCVTTPH2QQ ymm1 {k1}{z}, xmm2/m64/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP5.W0 7A /r</c><br/>
@@ -35041,7 +35025,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2qq_ymm_k1z_xmmm64b16 = 4382,
+		EVEX_Vcvttph2qq_ymm_k1z_xmmm64b16 = 4380,
 		/// <summary><c>VCVTTPH2QQ zmm1 {k1}{z}, xmm2/m128/m16bcst{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP5.W0 7A /r</c><br/>
@@ -35049,7 +35033,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2qq_zmm_k1z_xmmm128b16_sae = 4383,
+		EVEX_Vcvttph2qq_zmm_k1z_xmmm128b16_sae = 4381,
 		/// <summary><c>VCVTTPH2UDQ xmm1 {k1}{z}, xmm2/m64/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 78 /r</c><br/>
@@ -35057,7 +35041,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2udq_xmm_k1z_xmmm64b16 = 4384,
+		EVEX_Vcvttph2udq_xmm_k1z_xmmm64b16 = 4382,
 		/// <summary><c>VCVTTPH2UDQ ymm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 78 /r</c><br/>
@@ -35065,7 +35049,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2udq_ymm_k1z_xmmm128b16 = 4385,
+		EVEX_Vcvttph2udq_ymm_k1z_xmmm128b16 = 4383,
 		/// <summary><c>VCVTTPH2UDQ zmm1 {k1}{z}, ymm2/m256/m16bcst{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 78 /r</c><br/>
@@ -35073,7 +35057,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2udq_zmm_k1z_ymmm256b16_sae = 4386,
+		EVEX_Vcvttph2udq_zmm_k1z_ymmm256b16_sae = 4384,
 		/// <summary><c>VCVTTPH2UQQ xmm1 {k1}{z}, xmm2/m32/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W0 78 /r</c><br/>
@@ -35081,7 +35065,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2uqq_xmm_k1z_xmmm32b16 = 4387,
+		EVEX_Vcvttph2uqq_xmm_k1z_xmmm32b16 = 4385,
 		/// <summary><c>VCVTTPH2UQQ ymm1 {k1}{z}, xmm2/m64/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP5.W0 78 /r</c><br/>
@@ -35089,7 +35073,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2uqq_ymm_k1z_xmmm64b16 = 4388,
+		EVEX_Vcvttph2uqq_ymm_k1z_xmmm64b16 = 4386,
 		/// <summary><c>VCVTTPH2UQQ zmm1 {k1}{z}, xmm2/m128/m16bcst{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP5.W0 78 /r</c><br/>
@@ -35097,7 +35081,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2uqq_zmm_k1z_xmmm128b16_sae = 4389,
+		EVEX_Vcvttph2uqq_zmm_k1z_xmmm128b16_sae = 4387,
 		/// <summary><c>VCVTTPH2UW xmm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 7C /r</c><br/>
@@ -35105,7 +35089,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2uw_xmm_k1z_xmmm128b16 = 4390,
+		EVEX_Vcvttph2uw_xmm_k1z_xmmm128b16 = 4388,
 		/// <summary><c>VCVTTPH2UW ymm1 {k1}{z}, ymm2/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 7C /r</c><br/>
@@ -35113,7 +35097,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2uw_ymm_k1z_ymmm256b16 = 4391,
+		EVEX_Vcvttph2uw_ymm_k1z_ymmm256b16 = 4389,
 		/// <summary><c>VCVTTPH2UW zmm1 {k1}{z}, zmm2/m512/m16bcst{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 7C /r</c><br/>
@@ -35121,7 +35105,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2uw_zmm_k1z_zmmm512b16_sae = 4392,
+		EVEX_Vcvttph2uw_zmm_k1z_zmmm512b16_sae = 4390,
 		/// <summary><c>VCVTTPH2W xmm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W0 7C /r</c><br/>
@@ -35129,7 +35113,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2w_xmm_k1z_xmmm128b16 = 4393,
+		EVEX_Vcvttph2w_xmm_k1z_xmmm128b16 = 4391,
 		/// <summary><c>VCVTTPH2W ymm1 {k1}{z}, ymm2/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP5.W0 7C /r</c><br/>
@@ -35137,7 +35121,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2w_ymm_k1z_ymmm256b16 = 4394,
+		EVEX_Vcvttph2w_ymm_k1z_ymmm256b16 = 4392,
 		/// <summary><c>VCVTTPH2W zmm1 {k1}{z}, zmm2/m512/m16bcst{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP5.W0 7C /r</c><br/>
@@ -35145,7 +35129,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttph2w_zmm_k1z_zmmm512b16_sae = 4395,
+		EVEX_Vcvttph2w_zmm_k1z_zmmm512b16_sae = 4393,
 		/// <summary><c>VCVTTSH2SI r32, xmm1/m16{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 2C /r</c><br/>
@@ -35153,7 +35137,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttsh2si_r32_xmmm16_sae = 4396,
+		EVEX_Vcvttsh2si_r32_xmmm16_sae = 4394,
 		/// <summary><c>VCVTTSH2SI r64, xmm1/m16{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W1 2C /r</c><br/>
@@ -35161,7 +35145,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		EVEX_Vcvttsh2si_r64_xmmm16_sae = 4397,
+		EVEX_Vcvttsh2si_r64_xmmm16_sae = 4395,
 		/// <summary><c>VCVTTSH2USI r32, xmm1/m16{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 78 /r</c><br/>
@@ -35169,7 +35153,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvttsh2usi_r32_xmmm16_sae = 4398,
+		EVEX_Vcvttsh2usi_r32_xmmm16_sae = 4396,
 		/// <summary><c>VCVTTSH2USI r64, xmm1/m16{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W1 78 /r</c><br/>
@@ -35177,7 +35161,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		EVEX_Vcvttsh2usi_r64_xmmm16_sae = 4399,
+		EVEX_Vcvttsh2usi_r64_xmmm16_sae = 4397,
 		/// <summary><c>VCVTUDQ2PH xmm1 {k1}{z}, xmm2/m128/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.F2.MAP5.W0 7A /r</c><br/>
@@ -35185,7 +35169,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtudq2ph_xmm_k1z_xmmm128b32 = 4400,
+		EVEX_Vcvtudq2ph_xmm_k1z_xmmm128b32 = 4398,
 		/// <summary><c>VCVTUDQ2PH xmm1 {k1}{z}, ymm2/m256/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.F2.MAP5.W0 7A /r</c><br/>
@@ -35193,7 +35177,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtudq2ph_xmm_k1z_ymmm256b32 = 4401,
+		EVEX_Vcvtudq2ph_xmm_k1z_ymmm256b32 = 4399,
 		/// <summary><c>VCVTUDQ2PH ymm1 {k1}{z}, zmm2/m512/m32bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.F2.MAP5.W0 7A /r</c><br/>
@@ -35201,7 +35185,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtudq2ph_ymm_k1z_zmmm512b32_er = 4402,
+		EVEX_Vcvtudq2ph_ymm_k1z_zmmm512b32_er = 4400,
 		/// <summary><c>VCVTUQQ2PH xmm1 {k1}{z}, xmm2/m128/m64bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.F2.MAP5.W1 7A /r</c><br/>
@@ -35209,7 +35193,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtuqq2ph_xmm_k1z_xmmm128b64 = 4403,
+		EVEX_Vcvtuqq2ph_xmm_k1z_xmmm128b64 = 4401,
 		/// <summary><c>VCVTUQQ2PH xmm1 {k1}{z}, ymm2/m256/m64bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.F2.MAP5.W1 7A /r</c><br/>
@@ -35217,7 +35201,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtuqq2ph_xmm_k1z_ymmm256b64 = 4404,
+		EVEX_Vcvtuqq2ph_xmm_k1z_ymmm256b64 = 4402,
 		/// <summary><c>VCVTUQQ2PH xmm1 {k1}{z}, zmm2/m512/m64bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.F2.MAP5.W1 7A /r</c><br/>
@@ -35225,7 +35209,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtuqq2ph_xmm_k1z_zmmm512b64_er = 4405,
+		EVEX_Vcvtuqq2ph_xmm_k1z_zmmm512b64_er = 4403,
 		/// <summary><c>VCVTUSI2SH xmm1, xmm2, r/m32{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 7B /r</c><br/>
@@ -35233,7 +35217,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtusi2sh_xmm_xmm_rm32_er = 4406,
+		EVEX_Vcvtusi2sh_xmm_xmm_rm32_er = 4404,
 		/// <summary><c>VCVTUSI2SH xmm1, xmm2, r/m64{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W1 7B /r</c><br/>
@@ -35241,7 +35225,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		EVEX_Vcvtusi2sh_xmm_xmm_rm64_er = 4407,
+		EVEX_Vcvtusi2sh_xmm_xmm_rm64_er = 4405,
 		/// <summary><c>VCVTUW2PH xmm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.F2.MAP5.W0 7D /r</c><br/>
@@ -35249,7 +35233,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtuw2ph_xmm_k1z_xmmm128b16 = 4408,
+		EVEX_Vcvtuw2ph_xmm_k1z_xmmm128b16 = 4406,
 		/// <summary><c>VCVTUW2PH ymm1 {k1}{z}, ymm2/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.F2.MAP5.W0 7D /r</c><br/>
@@ -35257,7 +35241,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtuw2ph_ymm_k1z_ymmm256b16 = 4409,
+		EVEX_Vcvtuw2ph_ymm_k1z_ymmm256b16 = 4407,
 		/// <summary><c>VCVTUW2PH zmm1 {k1}{z}, zmm2/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.F2.MAP5.W0 7D /r</c><br/>
@@ -35265,7 +35249,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtuw2ph_zmm_k1z_zmmm512b16_er = 4410,
+		EVEX_Vcvtuw2ph_zmm_k1z_zmmm512b16_er = 4408,
 		/// <summary><c>VCVTW2PH xmm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.F3.MAP5.W0 7D /r</c><br/>
@@ -35273,7 +35257,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtw2ph_xmm_k1z_xmmm128b16 = 4411,
+		EVEX_Vcvtw2ph_xmm_k1z_xmmm128b16 = 4409,
 		/// <summary><c>VCVTW2PH ymm1 {k1}{z}, ymm2/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.F3.MAP5.W0 7D /r</c><br/>
@@ -35281,7 +35265,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtw2ph_ymm_k1z_ymmm256b16 = 4412,
+		EVEX_Vcvtw2ph_ymm_k1z_ymmm256b16 = 4410,
 		/// <summary><c>VCVTW2PH zmm1 {k1}{z}, zmm2/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.F3.MAP5.W0 7D /r</c><br/>
@@ -35289,7 +35273,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vcvtw2ph_zmm_k1z_zmmm512b16_er = 4413,
+		EVEX_Vcvtw2ph_zmm_k1z_zmmm512b16_er = 4411,
 		/// <summary><c>VDIVPH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 5E /r</c><br/>
@@ -35297,7 +35281,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vdivph_xmm_k1z_xmm_xmmm128b16 = 4414,
+		EVEX_Vdivph_xmm_k1z_xmm_xmmm128b16 = 4412,
 		/// <summary><c>VDIVPH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 5E /r</c><br/>
@@ -35305,7 +35289,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vdivph_ymm_k1z_ymm_ymmm256b16 = 4415,
+		EVEX_Vdivph_ymm_k1z_ymm_ymmm256b16 = 4413,
 		/// <summary><c>VDIVPH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 5E /r</c><br/>
@@ -35313,7 +35297,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vdivph_zmm_k1z_zmm_zmmm512b16_er = 4416,
+		EVEX_Vdivph_zmm_k1z_zmm_zmmm512b16_er = 4414,
 		/// <summary><c>VDIVSH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 5E /r</c><br/>
@@ -35321,7 +35305,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vdivsh_xmm_k1z_xmm_xmmm16_er = 4417,
+		EVEX_Vdivsh_xmm_k1z_xmm_xmmm16_er = 4415,
 		/// <summary><c>VFCMADDCPH xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.F2.MAP6.W0 56 /r</c><br/>
@@ -35329,7 +35313,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfcmaddcph_xmm_k1z_xmm_xmmm128b32 = 4418,
+		EVEX_Vfcmaddcph_xmm_k1z_xmm_xmmm128b32 = 4416,
 		/// <summary><c>VFCMADDCPH ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.F2.MAP6.W0 56 /r</c><br/>
@@ -35337,7 +35321,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfcmaddcph_ymm_k1z_ymm_ymmm256b32 = 4419,
+		EVEX_Vfcmaddcph_ymm_k1z_ymm_ymmm256b32 = 4417,
 		/// <summary><c>VFCMADDCPH zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.F2.MAP6.W0 56 /r</c><br/>
@@ -35345,7 +35329,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfcmaddcph_zmm_k1z_zmm_zmmm512b32_er = 4420,
+		EVEX_Vfcmaddcph_zmm_k1z_zmm_zmmm512b32_er = 4418,
 		/// <summary><c>VFMADDCPH xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.F3.MAP6.W0 56 /r</c><br/>
@@ -35353,7 +35337,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddcph_xmm_k1z_xmm_xmmm128b32 = 4421,
+		EVEX_Vfmaddcph_xmm_k1z_xmm_xmmm128b32 = 4419,
 		/// <summary><c>VFMADDCPH ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.F3.MAP6.W0 56 /r</c><br/>
@@ -35361,7 +35345,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddcph_ymm_k1z_ymm_ymmm256b32 = 4422,
+		EVEX_Vfmaddcph_ymm_k1z_ymm_ymmm256b32 = 4420,
 		/// <summary><c>VFMADDCPH zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.F3.MAP6.W0 56 /r</c><br/>
@@ -35369,7 +35353,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddcph_zmm_k1z_zmm_zmmm512b32_er = 4423,
+		EVEX_Vfmaddcph_zmm_k1z_zmm_zmmm512b32_er = 4421,
 		/// <summary><c>VFCMADDCSH xmm1 {k1}{z}, xmm2, xmm3/m32{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F2.MAP6.W0 57 /r</c><br/>
@@ -35377,7 +35361,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfcmaddcsh_xmm_k1z_xmm_xmmm32_er = 4424,
+		EVEX_Vfcmaddcsh_xmm_k1z_xmm_xmmm32_er = 4422,
 		/// <summary><c>VFMADDCSH xmm1 {k1}{z}, xmm2, xmm3/m32{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP6.W0 57 /r</c><br/>
@@ -35385,7 +35369,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddcsh_xmm_k1z_xmm_xmmm32_er = 4425,
+		EVEX_Vfmaddcsh_xmm_k1z_xmm_xmmm32_er = 4423,
 		/// <summary><c>VFCMULCPH xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.F2.MAP6.W0 D6 /r</c><br/>
@@ -35393,7 +35377,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfcmulcph_xmm_k1z_xmm_xmmm128b32 = 4426,
+		EVEX_Vfcmulcph_xmm_k1z_xmm_xmmm128b32 = 4424,
 		/// <summary><c>VFCMULCPH ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.F2.MAP6.W0 D6 /r</c><br/>
@@ -35401,7 +35385,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfcmulcph_ymm_k1z_ymm_ymmm256b32 = 4427,
+		EVEX_Vfcmulcph_ymm_k1z_ymm_ymmm256b32 = 4425,
 		/// <summary><c>VFCMULCPH zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.F2.MAP6.W0 D6 /r</c><br/>
@@ -35409,7 +35393,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfcmulcph_zmm_k1z_zmm_zmmm512b32_er = 4428,
+		EVEX_Vfcmulcph_zmm_k1z_zmm_zmmm512b32_er = 4426,
 		/// <summary><c>VFMULCPH xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.F3.MAP6.W0 D6 /r</c><br/>
@@ -35417,7 +35401,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmulcph_xmm_k1z_xmm_xmmm128b32 = 4429,
+		EVEX_Vfmulcph_xmm_k1z_xmm_xmmm128b32 = 4427,
 		/// <summary><c>VFMULCPH ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.F3.MAP6.W0 D6 /r</c><br/>
@@ -35425,7 +35409,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmulcph_ymm_k1z_ymm_ymmm256b32 = 4430,
+		EVEX_Vfmulcph_ymm_k1z_ymm_ymmm256b32 = 4428,
 		/// <summary><c>VFMULCPH zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.F3.MAP6.W0 D6 /r</c><br/>
@@ -35433,7 +35417,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmulcph_zmm_k1z_zmm_zmmm512b32_er = 4431,
+		EVEX_Vfmulcph_zmm_k1z_zmm_zmmm512b32_er = 4429,
 		/// <summary><c>VFCMULCSH xmm1 {k1}{z}, xmm2, xmm3/m32{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F2.MAP6.W0 D7 /r</c><br/>
@@ -35441,7 +35425,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfcmulcsh_xmm_k1z_xmm_xmmm32_er = 4432,
+		EVEX_Vfcmulcsh_xmm_k1z_xmm_xmmm32_er = 4430,
 		/// <summary><c>VFMULCSH xmm1 {k1}{z}, xmm2, xmm3/m32{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP6.W0 D7 /r</c><br/>
@@ -35449,7 +35433,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmulcsh_xmm_k1z_xmm_xmmm32_er = 4433,
+		EVEX_Vfmulcsh_xmm_k1z_xmm_xmmm32_er = 4431,
 		/// <summary><c>VFMADDSUB132PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 96 /r</c><br/>
@@ -35457,7 +35441,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddsub132ph_xmm_k1z_xmm_xmmm128b16 = 4434,
+		EVEX_Vfmaddsub132ph_xmm_k1z_xmm_xmmm128b16 = 4432,
 		/// <summary><c>VFMADDSUB132PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 96 /r</c><br/>
@@ -35465,7 +35449,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddsub132ph_ymm_k1z_ymm_ymmm256b16 = 4435,
+		EVEX_Vfmaddsub132ph_ymm_k1z_ymm_ymmm256b16 = 4433,
 		/// <summary><c>VFMADDSUB132PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 96 /r</c><br/>
@@ -35473,7 +35457,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddsub132ph_zmm_k1z_zmm_zmmm512b16_er = 4436,
+		EVEX_Vfmaddsub132ph_zmm_k1z_zmm_zmmm512b16_er = 4434,
 		/// <summary><c>VFMADDSUB213PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 A6 /r</c><br/>
@@ -35481,7 +35465,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddsub213ph_xmm_k1z_xmm_xmmm128b16 = 4437,
+		EVEX_Vfmaddsub213ph_xmm_k1z_xmm_xmmm128b16 = 4435,
 		/// <summary><c>VFMADDSUB213PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 A6 /r</c><br/>
@@ -35489,7 +35473,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddsub213ph_ymm_k1z_ymm_ymmm256b16 = 4438,
+		EVEX_Vfmaddsub213ph_ymm_k1z_ymm_ymmm256b16 = 4436,
 		/// <summary><c>VFMADDSUB213PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 A6 /r</c><br/>
@@ -35497,7 +35481,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddsub213ph_zmm_k1z_zmm_zmmm512b16_er = 4439,
+		EVEX_Vfmaddsub213ph_zmm_k1z_zmm_zmmm512b16_er = 4437,
 		/// <summary><c>VFMADDSUB231PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 B6 /r</c><br/>
@@ -35505,7 +35489,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddsub231ph_xmm_k1z_xmm_xmmm128b16 = 4440,
+		EVEX_Vfmaddsub231ph_xmm_k1z_xmm_xmmm128b16 = 4438,
 		/// <summary><c>VFMADDSUB231PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 B6 /r</c><br/>
@@ -35513,7 +35497,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddsub231ph_ymm_k1z_ymm_ymmm256b16 = 4441,
+		EVEX_Vfmaddsub231ph_ymm_k1z_ymm_ymmm256b16 = 4439,
 		/// <summary><c>VFMADDSUB231PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 B6 /r</c><br/>
@@ -35521,7 +35505,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmaddsub231ph_zmm_k1z_zmm_zmmm512b16_er = 4442,
+		EVEX_Vfmaddsub231ph_zmm_k1z_zmm_zmmm512b16_er = 4440,
 		/// <summary><c>VFMSUBADD132PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 97 /r</c><br/>
@@ -35529,7 +35513,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsubadd132ph_xmm_k1z_xmm_xmmm128b16 = 4443,
+		EVEX_Vfmsubadd132ph_xmm_k1z_xmm_xmmm128b16 = 4441,
 		/// <summary><c>VFMSUBADD132PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 97 /r</c><br/>
@@ -35537,7 +35521,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsubadd132ph_ymm_k1z_ymm_ymmm256b16 = 4444,
+		EVEX_Vfmsubadd132ph_ymm_k1z_ymm_ymmm256b16 = 4442,
 		/// <summary><c>VFMSUBADD132PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 97 /r</c><br/>
@@ -35545,7 +35529,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsubadd132ph_zmm_k1z_zmm_zmmm512b16_er = 4445,
+		EVEX_Vfmsubadd132ph_zmm_k1z_zmm_zmmm512b16_er = 4443,
 		/// <summary><c>VFMSUBADD213PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 A7 /r</c><br/>
@@ -35553,7 +35537,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsubadd213ph_xmm_k1z_xmm_xmmm128b16 = 4446,
+		EVEX_Vfmsubadd213ph_xmm_k1z_xmm_xmmm128b16 = 4444,
 		/// <summary><c>VFMSUBADD213PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 A7 /r</c><br/>
@@ -35561,7 +35545,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsubadd213ph_ymm_k1z_ymm_ymmm256b16 = 4447,
+		EVEX_Vfmsubadd213ph_ymm_k1z_ymm_ymmm256b16 = 4445,
 		/// <summary><c>VFMSUBADD213PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 A7 /r</c><br/>
@@ -35569,7 +35553,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsubadd213ph_zmm_k1z_zmm_zmmm512b16_er = 4448,
+		EVEX_Vfmsubadd213ph_zmm_k1z_zmm_zmmm512b16_er = 4446,
 		/// <summary><c>VFMSUBADD231PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 B7 /r</c><br/>
@@ -35577,7 +35561,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsubadd231ph_xmm_k1z_xmm_xmmm128b16 = 4449,
+		EVEX_Vfmsubadd231ph_xmm_k1z_xmm_xmmm128b16 = 4447,
 		/// <summary><c>VFMSUBADD231PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 B7 /r</c><br/>
@@ -35585,7 +35569,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsubadd231ph_ymm_k1z_ymm_ymmm256b16 = 4450,
+		EVEX_Vfmsubadd231ph_ymm_k1z_ymm_ymmm256b16 = 4448,
 		/// <summary><c>VFMSUBADD231PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 B7 /r</c><br/>
@@ -35593,7 +35577,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsubadd231ph_zmm_k1z_zmm_zmmm512b16_er = 4451,
+		EVEX_Vfmsubadd231ph_zmm_k1z_zmm_zmmm512b16_er = 4449,
 		/// <summary><c>VFMADD132PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 98 /r</c><br/>
@@ -35601,7 +35585,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmadd132ph_xmm_k1z_xmm_xmmm128b16 = 4452,
+		EVEX_Vfmadd132ph_xmm_k1z_xmm_xmmm128b16 = 4450,
 		/// <summary><c>VFMADD132PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 98 /r</c><br/>
@@ -35609,7 +35593,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmadd132ph_ymm_k1z_ymm_ymmm256b16 = 4453,
+		EVEX_Vfmadd132ph_ymm_k1z_ymm_ymmm256b16 = 4451,
 		/// <summary><c>VFMADD132PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 98 /r</c><br/>
@@ -35617,7 +35601,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmadd132ph_zmm_k1z_zmm_zmmm512b16_er = 4454,
+		EVEX_Vfmadd132ph_zmm_k1z_zmm_zmmm512b16_er = 4452,
 		/// <summary><c>VFMADD213PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 A8 /r</c><br/>
@@ -35625,7 +35609,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmadd213ph_xmm_k1z_xmm_xmmm128b16 = 4455,
+		EVEX_Vfmadd213ph_xmm_k1z_xmm_xmmm128b16 = 4453,
 		/// <summary><c>VFMADD213PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 A8 /r</c><br/>
@@ -35633,7 +35617,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmadd213ph_ymm_k1z_ymm_ymmm256b16 = 4456,
+		EVEX_Vfmadd213ph_ymm_k1z_ymm_ymmm256b16 = 4454,
 		/// <summary><c>VFMADD213PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 A8 /r</c><br/>
@@ -35641,7 +35625,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmadd213ph_zmm_k1z_zmm_zmmm512b16_er = 4457,
+		EVEX_Vfmadd213ph_zmm_k1z_zmm_zmmm512b16_er = 4455,
 		/// <summary><c>VFMADD231PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 B8 /r</c><br/>
@@ -35649,7 +35633,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmadd231ph_xmm_k1z_xmm_xmmm128b16 = 4458,
+		EVEX_Vfmadd231ph_xmm_k1z_xmm_xmmm128b16 = 4456,
 		/// <summary><c>VFMADD231PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 B8 /r</c><br/>
@@ -35657,7 +35641,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmadd231ph_ymm_k1z_ymm_ymmm256b16 = 4459,
+		EVEX_Vfmadd231ph_ymm_k1z_ymm_ymmm256b16 = 4457,
 		/// <summary><c>VFMADD231PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 B8 /r</c><br/>
@@ -35665,7 +35649,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmadd231ph_zmm_k1z_zmm_zmmm512b16_er = 4460,
+		EVEX_Vfmadd231ph_zmm_k1z_zmm_zmmm512b16_er = 4458,
 		/// <summary><c>VFNMADD132PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 9C /r</c><br/>
@@ -35673,7 +35657,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmadd132ph_xmm_k1z_xmm_xmmm128b16 = 4461,
+		EVEX_Vfnmadd132ph_xmm_k1z_xmm_xmmm128b16 = 4459,
 		/// <summary><c>VFNMADD132PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 9C /r</c><br/>
@@ -35681,7 +35665,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmadd132ph_ymm_k1z_ymm_ymmm256b16 = 4462,
+		EVEX_Vfnmadd132ph_ymm_k1z_ymm_ymmm256b16 = 4460,
 		/// <summary><c>VFNMADD132PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 9C /r</c><br/>
@@ -35689,7 +35673,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmadd132ph_zmm_k1z_zmm_zmmm512b16_er = 4463,
+		EVEX_Vfnmadd132ph_zmm_k1z_zmm_zmmm512b16_er = 4461,
 		/// <summary><c>VFNMADD213PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 AC /r</c><br/>
@@ -35697,7 +35681,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmadd213ph_xmm_k1z_xmm_xmmm128b16 = 4464,
+		EVEX_Vfnmadd213ph_xmm_k1z_xmm_xmmm128b16 = 4462,
 		/// <summary><c>VFNMADD213PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 AC /r</c><br/>
@@ -35705,7 +35689,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmadd213ph_ymm_k1z_ymm_ymmm256b16 = 4465,
+		EVEX_Vfnmadd213ph_ymm_k1z_ymm_ymmm256b16 = 4463,
 		/// <summary><c>VFNMADD213PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 AC /r</c><br/>
@@ -35713,7 +35697,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmadd213ph_zmm_k1z_zmm_zmmm512b16_er = 4466,
+		EVEX_Vfnmadd213ph_zmm_k1z_zmm_zmmm512b16_er = 4464,
 		/// <summary><c>VFNMADD231PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 BC /r</c><br/>
@@ -35721,7 +35705,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmadd231ph_xmm_k1z_xmm_xmmm128b16 = 4467,
+		EVEX_Vfnmadd231ph_xmm_k1z_xmm_xmmm128b16 = 4465,
 		/// <summary><c>VFNMADD231PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 BC /r</c><br/>
@@ -35729,7 +35713,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmadd231ph_ymm_k1z_ymm_ymmm256b16 = 4468,
+		EVEX_Vfnmadd231ph_ymm_k1z_ymm_ymmm256b16 = 4466,
 		/// <summary><c>VFNMADD231PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 BC /r</c><br/>
@@ -35737,7 +35721,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmadd231ph_zmm_k1z_zmm_zmmm512b16_er = 4469,
+		EVEX_Vfnmadd231ph_zmm_k1z_zmm_zmmm512b16_er = 4467,
 		/// <summary><c>VFMADD132SH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 99 /r</c><br/>
@@ -35745,7 +35729,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmadd132sh_xmm_k1z_xmm_xmmm16_er = 4470,
+		EVEX_Vfmadd132sh_xmm_k1z_xmm_xmmm16_er = 4468,
 		/// <summary><c>VFMADD213SH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 A9 /r</c><br/>
@@ -35753,7 +35737,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmadd213sh_xmm_k1z_xmm_xmmm16_er = 4471,
+		EVEX_Vfmadd213sh_xmm_k1z_xmm_xmmm16_er = 4469,
 		/// <summary><c>VFMADD231SH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 B9 /r</c><br/>
@@ -35761,7 +35745,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmadd231sh_xmm_k1z_xmm_xmmm16_er = 4472,
+		EVEX_Vfmadd231sh_xmm_k1z_xmm_xmmm16_er = 4470,
 		/// <summary><c>VFNMADD132SH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 9D /r</c><br/>
@@ -35769,7 +35753,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmadd132sh_xmm_k1z_xmm_xmmm16_er = 4473,
+		EVEX_Vfnmadd132sh_xmm_k1z_xmm_xmmm16_er = 4471,
 		/// <summary><c>VFNMADD213SH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 AD /r</c><br/>
@@ -35777,7 +35761,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmadd213sh_xmm_k1z_xmm_xmmm16_er = 4474,
+		EVEX_Vfnmadd213sh_xmm_k1z_xmm_xmmm16_er = 4472,
 		/// <summary><c>VFNMADD231SH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 BD /r</c><br/>
@@ -35785,7 +35769,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmadd231sh_xmm_k1z_xmm_xmmm16_er = 4475,
+		EVEX_Vfnmadd231sh_xmm_k1z_xmm_xmmm16_er = 4473,
 		/// <summary><c>VFMSUB132PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 9A /r</c><br/>
@@ -35793,7 +35777,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsub132ph_xmm_k1z_xmm_xmmm128b16 = 4476,
+		EVEX_Vfmsub132ph_xmm_k1z_xmm_xmmm128b16 = 4474,
 		/// <summary><c>VFMSUB132PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 9A /r</c><br/>
@@ -35801,7 +35785,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsub132ph_ymm_k1z_ymm_ymmm256b16 = 4477,
+		EVEX_Vfmsub132ph_ymm_k1z_ymm_ymmm256b16 = 4475,
 		/// <summary><c>VFMSUB132PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 9A /r</c><br/>
@@ -35809,7 +35793,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsub132ph_zmm_k1z_zmm_zmmm512b16_er = 4478,
+		EVEX_Vfmsub132ph_zmm_k1z_zmm_zmmm512b16_er = 4476,
 		/// <summary><c>VFMSUB213PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 AA /r</c><br/>
@@ -35817,7 +35801,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsub213ph_xmm_k1z_xmm_xmmm128b16 = 4479,
+		EVEX_Vfmsub213ph_xmm_k1z_xmm_xmmm128b16 = 4477,
 		/// <summary><c>VFMSUB213PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 AA /r</c><br/>
@@ -35825,7 +35809,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsub213ph_ymm_k1z_ymm_ymmm256b16 = 4480,
+		EVEX_Vfmsub213ph_ymm_k1z_ymm_ymmm256b16 = 4478,
 		/// <summary><c>VFMSUB213PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 AA /r</c><br/>
@@ -35833,7 +35817,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsub213ph_zmm_k1z_zmm_zmmm512b16_er = 4481,
+		EVEX_Vfmsub213ph_zmm_k1z_zmm_zmmm512b16_er = 4479,
 		/// <summary><c>VFMSUB231PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 BA /r</c><br/>
@@ -35841,7 +35825,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsub231ph_xmm_k1z_xmm_xmmm128b16 = 4482,
+		EVEX_Vfmsub231ph_xmm_k1z_xmm_xmmm128b16 = 4480,
 		/// <summary><c>VFMSUB231PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 BA /r</c><br/>
@@ -35849,7 +35833,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsub231ph_ymm_k1z_ymm_ymmm256b16 = 4483,
+		EVEX_Vfmsub231ph_ymm_k1z_ymm_ymmm256b16 = 4481,
 		/// <summary><c>VFMSUB231PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 BA /r</c><br/>
@@ -35857,7 +35841,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsub231ph_zmm_k1z_zmm_zmmm512b16_er = 4484,
+		EVEX_Vfmsub231ph_zmm_k1z_zmm_zmmm512b16_er = 4482,
 		/// <summary><c>VFNMSUB132PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 9E /r</c><br/>
@@ -35865,7 +35849,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmsub132ph_xmm_k1z_xmm_xmmm128b16 = 4485,
+		EVEX_Vfnmsub132ph_xmm_k1z_xmm_xmmm128b16 = 4483,
 		/// <summary><c>VFNMSUB132PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 9E /r</c><br/>
@@ -35873,7 +35857,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmsub132ph_ymm_k1z_ymm_ymmm256b16 = 4486,
+		EVEX_Vfnmsub132ph_ymm_k1z_ymm_ymmm256b16 = 4484,
 		/// <summary><c>VFNMSUB132PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 9E /r</c><br/>
@@ -35881,7 +35865,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmsub132ph_zmm_k1z_zmm_zmmm512b16_er = 4487,
+		EVEX_Vfnmsub132ph_zmm_k1z_zmm_zmmm512b16_er = 4485,
 		/// <summary><c>VFNMSUB213PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 AE /r</c><br/>
@@ -35889,7 +35873,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmsub213ph_xmm_k1z_xmm_xmmm128b16 = 4488,
+		EVEX_Vfnmsub213ph_xmm_k1z_xmm_xmmm128b16 = 4486,
 		/// <summary><c>VFNMSUB213PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 AE /r</c><br/>
@@ -35897,7 +35881,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmsub213ph_ymm_k1z_ymm_ymmm256b16 = 4489,
+		EVEX_Vfnmsub213ph_ymm_k1z_ymm_ymmm256b16 = 4487,
 		/// <summary><c>VFNMSUB213PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 AE /r</c><br/>
@@ -35905,7 +35889,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmsub213ph_zmm_k1z_zmm_zmmm512b16_er = 4490,
+		EVEX_Vfnmsub213ph_zmm_k1z_zmm_zmmm512b16_er = 4488,
 		/// <summary><c>VFNMSUB231PH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 BE /r</c><br/>
@@ -35913,7 +35897,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmsub231ph_xmm_k1z_xmm_xmmm128b16 = 4491,
+		EVEX_Vfnmsub231ph_xmm_k1z_xmm_xmmm128b16 = 4489,
 		/// <summary><c>VFNMSUB231PH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 BE /r</c><br/>
@@ -35921,7 +35905,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmsub231ph_ymm_k1z_ymm_ymmm256b16 = 4492,
+		EVEX_Vfnmsub231ph_ymm_k1z_ymm_ymmm256b16 = 4490,
 		/// <summary><c>VFNMSUB231PH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 BE /r</c><br/>
@@ -35929,7 +35913,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmsub231ph_zmm_k1z_zmm_zmmm512b16_er = 4493,
+		EVEX_Vfnmsub231ph_zmm_k1z_zmm_zmmm512b16_er = 4491,
 		/// <summary><c>VFMSUB132SH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 9B /r</c><br/>
@@ -35937,7 +35921,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsub132sh_xmm_k1z_xmm_xmmm16_er = 4494,
+		EVEX_Vfmsub132sh_xmm_k1z_xmm_xmmm16_er = 4492,
 		/// <summary><c>VFMSUB213SH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 AB /r</c><br/>
@@ -35945,7 +35929,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsub213sh_xmm_k1z_xmm_xmmm16_er = 4495,
+		EVEX_Vfmsub213sh_xmm_k1z_xmm_xmmm16_er = 4493,
 		/// <summary><c>VFMSUB231SH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 BB /r</c><br/>
@@ -35953,7 +35937,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfmsub231sh_xmm_k1z_xmm_xmmm16_er = 4496,
+		EVEX_Vfmsub231sh_xmm_k1z_xmm_xmmm16_er = 4494,
 		/// <summary><c>VFNMSUB132SH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 9F /r</c><br/>
@@ -35961,7 +35945,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmsub132sh_xmm_k1z_xmm_xmmm16_er = 4497,
+		EVEX_Vfnmsub132sh_xmm_k1z_xmm_xmmm16_er = 4495,
 		/// <summary><c>VFNMSUB213SH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 AF /r</c><br/>
@@ -35969,7 +35953,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmsub213sh_xmm_k1z_xmm_xmmm16_er = 4498,
+		EVEX_Vfnmsub213sh_xmm_k1z_xmm_xmmm16_er = 4496,
 		/// <summary><c>VFNMSUB231SH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 BF /r</c><br/>
@@ -35977,7 +35961,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfnmsub231sh_xmm_k1z_xmm_xmmm16_er = 4499,
+		EVEX_Vfnmsub231sh_xmm_k1z_xmm_xmmm16_er = 4497,
 		/// <summary><c>VFPCLASSPH k1 {k2}, xmm2/m128/m16bcst, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.0F3A.W0 66 /r ib</c><br/>
@@ -35985,7 +35969,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfpclassph_kr_k1_xmmm128b16_imm8 = 4500,
+		EVEX_Vfpclassph_kr_k1_xmmm128b16_imm8 = 4498,
 		/// <summary><c>VFPCLASSPH k1 {k2}, ymm2/m256/m16bcst, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.0F3A.W0 66 /r ib</c><br/>
@@ -35993,7 +35977,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfpclassph_kr_k1_ymmm256b16_imm8 = 4501,
+		EVEX_Vfpclassph_kr_k1_ymmm256b16_imm8 = 4499,
 		/// <summary><c>VFPCLASSPH k1 {k2}, zmm2/m512/m16bcst, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.0F3A.W0 66 /r ib</c><br/>
@@ -36001,7 +35985,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfpclassph_kr_k1_zmmm512b16_imm8 = 4502,
+		EVEX_Vfpclassph_kr_k1_zmmm512b16_imm8 = 4500,
 		/// <summary><c>VFPCLASSSH k1 {k2}, xmm2/m16, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.0F3A.W0 67 /r ib</c><br/>
@@ -36009,7 +35993,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vfpclasssh_kr_k1_xmmm16_imm8 = 4503,
+		EVEX_Vfpclasssh_kr_k1_xmmm16_imm8 = 4501,
 		/// <summary><c>VGETEXPPH xmm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 42 /r</c><br/>
@@ -36017,7 +36001,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vgetexpph_xmm_k1z_xmmm128b16 = 4504,
+		EVEX_Vgetexpph_xmm_k1z_xmmm128b16 = 4502,
 		/// <summary><c>VGETEXPPH ymm1 {k1}{z}, ymm2/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 42 /r</c><br/>
@@ -36025,7 +36009,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vgetexpph_ymm_k1z_ymmm256b16 = 4505,
+		EVEX_Vgetexpph_ymm_k1z_ymmm256b16 = 4503,
 		/// <summary><c>VGETEXPPH zmm1 {k1}{z}, zmm2/m512/m16bcst{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 42 /r</c><br/>
@@ -36033,7 +36017,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vgetexpph_zmm_k1z_zmmm512b16_sae = 4506,
+		EVEX_Vgetexpph_zmm_k1z_zmmm512b16_sae = 4504,
 		/// <summary><c>VGETEXPSH xmm1 {k1}{z}, xmm2, xmm3/m16{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 43 /r</c><br/>
@@ -36041,7 +36025,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vgetexpsh_xmm_k1z_xmm_xmmm16_sae = 4507,
+		EVEX_Vgetexpsh_xmm_k1z_xmm_xmmm16_sae = 4505,
 		/// <summary><c>VGETMANTPH xmm1 {k1}{z}, xmm2/m128/m16bcst, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.0F3A.W0 26 /r ib</c><br/>
@@ -36049,7 +36033,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vgetmantph_xmm_k1z_xmmm128b16_imm8 = 4508,
+		EVEX_Vgetmantph_xmm_k1z_xmmm128b16_imm8 = 4506,
 		/// <summary><c>VGETMANTPH ymm1 {k1}{z}, ymm2/m256/m16bcst, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.0F3A.W0 26 /r ib</c><br/>
@@ -36057,7 +36041,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vgetmantph_ymm_k1z_ymmm256b16_imm8 = 4509,
+		EVEX_Vgetmantph_ymm_k1z_ymmm256b16_imm8 = 4507,
 		/// <summary><c>VGETMANTPH zmm1 {k1}{z}, zmm2/m512/m16bcst{sae}, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.0F3A.W0 26 /r ib</c><br/>
@@ -36065,7 +36049,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vgetmantph_zmm_k1z_zmmm512b16_imm8_sae = 4510,
+		EVEX_Vgetmantph_zmm_k1z_zmmm512b16_imm8_sae = 4508,
 		/// <summary><c>VGETMANTSH xmm1 {k1}{z}, xmm2, xmm3/m16{sae}, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.0F3A.W0 27 /r ib</c><br/>
@@ -36073,7 +36057,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vgetmantsh_xmm_k1z_xmm_xmmm16_imm8_sae = 4511,
+		EVEX_Vgetmantsh_xmm_k1z_xmm_xmmm16_imm8_sae = 4509,
 		/// <summary><c>VMAXPH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 5F /r</c><br/>
@@ -36081,7 +36065,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmaxph_xmm_k1z_xmm_xmmm128b16 = 4512,
+		EVEX_Vmaxph_xmm_k1z_xmm_xmmm128b16 = 4510,
 		/// <summary><c>VMAXPH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 5F /r</c><br/>
@@ -36089,7 +36073,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmaxph_ymm_k1z_ymm_ymmm256b16 = 4513,
+		EVEX_Vmaxph_ymm_k1z_ymm_ymmm256b16 = 4511,
 		/// <summary><c>VMAXPH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 5F /r</c><br/>
@@ -36097,7 +36081,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmaxph_zmm_k1z_zmm_zmmm512b16_sae = 4514,
+		EVEX_Vmaxph_zmm_k1z_zmm_zmmm512b16_sae = 4512,
 		/// <summary><c>VMAXSH xmm1 {k1}{z}, xmm2, xmm3/m16{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 5F /r</c><br/>
@@ -36105,7 +36089,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmaxsh_xmm_k1z_xmm_xmmm16_sae = 4515,
+		EVEX_Vmaxsh_xmm_k1z_xmm_xmmm16_sae = 4513,
 		/// <summary><c>VMINPH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 5D /r</c><br/>
@@ -36113,7 +36097,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vminph_xmm_k1z_xmm_xmmm128b16 = 4516,
+		EVEX_Vminph_xmm_k1z_xmm_xmmm128b16 = 4514,
 		/// <summary><c>VMINPH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 5D /r</c><br/>
@@ -36121,7 +36105,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vminph_ymm_k1z_ymm_ymmm256b16 = 4517,
+		EVEX_Vminph_ymm_k1z_ymm_ymmm256b16 = 4515,
 		/// <summary><c>VMINPH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 5D /r</c><br/>
@@ -36129,7 +36113,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vminph_zmm_k1z_zmm_zmmm512b16_sae = 4518,
+		EVEX_Vminph_zmm_k1z_zmm_zmmm512b16_sae = 4516,
 		/// <summary><c>VMINSH xmm1 {k1}{z}, xmm2, xmm3/m16{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 5D /r</c><br/>
@@ -36137,7 +36121,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vminsh_xmm_k1z_xmm_xmmm16_sae = 4519,
+		EVEX_Vminsh_xmm_k1z_xmm_xmmm16_sae = 4517,
 		/// <summary><c>VMOVSH xmm1 {k1}{z}, m16</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 10 /r</c><br/>
@@ -36145,7 +36129,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmovsh_xmm_k1z_m16 = 4520,
+		EVEX_Vmovsh_xmm_k1z_m16 = 4518,
 		/// <summary><c>VMOVSH m16 {k1}, xmm1</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 11 /r</c><br/>
@@ -36153,7 +36137,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmovsh_m16_k1_xmm = 4521,
+		EVEX_Vmovsh_m16_k1_xmm = 4519,
 		/// <summary><c>VMOVSH xmm1 {k1}{z}, xmm2, xmm3</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 10 /r</c><br/>
@@ -36161,7 +36145,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmovsh_xmm_k1z_xmm_xmm = 4522,
+		EVEX_Vmovsh_xmm_k1z_xmm_xmm = 4520,
 		/// <summary><c>VMOVSH xmm1 {k1}{z}, xmm2, xmm3</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 11 /r</c><br/>
@@ -36169,7 +36153,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmovsh_xmm_k1z_xmm_xmm_MAP5_11 = 4523,
+		EVEX_Vmovsh_xmm_k1z_xmm_xmm_MAP5_11 = 4521,
 		/// <summary><c>VMOVW xmm1, r32/m16</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W0 6E /r</c><br/>
@@ -36177,7 +36161,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmovw_xmm_r32m16 = 4524,
+		EVEX_Vmovw_xmm_r32m16 = 4522,
 		/// <summary><c>VMOVW xmm1, r64/m16</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W1 6E /r</c><br/>
@@ -36185,7 +36169,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		EVEX_Vmovw_xmm_r64m16 = 4525,
+		EVEX_Vmovw_xmm_r64m16 = 4523,
 		/// <summary><c>VMOVW r32/m16, xmm1</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W0 7E /r</c><br/>
@@ -36193,7 +36177,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmovw_r32m16_xmm = 4526,
+		EVEX_Vmovw_r32m16_xmm = 4524,
 		/// <summary><c>VMOVW r64/m16, xmm1</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP5.W1 7E /r</c><br/>
@@ -36201,7 +36185,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		EVEX_Vmovw_r64m16_xmm = 4527,
+		EVEX_Vmovw_r64m16_xmm = 4525,
 		/// <summary><c>VMULPH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 59 /r</c><br/>
@@ -36209,7 +36193,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmulph_xmm_k1z_xmm_xmmm128b16 = 4528,
+		EVEX_Vmulph_xmm_k1z_xmm_xmmm128b16 = 4526,
 		/// <summary><c>VMULPH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 59 /r</c><br/>
@@ -36217,7 +36201,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmulph_ymm_k1z_ymm_ymmm256b16 = 4529,
+		EVEX_Vmulph_ymm_k1z_ymm_ymmm256b16 = 4527,
 		/// <summary><c>VMULPH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 59 /r</c><br/>
@@ -36225,7 +36209,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmulph_zmm_k1z_zmm_zmmm512b16_er = 4530,
+		EVEX_Vmulph_zmm_k1z_zmm_zmmm512b16_er = 4528,
 		/// <summary><c>VMULSH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 59 /r</c><br/>
@@ -36233,7 +36217,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vmulsh_xmm_k1z_xmm_xmmm16_er = 4531,
+		EVEX_Vmulsh_xmm_k1z_xmm_xmmm16_er = 4529,
 		/// <summary><c>VRCPPH xmm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 4C /r</c><br/>
@@ -36241,7 +36225,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vrcpph_xmm_k1z_xmmm128b16 = 4532,
+		EVEX_Vrcpph_xmm_k1z_xmmm128b16 = 4530,
 		/// <summary><c>VRCPPH ymm1 {k1}{z}, ymm2/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 4C /r</c><br/>
@@ -36249,7 +36233,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vrcpph_ymm_k1z_ymmm256b16 = 4533,
+		EVEX_Vrcpph_ymm_k1z_ymmm256b16 = 4531,
 		/// <summary><c>VRCPPH zmm1 {k1}{z}, zmm2/m512/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 4C /r</c><br/>
@@ -36257,7 +36241,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vrcpph_zmm_k1z_zmmm512b16 = 4534,
+		EVEX_Vrcpph_zmm_k1z_zmmm512b16 = 4532,
 		/// <summary><c>VRCPSH xmm1 {k1}{z}, xmm2, xmm3/m16</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 4D /r</c><br/>
@@ -36265,7 +36249,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vrcpsh_xmm_k1z_xmm_xmmm16 = 4535,
+		EVEX_Vrcpsh_xmm_k1z_xmm_xmmm16 = 4533,
 		/// <summary><c>VREDUCEPH xmm1 {k1}{z}, xmm2/m128/m16bcst, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.0F3A.W0 56 /r ib</c><br/>
@@ -36273,7 +36257,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vreduceph_xmm_k1z_xmmm128b16_imm8 = 4536,
+		EVEX_Vreduceph_xmm_k1z_xmmm128b16_imm8 = 4534,
 		/// <summary><c>VREDUCEPH ymm1 {k1}{z}, ymm2/m256/m16bcst, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.0F3A.W0 56 /r ib</c><br/>
@@ -36281,7 +36265,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vreduceph_ymm_k1z_ymmm256b16_imm8 = 4537,
+		EVEX_Vreduceph_ymm_k1z_ymmm256b16_imm8 = 4535,
 		/// <summary><c>VREDUCEPH zmm1 {k1}{z}, zmm2/m512/m16bcst{sae}, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.0F3A.W0 56 /r ib</c><br/>
@@ -36289,7 +36273,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vreduceph_zmm_k1z_zmmm512b16_imm8_sae = 4538,
+		EVEX_Vreduceph_zmm_k1z_zmmm512b16_imm8_sae = 4536,
 		/// <summary><c>VREDUCESH xmm1 {k1}{z}, xmm2, xmm3/m16{sae}, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.0F3A.W0 57 /r ib</c><br/>
@@ -36297,7 +36281,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vreducesh_xmm_k1z_xmm_xmmm16_imm8_sae = 4539,
+		EVEX_Vreducesh_xmm_k1z_xmm_xmmm16_imm8_sae = 4537,
 		/// <summary><c>VRNDSCALEPH xmm1 {k1}{z}, xmm2/m128/m16bcst, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.0F3A.W0 08 /r ib</c><br/>
@@ -36305,7 +36289,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vrndscaleph_xmm_k1z_xmmm128b16_imm8 = 4540,
+		EVEX_Vrndscaleph_xmm_k1z_xmmm128b16_imm8 = 4538,
 		/// <summary><c>VRNDSCALEPH ymm1 {k1}{z}, ymm2/m256/m16bcst, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.0F3A.W0 08 /r ib</c><br/>
@@ -36313,7 +36297,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vrndscaleph_ymm_k1z_ymmm256b16_imm8 = 4541,
+		EVEX_Vrndscaleph_ymm_k1z_ymmm256b16_imm8 = 4539,
 		/// <summary><c>VRNDSCALEPH zmm1 {k1}{z}, zmm2/m512/m16bcst{sae}, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.0F3A.W0 08 /r ib</c><br/>
@@ -36321,7 +36305,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vrndscaleph_zmm_k1z_zmmm512b16_imm8_sae = 4542,
+		EVEX_Vrndscaleph_zmm_k1z_zmmm512b16_imm8_sae = 4540,
 		/// <summary><c>VRNDSCALESH xmm1 {k1}{z}, xmm2, xmm3/m16{sae}, imm8</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.0F3A.W0 0A /r ib</c><br/>
@@ -36329,7 +36313,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vrndscalesh_xmm_k1z_xmm_xmmm16_imm8_sae = 4543,
+		EVEX_Vrndscalesh_xmm_k1z_xmm_xmmm16_imm8_sae = 4541,
 		/// <summary><c>VRSQRTPH xmm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 4E /r</c><br/>
@@ -36337,7 +36321,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vrsqrtph_xmm_k1z_xmmm128b16 = 4544,
+		EVEX_Vrsqrtph_xmm_k1z_xmmm128b16 = 4542,
 		/// <summary><c>VRSQRTPH ymm1 {k1}{z}, ymm2/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 4E /r</c><br/>
@@ -36345,7 +36329,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vrsqrtph_ymm_k1z_ymmm256b16 = 4545,
+		EVEX_Vrsqrtph_ymm_k1z_ymmm256b16 = 4543,
 		/// <summary><c>VRSQRTPH zmm1 {k1}{z}, zmm2/m512/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 4E /r</c><br/>
@@ -36353,7 +36337,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vrsqrtph_zmm_k1z_zmmm512b16 = 4546,
+		EVEX_Vrsqrtph_zmm_k1z_zmmm512b16 = 4544,
 		/// <summary><c>VRSQRTSH xmm1 {k1}{z}, xmm2, xmm3/m16</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 4F /r</c><br/>
@@ -36361,7 +36345,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vrsqrtsh_xmm_k1z_xmm_xmmm16 = 4547,
+		EVEX_Vrsqrtsh_xmm_k1z_xmm_xmmm16 = 4545,
 		/// <summary><c>VSCALEFPH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.66.MAP6.W0 2C /r</c><br/>
@@ -36369,7 +36353,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vscalefph_xmm_k1z_xmm_xmmm128b16 = 4548,
+		EVEX_Vscalefph_xmm_k1z_xmm_xmmm128b16 = 4546,
 		/// <summary><c>VSCALEFPH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.66.MAP6.W0 2C /r</c><br/>
@@ -36377,7 +36361,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vscalefph_ymm_k1z_ymm_ymmm256b16 = 4549,
+		EVEX_Vscalefph_ymm_k1z_ymm_ymmm256b16 = 4547,
 		/// <summary><c>VSCALEFPH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.66.MAP6.W0 2C /r</c><br/>
@@ -36385,7 +36369,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vscalefph_zmm_k1z_zmm_zmmm512b16_er = 4550,
+		EVEX_Vscalefph_zmm_k1z_zmm_zmmm512b16_er = 4548,
 		/// <summary><c>VSCALEFSH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.66.MAP6.W0 2D /r</c><br/>
@@ -36393,7 +36377,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vscalefsh_xmm_k1z_xmm_xmmm16_er = 4551,
+		EVEX_Vscalefsh_xmm_k1z_xmm_xmmm16_er = 4549,
 		/// <summary><c>VSQRTPH xmm1 {k1}{z}, xmm2/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 51 /r</c><br/>
@@ -36401,7 +36385,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vsqrtph_xmm_k1z_xmmm128b16 = 4552,
+		EVEX_Vsqrtph_xmm_k1z_xmmm128b16 = 4550,
 		/// <summary><c>VSQRTPH ymm1 {k1}{z}, ymm2/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 51 /r</c><br/>
@@ -36409,7 +36393,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vsqrtph_ymm_k1z_ymmm256b16 = 4553,
+		EVEX_Vsqrtph_ymm_k1z_ymmm256b16 = 4551,
 		/// <summary><c>VSQRTPH zmm1 {k1}{z}, zmm2/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 51 /r</c><br/>
@@ -36417,7 +36401,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vsqrtph_zmm_k1z_zmmm512b16_er = 4554,
+		EVEX_Vsqrtph_zmm_k1z_zmmm512b16_er = 4552,
 		/// <summary><c>VSQRTSH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 51 /r</c><br/>
@@ -36425,7 +36409,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vsqrtsh_xmm_k1z_xmm_xmmm16_er = 4555,
+		EVEX_Vsqrtsh_xmm_k1z_xmm_xmmm16_er = 4553,
 		/// <summary><c>VSUBPH xmm1 {k1}{z}, xmm2, xmm3/m128/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.128.MAP5.W0 5C /r</c><br/>
@@ -36433,7 +36417,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vsubph_xmm_k1z_xmm_xmmm128b16 = 4556,
+		EVEX_Vsubph_xmm_k1z_xmm_xmmm128b16 = 4554,
 		/// <summary><c>VSUBPH ymm1 {k1}{z}, ymm2, ymm3/m256/m16bcst</c><br/>
 		/// <br/>
 		/// <c>EVEX.256.MAP5.W0 5C /r</c><br/>
@@ -36441,7 +36425,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512VL and AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vsubph_ymm_k1z_ymm_ymmm256b16 = 4557,
+		EVEX_Vsubph_ymm_k1z_ymm_ymmm256b16 = 4555,
 		/// <summary><c>VSUBPH zmm1 {k1}{z}, zmm2, zmm3/m512/m16bcst{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.512.MAP5.W0 5C /r</c><br/>
@@ -36449,7 +36433,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vsubph_zmm_k1z_zmm_zmmm512b16_er = 4558,
+		EVEX_Vsubph_zmm_k1z_zmm_zmmm512b16_er = 4556,
 		/// <summary><c>VSUBSH xmm1 {k1}{z}, xmm2, xmm3/m16{er}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.F3.MAP5.W0 5C /r</c><br/>
@@ -36457,7 +36441,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vsubsh_xmm_k1z_xmm_xmmm16_er = 4559,
+		EVEX_Vsubsh_xmm_k1z_xmm_xmmm16_er = 4557,
 		/// <summary><c>VUCOMISH xmm1, xmm2/m16{sae}</c><br/>
 		/// <br/>
 		/// <c>EVEX.LIG.MAP5.W0 2E /r</c><br/>
@@ -36465,7 +36449,7 @@ namespace Blazed.Intel {
 		/// <c>AVX512-FP16</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		EVEX_Vucomish_xmm_xmmm16_sae = 4560,
+		EVEX_Vucomish_xmm_xmmm16_sae = 4558,
 		/// <summary><c>RDUDBG</c><br/>
 		/// <br/>
 		/// <c>0F 0E</c><br/>
@@ -36473,7 +36457,7 @@ namespace Blazed.Intel {
 		/// <c>UDBG</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Rdudbg = 4561,
+		Rdudbg = 4559,
 		/// <summary><c>WRUDBG</c><br/>
 		/// <br/>
 		/// <c>0F 0F</c><br/>
@@ -36481,7 +36465,7 @@ namespace Blazed.Intel {
 		/// <c>UDBG</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Wrudbg = 4562,
+		Wrudbg = 4560,
 		/// <summary><c>JKZD k1, rel8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.W0 74 cb</c><br/>
@@ -36489,7 +36473,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Jkzd_kr_rel8_64 = 4563,
+		VEX_KNC_Jkzd_kr_rel8_64 = 4561,
 		/// <summary><c>JKNZD k1, rel8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.W0 75 cb</c><br/>
@@ -36497,7 +36481,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Jknzd_kr_rel8_64 = 4564,
+		VEX_KNC_Jknzd_kr_rel8_64 = 4562,
 		/// <summary><c>VPREFETCHNTA m8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.WIG 18 /0</c><br/>
@@ -36505,7 +36489,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Vprefetchnta_m8 = 4565,
+		VEX_KNC_Vprefetchnta_m8 = 4563,
 		/// <summary><c>VPREFETCH0 m8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.WIG 18 /1</c><br/>
@@ -36513,7 +36497,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Vprefetch0_m8 = 4566,
+		VEX_KNC_Vprefetch0_m8 = 4564,
 		/// <summary><c>VPREFETCH1 m8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.WIG 18 /2</c><br/>
@@ -36521,7 +36505,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Vprefetch1_m8 = 4567,
+		VEX_KNC_Vprefetch1_m8 = 4565,
 		/// <summary><c>VPREFETCH2 m8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.WIG 18 /3</c><br/>
@@ -36529,7 +36513,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Vprefetch2_m8 = 4568,
+		VEX_KNC_Vprefetch2_m8 = 4566,
 		/// <summary><c>VPREFETCHENTA m8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.WIG 18 /4</c><br/>
@@ -36537,7 +36521,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Vprefetchenta_m8 = 4569,
+		VEX_KNC_Vprefetchenta_m8 = 4567,
 		/// <summary><c>VPREFETCHE0 m8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.WIG 18 /5</c><br/>
@@ -36545,7 +36529,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Vprefetche0_m8 = 4570,
+		VEX_KNC_Vprefetche0_m8 = 4568,
 		/// <summary><c>VPREFETCHE1 m8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.WIG 18 /6</c><br/>
@@ -36553,7 +36537,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Vprefetche1_m8 = 4571,
+		VEX_KNC_Vprefetche1_m8 = 4569,
 		/// <summary><c>VPREFETCHE2 m8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.WIG 18 /7</c><br/>
@@ -36561,7 +36545,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Vprefetche2_m8 = 4572,
+		VEX_KNC_Vprefetche2_m8 = 4570,
 		/// <summary><c>KAND k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 41 /r</c><br/>
@@ -36569,7 +36553,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kand_kr_kr = 4573,
+		VEX_KNC_Kand_kr_kr = 4571,
 		/// <summary><c>KANDN k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 42 /r</c><br/>
@@ -36577,7 +36561,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kandn_kr_kr = 4574,
+		VEX_KNC_Kandn_kr_kr = 4572,
 		/// <summary><c>KANDNR k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 43 /r</c><br/>
@@ -36585,7 +36569,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kandnr_kr_kr = 4575,
+		VEX_KNC_Kandnr_kr_kr = 4573,
 		/// <summary><c>KNOT k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 44 /r</c><br/>
@@ -36593,7 +36577,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Knot_kr_kr = 4576,
+		VEX_KNC_Knot_kr_kr = 4574,
 		/// <summary><c>KOR k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 45 /r</c><br/>
@@ -36601,7 +36585,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kor_kr_kr = 4577,
+		VEX_KNC_Kor_kr_kr = 4575,
 		/// <summary><c>KXNOR k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 46 /r</c><br/>
@@ -36609,7 +36593,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kxnor_kr_kr = 4578,
+		VEX_KNC_Kxnor_kr_kr = 4576,
 		/// <summary><c>KXOR k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 47 /r</c><br/>
@@ -36617,7 +36601,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kxor_kr_kr = 4579,
+		VEX_KNC_Kxor_kr_kr = 4577,
 		/// <summary><c>KMERGE2L1H k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 48 /r</c><br/>
@@ -36625,7 +36609,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kmerge2l1h_kr_kr = 4580,
+		VEX_KNC_Kmerge2l1h_kr_kr = 4578,
 		/// <summary><c>KMERGE2L1L k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 49 /r</c><br/>
@@ -36633,7 +36617,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kmerge2l1l_kr_kr = 4581,
+		VEX_KNC_Kmerge2l1l_kr_kr = 4579,
 		/// <summary><c>JKZD k1, rel32</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 84 cd</c><br/>
@@ -36641,7 +36625,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Jkzd_kr_rel32_64 = 4582,
+		VEX_KNC_Jkzd_kr_rel32_64 = 4580,
 		/// <summary><c>JKNZD k1, rel32</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 85 cd</c><br/>
@@ -36649,7 +36633,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Jknzd_kr_rel32_64 = 4583,
+		VEX_KNC_Jknzd_kr_rel32_64 = 4581,
 		/// <summary><c>KMOV k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 90 /r</c><br/>
@@ -36657,7 +36641,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kmov_kr_kr = 4584,
+		VEX_KNC_Kmov_kr_kr = 4582,
 		/// <summary><c>KMOV k1, r32</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 92 /r</c><br/>
@@ -36665,7 +36649,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kmov_kr_r32 = 4585,
+		VEX_KNC_Kmov_kr_r32 = 4583,
 		/// <summary><c>KMOV r32, k1</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 93 /r</c><br/>
@@ -36673,7 +36657,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kmov_r32_kr = 4586,
+		VEX_KNC_Kmov_r32_kr = 4584,
 		/// <summary><c>KCONCATH r64, k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 95 /r</c><br/>
@@ -36681,7 +36665,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kconcath_r64_kr_kr = 4587,
+		VEX_KNC_Kconcath_r64_kr_kr = 4585,
 		/// <summary><c>KCONCATL r64, k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 97 /r</c><br/>
@@ -36689,7 +36673,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kconcatl_r64_kr_kr = 4588,
+		VEX_KNC_Kconcatl_r64_kr_kr = 4586,
 		/// <summary><c>KORTEST k1, k2</c><br/>
 		/// <br/>
 		/// <c>VEX.128.0F.W0 98 /r</c><br/>
@@ -36697,7 +36681,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kortest_kr_kr = 4589,
+		VEX_KNC_Kortest_kr_kr = 4587,
 		/// <summary><c>DELAY r32</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F3.0F.W0 AE /6</c><br/>
@@ -36705,7 +36689,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Delay_r32 = 4590,
+		VEX_KNC_Delay_r32 = 4588,
 		/// <summary><c>DELAY r64</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F3.0F.W1 AE /6</c><br/>
@@ -36713,7 +36697,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Delay_r64 = 4591,
+		VEX_KNC_Delay_r64 = 4589,
 		/// <summary><c>SPFLT r32</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F2.0F.W0 AE /6</c><br/>
@@ -36721,7 +36705,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Spflt_r32 = 4592,
+		VEX_KNC_Spflt_r32 = 4590,
 		/// <summary><c>SPFLT r64</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F2.0F.W1 AE /6</c><br/>
@@ -36729,7 +36713,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Spflt_r64 = 4593,
+		VEX_KNC_Spflt_r64 = 4591,
 		/// <summary><c>CLEVICT1 m8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F3.0F.WIG AE /7</c><br/>
@@ -36737,7 +36721,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Clevict1_m8 = 4594,
+		VEX_KNC_Clevict1_m8 = 4592,
 		/// <summary><c>CLEVICT0 m8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F2.0F.WIG AE /7</c><br/>
@@ -36745,7 +36729,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Clevict0_m8 = 4595,
+		VEX_KNC_Clevict0_m8 = 4593,
 		/// <summary><c>POPCNT r32, r32</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F3.0F.W0 B8 /r</c><br/>
@@ -36753,7 +36737,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Popcnt_r32_r32 = 4596,
+		VEX_KNC_Popcnt_r32_r32 = 4594,
 		/// <summary><c>POPCNT r64, r64</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F3.0F.W1 B8 /r</c><br/>
@@ -36761,7 +36745,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Popcnt_r64_r64 = 4597,
+		VEX_KNC_Popcnt_r64_r64 = 4595,
 		/// <summary><c>TZCNT r32, r32</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F3.0F.W0 BC /r</c><br/>
@@ -36769,7 +36753,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Tzcnt_r32_r32 = 4598,
+		VEX_KNC_Tzcnt_r32_r32 = 4596,
 		/// <summary><c>TZCNT r64, r64</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F3.0F.W1 BC /r</c><br/>
@@ -36777,7 +36761,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Tzcnt_r64_r64 = 4599,
+		VEX_KNC_Tzcnt_r64_r64 = 4597,
 		/// <summary><c>TZCNTI r32, r32</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F2.0F.W0 BC /r</c><br/>
@@ -36785,7 +36769,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Tzcnti_r32_r32 = 4600,
+		VEX_KNC_Tzcnti_r32_r32 = 4598,
 		/// <summary><c>TZCNTI r64, r64</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F2.0F.W1 BC /r</c><br/>
@@ -36793,7 +36777,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Tzcnti_r64_r64 = 4601,
+		VEX_KNC_Tzcnti_r64_r64 = 4599,
 		/// <summary><c>LZCNT r32, r32</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F3.0F.W0 BD /r</c><br/>
@@ -36801,7 +36785,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Lzcnt_r32_r32 = 4602,
+		VEX_KNC_Lzcnt_r32_r32 = 4600,
 		/// <summary><c>LZCNT r64, r64</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F3.0F.W1 BD /r</c><br/>
@@ -36809,7 +36793,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Lzcnt_r64_r64 = 4603,
+		VEX_KNC_Lzcnt_r64_r64 = 4601,
 		/// <summary><c>UNDOC r32, r/m32</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F3.0F38.W0 F0 /r</c><br/>
@@ -36817,7 +36801,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Undoc_r32_rm32_128_F3_0F38_W0_F0 = 4604,
+		VEX_KNC_Undoc_r32_rm32_128_F3_0F38_W0_F0 = 4602,
 		/// <summary><c>UNDOC r64, r/m64</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F3.0F38.W1 F0 /r</c><br/>
@@ -36825,7 +36809,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Undoc_r64_rm64_128_F3_0F38_W1_F0 = 4605,
+		VEX_KNC_Undoc_r64_rm64_128_F3_0F38_W1_F0 = 4603,
 		/// <summary><c>UNDOC r32, r/m32</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F2.0F38.W0 F0 /r</c><br/>
@@ -36833,7 +36817,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F0 = 4606,
+		VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F0 = 4604,
 		/// <summary><c>UNDOC r64, r/m64</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F2.0F38.W1 F0 /r</c><br/>
@@ -36841,7 +36825,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F0 = 4607,
+		VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F0 = 4605,
 		/// <summary><c>UNDOC r32, r/m32</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F2.0F38.W0 F1 /r</c><br/>
@@ -36849,7 +36833,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F1 = 4608,
+		VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F1 = 4606,
 		/// <summary><c>UNDOC r64, r/m64</c><br/>
 		/// <br/>
 		/// <c>VEX.128.F2.0F38.W1 F1 /r</c><br/>
@@ -36857,7 +36841,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F1 = 4609,
+		VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F1 = 4607,
 		/// <summary><c>KEXTRACT k1, r64, imm8</c><br/>
 		/// <br/>
 		/// <c>VEX.128.66.0F3A.W0 3E /r ib</c><br/>
@@ -36865,7 +36849,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		VEX_KNC_Kextract_kr_r64_imm8 = 4610,
+		VEX_KNC_Kextract_kr_r64_imm8 = 4608,
 		/// <summary><c>VPREFETCHNTA m</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F.WIG 18 /0</c><br/>
@@ -36873,7 +36857,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vprefetchnta_m = 4611,
+		MVEX_Vprefetchnta_m = 4609,
 		/// <summary><c>VPREFETCH0 m</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F.WIG 18 /1</c><br/>
@@ -36881,7 +36865,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vprefetch0_m = 4612,
+		MVEX_Vprefetch0_m = 4610,
 		/// <summary><c>VPREFETCH1 m</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F.WIG 18 /2</c><br/>
@@ -36889,7 +36873,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vprefetch1_m = 4613,
+		MVEX_Vprefetch1_m = 4611,
 		/// <summary><c>VPREFETCH2 m</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F.WIG 18 /3</c><br/>
@@ -36897,7 +36881,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vprefetch2_m = 4614,
+		MVEX_Vprefetch2_m = 4612,
 		/// <summary><c>VPREFETCHENTA m</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F.WIG 18 /4</c><br/>
@@ -36905,7 +36889,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vprefetchenta_m = 4615,
+		MVEX_Vprefetchenta_m = 4613,
 		/// <summary><c>VPREFETCHE0 m</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F.WIG 18 /5</c><br/>
@@ -36913,7 +36897,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vprefetche0_m = 4616,
+		MVEX_Vprefetche0_m = 4614,
 		/// <summary><c>VPREFETCHE1 m</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F.WIG 18 /6</c><br/>
@@ -36921,7 +36905,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vprefetche1_m = 4617,
+		MVEX_Vprefetche1_m = 4615,
 		/// <summary><c>VPREFETCHE2 m</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F.WIG 18 /7</c><br/>
@@ -36929,7 +36913,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vprefetche2_m = 4618,
+		MVEX_Vprefetche2_m = 4616,
 		/// <summary><c>VMOVAPS zmm1 {k1}, Sf32(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F.W0 28 /r</c><br/>
@@ -36937,7 +36921,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmovaps_zmm_k1_zmmmt = 4619,
+		MVEX_Vmovaps_zmm_k1_zmmmt = 4617,
 		/// <summary><c>VMOVAPD zmm1 {k1}, Sf64(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F.W1 28 /r</c><br/>
@@ -36945,7 +36929,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmovapd_zmm_k1_zmmmt = 4620,
+		MVEX_Vmovapd_zmm_k1_zmmmt = 4618,
 		/// <summary><c>VMOVAPS mt {k1}, Df32(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F.W0 29 /r</c><br/>
@@ -36953,7 +36937,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmovaps_mt_k1_zmm = 4621,
+		MVEX_Vmovaps_mt_k1_zmm = 4619,
 		/// <summary><c>VMOVAPD mt {k1}, Df64(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F.W1 29 /r</c><br/>
@@ -36961,7 +36945,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmovapd_mt_k1_zmm = 4622,
+		MVEX_Vmovapd_mt_k1_zmm = 4620,
 		/// <summary><c>VMOVNRAPD m {k1}, Df64(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.F3.0F.W1.EH0 29 /r</c><br/>
@@ -36969,7 +36953,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmovnrapd_m_k1_zmm = 4623,
+		MVEX_Vmovnrapd_m_k1_zmm = 4621,
 		/// <summary><c>VMOVNRNGOAPD m {k1}, Df64(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.F3.0F.W1.EH1 29 /r</c><br/>
@@ -36977,7 +36961,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmovnrngoapd_m_k1_zmm = 4624,
+		MVEX_Vmovnrngoapd_m_k1_zmm = 4622,
 		/// <summary><c>VMOVNRAPS m {k1}, Df32(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.F2.0F.W0.EH0 29 /r</c><br/>
@@ -36985,7 +36969,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmovnraps_m_k1_zmm = 4625,
+		MVEX_Vmovnraps_m_k1_zmm = 4623,
 		/// <summary><c>VMOVNRNGOAPS m {k1}, Df32(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.F2.0F.W0.EH1 29 /r</c><br/>
@@ -36993,7 +36977,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmovnrngoaps_m_k1_zmm = 4626,
+		MVEX_Vmovnrngoaps_m_k1_zmm = 4624,
 		/// <summary><c>VADDPS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.0F.W0 58 /r</c><br/>
@@ -37001,7 +36985,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vaddps_zmm_k1_zmm_zmmmt = 4627,
+		MVEX_Vaddps_zmm_k1_zmm_zmmmt = 4625,
 		/// <summary><c>VADDPD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W1 58 /r</c><br/>
@@ -37009,7 +36993,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vaddpd_zmm_k1_zmm_zmmmt = 4628,
+		MVEX_Vaddpd_zmm_k1_zmm_zmmmt = 4626,
 		/// <summary><c>VMULPS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.0F.W0 59 /r</c><br/>
@@ -37017,7 +37001,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmulps_zmm_k1_zmm_zmmmt = 4629,
+		MVEX_Vmulps_zmm_k1_zmm_zmmmt = 4627,
 		/// <summary><c>VMULPD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W1 59 /r</c><br/>
@@ -37025,7 +37009,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmulpd_zmm_k1_zmm_zmmmt = 4630,
+		MVEX_Vmulpd_zmm_k1_zmm_zmmmt = 4628,
 		/// <summary><c>VCVTPS2PD zmm1 {k1}, Sf32(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F.W0 5A /r</c><br/>
@@ -37033,7 +37017,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vcvtps2pd_zmm_k1_zmmmt = 4631,
+		MVEX_Vcvtps2pd_zmm_k1_zmmmt = 4629,
 		/// <summary><c>VCVTPD2PS zmm1 {k1}, Sf64(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F.W1 5A /r</c><br/>
@@ -37041,7 +37025,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vcvtpd2ps_zmm_k1_zmmmt = 4632,
+		MVEX_Vcvtpd2ps_zmm_k1_zmmmt = 4630,
 		/// <summary><c>VSUBPS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.0F.W0 5C /r</c><br/>
@@ -37049,7 +37033,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vsubps_zmm_k1_zmm_zmmmt = 4633,
+		MVEX_Vsubps_zmm_k1_zmm_zmmmt = 4631,
 		/// <summary><c>VSUBPD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W1 5C /r</c><br/>
@@ -37057,7 +37041,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vsubpd_zmm_k1_zmm_zmmmt = 4634,
+		MVEX_Vsubpd_zmm_k1_zmm_zmmmt = 4632,
 		/// <summary><c>VPCMPGTD k2 {k1}, zmm1, Si32(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W0 66 /r</c><br/>
@@ -37065,7 +37049,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpcmpgtd_kr_k1_zmm_zmmmt = 4635,
+		MVEX_Vpcmpgtd_kr_k1_zmm_zmmmt = 4633,
 		/// <summary><c>VMOVDQA32 zmm1 {k1}, Si32(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F.W0 6F /r</c><br/>
@@ -37073,7 +37057,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmovdqa32_zmm_k1_zmmmt = 4636,
+		MVEX_Vmovdqa32_zmm_k1_zmmmt = 4634,
 		/// <summary><c>VMOVDQA64 zmm1 {k1}, Si64(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F.W1 6F /r</c><br/>
@@ -37081,7 +37065,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmovdqa64_zmm_k1_zmmmt = 4637,
+		MVEX_Vmovdqa64_zmm_k1_zmmmt = 4635,
 		/// <summary><c>VPSHUFD zmm1 {k1}, zmm2/mt, imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F.W0 70 /r ib</c><br/>
@@ -37089,7 +37073,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpshufd_zmm_k1_zmmmt_imm8 = 4638,
+		MVEX_Vpshufd_zmm_k1_zmmmt_imm8 = 4636,
 		/// <summary><c>VPSRLD zmm1 {k1}, Si32(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDD.512.66.0F.W0 72 /2 ib</c><br/>
@@ -37097,7 +37081,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpsrld_zmm_k1_zmmmt_imm8 = 4639,
+		MVEX_Vpsrld_zmm_k1_zmmmt_imm8 = 4637,
 		/// <summary><c>VPSRAD zmm1 {k1}, Si32(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDD.512.66.0F.W0 72 /4 ib</c><br/>
@@ -37105,7 +37089,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpsrad_zmm_k1_zmmmt_imm8 = 4640,
+		MVEX_Vpsrad_zmm_k1_zmmmt_imm8 = 4638,
 		/// <summary><c>VPSLLD zmm1 {k1}, Si32(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDD.512.66.0F.W0 72 /6 ib</c><br/>
@@ -37113,7 +37097,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpslld_zmm_k1_zmmmt_imm8 = 4641,
+		MVEX_Vpslld_zmm_k1_zmmmt_imm8 = 4639,
 		/// <summary><c>VPCMPEQD k2 {k1}, zmm1, Si32(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W0 76 /r</c><br/>
@@ -37121,7 +37105,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpcmpeqd_kr_k1_zmm_zmmmt = 4642,
+		MVEX_Vpcmpeqd_kr_k1_zmm_zmmmt = 4640,
 		/// <summary><c>VCVTUDQ2PD zmm1 {k1}, Si32(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.F3.0F.W0 7A /r</c><br/>
@@ -37129,7 +37113,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vcvtudq2pd_zmm_k1_zmmmt = 4643,
+		MVEX_Vcvtudq2pd_zmm_k1_zmmmt = 4641,
 		/// <summary><c>VMOVDQA32 mt {k1}, Di32(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F.W0 7F /r</c><br/>
@@ -37137,7 +37121,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmovdqa32_mt_k1_zmm = 4644,
+		MVEX_Vmovdqa32_mt_k1_zmm = 4642,
 		/// <summary><c>VMOVDQA64 mt {k1}, Di64(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F.W1 7F /r</c><br/>
@@ -37145,7 +37129,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vmovdqa64_mt_k1_zmm = 4645,
+		MVEX_Vmovdqa64_mt_k1_zmm = 4643,
 		/// <summary><c>CLEVICT1 m</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.F3.0F.WIG AE /7</c><br/>
@@ -37153,7 +37137,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Clevict1_m = 4646,
+		MVEX_Clevict1_m = 4644,
 		/// <summary><c>CLEVICT0 m</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.F2.0F.WIG AE /7</c><br/>
@@ -37161,7 +37145,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Clevict0_m = 4647,
+		MVEX_Clevict0_m = 4645,
 		/// <summary><c>VCMPPS k2 {k1}, zmm1, Sf32(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.0F.W0 C2 /r ib</c><br/>
@@ -37169,7 +37153,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vcmpps_kr_k1_zmm_zmmmt_imm8 = 4648,
+		MVEX_Vcmpps_kr_k1_zmm_zmmmt_imm8 = 4646,
 		/// <summary><c>VCMPPD k2 {k1}, zmm1, Sf64(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W1 C2 /r ib</c><br/>
@@ -37177,7 +37161,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vcmppd_kr_k1_zmm_zmmmt_imm8 = 4649,
+		MVEX_Vcmppd_kr_k1_zmm_zmmmt_imm8 = 4647,
 		/// <summary><c>VPANDD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W0 DB /r</c><br/>
@@ -37185,7 +37169,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpandd_zmm_k1_zmm_zmmmt = 4650,
+		MVEX_Vpandd_zmm_k1_zmm_zmmmt = 4648,
 		/// <summary><c>VPANDQ zmm1 {k1}, zmm2, Si64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W1 DB /r</c><br/>
@@ -37193,7 +37177,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpandq_zmm_k1_zmm_zmmmt = 4651,
+		MVEX_Vpandq_zmm_k1_zmm_zmmmt = 4649,
 		/// <summary><c>VPANDND zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W0 DF /r</c><br/>
@@ -37201,7 +37185,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpandnd_zmm_k1_zmm_zmmmt = 4652,
+		MVEX_Vpandnd_zmm_k1_zmm_zmmmt = 4650,
 		/// <summary><c>VPANDNQ zmm1 {k1}, zmm2, Si64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W1 DF /r</c><br/>
@@ -37209,7 +37193,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpandnq_zmm_k1_zmm_zmmmt = 4653,
+		MVEX_Vpandnq_zmm_k1_zmm_zmmmt = 4651,
 		/// <summary><c>VCVTDQ2PD zmm1 {k1}, Si32(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.F3.0F.W0 E6 /r</c><br/>
@@ -37217,7 +37201,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vcvtdq2pd_zmm_k1_zmmmt = 4654,
+		MVEX_Vcvtdq2pd_zmm_k1_zmmmt = 4652,
 		/// <summary><c>VPORD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W0 EB /r</c><br/>
@@ -37225,7 +37209,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpord_zmm_k1_zmm_zmmmt = 4655,
+		MVEX_Vpord_zmm_k1_zmm_zmmmt = 4653,
 		/// <summary><c>VPORQ zmm1 {k1}, zmm2, Si64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W1 EB /r</c><br/>
@@ -37233,7 +37217,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vporq_zmm_k1_zmm_zmmmt = 4656,
+		MVEX_Vporq_zmm_k1_zmm_zmmmt = 4654,
 		/// <summary><c>VPXORD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W0 EF /r</c><br/>
@@ -37241,7 +37225,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpxord_zmm_k1_zmm_zmmmt = 4657,
+		MVEX_Vpxord_zmm_k1_zmm_zmmmt = 4655,
 		/// <summary><c>VPXORQ zmm1 {k1}, zmm2, Si64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W1 EF /r</c><br/>
@@ -37249,7 +37233,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpxorq_zmm_k1_zmm_zmmmt = 4658,
+		MVEX_Vpxorq_zmm_k1_zmm_zmmmt = 4656,
 		/// <summary><c>VPSUBD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W0 FA /r</c><br/>
@@ -37257,7 +37241,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpsubd_zmm_k1_zmm_zmmmt = 4659,
+		MVEX_Vpsubd_zmm_k1_zmm_zmmmt = 4657,
 		/// <summary><c>VPADDD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F.W0 FE /r</c><br/>
@@ -37265,7 +37249,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpaddd_zmm_k1_zmm_zmmmt = 4660,
+		MVEX_Vpaddd_zmm_k1_zmm_zmmmt = 4658,
 		/// <summary><c>VBROADCASTSS zmm1 {k1}, Uf32(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 18 /r</c><br/>
@@ -37273,7 +37257,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vbroadcastss_zmm_k1_mt = 4661,
+		MVEX_Vbroadcastss_zmm_k1_mt = 4659,
 		/// <summary><c>VBROADCASTSD zmm1 {k1}, Uf64(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 19 /r</c><br/>
@@ -37281,7 +37265,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vbroadcastsd_zmm_k1_mt = 4662,
+		MVEX_Vbroadcastsd_zmm_k1_mt = 4660,
 		/// <summary><c>VBROADCASTF32X4 zmm1 {k1}, Uf32(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 1A /r</c><br/>
@@ -37289,7 +37273,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vbroadcastf32x4_zmm_k1_mt = 4663,
+		MVEX_Vbroadcastf32x4_zmm_k1_mt = 4661,
 		/// <summary><c>VBROADCASTF64X4 zmm1 {k1}, Uf64(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 1B /r</c><br/>
@@ -37297,7 +37281,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vbroadcastf64x4_zmm_k1_mt = 4664,
+		MVEX_Vbroadcastf64x4_zmm_k1_mt = 4662,
 		/// <summary><c>VPTESTMD k2 {k1}, zmm1, Si32(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 27 /r</c><br/>
@@ -37305,7 +37289,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vptestmd_kr_k1_zmm_zmmmt = 4665,
+		MVEX_Vptestmd_kr_k1_zmm_zmmmt = 4663,
 		/// <summary><c>VPERMD zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 36 /r</c><br/>
@@ -37313,7 +37297,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpermd_zmm_k1_zmm_zmmmt = 4666,
+		MVEX_Vpermd_zmm_k1_zmm_zmmmt = 4664,
 		/// <summary><c>VPMINSD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 39 /r</c><br/>
@@ -37321,7 +37305,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpminsd_zmm_k1_zmm_zmmmt = 4667,
+		MVEX_Vpminsd_zmm_k1_zmm_zmmmt = 4665,
 		/// <summary><c>VPMINUD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 3B /r</c><br/>
@@ -37329,7 +37313,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpminud_zmm_k1_zmm_zmmmt = 4668,
+		MVEX_Vpminud_zmm_k1_zmm_zmmmt = 4666,
 		/// <summary><c>VPMAXSD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 3D /r</c><br/>
@@ -37337,7 +37321,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpmaxsd_zmm_k1_zmm_zmmmt = 4669,
+		MVEX_Vpmaxsd_zmm_k1_zmm_zmmmt = 4667,
 		/// <summary><c>VPMAXUD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 3F /r</c><br/>
@@ -37345,7 +37329,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpmaxud_zmm_k1_zmm_zmmmt = 4670,
+		MVEX_Vpmaxud_zmm_k1_zmm_zmmmt = 4668,
 		/// <summary><c>VPMULLD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 40 /r</c><br/>
@@ -37353,7 +37337,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpmulld_zmm_k1_zmm_zmmmt = 4671,
+		MVEX_Vpmulld_zmm_k1_zmm_zmmmt = 4669,
 		/// <summary><c>VGETEXPPS zmm1 {k1}, Sf32(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 42 /r</c><br/>
@@ -37361,7 +37345,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgetexpps_zmm_k1_zmmmt = 4672,
+		MVEX_Vgetexpps_zmm_k1_zmmmt = 4670,
 		/// <summary><c>VGETEXPPD zmm1 {k1}, Sf64(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 42 /r</c><br/>
@@ -37369,7 +37353,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgetexppd_zmm_k1_zmmmt = 4673,
+		MVEX_Vgetexppd_zmm_k1_zmmmt = 4671,
 		/// <summary><c>VPSRLVD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 45 /r</c><br/>
@@ -37377,7 +37361,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpsrlvd_zmm_k1_zmm_zmmmt = 4674,
+		MVEX_Vpsrlvd_zmm_k1_zmm_zmmmt = 4672,
 		/// <summary><c>VPSRAVD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 46 /r</c><br/>
@@ -37385,7 +37369,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpsravd_zmm_k1_zmm_zmmmt = 4675,
+		MVEX_Vpsravd_zmm_k1_zmm_zmmmt = 4673,
 		/// <summary><c>VPSLLVD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 47 /r</c><br/>
@@ -37393,7 +37377,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpsllvd_zmm_k1_zmm_zmmmt = 4676,
+		MVEX_Vpsllvd_zmm_k1_zmm_zmmmt = 4674,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 48 /r</c><br/>
@@ -37401,7 +37385,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_48 = 4677,
+		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_48 = 4675,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 49 /r</c><br/>
@@ -37409,7 +37393,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_49 = 4678,
+		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_49 = 4676,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 4A /r</c><br/>
@@ -37417,7 +37401,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_4A = 4679,
+		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_4A = 4677,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 4B /r</c><br/>
@@ -37425,7 +37409,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_4B = 4680,
+		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_4B = 4678,
 		/// <summary><c>VADDNPS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 50 /r</c><br/>
@@ -37433,7 +37417,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vaddnps_zmm_k1_zmm_zmmmt = 4681,
+		MVEX_Vaddnps_zmm_k1_zmm_zmmmt = 4679,
 		/// <summary><c>VADDNPD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 50 /r</c><br/>
@@ -37441,7 +37425,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vaddnpd_zmm_k1_zmm_zmmmt = 4682,
+		MVEX_Vaddnpd_zmm_k1_zmm_zmmmt = 4680,
 		/// <summary><c>VGMAXABSPS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 51 /r</c><br/>
@@ -37449,7 +37433,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgmaxabsps_zmm_k1_zmm_zmmmt = 4683,
+		MVEX_Vgmaxabsps_zmm_k1_zmm_zmmmt = 4681,
 		/// <summary><c>VGMINPS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 52 /r</c><br/>
@@ -37457,7 +37441,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgminps_zmm_k1_zmm_zmmmt = 4684,
+		MVEX_Vgminps_zmm_k1_zmm_zmmmt = 4682,
 		/// <summary><c>VGMINPD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 52 /r</c><br/>
@@ -37465,7 +37449,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgminpd_zmm_k1_zmm_zmmmt = 4685,
+		MVEX_Vgminpd_zmm_k1_zmm_zmmmt = 4683,
 		/// <summary><c>VGMAXPS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 53 /r</c><br/>
@@ -37473,7 +37457,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgmaxps_zmm_k1_zmm_zmmmt = 4686,
+		MVEX_Vgmaxps_zmm_k1_zmm_zmmmt = 4684,
 		/// <summary><c>VGMAXPD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 53 /r</c><br/>
@@ -37481,7 +37465,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgmaxpd_zmm_k1_zmm_zmmmt = 4687,
+		MVEX_Vgmaxpd_zmm_k1_zmm_zmmmt = 4685,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 54 /r</c><br/>
@@ -37489,7 +37473,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_54 = 4688,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_54 = 4686,
 		/// <summary><c>VFIXUPNANPS zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 55 /r</c><br/>
@@ -37497,7 +37481,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfixupnanps_zmm_k1_zmm_zmmmt = 4689,
+		MVEX_Vfixupnanps_zmm_k1_zmm_zmmmt = 4687,
 		/// <summary><c>VFIXUPNANPD zmm1 {k1}, zmm2, Si64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 55 /r</c><br/>
@@ -37505,7 +37489,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfixupnanpd_zmm_k1_zmm_zmmmt = 4690,
+		MVEX_Vfixupnanpd_zmm_k1_zmm_zmmmt = 4688,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 56 /r</c><br/>
@@ -37513,7 +37497,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_56 = 4691,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_56 = 4689,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 57 /r</c><br/>
@@ -37521,7 +37505,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_57 = 4692,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_57 = 4690,
 		/// <summary><c>VPBROADCASTD zmm1 {k1}, Ui32(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 58 /r</c><br/>
@@ -37529,7 +37513,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpbroadcastd_zmm_k1_mt = 4693,
+		MVEX_Vpbroadcastd_zmm_k1_mt = 4691,
 		/// <summary><c>VPBROADCASTQ zmm1 {k1}, Ui64(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 59 /r</c><br/>
@@ -37537,7 +37521,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpbroadcastq_zmm_k1_mt = 4694,
+		MVEX_Vpbroadcastq_zmm_k1_mt = 4692,
 		/// <summary><c>VBROADCASTI32X4 zmm1 {k1}, Ui32(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 5A /r</c><br/>
@@ -37545,7 +37529,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vbroadcasti32x4_zmm_k1_mt = 4695,
+		MVEX_Vbroadcasti32x4_zmm_k1_mt = 4693,
 		/// <summary><c>VBROADCASTI64X4 zmm1 {k1}, Ui64(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 5B /r</c><br/>
@@ -37553,7 +37537,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vbroadcasti64x4_zmm_k1_mt = 4696,
+		MVEX_Vbroadcasti64x4_zmm_k1_mt = 4694,
 		/// <summary><c>VPADCD zmm1 {k1}, k2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 5C /r</c><br/>
@@ -37561,7 +37545,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpadcd_zmm_k1_kr_zmmmt = 4697,
+		MVEX_Vpadcd_zmm_k1_kr_zmmmt = 4695,
 		/// <summary><c>VPADDSETCD zmm1 {k1}, k2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 5D /r</c><br/>
@@ -37569,7 +37553,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpaddsetcd_zmm_k1_kr_zmmmt = 4698,
+		MVEX_Vpaddsetcd_zmm_k1_kr_zmmmt = 4696,
 		/// <summary><c>VPSBBD zmm1 {k1}, k2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 5E /r</c><br/>
@@ -37577,7 +37561,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpsbbd_zmm_k1_kr_zmmmt = 4699,
+		MVEX_Vpsbbd_zmm_k1_kr_zmmmt = 4697,
 		/// <summary><c>VPSUBSETBD zmm1 {k1}, k2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 5F /r</c><br/>
@@ -37585,7 +37569,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpsubsetbd_zmm_k1_kr_zmmmt = 4700,
+		MVEX_Vpsubsetbd_zmm_k1_kr_zmmmt = 4698,
 		/// <summary><c>VPBLENDMD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 64 /r</c><br/>
@@ -37593,7 +37577,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpblendmd_zmm_k1_zmm_zmmmt = 4701,
+		MVEX_Vpblendmd_zmm_k1_zmm_zmmmt = 4699,
 		/// <summary><c>VPBLENDMQ zmm1 {k1}, zmm2, Si64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 64 /r</c><br/>
@@ -37601,7 +37585,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpblendmq_zmm_k1_zmm_zmmmt = 4702,
+		MVEX_Vpblendmq_zmm_k1_zmm_zmmmt = 4700,
 		/// <summary><c>VBLENDMPS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 65 /r</c><br/>
@@ -37609,7 +37593,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vblendmps_zmm_k1_zmm_zmmmt = 4703,
+		MVEX_Vblendmps_zmm_k1_zmm_zmmmt = 4701,
 		/// <summary><c>VBLENDMPD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 65 /r</c><br/>
@@ -37617,7 +37601,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vblendmpd_zmm_k1_zmm_zmmmt = 4704,
+		MVEX_Vblendmpd_zmm_k1_zmm_zmmmt = 4702,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 67 /r</c><br/>
@@ -37625,7 +37609,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_67 = 4705,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_67 = 4703,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 68 /r</c><br/>
@@ -37633,7 +37617,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_68 = 4706,
+		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_68 = 4704,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 69 /r</c><br/>
@@ -37641,7 +37625,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_69 = 4707,
+		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_69 = 4705,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 6A /r</c><br/>
@@ -37649,7 +37633,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_6A = 4708,
+		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_6A = 4706,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 6B /r</c><br/>
@@ -37657,7 +37641,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_6B = 4709,
+		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_6B = 4707,
 		/// <summary><c>VPSUBRD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 6C /r</c><br/>
@@ -37665,7 +37649,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpsubrd_zmm_k1_zmm_zmmmt = 4710,
+		MVEX_Vpsubrd_zmm_k1_zmm_zmmmt = 4708,
 		/// <summary><c>VSUBRPS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 6D /r</c><br/>
@@ -37673,7 +37657,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vsubrps_zmm_k1_zmm_zmmmt = 4711,
+		MVEX_Vsubrps_zmm_k1_zmm_zmmmt = 4709,
 		/// <summary><c>VSUBRPD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 6D /r</c><br/>
@@ -37681,7 +37665,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vsubrpd_zmm_k1_zmm_zmmmt = 4712,
+		MVEX_Vsubrpd_zmm_k1_zmm_zmmmt = 4710,
 		/// <summary><c>VPSBBRD zmm1 {k1}, k2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 6E /r</c><br/>
@@ -37689,7 +37673,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpsbbrd_zmm_k1_kr_zmmmt = 4713,
+		MVEX_Vpsbbrd_zmm_k1_kr_zmmmt = 4711,
 		/// <summary><c>VPSUBRSETBD zmm1 {k1}, k2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 6F /r</c><br/>
@@ -37697,7 +37681,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpsubrsetbd_zmm_k1_kr_zmmmt = 4714,
+		MVEX_Vpsubrsetbd_zmm_k1_kr_zmmmt = 4712,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 70 /r</c><br/>
@@ -37705,7 +37689,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_70 = 4715,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_70 = 4713,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 71 /r</c><br/>
@@ -37713,7 +37697,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_71 = 4716,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_71 = 4714,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 72 /r</c><br/>
@@ -37721,7 +37705,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_72 = 4717,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_72 = 4715,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 73 /r</c><br/>
@@ -37729,7 +37713,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_73 = 4718,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_73 = 4716,
 		/// <summary><c>VPCMPLTD k2 {k1}, zmm1, Si32(zmm2/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 74 /r</c><br/>
@@ -37737,7 +37721,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpcmpltd_kr_k1_zmm_zmmmt = 4719,
+		MVEX_Vpcmpltd_kr_k1_zmm_zmmmt = 4717,
 		/// <summary><c>VSCALEPS zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 84 /r</c><br/>
@@ -37745,7 +37729,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vscaleps_zmm_k1_zmm_zmmmt = 4720,
+		MVEX_Vscaleps_zmm_k1_zmm_zmmmt = 4718,
 		/// <summary><c>VPMULHUD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 86 /r</c><br/>
@@ -37753,7 +37737,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpmulhud_zmm_k1_zmm_zmmmt = 4721,
+		MVEX_Vpmulhud_zmm_k1_zmm_zmmmt = 4719,
 		/// <summary><c>VPMULHD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 87 /r</c><br/>
@@ -37761,7 +37745,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpmulhd_zmm_k1_zmm_zmmmt = 4722,
+		MVEX_Vpmulhd_zmm_k1_zmm_zmmmt = 4720,
 		/// <summary><c>VPGATHERDD zmm1 {k1}, Ui32(mvt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 90 /vsib</c><br/>
@@ -37769,7 +37753,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpgatherdd_zmm_k1_mvt = 4723,
+		MVEX_Vpgatherdd_zmm_k1_mvt = 4721,
 		/// <summary><c>VPGATHERDQ zmm1 {k1}, Ui64(mvt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 90 /vsib</c><br/>
@@ -37777,7 +37761,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpgatherdq_zmm_k1_mvt = 4724,
+		MVEX_Vpgatherdq_zmm_k1_mvt = 4722,
 		/// <summary><c>VGATHERDPS zmm1 {k1}, Uf32(mvt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 92 /vsib</c><br/>
@@ -37785,7 +37769,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgatherdps_zmm_k1_mvt = 4725,
+		MVEX_Vgatherdps_zmm_k1_mvt = 4723,
 		/// <summary><c>VGATHERDPD zmm1 {k1}, Uf64(mvt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 92 /vsib</c><br/>
@@ -37793,7 +37777,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgatherdpd_zmm_k1_mvt = 4726,
+		MVEX_Vgatherdpd_zmm_k1_mvt = 4724,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 94 /r</c><br/>
@@ -37801,7 +37785,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_94 = 4727,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_94 = 4725,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 94 /r</c><br/>
@@ -37809,7 +37793,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W1_94 = 4728,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W1_94 = 4726,
 		/// <summary><c>VFMADD132PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 98 /r</c><br/>
@@ -37817,7 +37801,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmadd132ps_zmm_k1_zmm_zmmmt = 4729,
+		MVEX_Vfmadd132ps_zmm_k1_zmm_zmmmt = 4727,
 		/// <summary><c>VFMADD132PD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 98 /r</c><br/>
@@ -37825,7 +37809,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmadd132pd_zmm_k1_zmm_zmmmt = 4730,
+		MVEX_Vfmadd132pd_zmm_k1_zmm_zmmmt = 4728,
 		/// <summary><c>VFMSUB132PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 9A /r</c><br/>
@@ -37833,7 +37817,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmsub132ps_zmm_k1_zmm_zmmmt = 4731,
+		MVEX_Vfmsub132ps_zmm_k1_zmm_zmmmt = 4729,
 		/// <summary><c>VFMSUB132PD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 9A /r</c><br/>
@@ -37841,7 +37825,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmsub132pd_zmm_k1_zmm_zmmmt = 4732,
+		MVEX_Vfmsub132pd_zmm_k1_zmm_zmmmt = 4730,
 		/// <summary><c>VFNMADD132PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 9C /r</c><br/>
@@ -37849,7 +37833,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfnmadd132ps_zmm_k1_zmm_zmmmt = 4733,
+		MVEX_Vfnmadd132ps_zmm_k1_zmm_zmmmt = 4731,
 		/// <summary><c>VFNMADD132PD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 9C /r</c><br/>
@@ -37857,7 +37841,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfnmadd132pd_zmm_k1_zmm_zmmmt = 4734,
+		MVEX_Vfnmadd132pd_zmm_k1_zmm_zmmmt = 4732,
 		/// <summary><c>VFNMSUB132PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 9E /r</c><br/>
@@ -37865,7 +37849,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfnmsub132ps_zmm_k1_zmm_zmmmt = 4735,
+		MVEX_Vfnmsub132ps_zmm_k1_zmm_zmmmt = 4733,
 		/// <summary><c>VFNMSUB132PD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 9E /r</c><br/>
@@ -37873,7 +37857,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfnmsub132pd_zmm_k1_zmm_zmmmt = 4736,
+		MVEX_Vfnmsub132pd_zmm_k1_zmm_zmmmt = 4734,
 		/// <summary><c>VPSCATTERDD mvt {k1}, Di32(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 A0 /vsib</c><br/>
@@ -37881,7 +37865,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpscatterdd_mvt_k1_zmm = 4737,
+		MVEX_Vpscatterdd_mvt_k1_zmm = 4735,
 		/// <summary><c>VPSCATTERDQ mvt {k1}, Di64(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 A0 /vsib</c><br/>
@@ -37889,7 +37873,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpscatterdq_mvt_k1_zmm = 4738,
+		MVEX_Vpscatterdq_mvt_k1_zmm = 4736,
 		/// <summary><c>VSCATTERDPS mvt {k1}, Df32(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 A2 /vsib</c><br/>
@@ -37897,7 +37881,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vscatterdps_mvt_k1_zmm = 4739,
+		MVEX_Vscatterdps_mvt_k1_zmm = 4737,
 		/// <summary><c>VSCATTERDPD mvt {k1}, Df64(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 A2 /vsib</c><br/>
@@ -37905,7 +37889,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vscatterdpd_mvt_k1_zmm = 4740,
+		MVEX_Vscatterdpd_mvt_k1_zmm = 4738,
 		/// <summary><c>VFMADD233PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 A4 /r</c><br/>
@@ -37913,7 +37897,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmadd233ps_zmm_k1_zmm_zmmmt = 4741,
+		MVEX_Vfmadd233ps_zmm_k1_zmm_zmmmt = 4739,
 		/// <summary><c>VFMADD213PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 A8 /r</c><br/>
@@ -37921,7 +37905,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmadd213ps_zmm_k1_zmm_zmmmt = 4742,
+		MVEX_Vfmadd213ps_zmm_k1_zmm_zmmmt = 4740,
 		/// <summary><c>VFMADD213PD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 A8 /r</c><br/>
@@ -37929,7 +37913,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmadd213pd_zmm_k1_zmm_zmmmt = 4743,
+		MVEX_Vfmadd213pd_zmm_k1_zmm_zmmmt = 4741,
 		/// <summary><c>VFMSUB213PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 AA /r</c><br/>
@@ -37937,7 +37921,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmsub213ps_zmm_k1_zmm_zmmmt = 4744,
+		MVEX_Vfmsub213ps_zmm_k1_zmm_zmmmt = 4742,
 		/// <summary><c>VFMSUB213PD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 AA /r</c><br/>
@@ -37945,7 +37929,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmsub213pd_zmm_k1_zmm_zmmmt = 4745,
+		MVEX_Vfmsub213pd_zmm_k1_zmm_zmmmt = 4743,
 		/// <summary><c>VFNMADD213PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 AC /r</c><br/>
@@ -37953,7 +37937,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfnmadd213ps_zmm_k1_zmm_zmmmt = 4746,
+		MVEX_Vfnmadd213ps_zmm_k1_zmm_zmmmt = 4744,
 		/// <summary><c>VFNMADD213PD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 AC /r</c><br/>
@@ -37961,7 +37945,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfnmadd213pd_zmm_k1_zmm_zmmmt = 4747,
+		MVEX_Vfnmadd213pd_zmm_k1_zmm_zmmmt = 4745,
 		/// <summary><c>VFNMSUB213PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 AE /r</c><br/>
@@ -37969,7 +37953,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfnmsub213ps_zmm_k1_zmm_zmmmt = 4748,
+		MVEX_Vfnmsub213ps_zmm_k1_zmm_zmmmt = 4746,
 		/// <summary><c>VFNMSUB213PD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 AE /r</c><br/>
@@ -37977,7 +37961,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfnmsub213pd_zmm_k1_zmm_zmmmt = 4749,
+		MVEX_Vfnmsub213pd_zmm_k1_zmm_zmmmt = 4747,
 		/// <summary><c>UNDOC zmm1 {k1}, mvt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 B0 /vsib</c><br/>
@@ -37985,7 +37969,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_mvt_512_66_0F38_W0_B0 = 4750,
+		MVEX_Undoc_zmm_k1_mvt_512_66_0F38_W0_B0 = 4748,
 		/// <summary><c>UNDOC zmm1 {k1}, mvt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 B2 /vsib</c><br/>
@@ -37993,7 +37977,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_mvt_512_66_0F38_W0_B2 = 4751,
+		MVEX_Undoc_zmm_k1_mvt_512_66_0F38_W0_B2 = 4749,
 		/// <summary><c>VPMADD233D zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 B4 /r</c><br/>
@@ -38001,7 +37985,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpmadd233d_zmm_k1_zmm_zmmmt = 4752,
+		MVEX_Vpmadd233d_zmm_k1_zmm_zmmmt = 4750,
 		/// <summary><c>VPMADD231D zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 B5 /r</c><br/>
@@ -38009,7 +37993,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpmadd231d_zmm_k1_zmm_zmmmt = 4753,
+		MVEX_Vpmadd231d_zmm_k1_zmm_zmmmt = 4751,
 		/// <summary><c>VFMADD231PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 B8 /r</c><br/>
@@ -38017,7 +38001,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmadd231ps_zmm_k1_zmm_zmmmt = 4754,
+		MVEX_Vfmadd231ps_zmm_k1_zmm_zmmmt = 4752,
 		/// <summary><c>VFMADD231PD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 B8 /r</c><br/>
@@ -38025,7 +38009,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmadd231pd_zmm_k1_zmm_zmmmt = 4755,
+		MVEX_Vfmadd231pd_zmm_k1_zmm_zmmmt = 4753,
 		/// <summary><c>VFMSUB231PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 BA /r</c><br/>
@@ -38033,7 +38017,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmsub231ps_zmm_k1_zmm_zmmmt = 4756,
+		MVEX_Vfmsub231ps_zmm_k1_zmm_zmmmt = 4754,
 		/// <summary><c>VFMSUB231PD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 BA /r</c><br/>
@@ -38041,7 +38025,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfmsub231pd_zmm_k1_zmm_zmmmt = 4757,
+		MVEX_Vfmsub231pd_zmm_k1_zmm_zmmmt = 4755,
 		/// <summary><c>VFNMADD231PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 BC /r</c><br/>
@@ -38049,7 +38033,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfnmadd231ps_zmm_k1_zmm_zmmmt = 4758,
+		MVEX_Vfnmadd231ps_zmm_k1_zmm_zmmmt = 4756,
 		/// <summary><c>VFNMADD231PD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 BC /r</c><br/>
@@ -38057,7 +38041,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfnmadd231pd_zmm_k1_zmm_zmmmt = 4759,
+		MVEX_Vfnmadd231pd_zmm_k1_zmm_zmmmt = 4757,
 		/// <summary><c>VFNMSUB231PS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 BE /r</c><br/>
@@ -38065,7 +38049,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfnmsub231ps_zmm_k1_zmm_zmmmt = 4760,
+		MVEX_Vfnmsub231ps_zmm_k1_zmm_zmmmt = 4758,
 		/// <summary><c>VFNMSUB231PD zmm1 {k1}, zmm2, Sf64(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 BE /r</c><br/>
@@ -38073,7 +38057,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vfnmsub231pd_zmm_k1_zmm_zmmmt = 4761,
+		MVEX_Vfnmsub231pd_zmm_k1_zmm_zmmmt = 4759,
 		/// <summary><c>UNDOC zmm1 {k1}, mvt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 C0 /vsib</c><br/>
@@ -38081,7 +38065,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_mvt_512_66_0F38_W0_C0 = 4762,
+		MVEX_Undoc_zmm_k1_mvt_512_66_0F38_W0_C0 = 4760,
 		/// <summary><c>VGATHERPF0HINTDPS Uf32(mvt) {k1}</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 C6 /0 /vsib</c><br/>
@@ -38089,7 +38073,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgatherpf0hintdps_mvt_k1 = 4763,
+		MVEX_Vgatherpf0hintdps_mvt_k1 = 4761,
 		/// <summary><c>VGATHERPF0HINTDPD Uf64(mvt) {k1}</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 C6 /0 /vsib</c><br/>
@@ -38097,7 +38081,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgatherpf0hintdpd_mvt_k1 = 4764,
+		MVEX_Vgatherpf0hintdpd_mvt_k1 = 4762,
 		/// <summary><c>VGATHERPF0DPS Uf32(mvt) {k1}</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 C6 /1 /vsib</c><br/>
@@ -38105,7 +38089,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgatherpf0dps_mvt_k1 = 4765,
+		MVEX_Vgatherpf0dps_mvt_k1 = 4763,
 		/// <summary><c>VGATHERPF1DPS Uf32(mvt) {k1}</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 C6 /2 /vsib</c><br/>
@@ -38113,7 +38097,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgatherpf1dps_mvt_k1 = 4766,
+		MVEX_Vgatherpf1dps_mvt_k1 = 4764,
 		/// <summary><c>VSCATTERPF0HINTDPS Uf32(mvt) {k1}</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 C6 /4 /vsib</c><br/>
@@ -38121,7 +38105,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vscatterpf0hintdps_mvt_k1 = 4767,
+		MVEX_Vscatterpf0hintdps_mvt_k1 = 4765,
 		/// <summary><c>VSCATTERPF0HINTDPD Uf64(mvt) {k1}</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 C6 /4 /vsib</c><br/>
@@ -38129,7 +38113,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vscatterpf0hintdpd_mvt_k1 = 4768,
+		MVEX_Vscatterpf0hintdpd_mvt_k1 = 4766,
 		/// <summary><c>VSCATTERPF0DPS Uf32(mvt) {k1}</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 C6 /5 /vsib</c><br/>
@@ -38137,7 +38121,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vscatterpf0dps_mvt_k1 = 4769,
+		MVEX_Vscatterpf0dps_mvt_k1 = 4767,
 		/// <summary><c>VSCATTERPF1DPS Uf32(mvt) {k1}</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 C6 /6 /vsib</c><br/>
@@ -38145,7 +38129,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vscatterpf1dps_mvt_k1 = 4770,
+		MVEX_Vscatterpf1dps_mvt_k1 = 4768,
 		/// <summary><c>VEXP223PS zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 C8 /r</c><br/>
@@ -38153,7 +38137,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vexp223ps_zmm_k1_zmmmt = 4771,
+		MVEX_Vexp223ps_zmm_k1_zmmmt = 4769,
 		/// <summary><c>VLOG2PS zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 C9 /r</c><br/>
@@ -38161,7 +38145,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vlog2ps_zmm_k1_zmmmt = 4772,
+		MVEX_Vlog2ps_zmm_k1_zmmmt = 4770,
 		/// <summary><c>VRCP23PS zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 CA /r</c><br/>
@@ -38169,7 +38153,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vrcp23ps_zmm_k1_zmmmt = 4773,
+		MVEX_Vrcp23ps_zmm_k1_zmmmt = 4771,
 		/// <summary><c>VRSQRT23PS zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 CB /r</c><br/>
@@ -38177,7 +38161,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vrsqrt23ps_zmm_k1_zmmmt = 4774,
+		MVEX_Vrsqrt23ps_zmm_k1_zmmmt = 4772,
 		/// <summary><c>VADDSETSPS zmm1 {k1}, zmm2, Sf32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 CC /r</c><br/>
@@ -38185,7 +38169,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vaddsetsps_zmm_k1_zmm_zmmmt = 4775,
+		MVEX_Vaddsetsps_zmm_k1_zmm_zmmmt = 4773,
 		/// <summary><c>VPADDSETSD zmm1 {k1}, zmm2, Si32(zmm3/mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 CD /r</c><br/>
@@ -38193,7 +38177,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpaddsetsd_zmm_k1_zmm_zmmmt = 4776,
+		MVEX_Vpaddsetsd_zmm_k1_zmm_zmmmt = 4774,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 CE /r</c><br/>
@@ -38201,7 +38185,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_CE = 4777,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_CE = 4775,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W1 CE /r</c><br/>
@@ -38209,7 +38193,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W1_CE = 4778,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W1_CE = 4776,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2, zmm3/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F38.W0 CF /r</c><br/>
@@ -38217,7 +38201,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_CF = 4779,
+		MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_CF = 4777,
 		/// <summary><c>VLOADUNPACKLD zmm1 {k1}, Ui32(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F38.W0 D0 /r</c><br/>
@@ -38225,7 +38209,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vloadunpackld_zmm_k1_mt = 4780,
+		MVEX_Vloadunpackld_zmm_k1_mt = 4778,
 		/// <summary><c>VLOADUNPACKLQ zmm1 {k1}, Ui64(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F38.W1 D0 /r</c><br/>
@@ -38233,7 +38217,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vloadunpacklq_zmm_k1_mt = 4781,
+		MVEX_Vloadunpacklq_zmm_k1_mt = 4779,
 		/// <summary><c>VPACKSTORELD mt {k1}, Di32(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 D0 /r</c><br/>
@@ -38241,7 +38225,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpackstoreld_mt_k1_zmm = 4782,
+		MVEX_Vpackstoreld_mt_k1_zmm = 4780,
 		/// <summary><c>VPACKSTORELQ mt {k1}, Di64(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 D0 /r</c><br/>
@@ -38249,7 +38233,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpackstorelq_mt_k1_zmm = 4783,
+		MVEX_Vpackstorelq_mt_k1_zmm = 4781,
 		/// <summary><c>VLOADUNPACKLPS zmm1 {k1}, Uf32(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F38.W0 D1 /r</c><br/>
@@ -38257,7 +38241,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vloadunpacklps_zmm_k1_mt = 4784,
+		MVEX_Vloadunpacklps_zmm_k1_mt = 4782,
 		/// <summary><c>VLOADUNPACKLPD zmm1 {k1}, Uf64(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F38.W1 D1 /r</c><br/>
@@ -38265,7 +38249,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vloadunpacklpd_zmm_k1_mt = 4785,
+		MVEX_Vloadunpacklpd_zmm_k1_mt = 4783,
 		/// <summary><c>VPACKSTORELPS mt {k1}, Df32(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 D1 /r</c><br/>
@@ -38273,7 +38257,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpackstorelps_mt_k1_zmm = 4786,
+		MVEX_Vpackstorelps_mt_k1_zmm = 4784,
 		/// <summary><c>VPACKSTORELPD mt {k1}, Df64(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 D1 /r</c><br/>
@@ -38281,7 +38265,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpackstorelpd_mt_k1_zmm = 4787,
+		MVEX_Vpackstorelpd_mt_k1_zmm = 4785,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F38.W0 D2 /r</c><br/>
@@ -38289,7 +38273,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D2 = 4788,
+		MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D2 = 4786,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 D2 /r</c><br/>
@@ -38297,7 +38281,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_D2 = 4789,
+		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_D2 = 4787,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F38.W0 D3 /r</c><br/>
@@ -38305,7 +38289,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D3 = 4790,
+		MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D3 = 4788,
 		/// <summary><c>VLOADUNPACKHD zmm1 {k1}, Ui32(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F38.W0 D4 /r</c><br/>
@@ -38313,7 +38297,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vloadunpackhd_zmm_k1_mt = 4791,
+		MVEX_Vloadunpackhd_zmm_k1_mt = 4789,
 		/// <summary><c>VLOADUNPACKHQ zmm1 {k1}, Ui64(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F38.W1 D4 /r</c><br/>
@@ -38321,7 +38305,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vloadunpackhq_zmm_k1_mt = 4792,
+		MVEX_Vloadunpackhq_zmm_k1_mt = 4790,
 		/// <summary><c>VPACKSTOREHD mt {k1}, Di32(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 D4 /r</c><br/>
@@ -38329,7 +38313,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpackstorehd_mt_k1_zmm = 4793,
+		MVEX_Vpackstorehd_mt_k1_zmm = 4791,
 		/// <summary><c>VPACKSTOREHQ mt {k1}, Di64(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 D4 /r</c><br/>
@@ -38337,7 +38321,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpackstorehq_mt_k1_zmm = 4794,
+		MVEX_Vpackstorehq_mt_k1_zmm = 4792,
 		/// <summary><c>VLOADUNPACKHPS zmm1 {k1}, Uf32(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F38.W0 D5 /r</c><br/>
@@ -38345,7 +38329,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vloadunpackhps_zmm_k1_mt = 4795,
+		MVEX_Vloadunpackhps_zmm_k1_mt = 4793,
 		/// <summary><c>VLOADUNPACKHPD zmm1 {k1}, Uf64(mt)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F38.W1 D5 /r</c><br/>
@@ -38353,7 +38337,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vloadunpackhpd_zmm_k1_mt = 4796,
+		MVEX_Vloadunpackhpd_zmm_k1_mt = 4794,
 		/// <summary><c>VPACKSTOREHPS mt {k1}, Df32(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 D5 /r</c><br/>
@@ -38361,7 +38345,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpackstorehps_mt_k1_zmm = 4797,
+		MVEX_Vpackstorehps_mt_k1_zmm = 4795,
 		/// <summary><c>VPACKSTOREHPD mt {k1}, Df64(zmm1)</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W1 D5 /r</c><br/>
@@ -38369,7 +38353,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpackstorehpd_mt_k1_zmm = 4798,
+		MVEX_Vpackstorehpd_mt_k1_zmm = 4796,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F38.W0 D6 /r</c><br/>
@@ -38377,7 +38361,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D6 = 4799,
+		MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D6 = 4797,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F38.W0 D6 /r</c><br/>
@@ -38385,7 +38369,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_D6 = 4800,
+		MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_D6 = 4798,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F38.W0 D7 /r</c><br/>
@@ -38393,7 +38377,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D7 = 4801,
+		MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D7 = 4799,
 		/// <summary><c>VALIGND zmm1 {k1}, zmm2, zmm3/mt, imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F3A.W0 03 /r ib</c><br/>
@@ -38401,7 +38385,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Valignd_zmm_k1_zmm_zmmmt_imm8 = 4802,
+		MVEX_Valignd_zmm_k1_zmm_zmmmt_imm8 = 4800,
 		/// <summary><c>VPERMF32X4 zmm1 {k1}, zmm2/mt, imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F3A.W0 07 /r ib</c><br/>
@@ -38409,7 +38393,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpermf32x4_zmm_k1_zmmmt_imm8 = 4803,
+		MVEX_Vpermf32x4_zmm_k1_zmmmt_imm8 = 4801,
 		/// <summary><c>VPCMPUD k2 {k1}, zmm1, Si32(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F3A.W0 1E /r ib</c><br/>
@@ -38417,7 +38401,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpcmpud_kr_k1_zmm_zmmmt_imm8 = 4804,
+		MVEX_Vpcmpud_kr_k1_zmm_zmmmt_imm8 = 4802,
 		/// <summary><c>VPCMPD k2 {k1}, zmm1, Si32(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.NDS.512.66.0F3A.W0 1F /r ib</c><br/>
@@ -38425,7 +38409,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vpcmpd_kr_k1_zmm_zmmmt_imm8 = 4805,
+		MVEX_Vpcmpd_kr_k1_zmm_zmmmt_imm8 = 4803,
 		/// <summary><c>VGETMANTPS zmm1 {k1}, Sf32(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F3A.W0 26 /r ib</c><br/>
@@ -38433,7 +38417,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgetmantps_zmm_k1_zmmmt_imm8 = 4806,
+		MVEX_Vgetmantps_zmm_k1_zmmmt_imm8 = 4804,
 		/// <summary><c>VGETMANTPD zmm1 {k1}, Sf64(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F3A.W1 26 /r ib</c><br/>
@@ -38441,7 +38425,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vgetmantpd_zmm_k1_zmmmt_imm8 = 4807,
+		MVEX_Vgetmantpd_zmm_k1_zmmmt_imm8 = 4805,
 		/// <summary><c>VRNDFXPNTPS zmm1 {k1}, Sf32(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F3A.W0 52 /r ib</c><br/>
@@ -38449,7 +38433,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vrndfxpntps_zmm_k1_zmmmt_imm8 = 4808,
+		MVEX_Vrndfxpntps_zmm_k1_zmmmt_imm8 = 4806,
 		/// <summary><c>VRNDFXPNTPD zmm1 {k1}, Sf64(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F3A.W1 52 /r ib</c><br/>
@@ -38457,7 +38441,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vrndfxpntpd_zmm_k1_zmmmt_imm8 = 4809,
+		MVEX_Vrndfxpntpd_zmm_k1_zmmmt_imm8 = 4807,
 		/// <summary><c>VCVTFXPNTUDQ2PS zmm1 {k1}, Si32(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F3A.W0 CA /r ib</c><br/>
@@ -38465,7 +38449,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vcvtfxpntudq2ps_zmm_k1_zmmmt_imm8 = 4810,
+		MVEX_Vcvtfxpntudq2ps_zmm_k1_zmmmt_imm8 = 4808,
 		/// <summary><c>VCVTFXPNTPS2UDQ zmm1 {k1}, Sf32(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F3A.W0 CA /r ib</c><br/>
@@ -38473,7 +38457,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vcvtfxpntps2udq_zmm_k1_zmmmt_imm8 = 4811,
+		MVEX_Vcvtfxpntps2udq_zmm_k1_zmmmt_imm8 = 4809,
 		/// <summary><c>VCVTFXPNTPD2UDQ zmm1 {k1}, Sf64(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.F2.0F3A.W1 CA /r ib</c><br/>
@@ -38481,7 +38465,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vcvtfxpntpd2udq_zmm_k1_zmmmt_imm8 = 4812,
+		MVEX_Vcvtfxpntpd2udq_zmm_k1_zmmmt_imm8 = 4810,
 		/// <summary><c>VCVTFXPNTDQ2PS zmm1 {k1}, Si32(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.0F3A.W0 CB /r ib</c><br/>
@@ -38489,7 +38473,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vcvtfxpntdq2ps_zmm_k1_zmmmt_imm8 = 4813,
+		MVEX_Vcvtfxpntdq2ps_zmm_k1_zmmmt_imm8 = 4811,
 		/// <summary><c>VCVTFXPNTPS2DQ zmm1 {k1}, Sf32(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F3A.W0 CB /r ib</c><br/>
@@ -38497,7 +38481,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vcvtfxpntps2dq_zmm_k1_zmmmt_imm8 = 4814,
+		MVEX_Vcvtfxpntps2dq_zmm_k1_zmmmt_imm8 = 4812,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt, imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F3A.W0 D0 /r ib</c><br/>
@@ -38505,7 +38489,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D0 = 4815,
+		MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D0 = 4813,
 		/// <summary><c>UNDOC zmm1 {k1}, zmm2/mt, imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.66.0F3A.W0 D1 /r ib</c><br/>
@@ -38513,7 +38497,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D1 = 4816,
+		MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D1 = 4814,
 		/// <summary><c>VCVTFXPNTPD2DQ zmm1 {k1}, Sf64(zmm2/mt), imm8</c><br/>
 		/// <br/>
 		/// <c>MVEX.512.F2.0F3A.W1 E6 /r ib</c><br/>
@@ -38521,7 +38505,7 @@ namespace Blazed.Intel {
 		/// <c>KNC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		MVEX_Vcvtfxpntpd2dq_zmm_k1_zmmmt_imm8 = 4817,
+		MVEX_Vcvtfxpntpd2dq_zmm_k1_zmmmt_imm8 = 4815,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>a16 F3 0F A6 F0</c><br/>
@@ -38529,7 +38513,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_UNDOC</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Via_undoc_F30FA6F0_16 = 4818,
+		Via_undoc_F30FA6F0_16 = 4816,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>a32 F3 0F A6 F0</c><br/>
@@ -38537,7 +38521,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_UNDOC</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Via_undoc_F30FA6F0_32 = 4819,
+		Via_undoc_F30FA6F0_32 = 4817,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>a64 F3 0F A6 F0</c><br/>
@@ -38545,7 +38529,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_UNDOC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Via_undoc_F30FA6F0_64 = 4820,
+		Via_undoc_F30FA6F0_64 = 4818,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>a16 F3 0F A6 F8</c><br/>
@@ -38553,7 +38537,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_UNDOC</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Via_undoc_F30FA6F8_16 = 4821,
+		Via_undoc_F30FA6F8_16 = 4819,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>a32 F3 0F A6 F8</c><br/>
@@ -38561,7 +38545,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_UNDOC</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Via_undoc_F30FA6F8_32 = 4822,
+		Via_undoc_F30FA6F8_32 = 4820,
 		/// <summary><c>UNDOC</c><br/>
 		/// <br/>
 		/// <c>a64 F3 0F A6 F8</c><br/>
@@ -38569,7 +38553,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_UNDOC</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Via_undoc_F30FA6F8_64 = 4823,
+		Via_undoc_F30FA6F8_64 = 4821,
 		/// <summary><c>XSHA512</c><br/>
 		/// <br/>
 		/// <c>a16 F3 0F A6 E0</c><br/>
@@ -38577,7 +38561,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_PHE</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Xsha512_16 = 4824,
+		Xsha512_16 = 4822,
 		/// <summary><c>XSHA512</c><br/>
 		/// <br/>
 		/// <c>a32 F3 0F A6 E0</c><br/>
@@ -38585,7 +38569,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_PHE</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Xsha512_32 = 4825,
+		Xsha512_32 = 4823,
 		/// <summary><c>XSHA512</c><br/>
 		/// <br/>
 		/// <c>a64 F3 0F A6 E0</c><br/>
@@ -38593,7 +38577,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_PHE</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Xsha512_64 = 4826,
+		Xsha512_64 = 4824,
 		/// <summary><c>XSTORE_ALT</c><br/>
 		/// <br/>
 		/// <c>a16 F3 0F A7 F8</c><br/>
@@ -38601,7 +38585,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_RNG</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Xstore_alt_16 = 4827,
+		Xstore_alt_16 = 4825,
 		/// <summary><c>XSTORE_ALT</c><br/>
 		/// <br/>
 		/// <c>a32 F3 0F A7 F8</c><br/>
@@ -38609,7 +38593,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_RNG</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Xstore_alt_32 = 4828,
+		Xstore_alt_32 = 4826,
 		/// <summary><c>XSTORE_ALT</c><br/>
 		/// <br/>
 		/// <c>a64 F3 0F A7 F8</c><br/>
@@ -38617,7 +38601,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_RNG</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Xstore_alt_64 = 4829,
+		Xstore_alt_64 = 4827,
 		/// <summary><c>XSHA512_ALT</c><br/>
 		/// <br/>
 		/// <c>a16 F3 0F A6 D8</c><br/>
@@ -38625,7 +38609,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_PHE</c><br/>
 		/// <br/>
 		/// <c>16/32-bit</c></summary>
-		Xsha512_alt_16 = 4830,
+		Xsha512_alt_16 = 4828,
 		/// <summary><c>XSHA512_ALT</c><br/>
 		/// <br/>
 		/// <c>a32 F3 0F A6 D8</c><br/>
@@ -38633,7 +38617,7 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_PHE</c><br/>
 		/// <br/>
 		/// <c>16/32/64-bit</c></summary>
-		Xsha512_alt_32 = 4831,
+		Xsha512_alt_32 = 4829,
 		/// <summary><c>XSHA512_ALT</c><br/>
 		/// <br/>
 		/// <c>a64 F3 0F A6 D8</c><br/>
@@ -38641,8 +38625,8 @@ namespace Blazed.Intel {
 		/// <c>PADLOCK_PHE</c><br/>
 		/// <br/>
 		/// <c>64-bit</c></summary>
-		Xsha512_alt_64 = 4832,
+		Xsha512_alt_64 = 4830,
 		/// <summary>A zero-sized instruction. Can be used as a label.</summary>
-		Zero_bytes = 4833,
+		Zero_bytes = 4831,
 	}
 }

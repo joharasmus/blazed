@@ -4249,8 +4249,6 @@ namespace Blazed.Intel {
 			(ushort)Mnemonic.Rdshr,// Rdshr_rm32
 			(ushort)Mnemonic.Wrshr,// Wrshr_rm32
 			(ushort)Mnemonic.Smint,// Smint
-			(ushort)Mnemonic.Dmint,// Dmint
-			(ushort)Mnemonic.Rdm,// Rdm
 			(ushort)Mnemonic.Svdc,// Svdc_m80_Sreg
 			(ushort)Mnemonic.Rsdc,// Rsdc_Sreg_m80
 			(ushort)Mnemonic.Svldt,// Svldt_m80
