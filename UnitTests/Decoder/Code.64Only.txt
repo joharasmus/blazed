@@ -446,8 +446,6 @@ Testui
 Clui
 Stui
 Senduipi_r64
-Ccs_hash_64
-Ccs_encrypt_64
 Lkgs_rm16
 Lkgs_r32m16
 Lkgs_r64m16

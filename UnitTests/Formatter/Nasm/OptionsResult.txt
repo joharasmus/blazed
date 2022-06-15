@@ -2035,8 +2035,6 @@ rep xcryptcbc
 rep xcryptctr
 rep xcryptcfb
 rep xcryptofb
-rep ccs_hash
-rep ccs_encrypt
 rep undoc
 rep undoc
 rep xsha512
@@ -2100,8 +2098,6 @@ rep xcryptcbc
 rep xcryptctr
 rep xcryptcfb
 rep xcryptofb
-rep ccs_hash
-rep ccs_encrypt
 rep undoc
 rep undoc
 rep xsha512
@@ -2160,8 +2156,6 @@ rep xcryptcbc
 rep xcryptctr
 rep xcryptcfb
 rep xcryptofb
-rep ccs_hash
-rep ccs_encrypt
 rep undoc
 rep undoc
 rep xsha512
@@ -2225,8 +2219,6 @@ rep xcryptcbc
 rep xcryptctr
 rep xcryptcfb
 rep xcryptofb
-rep ccs_hash
-rep ccs_encrypt
 rep undoc
 rep undoc
 rep xsha512
@@ -2290,8 +2282,6 @@ rep xcryptcbc
 rep xcryptctr
 rep xcryptcfb
 rep xcryptofb
-rep ccs_hash
-rep ccs_encrypt
 rep undoc
 rep undoc
 rep xsha512
@@ -2350,8 +2340,6 @@ rep xcryptcbc
 rep xcryptctr
 rep xcryptcfb
 rep xcryptofb
-rep ccs_hash
-rep ccs_encrypt
 rep undoc
 rep undoc
 rep xsha512
@@ -2415,8 +2403,6 @@ rep xcryptcbc
 rep xcryptctr
 rep xcryptcfb
 rep xcryptofb
-rep ccs_hash
-rep ccs_encrypt
 rep undoc
 rep undoc
 rep xsha512
@@ -2480,8 +2466,6 @@ rep xcryptcbc
 rep xcryptctr
 rep xcryptcfb
 rep xcryptofb
-rep ccs_hash
-rep ccs_encrypt
 rep undoc
 rep undoc
 rep xsha512
@@ -2540,8 +2524,6 @@ rep xcryptcbc
 rep xcryptctr
 rep xcryptcfb
 rep xcryptofb
-rep ccs_hash
-rep ccs_encrypt
 rep undoc
 rep undoc
 rep xsha512
@@ -2605,8 +2587,6 @@ rep xcryptcbc
 rep xcryptctr
 rep xcryptcfb
 rep xcryptofb
-rep ccs_hash
-rep ccs_encrypt
 rep undoc
 rep undoc
 rep xsha512
@@ -2670,8 +2650,6 @@ rep xcryptcbc
 rep xcryptctr
 rep xcryptcfb
 rep xcryptofb
-rep ccs_hash
-rep ccs_encrypt
 rep undoc
 rep undoc
 rep xsha512
@@ -2730,8 +2708,6 @@ rep xcryptcbc
 rep xcryptctr
 rep xcryptcfb
 rep xcryptofb
-rep ccs_hash
-rep ccs_encrypt
 rep undoc
 rep undoc
 rep xsha512

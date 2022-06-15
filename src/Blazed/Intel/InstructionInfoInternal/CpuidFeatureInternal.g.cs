@@ -174,7 +174,6 @@ namespace Blazed.Intel.InstructionInfoInternal {
 		UINTR,
 		HRESET,
 		AVX_VNNI,
-		PADLOCK_GMI,
 		FRED,
 		LKGS,
 		AVX512_FP16,

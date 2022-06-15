@@ -1450,20 +1450,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void ccs_encrypt() {
-			{ // skip (Bitness == 64) not supported by this Assembler bitness
-			} /* else */ { // skip (Bitness >= 32) not supported by this Assembler bitness
-			} /* else */ TestAssembler(c => c.ccs_encrypt(), Instruction.Create(Code.Ccs_encrypt_16), TestInstrFlags.RemoveRepRepnePrefixes);
-		}
-
-		[Fact]
-		public void ccs_hash() {
-			{ // skip (Bitness == 64) not supported by this Assembler bitness
-			} /* else */ { // skip (Bitness >= 32) not supported by this Assembler bitness
-			} /* else */ TestAssembler(c => c.ccs_hash(), Instruction.Create(Code.Ccs_hash_16), TestInstrFlags.RemoveRepRepnePrefixes);
-		}
-
-		[Fact]
 		public void cdq() {
 			TestAssembler(c => c.cdq(), Instruction.Create(Code.Cdq));
 		}

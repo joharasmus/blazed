@@ -673,14 +673,6 @@ C7 F8 5AA5, Xbegin_rel16, Legacy, RTM, flow=XbeginXabortXend op0=r cw=eax
 64 66 8D 18, Lea_r32_m, Legacy, INTEL386, op0=w op1=nma w=ebx r=bx;si
 # lea esi,[ecx+edx*8]
 67 66 8D 34 D1, Lea_r32_m, Legacy, INTEL386, op0=w op1=nma w=esi r=ecx;edx
-# rep ccs_hash
-F3 0FA6 E8, Ccs_hash_16, Legacy, PADLOCK_GMI, crm=es:di;Unknown cwm=es:di;Unknown crm=es:si;Unknown cr=es cr=si;di cw=si rcw=ax;cx cr=bx
-# rep ccs_hash
-67 F3 0FA6 E8, Ccs_hash_32, Legacy, PADLOCK_GMI, crm=es:edi;Unknown cwm=es:edi;Unknown crm=es:esi;Unknown cr=es cr=esi;edi cw=esi rcw=eax;ecx cr=ebx
-# rep ccs_encrypt
-F3 0FA7 F0, Ccs_encrypt_16, Legacy, PADLOCK_GMI, crm=es:dx;Unknown crm=es:bx;Unknown crm=es:si;Unknown cwm=es:di;Unknown cr=es cr=dx;bx;si;di cw=si;di rcw=cx cr=ax
-# rep ccs_encrypt
-67 F3 0FA7 F0, Ccs_encrypt_32, Legacy, PADLOCK_GMI, crm=es:edx;Unknown crm=es:ebx;Unknown crm=es:esi;Unknown cwm=es:edi;Unknown cr=es cr=edx;ebx;esi;edi cw=esi;edi rcw=ecx cr=eax
 # rep undoc
 F3 0FA6 F0, Via_undoc_F30FA6F0_16, Legacy, PADLOCK_UNDOC, save-restore
 # rep undoc

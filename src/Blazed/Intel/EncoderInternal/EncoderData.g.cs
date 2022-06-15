@@ -13,7 +13,7 @@ namespace Blazed.Intel.EncoderInternal {
 		internal static readonly uint[] EncFlags3 = GetEncFlags3();
 
 		static uint[] GetEncFlags1() =>
-			new uint[4792] {
+			new uint[4786] {
 				0x00000000,// INVALID
 				0x00000000,// DeclareByte
 				0x00000000,// DeclareWord
@@ -4284,12 +4284,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x000096D9,// VEX_Vpdpwssd_ymm_ymm_ymmm256
 				0x00008594,// VEX_Vpdpwssds_xmm_xmm_xmmm128
 				0x000096D9,// VEX_Vpdpwssds_ymm_ymm_ymmm256
-				0x00000000,// Ccs_hash_16
-				0x00000000,// Ccs_hash_32
-				0x00000000,// Ccs_hash_64
-				0x00000000,// Ccs_encrypt_16
-				0x00000000,// Ccs_encrypt_32
-				0x00000000,// Ccs_encrypt_64
 				0x00000008,// Lkgs_rm16
 				0x00000009,// Lkgs_r32m16
 				0x0000000B,// Lkgs_r64m16
@@ -4809,7 +4803,7 @@ namespace Blazed.Intel.EncoderInternal {
 			};
 
 		static uint[] GetEncFlags2() =>
-			new uint[4792] {
+			new uint[4786] {
 				0x00000000,// INVALID
 				0x00000000,// DeclareByte
 				0x00000000,// DeclareWord
@@ -9080,12 +9074,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x45140052,// VEX_Vpdpwssd_ymm_ymm_ymmm256
 				0x44140053,// VEX_Vpdpwssds_xmm_xmm_xmmm128
 				0x45140053,// VEX_Vpdpwssds_ymm_ymm_ymmm256
-				0x4023A6E8,// Ccs_hash_16
-				0x4023A6E8,// Ccs_hash_32
-				0x4023A6E8,// Ccs_hash_64
-				0x4023A7F0,// Ccs_encrypt_16
-				0x4023A7F0,// Ccs_encrypt_32
-				0x4023A7F0,// Ccs_encrypt_64
 				0xF0320000,// Lkgs_rm16
 				0xF0320000,// Lkgs_r32m16
 				0xF0320000,// Lkgs_r64m16
@@ -9605,7 +9593,7 @@ namespace Blazed.Intel.EncoderInternal {
 			};
 
 		static uint[] GetEncFlags3() =>
-			new uint[4792] {
+			new uint[4786] {
 				0x00030000,// INVALID
 				0x00030000,// DeclareByte
 				0x00030000,// DeclareWord
@@ -13876,12 +13864,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x00030001,// VEX_Vpdpwssd_ymm_ymm_ymmm256
 				0x00030001,// VEX_Vpdpwssds_xmm_xmm_xmmm128
 				0x00030001,// VEX_Vpdpwssds_ymm_ymm_ymmm256
-				0x00010020,// Ccs_hash_16
-				0x00030040,// Ccs_hash_32
-				0x00020060,// Ccs_hash_64
-				0x00010020,// Ccs_encrypt_16
-				0x00030040,// Ccs_encrypt_32
-				0x00020060,// Ccs_encrypt_64
 				0x00020008,// Lkgs_rm16
 				0x00020010,// Lkgs_r32m16
 				0x00020018,// Lkgs_r64m16

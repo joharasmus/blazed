@@ -140,12 +140,6 @@ namespace Blazed.Intel.FormatterInternal {
 			case Code.Xcryptofb_16:
 			case Code.Xcryptofb_32:
 			case Code.Xcryptofb_64:
-			case Code.Ccs_hash_16:
-			case Code.Ccs_hash_32:
-			case Code.Ccs_hash_64:
-			case Code.Ccs_encrypt_16:
-			case Code.Ccs_encrypt_32:
-			case Code.Ccs_encrypt_64:
 			case Code.Via_undoc_F30FA6F0_16:
 			case Code.Via_undoc_F30FA6F0_32:
 			case Code.Via_undoc_F30FA6F0_64:

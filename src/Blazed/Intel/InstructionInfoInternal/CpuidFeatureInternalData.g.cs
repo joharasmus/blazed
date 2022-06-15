@@ -32,7 +32,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 				0x00,
 				0x00,
 				0x04,
-				0x04,
+				0x02,
 
 				0x00,// INTEL8086
 				0x01,// INTEL8086_ONLY
@@ -200,14 +200,13 @@ namespace Blazed.Intel.InstructionInfoInternal {
 				0x8F,// UINTR
 				0x90,// HRESET
 				0x91,// AVX_VNNI
-				0x92,// PADLOCK_GMI
-				0x93,// FRED
-				0x94,// LKGS
-				0x95,// AVX512_FP16
-				0x21, 0x95,// AVX512VL_and_AVX512_FP16
-				0x96,// UDBG
-				0x97,// KNC
-				0x98,// PADLOCK_UNDOC
+				0x92,// FRED
+				0x93,// LKGS
+				0x94,// AVX512_FP16
+				0x21, 0x94,// AVX512VL_and_AVX512_FP16
+				0x95,// UDBG
+				0x96,// KNC
+				0x97,// PADLOCK_UNDOC
 			};
 	}
 }

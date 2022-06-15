@@ -21853,54 +21853,6 @@ C4E24D 53 10, VEX_Vpdpwssds_ymm_ymm_ymmm256, Vpdpwssds, 3, op0=r;ymm2 op1=r;ymm6
 C4E24D 53 D3, VEX_Vpdpwssds_ymm_ymm_ymmm256, Vpdpwssds, 3, op0=r;ymm2 op1=r;ymm6 op2=r;ymm3
 C4C24D 53 10, VEX_Vpdpwssds_ymm_ymm_ymmm256, Vpdpwssds, 3, op0=r;ymm2 op1=r;ymm6 op2=m;ds;eax;;1;0;0;Packed256_Int16 enc=C4E24D5310
 
-F3 67 0FA6 E8, Ccs_hash_16, Ccs_hash, 0, rep enc=67F30FA6E8
-67 F3 0FA6 E8, Ccs_hash_16, Ccs_hash, 0, rep
-67 0FA6 E8, INVALID, INVALID, 0, code=Ccs_hash_16
-67 F3 0FA6 E9, Ccs_hash_16, Ccs_hash, 0, rep enc=67F30FA6E8
-67 F3 0FA6 EA, Ccs_hash_16, Ccs_hash, 0, rep enc=67F30FA6E8
-67 F3 0FA6 EB, Ccs_hash_16, Ccs_hash, 0, rep enc=67F30FA6E8
-67 F3 0FA6 EC, Ccs_hash_16, Ccs_hash, 0, rep enc=67F30FA6E8
-67 F3 0FA6 ED, Ccs_hash_16, Ccs_hash, 0, rep enc=67F30FA6E8
-67 F3 0FA6 EE, Ccs_hash_16, Ccs_hash, 0, rep enc=67F30FA6E8
-67 F3 0FA6 EF, Ccs_hash_16, Ccs_hash, 0, rep enc=67F30FA6E8
-
-F3 0FA6 E8, Ccs_hash_32, Ccs_hash, 0, rep
-F2 0FA6 E8, INVALID, INVALID, 0, code=Ccs_hash_32
-F2 F3 0FA6 E8, Ccs_hash_32, Ccs_hash, 0, rep enc=F30FA6E8
-F3 F2 0FA6 E8, INVALID, INVALID, 0, code=Ccs_hash_32
-0FA6 E8, INVALID, INVALID, 0, code=Ccs_hash_32
-F3 0FA6 E9, Ccs_hash_32, Ccs_hash, 0, rep enc=F30FA6E8
-F3 0FA6 EA, Ccs_hash_32, Ccs_hash, 0, rep enc=F30FA6E8
-F3 0FA6 EB, Ccs_hash_32, Ccs_hash, 0, rep enc=F30FA6E8
-F3 0FA6 EC, Ccs_hash_32, Ccs_hash, 0, rep enc=F30FA6E8
-F3 0FA6 ED, Ccs_hash_32, Ccs_hash, 0, rep enc=F30FA6E8
-F3 0FA6 EE, Ccs_hash_32, Ccs_hash, 0, rep enc=F30FA6E8
-F3 0FA6 EF, Ccs_hash_32, Ccs_hash, 0, rep enc=F30FA6E8
-
-F3 67 0FA7 F0, Ccs_encrypt_16, Ccs_encrypt, 0, rep enc=67F30FA7F0
-67 F3 0FA7 F0, Ccs_encrypt_16, Ccs_encrypt, 0, rep
-67 0FA7 F0, INVALID, INVALID, 0, code=Ccs_encrypt_16
-67 F3 0FA7 F1, Ccs_encrypt_16, Ccs_encrypt, 0, rep enc=67F30FA7F0
-67 F3 0FA7 F2, Ccs_encrypt_16, Ccs_encrypt, 0, rep enc=67F30FA7F0
-67 F3 0FA7 F3, Ccs_encrypt_16, Ccs_encrypt, 0, rep enc=67F30FA7F0
-67 F3 0FA7 F4, Ccs_encrypt_16, Ccs_encrypt, 0, rep enc=67F30FA7F0
-67 F3 0FA7 F5, Ccs_encrypt_16, Ccs_encrypt, 0, rep enc=67F30FA7F0
-67 F3 0FA7 F6, Ccs_encrypt_16, Ccs_encrypt, 0, rep enc=67F30FA7F0
-67 F3 0FA7 F7, Ccs_encrypt_16, Ccs_encrypt, 0, rep enc=67F30FA7F0
-
-F3 0FA7 F0, Ccs_encrypt_32, Ccs_encrypt, 0, rep
-F2 0FA7 F0, INVALID, INVALID, 0, code=Ccs_encrypt_32
-F2 F3 0FA7 F0, Ccs_encrypt_32, Ccs_encrypt, 0, rep enc=F30FA7F0
-F3 F2 0FA7 F0, INVALID, INVALID, 0, code=Ccs_encrypt_32
-0FA7 F0, INVALID, INVALID, 0, code=Ccs_encrypt_32
-F3 0FA7 F1, Ccs_encrypt_32, Ccs_encrypt, 0, rep enc=F30FA7F0
-F3 0FA7 F2, Ccs_encrypt_32, Ccs_encrypt, 0, rep enc=F30FA7F0
-F3 0FA7 F3, Ccs_encrypt_32, Ccs_encrypt, 0, rep enc=F30FA7F0
-F3 0FA7 F4, Ccs_encrypt_32, Ccs_encrypt, 0, rep enc=F30FA7F0
-F3 0FA7 F5, Ccs_encrypt_32, Ccs_encrypt, 0, rep enc=F30FA7F0
-F3 0FA7 F6, Ccs_encrypt_32, Ccs_encrypt, 0, rep enc=F30FA7F0
-F3 0FA7 F7, Ccs_encrypt_32, Ccs_encrypt, 0, rep enc=F30FA7F0
-
 62 F54C0B 58 50 01, EVEX_Vaddph_xmm_k1z_xmm_xmmm128b16, Vaddph, 3, op0=r;xmm2 op1=r;xmm6 op2=m;ds;eax;;1;16;1;Packed128_Float16 k3 co=0;0;0;0;6;1
 62 F54C9D 58 50 01, EVEX_Vaddph_xmm_k1z_xmm_xmmm128b16, Vaddph, 3, op0=r;xmm2 op1=r;xmm6 op2=m;ds;eax;;1;2;1;Broadcast128_Float16 bcst k5 zmsk co=0;0;0;0;6;1
 62 F54C08 58 50 01, EVEX_Vaddph_xmm_k1z_xmm_xmmm128b16, Vaddph, 3, op0=r;xmm2 op1=r;xmm6 op2=m;ds;eax;;1;16;1;Packed128_Float16 co=0;0;0;0;6;1

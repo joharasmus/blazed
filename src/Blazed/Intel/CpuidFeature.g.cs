@@ -301,20 +301,18 @@ namespace Blazed.Intel {
 		HRESET = 144,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.AVX-VNNI[bit 4]</summary>
 		AVX_VNNI = 145,
-		/// <summary>CPUID.0C0000000H:EAX &gt;= 0C0000001H AND CPUID.0C0000001H:EDX.GMI[Bits 5:4] = 11B ([4] = exists, [5] = enabled)</summary>
-		PADLOCK_GMI = 146,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.FRED[bit 17]</summary>
-		FRED = 147,
+		FRED = 146,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.LKGS[bit 18]</summary>
-		LKGS = 148,
+		LKGS = 147,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.AVX512-FP16[bit 23]</summary>
-		AVX512_FP16 = 149,
+		AVX512_FP16 = 148,
 		/// <summary>Undocumented Intel <c>RDUDBG</c> and <c>WRUDBG</c> instructions</summary>
-		UDBG = 150,
+		UDBG = 149,
 		/// <summary>Intel Knights Corner</summary>
-		KNC = 151,
+		KNC = 150,
 		/// <summary>Undocumented instruction</summary>
-		PADLOCK_UNDOC = 152,
+		PADLOCK_UNDOC = 151,
 	}
 }
 #endif

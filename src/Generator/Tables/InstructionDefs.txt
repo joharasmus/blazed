@@ -25904,39 +25904,6 @@ INSTRUCTION: VEX.256.66.0F38.W0 53 /r | VPDPWSSDS ymm1, ymm2, ymm3/m256 | AVX_VN
 	ops: rw=reg r=vvvv r=rm | Packed256_Int16
 END
 
-# Code: Ccs_hash_16
-INSTRUCTION: a16 F3 0F A6 E8 | CCS_HASH | PADLOCK_GMI
-	# Some Zhaoxin CPUs support GMI, eg. ZX-C+, KX, KH
-	# GMI = GuoMi Instruction
-
-	# https://github.com/ZXOpenSource/OpenSSL-ZX-GMI/blob/master/GMI%20User%20Manual%20V1.0.pdf
-	# OpenSSL PR: https://github.com/openssl/openssl/pull/8706
-
-	# SM3 instruction
-	implied: cr=[es:si=Unknown] crcw=[es:di=Unknown] cw=si rcw=ax;cx cr=bx
-	code-suffix: 16
-	flags: 16 32 ig-modrm-low3
-	nasm: asz
-END
-
-# Code: Ccs_hash_32
-INSTRUCTION: a32 F3 0F A6 E8 | CCS_HASH | PADLOCK_GMI
-	# See a16 version above for more info
-	implied: cr=[es:esi=Unknown] crcw=[es:edi=Unknown] cw=esi rcw=eax;ecx cr=ebx
-	code-suffix: 32
-	flags: ig-modrm-low3
-	nasm: asz
-END
-
-# Code: Ccs_hash_64
-INSTRUCTION: a64 F3 0F A6 E8 | CCS_HASH | PADLOCK_GMI
-	# See a16 version above for more info
-	implied: cr=[es:rsi=Unknown] crcw=[es:rdi=Unknown] cw=rsi rcw=rax;rcx cr=rbx
-	code-suffix: 64
-	flags: 64 ig-modrm-low3
-	nasm: asz
-END
-
 # Code: Via_undoc_F30FA6F0_16
 INSTRUCTION: a16 F3 0F A6 F0 | UNDOC | PADLOCK_UNDOC
 	# Undocumented instruction (Zhaoxin KX-6580 CPU, tested by @tremalrik)
@@ -25984,36 +25951,6 @@ INSTRUCTION: a64 F3 0F A6 F8 | UNDOC | PADLOCK_UNDOC
 	code-mnemonic: via_undoc
 	code-suffix: F30FA6F8_64
 	flags: 64 ig-modrm-low3 save-restore asm-ig
-	nasm: asz
-END
-
-# Code: Ccs_encrypt_16
-INSTRUCTION: a16 F3 0F A7 F0 | CCS_ENCRYPT | PADLOCK_GMI
-	# https://github.com/ZXOpenSource/OpenSSL-ZX-GMI/blob/master/GMI%20User%20Manual%20V1.0.pdf
-	# OpenSSL PR: https://github.com/openssl/openssl/pull/8706
-
-	# SM4 instruction
-	implied: cr=[es:dx=Unknown];[es:bx=Unknown];[es:si=Unknown] cw=[es:di=Unknown] rcw=cx cw=si;di cr=ax
-	code-suffix: 16
-	flags: 16 32 ig-modrm-low3
-	nasm: asz
-END
-
-# Code: Ccs_encrypt_32
-INSTRUCTION: a32 F3 0F A7 F0 | CCS_ENCRYPT | PADLOCK_GMI
-	# See a16 version above for more info
-	implied: cr=[es:edx=Unknown];[es:ebx=Unknown];[es:esi=Unknown] cw=[es:edi=Unknown] rcw=ecx cw=esi;edi cr=eax
-	code-suffix: 32
-	flags: ig-modrm-low3
-	nasm: asz
-END
-
-# Code: Ccs_encrypt_64
-INSTRUCTION: a64 F3 0F A7 F0 | CCS_ENCRYPT | PADLOCK_GMI
-	# See a16 version above for more info
-	implied: cr=[es:rdx=Unknown];[es:rbx=Unknown];[es:rsi=Unknown] cw=[es:rdi=Unknown] rcw=rcx cw=rsi;rdi cr=rax
-	code-suffix: 64
-	flags: 64 ig-modrm-low3
 	nasm: asz
 END
 

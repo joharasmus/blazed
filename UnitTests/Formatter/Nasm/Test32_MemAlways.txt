@@ -673,10 +673,6 @@ invlpgb
 tlbsync
 cl1invmb
 altinst
-rep ccs_hash
-a16 rep ccs_hash
-rep ccs_encrypt
-a16 rep ccs_encrypt
 a16 rep undoc
 rep undoc
 a16 rep undoc

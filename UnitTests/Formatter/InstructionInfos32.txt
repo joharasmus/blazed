@@ -673,10 +673,6 @@ F2 0F 01 E9, Xresldtrk
 0F 01 FF, Tlbsync
 0F0A, Cl1invmb, Cl1invmb
 0F3F, Altinst, ALTINST
-F3 0FA6 E8, Ccs_hash_32
-67 F3 0FA6 E8, Ccs_hash_16
-F3 0FA7 F0, Ccs_encrypt_32
-67 F3 0FA7 F0, Ccs_encrypt_16
 67 F3 0FA6 F0, Via_undoc_F30FA6F0_16
 F3 0FA6 F0, Via_undoc_F30FA6F0_32
 67 F3 0FA6 F8, Via_undoc_F30FA6F8_16
