@@ -95,8 +95,6 @@ Options:
 
 -h, --help
     Show this message
---no-formatter
-    Don't include the formatter
 --no-vex
     Don't include VEX instructions
 --no-evex
@@ -134,10 +132,6 @@ Options:
 			case "--help":
 				error = string.Empty;
 				return false;
-
-			case "--no-formatter":
-				options.GeneratorFlags |= GeneratorFlags.NoFormatter;
-				break;
 
 			case "--no-vex":
 				options.GeneratorFlags |= GeneratorFlags.NoVEX;
