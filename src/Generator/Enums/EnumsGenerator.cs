@@ -22,7 +22,6 @@ namespace Generator.Enums {
 				genTypes[TypeIds.DecoderOptions],
 				genTypes[TypeIds.DecoderTestOptions],
 				genTypes[TypeIds.EvexOpCodeHandlerKind],
-				genTypes[TypeIds.MvexOpCodeHandlerKind],
 				genTypes[TypeIds.HandlerFlags],
 				genTypes[TypeIds.LegacyHandlerFlags],
 				genTypes[TypeIds.MemorySize],
@@ -67,7 +66,6 @@ namespace Generator.Enums {
 				genTypes[TypeIds.OpKind],
 				genTypes[TypeIds.InstrScale],
 				genTypes[TypeIds.InstrFlags1],
-				genTypes[TypeIds.MvexInstrFlags],
 				genTypes[TypeIds.VectorLength],
 				genTypes[TypeIds.MandatoryPrefixByte],
 				genTypes[TypeIds.StateFlags],
@@ -83,7 +81,6 @@ namespace Generator.Enums {
 				genTypes[TypeIds.VexOpCodeTable],
 				genTypes[TypeIds.XopOpCodeTable],
 				genTypes[TypeIds.EvexOpCodeTable],
-				genTypes[TypeIds.MvexOpCodeTable],
 				genTypes[TypeIds.MandatoryPrefix],
 				genTypes[TypeIds.OpCodeTableKind],
 				genTypes[TypeIds.DisplSize],
@@ -102,13 +99,7 @@ namespace Generator.Enums {
 				genTypes[TypeIds.DecOptionValue],
 				genTypes[TypeIds.InstrStrFmtOption],
 				genTypes[TypeIds.CodeAsmMemoryOperandSize],
-				genTypes[TypeIds.TestInstrFlags],
-				genTypes[TypeIds.MvexConvFn],
-				genTypes[TypeIds.MvexEHBit],
-				genTypes[TypeIds.MvexInfoFlags1],
-				genTypes[TypeIds.MvexInfoFlags2],
-				genTypes[TypeIds.MvexRegMemConv],
-				genTypes[TypeIds.MvexTupleTypeLutKind],
+				genTypes[TypeIds.TestInstrFlags]
 			};
 
 			GenerateBegin();

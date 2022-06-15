@@ -184,18 +184,6 @@ namespace Blazed.Intel.EncoderInternal {
 			new OpIb(OpKind.Immediate8),
 		};
 #endif
-#if MVEX
-		public static readonly Op[] MvexOps = new Op[8] {
-			new OpModRM_rm_mem_only(false),
-			new OpVsib(Register.ZMM0, Register.ZMM31),
-			new OpModRM_rm(Register.ZMM0, Register.ZMM31),
-			new OpModRM_reg(Register.K0, Register.K7),
-			new OpHx(Register.K0, Register.K7),
-			new OpModRM_reg(Register.ZMM0, Register.ZMM31),
-			new OpHx(Register.ZMM0, Register.ZMM31),
-			new OpIb(OpKind.Immediate8),
-		};
-#endif
 	}
 }
 #endif

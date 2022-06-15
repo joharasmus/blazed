@@ -65,9 +65,6 @@ namespace Blazed.Intel.DecoderInternal {
 #if !NO_EVEX
 		public EvexOpCodeHandlerKind ReadEvexOpCodeHandlerKind() => (EvexOpCodeHandlerKind)reader.ReadByte();
 #endif
-#if MVEX
-		public MvexOpCodeHandlerKind ReadMvexOpCodeHandlerKind() => (MvexOpCodeHandlerKind)reader.ReadByte();
-#endif
 		public Code ReadCode() => (Code)reader.ReadCompressedUInt32();
 		public Register ReadRegister() => (Register)reader.ReadByte();
 		public DecoderOptions ReadDecoderOptions() => (DecoderOptions)reader.ReadCompressedUInt32();

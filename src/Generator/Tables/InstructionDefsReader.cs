@@ -33,7 +33,6 @@ namespace Generator.Tables {
 		readonly Dictionary<string, EnumValue> toEncoding;
 		readonly Dictionary<string, EnumValue> toCpuid;
 		readonly Dictionary<string, EnumValue> toTupleType;
-		readonly Dictionary<string, EnumValue> toMvexTupleTypeLutKind;
 		readonly Dictionary<string, EnumValue> toConditionCode;
 		readonly Dictionary<string, EnumValue> toPseudoOpsKind;
 		readonly Dictionary<string, EnumValue> toDecOptionValue;
@@ -137,7 +136,6 @@ namespace Generator.Tables {
 			toEncoding = CreateEnumDict(genTypes[TypeIds.EncodingKind]);
 			toCpuid = CreateEnumDict(genTypes[TypeIds.CpuidFeature]);
 			toTupleType = CreateEnumDict(genTypes[TypeIds.TupleType]);
-			toMvexTupleTypeLutKind = CreateEnumDict(genTypes[TypeIds.MvexTupleTypeLutKind]);
 			toConditionCode = CreateEnumDict(genTypes[TypeIds.ConditionCode]);
 			toPseudoOpsKind = CreateEnumDict(genTypes[TypeIds.PseudoOpsKind]);
 			toDecOptionValue = CreateEnumDict(genTypes[TypeIds.DecOptionValue]);
@@ -1150,173 +1148,8 @@ namespace Generator.Tables {
 					}
 					state.OpAccess = opAccess.ToArray();
 					state.OpKinds = opKinds.ToArray();
-					if (parsedOpCode.Encoding == EncodingKind.MVEX) {
-						if (opsParts.Length < 2) {
-							Error(lineIndex, "Expected MVEX memory/swizzle info");
-							return false;
-						}
 
-						state.Mvex = new(toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Int32)], state.OpCode.MvexEHBit, MvexConvFn.None, 0, 0);
-						bool seenN = false;
-						EnumValue? ttLutKind = null;
-						int elemSize = 0;
-						foreach (var (key, value) in GetKeyValues(opsParts[1].Trim())) {
-							if (key is not "swizz" and not "mem" and not "N") {
-								if (value != string.Empty) {
-									Error(lineIndex, $"Unexpected value `{key}={value}`");
-									return false;
-								}
-							}
-							switch (key) {
-							case "sae":
-								state.Flags1 |= InstructionDefFlags1.SuppressAllExceptions;
-								state.Mvex.Flags1 |= MvexInfoFlags1.SuppressAllExceptions;
-								break;
-
-							case "er":
-								state.Flags1 |= InstructionDefFlags1.RoundingControl;
-								state.Mvex.Flags1 |= MvexInfoFlags1.RoundingControl;
-								break;
-
-							case "er-imm":
-								state.Flags1 |= InstructionDefFlags1.RoundingControl;
-								state.Mvex.Flags1 |= MvexInfoFlags1.ImmRoundingControl;
-								break;
-
-							case "no-er-sae":
-								state.Mvex.Flags2 |= MvexInfoFlags2.NoSaeRoundingControl;
-								break;
-
-							case "ignore-opmask":
-								state.Mvex.Flags1 |= MvexInfoFlags1.IgnoresOpMaskRegister;
-								break;
-
-							case "ignore-eh":
-								state.Mvex.Flags2 |= MvexInfoFlags2.IgnoresEvictionHint;
-								break;
-
-							case "swizz":
-								if (value == string.Empty)
-									state.Mvex.ValidSwizzleFns = 0xFF;
-								else if (!ParseMvexValidFns(value, out state.Mvex.ValidSwizzleFns, out error)) {
-									Error(lineIndex, $"Invalid swizzle-fn bits: {error}");
-									return false;
-								}
-								break;
-
-							case "mem":
-								if (seenN) {
-									Error(lineIndex, "mem=xxx must be before N=xxx");
-									return false;
-								}
-								if (value == string.Empty) {
-									Error(lineIndex, "Expected mem conv fn bits");
-									return false;
-								}
-								if (!ParseMvexValidFns(value, out state.Mvex.ValidConvFns, out error)) {
-									Error(lineIndex, $"Invalid mem-conv-fn bits: {error}");
-									return false;
-								}
-								break;
-
-							case "i32":
-								ttLutKind = toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Int32)];
-								elemSize = 32;
-								break;
-
-							case "f32":
-								ttLutKind = toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Float32)];
-								elemSize = 32;
-								break;
-
-							case "i32-half":
-								ttLutKind = toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Int32_Half)];
-								elemSize = 32;
-								break;
-
-							case "f32-half":
-								ttLutKind = toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Float32_Half)];
-								elemSize = 32;
-								break;
-
-							case "i32-bcst1":
-							case "i32-elem":
-								ttLutKind = toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Int32_1to16_or_elem)];
-								elemSize = 32;
-								break;
-
-							case "f32-bcst1":
-							case "f32-elem":
-								ttLutKind = toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Float32_1to16_or_elem)];
-								elemSize = 32;
-								break;
-
-							case "i64-bcst1":
-							case "i64-elem":
-								ttLutKind = toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Int64_1to8_or_elem)];
-								elemSize = 64;
-								break;
-
-							case "f64-bcst1":
-							case "f64-elem":
-								ttLutKind = toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Float64_1to8_or_elem)];
-								elemSize = 64;
-								break;
-
-							case "i32-bcst4":
-								ttLutKind = toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Int32_4to16)];
-								elemSize = 32;
-								break;
-
-							case "f32-bcst4":
-								ttLutKind = toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Float32_4to16)];
-								elemSize = 32;
-								break;
-
-							case "i64-bcst4":
-								ttLutKind = toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Int64_4to8)];
-								elemSize = 64;
-								break;
-
-							case "f64-bcst4":
-								ttLutKind = toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Float64_4to8)];
-								elemSize = 64;
-								break;
-
-							default:
-								Error(lineIndex, $"Invalid key `{key}`");
-								return false;
-							}
-						}
-						foreach (var op in parsedInstr.Operands) {
-							if (op.MvexConvFn != MvexConvFn.None) {
-								state.Mvex.ConvFn = op.MvexConvFn;
-								break;
-							}
-						}
-						ttLutKind ??= state.Mvex.ConvFn switch {
-							MvexConvFn.Si32 or MvexConvFn.Ui32 or MvexConvFn.Di32 => toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Int32)],
-							MvexConvFn.Sf32 or MvexConvFn.Uf32 or MvexConvFn.Df32 => toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Float32)],
-							MvexConvFn.Si64 or MvexConvFn.Ui64 or MvexConvFn.Di64 => toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Int64)],
-							MvexConvFn.Sf64 or MvexConvFn.Uf64 or MvexConvFn.Df64 => toMvexTupleTypeLutKind[nameof(MvexTupleTypeLutKind.Float64)],
-							MvexConvFn.None => null,
-							_ => throw new InvalidOperationException(),
-						};
-						state.Mvex.Flags2 |= state.Mvex.ConvFn switch {
-							MvexConvFn.Si32 or MvexConvFn.Ui32 or MvexConvFn.Di32 or
-							MvexConvFn.Sf32 or MvexConvFn.Uf32 or MvexConvFn.Df32 => MvexInfoFlags2.ConvFn32,
-							MvexConvFn.Si64 or MvexConvFn.Ui64 or MvexConvFn.Di64 or
-							MvexConvFn.Sf64 or MvexConvFn.Uf64 or MvexConvFn.Df64 => MvexInfoFlags2.None,
-							MvexConvFn.None => elemSize == 32 ? MvexInfoFlags2.ConvFn32 : MvexInfoFlags2.None,
-							_ => throw new InvalidOperationException(),
-						};
-						if (ttLutKind is null) {
-							Error(lineIndex, $"Unknown {nameof(MvexTupleTypeLutKind)} value");
-							return false;
-						}
-						state.Mvex.TupleTypeLutKind = ttLutKind;
-					}
-					else if (opsParts.Length > 1) {
+					if (opsParts.Length > 1) {
 						var memParts = opsParts[1].Split(' ', StringSplitOptions.RemoveEmptyEntries);
 						if (memParts.Length == 0 || memParts.Length > 2) {
 							Error(lineIndex, $"Expected 1-2 {nameof(MemorySize)} values");
@@ -1351,9 +1184,6 @@ namespace Generator.Tables {
 				Error(lineIndex, $"Missing `{DefEnd}`");
 				return false;
 			}
-
-			if ((state.Flags1 & InstructionDefFlags1.RequireOpMaskRegister) != 0)
-				state.Mvex.Flags1 |= MvexInfoFlags1.RequireOpMaskRegister;
 
 			if ((state.Flags3 & (InstructionDefFlags3.ImpliedZeroingMasking | InstructionDefFlags3.OpMaskIsElementSelector)) != 0) {
 				if (state.OpAccess.Length == 0 || state.OpAccess[0] != OpInfo.Write) {
@@ -1446,12 +1276,6 @@ namespace Generator.Tables {
 			}
 			const InstructionDefFlags1 CpuModeBits = InstructionDefFlags1.Bit16 | InstructionDefFlags1.Bit32 | InstructionDefFlags1.Bit64;
 
-			if (parsedOpCode.Encoding == EncodingKind.MVEX) {
-				if (state.Cpuid.Length != 1 || (CpuidFeature)state.Cpuid[0].Value != CpuidFeature.KNC) {
-					Error(state.LineIndex, "KNC CPUID feature must be used");
-					return false;
-				}
-			}
 			var isKnc = state.Cpuid.Any(x => (CpuidFeature)x.Value == CpuidFeature.KNC);
 			if (isKnc) {
 				if ((state.Flags1 & CpuModeBits) != 0) {
@@ -1465,19 +1289,6 @@ namespace Generator.Tables {
 					return false;
 				}
 				state.DecoderOption = toDecOptionValue[nameof(DecOptionValue.KNC)];
-			}
-			switch (state.OpCode.MvexEHBit) {
-			case MvexEHBit.None:
-				break;
-			case MvexEHBit.EH0:
-			case MvexEHBit.EH1:
-				if ((state.Mvex.Flags1 & MvexInfoFlags1.EvictionHint) != 0) {
-					Error(state.LineIndex, "{eh} can't be used when the instruction requires EH0 or EH1");
-					return false;
-				}
-				break;
-			default:
-				throw new InvalidOperationException();
 			}
 
 			if ((state.Flags1 & CpuModeBits) == 0)
@@ -1504,8 +1315,6 @@ namespace Generator.Tables {
 				state.Flags1 |= InstructionDefFlags1.OpMaskRegister;
 			if ((parsedInstr.Flags & ParsedInstructionFlags.ZeroingMasking) != 0)
 				state.Flags1 |= InstructionDefFlags1.ZeroingMasking;
-			if ((parsedInstr.Flags & ParsedInstructionFlags.EvictionHint) != 0)
-				state.Mvex.Flags1 |= MvexInfoFlags1.EvictionHint;
 			switch (state.VmxMode) {
 			case VmxMode.None:
 				break;
@@ -1539,7 +1348,6 @@ namespace Generator.Tables {
 			case EncodingKind.VEX:
 			case EncodingKind.EVEX:
 			case EncodingKind.XOP:
-			case EncodingKind.MVEX:
 				state.Flags2 &= ~(InstructionDefFlags2.RealMode | InstructionDefFlags2.Virtual8086Mode);
 				break;
 			default:
@@ -1603,8 +1411,8 @@ namespace Generator.Tables {
 			}
 
 			var codeFormatter = new CodeFormatter(sb, regDefs, memSizeTbl, state.CodeMnemonic, state.CodeSuffix, state.CodeMemorySize,
-				state.CodeMemorySizeSuffix, state.MemorySize, state.MemorySize_Broadcast, state.Flags1, state.Mvex.Flags1, parsedOpCode.Encoding,
-				state.OpKinds, isKnc);
+				state.CodeMemorySizeSuffix, state.MemorySize, state.MemorySize_Broadcast, state.Flags1, parsedOpCode.Encoding, state.OpKinds,
+				isKnc);
 			var codeValue = codeFormatter.Format();
 			if (usedCodeValues.TryGetValue(codeValue, out var otherLineIndex)) {
 				Error(state.LineIndex,
@@ -1645,15 +1453,15 @@ namespace Generator.Tables {
 			var cpuidFeatureStrings = state.Cpuid.Select(a => toCpuidFeatureString[a]).ToArray();
 			def = new InstructionDef(state.Code, state.OpCodeStr, state.InstrStr, state.Mnemonic, state.MemorySize,
 				state.MemorySize_Broadcast, state.DecoderOption, state.Flags1, state.Flags2, state.Flags3, state.InstrStrFmtOption,
-				state.InstrStrFlags, parsedInstr.ImpliedOps, state.Mvex,
-				state.OpCode.MandatoryPrefix, state.OpCode.Table, state.OpCode.LBit, state.OpCode.WBit, state.OpCode.NDKind,
-				state.OpCode.OpCode,
-				state.OpCode.OpCodeLength, state.OpCode.GroupIndex, state.OpCode.RmGroupIndex,
-				state.OpCode.OperandSize, state.OpCode.AddressSize, (TupleType)state.TupleType.Value, state.OpKinds,
-				pseudoOp, state.Encoding, state.Cflow, state.ConditionCode, state.BranchKind, state.StackInfo, state.FpuStackIncrement,
-				state.RflagsRead, state.RflagsUndefined, state.RflagsWritten, state.RflagsCleared, state.RflagsSet,
-				state.Cpuid, cpuidFeatureStrings, state.OpAccess,
-				fmtInstrDef, state.AsmMnemonic);
+				state.InstrStrFlags, parsedInstr.ImpliedOps, state.OpCode.MandatoryPrefix,
+				state.OpCode.Table, state.OpCode.LBit, state.OpCode.WBit, state.OpCode.NDKind, state.OpCode.OpCode,
+				state.OpCode.OpCodeLength,
+				state.OpCode.GroupIndex, state.OpCode.RmGroupIndex, state.OpCode.OperandSize,
+				state.OpCode.AddressSize, (TupleType)state.TupleType.Value, state.OpKinds, pseudoOp,
+				state.Encoding, state.Cflow, state.ConditionCode, state.BranchKind, state.StackInfo, state.FpuStackIncrement, state.RflagsRead,
+				state.RflagsUndefined, state.RflagsWritten, state.RflagsCleared, state.RflagsSet, state.Cpuid,
+				cpuidFeatureStrings, state.OpAccess, fmtInstrDef,
+				state.AsmMnemonic);
 			defLineIndex = state.LineIndex;
 			return true;
 		}
@@ -2417,36 +2225,6 @@ namespace Generator.Tables {
 				return false;
 			}
 		}
-
-		static bool ParseMvexValidFns(string value, out byte validBits, [NotNullWhen(false)] out string? error) {
-			validBits = 0;
-			int bit = 0;
-			foreach (var c in value) {
-				if (c == '_')
-					continue;
-				switch (c) {
-				case '_':
-					break;
-				case '0':
-					bit++;
-					break;
-				case '1':
-					validBits |= (byte)(1 << bit);
-					bit++;
-					break;
-				default:
-					error = $"Invalid char `{c}`, expected `0`, `1` or `_`";
-					return false;
-				}
-			}
-			if (bit != 8) {
-				error = $"Expected 8 bits but got {bit} bits";
-				return false;
-			}
-
-			error = null;
-			return true;
-		}
 	}
 
 	class FmtState {
@@ -2502,7 +2280,6 @@ namespace Generator.Tables {
 		public EnumValue? PseudoOpsKind;
 		public EnumValue? MemorySize;
 		public EnumValue? MemorySize_Broadcast;
-		public MvexInstructionInfo Mvex;
 		public OpCodeDef OpCode;
 		public FmtState? FmtState;
 		public string? AsmMnemonic;

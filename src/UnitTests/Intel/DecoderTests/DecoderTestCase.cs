@@ -6,13 +6,6 @@ using Blazed.Intel;
 
 namespace UnitTests.Intel.DecoderTests;
 
-#if MVEX
-struct MvexDecoderInfo {
-	public bool EvictionHint;
-	public MvexRegMemConv RegMemConv;
-}
-#endif
-
 sealed class DecoderTestCase {
 	public int LineNumber;
 	public DecoderTestOptions TestOptions;
@@ -52,9 +45,6 @@ sealed class DecoderTestCase {
 	public ushort FarBranchSelector;
 	public Register Op0Register, Op1Register, Op2Register, Op3Register, Op4Register;
 	public ConstantOffsets ConstantOffsets;
-#if MVEX
-	public MvexDecoderInfo Mvex;
-#endif
 
 	public OpKind GetOpKind(int operand) =>
 		operand switch {

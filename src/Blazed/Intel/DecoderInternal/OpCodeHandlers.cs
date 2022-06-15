@@ -130,8 +130,7 @@ namespace Blazed.Intel.DecoderInternal {
 			Debug.Assert(
 				decoder.state.Encoding == EncodingKind.VEX ||
 				decoder.state.Encoding == EncodingKind.EVEX ||
-				decoder.state.Encoding == EncodingKind.XOP ||
-				decoder.state.Encoding == EncodingKind.MVEX);
+				decoder.state.Encoding == EncodingKind.XOP);
 			handlers[(int)decoder.state.zs.mandatoryPrefix].Decode(decoder, ref instruction);
 		}
 	}
@@ -160,8 +159,7 @@ namespace Blazed.Intel.DecoderInternal {
 			Debug.Assert(
 				decoder.state.Encoding == EncodingKind.VEX ||
 				decoder.state.Encoding == EncodingKind.EVEX ||
-				decoder.state.Encoding == EncodingKind.XOP ||
-				decoder.state.Encoding == EncodingKind.MVEX);
+				decoder.state.Encoding == EncodingKind.XOP);
 			handlers[(int)decoder.state.zs.mandatoryPrefix].Decode(decoder, ref instruction);
 		}
 	}
@@ -181,8 +179,7 @@ namespace Blazed.Intel.DecoderInternal {
 			Debug.Assert(
 				decoder.state.Encoding == EncodingKind.VEX ||
 				decoder.state.Encoding == EncodingKind.EVEX ||
-				decoder.state.Encoding == EncodingKind.XOP ||
-				decoder.state.Encoding == EncodingKind.MVEX);
+				decoder.state.Encoding == EncodingKind.XOP);
 			((decoder.state.zs.flags & StateFlags.W) != 0 ? handlerW1 : handlerW0).Decode(decoder, ref instruction);
 		}
 	}

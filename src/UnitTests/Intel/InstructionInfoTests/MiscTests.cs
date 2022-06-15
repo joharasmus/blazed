@@ -23,10 +23,6 @@ namespace UnitTests.Intel.InstructionInfoTests {
 			var callNear = MiscTestsData.CallNear;
 			var callNearIndirect = MiscTestsData.CallNearIndirect;
 			var callFarIndirect = MiscTestsData.CallFarIndirect;
-#if MVEX
-			var jkccShort = MiscTestsData.JkccShort;
-			var jkccNear = MiscTestsData.JkccNear;
-#endif
 			var loop = MiscTestsData.Loop;
 
 			for (int i = 0; i < BlazedConstants.CodeEnumCount; i++) {
@@ -76,16 +72,6 @@ namespace UnitTests.Intel.InstructionInfoTests {
 				Assert.Equal(callFarIndirect.Contains(code), code.IsCallFarIndirect());
 				Assert.Equal(code.IsCallFarIndirect(), instruction.IsCallFarIndirect);
 
-#if MVEX
-				Assert.Equal(jkccShort.Contains(code) || jkccNear.Contains(code), code.IsJkccShortOrNear());
-				Assert.Equal(code.IsJkccShortOrNear(), instruction.IsJkccShortOrNear);
-
-				Assert.Equal(jkccNear.Contains(code), code.IsJkccNear());
-				Assert.Equal(code.IsJkccNear(), instruction.IsJkccNear);
-
-				Assert.Equal(jkccShort.Contains(code), code.IsJkccShort());
-				Assert.Equal(code.IsJkccShort(), instruction.IsJkccShort);
-#endif
 				Assert.Equal(loop.Contains(code), code.IsLoop() || code.IsLoopcc());
 				Assert.Equal(code.IsLoop(), instruction.IsLoop);
 				Assert.Equal(code.IsLoopcc(), instruction.IsLoopcc);

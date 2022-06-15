@@ -42,10 +42,6 @@ namespace Blazed.Intel {
 		readonly FormatterString[] addrSizeStrings;
 		readonly FormatterString[]?[] branchInfos;
 		readonly string[] scaleNumbers;
-#if MVEX
-		readonly FormatterString[] mvexRegMemConsts32;
-		readonly FormatterString[] mvexRegMemConsts64;
-#endif
 		readonly FormatterString[] memSizeInfos;
 		readonly FormatterString[] farMemSizeInfos;
 
@@ -80,10 +76,6 @@ namespace Blazed.Intel {
 			addrSizeStrings = s_addrSizeStrings;
 			branchInfos = s_branchInfos;
 			scaleNumbers = s_scaleNumbers;
-#if MVEX
-			mvexRegMemConsts32 = s_mvexRegMemConsts32;
-			mvexRegMemConsts64 = s_mvexRegMemConsts64;
-#endif
 			memSizeInfos = s_memSizeInfos;
 			farMemSizeInfos = s_farMemSizeInfos;
 		}
@@ -155,47 +147,6 @@ namespace Blazed.Intel {
 		static readonly string[] s_scaleNumbers = new string[4] {
 			"1", "2", "4", "8",
 		};
-#if MVEX
-		static readonly FormatterString[] s_mvexRegMemConsts32 = new FormatterString[BlazedConstants.MvexRegMemConvEnumCount] {
-			new FormatterString(""),
-			new FormatterString(""),
-			new FormatterString("cdab"),
-			new FormatterString("badc"),
-			new FormatterString("dacb"),
-			new FormatterString("aaaa"),
-			new FormatterString("bbbb"),
-			new FormatterString("cccc"),
-			new FormatterString("dddd"),
-			new FormatterString(""),
-			new FormatterString("1to16"),
-			new FormatterString("4to16"),
-			new FormatterString("float16"),
-			new FormatterString("uint8"),
-			new FormatterString("sint8"),
-			new FormatterString("uint16"),
-			new FormatterString("sint16"),
-		};
-		static readonly FormatterString[] s_mvexRegMemConsts64 = new FormatterString[BlazedConstants.MvexRegMemConvEnumCount] {
-			new FormatterString(""),
-			new FormatterString(""),
-			new FormatterString("cdab"),
-			new FormatterString("badc"),
-			new FormatterString("dacb"),
-			new FormatterString("aaaa"),
-			new FormatterString("bbbb"),
-			new FormatterString("cccc"),
-			new FormatterString("dddd"),
-			new FormatterString(""),
-			new FormatterString("1to8"),
-			new FormatterString("4to8"),
-			new FormatterString("float16"),
-			new FormatterString("uint8"),
-			new FormatterString("sint8"),
-			new FormatterString("uint16"),
-			new FormatterString("sint16"),
-		};
-		static readonly FormatterString str_eh = new FormatterString("eh");
-#endif
 
 		/// <summary>
 		/// Formats the mnemonic and/or any prefixes
@@ -534,16 +485,6 @@ namespace Blazed.Intel {
 			if (output is null)
 				ThrowHelper.ThrowArgumentNullException_output();
 
-#if MVEX
-			int mvexRmOperand;
-			if (BlazedConstants.IsMvex(instruction.Code)) {
-				var opCount = instruction.OpCount;
-				Debug.Assert(opCount != 0);
-				mvexRmOperand = instruction.GetOpKind(opCount - 1) == OpKind.Immediate8 ? opCount - 2 : opCount - 1;
-			}
-			else
-				mvexRmOperand = -1;
-#endif
 			int instructionOperand = opInfo.GetInstructionIndex(operand);
 
 			string s;
@@ -879,20 +820,6 @@ namespace Blazed.Intel {
 				if (instruction.ZeroingMasking)
 					FormatDecorator(output, instruction, operand, instructionOperand, str_z, DecoratorKind.ZeroingMasking);
 			}
-#if MVEX
-			if (mvexRmOperand == operand) {
-				var conv = instruction.MvexRegMemConv;
-				if (conv != MvexRegMemConv.None) {
-					var mvex = new MvexInfo(instruction.Code);
-					if (mvex.ConvFn != MvexConvFn.None) {
-						var tbl = mvex.IsConvFn32 ? mvexRegMemConsts32 : mvexRegMemConsts64;
-						var fs = tbl[(int)conv];
-						if (fs.Length != 0)
-							FormatDecorator(output, instruction, operand, instructionOperand, fs, DecoratorKind.SwizzleMemConv);
-					}
-				}
-			}
-#endif
 		}
 
 		void ShowSignExtendInfo(FormatterOutput output, InstrOpInfoFlags flags) {
@@ -1181,10 +1108,6 @@ namespace Blazed.Intel {
 			var bcstTo = allMemorySizes[(int)memSize].bcstTo;
 			if (bcstTo.Length != 0)
 				FormatDecorator(output, instruction, operand, instructionOperand, bcstTo, DecoratorKind.Broadcast);
-#if MVEX
-			if (instruction.IsMvexEvictionHint)
-				FormatDecorator(output, instruction, operand, instructionOperand, str_eh, DecoratorKind.EvictionHint);
-#endif
 		}
 
 		void FormatMemorySize(FormatterOutput output, MemorySize memSize, InstrOpInfoFlags flags, FormatterOperandOptions operandOptions) {

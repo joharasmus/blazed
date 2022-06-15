@@ -63,14 +63,6 @@ namespace Blazed.Intel.EncoderInternal {
 #endif
 					break;
 
-				case EncodingKind.MVEX:
-#if MVEX
-					handler = new MvexHandler((EncFlags1)encFlags1[i], (EncFlags2)encFlags2[i], encFlags3);
-#else
-					handler = invalidHandler;
-#endif
-					break;
-
 				default:
 					throw new InvalidOperationException();
 				}

@@ -41,19 +41,10 @@ sealed class DecoderTables : ICreatedInstructions {
 		}
 	}
 
-	public (string name, object?[] handlers)[] MVEX {
-		get {
-			if (!filtered)
-				throw new InvalidOperationException();
-			return mvex;
-		}
-	}
-
 	(string name, object?[] handlers)[] legacy;
 	(string name, object?[] handlers)[] vex;
 	(string name, object?[] handlers)[] evex;
 	(string name, object?[] handlers)[] xop;
-	(string name, object?[] handlers)[] mvex;
 	bool filtered;
 
 	DecoderTables(GenTypes genTypes) {
@@ -61,7 +52,6 @@ sealed class DecoderTables : ICreatedInstructions {
 		vex = DecoderTable_VEX.CreateHandlers(genTypes);
 		evex = DecoderTable_EVEX.CreateHandlers(genTypes);
 		xop = DecoderTable_XOP.CreateHandlers(genTypes);
-		mvex = DecoderTable_MVEX.CreateHandlers(genTypes);
 		genTypes.AddObject(TypeIds.DecoderTables, this);
 	}
 
@@ -70,7 +60,6 @@ sealed class DecoderTables : ICreatedInstructions {
 		vex = new DecoderTableFilter(genTypes, filteredCodeValues, vex, EncodingKind.VEX).Filter();
 		xop = new DecoderTableFilter(genTypes, filteredCodeValues, xop, EncodingKind.XOP).Filter();
 		evex = new DecoderTableFilter(genTypes, filteredCodeValues, evex, EncodingKind.EVEX).Filter();
-		mvex = new DecoderTableFilter(genTypes, filteredCodeValues, mvex, EncodingKind.MVEX).Filter();
 		filtered = true;
 	}
 }

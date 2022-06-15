@@ -7,7 +7,7 @@
 
 #if DECODER || ENCODER || (ENCODER && OPCODE_INFO)
 namespace Blazed.Intel {
-	/// <summary>Tuple type (EVEX/MVEX) which can be used to get the disp8 scale factor <c>N</c></summary>
+	/// <summary>Tuple type (EVEX) which can be used to get the disp8 scale factor <c>N</c></summary>
 	public enum TupleType {
 		/// <summary><c>N = 1</c></summary>
 		N1 = 0,

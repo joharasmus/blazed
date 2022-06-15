@@ -57,7 +57,6 @@ sealed class CSharpEnumsGenerator : EnumsGenerator {
 		toFullFileInfo.Add(TypeIds.DecoderOptions, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.DecoderOptions) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.DecoderDefine, baseType: "uint"));
 		toFullFileInfo.Add(TypeIds.DecoderTestOptions, new FullEnumFileInfo(dirs.GetCSharpTestFilename("Intel", "DecoderTests", nameof(TypeIds.DecoderTestOptions) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.DecoderDefine, baseType: "uint"));
 		toFullFileInfo.Add(TypeIds.EvexOpCodeHandlerKind, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.DecoderNamespace, nameof(TypeIds.EvexOpCodeHandlerKind) + ".g.cs"), CSharpConstants.DecoderNamespace, CSharpConstants.DecoderEvexDefine, baseType: "byte"));
-		toFullFileInfo.Add(TypeIds.MvexOpCodeHandlerKind, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.DecoderNamespace, nameof(TypeIds.MvexOpCodeHandlerKind) + ".g.cs"), CSharpConstants.DecoderNamespace, CSharpConstants.DecoderMvexDefine, baseType: "byte"));
 		toFullFileInfo.Add(TypeIds.HandlerFlags, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.DecoderNamespace, nameof(TypeIds.HandlerFlags) + ".g.cs"), CSharpConstants.DecoderNamespace, CSharpConstants.DecoderDefine, baseType: "uint"));
 		toFullFileInfo.Add(TypeIds.LegacyHandlerFlags, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.DecoderNamespace, nameof(TypeIds.LegacyHandlerFlags) + ".g.cs"), CSharpConstants.DecoderNamespace, CSharpConstants.DecoderDefine, baseType: "uint"));
 		toFullFileInfo.Add(TypeIds.MemorySize, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.MemorySize) + ".g.cs"), CSharpConstants.BlazedNamespace));
@@ -81,9 +80,6 @@ sealed class CSharpEnumsGenerator : EnumsGenerator {
 		toFullFileInfo.Add(TypeIds.EncodingKind, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.EncodingKind) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.DecoderOrEncoderOrInstrInfoOrOpCodeInfoDefine));
 		toFullFileInfo.Add(TypeIds.FlowControl, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.FlowControl) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.InstructionInfoDefine));
 		toFullFileInfo.Add(TypeIds.OpCodeOperandKind, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.OpCodeOperandKind) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.OpCodeInfoDefine));
-		toFullFileInfo.Add(TypeIds.MvexEHBit, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.MvexEHBit) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.MvexDefine));
-		toFullFileInfo.Add(TypeIds.MvexInfoFlags1, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.MvexInfoFlags1) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.MvexDefine));
-		toFullFileInfo.Add(TypeIds.MvexInfoFlags2, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.MvexInfoFlags2) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.MvexDefine));
 		toFullFileInfo.Add(TypeIds.RflagsBits, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.RflagsBits) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.InstructionInfoDefine));
 		toFullFileInfo.Add(TypeIds.OpAccess, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.OpAccess) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.InstructionInfoDefine));
 		toFullFileInfo.Add(TypeIds.MandatoryPrefix, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.MandatoryPrefix) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.OpCodeInfoDefine));
@@ -91,13 +87,9 @@ sealed class CSharpEnumsGenerator : EnumsGenerator {
 		toFullFileInfo.Add(TypeIds.FormatterTextKind, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.FormatterTextKind) + ".g.cs"), CSharpConstants.BlazedNamespace));
 		toFullFileInfo.Add(TypeIds.MemorySizeOptions, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.MemorySizeOptions) + ".g.cs"), CSharpConstants.BlazedNamespace));
 		toFullFileInfo.Add(TypeIds.CodeAsmMemoryOperandSize, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Assembler", "MemoryOperandSize.g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.CodeAssemblerDefine));
-		toFullFileInfo.Add(TypeIds.MvexConvFn, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.MvexConvFn) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.MvexDefine));
-		toFullFileInfo.Add(TypeIds.MvexRegMemConv, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.MvexRegMemConv) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.MvexDefine));
-		toFullFileInfo.Add(TypeIds.MvexTupleTypeLutKind, new FullEnumFileInfo(CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, nameof(TypeIds.MvexTupleTypeLutKind) + ".g.cs"), CSharpConstants.BlazedNamespace, CSharpConstants.MvexDefine));
 
 		toPartialFileInfo = new();
 		toPartialFileInfo.Add(TypeIds.InstrFlags1, new PartialEnumFileInfo("InstrFlags1", CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Instruction.cs"), "uint"));
-		toPartialFileInfo.Add(TypeIds.MvexInstrFlags, new PartialEnumFileInfo("MvexInstrFlags", CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Instruction.cs"), "uint"));
 		toPartialFileInfo.Add(TypeIds.OpSize, new PartialEnumFileInfo("OpSize", CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Decoder.cs"), "byte"));
 		toPartialFileInfo.Add(TypeIds.StateFlags, new PartialEnumFileInfo("StateFlags", CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, "Decoder.cs"), "uint"));
 		toPartialFileInfo.Add(TypeIds.ImpliedAccess, new PartialEnumFileInfo("ImpliedAccess", CSharpConstants.GetFilename(genTypes, CSharpConstants.InstructionInfoNamespace, "InfoHandlerFlags.cs"), null));
@@ -116,7 +108,6 @@ sealed class CSharpEnumsGenerator : EnumsGenerator {
 		toPartialFileInfo.Add(TypeIds.VexOpCodeTable, new PartialEnumFileInfo("VexOpCodeTable", CSharpConstants.GetFilename(genTypes, CSharpConstants.EncoderNamespace, "Enums.cs"), null));
 		toPartialFileInfo.Add(TypeIds.XopOpCodeTable, new PartialEnumFileInfo("XopOpCodeTable", CSharpConstants.GetFilename(genTypes, CSharpConstants.EncoderNamespace, "Enums.cs"), null));
 		toPartialFileInfo.Add(TypeIds.EvexOpCodeTable, new PartialEnumFileInfo("EvexOpCodeTable", CSharpConstants.GetFilename(genTypes, CSharpConstants.EncoderNamespace, "Enums.cs"), null));
-		toPartialFileInfo.Add(TypeIds.MvexOpCodeTable, new PartialEnumFileInfo("MvexOpCodeTable", CSharpConstants.GetFilename(genTypes, CSharpConstants.EncoderNamespace, "Enums.cs"), null));
 
 		toPartialFileInfo.Add(TypeIds.FormatterFlowControl, new PartialEnumFileInfo("FormatterFlowControl", CSharpConstants.GetFilename(genTypes, CSharpConstants.FormatterNamespace, "FormatterUtils.cs"), null));
 		toPartialFileInfo.Add(TypeIds.InstrOpKind, new PartialEnumFileInfo("InstrOpKind", CSharpConstants.GetFilename(genTypes, CSharpConstants.FormatterNamespace, "InstrInfo.cs"), "byte"));

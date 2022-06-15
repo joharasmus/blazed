@@ -68,9 +68,9 @@ namespace Blazed.Intel.DecoderInternal {
 
 		public override void Decode(Decoder decoder, ref Instruction instruction) {
 			if (decoder.is64bMode)
-				decoder.EVEX_MVEX(ref instruction);
+				decoder.EVEX(ref instruction);
 			else if (decoder.state.mod == 3)
-				decoder.EVEX_MVEX(ref instruction);
+				decoder.EVEX(ref instruction);
 			else
 				handlerMem.Decode(decoder, ref instruction);
 		}

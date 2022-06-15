@@ -1330,9 +1330,6 @@ namespace Blazed.Intel {
 					AddRegister(flags, Register.EBX, OpAccess.CondWrite);
 				}
 				break;
-			case ImpliedAccess.t_memdisplm64:
-				CommandMemDispl(flags, -64);
-				break;
 			// GENERATOR-END: ImpliedAccessHandler
 
 			default:
@@ -1888,19 +1885,7 @@ namespace Blazed.Intel {
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		static bool IsClearInstr(in Instruction instruction) {
-#if MVEX
-			switch (instruction.MvexRegMemConv) {
-			case MvexRegMemConv.None:
-			case MvexRegMemConv.RegSwizzleNone:
-				return true;
-			default:
-				return false;
-			}
-#else
-			return true;
-#endif
-		}
+		static bool IsClearInstr(in Instruction instruction) => true;
 
 		void CommandClearRegRegmem(in Instruction instruction, Flags flags) {
 			if (instruction.Op0Register != instruction.Op1Register)

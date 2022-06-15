@@ -44,9 +44,7 @@ sealed class EnumHashTableGen {
 			("CC_l_hash", genTypes[TypeIds.CC_l], false, "Intel/ToEnumConverter.CC.cs"),
 			("CC_ge_hash", genTypes[TypeIds.CC_ge], false, "Intel/ToEnumConverter.CC.cs"),
 			("CC_le_hash", genTypes[TypeIds.CC_le], false, "Intel/ToEnumConverter.CC.cs"),
-			("CC_g_hash", genTypes[TypeIds.CC_g], false, "Intel/ToEnumConverter.CC.cs"),
-			("MvexConvFnHash", genTypes[TypeIds.MvexConvFn], false, "Intel/ToEnumConverter.MvexConvFn.cs"),
-			("MvexTupleTypeLutKindHash", genTypes[TypeIds.MvexTupleTypeLutKind], false, "Intel/ToEnumConverter.MvexTupleTypeLutKind.cs"),
+			("CC_g_hash", genTypes[TypeIds.CC_g], false, "Intel/ToEnumConverter.CC.cs")
 		};
 		foreach (var info in infos) {
 			var filename = generatorContext.Types.Dirs.GetCSharpTestFilename(info.filename.Split('/'));

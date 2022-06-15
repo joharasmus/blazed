@@ -188,19 +188,6 @@ namespace Blazed.Intel.EncoderInternal {
 			(byte)OpCodeOperandKind.imm8,
 		};
 #endif
-#if MVEX
-		public static System.ReadOnlySpan<byte> MvexOpKinds => new byte[9] {
-			(byte)OpCodeOperandKind.None,
-			(byte)OpCodeOperandKind.mem,
-			(byte)OpCodeOperandKind.mem_vsib32z,
-			(byte)OpCodeOperandKind.zmm_or_mem,
-			(byte)OpCodeOperandKind.k_reg,
-			(byte)OpCodeOperandKind.k_vvvv,
-			(byte)OpCodeOperandKind.zmm_reg,
-			(byte)OpCodeOperandKind.zmm_vvvv,
-			(byte)OpCodeOperandKind.imm8,
-		};
-#endif
 	}
 }
 #endif

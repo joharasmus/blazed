@@ -9,7 +9,6 @@ static class OpCodeInfoConstants {
 	public const string Encoding_EVEX = "EVEX";
 	public const string Encoding_XOP = "XOP";
 	public const string Encoding_3DNOW = "3DNow!";
-	public const string Encoding_MVEX = "MVEX";
 	public const string MandatoryPrefix_None = "";
 	public const string MandatoryPrefix_NP = "NP";
 	public const string MandatoryPrefix_66 = "66";
@@ -137,5 +136,4 @@ static class OpCodeInfoKeywordKeys {
 	public const string OpCodeOperandKind = "op";
 	public const string TupleType = "tt";
 	public const string DecoderOption = "dec-opt";
-	public const string MVEX = "mvex";
 }

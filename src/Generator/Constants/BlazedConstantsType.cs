@@ -76,7 +76,6 @@ sealed class BlazedConstantsType {
 	}
 
 	Constant[] GetConstants() {
-		var (mvexStart, mvexLen) = GetMvexCodeValueRange();
 		var vmmFirst = Get_VMM_first().Value;
 		var vmmLast = Get_VMM_last().Value;
 		ConstantUtils.VerifyMask<Register>((1U << BlazedConstants.RegisterBits) - 1);
@@ -93,9 +92,7 @@ sealed class BlazedConstantsType {
 			new Constant(ConstantKind.Register, "ZMM_last", Get_VEC_last("ZMM").Value),
 			new Constant(ConstantKind.Register, "TMM_last", Get_TMM_last().Value),
 			new Constant(ConstantKind.Index, "MaxCpuidFeatureInternalValues", GetEnumCount(genTypes[TypeIds.CpuidFeatureInternal])),
-			new Constant(ConstantKind.MemorySize, BlazedConstants.FirstBroadcastMemorySizeName, GetFirstBroadcastMemorySize()),
-			new Constant(ConstantKind.UInt32, "MvexStart", mvexStart),
-			new Constant(ConstantKind.UInt32, "MvexLength", mvexLen),
+			new Constant(ConstantKind.MemorySize, BlazedConstants.FirstBroadcastMemorySizeName, GetFirstBroadcastMemorySize())
 		};
 
 		foreach (var kv in BlazedConstants.GetEnumCountTypeIdsAndNames().OrderBy(kv => kv.Value, StringComparer.Ordinal))
@@ -158,30 +155,5 @@ sealed class BlazedConstantsType {
 			}
 		}
 		return firstBroadcastValue ?? throw new InvalidOperationException("Couldn't find a broadcast memory type");
-	}
-
-	(uint start, uint len) GetMvexCodeValueRange() {
-		const string EncodingPrefix = "MVEX_";
-		var codeValues = genTypes[TypeIds.Code].Values;
-		int start = 0;
-		while (start < codeValues.Length) {
-			if (codeValues[start].RawName.StartsWith(EncodingPrefix, StringComparison.Ordinal))
-				break;
-			start++;
-		}
-		var end = start;
-		while (end < codeValues.Length) {
-			if (!codeValues[end].RawName.StartsWith(EncodingPrefix, StringComparison.Ordinal))
-				break;
-			end++;
-		}
-		for (int index = end; index < codeValues.Length; index++) {
-			// All of them must be next to each other
-			if (codeValues[index].RawName.StartsWith(EncodingPrefix, StringComparison.Ordinal))
-				throw new InvalidOperationException();
-		}
-		if (end <= start)
-			return (0, 0);
-		return ((uint)start, (uint)(end - start));
 	}
 }

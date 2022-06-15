@@ -5,19 +5,6 @@
 using Blazed.Intel;
 
 namespace UnitTests.Intel.EncoderTests {
-#if MVEX
-	struct MvexTestCase {
-		public MvexEHBit EHBit;
-		public bool CanUseEvictionHint;
-		public bool CanUseImmRoundingControl;
-		public bool IgnoresOpMaskRegister;
-		public bool NoSaeRc;
-		public MvexTupleTypeLutKind TupleTypeLutKind;
-		public MvexConvFn ConversionFunc;
-		public byte ValidConversionFuncsMask;
-		public byte ValidSwizzleFuncsMask;
-	}
-#endif
 
 	sealed class OpCodeInfoTestCase {
 		public int LineNumber = -1;
@@ -130,9 +117,6 @@ namespace UnitTests.Intel.EncoderTests {
 		public OpCodeOperandKind Op2Kind = OpCodeOperandKind.None;
 		public OpCodeOperandKind Op3Kind = OpCodeOperandKind.None;
 		public OpCodeOperandKind Op4Kind = OpCodeOperandKind.None;
-#if MVEX
-		public MvexTestCase Mvex;
-#endif
 	}
 }
 #endif

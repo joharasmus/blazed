@@ -19,11 +19,6 @@ namespace Blazed.Intel.BlockEncoderInternal {
 		readonly byte longInstructionSize64;
 
 		static uint GetLongInstructionSize64(in Instruction instruction) {
-#if MVEX
-			// Check if JKZD/JKNZD
-			if (instruction.OpCount == 2)
-				return 5 + CallOrJmpPointerDataInstructionSize64;
-#endif
 			// Code:
 			//		!jcc short skip		; negated jcc opcode
 			//		jmp qword ptr [rip+mem]
@@ -154,14 +149,7 @@ namespace Blazed.Intel.BlockEncoderInternal {
 				if (instruction.OpCount == 1)
 					instr.Op0Kind = OpKind.NearBranch64;
 				else {
-#if MVEX
-					Debug.Assert(instruction.OpCount == 2);
-					instr.Op0Kind = OpKind.Register;
-					instr.Op0Register = instruction.Op0Register;
-					instr.Op1Kind = OpKind.NearBranch64;
-#else
 					throw new InvalidOperationException();
-#endif
 				}
 				Debug.Assert(encoder.Bitness == 64);
 				Debug.Assert(longInstructionSize64 <= sbyte.MaxValue);
@@ -309,14 +297,6 @@ namespace Blazed.Intel.BlockEncoderInternal {
 				c32 = Code.Jg_rel8_32;
 				c64 = Code.Jg_rel8_64;
 				break;
-
-#if MVEX
-			case Code.VEX_KNC_Jkzd_kr_rel8_64:
-			case Code.VEX_KNC_Jknzd_kr_rel8_64:
-				if (bitness == 64)
-					return code;
-				throw new InvalidOperationException();
-#endif
 
 			default:
 				throw new ArgumentOutOfRangeException(nameof(code));

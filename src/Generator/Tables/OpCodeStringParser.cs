@@ -16,7 +16,6 @@ namespace Generator.Tables {
 			VEX,
 			XOP,
 			EVEX,
-			MVEX,
 		}
 
 		public OpCodeStringParser(string opCodeStr) =>
@@ -38,8 +37,6 @@ namespace Generator.Tables {
 				return TryParseVec(VecEncoding.XOP, out result, out error);
 			if (opCodeStr.StartsWith("EVEX.", StringComparison.Ordinal))
 				return TryParseVec(VecEncoding.EVEX, out result, out error);
-			if (opCodeStr.StartsWith("MVEX.", StringComparison.Ordinal))
-				return TryParseVec(VecEncoding.MVEX, out result, out error);
 			return TryParseLegacy(out result, out error);
 		}
 
@@ -272,7 +269,6 @@ namespace Generator.Tables {
 				VecEncoding.VEX => EncodingKind.VEX,
 				VecEncoding.XOP => EncodingKind.XOP,
 				VecEncoding.EVEX => EncodingKind.EVEX,
-				VecEncoding.MVEX => EncodingKind.MVEX,
 				_ => throw new InvalidOperationException(),
 			};
 			result = OpCodeDef.CreateDefault(encoding);
@@ -376,19 +372,6 @@ namespace Generator.Tables {
 					};
 					break;
 
-				case "EH0":
-				case "EH1":
-					if (result.MvexEHBit != MvexEHBit.None) {
-						error = $"Duplicate EH bit: `{encPart}`";
-						return false;
-					}
-					result.MvexEHBit = encPart switch {
-						"EH0" => MvexEHBit.EH0,
-						"EH1" => MvexEHBit.EH1,
-						_ => throw new InvalidOperationException(),
-					};
-					break;
-
 				default:
 					error = $"Unknown opcode value `{encPart}`";
 					return false;
@@ -438,12 +421,8 @@ namespace Generator.Tables {
 			}
 			result.OpCodeLength = opCodeByteCount;
 
-			if (result.NDKind != NonDestructiveOpKind.None && vecEnc != VecEncoding.MVEX) {
+			if (result.NDKind != NonDestructiveOpKind.None) {
 				error = "Can't use NDD/NDS";
-				return false;
-			}
-			if (result.MvexEHBit != MvexEHBit.None && vecEnc != VecEncoding.MVEX) {
-				error = "Can't use EH0/EH1";
 				return false;
 			}
 
@@ -535,38 +514,6 @@ namespace Generator.Tables {
 				case OpCodeTableKind.MAP6:
 					break;
 				case OpCodeTableKind.Normal:
-				case OpCodeTableKind.MAP8:
-				case OpCodeTableKind.MAP9:
-				case OpCodeTableKind.MAP10:
-				default:
-					error = $"Invalid table: {result.Table}";
-					return false;
-				}
-				break;
-
-			case VecEncoding.MVEX:
-				switch (result.LBit) {
-				case OpCodeL.L512:
-					break;
-				case OpCodeL.None:
-				case OpCodeL.L0:
-				case OpCodeL.L1:
-				case OpCodeL.LIG:
-				case OpCodeL.LZ:
-				case OpCodeL.L128:
-				case OpCodeL.L256:
-				default:
-					error = $"Invalid L bit: {result.LBit}";
-					return false;
-				}
-				switch (result.Table) {
-				case OpCodeTableKind.T0F:
-				case OpCodeTableKind.T0F38:
-				case OpCodeTableKind.T0F3A:
-					break;
-				case OpCodeTableKind.Normal:
-				case OpCodeTableKind.MAP5:
-				case OpCodeTableKind.MAP6:
 				case OpCodeTableKind.MAP8:
 				case OpCodeTableKind.MAP9:
 				case OpCodeTableKind.MAP10:

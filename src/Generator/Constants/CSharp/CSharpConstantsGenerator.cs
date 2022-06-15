@@ -68,8 +68,9 @@ sealed class CSharpConstantsGenerator : ConstantsGenerator {
 		if (toFullFileInfo.TryGetValue(constantsType.TypeId, out var fullFileInfo))
 			WriteFile(fullFileInfo, constantsType);
 		else if (toPartialFileInfo.TryGetValue(constantsType.TypeId, out var partialInfo)) {
-			if (partialInfo is not null)
+			if (partialInfo is not null) {
 				new FileUpdater(TargetLanguage.CSharp, partialInfo.Id, partialInfo.Filename).Generate(writer => WriteConstants(writer, constantsType, isPartialClass: partialInfo.PartialClass));
+			}
 		}
 		else
 			throw new InvalidOperationException();

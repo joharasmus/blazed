@@ -16,7 +16,6 @@ namespace Generator.Enums.Encoder {
 		/// <see cref="VexOpCodeTable"/>
 		/// <see cref="XopOpCodeTable"/>
 		/// <see cref="EvexOpCodeTable"/>
-		/// <see cref="MvexOpCodeTable"/>
 		/// </summary>
 		TableShift				= 17,
 		TableMask				= 7,

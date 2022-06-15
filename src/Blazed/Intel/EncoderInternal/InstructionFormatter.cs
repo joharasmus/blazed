@@ -26,23 +26,6 @@ namespace Blazed.Intel.EncoderInternal {
 		readonly bool noGprSuffix;
 		readonly bool vecIndexSameAsOpIndex;
 
-#if MVEX
-		static readonly string[] ConvFnNames = new string[] {
-			"Sf32",
-			"Sf64",
-			"Si32",
-			"Si64",
-			"Uf32",
-			"Uf64",
-			"Ui32",
-			"Ui64",
-			"Df32",
-			"Df64",
-			"Di32",
-			"Di64",
-		};
-#endif
-
 		int GetKIndex() {
 			k_index++;
 			if (opMaskIsK1) {
@@ -125,8 +108,7 @@ namespace Blazed.Intel.EncoderInternal {
 			default:
 				throw new InvalidOperationException();
 			}
-			if ((opCode.Op0Kind == OpCodeOperandKind.k_reg || opCode.Op0Kind == OpCodeOperandKind.kp1_reg) && opCode.OpCount > 2 &&
-				opCode.Encoding != EncodingKind.MVEX) {
+			if ((opCode.Op0Kind == OpCodeOperandKind.k_reg || opCode.Op0Kind == OpCodeOperandKind.kp1_reg) && opCode.OpCount > 2) {
 				vecIndexSameAsOpIndex = true;
 			}
 			for (int i = 0; i < opCode.OpCount; i++) {
@@ -298,17 +280,6 @@ namespace Blazed.Intel.EncoderInternal {
 					if (addComma)
 						WriteOpSeparator();
 					addComma = true;
-
-#if MVEX
-					if (i == saeErIndex && opCode.Encoding == EncodingKind.MVEX) {
-						var mvexInfo = new MvexInfo(opCode.Code);
-						var convFn = mvexInfo.ConvFn;
-						if (convFn != MvexConvFn.None) {
-							sb.Append(ConvFnNames[(int)convFn - 1]);
-							sb.Append('(');
-						}
-					}
-#endif
 					var opKind = opCode.GetOpKind(i);
 					switch (opKind) {
 					case OpCodeOperandKind.farbr2_2:
@@ -354,10 +325,7 @@ namespace Blazed.Intel.EncoderInternal {
 						break;
 
 					case OpCodeOperandKind.mem_vsib32z:
-						if (opCode.Encoding == EncodingKind.MVEX)
-							sb.Append("mvt");
-						else
-							sb.Append("vm32z");
+						sb.Append("vm32z");
 						break;
 
 					case OpCodeOperandKind.mem_vsib64z:
@@ -645,14 +613,6 @@ namespace Blazed.Intel.EncoderInternal {
 					default:
 						throw new InvalidOperationException();
 					}
-
-#if MVEX
-					if (i == saeErIndex && opCode.Encoding == EncodingKind.MVEX) {
-						var mvexInfo = new MvexInfo(opCode.Code);
-						if (mvexInfo.ConvFn != MvexConvFn.None)
-							sb.Append(')');
-					}
-#endif
 					if (i == 0) {
 						if (opCode.CanUseOpMaskRegister) {
 							sb.Append(' ');
@@ -661,7 +621,7 @@ namespace Blazed.Intel.EncoderInternal {
 								WriteDecorator("z");
 						}
 					}
-					if (i == saeErIndex && opCode.Encoding != EncodingKind.MVEX) {
+					if (i == saeErIndex) {
 						if (opCode.CanSuppressAllExceptions)
 							WriteDecorator("sae");
 						if (opCode.CanUseRoundingControl)
@@ -891,13 +851,6 @@ namespace Blazed.Intel.EncoderInternal {
 		void WriteMemory(bool isBroadcast) {
 			var memorySize = GetMemorySize(isBroadcast);
 			sb.Append('m');
-#if MVEX
-			if (opCode.Encoding == EncodingKind.MVEX) {
-				var mvexInfo = new MvexInfo(opCode.Code);
-				if (mvexInfo.EHBit == MvexEHBit.None && !mvexInfo.IgnoresEvictionHint)
-					sb.Append('t');
-			}
-#endif
 			WriteMemorySize(memorySize);
 			if (isBroadcast)
 				sb.Append("bcst");

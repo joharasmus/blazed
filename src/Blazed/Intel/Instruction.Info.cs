@@ -551,35 +551,6 @@ namespace Blazed.Intel {
 			get => Code.IsCallFarIndirect();
 		}
 
-#if MVEX
-		/// <summary>
-		/// Checks if it's a <c>JKccD SHORT</c> or <c>JKccD NEAR</c> instruction
-		/// </summary>
-		/// <returns></returns>
-		public readonly bool IsJkccShortOrNear {
-			[MethodImpl(MethodImplOptions.AggressiveInlining)]
-			get => Code.IsJkccShortOrNear();
-		}
-
-		/// <summary>
-		/// Checks if it's a <c>JKccD NEAR</c> instruction
-		/// </summary>
-		/// <returns></returns>
-		public readonly bool IsJkccNear {
-			[MethodImpl(MethodImplOptions.AggressiveInlining)]
-			get => Code.IsJkccNear();
-		}
-
-		/// <summary>
-		/// Checks if it's a <c>JKccD SHORT</c> instruction
-		/// </summary>
-		/// <returns></returns>
-		public readonly bool IsJkccShort {
-			[MethodImpl(MethodImplOptions.AggressiveInlining)]
-			get => Code.IsJkccShort();
-		}
-#endif
-
 		/// <summary>
 		/// Checks if it's a <c>JCXZ SHORT</c>, <c>JECXZ SHORT</c> or <c>JRCXZ SHORT</c> instruction
 		/// </summary>

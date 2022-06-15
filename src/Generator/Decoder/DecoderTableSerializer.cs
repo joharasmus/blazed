@@ -84,22 +84,6 @@ sealed class DecoderTableSerializerInfo {
 			enumType[nameof(EvexOpCodeHandlerKind.Invalid2)],
 			enumType[nameof(EvexOpCodeHandlerKind.Dup)]);
 	}
-
-	public static DecoderTableSerializerInfo Mvex(GenTypes genTypes) {
-		var enumType = genTypes[TypeIds.MvexOpCodeHandlerKind];
-		return new DecoderTableSerializerInfo(genTypes.GetObject<DecoderTables>(TypeIds.DecoderTables).MVEX,
-			new string[] {
-				DecoderTable_MVEX.Handlers_0F,
-				DecoderTable_MVEX.Handlers_0F38,
-				DecoderTable_MVEX.Handlers_0F3A,
-			},
-			CSharpConstants.DecoderMvexDefine,
-			null,
-			enumType[nameof(MvexOpCodeHandlerKind.HandlerReference)],
-			enumType[nameof(MvexOpCodeHandlerKind.ArrayReference)],
-			enumType[nameof(MvexOpCodeHandlerKind.Invalid2)],
-			enumType[nameof(MvexOpCodeHandlerKind.Dup)]);
-	}
 }
 
 abstract class DecoderTableSerializer {
@@ -475,12 +459,6 @@ abstract class DecoderTableSerializer {
 				writer.WriteCommentLine(enumValue.ToStringValue());
 			}
 			else if (typeId == TypeIds.EvexOpCodeHandlerKind) {
-				if ((uint)enumValue.Value > byte.MaxValue)
-					throw new InvalidOperationException();
-				writer.WriteByte((byte)enumValue.Value);
-				writer.WriteCommentLine(enumValue.ToStringValue());
-			}
-			else if (typeId == TypeIds.MvexOpCodeHandlerKind) {
 				if ((uint)enumValue.Value > byte.MaxValue)
 					throw new InvalidOperationException();
 				writer.WriteByte((byte)enumValue.Value);

@@ -18,14 +18,13 @@ namespace Generator.Tables {
 		readonly EnumValue memSize;
 		readonly EnumValue memSizeBcst;
 		readonly InstructionDefFlags1 flags1;
-		readonly MvexInfoFlags1 mvexFlags;
 		readonly EncodingKind encoding;
 		readonly OpCodeOperandKindDef[] opKinds;
 		readonly bool isKnc;
 
 		public CodeFormatter(StringBuilder sb, RegisterDef[] regDefs, MemorySizeDefs memSizeTbl, string codeMnemonic, string? codeSuffix,
 			string? codeMemorySize, string? codeMemorySizeSuffix, EnumValue memSize, EnumValue memSizeBcst, InstructionDefFlags1 flags1,
-			MvexInfoFlags1 mvexFlags, EncodingKind encoding, OpCodeOperandKindDef[] opKinds, bool isKnc) {
+			EncodingKind encoding, OpCodeOperandKindDef[] opKinds, bool isKnc) {
 			if (codeMnemonic == string.Empty)
 				throw new ArgumentOutOfRangeException(nameof(codeMnemonic));
 			this.sb = sb;
@@ -38,7 +37,6 @@ namespace Generator.Tables {
 			this.memSize = memSize;
 			this.memSizeBcst = memSizeBcst;
 			this.flags1 = flags1;
-			this.mvexFlags = mvexFlags;
 			this.encoding = encoding;
 			this.opKinds = opKinds;
 			this.isKnc = isKnc;
@@ -66,9 +64,6 @@ namespace Generator.Tables {
 				break;
 			case EncodingKind.D3NOW:
 				sb.Append("D3NOW_");
-				break;
-			case EncodingKind.MVEX:
-				sb.Append("MVEX_");
 				break;
 			default:
 				throw new InvalidOperationException();
@@ -149,14 +144,10 @@ namespace Generator.Tables {
 						else if (def.MIB)
 							sb.Append("mib");
 						else if (def.Vsib) {
-							if (encoding == EncodingKind.MVEX)
-								sb.Append("mvt");
-							else {
-								var sz = def.Vsib32 ? "32" : "64";
-								// x, y, z
-								var reg = regDefs[(int)def.Register].Name.ToLowerInvariant()[0..1];
-								sb.Append($"vm{sz}{reg}");
-							}
+							var sz = def.Vsib32 ? "32" : "64";
+							// x, y, z
+							var reg = regDefs[(int)def.Register].Name.ToLowerInvariant()[0..1];
+							sb.Append($"vm{sz}{reg}");
 						}
 						else
 							WriteMemory();
@@ -179,7 +170,7 @@ namespace Generator.Tables {
 								sb.Append('z');
 						}
 					}
-					if (i == opKinds.Length - 1 && encoding != EncodingKind.MVEX) {
+					if (i == opKinds.Length - 1) {
 						if ((flags1 & InstructionDefFlags1.SuppressAllExceptions) != 0)
 							sb.Append("_sae");
 						if ((flags1 & InstructionDefFlags1.RoundingControl) != 0)
@@ -247,10 +238,7 @@ namespace Generator.Tables {
 
 		void WriteMemory(bool isBroadcast) {
 			var memorySize = GetMemorySize(isBroadcast);
-			if (encoding == EncodingKind.MVEX)
-				sb.Append((mvexFlags & MvexInfoFlags1.EvictionHint) != 0 ? "mt" : "m");
-			else
-				sb.Append(isBroadcast ? 'b' : 'm');
+			sb.Append(isBroadcast ? 'b' : 'm');
 			WriteMemorySize(memorySize);
 		}
 

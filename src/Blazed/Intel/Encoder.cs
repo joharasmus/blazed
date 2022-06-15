@@ -87,17 +87,6 @@ namespace Blazed.Intel {
 		}
 		internal uint Internal_EVEX_LIG;
 
-#if MVEX
-		/// <summary>
-		/// Value of the <c>MVEX.W</c> bit to use if it's an instruction that ignores the bit. Default is 0.
-		/// </summary>
-		public uint MVEX_WIG {
-			get => Internal_MVEX_WIG >> 7;
-			set => Internal_MVEX_WIG = (value & 1) << 7;
-		}
-		internal uint Internal_MVEX_WIG;
-#endif
-
 		internal const string ERROR_ONLY_1632_BIT_MODE = "The instruction can only be used in 16/32-bit mode";
 		internal const string ERROR_ONLY_64_BIT_MODE = "The instruction can only be used in 64-bit mode";
 

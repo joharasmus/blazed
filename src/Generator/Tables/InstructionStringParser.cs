@@ -106,12 +106,6 @@ namespace Generator.Tables {
 					realOps++;
 				}
 
-				var mvexConvFn = MvexConvFn.None;
-				if (encoding == EncodingKind.MVEX) {
-					if (!TryParseMvedConvFn(op, out mvexConvFn, out var op2, out error))
-						return false;
-					op = op2;
-				}
 				if (!TryParseDecorators(op, out var newOp, out error))
 					return false;
 				op = newOp;
@@ -303,25 +297,6 @@ namespace Generator.Tables {
 						};
 						break;
 
-					case "mt":
-						if (encoding != EncodingKind.MVEX) {
-							error = $"Expected MVEX encoding: {part}";
-							return false;
-						}
-						opFlags |= ParsedInstructionOperandFlags.Memory;
-						instrFlags |= ParsedInstructionFlags.EvictionHint;
-						break;
-					case "mvt":
-						if (encoding != EncodingKind.MVEX) {
-							error = $"Expected MVEX encoding: {part}";
-							return false;
-						}
-						opFlags |= ParsedInstructionOperandFlags.Memory | ParsedInstructionOperandFlags.Vsib;
-						sizeBits = 32;
-						instrFlags |= ParsedInstructionFlags.EvictionHint;
-						register = Register.ZMM0;
-						break;
-
 					case "m":
 					case "mem":
 						opFlags |= ParsedInstructionOperandFlags.Memory;
@@ -367,7 +342,7 @@ namespace Generator.Tables {
 					}
 				}
 
-				parsedOps.Add(new ParsedInstructionOperand(opFlags, register, sizeBits, memSizeBits, memSize2Bits, mvexConvFn));
+				parsedOps.Add(new ParsedInstructionOperand(opFlags, register, sizeBits, memSizeBits, memSize2Bits));
 			}
 
 			var impliedOps = new List<InstrStrImpliedOp>();
@@ -434,50 +409,6 @@ namespace Generator.Tables {
 			}
 
 			newOp = parts[0];
-			error = null;
-			return true;
-		}
-
-		static bool TryParseMvedConvFn(string op, out MvexConvFn mvexConvFn, [NotNullWhen(true)] out string? newOp, [NotNullWhen(false)] out string? error) {
-			newOp = null;
-			mvexConvFn = MvexConvFn.None;
-
-			int index = op.IndexOf('(');
-			if (index < 0) {
-				newOp = op;
-				error = null;
-				return true;
-			}
-			int endIndex = op.IndexOf(')');
-			if (endIndex <= index) {
-				error = "Expected ')'";
-				return false;
-			}
-			var convFnStr = op[0..index];
-			// Some of them have an opmask register after ')'
-			newOp = op[(index + 1)..endIndex] + op[(endIndex + 1)..];
-			var convFn = convFnStr switch {
-				"Sf32" => MvexConvFn.Sf32,
-				"Sf64" => MvexConvFn.Sf64,
-				"Si32" => MvexConvFn.Si32,
-				"Si64" => MvexConvFn.Si64,
-				"Uf32" => MvexConvFn.Uf32,
-				"Uf64" => MvexConvFn.Uf64,
-				"Ui32" => MvexConvFn.Ui32,
-				"Ui64" => MvexConvFn.Ui64,
-				"Df32" => MvexConvFn.Df32,
-				"Df64" => MvexConvFn.Df64,
-				"Di32" => MvexConvFn.Di32,
-				"Di64" => MvexConvFn.Di64,
-				_ => (MvexConvFn?)null,
-			};
-			if (convFn is MvexConvFn convFn2)
-				mvexConvFn = convFn2;
-			else {
-				error = $"Unknown MVEX conv fn: {convFnStr}";
-				return false;
-			}
-
 			error = null;
 			return true;
 		}

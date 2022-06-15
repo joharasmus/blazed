@@ -533,26 +533,6 @@ namespace Generator.Tables {
 		L512,
 	}
 
-	struct MvexInstructionInfo {
-		public EnumValue TupleTypeLutKind;
-		public MvexEHBit EHBit;
-		public MvexConvFn ConvFn;
-		public byte ValidConvFns;
-		public byte ValidSwizzleFns;
-		public MvexInfoFlags1 Flags1;
-		public MvexInfoFlags2 Flags2;
-
-		public MvexInstructionInfo(EnumValue tupleType, MvexEHBit ehBit, MvexConvFn convFn, byte validConvFns, byte validSwizzleFns) {
-			TupleTypeLutKind = tupleType;
-			EHBit = ehBit;
-			ConvFn = convFn;
-			ValidConvFns = validConvFns;
-			ValidSwizzleFns = validSwizzleFns;
-			Flags1 = MvexInfoFlags1.None;
-			Flags2 = MvexInfoFlags2.None;
-		}
-	}
-
 	[DebuggerDisplay("{OpCodeString,nq} | {InstructionString,nq}")]
 	sealed class InstructionDef {
 		public readonly string OpCodeString;
@@ -571,7 +551,6 @@ namespace Generator.Tables {
 		public readonly InstrStrFmtOption InstrStrFmtOption;
 		public readonly InstructionStringFlags InstrStrFlags;
 		public readonly InstrStrImpliedOp[] InstrStrImpliedOps;
-		public readonly MvexInstructionInfo Mvex;
 
 		public readonly CodeSize OperandSize;
 		public readonly CodeSize AddressSize;
@@ -614,15 +593,15 @@ namespace Generator.Tables {
 		public InstructionDef(EnumValue code, string opCodeString, string instructionString, EnumValue mnemonic,
 			EnumValue mem, EnumValue bcst, EnumValue decoderOption, InstructionDefFlags1 flags1, InstructionDefFlags2 flags2,
 			InstructionDefFlags3 flags3, InstrStrFmtOption instrStrFmtOption, InstructionStringFlags instrStrFlags,
-			InstrStrImpliedOp[] instrStrImpliedOps, MvexInstructionInfo mvex,
-			MandatoryPrefix mandatoryPrefix, OpCodeTableKind table, OpCodeL lBit, OpCodeW wBit, NonDestructiveOpKind ndKind,
-			uint opCode, int opCodeLength,
-			int groupIndex, int rmGroupIndex, CodeSize operandSize, CodeSize addressSize, TupleType tupleType, OpCodeOperandKindDef[] opKinds,
-			PseudoOpsKind? pseudoOp, EnumValue encoding, EnumValue flowControl, ConditionCode conditionCode,
-			BranchKind branchKind, StackInfo stackInfo, int fpuStackIncrement,
-			RflagsBits read, RflagsBits undefined, RflagsBits written, RflagsBits cleared, RflagsBits set,
-			EnumValue[] cpuid, string[] cpuidFeatureStrings, OpInfo[] opInfo,
-			FmtInstructionDef asm,	string? asmMnemonic) {
+			InstrStrImpliedOp[] instrStrImpliedOps, MandatoryPrefix mandatoryPrefix,
+			OpCodeTableKind table, OpCodeL lBit, OpCodeW wBit, NonDestructiveOpKind ndKind, uint opCode,
+			int opCodeLength, int groupIndex,
+			int rmGroupIndex, CodeSize operandSize, CodeSize addressSize, TupleType tupleType, OpCodeOperandKindDef[] opKinds, PseudoOpsKind? pseudoOp,
+			EnumValue encoding, EnumValue flowControl, ConditionCode conditionCode, BranchKind branchKind,
+			StackInfo stackInfo, int fpuStackIncrement, RflagsBits read,
+			RflagsBits undefined, RflagsBits written, RflagsBits cleared, RflagsBits set, EnumValue[] cpuid,
+			string[] cpuidFeatureStrings, OpInfo[] opInfo, FmtInstructionDef asm,
+			string? asmMnemonic) {
 			Code = code;
 			OpCodeString = opCodeString;
 			InstructionString = instructionString;
@@ -637,7 +616,6 @@ namespace Generator.Tables {
 			InstrStrFmtOption = instrStrFmtOption;
 			InstrStrFlags = instrStrFlags;
 			InstrStrImpliedOps = instrStrImpliedOps;
-			Mvex = mvex;
 
 			MandatoryPrefix = mandatoryPrefix;
 			Table = table;

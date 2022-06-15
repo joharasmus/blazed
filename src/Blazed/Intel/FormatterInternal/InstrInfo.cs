@@ -1131,51 +1131,21 @@ namespace Blazed.Intel.FormatterInternal {
 
 		public override void GetOpInfo(FormatterOptions options, in Instruction instruction, out InstrOpInfo info) {
 			info = new InstrOpInfo(mnemonic, instruction, flags);
-			if (BlazedConstants.IsMvex(instruction.Code)) {
-				var rc = instruction.RoundingControl;
-				if (rc != RoundingControl.None) {
-					InstrOpKind rcOpKind;
-					if (instruction.SuppressAllExceptions) {
-						switch (rc) {
-						case RoundingControl.RoundToNearest:	rcOpKind = InstrOpKind.RnSae; break;
-						case RoundingControl.RoundDown:			rcOpKind = InstrOpKind.RdSae; break;
-						case RoundingControl.RoundUp:			rcOpKind = InstrOpKind.RuSae; break;
-						case RoundingControl.RoundTowardZero:	rcOpKind = InstrOpKind.RzSae; break;
-						default:
-							return;
-						}
-					}
-					else {
-						switch (rc) {
-						case RoundingControl.RoundToNearest:	rcOpKind = InstrOpKind.Rn; break;
-						case RoundingControl.RoundDown:			rcOpKind = InstrOpKind.Rd; break;
-						case RoundingControl.RoundUp:			rcOpKind = InstrOpKind.Ru; break;
-						case RoundingControl.RoundTowardZero:	rcOpKind = InstrOpKind.Rz; break;
-						default:
-							return;
-						}
-					}
-					MoveOperands(ref info, erIndex, rcOpKind);
+
+			var rc = instruction.RoundingControl;
+			if (rc != RoundingControl.None) {
+				if (!FormatterUtils.CanShowRoundingControl(instruction, options))
+					return;
+				InstrOpKind rcOpKind;
+				switch (rc) {
+				case RoundingControl.RoundToNearest:	rcOpKind = InstrOpKind.RnSae; break;
+				case RoundingControl.RoundDown:			rcOpKind = InstrOpKind.RdSae; break;
+				case RoundingControl.RoundUp:			rcOpKind = InstrOpKind.RuSae; break;
+				case RoundingControl.RoundTowardZero:	rcOpKind = InstrOpKind.RzSae; break;
+				default:
+					return;
 				}
-				else if (instruction.SuppressAllExceptions)
-					SimpleInstrInfo_er.MoveOperands(ref info, erIndex, InstrOpKind.Sae);
-			}
-			else {
-				var rc = instruction.RoundingControl;
-				if (rc != RoundingControl.None) {
-					if (!FormatterUtils.CanShowRoundingControl(instruction, options))
-						return;
-					InstrOpKind rcOpKind;
-					switch (rc) {
-					case RoundingControl.RoundToNearest:	rcOpKind = InstrOpKind.RnSae; break;
-					case RoundingControl.RoundDown:			rcOpKind = InstrOpKind.RdSae; break;
-					case RoundingControl.RoundUp:			rcOpKind = InstrOpKind.RuSae; break;
-					case RoundingControl.RoundTowardZero:	rcOpKind = InstrOpKind.RzSae; break;
-					default:
-						return;
-					}
-					MoveOperands(ref info, erIndex, rcOpKind);
-				}
+				MoveOperands(ref info, erIndex, rcOpKind);
 			}
 		}
 

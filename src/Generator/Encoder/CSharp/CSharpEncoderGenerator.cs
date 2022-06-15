@@ -38,7 +38,6 @@ sealed class CSharpEncoderGenerator : EncoderGenerator {
 					Generate(writer, "VexOpKinds", CSharpConstants.VexDefine, handlers.Vex);
 					Generate(writer, "XopOpKinds", CSharpConstants.XopDefine, handlers.Xop);
 					Generate(writer, "EvexOpKinds", CSharpConstants.EvexDefine, handlers.Evex);
-					Generate(writer, "MvexOpKinds", CSharpConstants.MvexDefine, handlers.Mvex);
 				}
 				writer.WriteLine("}");
 			}
@@ -74,7 +73,6 @@ sealed class CSharpEncoderGenerator : EncoderGenerator {
 					Generate(writer, "VexOps", CSharpConstants.VexDefine, handlers.Vex);
 					Generate(writer, "XopOps", CSharpConstants.XopDefine, handlers.Xop);
 					Generate(writer, "EvexOps", CSharpConstants.EvexDefine, handlers.Evex);
-					Generate(writer, "MvexOps", CSharpConstants.MvexDefine, handlers.Mvex);
 				}
 				writer.WriteLine("}");
 			}
@@ -122,19 +120,14 @@ sealed class CSharpEncoderGenerator : EncoderGenerator {
 		}
 	}
 
-	protected override void GenerateOpCodeInfo(InstructionDef[] defs, (MvexTupleTypeLutKind ttLutKind, EnumValue[] tupleTypes)[] mvexTupleTypeData,
-		(MvexTupleTypeLutKind ttLutKind, EnumValue[] tupleTypes)[] mvexMemorySizeData) =>
-		GenerateTable(defs, mvexTupleTypeData, mvexMemorySizeData);
-
-	void GenerateTable(InstructionDef[] defs, (MvexTupleTypeLutKind ttLutKind, EnumValue[] tupleTypes)[] mvexTupleTypeData,
-		(MvexTupleTypeLutKind ttLutKind, EnumValue[] tupleTypes)[] mvexMemorySizeData) {
+	protected override void GenerateOpCodeInfo(InstructionDef[] defs) {
 		var allData = GetData(defs).ToArray();
 		var encFlags1 = allData.Select(a => (a.def, a.encFlags1)).ToArray();
 		var encFlags2 = allData.Select(a => (a.def, a.encFlags2)).ToArray();
 		var encFlags3 = allData.Select(a => (a.def, a.encFlags3)).ToArray();
 		var opcFlags1 = allData.Select(a => (a.def, a.opcFlags1)).ToArray();
 		var opcFlags2 = allData.Select(a => (a.def, a.opcFlags2)).ToArray();
-		var mvexInfos = allData.Where(a => a.mvex is not null).Select(a => (a.def, a.mvex.GetValueOrDefault())).ToArray();
+
 		var encoderInfo = new (string name, (InstructionDef def, uint value)[] values)[] {
 			("EncFlags1", encFlags1),
 			("EncFlags2", encFlags2),
@@ -147,9 +140,6 @@ sealed class CSharpEncoderGenerator : EncoderGenerator {
 
 		GenerateTables(defs, encoderInfo, CSharpConstants.EncoderDefine, "EncoderData", "EncoderData.g.cs");
 		GenerateTables(defs, opCodeInfo, CSharpConstants.OpCodeInfoDefine, "OpCodeInfoData", "OpCodeInfoData.g.cs");
-		GenerateTables(mvexInfos, CSharpConstants.MvexDefine, "MvexInfoData", "MvexInfoData.g.cs");
-		GenerateTables(mvexTupleTypeData, CSharpConstants.MvexDefine, "MvexTupleTypeLut", "MvexTupleTypeLut.g.cs");
-		GenerateTables(mvexMemorySizeData, CSharpConstants.MvexDefine, "MvexMemorySizeLut", "MvexMemorySizeLut.g.cs");
 	}
 
 	void GenerateTables(InstructionDef[] defs, (string name, (InstructionDef def, uint value)[] values)[] tableData, string define, string className, string filename) {
@@ -175,93 +165,6 @@ sealed class CSharpEncoderGenerator : EncoderGenerator {
 							writer.WriteLine("};");
 						}
 					}
-				}
-				writer.WriteLine("}");
-			}
-			writer.WriteLine("}");
-			writer.WriteLineNoIndent("#endif");
-		}
-	}
-
-	void GenerateTables((InstructionDef def, MvexEncInfo mvex)[] mvexInfos, string define, string className, string filename) {
-		var infos = mvexInfos.Where(x => x.def.Encoding == EncodingKind.MVEX).ToArray();
-		var fullFilename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, filename);
-		using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(fullFilename))) {
-			writer.WriteFileHeader();
-			writer.WriteLineNoIndent($"#if {define}");
-			writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
-			using (writer.Indent()) {
-				writer.WriteLine($"static class {className} {{");
-				using (writer.Indent()) {
-					const int StructSize = 8;
-					const int TupleTypeLutKindIndex = 0;
-					const int EHBitIndex = 1;
-					const int ConvFnIndex = 2;
-					const int InvalidConvFnsIndex = 3;
-					const int InvalidSwizzleFnsIndex = 4;
-					const int Flags1Index = 5;
-					const int Flags2Index = 6;
-
-					writer.WriteLine($"public const int StructSize = {StructSize};");
-					writer.WriteLine($"public const int TupleTypeLutKindIndex = {TupleTypeLutKindIndex};");
-					writer.WriteLine($"public const int EHBitIndex = {EHBitIndex};");
-					writer.WriteLine($"public const int ConvFnIndex = {ConvFnIndex};");
-					writer.WriteLine($"public const int InvalidConvFnsIndex = {InvalidConvFnsIndex};");
-					writer.WriteLine($"public const int InvalidSwizzleFnsIndex = {InvalidSwizzleFnsIndex};");
-					writer.WriteLine($"public const int Flags1Index = {Flags1Index};");
-					writer.WriteLine($"public const int Flags2Index = {Flags2Index};");
-
-					writer.WriteLine("internal static readonly byte[] Data = new byte[] {");
-					using (writer.Indent()) {
-						var data = new byte[StructSize];
-						foreach (var (def, mvex) in infos) {
-							data[TupleTypeLutKindIndex] = (byte)mvex.TupleTypeLutKind.Value;
-							data[EHBitIndex] = (byte)mvex.EHBit.Value;
-							data[ConvFnIndex] = (byte)mvex.ConvFn.Value;
-							data[InvalidConvFnsIndex] = mvex.InvalidConvFns;
-							data[InvalidSwizzleFnsIndex] = mvex.InvalidSwizzleFns;
-							data[Flags1Index] = (byte)mvex.Flags1;
-							data[Flags2Index] = (byte)mvex.Flags2;
-							for (int i = 0; i < data.Length; i++) {
-								if (i != 0)
-									writer.Write(" ");
-								writer.Write($"0x{data[i]:X02},");
-							}
-							writer.WriteLine($"// {IdentifierConverter.ToDeclTypeAndValue(def.Code)}");
-						}
-					}
-					writer.WriteLine("};");
-				}
-				writer.WriteLine("}");
-			}
-			writer.WriteLine("}");
-			writer.WriteLineNoIndent("#endif");
-		}
-	}
-
-	void GenerateTables((MvexTupleTypeLutKind ttLutKind, EnumValue[] enumValues)[] mvexData, string define, string className, string filename) {
-		var fullFilename = CSharpConstants.GetFilename(genTypes, CSharpConstants.BlazedNamespace, filename);
-		using (var writer = new FileWriter(TargetLanguage.CSharp, FileUtils.OpenWrite(fullFilename))) {
-			writer.WriteFileHeader();
-			writer.WriteLineNoIndent($"#if {define}");
-			writer.WriteLine($"namespace {CSharpConstants.BlazedNamespace} {{");
-			using (writer.Indent()) {
-				writer.WriteLine($"static class {className} {{");
-				using (writer.Indent()) {
-					writer.WriteLine("public static readonly byte[] Data = new byte[] {");
-					using (writer.Indent()) {
-						foreach (var (ttLutKind, enumValues) in mvexData) {
-							var ttLutKindValue = genTypes[TypeIds.MvexTupleTypeLutKind][ttLutKind.ToString()];
-							writer.WriteLine($"// {IdentifierConverter.ToDeclTypeAndValue(ttLutKindValue)}");
-							for (int i = 0; i < enumValues.Length; i++) {
-								var enumValue = enumValues[i];
-								if (enumValue.Value > byte.MaxValue)
-									throw new InvalidOperationException();
-								writer.WriteLine($"(byte){IdentifierConverter.ToDeclTypeAndValue(enumValue)},// {i}");
-							}
-						}
-					}
-					writer.WriteLine("};");
 				}
 				writer.WriteLine("}");
 			}

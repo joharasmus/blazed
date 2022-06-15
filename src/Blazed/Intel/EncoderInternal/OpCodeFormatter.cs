@@ -71,11 +71,6 @@ namespace Blazed.Intel.EncoderInternal {
 #else
 				EncodingKind.D3NOW => string.Empty,
 #endif
-#if MVEX
-				EncodingKind.MVEX => FormatVecEncoding("MVEX"),
-#else
-				EncodingKind.MVEX => string.Empty,
-#endif
 				_ => throw new InvalidOperationException(),
 			};
 		}
@@ -148,7 +143,6 @@ namespace Blazed.Intel.EncoderInternal {
 			case EncodingKind.EVEX:
 			case EncodingKind.XOP:
 			case EncodingKind.D3NOW:
-			case EncodingKind.MVEX:
 				return true;
 			default:
 				throw new InvalidOperationException();
@@ -308,7 +302,7 @@ namespace Blazed.Intel.EncoderInternal {
 				AppendBits("bbb", bbb, 3);
 			}
 			else {
-				bool isVsib = (opCode.Encoding == EncodingKind.EVEX || opCode.Encoding == EncodingKind.MVEX) && HasVsib();
+				bool isVsib = (opCode.Encoding == EncodingKind.EVEX) && HasVsib();
 				if (opCode.IsGroup) {
 					sb.Append(" /");
 					sb.Append(opCode.GroupIndex);
@@ -506,20 +500,12 @@ namespace Blazed.Intel.EncoderInternal {
 		}
 #endif
 
-#if !NO_VEX || !NO_XOP || !NO_EVEX || MVEX
+#if !NO_VEX || !NO_XOP || !NO_EVEX
 		string FormatVecEncoding(string encodingName) {
 			sb.Length = 0;
 
 			sb.Append(encodingName);
-#if MVEX
-			if (opCode.Encoding == EncodingKind.MVEX) {
-				var mvexInfo = new MvexInfo(opCode.Code);
-				if (mvexInfo.IsNDD)
-					sb.Append(".NDD");
-				else if (mvexInfo.IsNDS)
-					sb.Append(".NDS");
-			}
-#endif
+
 			sb.Append('.');
 			if (opCode.IsLIG)
 				sb.Append("LIG");
@@ -561,26 +547,19 @@ namespace Blazed.Intel.EncoderInternal {
 			default:
 				throw new InvalidOperationException();
 			}
+
 			if (opCode.Table != OpCodeTableKind.Normal)
 				sb.Append('.');
+
 			AppendTable(false);
+
 			if (opCode.IsWIG)
 				sb.Append(".WIG");
 			else {
 				sb.Append(".W");
 				sb.Append(opCode.W);
 			}
-#if MVEX
-			if (opCode.Encoding == EncodingKind.MVEX) {
-				var mvexInfo = new MvexInfo(opCode.Code);
-				switch (mvexInfo.EHBit) {
-				case MvexEHBit.None: break;
-				case MvexEHBit.EH0: sb.Append(".EH0"); break;
-				case MvexEHBit.EH1: sb.Append(".EH1"); break;
-				default: throw new InvalidOperationException();
-				}
-			}
-#endif
+
 			sb.Append(' ');
 			AppendOpCode(opCode.OpCode, opCode.OpCodeLength, true);
 			AppendRest();

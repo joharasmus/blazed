@@ -46,7 +46,6 @@ namespace Generator.Tables {
 				EncodingKind.EVEX => OpCodeInfoConstants.Encoding_EVEX,
 				EncodingKind.XOP => OpCodeInfoConstants.Encoding_XOP,
 				EncodingKind.D3NOW => OpCodeInfoConstants.Encoding_3DNOW,
-				EncodingKind.MVEX => OpCodeInfoConstants.Encoding_MVEX,
 				_ => throw new InvalidOperationException(),
 			};
 			writer.Write(sep);
@@ -173,13 +172,6 @@ namespace Generator.Tables {
 				}
 			}
 
-			switch (def.Mvex.EHBit) {
-			case MvexEHBit.None: break;
-			case MvexEHBit.EH0: W(OpCodeInfoKeywords.EH0); break;
-			case MvexEHBit.EH1: W(OpCodeInfoKeywords.EH1); break;
-			default: throw new InvalidOperationException();
-			}
-
 			if (def.OpCount > 0) {
 				WK(OpCodeInfoKeywordKeys.OpCodeOperandKind);
 				for (int i = 0; i < def.OpCount; i++) {
@@ -215,19 +207,12 @@ namespace Generator.Tables {
 			if ((def.Flags1 & InstructionDefFlags1.Notrack) != 0) W(OpCodeInfoKeywords.Notrack);
 
 			bool addTupleType = def.Encoding switch {
-				EncodingKind.EVEX or EncodingKind.MVEX => def.OpKindDefs.Any(x => x.Memory),
+				EncodingKind.EVEX => def.OpKindDefs.Any(x => x.Memory),
 				_ => false,
 			};
 			if (addTupleType) {
 				WK(OpCodeInfoKeywordKeys.TupleType);
 				writer.Write(def.TupleType.ToString());
-			}
-
-			if (def.Encoding == EncodingKind.MVEX) {
-				WK(OpCodeInfoKeywordKeys.MVEX);
-				ref readonly var mvex = ref def.Mvex;
-				var value = $"{mvex.TupleTypeLutKind.RawName};{mvex.ConvFn};0x{mvex.ValidConvFns:X};0x{mvex.ValidSwizzleFns:X}";
-				writer.Write(value);
 			}
 
 			if ((def.Flags1 & InstructionDefFlags1.Broadcast) != 0) W(OpCodeInfoKeywords.Broadcast);
@@ -290,11 +275,6 @@ namespace Generator.Tables {
 			if ((def.Flags3 & InstructionDefFlags3.FpuNoWait) != 0) W(OpCodeInfoKeywords.FpuNoWait);
 			if ((def.Flags3 & InstructionDefFlags3.Privileged) != 0) W(OpCodeInfoKeywords.Privileged);
 			if ((def.Flags3 & InstructionDefFlags3.RequiresUniqueDestRegNum) != 0) W(OpCodeInfoKeywords.RequiresUniqueDestRegNum);
-
-			if ((def.Mvex.Flags1 & MvexInfoFlags1.EvictionHint) != 0) W(OpCodeInfoKeywords.EvictionHint);
-			if ((def.Mvex.Flags1 & MvexInfoFlags1.IgnoresOpMaskRegister) != 0) W(OpCodeInfoKeywords.IgnoresOpMaskRegister);
-			if ((def.Mvex.Flags1 & MvexInfoFlags1.ImmRoundingControl) != 0) W(OpCodeInfoKeywords.ImmRoundingControl);
-			if ((def.Mvex.Flags2 & MvexInfoFlags2.NoSaeRoundingControl) != 0) W(OpCodeInfoKeywords.NoSaeRoundingControl);
 
 			writer.WriteLine();
 		}

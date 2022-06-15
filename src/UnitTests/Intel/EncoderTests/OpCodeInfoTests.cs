@@ -146,17 +146,6 @@ namespace UnitTests.Intel.EncoderTests {
 			Static.Assert(BlazedConstants.MaxOpCount == 5 ? 0 : -1);
 			for (int i = tc.OpCount; i < BlazedConstants.MaxOpCount; i++)
 				Assert.Equal(OpCodeOperandKind.None, info.GetOpKind(i));
-#if MVEX
-			Assert.Equal(tc.Mvex.EHBit, info.MvexEHBit);
-			Assert.Equal(tc.Mvex.CanUseEvictionHint, info.MvexCanUseEvictionHint);
-			Assert.Equal(tc.Mvex.CanUseImmRoundingControl, info.MvexCanUseImmRoundingControl);
-			Assert.Equal(tc.Mvex.IgnoresOpMaskRegister, info.MvexIgnoresOpMaskRegister);
-			Assert.Equal(tc.Mvex.NoSaeRc, info.MvexNoSaeRc);
-			Assert.Equal(tc.Mvex.TupleTypeLutKind, info.MvexTupleTypeLutKind);
-			Assert.Equal(tc.Mvex.ConversionFunc, info.MvexConversionFunc);
-			Assert.Equal(tc.Mvex.ValidConversionFuncsMask, info.MvexValidConversionFuncsMask);
-			Assert.Equal(tc.Mvex.ValidSwizzleFuncsMask, info.MvexValidSwizzleFuncsMask);
-#endif
 		}
 		public static IEnumerable<object[]> TestAllOpCodeInfos_Data => OpCodeInfoTestCases.OpCodeInfoTests.Select(a => new object[] { a.LineNumber, a.Code, a.OpCodeString, a.InstructionString, a });
 

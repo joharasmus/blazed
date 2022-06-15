@@ -68,7 +68,7 @@ namespace UnitTests.Intel.EncoderTests {
 		}
 
 		[Fact]
-		void Verify_invalid_REX_mandatory_prefixes_VEX_EVEX_XOP_MVEX() {
+		void Verify_invalid_REX_mandatory_prefixes_VEX_EVEX_XOP() {
 			var prefixes1632 = new string[] { "66", "F3", "F2" };
 			var prefixes64   = new string[] { "66", "F3", "F2",
 											  "40", "41", "42", "43", "44", "45", "46", "47",
@@ -85,7 +85,6 @@ namespace UnitTests.Intel.EncoderTests {
 				case EncodingKind.VEX:
 				case EncodingKind.EVEX:
 				case EncodingKind.XOP:
-				case EncodingKind.MVEX:
 					break;
 
 				default:
@@ -341,7 +340,7 @@ namespace UnitTests.Intel.EncoderTests {
 				var opCode = info.Code.ToOpCode();
 				var encoding = opCode.Encoding;
 				bool isWIG = opCode.IsWIG || (opCode.IsWIG32 && info.Bitness != 64);
-				if (encoding == EncodingKind.EVEX || encoding == EncodingKind.MVEX) {
+				if (encoding == EncodingKind.EVEX) {
 					var bytes = HexUtils.ToByteArray(info.HexBytes);
 					int evexIndex = GetEvexIndex(bytes);
 
@@ -519,8 +518,6 @@ namespace UnitTests.Intel.EncoderTests {
 					}
 				}
 				else if (encoding == EncodingKind.Legacy || encoding == EncodingKind.D3NOW)
-					continue;
-				else if (encoding == EncodingKind.MVEX)
 					continue;
 				else
 					throw new InvalidOperationException();
@@ -762,7 +759,6 @@ namespace UnitTests.Intel.EncoderTests {
 				case EncodingKind.VEX:
 				case EncodingKind.EVEX:
 				case EncodingKind.XOP:
-				case EncodingKind.MVEX:
 					break;
 
 				default:
@@ -832,7 +828,7 @@ namespace UnitTests.Intel.EncoderTests {
 						}
 					}
 				}
-				else if (opCode.Encoding == EncodingKind.EVEX || opCode.Encoding == EncodingKind.MVEX) {
+				else if (opCode.Encoding == EncodingKind.EVEX) {
 					var bytes = HexUtils.ToByteArray(info.HexBytes);
 					int evexIndex = GetEvexIndex(bytes);
 					var b2 = bytes[evexIndex + 2];
@@ -923,7 +919,6 @@ namespace UnitTests.Intel.EncoderTests {
 			isVsib = false;
 			switch (opCode.Encoding) {
 			case EncodingKind.EVEX:
-			case EncodingKind.MVEX:
 				vvvv_mask = 0x1F;
 				break;
 			case EncodingKind.VEX:
@@ -979,7 +974,6 @@ namespace UnitTests.Intel.EncoderTests {
 				case EncodingKind.VEX:
 				case EncodingKind.EVEX:
 				case EncodingKind.XOP:
-				case EncodingKind.MVEX:
 					break;
 
 				default:
@@ -1089,7 +1083,7 @@ namespace UnitTests.Intel.EncoderTests {
 						Assert.True(Instruction.EqualsAllBits(origInstr, instruction));
 					}
 				}
-				else if (opCode.Encoding == EncodingKind.EVEX || opCode.Encoding == EncodingKind.MVEX) {
+				else if (opCode.Encoding == EncodingKind.EVEX) {
 					var bytes = HexUtils.ToByteArray(info.HexBytes);
 					int evexIndex = GetEvexIndex(bytes);
 					bool isRegOnly = (bytes[evexIndex + 5] >> 6) == 3;
@@ -1182,7 +1176,6 @@ namespace UnitTests.Intel.EncoderTests {
 				case EncodingKind.VEX:
 				case EncodingKind.EVEX:
 				case EncodingKind.XOP:
-				case EncodingKind.MVEX:
 					break;
 
 				default:
@@ -1307,7 +1300,7 @@ namespace UnitTests.Intel.EncoderTests {
 						Assert.True(Instruction.EqualsAllBits(origInstr, instruction));
 					}
 				}
-				else if (opCode.Encoding == EncodingKind.EVEX || opCode.Encoding == EncodingKind.MVEX) {
+				else if (opCode.Encoding == EncodingKind.EVEX) {
 					var bytes = HexUtils.ToByteArray(info.HexBytes);
 					int evexIndex = GetEvexIndex(bytes);
 					bool isRegOnly = (bytes[evexIndex + 5] >> 6) == 3;
@@ -1400,7 +1393,7 @@ namespace UnitTests.Intel.EncoderTests {
 				if (!CanHaveInvalidIndexRegister_EVEX(opCode))
 					continue;
 
-				if (opCode.Encoding == EncodingKind.EVEX || opCode.Encoding == EncodingKind.MVEX) {
+				if (opCode.Encoding == EncodingKind.EVEX) {
 					var bytes = HexUtils.ToByteArray(info.HexBytes);
 					int evexIndex = GetEvexIndex(bytes);
 					var p0 = bytes[evexIndex + 1];
@@ -1451,7 +1444,7 @@ namespace UnitTests.Intel.EncoderTests {
 
 		// All Vk_VSIB instructions, eg. EVEX_Vpgatherdd_xmm_k1_vm32x
 		static bool CanHaveInvalidIndexRegister_EVEX(OpCodeInfo opCode) {
-			if (opCode.Encoding != EncodingKind.EVEX && opCode.Encoding != EncodingKind.MVEX)
+			if (opCode.Encoding != EncodingKind.EVEX)
 				return false;
 
 			switch (opCode.Op0Kind) {
@@ -1622,19 +1615,19 @@ namespace UnitTests.Intel.EncoderTests {
 			public uint LBits;// bit 0 = L0/L128, bit 1 = L1/L256, etc
 			public uint VEX2_LBits;
 
-			// REX/VEX/XOP/EVEX/MVEX: W values
+			// REX/VEX/XOP/EVEX: W values
 			public uint WBits;// bit 0 = W0, bit 1 = W1
 
-			// REX/VEX/XOP/EVEX/MVEX.R
+			// REX/VEX/XOP/EVEX.R
 			public uint RBits;
 			public uint VEX2_RBits;
-			// REX/VEX/XOP/EVEX/MVEX.X
+			// REX/VEX/XOP/EVEX.X
 			public uint XBits;
-			// REX/VEX/XOP/EVEX/MVEX.B
+			// REX/VEX/XOP/EVEX.B
 			public uint BBits;
-			// EVEX/MVEX.R'
+			// EVEX.R'
 			public uint R2Bits;
-			// EVEX/MVEX.V'
+			// EVEX.V'
 			public uint V2Bits;
 
 			// mod=11
@@ -1642,7 +1635,7 @@ namespace UnitTests.Intel.EncoderTests {
 			// mod=00,01,10
 			public bool RegMem;
 
-			// EVEX/MVEX only
+			// EVEX only
 			public bool MemDisp8;
 
 			// Tested VEX2 prefix
@@ -1650,9 +1643,9 @@ namespace UnitTests.Intel.EncoderTests {
 			// Tested VEX3 prefix
 			public bool VEX3;
 
-			// EVEX/MVEX: tested opmask
+			// EVEX: tested opmask
 			public bool OpMask;
-			// EVEX/MVEX: tested no opmask
+			// EVEX: tested no opmask
 			public bool NoOpMask;
 
 			public bool PrefixXacquire;
@@ -1703,7 +1696,6 @@ namespace UnitTests.Intel.EncoderTests {
 					case EncodingKind.VEX:
 					case EncodingKind.EVEX:
 					case EncodingKind.XOP:
-					case EncodingKind.MVEX:
 						break;
 
 					default:
@@ -1730,7 +1722,7 @@ namespace UnitTests.Intel.EncoderTests {
 				decoder.Decode(out var instruction);
 				Assert.Equal(info.Code, instruction.Code);
 
-				if (opCode.Encoding == EncodingKind.EVEX || opCode.Encoding == EncodingKind.MVEX) {
+				if (opCode.Encoding == EncodingKind.EVEX) {
 					int evexIndex = GetEvexIndex(bytes);
 
 					if (opCode.Encoding == EncodingKind.EVEX) {
@@ -2089,7 +2081,6 @@ namespace UnitTests.Intel.EncoderTests {
 
 						case EncodingKind.Legacy:
 						case EncodingKind.D3NOW:
-						case EncodingKind.MVEX:
 						default:
 							throw new InvalidOperationException();
 						}
@@ -2115,7 +2106,6 @@ namespace UnitTests.Intel.EncoderTests {
 					case EncodingKind.D3NOW:
 						break;
 					case EncodingKind.EVEX:
-					case EncodingKind.MVEX:
 						if (!tested.MemDisp8 && CanUseModRM_rm_mem(opCode))
 							GetList(bitness, disp8_16, disp8_32, disp8_64).Add(code);
 						break;
@@ -2144,7 +2134,6 @@ namespace UnitTests.Intel.EncoderTests {
 					}
 					switch (opCode.Encoding) {
 					case EncodingKind.EVEX:
-					case EncodingKind.MVEX:
 						if (CanUseR2(opCode)) {
 							if (tested.R2Bits != 3)
 								GetList(bitness, r2_16, r2_32, r2_64).Add(code);
@@ -2186,7 +2175,6 @@ namespace UnitTests.Intel.EncoderTests {
 						}
 						switch (opCode.Encoding) {
 						case EncodingKind.EVEX:
-						case EncodingKind.MVEX:
 							if (IsVsib(opCode)) {
 								// The memory tests test vsib memory operands
 							}
@@ -2784,33 +2772,21 @@ namespace UnitTests.Intel.EncoderTests {
 		void Verify_invalid_table_encoding() {
 			foreach (var info in DecoderTestUtils.GetDecoderTests(includeOtherTests: false, includeInvalid: false)) {
 				var opCode = info.Code.ToOpCode();
-				if (opCode.Encoding == EncodingKind.EVEX || opCode.Encoding == EncodingKind.MVEX) {
+				if (opCode.Encoding == EncodingKind.EVEX) {
 					var hexBytes = HexUtils.ToByteArray(info.HexBytes);
 					var evexIndex = GetEvexIndex(hexBytes);
 					var maxTable = opCode.Encoding == EncodingKind.EVEX ? 8 : 0x10;
+
 					for (int i = 0; i < 8; i++) {
-						switch (opCode.Encoding) {
-						case EncodingKind.EVEX:
-							switch (i) {
+						switch (i) {
 							case 1:// 0F
 							case 2:// 0F 38
 							case 3:// 0F 3A
 							case 5:// MAP5
 							case 6:// MAP6
 								continue;
-							}
-							break;
-						case EncodingKind.MVEX:
-							switch (i) {
-							case 1:// 0F
-							case 2:// 0F 38
-							case 3:// 0F 3A
-								continue;
-							}
-							break;
-						default:
-							throw new InvalidOperationException();
 						}
+
 						hexBytes[evexIndex + 1] = (byte)((hexBytes[evexIndex + 1] & ~(byte)(maxTable - 1)) | i);
 						{
 							var decoder = Decoder.Create(info.Bitness, new ByteArrayCodeReader(hexBytes), info.Options);
@@ -2833,10 +2809,6 @@ namespace UnitTests.Intel.EncoderTests {
 						continue;
 					for (int i = 0; i < 32; i++) {
 						switch (i) {
-#if MVEX
-						case 0:// MAP0
-							continue;
-#endif
 						case 1:// 0F
 						case 2:// 0F 38
 						case 3:// 0F 3A
@@ -2901,7 +2873,7 @@ namespace UnitTests.Intel.EncoderTests {
 		void Verify_invalid_pp_field() {
 			foreach (var info in DecoderTestUtils.GetDecoderTests(includeOtherTests: false, includeInvalid: false)) {
 				var opCode = info.Code.ToOpCode();
-				if (opCode.Encoding == EncodingKind.EVEX || opCode.Encoding == EncodingKind.MVEX) {
+				if (opCode.Encoding == EncodingKind.EVEX) {
 					var hexBytes = HexUtils.ToByteArray(info.HexBytes);
 					var evexIndex = GetEvexIndex(hexBytes);
 					var b = hexBytes[evexIndex + 2];
@@ -2958,7 +2930,7 @@ namespace UnitTests.Intel.EncoderTests {
 
 				var bytes = HexUtils.ToByteArray(info.HexBytes + extraBytes);
 				int mIndex;
-				if (opCode.Encoding == EncodingKind.EVEX || opCode.Encoding == EncodingKind.MVEX)
+				if (opCode.Encoding == EncodingKind.EVEX)
 					mIndex = GetEvexIndex(bytes) + 5;
 				else if (opCode.Encoding == EncodingKind.VEX || opCode.Encoding == EncodingKind.XOP) {
 					int vexIndex = GetVexXopIndex(bytes);

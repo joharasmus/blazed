@@ -38,9 +38,6 @@ namespace Blazed.Intel {
 		AllowLock = 0x00002000,
 		NoMoreBytes = 0x00004000,
 		Has66 = 0x00008000,
-		MvexSssMask = 0x00000007,
-		MvexSssShift = 0x00000010,
-		MvexEH = 0x00080000,
 		EncodingMask = 0x00000007,
 		EncodingShift = 0x0000001D,
 	}
@@ -54,9 +51,6 @@ namespace Blazed.Intel {
 		readonly CodeReader reader;
 		readonly RegInfo2[] memRegs16;
 		readonly OpCodeHandler[] handlers_MAP0;
-#if !NO_VEX && MVEX
-		readonly OpCodeHandler[] handlers_VEX_MAP0;
-#endif
 #if !NO_VEX
 		readonly OpCodeHandler[] handlers_VEX_0F;
 		readonly OpCodeHandler[] handlers_VEX_0F38;
@@ -73,11 +67,6 @@ namespace Blazed.Intel {
 		readonly OpCodeHandler[] handlers_XOP_MAP8;
 		readonly OpCodeHandler[] handlers_XOP_MAP9;
 		readonly OpCodeHandler[] handlers_XOP_MAP10;
-#endif
-#if MVEX
-		readonly OpCodeHandler[] handlers_MVEX_0F;
-		readonly OpCodeHandler[] handlers_MVEX_0F38;
-		readonly OpCodeHandler[] handlers_MVEX_0F3A;
 #endif
 		internal State state;
 		internal uint displIndex;
@@ -112,15 +101,12 @@ namespace Blazed.Intel {
 			public uint vvvv;// V`vvvv. Not stored in inverted form. If 16/32-bit mode, bits [4:3] are cleared
 			public uint vvvv_invalidCheck;// vvvv bits, even in 16/32-bit mode.
 			public uint aaa;
-			public uint extraRegisterBaseEVEX;		// EVEX/MVEX.R' << 4
-			public uint extraBaseRegisterBaseEVEX;	// EVEX/MVEX.XB << 3
+			public uint extraRegisterBaseEVEX;		// EVEX.R' << 4
+			public uint extraBaseRegisterBaseEVEX;	// EVEX.XB << 3
 			public uint vectorLength;
 			public OpSize operandSize;
 			public OpSize addressSize;
 			public readonly EncodingKind Encoding => (EncodingKind)(((uint)zs.flags >> (int)StateFlags.EncodingShift) & (uint)StateFlags.EncodingMask);
-#if MVEX
-			public int Sss => ((int)zs.flags >> (int)StateFlags.MvexSssShift) & (int)StateFlags.MvexSssMask;
-#endif
 		}
 
 		/// <summary>
@@ -201,9 +187,6 @@ namespace Blazed.Intel {
 			is64bMode_and_W = is64bMode ? (uint)StateFlags.W : 0;
 			reg15Mask = is64bMode ? 0xFU : 0x7;
 			handlers_MAP0 = OpCodeHandlersTables_Legacy.Handlers_MAP0;
-#if !NO_VEX && MVEX
-			handlers_VEX_MAP0 = OpCodeHandlersTables_VEX.Handlers_MAP0;
-#endif
 #if !NO_VEX
 			handlers_VEX_0F = OpCodeHandlersTables_VEX.Handlers_0F;
 			handlers_VEX_0F38 = OpCodeHandlersTables_VEX.Handlers_0F38;
@@ -220,11 +203,6 @@ namespace Blazed.Intel {
 			handlers_XOP_MAP8 = OpCodeHandlersTables_XOP.Handlers_MAP8;
 			handlers_XOP_MAP9 = OpCodeHandlersTables_XOP.Handlers_MAP9;
 			handlers_XOP_MAP10 = OpCodeHandlersTables_XOP.Handlers_MAP10;
-#endif
-#if MVEX
-			handlers_MVEX_0F = OpCodeHandlersTables_MVEX.Handlers_0F;
-			handlers_MVEX_0F38 = OpCodeHandlersTables_MVEX.Handlers_0F38;
-			handlers_MVEX_0F3A = OpCodeHandlersTables_MVEX.Handlers_0F3A;
 #endif
 		}
 
@@ -553,10 +531,6 @@ namespace Blazed.Intel {
 				handlers = handlers_VEX_0F38;
 			else if (table == 3)
 				handlers = handlers_VEX_0F3A;
-#if MVEX
-			else if (table == 0)
-				handlers = handlers_VEX_MAP0;
-#endif
 			else {
 				SetInvalidInstruction();
 				return;
@@ -618,8 +592,8 @@ namespace Blazed.Intel {
 #endif
 		}
 
-		internal void EVEX_MVEX(ref Instruction instruction) {
-#if NO_EVEX && !MVEX
+		internal void EVEX(ref Instruction instruction) {
+#if NO_EVEX
 			SetInvalidInstruction();
 #else
 			if ((((uint)(state.zs.flags & StateFlags.HasRex) | (uint)state.zs.mandatoryPrefix) & invalidCheckMask) != 0)
@@ -721,15 +695,9 @@ namespace Blazed.Intel {
 #endif
 			}
 			else {
-#if !MVEX
-				SetInvalidInstruction();
-#else
 				if ((options & DecoderOptions.KNC) == 0 || !is64bMode)
 					SetInvalidInstruction();
 				else {
-#if DEBUG
-					state.zs.flags |= (StateFlags)((uint)EncodingKind.MVEX << (int)StateFlags.EncodingShift);
-#endif
 
 					Static.Assert((int)MandatoryPrefixByte.None == 0 ? 0 : -1);
 					Static.Assert((int)MandatoryPrefixByte.P66 == 1 ? 0 : -1);
@@ -743,11 +711,6 @@ namespace Blazed.Intel {
 					uint aaa = p2 & 7;
 					state.aaa = aaa;
 					instruction.InternalOpMask = aaa;
-
-					Static.Assert((int)StateFlags.MvexSssShift == 16 ? 0 : -1);
-					Static.Assert((int)StateFlags.MvexSssMask == 7 ? 0 : -1);
-					Static.Assert((int)StateFlags.MvexEH == 1 << ((int)StateFlags.MvexSssShift + 3) ? 0 : -1);
-					state.zs.flags |= (StateFlags)((p2 & 0xF0) << ((int)StateFlags.MvexSssShift - 4));
 
 					p1 = (~p1 >> 3) & 0x0F;
 					uint tmp = (~p2 & 8) << 1;
@@ -763,22 +726,8 @@ namespace Blazed.Intel {
 					state.extraBaseRegisterBaseEVEX = p0x & 0x18;
 					state.zs.extraBaseRegisterBase = p0x & 8;
 
-					OpCodeHandler[] handlers;
-					switch ((int)(p0 & 0xF)) {
-					case 1: handlers = handlers_MVEX_0F; break;
-					case 2: handlers = handlers_MVEX_0F38; break;
-					case 3: handlers = handlers_MVEX_0F3A; break;
-					default:
-						SetInvalidInstruction();
-						return;
-					}
-					var handler = handlers[(int)p3];
-					Debug.Assert(handler.HasModRM);
-					state.modrm = p4;
-					state.mod = p4 >> 6;
-					state.reg = (p4 >> 3) & 7;
-					state.rm = p4 & 7;
-					handler.Decode(this, ref instruction);
+					SetInvalidInstruction();
+					return;
 				}
 #endif
 			}
@@ -796,7 +745,7 @@ namespace Blazed.Intel {
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal bool ReadOpMem(ref Instruction instruction) {
-			Debug.Assert(state.Encoding != EncodingKind.EVEX && state.Encoding != EncodingKind.MVEX);
+			Debug.Assert(state.Encoding != EncodingKind.EVEX);
 			if (state.addressSize == OpSize.Size64)
 				return ReadOpMem32Or64(ref instruction, Register.RAX, Register.RAX, TupleType.N1, false);
 			else if (state.addressSize == OpSize.Size32)
@@ -809,7 +758,7 @@ namespace Blazed.Intel {
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal void ReadOpMemSib(ref Instruction instruction) {
-			Debug.Assert(state.Encoding != EncodingKind.EVEX && state.Encoding != EncodingKind.MVEX);
+			Debug.Assert(state.Encoding != EncodingKind.EVEX);
 			bool isValid;
 			if (state.addressSize == OpSize.Size64)
 				isValid = ReadOpMem32Or64(ref instruction, Register.RAX, Register.RAX, TupleType.N1, false);
@@ -828,7 +777,7 @@ namespace Blazed.Intel {
 		// (see SDM Vol 1, 17.5.1 Intel MPX and Operating Modes)
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal void ReadOpMem_MPX(ref Instruction instruction) {
-			Debug.Assert(state.Encoding != EncodingKind.EVEX && state.Encoding != EncodingKind.MVEX);
+			Debug.Assert(state.Encoding != EncodingKind.EVEX);
 			if (is64bMode) {
 				state.addressSize = OpSize.Size64;
 				ReadOpMem32Or64(ref instruction, Register.RAX, Register.RAX, TupleType.N1, false);
@@ -844,7 +793,7 @@ namespace Blazed.Intel {
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal void ReadOpMem(ref Instruction instruction, TupleType tupleType) {
-			Debug.Assert(state.Encoding == EncodingKind.EVEX || state.Encoding == EncodingKind.MVEX);
+			Debug.Assert(state.Encoding == EncodingKind.EVEX);
 			if (state.addressSize == OpSize.Size64)
 				ReadOpMem32Or64(ref instruction, Register.RAX, Register.RAX, tupleType, false);
 			else if (state.addressSize == OpSize.Size32)
@@ -1223,4 +1172,3 @@ after_imm_loop:
 		IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 	}
 }
-#endif
