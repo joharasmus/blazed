@@ -113,42 +113,6 @@ namespace Blazed.Intel.FormatterInternal {
 			case Code.Scasw_AX_m16:
 			case Code.Scasd_EAX_m32:
 			case Code.Scasq_RAX_m64:
-			case Code.Montmul_16:
-			case Code.Montmul_32:
-			case Code.Montmul_64:
-			case Code.Xsha1_16:
-			case Code.Xsha1_32:
-			case Code.Xsha1_64:
-			case Code.Xsha256_16:
-			case Code.Xsha256_32:
-			case Code.Xsha256_64:
-			case Code.Xcryptecb_16:
-			case Code.Xcryptecb_32:
-			case Code.Xcryptecb_64:
-			case Code.Xcryptcbc_16:
-			case Code.Xcryptcbc_32:
-			case Code.Xcryptcbc_64:
-			case Code.Xcryptctr_16:
-			case Code.Xcryptctr_32:
-			case Code.Xcryptctr_64:
-			case Code.Xcryptcfb_16:
-			case Code.Xcryptcfb_32:
-			case Code.Xcryptcfb_64:
-			case Code.Xcryptofb_16:
-			case Code.Xcryptofb_32:
-			case Code.Xcryptofb_64:
-			case Code.Via_undoc_F30FA6F0_16:
-			case Code.Via_undoc_F30FA6F0_32:
-			case Code.Via_undoc_F30FA6F0_64:
-			case Code.Via_undoc_F30FA6F8_16:
-			case Code.Via_undoc_F30FA6F8_32:
-			case Code.Via_undoc_F30FA6F8_64:
-			case Code.Xsha512_16:
-			case Code.Xsha512_32:
-			case Code.Xsha512_64:
-			case Code.Xsha512_alt_16:
-			case Code.Xsha512_alt_32:
-			case Code.Xsha512_alt_64:
 				return true;
 
 			default:

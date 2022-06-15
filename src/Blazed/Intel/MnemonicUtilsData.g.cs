@@ -1966,32 +1966,8 @@ namespace Blazed.Intel {
 			(ushort)Mnemonic.Shld,// Shld_rm16_r16_CL
 			(ushort)Mnemonic.Shld,// Shld_rm32_r32_CL
 			(ushort)Mnemonic.Shld,// Shld_rm64_r64_CL
-			(ushort)Mnemonic.Montmul,// Montmul_16
-			(ushort)Mnemonic.Montmul,// Montmul_32
-			(ushort)Mnemonic.Montmul,// Montmul_64
-			(ushort)Mnemonic.Xsha1,// Xsha1_16
-			(ushort)Mnemonic.Xsha1,// Xsha1_32
-			(ushort)Mnemonic.Xsha1,// Xsha1_64
-			(ushort)Mnemonic.Xsha256,// Xsha256_16
-			(ushort)Mnemonic.Xsha256,// Xsha256_32
-			(ushort)Mnemonic.Xsha256,// Xsha256_64
 			(ushort)Mnemonic.Xbts,// Xbts_r16_rm16
 			(ushort)Mnemonic.Xbts,// Xbts_r32_rm32
-			(ushort)Mnemonic.Xcryptecb,// Xcryptecb_16
-			(ushort)Mnemonic.Xcryptecb,// Xcryptecb_32
-			(ushort)Mnemonic.Xcryptecb,// Xcryptecb_64
-			(ushort)Mnemonic.Xcryptcbc,// Xcryptcbc_16
-			(ushort)Mnemonic.Xcryptcbc,// Xcryptcbc_32
-			(ushort)Mnemonic.Xcryptcbc,// Xcryptcbc_64
-			(ushort)Mnemonic.Xcryptctr,// Xcryptctr_16
-			(ushort)Mnemonic.Xcryptctr,// Xcryptctr_32
-			(ushort)Mnemonic.Xcryptctr,// Xcryptctr_64
-			(ushort)Mnemonic.Xcryptcfb,// Xcryptcfb_16
-			(ushort)Mnemonic.Xcryptcfb,// Xcryptcfb_32
-			(ushort)Mnemonic.Xcryptcfb,// Xcryptcfb_64
-			(ushort)Mnemonic.Xcryptofb,// Xcryptofb_16
-			(ushort)Mnemonic.Xcryptofb,// Xcryptofb_32
-			(ushort)Mnemonic.Xcryptofb,// Xcryptofb_64
 			(ushort)Mnemonic.Ibts,// Ibts_rm16_r16
 			(ushort)Mnemonic.Ibts,// Ibts_rm32_r32
 			(ushort)Mnemonic.Cmpxchg,// Cmpxchg486_rm8_r8
@@ -4775,18 +4751,6 @@ namespace Blazed.Intel {
 			(ushort)Mnemonic.Undoc,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D0
 			(ushort)Mnemonic.Undoc,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D1
 			(ushort)Mnemonic.Vcvtfxpntpd2dq,// MVEX_Vcvtfxpntpd2dq_zmm_k1_zmmmt_imm8
-			(ushort)Mnemonic.Undoc,// Via_undoc_F30FA6F0_16
-			(ushort)Mnemonic.Undoc,// Via_undoc_F30FA6F0_32
-			(ushort)Mnemonic.Undoc,// Via_undoc_F30FA6F0_64
-			(ushort)Mnemonic.Undoc,// Via_undoc_F30FA6F8_16
-			(ushort)Mnemonic.Undoc,// Via_undoc_F30FA6F8_32
-			(ushort)Mnemonic.Undoc,// Via_undoc_F30FA6F8_64
-			(ushort)Mnemonic.Xsha512,// Xsha512_16
-			(ushort)Mnemonic.Xsha512,// Xsha512_32
-			(ushort)Mnemonic.Xsha512,// Xsha512_64
-			(ushort)Mnemonic.Xsha512_alt,// Xsha512_alt_16
-			(ushort)Mnemonic.Xsha512_alt,// Xsha512_alt_32
-			(ushort)Mnemonic.Xsha512_alt,// Xsha512_alt_64
 			(ushort)Mnemonic.Zero_bytes,// Zero_bytes
 		};
 	}

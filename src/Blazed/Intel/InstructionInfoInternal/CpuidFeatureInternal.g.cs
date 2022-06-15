@@ -101,9 +101,6 @@ namespace Blazed.Intel.InstructionInfoInternal {
 		MPX,
 		MSR,
 		MULTIBYTENOP,
-		PADLOCK_ACE,
-		PADLOCK_PHE,
-		PADLOCK_PMM,
 		PAUSE,
 		PCLMULQDQ,
 		PCLMULQDQ_and_AVX,
@@ -179,7 +176,6 @@ namespace Blazed.Intel.InstructionInfoInternal {
 		AVX512VL_and_AVX512_FP16,
 		UDBG,
 		KNC,
-		PADLOCK_UNDOC,
 	}
 }
 #endif

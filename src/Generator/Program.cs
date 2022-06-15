@@ -107,8 +107,6 @@ Options:
     Don't include MVEX instructions
 --no-knc
     Don't include KNC instructions (MVEX + KNC VEX)
---no-padlock
-    Don't include Centaur (VIA) PadLock instructions
 --include-cpuid <name>
     Include instructions with these CPUID features, remove everything else
     eg. --include-cpuid intel8086;intel186;intel286;intel386;intel486;x64;wbnoinvd
@@ -156,12 +154,6 @@ Options:
 			case "--no-knc":
 				options.GeneratorFlags |= GeneratorFlags.NoMVEX;
 				options.ExcludeCpuid.Add(nameof(CpuidFeature.KNC));
-				break;
-
-			case "--no-padlock":
-				options.ExcludeCpuid.Add(nameof(CpuidFeature.PADLOCK_ACE));
-				options.ExcludeCpuid.Add(nameof(CpuidFeature.PADLOCK_PHE));
-				options.ExcludeCpuid.Add(nameof(CpuidFeature.PADLOCK_PMM));
 				break;
 
 			case "--include-cpuid":

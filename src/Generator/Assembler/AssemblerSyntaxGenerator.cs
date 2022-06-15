@@ -1876,13 +1876,6 @@ abstract class AssemblerSyntaxGenerator {
 			instrFlags.Add((group.Flags & OpCodeArgFlags.HasLabelUlong) == 0 ?
 				testInstrFlags[nameof(TestInstrFlags.Branch)] : testInstrFlags[nameof(TestInstrFlags.BranchU64)]);
 		}
-		foreach (var cpuid in def.Cpuid) {
-			if (cpuid.RawName.Contains("PADLOCK", StringComparison.Ordinal)) {
-				// They're mandatory prefix instructions but the REP prefix isn't cleared since it's shown in disassembly
-				instrFlags.Add(testInstrFlags[nameof(TestInstrFlags.RemoveRepRepnePrefixes)]);
-				break;
-			}
-		}
 		return instrFlags;
 	}
 

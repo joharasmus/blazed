@@ -7061,13 +7061,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void montmul() {
-			{ /* if (Bitness == 64) */
-				TestAssembler(c => c.montmul(), Instruction.Create(Code.Montmul_64), TestInstrFlags.RemoveRepRepnePrefixes, decoderOptions: DecoderOptions.NoInvalidCheck);
-			} /* else skip !(Bitness == 64) not supported by this Assembler bitness */
-		}
-
-		[Fact]
 		public void mov_r8_r8() {
 			TestAssembler(c => c.mov(dl, bl), Instruction.Create(Code.Mov_rm8_r8, Register.DL, Register.BL));
 		}
@@ -48772,41 +48765,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void xcryptcbc() {
-			{ /* if (Bitness == 64) */
-				TestAssembler(c => c.xcryptcbc(), Instruction.Create(Code.Xcryptcbc_64), TestInstrFlags.RemoveRepRepnePrefixes);
-			} /* else skip !(Bitness == 64) not supported by this Assembler bitness */
-		}
-
-		[Fact]
-		public void xcryptcfb() {
-			{ /* if (Bitness == 64) */
-				TestAssembler(c => c.xcryptcfb(), Instruction.Create(Code.Xcryptcfb_64), TestInstrFlags.RemoveRepRepnePrefixes);
-			} /* else skip !(Bitness == 64) not supported by this Assembler bitness */
-		}
-
-		[Fact]
-		public void xcryptctr() {
-			{ /* if (Bitness == 64) */
-				TestAssembler(c => c.xcryptctr(), Instruction.Create(Code.Xcryptctr_64), TestInstrFlags.RemoveRepRepnePrefixes);
-			} /* else skip !(Bitness == 64) not supported by this Assembler bitness */
-		}
-
-		[Fact]
-		public void xcryptecb() {
-			{ /* if (Bitness == 64) */
-				TestAssembler(c => c.xcryptecb(), Instruction.Create(Code.Xcryptecb_64), TestInstrFlags.RemoveRepRepnePrefixes);
-			} /* else skip !(Bitness == 64) not supported by this Assembler bitness */
-		}
-
-		[Fact]
-		public void xcryptofb() {
-			{ /* if (Bitness == 64) */
-				TestAssembler(c => c.xcryptofb(), Instruction.Create(Code.Xcryptofb_64), TestInstrFlags.RemoveRepRepnePrefixes);
-			} /* else skip !(Bitness == 64) not supported by this Assembler bitness */
-		}
-
-		[Fact]
 		public void xend() {
 			TestAssembler(c => c.xend(), Instruction.Create(Code.Xend));
 		}
@@ -49077,34 +49035,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		[Fact]
 		public void xsetbv() {
 			TestAssembler(c => c.xsetbv(), Instruction.Create(Code.Xsetbv));
-		}
-
-		[Fact]
-		public void xsha1() {
-			{ /* if (Bitness == 64) */
-				TestAssembler(c => c.xsha1(), Instruction.Create(Code.Xsha1_64), TestInstrFlags.RemoveRepRepnePrefixes);
-			} /* else skip !(Bitness == 64) not supported by this Assembler bitness */
-		}
-
-		[Fact]
-		public void xsha256() {
-			{ /* if (Bitness == 64) */
-				TestAssembler(c => c.xsha256(), Instruction.Create(Code.Xsha256_64), TestInstrFlags.RemoveRepRepnePrefixes);
-			} /* else skip !(Bitness == 64) not supported by this Assembler bitness */
-		}
-
-		[Fact]
-		public void xsha512() {
-			{ /* if (Bitness == 64) */
-				TestAssembler(c => c.xsha512(), Instruction.Create(Code.Xsha512_64), TestInstrFlags.RemoveRepRepnePrefixes);
-			} /* else skip !(Bitness == 64) not supported by this Assembler bitness */
-		}
-
-		[Fact]
-		public void xsha512_alt() {
-			{ /* if (Bitness == 64) */
-				TestAssembler(c => c.xsha512_alt(), Instruction.Create(Code.Xsha512_alt_64), TestInstrFlags.RemoveRepRepnePrefixes);
-			} /* else skip !(Bitness == 64) not supported by this Assembler bitness */
 		}
 
 		[Fact]

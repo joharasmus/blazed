@@ -158,16 +158,8 @@ Jle_rel32_32
 Jg_rel32_32
 Pushd_FS
 Popd_FS
-Montmul_16
-Xsha1_16
-Xsha256_16
 Xbts_r16_rm16
 Xbts_r32_rm32
-Xcryptecb_16
-Xcryptcbc_16
-Xcryptctr_16
-Xcryptcfb_16
-Xcryptofb_16
 Ibts_rm16_r16
 Ibts_rm32_r32
 Cmpxchg486_rm8_r8
@@ -190,7 +182,3 @@ Invlpgbw
 Fnstdw_AX
 Fnstsg_AX
 Altinst
-Via_undoc_F30FA6F0_16
-Via_undoc_F30FA6F8_16
-Xsha512_16
-Xsha512_alt_16

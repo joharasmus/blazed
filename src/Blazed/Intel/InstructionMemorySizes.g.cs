@@ -1966,32 +1966,8 @@ namespace Blazed.Intel {
 			(byte)MemorySize.UInt16,// Shld_rm16_r16_CL
 			(byte)MemorySize.UInt32,// Shld_rm32_r32_CL
 			(byte)MemorySize.UInt64,// Shld_rm64_r64_CL
-			0,// Montmul_16
-			0,// Montmul_32
-			0,// Montmul_64
-			0,// Xsha1_16
-			0,// Xsha1_32
-			0,// Xsha1_64
-			0,// Xsha256_16
-			0,// Xsha256_32
-			0,// Xsha256_64
 			(byte)MemorySize.UInt16,// Xbts_r16_rm16
 			(byte)MemorySize.UInt32,// Xbts_r32_rm32
-			0,// Xcryptecb_16
-			0,// Xcryptecb_32
-			0,// Xcryptecb_64
-			0,// Xcryptcbc_16
-			0,// Xcryptcbc_32
-			0,// Xcryptcbc_64
-			0,// Xcryptctr_16
-			0,// Xcryptctr_32
-			0,// Xcryptctr_64
-			0,// Xcryptcfb_16
-			0,// Xcryptcfb_32
-			0,// Xcryptcfb_64
-			0,// Xcryptofb_16
-			0,// Xcryptofb_32
-			0,// Xcryptofb_64
 			(byte)MemorySize.UInt16,// Ibts_rm16_r16
 			(byte)MemorySize.UInt32,// Ibts_rm32_r32
 			(byte)MemorySize.UInt8,// Cmpxchg486_rm8_r8
@@ -4775,18 +4751,6 @@ namespace Blazed.Intel {
 			0,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D0
 			0,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D1
 			0,// MVEX_Vcvtfxpntpd2dq_zmm_k1_zmmmt_imm8
-			0,// Via_undoc_F30FA6F0_16
-			0,// Via_undoc_F30FA6F0_32
-			0,// Via_undoc_F30FA6F0_64
-			0,// Via_undoc_F30FA6F8_16
-			0,// Via_undoc_F30FA6F8_32
-			0,// Via_undoc_F30FA6F8_64
-			0,// Xsha512_16
-			0,// Xsha512_32
-			0,// Xsha512_64
-			0,// Xsha512_alt_16
-			0,// Xsha512_alt_32
-			0,// Xsha512_alt_64
 			0,// Zero_bytes
 		};
 
@@ -6749,32 +6713,8 @@ namespace Blazed.Intel {
 			0,// Shld_rm16_r16_CL
 			0,// Shld_rm32_r32_CL
 			0,// Shld_rm64_r64_CL
-			0,// Montmul_16
-			0,// Montmul_32
-			0,// Montmul_64
-			0,// Xsha1_16
-			0,// Xsha1_32
-			0,// Xsha1_64
-			0,// Xsha256_16
-			0,// Xsha256_32
-			0,// Xsha256_64
 			0,// Xbts_r16_rm16
 			0,// Xbts_r32_rm32
-			0,// Xcryptecb_16
-			0,// Xcryptecb_32
-			0,// Xcryptecb_64
-			0,// Xcryptcbc_16
-			0,// Xcryptcbc_32
-			0,// Xcryptcbc_64
-			0,// Xcryptctr_16
-			0,// Xcryptctr_32
-			0,// Xcryptctr_64
-			0,// Xcryptcfb_16
-			0,// Xcryptcfb_32
-			0,// Xcryptcfb_64
-			0,// Xcryptofb_16
-			0,// Xcryptofb_32
-			0,// Xcryptofb_64
 			0,// Ibts_rm16_r16
 			0,// Ibts_rm32_r32
 			0,// Cmpxchg486_rm8_r8
@@ -9558,18 +9498,6 @@ namespace Blazed.Intel {
 			0,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D0
 			0,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D1
 			0,// MVEX_Vcvtfxpntpd2dq_zmm_k1_zmmmt_imm8
-			0,// Via_undoc_F30FA6F0_16
-			0,// Via_undoc_F30FA6F0_32
-			0,// Via_undoc_F30FA6F0_64
-			0,// Via_undoc_F30FA6F8_16
-			0,// Via_undoc_F30FA6F8_32
-			0,// Via_undoc_F30FA6F8_64
-			0,// Xsha512_16
-			0,// Xsha512_32
-			0,// Xsha512_64
-			0,// Xsha512_alt_16
-			0,// Xsha512_alt_32
-			0,// Xsha512_alt_64
 			0,// Zero_bytes
 		};
 	}

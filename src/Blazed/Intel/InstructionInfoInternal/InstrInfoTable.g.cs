@@ -8,7 +8,7 @@
 #if INSTR_INFO
 namespace Blazed.Intel.InstructionInfoInternal {
 	static class InstrInfoTable {
-		internal static readonly uint[] Data = new uint[9560] {
+		internal static readonly uint[] Data = new uint[9488] {
 			0x00000000, 0x00900000,// INVALID
 			0x00000000, 0x00900000,// DeclareByte
 			0x00000000, 0x00900000,// DeclareWord
@@ -314,7 +314,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000056, 0x00000000,// Xchg_r16_AX
 			0x00000056, 0x05000000,// Xchg_r32_EAX
 			0x00000056, 0x0C000000,// Xchg_r64_RAX
-			0x00000000, 0x60000000,// Pause
+			0x00000000, 0x5D000000,// Pause
 			0x01A00000, 0x00000000,// Cbw
 			0x01B00000, 0x05000000,// Cwde
 			0x01C00000, 0x0C000000,// Cdqe
@@ -411,12 +411,12 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x02A00037, 0x00000000,// Lds_r16_m1616
 			0x02A00037, 0x05000000,// Lds_r32_m1632
 			0x00000037, 0x00000000,// Mov_rm8_imm8
-			0x00000004, 0x70020000,// Xabort_imm8
+			0x00000004, 0x6D020000,// Xabort_imm8
 			0x00000037, 0x00000000,// Mov_rm16_imm16
 			0x00000037, 0x05000000,// Mov_rm32_imm32
 			0x00000037, 0x0C000000,// Mov_rm64_imm32
-			0x02B00004, 0x70800000,// Xbegin_rel16
-			0x02B00004, 0x70800000,// Xbegin_rel32
+			0x02B00004, 0x6D800000,// Xbegin_rel16
+			0x02B00004, 0x6D800000,// Xbegin_rel32
 			0x02C00034, 0x02040000,// Enterw_imm16_imm8
 			0x02D00034, 0x05040000,// Enterd_imm16_imm8
 			0x02E00034, 0x0C040000,// Enterq_imm16_imm8
@@ -576,7 +576,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00046011, 0x44000000,// Fcmovu_st0_sti
 			0x03F60000, 0x47000000,// Fucompp
 			0x00064004, 0x43000000,// Fild_m32int
-			0x03B04007, 0x7A000000,// Fisttp_m32int
+			0x03B04007, 0x77000000,// Fisttp_m32int
 			0x03B64007, 0x43000000,// Fist_m32int
 			0x03B64007, 0x43000000,// Fistp_m32int
 			0x00064004, 0x43000000,// Fld_m80fp
@@ -615,7 +615,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00064036, 0x43000000,// Fdivr_sti_st0
 			0x00064036, 0x43000000,// Fdiv_sti_st0
 			0x00064004, 0x43000000,// Fld_m64fp
-			0x03B04007, 0x7A000000,// Fisttp_m64int
+			0x03B04007, 0x77000000,// Fisttp_m64int
 			0x03B64007, 0x43000000,// Fst_m64fp
 			0x03B64007, 0x43000000,// Fstp_m64fp
 			0x0405E004, 0x43000000,// Frstor_m94byte
@@ -649,7 +649,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00064036, 0x43000000,// Fdivrp_sti_st0
 			0x00064036, 0x43000000,// Fdivp_sti_st0
 			0x00064004, 0x43000000,// Fild_m16int
-			0x03B04007, 0x7A000000,// Fisttp_m16int
+			0x03B04007, 0x77000000,// Fisttp_m16int
 			0x03B64007, 0x43000000,// Fist_m16int
 			0x03B64007, 0x43000000,// Fistp_m16int
 			0x00064004, 0x43000000,// Fbld_m80bcd
@@ -822,46 +822,46 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x05100004, 0x0C080000,// Lmsw_r64m16
 			0x00000003, 0x08080000,// Invlpg_m
 			0x05266000, 0x3E080000,// Enclv
-			0x0008C000, 0x87500000,// Vmcall
-			0x0008C000, 0x87580000,// Vmlaunch
-			0x0008C000, 0x87580000,// Vmresume
-			0x0008C000, 0x87080000,// Vmxoff
-			0x05398000, 0x64080000,// Pconfig
+			0x0008C000, 0x84500000,// Vmcall
+			0x0008C000, 0x84580000,// Vmlaunch
+			0x0008C000, 0x84580000,// Vmresume
+			0x0008C000, 0x84080000,// Vmxoff
+			0x05398000, 0x61080000,// Pconfig
 			0x05400000, 0x55000000,// Monitorw
 			0x05500000, 0x55000000,// Monitord
 			0x05600000, 0x55000000,// Monitorq
 			0x05700000, 0x55000000,// Mwait
-			0x00006000, 0x75080000,// Clac
-			0x00050000, 0x75080000,// Stac
-			0x05266000, 0x72080000,// Encls
-			0x05800000, 0x90000000,// Xgetbv
-			0x05900000, 0x90080000,// Xsetbv
-			0x05766000, 0x87000000,// Vmfunc
-			0x00000000, 0x70000000,// Xend
+			0x00006000, 0x72080000,// Clac
+			0x00050000, 0x72080000,// Stac
+			0x05266000, 0x6F080000,// Encls
+			0x05800000, 0x8D000000,// Xgetbv
+			0x05900000, 0x8D080000,// Xsetbv
+			0x05766000, 0x84000000,// Vmfunc
+			0x00000000, 0x6D000000,// Xend
 			0x00098000, 0x4F000000,// Xtest
-			0x05266000, 0x72000000,// Enclu
-			0x05A22000, 0x7F5A0000,// Vmrunw
-			0x05B22000, 0x7F5A0000,// Vmrund
-			0x05C22000, 0x7F5A0000,// Vmrunq
-			0x00000000, 0x7F500000,// Vmmcall
-			0x05D00000, 0x7F080000,// Vmloadw
-			0x05E00000, 0x7F080000,// Vmloadd
-			0x05F00000, 0x7F080000,// Vmloadq
-			0x06000000, 0x7F080000,// Vmsavew
-			0x06100000, 0x7F080000,// Vmsaved
-			0x06200000, 0x7F080000,// Vmsaveq
-			0x00000000, 0x74080000,// Stgi
-			0x00000000, 0x7F080000,// Clgi
-			0x0630A000, 0x74480000,// Skinit
-			0x06400000, 0x7F080000,// Invlpgaw
-			0x05700000, 0x7F080000,// Invlpgad
-			0x06500000, 0x7F080000,// Invlpgaq
+			0x05266000, 0x6F000000,// Enclu
+			0x05A22000, 0x7C5A0000,// Vmrunw
+			0x05B22000, 0x7C5A0000,// Vmrund
+			0x05C22000, 0x7C5A0000,// Vmrunq
+			0x00000000, 0x7C500000,// Vmmcall
+			0x05D00000, 0x7C080000,// Vmloadw
+			0x05E00000, 0x7C080000,// Vmloadd
+			0x05F00000, 0x7C080000,// Vmloadq
+			0x06000000, 0x7C080000,// Vmsavew
+			0x06100000, 0x7C080000,// Vmsaved
+			0x06200000, 0x7C080000,// Vmsaveq
+			0x00000000, 0x71080000,// Stgi
+			0x00000000, 0x7C080000,// Clgi
+			0x0630A000, 0x71480000,// Skinit
+			0x06400000, 0x7C080000,// Invlpgaw
+			0x05700000, 0x7C080000,// Invlpgad
+			0x06500000, 0x7C080000,// Invlpgaq
 			0x00000000, 0x31080000,// Setssbsy
 			0x00028000, 0x31000000,// Saveprevssp
-			0x05800000, 0x65000000,// Rdpkru
-			0x05900000, 0x65000000,// Wrpkru
+			0x05800000, 0x62000000,// Rdpkru
+			0x05900000, 0x62000000,// Wrpkru
 			0x00000000, 0x0C080000,// Swapgs
-			0x06600000, 0x6F000000,// Rdtscp
+			0x06600000, 0x6C000000,// Rdtscp
 			0x05400000, 0x56000000,// Monitorxw
 			0x05500000, 0x56000000,// Monitorxd
 			0x05600000, 0x56000000,// Monitorxq
@@ -870,7 +870,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x06800000, 0x37000000,// Clzerow
 			0x06900000, 0x37000000,// Clzerod
 			0x06A00000, 0x37000000,// Clzeroq
-			0x05874000, 0x6C000000,// Rdpru
+			0x05874000, 0x69000000,// Rdpru
 			0x00096031, 0x03000000,// Lar_r16_rm16
 			0x01696031, 0x05000000,// Lar_r32_r32m16
 			0x01696031, 0x0C000000,// Lar_r64_r64m16
@@ -879,22 +879,22 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x01696031, 0x0C000000,// Lsl_r64_r64m16
 			0x00000000, 0x040A0000,// Storeall
 			0x00000000, 0x040A0000,// Loadall286
-			0x06B24000, 0x81500000,// Syscall
+			0x06B24000, 0x7E500000,// Syscall
 			0x05000000, 0x03080000,// Clts
 			0x06C00000, 0x060A0000,// Loadall386
-			0x06D6C000, 0x81480000,// Sysretd
-			0x06E6C000, 0x81480000,// Sysretq
+			0x06D6C000, 0x7E480000,// Sysretd
+			0x06E6C000, 0x7E480000,// Sysretq
 			0x00000000, 0x08080000,// Invd
 			0x00000000, 0x08080000,// Wbinvd
-			0x00000000, 0x8E080000,// Wbnoinvd
+			0x00000000, 0x8B080000,// Wbnoinvd
 			0x00000000, 0x32080000,// Cl1invmb
 			0x00000000, 0x03900000,// Ud2
 			0x00000000, 0x5C000000,// Reservednop_rm16_r16_0F0D
 			0x00000000, 0x5C000000,// Reservednop_rm32_r32_0F0D
 			0x00000000, 0x5C000000,// Reservednop_rm64_r64_0F0D
-			0x00000003, 0x67000000,// Prefetch_m8
-			0x00000003, 0x67000000,// Prefetchw_m8
-			0x00000003, 0x68000000,// Prefetchwt1_m8
+			0x00000003, 0x64000000,// Prefetch_m8
+			0x00000003, 0x64000000,// Prefetchw_m8
+			0x00000003, 0x65000000,// Prefetchwt1_m8
 			0x00000000, 0x3C000000,// Femms
 			0x00000037, 0x0A000000,// Umov_rm8_r8
 			0x00000037, 0x0A000000,// Umov_rm16_r16
@@ -902,120 +902,120 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x0A000000,// Umov_r8_rm8
 			0x00000037, 0x0A000000,// Umov_r16_rm16
 			0x00000037, 0x0A000000,// Umov_r32_rm32
-			0x00000037, 0x77000000,// Movups_xmm_xmmm128
+			0x00000037, 0x74000000,// Movups_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovups_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovups_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vmovups_xmm_k1z_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vmovups_ymm_k1z_ymmm256
 			0x00000038, 0x1E000002,// EVEX_Vmovups_zmm_k1z_zmmm512
-			0x00000037, 0x78000000,// Movupd_xmm_xmmm128
+			0x00000037, 0x75000000,// Movupd_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovupd_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovupd_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vmovupd_xmm_k1z_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vmovupd_ymm_k1z_ymmm256
 			0x00000038, 0x1E000002,// EVEX_Vmovupd_zmm_k1z_zmmm512
-			0x0000003B, 0x77000000,// Movss_xmm_xmmm32
+			0x0000003B, 0x74000000,// Movss_xmm_xmmm32
 			0x000000B7, 0x0F000001,// VEX_Vmovss_xmm_xmm_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovss_xmm_m32
 			0x000000B7, 0x1E000002,// EVEX_Vmovss_xmm_k1z_xmm_xmm
 			0x00000037, 0x1E000002,// EVEX_Vmovss_xmm_k1z_m32
-			0x0000003B, 0x78000000,// Movsd_xmm_xmmm64
+			0x0000003B, 0x75000000,// Movsd_xmm_xmmm64
 			0x000000B7, 0x0F000001,// VEX_Vmovsd_xmm_xmm_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovsd_xmm_m64
 			0x000000B7, 0x1E000002,// EVEX_Vmovsd_xmm_k1z_xmm_xmm
 			0x00000037, 0x1E000002,// EVEX_Vmovsd_xmm_k1z_m64
-			0x00000037, 0x77000000,// Movups_xmmm128_xmm
+			0x00000037, 0x74000000,// Movups_xmmm128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovups_xmmm128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovups_ymmm256_ymm
 			0x00000037, 0x2D000002,// EVEX_Vmovups_xmmm128_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vmovups_ymmm256_k1z_ymm
 			0x00000038, 0x1E000002,// EVEX_Vmovups_zmmm512_k1z_zmm
-			0x00000037, 0x78000000,// Movupd_xmmm128_xmm
+			0x00000037, 0x75000000,// Movupd_xmmm128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovupd_xmmm128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovupd_ymmm256_ymm
 			0x00000037, 0x2D000002,// EVEX_Vmovupd_xmmm128_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vmovupd_ymmm256_k1z_ymm
 			0x00000038, 0x1E000002,// EVEX_Vmovupd_zmmm512_k1z_zmm
-			0x0000003B, 0x77000000,// Movss_xmmm32_xmm
+			0x0000003B, 0x74000000,// Movss_xmmm32_xmm
 			0x000000B7, 0x0F000001,// VEX_Vmovss_xmm_xmm_xmm_0F11
 			0x00000037, 0x0F000001,// VEX_Vmovss_m32_xmm
 			0x000000B7, 0x1E000002,// EVEX_Vmovss_xmm_k1z_xmm_xmm_0F11
 			0x00000037, 0x1E000002,// EVEX_Vmovss_m32_k1_xmm
-			0x0000003B, 0x78000000,// Movsd_xmmm64_xmm
+			0x0000003B, 0x75000000,// Movsd_xmmm64_xmm
 			0x000000B7, 0x0F000001,// VEX_Vmovsd_xmm_xmm_xmm_0F11
 			0x00000037, 0x0F000001,// VEX_Vmovsd_m64_xmm
 			0x000000B7, 0x1E000002,// EVEX_Vmovsd_xmm_k1z_xmm_xmm_0F11
 			0x00000037, 0x1E000002,// EVEX_Vmovsd_m64_k1_xmm
-			0x00000036, 0x77000000,// Movhlps_xmm_xmm
-			0x00000036, 0x77000000,// Movlps_xmm_m64
+			0x00000036, 0x74000000,// Movhlps_xmm_xmm
+			0x00000036, 0x74000000,// Movlps_xmm_m64
 			0x000000B7, 0x0F000001,// VEX_Vmovhlps_xmm_xmm_xmm
 			0x000000B7, 0x0F000001,// VEX_Vmovlps_xmm_xmm_m64
 			0x000000B7, 0x1E000002,// EVEX_Vmovhlps_xmm_xmm_xmm
 			0x000000B7, 0x1E000002,// EVEX_Vmovlps_xmm_xmm_m64
-			0x00000036, 0x78000000,// Movlpd_xmm_m64
+			0x00000036, 0x75000000,// Movlpd_xmm_m64
 			0x000000B7, 0x0F000001,// VEX_Vmovlpd_xmm_xmm_m64
 			0x000000B7, 0x1E000002,// EVEX_Vmovlpd_xmm_xmm_m64
-			0x00000037, 0x79000000,// Movsldup_xmm_xmmm128
+			0x00000037, 0x76000000,// Movsldup_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovsldup_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovsldup_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vmovsldup_xmm_k1z_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vmovsldup_ymm_k1z_ymmm256
 			0x00000038, 0x1E000002,// EVEX_Vmovsldup_zmm_k1z_zmmm512
-			0x00000037, 0x79000000,// Movddup_xmm_xmmm64
+			0x00000037, 0x76000000,// Movddup_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vmovddup_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vmovddup_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vmovddup_xmm_k1z_xmmm64
 			0x00000037, 0x2D000002,// EVEX_Vmovddup_ymm_k1z_ymmm256
 			0x00000038, 0x1E000002,// EVEX_Vmovddup_zmm_k1z_zmmm512
-			0x00000037, 0x77000000,// Movlps_m64_xmm
+			0x00000037, 0x74000000,// Movlps_m64_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovlps_m64_xmm
 			0x00000037, 0x1E000002,// EVEX_Vmovlps_m64_xmm
-			0x00000037, 0x78000000,// Movlpd_m64_xmm
+			0x00000037, 0x75000000,// Movlpd_m64_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovlpd_m64_xmm
 			0x00000037, 0x1E000002,// EVEX_Vmovlpd_m64_xmm
-			0x00000036, 0x77000000,// Unpcklps_xmm_xmmm128
+			0x00000036, 0x74000000,// Unpcklps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vunpcklps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vunpcklps_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vunpcklps_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2D000002,// EVEX_Vunpcklps_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1E000002,// EVEX_Vunpcklps_zmm_k1z_zmm_zmmm512b32
-			0x00000036, 0x78000000,// Unpcklpd_xmm_xmmm128
+			0x00000036, 0x75000000,// Unpcklpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vunpcklpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vunpcklpd_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vunpcklpd_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vunpcklpd_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vunpcklpd_zmm_k1z_zmm_zmmm512b64
-			0x00000036, 0x77000000,// Unpckhps_xmm_xmmm128
+			0x00000036, 0x74000000,// Unpckhps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vunpckhps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vunpckhps_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vunpckhps_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2D000002,// EVEX_Vunpckhps_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1E000002,// EVEX_Vunpckhps_zmm_k1z_zmm_zmmm512b32
-			0x00000036, 0x78000000,// Unpckhpd_xmm_xmmm128
+			0x00000036, 0x75000000,// Unpckhpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vunpckhpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vunpckhpd_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vunpckhpd_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vunpckhpd_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vunpckhpd_zmm_k1z_zmm_zmmm512b64
-			0x00000036, 0x77000000,// Movlhps_xmm_xmm
+			0x00000036, 0x74000000,// Movlhps_xmm_xmm
 			0x000000B7, 0x0F000001,// VEX_Vmovlhps_xmm_xmm_xmm
 			0x000000B7, 0x1E000002,// EVEX_Vmovlhps_xmm_xmm_xmm
-			0x00000036, 0x77000000,// Movhps_xmm_m64
+			0x00000036, 0x74000000,// Movhps_xmm_m64
 			0x000000B7, 0x0F000001,// VEX_Vmovhps_xmm_xmm_m64
 			0x000000B7, 0x1E000002,// EVEX_Vmovhps_xmm_xmm_m64
-			0x00000036, 0x78000000,// Movhpd_xmm_m64
+			0x00000036, 0x75000000,// Movhpd_xmm_m64
 			0x000000B7, 0x0F000001,// VEX_Vmovhpd_xmm_xmm_m64
 			0x000000B7, 0x1E000002,// EVEX_Vmovhpd_xmm_xmm_m64
-			0x00000037, 0x79000000,// Movshdup_xmm_xmmm128
+			0x00000037, 0x76000000,// Movshdup_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovshdup_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovshdup_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vmovshdup_xmm_k1z_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vmovshdup_ymm_k1z_ymmm256
 			0x00000038, 0x1E000002,// EVEX_Vmovshdup_zmm_k1z_zmmm512
-			0x00000037, 0x77000000,// Movhps_m64_xmm
+			0x00000037, 0x74000000,// Movhps_m64_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovhps_m64_xmm
 			0x00000037, 0x1E000002,// EVEX_Vmovhps_m64_xmm
-			0x00000037, 0x78000000,// Movhpd_m64_xmm
+			0x00000037, 0x75000000,// Movhpd_m64_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovhpd_m64_xmm
 			0x00000037, 0x1E000002,// EVEX_Vmovhpd_m64_xmm
 			0x00000000, 0x5C000000,// Reservednop_rm16_r16_0F18
@@ -1042,10 +1042,10 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000000, 0x5C000000,// Reservednop_rm16_r16_0F1F
 			0x00000000, 0x5C000000,// Reservednop_rm32_r32_0F1F
 			0x00000000, 0x5C000000,// Reservednop_rm64_r64_0F1F
-			0x00000003, 0x77000000,// Prefetchnta_m8
-			0x00000003, 0x77000000,// Prefetcht0_m8
-			0x00000003, 0x77000000,// Prefetcht1_m8
-			0x00000003, 0x77000000,// Prefetcht2_m8
+			0x00000003, 0x74000000,// Prefetchnta_m8
+			0x00000003, 0x74000000,// Prefetcht0_m8
+			0x00000003, 0x74000000,// Prefetcht1_m8
+			0x00000003, 0x74000000,// Prefetcht2_m8
 			0x00000027, 0x5A000000,// Bndldx_bnd_mib
 			0x00000037, 0x5A000000,// Bndmov_bnd_bndm64
 			0x00000037, 0x5A000000,// Bndmov_bnd_bndm128
@@ -1076,108 +1076,108 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x0005C037, 0x0C080000,// Mov_cr_r64
 			0x0005C037, 0x05080000,// Mov_dr_r32
 			0x0005C037, 0x0C080000,// Mov_dr_r64
-			0x0005C037, 0x9C080000,// Mov_r32_tr
-			0x0005C037, 0x9C080000,// Mov_tr_r32
-			0x00000037, 0x77000000,// Movaps_xmm_xmmm128
+			0x0005C037, 0x99080000,// Mov_r32_tr
+			0x0005C037, 0x99080000,// Mov_tr_r32
+			0x00000037, 0x74000000,// Movaps_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovaps_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovaps_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vmovaps_xmm_k1z_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vmovaps_ymm_k1z_ymmm256
 			0x00000038, 0x1E000002,// EVEX_Vmovaps_zmm_k1z_zmmm512
-			0x00000037, 0x78000000,// Movapd_xmm_xmmm128
+			0x00000037, 0x75000000,// Movapd_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovapd_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovapd_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vmovapd_xmm_k1z_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vmovapd_ymm_k1z_ymmm256
 			0x00000038, 0x1E000002,// EVEX_Vmovapd_zmm_k1z_zmmm512
-			0x00000037, 0x77000000,// Movaps_xmmm128_xmm
+			0x00000037, 0x74000000,// Movaps_xmmm128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovaps_xmmm128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovaps_ymmm256_ymm
 			0x00000037, 0x2D000002,// EVEX_Vmovaps_xmmm128_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vmovaps_ymmm256_k1z_ymm
 			0x00000038, 0x1E000002,// EVEX_Vmovaps_zmmm512_k1z_zmm
-			0x00000037, 0x78000000,// Movapd_xmmm128_xmm
+			0x00000037, 0x75000000,// Movapd_xmmm128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovapd_xmmm128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovapd_ymmm256_ymm
 			0x00000037, 0x2D000002,// EVEX_Vmovapd_xmmm128_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vmovapd_ymmm256_k1z_ymm
 			0x00000038, 0x1E000002,// EVEX_Vmovapd_zmmm512_k1z_zmm
-			0x00000036, 0x77000000,// Cvtpi2ps_xmm_mmm64
-			0x00000037, 0x78000000,// Cvtpi2pd_xmm_mmm64
-			0x00000036, 0x77000000,// Cvtsi2ss_xmm_rm32
-			0x00000036, 0x77000000,// Cvtsi2ss_xmm_rm64
+			0x00000036, 0x74000000,// Cvtpi2ps_xmm_mmm64
+			0x00000037, 0x75000000,// Cvtpi2pd_xmm_mmm64
+			0x00000036, 0x74000000,// Cvtsi2ss_xmm_rm32
+			0x00000036, 0x74000000,// Cvtsi2ss_xmm_rm64
 			0x000000B7, 0x0F000001,// VEX_Vcvtsi2ss_xmm_xmm_rm32
 			0x000000B7, 0x0F000001,// VEX_Vcvtsi2ss_xmm_xmm_rm64
 			0x000000B7, 0x1E000002,// EVEX_Vcvtsi2ss_xmm_xmm_rm32_er
 			0x000000B7, 0x1E000002,// EVEX_Vcvtsi2ss_xmm_xmm_rm64_er
-			0x00000036, 0x78000000,// Cvtsi2sd_xmm_rm32
-			0x00000036, 0x78000000,// Cvtsi2sd_xmm_rm64
+			0x00000036, 0x75000000,// Cvtsi2sd_xmm_rm32
+			0x00000036, 0x75000000,// Cvtsi2sd_xmm_rm64
 			0x000000B7, 0x0F000001,// VEX_Vcvtsi2sd_xmm_xmm_rm32
 			0x000000B7, 0x0F000001,// VEX_Vcvtsi2sd_xmm_xmm_rm64
 			0x000000B7, 0x1E000002,// EVEX_Vcvtsi2sd_xmm_xmm_rm32_er
 			0x000000B7, 0x1E000002,// EVEX_Vcvtsi2sd_xmm_xmm_rm64_er
-			0x00000037, 0x77000000,// Movntps_m128_xmm
+			0x00000037, 0x74000000,// Movntps_m128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovntps_m128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovntps_m256_ymm
 			0x00000037, 0x2D000002,// EVEX_Vmovntps_m128_xmm
 			0x00000037, 0x2D000002,// EVEX_Vmovntps_m256_ymm
 			0x00000037, 0x1E000002,// EVEX_Vmovntps_m512_zmm
-			0x00000037, 0x78000000,// Movntpd_m128_xmm
+			0x00000037, 0x75000000,// Movntpd_m128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovntpd_m128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovntpd_m256_ymm
 			0x00000037, 0x2D000002,// EVEX_Vmovntpd_m128_xmm
 			0x00000037, 0x2D000002,// EVEX_Vmovntpd_m256_ymm
 			0x00000037, 0x1E000002,// EVEX_Vmovntpd_m512_zmm
-			0x00000037, 0x7D000000,// Movntss_m32_xmm
-			0x00000037, 0x7D000000,// Movntsd_m64_xmm
-			0x00000037, 0x77000000,// Cvttps2pi_mm_xmmm64
-			0x00000037, 0x78000000,// Cvttpd2pi_mm_xmmm128
-			0x00000037, 0x77000000,// Cvttss2si_r32_xmmm32
-			0x00000037, 0x77000000,// Cvttss2si_r64_xmmm32
+			0x00000037, 0x7A000000,// Movntss_m32_xmm
+			0x00000037, 0x7A000000,// Movntsd_m64_xmm
+			0x00000037, 0x74000000,// Cvttps2pi_mm_xmmm64
+			0x00000037, 0x75000000,// Cvttpd2pi_mm_xmmm128
+			0x00000037, 0x74000000,// Cvttss2si_r32_xmmm32
+			0x00000037, 0x74000000,// Cvttss2si_r64_xmmm32
 			0x00000037, 0x0F000001,// VEX_Vcvttss2si_r32_xmmm32
 			0x00000037, 0x0F000001,// VEX_Vcvttss2si_r64_xmmm32
 			0x00000037, 0x1E000002,// EVEX_Vcvttss2si_r32_xmmm32_sae
 			0x00000037, 0x1E000002,// EVEX_Vcvttss2si_r64_xmmm32_sae
-			0x00000037, 0x78000000,// Cvttsd2si_r32_xmmm64
-			0x00000037, 0x78000000,// Cvttsd2si_r64_xmmm64
+			0x00000037, 0x75000000,// Cvttsd2si_r32_xmmm64
+			0x00000037, 0x75000000,// Cvttsd2si_r64_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vcvttsd2si_r32_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vcvttsd2si_r64_xmmm64
 			0x00000037, 0x1E000002,// EVEX_Vcvttsd2si_r32_xmmm64_sae
 			0x00000037, 0x1E000002,// EVEX_Vcvttsd2si_r64_xmmm64_sae
-			0x00000037, 0x77000000,// Cvtps2pi_mm_xmmm64
-			0x00000037, 0x78000000,// Cvtpd2pi_mm_xmmm128
-			0x00000037, 0x77000000,// Cvtss2si_r32_xmmm32
-			0x00000037, 0x77000000,// Cvtss2si_r64_xmmm32
+			0x00000037, 0x74000000,// Cvtps2pi_mm_xmmm64
+			0x00000037, 0x75000000,// Cvtpd2pi_mm_xmmm128
+			0x00000037, 0x74000000,// Cvtss2si_r32_xmmm32
+			0x00000037, 0x74000000,// Cvtss2si_r64_xmmm32
 			0x00000037, 0x0F000001,// VEX_Vcvtss2si_r32_xmmm32
 			0x00000037, 0x0F000001,// VEX_Vcvtss2si_r64_xmmm32
 			0x00000037, 0x1E000002,// EVEX_Vcvtss2si_r32_xmmm32_er
 			0x00000037, 0x1E000002,// EVEX_Vcvtss2si_r64_xmmm32_er
-			0x00000037, 0x78000000,// Cvtsd2si_r32_xmmm64
-			0x00000037, 0x78000000,// Cvtsd2si_r64_xmmm64
+			0x00000037, 0x75000000,// Cvtsd2si_r32_xmmm64
+			0x00000037, 0x75000000,// Cvtsd2si_r64_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vcvtsd2si_r32_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vcvtsd2si_r64_xmmm64
 			0x00000037, 0x1E000002,// EVEX_Vcvtsd2si_r32_xmmm64_er
 			0x00000037, 0x1E000002,// EVEX_Vcvtsd2si_r64_xmmm64_er
-			0x00084034, 0x77000000,// Ucomiss_xmm_xmmm32
+			0x00084034, 0x74000000,// Ucomiss_xmm_xmmm32
 			0x00084034, 0x0F000001,// VEX_Vucomiss_xmm_xmmm32
 			0x00084034, 0x1E000002,// EVEX_Vucomiss_xmm_xmmm32_sae
-			0x00084034, 0x78000000,// Ucomisd_xmm_xmmm64
+			0x00084034, 0x75000000,// Ucomisd_xmm_xmmm64
 			0x00084034, 0x0F000001,// VEX_Vucomisd_xmm_xmmm64
 			0x00084034, 0x1E000002,// EVEX_Vucomisd_xmm_xmmm64_sae
-			0x00084034, 0x77000000,// Comiss_xmm_xmmm32
-			0x00084034, 0x78000000,// Comisd_xmm_xmmm64
+			0x00084034, 0x74000000,// Comiss_xmm_xmmm32
+			0x00084034, 0x75000000,// Comisd_xmm_xmmm64
 			0x00084034, 0x0F000001,// VEX_Vcomiss_xmm_xmmm32
 			0x00084034, 0x0F000001,// VEX_Vcomisd_xmm_xmmm64
 			0x00084034, 0x1E000002,// EVEX_Vcomiss_xmm_xmmm32_sae
 			0x00084034, 0x1E000002,// EVEX_Vcomisd_xmm_xmmm64_sae
 			0x05900000, 0x5B080000,// Wrmsr
-			0x06F00000, 0x83000000,// Rdtsc
+			0x06F00000, 0x80000000,// Rdtsc
 			0x05800000, 0x5B080000,// Rdmsr
-			0x05800000, 0x6B000000,// Rdpmc
-			0x07014000, 0x71500000,// Sysenter
-			0x07100000, 0x71480000,// Sysexitd
-			0x07200000, 0x71480000,// Sysexitq
-			0x05B00000, 0x76020000,// Getsecd
+			0x05800000, 0x68000000,// Rdpmc
+			0x07014000, 0x6E500000,// Sysenter
+			0x07100000, 0x6E480000,// Sysexitd
+			0x07200000, 0x6E480000,// Sysexitq
+			0x05B00000, 0x73020000,// Getsecd
 			0x0003C031, 0x38000000,// Cmovo_r16_rm16
 			0x0003C032, 0x38000000,// Cmovo_r32_rm32
 			0x0003C031, 0x38000000,// Cmovo_r64_rm64
@@ -1257,149 +1257,149 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x1A000001,// VEX_Kunpckwd_kr_kr_kr
 			0x000000B7, 0x1A000001,// VEX_Kunpckdq_kr_kr_kr
 			0x000000B7, 0x1E000001,// VEX_Kunpckbw_kr_kr_kr
-			0x00000037, 0x77000000,// Movmskps_r32_xmm
-			0x00000037, 0x77000000,// Movmskps_r64_xmm
+			0x00000037, 0x74000000,// Movmskps_r32_xmm
+			0x00000037, 0x74000000,// Movmskps_r64_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovmskps_r32_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovmskps_r64_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovmskps_r32_ymm
 			0x00000037, 0x0F000001,// VEX_Vmovmskps_r64_ymm
-			0x00000037, 0x78000000,// Movmskpd_r32_xmm
-			0x00000037, 0x78000000,// Movmskpd_r64_xmm
+			0x00000037, 0x75000000,// Movmskpd_r32_xmm
+			0x00000037, 0x75000000,// Movmskpd_r64_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovmskpd_r32_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovmskpd_r64_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovmskpd_r32_ymm
 			0x00000037, 0x0F000001,// VEX_Vmovmskpd_r64_ymm
-			0x00000037, 0x77000000,// Sqrtps_xmm_xmmm128
+			0x00000037, 0x74000000,// Sqrtps_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vsqrtps_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vsqrtps_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vsqrtps_xmm_k1z_xmmm128b32
 			0x00000037, 0x2D000002,// EVEX_Vsqrtps_ymm_k1z_ymmm256b32
 			0x00000038, 0x1E000002,// EVEX_Vsqrtps_zmm_k1z_zmmm512b32_er
-			0x00000037, 0x78000000,// Sqrtpd_xmm_xmmm128
+			0x00000037, 0x75000000,// Sqrtpd_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vsqrtpd_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vsqrtpd_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vsqrtpd_xmm_k1z_xmmm128b64
 			0x00000037, 0x2D000002,// EVEX_Vsqrtpd_ymm_k1z_ymmm256b64
 			0x00000038, 0x1E000002,// EVEX_Vsqrtpd_zmm_k1z_zmmm512b64_er
-			0x00000036, 0x77000000,// Sqrtss_xmm_xmmm32
+			0x00000036, 0x74000000,// Sqrtss_xmm_xmmm32
 			0x000000B7, 0x0F000001,// VEX_Vsqrtss_xmm_xmm_xmmm32
 			0x000000B7, 0x1E000002,// EVEX_Vsqrtss_xmm_k1z_xmm_xmmm32_er
-			0x00000036, 0x78000000,// Sqrtsd_xmm_xmmm64
+			0x00000036, 0x75000000,// Sqrtsd_xmm_xmmm64
 			0x000000B7, 0x0F000001,// VEX_Vsqrtsd_xmm_xmm_xmmm64
 			0x000000B7, 0x1E000002,// EVEX_Vsqrtsd_xmm_k1z_xmm_xmmm64_er
-			0x00000037, 0x77000000,// Rsqrtps_xmm_xmmm128
+			0x00000037, 0x74000000,// Rsqrtps_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vrsqrtps_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vrsqrtps_ymm_ymmm256
-			0x00000036, 0x77000000,// Rsqrtss_xmm_xmmm32
+			0x00000036, 0x74000000,// Rsqrtss_xmm_xmmm32
 			0x000000B7, 0x0F000001,// VEX_Vrsqrtss_xmm_xmm_xmmm32
-			0x00000037, 0x77000000,// Rcpps_xmm_xmmm128
+			0x00000037, 0x74000000,// Rcpps_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vrcpps_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vrcpps_ymm_ymmm256
-			0x00000036, 0x77000000,// Rcpss_xmm_xmmm32
+			0x00000036, 0x74000000,// Rcpss_xmm_xmmm32
 			0x000000B7, 0x0F000001,// VEX_Vrcpss_xmm_xmm_xmmm32
-			0x00000036, 0x77000000,// Andps_xmm_xmmm128
+			0x00000036, 0x74000000,// Andps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vandps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vandps_ymm_ymm_ymmm256
 			0x000000B7, 0x2C000002,// EVEX_Vandps_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2C000002,// EVEX_Vandps_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1C000002,// EVEX_Vandps_zmm_k1z_zmm_zmmm512b32
-			0x00000036, 0x78000000,// Andpd_xmm_xmmm128
+			0x00000036, 0x75000000,// Andpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vandpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vandpd_ymm_ymm_ymmm256
 			0x000000B7, 0x2C000002,// EVEX_Vandpd_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2C000002,// EVEX_Vandpd_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1C000002,// EVEX_Vandpd_zmm_k1z_zmm_zmmm512b64
-			0x00000036, 0x77000000,// Andnps_xmm_xmmm128
+			0x00000036, 0x74000000,// Andnps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vandnps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vandnps_ymm_ymm_ymmm256
 			0x000000B7, 0x2C000002,// EVEX_Vandnps_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2C000002,// EVEX_Vandnps_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1C000002,// EVEX_Vandnps_zmm_k1z_zmm_zmmm512b32
-			0x00000036, 0x78000000,// Andnpd_xmm_xmmm128
+			0x00000036, 0x75000000,// Andnpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vandnpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vandnpd_ymm_ymm_ymmm256
 			0x000000B7, 0x2C000002,// EVEX_Vandnpd_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2C000002,// EVEX_Vandnpd_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1C000002,// EVEX_Vandnpd_zmm_k1z_zmm_zmmm512b64
-			0x00000036, 0x77000000,// Orps_xmm_xmmm128
+			0x00000036, 0x74000000,// Orps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vorps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vorps_ymm_ymm_ymmm256
 			0x000000B7, 0x2C000002,// EVEX_Vorps_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2C000002,// EVEX_Vorps_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1C000002,// EVEX_Vorps_zmm_k1z_zmm_zmmm512b32
-			0x00000036, 0x78000000,// Orpd_xmm_xmmm128
+			0x00000036, 0x75000000,// Orpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vorpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vorpd_ymm_ymm_ymmm256
 			0x000000B7, 0x2C000002,// EVEX_Vorpd_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2C000002,// EVEX_Vorpd_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1C000002,// EVEX_Vorpd_zmm_k1z_zmm_zmmm512b64
-			0x07300036, 0x77000000,// Xorps_xmm_xmmm128
+			0x07300036, 0x74000000,// Xorps_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vxorps_xmm_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vxorps_ymm_ymm_ymmm256
 			0x074000B7, 0x2C000002,// EVEX_Vxorps_xmm_k1z_xmm_xmmm128b32
 			0x074000B7, 0x2C000002,// EVEX_Vxorps_ymm_k1z_ymm_ymmm256b32
 			0x074000B8, 0x1C000002,// EVEX_Vxorps_zmm_k1z_zmm_zmmm512b32
-			0x07300036, 0x78000000,// Xorpd_xmm_xmmm128
+			0x07300036, 0x75000000,// Xorpd_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vxorpd_xmm_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vxorpd_ymm_ymm_ymmm256
 			0x074000B7, 0x2C000002,// EVEX_Vxorpd_xmm_k1z_xmm_xmmm128b64
 			0x074000B7, 0x2C000002,// EVEX_Vxorpd_ymm_k1z_ymm_ymmm256b64
 			0x074000B8, 0x1C000002,// EVEX_Vxorpd_zmm_k1z_zmm_zmmm512b64
-			0x00000036, 0x77000000,// Addps_xmm_xmmm128
+			0x00000036, 0x74000000,// Addps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vaddps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vaddps_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vaddps_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2D000002,// EVEX_Vaddps_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1E000002,// EVEX_Vaddps_zmm_k1z_zmm_zmmm512b32_er
-			0x00000036, 0x78000000,// Addpd_xmm_xmmm128
+			0x00000036, 0x75000000,// Addpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vaddpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vaddpd_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vaddpd_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vaddpd_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vaddpd_zmm_k1z_zmm_zmmm512b64_er
-			0x00000036, 0x77000000,// Addss_xmm_xmmm32
+			0x00000036, 0x74000000,// Addss_xmm_xmmm32
 			0x000000B7, 0x0F000001,// VEX_Vaddss_xmm_xmm_xmmm32
 			0x000000B7, 0x1E000002,// EVEX_Vaddss_xmm_k1z_xmm_xmmm32_er
-			0x00000036, 0x78000000,// Addsd_xmm_xmmm64
+			0x00000036, 0x75000000,// Addsd_xmm_xmmm64
 			0x000000B7, 0x0F000001,// VEX_Vaddsd_xmm_xmm_xmmm64
 			0x000000B7, 0x1E000002,// EVEX_Vaddsd_xmm_k1z_xmm_xmmm64_er
-			0x00000036, 0x77000000,// Mulps_xmm_xmmm128
+			0x00000036, 0x74000000,// Mulps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vmulps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vmulps_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vmulps_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2D000002,// EVEX_Vmulps_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1E000002,// EVEX_Vmulps_zmm_k1z_zmm_zmmm512b32_er
-			0x00000036, 0x78000000,// Mulpd_xmm_xmmm128
+			0x00000036, 0x75000000,// Mulpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vmulpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vmulpd_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vmulpd_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vmulpd_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vmulpd_zmm_k1z_zmm_zmmm512b64_er
-			0x00000036, 0x77000000,// Mulss_xmm_xmmm32
+			0x00000036, 0x74000000,// Mulss_xmm_xmmm32
 			0x000000B7, 0x0F000001,// VEX_Vmulss_xmm_xmm_xmmm32
 			0x000000B7, 0x1E000002,// EVEX_Vmulss_xmm_k1z_xmm_xmmm32_er
-			0x00000036, 0x78000000,// Mulsd_xmm_xmmm64
+			0x00000036, 0x75000000,// Mulsd_xmm_xmmm64
 			0x000000B7, 0x0F000001,// VEX_Vmulsd_xmm_xmm_xmmm64
 			0x000000B7, 0x1E000002,// EVEX_Vmulsd_xmm_k1z_xmm_xmmm64_er
-			0x00000037, 0x78000000,// Cvtps2pd_xmm_xmmm64
+			0x00000037, 0x75000000,// Cvtps2pd_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vcvtps2pd_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vcvtps2pd_ymm_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vcvtps2pd_xmm_k1z_xmmm64b32
 			0x00000037, 0x2D000002,// EVEX_Vcvtps2pd_ymm_k1z_xmmm128b32
 			0x00000038, 0x1E000002,// EVEX_Vcvtps2pd_zmm_k1z_ymmm256b32_sae
-			0x00000037, 0x78000000,// Cvtpd2ps_xmm_xmmm128
+			0x00000037, 0x75000000,// Cvtpd2ps_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vcvtpd2ps_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vcvtpd2ps_xmm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vcvtpd2ps_xmm_k1z_xmmm128b64
 			0x00000037, 0x2D000002,// EVEX_Vcvtpd2ps_xmm_k1z_ymmm256b64
 			0x00000037, 0x1E000002,// EVEX_Vcvtpd2ps_ymm_k1z_zmmm512b64_er
-			0x00000036, 0x78000000,// Cvtss2sd_xmm_xmmm32
+			0x00000036, 0x75000000,// Cvtss2sd_xmm_xmmm32
 			0x000000B7, 0x0F000001,// VEX_Vcvtss2sd_xmm_xmm_xmmm32
 			0x000000B7, 0x1E000002,// EVEX_Vcvtss2sd_xmm_k1z_xmm_xmmm32_sae
-			0x00000036, 0x78000000,// Cvtsd2ss_xmm_xmmm64
+			0x00000036, 0x75000000,// Cvtsd2ss_xmm_xmmm64
 			0x000000B7, 0x0F000001,// VEX_Vcvtsd2ss_xmm_xmm_xmmm64
 			0x000000B7, 0x1E000002,// EVEX_Vcvtsd2ss_xmm_k1z_xmm_xmmm64_er
-			0x00000037, 0x78000000,// Cvtdq2ps_xmm_xmmm128
+			0x00000037, 0x75000000,// Cvtdq2ps_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vcvtdq2ps_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vcvtdq2ps_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vcvtdq2ps_xmm_k1z_xmmm128b32
@@ -1408,181 +1408,181 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2C000002,// EVEX_Vcvtqq2ps_xmm_k1z_xmmm128b64
 			0x00000037, 0x2C000002,// EVEX_Vcvtqq2ps_xmm_k1z_ymmm256b64
 			0x00000037, 0x1C000002,// EVEX_Vcvtqq2ps_ymm_k1z_zmmm512b64_er
-			0x00000037, 0x78000000,// Cvtps2dq_xmm_xmmm128
+			0x00000037, 0x75000000,// Cvtps2dq_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vcvtps2dq_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vcvtps2dq_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vcvtps2dq_xmm_k1z_xmmm128b32
 			0x00000037, 0x2D000002,// EVEX_Vcvtps2dq_ymm_k1z_ymmm256b32
 			0x00000038, 0x1E000002,// EVEX_Vcvtps2dq_zmm_k1z_zmmm512b32_er
-			0x00000037, 0x78000000,// Cvttps2dq_xmm_xmmm128
+			0x00000037, 0x75000000,// Cvttps2dq_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vcvttps2dq_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vcvttps2dq_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vcvttps2dq_xmm_k1z_xmmm128b32
 			0x00000037, 0x2D000002,// EVEX_Vcvttps2dq_ymm_k1z_ymmm256b32
 			0x00000038, 0x1E000002,// EVEX_Vcvttps2dq_zmm_k1z_zmmm512b32_sae
-			0x00000036, 0x77000000,// Subps_xmm_xmmm128
+			0x00000036, 0x74000000,// Subps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vsubps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vsubps_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vsubps_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2D000002,// EVEX_Vsubps_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1E000002,// EVEX_Vsubps_zmm_k1z_zmm_zmmm512b32_er
-			0x00000036, 0x78000000,// Subpd_xmm_xmmm128
+			0x00000036, 0x75000000,// Subpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vsubpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vsubpd_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vsubpd_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vsubpd_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vsubpd_zmm_k1z_zmm_zmmm512b64_er
-			0x00000036, 0x77000000,// Subss_xmm_xmmm32
+			0x00000036, 0x74000000,// Subss_xmm_xmmm32
 			0x000000B7, 0x0F000001,// VEX_Vsubss_xmm_xmm_xmmm32
 			0x000000B7, 0x1E000002,// EVEX_Vsubss_xmm_k1z_xmm_xmmm32_er
-			0x00000036, 0x78000000,// Subsd_xmm_xmmm64
+			0x00000036, 0x75000000,// Subsd_xmm_xmmm64
 			0x000000B7, 0x0F000001,// VEX_Vsubsd_xmm_xmm_xmmm64
 			0x000000B7, 0x1E000002,// EVEX_Vsubsd_xmm_k1z_xmm_xmmm64_er
-			0x00000036, 0x77000000,// Minps_xmm_xmmm128
+			0x00000036, 0x74000000,// Minps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vminps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vminps_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vminps_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2D000002,// EVEX_Vminps_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1E000002,// EVEX_Vminps_zmm_k1z_zmm_zmmm512b32_sae
-			0x00000036, 0x78000000,// Minpd_xmm_xmmm128
+			0x00000036, 0x75000000,// Minpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vminpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vminpd_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vminpd_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vminpd_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vminpd_zmm_k1z_zmm_zmmm512b64_sae
-			0x00000036, 0x77000000,// Minss_xmm_xmmm32
+			0x00000036, 0x74000000,// Minss_xmm_xmmm32
 			0x000000B7, 0x0F000001,// VEX_Vminss_xmm_xmm_xmmm32
 			0x000000B7, 0x1E000002,// EVEX_Vminss_xmm_k1z_xmm_xmmm32_sae
-			0x00000036, 0x78000000,// Minsd_xmm_xmmm64
+			0x00000036, 0x75000000,// Minsd_xmm_xmmm64
 			0x000000B7, 0x0F000001,// VEX_Vminsd_xmm_xmm_xmmm64
 			0x000000B7, 0x1E000002,// EVEX_Vminsd_xmm_k1z_xmm_xmmm64_sae
-			0x00000036, 0x77000000,// Divps_xmm_xmmm128
+			0x00000036, 0x74000000,// Divps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vdivps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vdivps_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vdivps_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2D000002,// EVEX_Vdivps_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1E000002,// EVEX_Vdivps_zmm_k1z_zmm_zmmm512b32_er
-			0x00000036, 0x78000000,// Divpd_xmm_xmmm128
+			0x00000036, 0x75000000,// Divpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vdivpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vdivpd_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vdivpd_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vdivpd_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vdivpd_zmm_k1z_zmm_zmmm512b64_er
-			0x00000036, 0x77000000,// Divss_xmm_xmmm32
+			0x00000036, 0x74000000,// Divss_xmm_xmmm32
 			0x000000B7, 0x0F000001,// VEX_Vdivss_xmm_xmm_xmmm32
 			0x000000B7, 0x1E000002,// EVEX_Vdivss_xmm_k1z_xmm_xmmm32_er
-			0x00000036, 0x78000000,// Divsd_xmm_xmmm64
+			0x00000036, 0x75000000,// Divsd_xmm_xmmm64
 			0x000000B7, 0x0F000001,// VEX_Vdivsd_xmm_xmm_xmmm64
 			0x000000B7, 0x1E000002,// EVEX_Vdivsd_xmm_k1z_xmm_xmmm64_er
-			0x00000036, 0x77000000,// Maxps_xmm_xmmm128
+			0x00000036, 0x74000000,// Maxps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vmaxps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vmaxps_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vmaxps_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2D000002,// EVEX_Vmaxps_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1E000002,// EVEX_Vmaxps_zmm_k1z_zmm_zmmm512b32_sae
-			0x00000036, 0x78000000,// Maxpd_xmm_xmmm128
+			0x00000036, 0x75000000,// Maxpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vmaxpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vmaxpd_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vmaxpd_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vmaxpd_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vmaxpd_zmm_k1z_zmm_zmmm512b64_sae
-			0x00000036, 0x77000000,// Maxss_xmm_xmmm32
+			0x00000036, 0x74000000,// Maxss_xmm_xmmm32
 			0x000000B7, 0x0F000001,// VEX_Vmaxss_xmm_xmm_xmmm32
 			0x000000B7, 0x1E000002,// EVEX_Vmaxss_xmm_k1z_xmm_xmmm32_sae
-			0x00000036, 0x78000000,// Maxsd_xmm_xmmm64
+			0x00000036, 0x75000000,// Maxsd_xmm_xmmm64
 			0x000000B7, 0x0F000001,// VEX_Vmaxsd_xmm_xmm_xmmm64
 			0x000000B7, 0x1E000002,// EVEX_Vmaxsd_xmm_k1z_xmm_xmmm64_sae
 			0x00000036, 0x54000000,// Punpcklbw_mm_mmm32
-			0x00000036, 0x78000000,// Punpcklbw_xmm_xmmm128
+			0x00000036, 0x75000000,// Punpcklbw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpunpcklbw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpunpcklbw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpunpcklbw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpunpcklbw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpunpcklbw_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Punpcklwd_mm_mmm32
-			0x00000036, 0x78000000,// Punpcklwd_xmm_xmmm128
+			0x00000036, 0x75000000,// Punpcklwd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpunpcklwd_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpunpcklwd_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpunpcklwd_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpunpcklwd_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpunpcklwd_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Punpckldq_mm_mmm32
-			0x00000036, 0x78000000,// Punpckldq_xmm_xmmm128
+			0x00000036, 0x75000000,// Punpckldq_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpunpckldq_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpunpckldq_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpunpckldq_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2D000002,// EVEX_Vpunpckldq_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1E000002,// EVEX_Vpunpckldq_zmm_k1z_zmm_zmmm512b32
 			0x00000036, 0x54000000,// Packsswb_mm_mmm64
-			0x00000036, 0x78000000,// Packsswb_xmm_xmmm128
+			0x00000036, 0x75000000,// Packsswb_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpacksswb_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpacksswb_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpacksswb_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpacksswb_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpacksswb_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Pcmpgtb_mm_mmm64
-			0x00000036, 0x78000000,// Pcmpgtb_xmm_xmmm128
+			0x00000036, 0x75000000,// Pcmpgtb_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpcmpgtb_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpcmpgtb_ymm_ymm_ymmm256
 			0x000000BA, 0x2A000002,// EVEX_Vpcmpgtb_kr_k1_xmm_xmmm128
 			0x000000BA, 0x2A000002,// EVEX_Vpcmpgtb_kr_k1_ymm_ymmm256
 			0x000000BA, 0x1A000002,// EVEX_Vpcmpgtb_kr_k1_zmm_zmmm512
 			0x00000036, 0x54000000,// Pcmpgtw_mm_mmm64
-			0x00000036, 0x78000000,// Pcmpgtw_xmm_xmmm128
+			0x00000036, 0x75000000,// Pcmpgtw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpcmpgtw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpcmpgtw_ymm_ymm_ymmm256
 			0x000000BA, 0x2A000002,// EVEX_Vpcmpgtw_kr_k1_xmm_xmmm128
 			0x000000BA, 0x2A000002,// EVEX_Vpcmpgtw_kr_k1_ymm_ymmm256
 			0x000000BA, 0x1A000002,// EVEX_Vpcmpgtw_kr_k1_zmm_zmmm512
 			0x00000036, 0x54000000,// Pcmpgtd_mm_mmm64
-			0x00000036, 0x78000000,// Pcmpgtd_xmm_xmmm128
+			0x00000036, 0x75000000,// Pcmpgtd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpcmpgtd_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpcmpgtd_ymm_ymm_ymmm256
 			0x000000BA, 0x2D000002,// EVEX_Vpcmpgtd_kr_k1_xmm_xmmm128b32
 			0x000000BA, 0x2D000002,// EVEX_Vpcmpgtd_kr_k1_ymm_ymmm256b32
 			0x000000BA, 0x1E000002,// EVEX_Vpcmpgtd_kr_k1_zmm_zmmm512b32
 			0x00000036, 0x54000000,// Packuswb_mm_mmm64
-			0x00000036, 0x78000000,// Packuswb_xmm_xmmm128
+			0x00000036, 0x75000000,// Packuswb_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpackuswb_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpackuswb_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpackuswb_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpackuswb_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpackuswb_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Punpckhbw_mm_mmm64
-			0x00000036, 0x78000000,// Punpckhbw_xmm_xmmm128
+			0x00000036, 0x75000000,// Punpckhbw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpunpckhbw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpunpckhbw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpunpckhbw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpunpckhbw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpunpckhbw_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Punpckhwd_mm_mmm64
-			0x00000036, 0x78000000,// Punpckhwd_xmm_xmmm128
+			0x00000036, 0x75000000,// Punpckhwd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpunpckhwd_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpunpckhwd_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpunpckhwd_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpunpckhwd_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpunpckhwd_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Punpckhdq_mm_mmm64
-			0x00000036, 0x78000000,// Punpckhdq_xmm_xmmm128
+			0x00000036, 0x75000000,// Punpckhdq_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpunpckhdq_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpunpckhdq_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpunpckhdq_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2D000002,// EVEX_Vpunpckhdq_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1E000002,// EVEX_Vpunpckhdq_zmm_k1z_zmm_zmmm512b32
 			0x00000036, 0x54000000,// Packssdw_mm_mmm64
-			0x00000036, 0x78000000,// Packssdw_xmm_xmmm128
+			0x00000036, 0x75000000,// Packssdw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpackssdw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpackssdw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpackssdw_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2A000002,// EVEX_Vpackssdw_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1A000002,// EVEX_Vpackssdw_zmm_k1z_zmm_zmmm512b32
-			0x00000036, 0x78000000,// Punpcklqdq_xmm_xmmm128
+			0x00000036, 0x75000000,// Punpcklqdq_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpunpcklqdq_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpunpcklqdq_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpunpcklqdq_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vpunpcklqdq_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vpunpcklqdq_zmm_k1z_zmm_zmmm512b64
-			0x00000036, 0x78000000,// Punpckhqdq_xmm_xmmm128
+			0x00000036, 0x75000000,// Punpckhqdq_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpunpckhqdq_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpunpckhqdq_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpunpckhqdq_xmm_k1z_xmm_xmmm128b64
@@ -1590,14 +1590,14 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B8, 0x1E000002,// EVEX_Vpunpckhqdq_zmm_k1z_zmm_zmmm512b64
 			0x00000037, 0x54000000,// Movd_mm_rm32
 			0x00000037, 0x54000000,// Movq_mm_rm64
-			0x00000037, 0x78000000,// Movd_xmm_rm32
-			0x00000037, 0x78000000,// Movq_xmm_rm64
+			0x00000037, 0x75000000,// Movd_xmm_rm32
+			0x00000037, 0x75000000,// Movq_xmm_rm64
 			0x00000037, 0x0F000001,// VEX_Vmovd_xmm_rm32
 			0x00000037, 0x0F000001,// VEX_Vmovq_xmm_rm64
 			0x00000037, 0x1E000002,// EVEX_Vmovd_xmm_rm32
 			0x00000037, 0x1E000002,// EVEX_Vmovq_xmm_rm64
 			0x00000037, 0x54000000,// Movq_mm_mmm64
-			0x00000037, 0x78000000,// Movdqa_xmm_xmmm128
+			0x00000037, 0x75000000,// Movdqa_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovdqa_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovdqa_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vmovdqa32_xmm_k1z_xmmm128
@@ -1606,7 +1606,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vmovdqa64_xmm_k1z_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vmovdqa64_ymm_k1z_ymmm256
 			0x00000038, 0x1E000002,// EVEX_Vmovdqa64_zmm_k1z_zmmm512
-			0x00000037, 0x78000000,// Movdqu_xmm_xmmm128
+			0x00000037, 0x75000000,// Movdqu_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovdqu_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vmovdqu_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vmovdqu32_xmm_k1z_xmmm128
@@ -1621,41 +1621,41 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2A000002,// EVEX_Vmovdqu16_xmm_k1z_xmmm128
 			0x00000037, 0x2A000002,// EVEX_Vmovdqu16_ymm_k1z_ymmm256
 			0x00000038, 0x1A000002,// EVEX_Vmovdqu16_zmm_k1z_zmmm512
-			0x000000B7, 0x77000000,// Pshufw_mm_mmm64_imm8
-			0x000000B7, 0x78000000,// Pshufd_xmm_xmmm128_imm8
+			0x000000B7, 0x74000000,// Pshufw_mm_mmm64_imm8
+			0x000000B7, 0x75000000,// Pshufd_xmm_xmmm128_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpshufd_xmm_xmmm128_imm8
 			0x000000B7, 0x11000001,// VEX_Vpshufd_ymm_ymmm256_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vpshufd_xmm_k1z_xmmm128b32_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vpshufd_ymm_k1z_ymmm256b32_imm8
 			0x000000B8, 0x1E000002,// EVEX_Vpshufd_zmm_k1z_zmmm512b32_imm8
-			0x000000B7, 0x78000000,// Pshufhw_xmm_xmmm128_imm8
+			0x000000B7, 0x75000000,// Pshufhw_xmm_xmmm128_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpshufhw_xmm_xmmm128_imm8
 			0x000000B7, 0x11000001,// VEX_Vpshufhw_ymm_ymmm256_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpshufhw_xmm_k1z_xmmm128_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpshufhw_ymm_k1z_ymmm256_imm8
 			0x000000B8, 0x1A000002,// EVEX_Vpshufhw_zmm_k1z_zmmm512_imm8
-			0x000000B7, 0x78000000,// Pshuflw_xmm_xmmm128_imm8
+			0x000000B7, 0x75000000,// Pshuflw_xmm_xmmm128_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpshuflw_xmm_xmmm128_imm8
 			0x000000B7, 0x11000001,// VEX_Vpshuflw_ymm_ymmm256_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpshuflw_xmm_k1z_xmmm128_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpshuflw_ymm_k1z_ymmm256_imm8
 			0x000000B8, 0x1A000002,// EVEX_Vpshuflw_zmm_k1z_zmmm512_imm8
 			0x00000036, 0x54000000,// Psrlw_mm_imm8
-			0x00000036, 0x78000000,// Psrlw_xmm_imm8
+			0x00000036, 0x75000000,// Psrlw_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpsrlw_xmm_xmm_imm8
 			0x000000B7, 0x11000001,// VEX_Vpsrlw_ymm_ymm_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpsrlw_xmm_k1z_xmmm128_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpsrlw_ymm_k1z_ymmm256_imm8
 			0x000000B8, 0x1A000002,// EVEX_Vpsrlw_zmm_k1z_zmmm512_imm8
 			0x00000036, 0x54000000,// Psraw_mm_imm8
-			0x00000036, 0x78000000,// Psraw_xmm_imm8
+			0x00000036, 0x75000000,// Psraw_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpsraw_xmm_xmm_imm8
 			0x000000B7, 0x11000001,// VEX_Vpsraw_ymm_ymm_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpsraw_xmm_k1z_xmmm128_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpsraw_ymm_k1z_ymmm256_imm8
 			0x000000B8, 0x1A000002,// EVEX_Vpsraw_zmm_k1z_zmmm512_imm8
 			0x00000036, 0x54000000,// Psllw_mm_imm8
-			0x00000036, 0x78000000,// Psllw_xmm_imm8
+			0x00000036, 0x75000000,// Psllw_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpsllw_xmm_xmm_imm8
 			0x000000B7, 0x11000001,// VEX_Vpsllw_ymm_ymm_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpsllw_xmm_k1z_xmmm128_imm8
@@ -1674,14 +1674,14 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x2D000002,// EVEX_Vprolq_ymm_k1z_ymmm256b64_imm8
 			0x000000B8, 0x1E000002,// EVEX_Vprolq_zmm_k1z_zmmm512b64_imm8
 			0x00000036, 0x54000000,// Psrld_mm_imm8
-			0x00000036, 0x78000000,// Psrld_xmm_imm8
+			0x00000036, 0x75000000,// Psrld_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpsrld_xmm_xmm_imm8
 			0x000000B7, 0x11000001,// VEX_Vpsrld_ymm_ymm_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vpsrld_xmm_k1z_xmmm128b32_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vpsrld_ymm_k1z_ymmm256b32_imm8
 			0x000000B8, 0x1E000002,// EVEX_Vpsrld_zmm_k1z_zmmm512b32_imm8
 			0x00000036, 0x54000000,// Psrad_mm_imm8
-			0x00000036, 0x78000000,// Psrad_xmm_imm8
+			0x00000036, 0x75000000,// Psrad_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpsrad_xmm_xmm_imm8
 			0x000000B7, 0x11000001,// VEX_Vpsrad_ymm_ymm_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vpsrad_xmm_k1z_xmmm128b32_imm8
@@ -1691,54 +1691,54 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x2D000002,// EVEX_Vpsraq_ymm_k1z_ymmm256b64_imm8
 			0x000000B8, 0x1E000002,// EVEX_Vpsraq_zmm_k1z_zmmm512b64_imm8
 			0x00000036, 0x54000000,// Pslld_mm_imm8
-			0x00000036, 0x78000000,// Pslld_xmm_imm8
+			0x00000036, 0x75000000,// Pslld_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpslld_xmm_xmm_imm8
 			0x000000B7, 0x11000001,// VEX_Vpslld_ymm_ymm_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vpslld_xmm_k1z_xmmm128b32_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vpslld_ymm_k1z_ymmm256b32_imm8
 			0x000000B8, 0x1E000002,// EVEX_Vpslld_zmm_k1z_zmmm512b32_imm8
 			0x00000036, 0x54000000,// Psrlq_mm_imm8
-			0x00000036, 0x78000000,// Psrlq_xmm_imm8
+			0x00000036, 0x75000000,// Psrlq_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpsrlq_xmm_xmm_imm8
 			0x000000B7, 0x11000001,// VEX_Vpsrlq_ymm_ymm_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vpsrlq_xmm_k1z_xmmm128b64_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vpsrlq_ymm_k1z_ymmm256b64_imm8
 			0x000000B8, 0x1E000002,// EVEX_Vpsrlq_zmm_k1z_zmmm512b64_imm8
-			0x00000036, 0x78000000,// Psrldq_xmm_imm8
+			0x00000036, 0x75000000,// Psrldq_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpsrldq_xmm_xmm_imm8
 			0x000000B7, 0x11000001,// VEX_Vpsrldq_ymm_ymm_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpsrldq_xmm_xmmm128_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpsrldq_ymm_ymmm256_imm8
 			0x000000B7, 0x1A000002,// EVEX_Vpsrldq_zmm_zmmm512_imm8
 			0x00000036, 0x54000000,// Psllq_mm_imm8
-			0x00000036, 0x78000000,// Psllq_xmm_imm8
+			0x00000036, 0x75000000,// Psllq_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpsllq_xmm_xmm_imm8
 			0x000000B7, 0x11000001,// VEX_Vpsllq_ymm_ymm_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vpsllq_xmm_k1z_xmmm128b64_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vpsllq_ymm_k1z_ymmm256b64_imm8
 			0x000000B8, 0x1E000002,// EVEX_Vpsllq_zmm_k1z_zmmm512b64_imm8
-			0x00000036, 0x78000000,// Pslldq_xmm_imm8
+			0x00000036, 0x75000000,// Pslldq_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpslldq_xmm_xmm_imm8
 			0x000000B7, 0x11000001,// VEX_Vpslldq_ymm_ymm_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpslldq_xmm_xmmm128_imm8
 			0x000000B7, 0x2A000002,// EVEX_Vpslldq_ymm_ymmm256_imm8
 			0x000000B7, 0x1A000002,// EVEX_Vpslldq_zmm_zmmm512_imm8
 			0x00000036, 0x54000000,// Pcmpeqb_mm_mmm64
-			0x00000036, 0x78000000,// Pcmpeqb_xmm_xmmm128
+			0x00000036, 0x75000000,// Pcmpeqb_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpcmpeqb_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpcmpeqb_ymm_ymm_ymmm256
 			0x000000BA, 0x2A000002,// EVEX_Vpcmpeqb_kr_k1_xmm_xmmm128
 			0x000000BA, 0x2A000002,// EVEX_Vpcmpeqb_kr_k1_ymm_ymmm256
 			0x000000BA, 0x1A000002,// EVEX_Vpcmpeqb_kr_k1_zmm_zmmm512
 			0x00000036, 0x54000000,// Pcmpeqw_mm_mmm64
-			0x00000036, 0x78000000,// Pcmpeqw_xmm_xmmm128
+			0x00000036, 0x75000000,// Pcmpeqw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpcmpeqw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpcmpeqw_ymm_ymm_ymmm256
 			0x000000BA, 0x2A000002,// EVEX_Vpcmpeqw_kr_k1_xmm_xmmm128
 			0x000000BA, 0x2A000002,// EVEX_Vpcmpeqw_kr_k1_ymm_ymmm256
 			0x000000BA, 0x1A000002,// EVEX_Vpcmpeqw_kr_k1_zmm_zmmm512
 			0x00000036, 0x54000000,// Pcmpeqd_mm_mmm64
-			0x00000036, 0x78000000,// Pcmpeqd_xmm_xmmm128
+			0x00000036, 0x75000000,// Pcmpeqd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpcmpeqd_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpcmpeqd_ymm_ymm_ymmm256
 			0x000000BA, 0x2D000002,// EVEX_Vpcmpeqd_kr_k1_xmm_xmmm128b32
@@ -1747,15 +1747,15 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000000, 0x54000000,// Emms
 			0x07500000, 0x0F000001,// VEX_Vzeroupper
 			0x07600000, 0x0F000001,// VEX_Vzeroall
-			0x0008C037, 0x87080000,// Vmread_rm32_r32
-			0x0008C037, 0x87080000,// Vmread_rm64_r64
+			0x0008C037, 0x84080000,// Vmread_rm32_r32
+			0x0008C037, 0x84080000,// Vmread_rm64_r64
 			0x00000037, 0x2D000002,// EVEX_Vcvttps2udq_xmm_k1z_xmmm128b32
 			0x00000037, 0x2D000002,// EVEX_Vcvttps2udq_ymm_k1z_ymmm256b32
 			0x00000038, 0x1E000002,// EVEX_Vcvttps2udq_zmm_k1z_zmmm512b32_sae
 			0x00000037, 0x2D000002,// EVEX_Vcvttpd2udq_xmm_k1z_xmmm128b64
 			0x00000037, 0x2D000002,// EVEX_Vcvttpd2udq_xmm_k1z_ymmm256b64
 			0x00000037, 0x1E000002,// EVEX_Vcvttpd2udq_ymm_k1z_zmmm512b64_sae
-			0x000000B6, 0x7D000000,// Extrq_xmm_imm8_imm8
+			0x000000B6, 0x7A000000,// Extrq_xmm_imm8_imm8
 			0x00000037, 0x2C000002,// EVEX_Vcvttps2uqq_xmm_k1z_xmmm64b32
 			0x00000037, 0x2C000002,// EVEX_Vcvttps2uqq_ymm_k1z_xmmm128b32
 			0x00000038, 0x1C000002,// EVEX_Vcvttps2uqq_zmm_k1z_ymmm256b32_sae
@@ -1764,18 +1764,18 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000038, 0x1C000002,// EVEX_Vcvttpd2uqq_zmm_k1z_zmmm512b64_sae
 			0x00000037, 0x1E000002,// EVEX_Vcvttss2usi_r32_xmmm32_sae
 			0x00000037, 0x1E000002,// EVEX_Vcvttss2usi_r64_xmmm32_sae
-			0x000002B7, 0x7D000000,// Insertq_xmm_xmm_imm8_imm8
+			0x000002B7, 0x7A000000,// Insertq_xmm_xmm_imm8_imm8
 			0x00000037, 0x1E000002,// EVEX_Vcvttsd2usi_r32_xmmm64_sae
 			0x00000037, 0x1E000002,// EVEX_Vcvttsd2usi_r64_xmmm64_sae
-			0x0008C034, 0x87080000,// Vmwrite_r32_rm32
-			0x0008C034, 0x87080000,// Vmwrite_r64_rm64
+			0x0008C034, 0x84080000,// Vmwrite_r32_rm32
+			0x0008C034, 0x84080000,// Vmwrite_r64_rm64
 			0x00000037, 0x2D000002,// EVEX_Vcvtps2udq_xmm_k1z_xmmm128b32
 			0x00000037, 0x2D000002,// EVEX_Vcvtps2udq_ymm_k1z_ymmm256b32
 			0x00000038, 0x1E000002,// EVEX_Vcvtps2udq_zmm_k1z_zmmm512b32_er
 			0x00000037, 0x2D000002,// EVEX_Vcvtpd2udq_xmm_k1z_xmmm128b64
 			0x00000037, 0x2D000002,// EVEX_Vcvtpd2udq_xmm_k1z_ymmm256b64
 			0x00000037, 0x1E000002,// EVEX_Vcvtpd2udq_ymm_k1z_zmmm512b64_er
-			0x00000036, 0x7D000000,// Extrq_xmm_xmm
+			0x00000036, 0x7A000000,// Extrq_xmm_xmm
 			0x00000037, 0x2C000002,// EVEX_Vcvtps2uqq_xmm_k1z_xmmm64b32
 			0x00000037, 0x2C000002,// EVEX_Vcvtps2uqq_ymm_k1z_xmmm128b32
 			0x00000038, 0x1C000002,// EVEX_Vcvtps2uqq_zmm_k1z_ymmm256b32_er
@@ -1784,7 +1784,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000038, 0x1C000002,// EVEX_Vcvtpd2uqq_zmm_k1z_zmmm512b64_er
 			0x00000037, 0x1E000002,// EVEX_Vcvtss2usi_r32_xmmm32_er
 			0x00000037, 0x1E000002,// EVEX_Vcvtss2usi_r64_xmmm32_er
-			0x00000036, 0x7D000000,// Insertq_xmm_xmm
+			0x00000036, 0x7A000000,// Insertq_xmm_xmm
 			0x00000037, 0x1E000002,// EVEX_Vcvtsd2usi_r32_xmmm64_er
 			0x00000037, 0x1E000002,// EVEX_Vcvtsd2usi_r64_xmmm64_er
 			0x00000037, 0x2C000002,// EVEX_Vcvttps2qq_xmm_k1z_xmmm64b32
@@ -1815,31 +1815,31 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x1E000002,// EVEX_Vcvtusi2ss_xmm_xmm_rm64_er
 			0x000000B7, 0x1E000002,// EVEX_Vcvtusi2sd_xmm_xmm_rm32_er
 			0x000000B7, 0x1E000002,// EVEX_Vcvtusi2sd_xmm_xmm_rm64_er
-			0x00000036, 0x79000000,// Haddpd_xmm_xmmm128
+			0x00000036, 0x76000000,// Haddpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vhaddpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vhaddpd_ymm_ymm_ymmm256
-			0x00000036, 0x79000000,// Haddps_xmm_xmmm128
+			0x00000036, 0x76000000,// Haddps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vhaddps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vhaddps_ymm_ymm_ymmm256
-			0x00000036, 0x79000000,// Hsubpd_xmm_xmmm128
+			0x00000036, 0x76000000,// Hsubpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vhsubpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vhsubpd_ymm_ymm_ymmm256
-			0x00000036, 0x79000000,// Hsubps_xmm_xmmm128
+			0x00000036, 0x76000000,// Hsubps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vhsubps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vhsubps_ymm_ymm_ymmm256
 			0x00000037, 0x54000000,// Movd_rm32_mm
 			0x00000037, 0x54000000,// Movq_rm64_mm
-			0x00000037, 0x78000000,// Movd_rm32_xmm
-			0x00000037, 0x78000000,// Movq_rm64_xmm
+			0x00000037, 0x75000000,// Movd_rm32_xmm
+			0x00000037, 0x75000000,// Movq_rm64_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovd_rm32_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovq_rm64_xmm
 			0x00000037, 0x1E000002,// EVEX_Vmovd_rm32_xmm
 			0x00000037, 0x1E000002,// EVEX_Vmovq_rm64_xmm
-			0x00000037, 0x78000000,// Movq_xmm_xmmm64
+			0x00000037, 0x75000000,// Movq_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vmovq_xmm_xmmm64
 			0x00000037, 0x1E000002,// EVEX_Vmovq_xmm_xmmm64
 			0x00000037, 0x54000000,// Movq_mmm64_mm
-			0x00000037, 0x78000000,// Movdqa_xmmm128_xmm
+			0x00000037, 0x75000000,// Movdqa_xmmm128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovdqa_xmmm128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovdqa_ymmm256_ymm
 			0x00000037, 0x2D000002,// EVEX_Vmovdqa32_xmmm128_k1z_xmm
@@ -1848,7 +1848,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vmovdqa64_xmmm128_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vmovdqa64_ymmm256_k1z_ymm
 			0x00000038, 0x1E000002,// EVEX_Vmovdqa64_zmmm512_k1z_zmm
-			0x00000037, 0x78000000,// Movdqu_xmmm128_xmm
+			0x00000037, 0x75000000,// Movdqu_xmmm128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovdqu_xmmm128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovdqu_ymmm256_ymm
 			0x00000037, 0x2D000002,// EVEX_Vmovdqu32_xmmm128_k1z_xmm
@@ -1967,44 +1967,20 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000820B6, 0x05000000,// Shld_rm16_r16_CL
 			0x000820B6, 0x05000000,// Shld_rm32_r32_CL
 			0x000820B6, 0x0C000000,// Shld_rm64_r64_CL
-			0x07800000, 0x5F000000,// Montmul_16
-			0x07900000, 0x5F000000,// Montmul_32
-			0x07A00000, 0x5F000000,// Montmul_64
-			0x07B00000, 0x5E000000,// Xsha1_16
-			0x07C00000, 0x5E000000,// Xsha1_32
-			0x07D00000, 0x5E000000,// Xsha1_64
-			0x07B00000, 0x5E000000,// Xsha256_16
-			0x07C00000, 0x5E000000,// Xsha256_32
-			0x07D00000, 0x5E000000,// Xsha256_64
-			0x07E00036, 0x07000000,// Xbts_r16_rm16
-			0x07F00036, 0x07000000,// Xbts_r32_rm32
-			0x08000000, 0x5D000000,// Xcryptecb_16
-			0x08100000, 0x5D000000,// Xcryptecb_32
-			0x08200000, 0x5D000000,// Xcryptecb_64
-			0x08300000, 0x5D000000,// Xcryptcbc_16
-			0x08400000, 0x5D000000,// Xcryptcbc_32
-			0x08500000, 0x5D000000,// Xcryptcbc_64
-			0x08300000, 0x5D000000,// Xcryptctr_16
-			0x08400000, 0x5D000000,// Xcryptctr_32
-			0x08500000, 0x5D000000,// Xcryptctr_64
-			0x08300000, 0x5D000000,// Xcryptcfb_16
-			0x08400000, 0x5D000000,// Xcryptcfb_32
-			0x08500000, 0x5D000000,// Xcryptcfb_64
-			0x08300000, 0x5D000000,// Xcryptofb_16
-			0x08400000, 0x5D000000,// Xcryptofb_32
-			0x08500000, 0x5D000000,// Xcryptofb_64
-			0x07E00036, 0x07000000,// Ibts_rm16_r16
-			0x07F00036, 0x07000000,// Ibts_rm32_r32
-			0x08666035, 0x09000000,// Cmpxchg486_rm8_r8
-			0x08766035, 0x09000000,// Cmpxchg486_rm16_r16
-			0x08866035, 0x09000000,// Cmpxchg486_rm32_r32
+			0x07800036, 0x07000000,// Xbts_r16_rm16
+			0x07900036, 0x07000000,// Xbts_r32_rm32
+			0x07800036, 0x07000000,// Ibts_rm16_r16
+			0x07900036, 0x07000000,// Ibts_rm32_r32
+			0x07A66035, 0x09000000,// Cmpxchg486_rm8_r8
+			0x07B66035, 0x09000000,// Cmpxchg486_rm16_r16
+			0x07C66035, 0x09000000,// Cmpxchg486_rm32_r32
 			0x00600004, 0x05040000,// Pushw_GS
 			0x00700004, 0x05040000,// Pushd_GS
 			0x00C00004, 0x0C040000,// Pushq_GS
 			0x00800007, 0x05040000,// Popw_GS
 			0x00900007, 0x05040000,// Popd_GS
 			0x00D00007, 0x0C040000,// Popq_GS
-			0x0006C000, 0x9D4A0000,// Rsm
+			0x0006C000, 0x9A4A0000,// Rsm
 			0x00076036, 0x05000000,// Bts_rm16_r16
 			0x00076036, 0x05000000,// Bts_rm32_r32
 			0x00076036, 0x0C000000,// Bts_rm64_r64
@@ -2022,79 +1998,79 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000004, 0x4A020000,// Fxrstor64_m512byte
 			0x00000007, 0x49000000,// Rdgsbase_r32
 			0x00000007, 0x49000000,// Rdgsbase_r64
-			0x00000004, 0x77000000,// Ldmxcsr_m32
+			0x00000004, 0x74000000,// Ldmxcsr_m32
 			0x00000004, 0x49000000,// Wrfsbase_r32
 			0x00000004, 0x49000000,// Wrfsbase_r64
 			0x00000004, 0x0F000001,// VEX_Vldmxcsr_m32
-			0x00000007, 0x77000000,// Stmxcsr_m32
+			0x00000007, 0x74000000,// Stmxcsr_m32
 			0x00000004, 0x49000000,// Wrgsbase_r32
 			0x00000004, 0x49000000,// Wrgsbase_r64
 			0x00000007, 0x0F000001,// VEX_Vstmxcsr_m32
-			0x08900006, 0x90020000,// Xsave_mem
-			0x08900006, 0x90020000,// Xsave64_mem
-			0x00000004, 0x69000000,// Ptwrite_rm32
-			0x00000004, 0x69000000,// Ptwrite_rm64
-			0x08900004, 0x90020000,// Xrstor_mem
-			0x08900004, 0x90020000,// Xrstor64_mem
-			0x08A00004, 0x31000000,// Incsspd_r32
-			0x08A00004, 0x31000000,// Incsspq_r64
-			0x08900006, 0x92020000,// Xsaveopt_mem
-			0x08900006, 0x92020000,// Xsaveopt64_mem
+			0x07D00006, 0x8D020000,// Xsave_mem
+			0x07D00006, 0x8D020000,// Xsave64_mem
+			0x00000004, 0x66000000,// Ptwrite_rm32
+			0x00000004, 0x66000000,// Ptwrite_rm64
+			0x07D00004, 0x8D020000,// Xrstor_mem
+			0x07D00004, 0x8D020000,// Xrstor64_mem
+			0x07E00004, 0x31000000,// Incsspd_r32
+			0x07E00004, 0x31000000,// Incsspq_r64
+			0x07D00006, 0x8F020000,// Xsaveopt_mem
+			0x07D00006, 0x8F020000,// Xsaveopt64_mem
 			0x00000004, 0x36000000,// Clwb_m8
-			0x08974004, 0x8D000000,// Tpause_r32
-			0x08B74004, 0x8D000000,// Tpause_r64
+			0x07D74004, 0x8A000000,// Tpause_r32
+			0x07F74004, 0x8A000000,// Tpause_r64
 			0x00074006, 0x31080000,// Clrssbsy_m64
-			0x08C00004, 0x8D000000,// Umonitor_r16
-			0x08C00004, 0x8D000000,// Umonitor_r32
-			0x08C00004, 0x8D000000,// Umonitor_r64
-			0x08974004, 0x8D000000,// Umwait_r32
-			0x08B74004, 0x8D000000,// Umwait_r64
+			0x08000004, 0x8A000000,// Umonitor_r16
+			0x08000004, 0x8A000000,// Umonitor_r32
+			0x08000004, 0x8A000000,// Umonitor_r64
+			0x07D74004, 0x8A000000,// Umwait_r32
+			0x07F74004, 0x8A000000,// Umwait_r64
 			0x00000004, 0x35000000,// Clflush_m8
 			0x00000004, 0x34000000,// Clflushopt_m8
-			0x00000000, 0x78000000,// Lfence
-			0x00000000, 0x78000000,// Lfence_E9
-			0x00000000, 0x78000000,// Lfence_EA
-			0x00000000, 0x78000000,// Lfence_EB
-			0x00000000, 0x78000000,// Lfence_EC
-			0x00000000, 0x78000000,// Lfence_ED
-			0x00000000, 0x78000000,// Lfence_EE
-			0x00000000, 0x78000000,// Lfence_EF
-			0x00000000, 0x78000000,// Mfence
-			0x00000000, 0x78000000,// Mfence_F1
-			0x00000000, 0x78000000,// Mfence_F2
-			0x00000000, 0x78000000,// Mfence_F3
-			0x00000000, 0x78000000,// Mfence_F4
-			0x00000000, 0x78000000,// Mfence_F5
-			0x00000000, 0x78000000,// Mfence_F6
-			0x00000000, 0x78000000,// Mfence_F7
-			0x00000000, 0x77000000,// Sfence
-			0x00000000, 0x77000000,// Sfence_F9
-			0x00000000, 0x77000000,// Sfence_FA
-			0x00000000, 0x77000000,// Sfence_FB
-			0x00000000, 0x77000000,// Sfence_FC
-			0x00000000, 0x77000000,// Sfence_FD
-			0x00000000, 0x77000000,// Sfence_FE
-			0x00000000, 0x77000000,// Sfence_FF
-			0x00000000, 0x63000000,// Pcommit
+			0x00000000, 0x75000000,// Lfence
+			0x00000000, 0x75000000,// Lfence_E9
+			0x00000000, 0x75000000,// Lfence_EA
+			0x00000000, 0x75000000,// Lfence_EB
+			0x00000000, 0x75000000,// Lfence_EC
+			0x00000000, 0x75000000,// Lfence_ED
+			0x00000000, 0x75000000,// Lfence_EE
+			0x00000000, 0x75000000,// Lfence_EF
+			0x00000000, 0x75000000,// Mfence
+			0x00000000, 0x75000000,// Mfence_F1
+			0x00000000, 0x75000000,// Mfence_F2
+			0x00000000, 0x75000000,// Mfence_F3
+			0x00000000, 0x75000000,// Mfence_F4
+			0x00000000, 0x75000000,// Mfence_F5
+			0x00000000, 0x75000000,// Mfence_F6
+			0x00000000, 0x75000000,// Mfence_F7
+			0x00000000, 0x74000000,// Sfence
+			0x00000000, 0x74000000,// Sfence_F9
+			0x00000000, 0x74000000,// Sfence_FA
+			0x00000000, 0x74000000,// Sfence_FB
+			0x00000000, 0x74000000,// Sfence_FC
+			0x00000000, 0x74000000,// Sfence_FD
+			0x00000000, 0x74000000,// Sfence_FE
+			0x00000000, 0x74000000,// Sfence_FF
+			0x00000000, 0x60000000,// Pcommit
 			0x0007C036, 0x05000000,// Imul_r16_rm16
 			0x0007C036, 0x05000000,// Imul_r32_rm32
 			0x0007C036, 0x0C000000,// Imul_r64_rm64
-			0x08666035, 0x08000000,// Cmpxchg_rm8_r8
-			0x08766035, 0x08000000,// Cmpxchg_rm16_r16
-			0x08866035, 0x08000000,// Cmpxchg_rm32_r32
-			0x08D66035, 0x0C000000,// Cmpxchg_rm64_r64
-			0x08E00037, 0x05000000,// Lss_r16_m1616
-			0x08E00037, 0x05000000,// Lss_r32_m1632
-			0x08E00037, 0x0C000000,// Lss_r64_m1664
+			0x07A66035, 0x08000000,// Cmpxchg_rm8_r8
+			0x07B66035, 0x08000000,// Cmpxchg_rm16_r16
+			0x07C66035, 0x08000000,// Cmpxchg_rm32_r32
+			0x08166035, 0x0C000000,// Cmpxchg_rm64_r64
+			0x08200037, 0x05000000,// Lss_r16_m1616
+			0x08200037, 0x05000000,// Lss_r32_m1632
+			0x08200037, 0x0C000000,// Lss_r64_m1664
 			0x00076036, 0x05000000,// Btr_rm16_r16
 			0x00076036, 0x05000000,// Btr_rm32_r32
 			0x00076036, 0x0C000000,// Btr_rm64_r64
-			0x08F00037, 0x05000000,// Lfs_r16_m1616
-			0x08F00037, 0x05000000,// Lfs_r32_m1632
-			0x08F00037, 0x0C000000,// Lfs_r64_m1664
-			0x09000037, 0x05000000,// Lgs_r16_m1616
-			0x09000037, 0x05000000,// Lgs_r32_m1632
-			0x09000037, 0x0C000000,// Lgs_r64_m1664
+			0x08300037, 0x05000000,// Lfs_r16_m1616
+			0x08300037, 0x05000000,// Lfs_r32_m1632
+			0x08300037, 0x0C000000,// Lfs_r64_m1664
+			0x08400037, 0x05000000,// Lgs_r16_m1616
+			0x08400037, 0x05000000,// Lgs_r32_m1632
+			0x08400037, 0x0C000000,// Lgs_r64_m1664
 			0x00000037, 0x05000000,// Movzx_r16_rm8
 			0x00000037, 0x05000000,// Movzx_r32_rm8
 			0x00000037, 0x0C000000,// Movzx_r64_rm8
@@ -2103,9 +2079,9 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x0C000000,// Movzx_r64_rm16
 			0x00000004, 0x0B100000,// Jmpe_disp16
 			0x00000004, 0x0B100000,// Jmpe_disp32
-			0x00098037, 0x66000000,// Popcnt_r16_rm16
-			0x00098037, 0x66000000,// Popcnt_r32_rm32
-			0x00098037, 0x66000000,// Popcnt_r64_rm64
+			0x00098037, 0x63000000,// Popcnt_r16_rm16
+			0x00098037, 0x63000000,// Popcnt_r32_rm32
+			0x00098037, 0x63000000,// Popcnt_r64_rm64
 			0x00000000, 0x03900000,// Ud1_r16_rm16
 			0x00000000, 0x05900000,// Ud1_r32_rm32
 			0x00000000, 0x0C900000,// Ud1_r64_rm64
@@ -2146,154 +2122,154 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00066056, 0x08000000,// Xadd_rm16_r16
 			0x00066056, 0x08000000,// Xadd_rm32_r32
 			0x00066056, 0x0C000000,// Xadd_rm64_r64
-			0x000000B6, 0x77000000,// Cmpps_xmm_xmmm128_imm8
+			0x000000B6, 0x74000000,// Cmpps_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vcmpps_xmm_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vcmpps_ymm_ymm_ymmm256_imm8
 			0x000002BA, 0x2D000002,// EVEX_Vcmpps_kr_k1_xmm_xmmm128b32_imm8
 			0x000002BA, 0x2D000002,// EVEX_Vcmpps_kr_k1_ymm_ymmm256b32_imm8
 			0x000002BA, 0x1E000002,// EVEX_Vcmpps_kr_k1_zmm_zmmm512b32_imm8_sae
-			0x000000B6, 0x78000000,// Cmppd_xmm_xmmm128_imm8
+			0x000000B6, 0x75000000,// Cmppd_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vcmppd_xmm_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vcmppd_ymm_ymm_ymmm256_imm8
 			0x000002BA, 0x2D000002,// EVEX_Vcmppd_kr_k1_xmm_xmmm128b64_imm8
 			0x000002BA, 0x2D000002,// EVEX_Vcmppd_kr_k1_ymm_ymmm256b64_imm8
 			0x000002BA, 0x1E000002,// EVEX_Vcmppd_kr_k1_zmm_zmmm512b64_imm8_sae
-			0x000000B6, 0x77000000,// Cmpss_xmm_xmmm32_imm8
+			0x000000B6, 0x74000000,// Cmpss_xmm_xmmm32_imm8
 			0x000002B7, 0x0F000001,// VEX_Vcmpss_xmm_xmm_xmmm32_imm8
 			0x000002BA, 0x1E000002,// EVEX_Vcmpss_kr_k1_xmm_xmmm32_imm8_sae
-			0x000000B6, 0x78000000,// Cmpsd_xmm_xmmm64_imm8
+			0x000000B6, 0x75000000,// Cmpsd_xmm_xmmm64_imm8
 			0x000002B7, 0x0F000001,// VEX_Vcmpsd_xmm_xmm_xmmm64_imm8
 			0x000002BA, 0x1E000002,// EVEX_Vcmpsd_kr_k1_xmm_xmmm64_imm8_sae
-			0x00000037, 0x78000000,// Movnti_m32_r32
-			0x00000037, 0x78000000,// Movnti_m64_r64
-			0x016000B6, 0x77000000,// Pinsrw_mm_r32m16_imm8
-			0x016000B6, 0x77000000,// Pinsrw_mm_r64m16_imm8
-			0x016000B6, 0x78000000,// Pinsrw_xmm_r32m16_imm8
-			0x016000B6, 0x78000000,// Pinsrw_xmm_r64m16_imm8
+			0x00000037, 0x75000000,// Movnti_m32_r32
+			0x00000037, 0x75000000,// Movnti_m64_r64
+			0x016000B6, 0x74000000,// Pinsrw_mm_r32m16_imm8
+			0x016000B6, 0x74000000,// Pinsrw_mm_r64m16_imm8
+			0x016000B6, 0x75000000,// Pinsrw_xmm_r32m16_imm8
+			0x016000B6, 0x75000000,// Pinsrw_xmm_r64m16_imm8
 			0x016002B7, 0x0F000001,// VEX_Vpinsrw_xmm_xmm_r32m16_imm8
 			0x016002B7, 0x0F000001,// VEX_Vpinsrw_xmm_xmm_r64m16_imm8
 			0x016002B7, 0x1A000002,// EVEX_Vpinsrw_xmm_xmm_r32m16_imm8
 			0x016002B7, 0x1A000002,// EVEX_Vpinsrw_xmm_xmm_r64m16_imm8
-			0x000000B7, 0x77000000,// Pextrw_r32_mm_imm8
-			0x000000B7, 0x77000000,// Pextrw_r64_mm_imm8
-			0x000000B7, 0x78000000,// Pextrw_r32_xmm_imm8
-			0x000000B7, 0x78000000,// Pextrw_r64_xmm_imm8
+			0x000000B7, 0x74000000,// Pextrw_r32_mm_imm8
+			0x000000B7, 0x74000000,// Pextrw_r64_mm_imm8
+			0x000000B7, 0x75000000,// Pextrw_r32_xmm_imm8
+			0x000000B7, 0x75000000,// Pextrw_r64_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpextrw_r32_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpextrw_r64_xmm_imm8
 			0x000000B7, 0x1A000002,// EVEX_Vpextrw_r32_xmm_imm8
 			0x000000B7, 0x1A000002,// EVEX_Vpextrw_r64_xmm_imm8
-			0x000000B6, 0x77000000,// Shufps_xmm_xmmm128_imm8
+			0x000000B6, 0x74000000,// Shufps_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vshufps_xmm_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vshufps_ymm_ymm_ymmm256_imm8
 			0x000002B7, 0x2D000002,// EVEX_Vshufps_xmm_k1z_xmm_xmmm128b32_imm8
 			0x000002B7, 0x2D000002,// EVEX_Vshufps_ymm_k1z_ymm_ymmm256b32_imm8
 			0x000002B8, 0x1E000002,// EVEX_Vshufps_zmm_k1z_zmm_zmmm512b32_imm8
-			0x000000B6, 0x78000000,// Shufpd_xmm_xmmm128_imm8
+			0x000000B6, 0x75000000,// Shufpd_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vshufpd_xmm_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vshufpd_ymm_ymm_ymmm256_imm8
 			0x000002B7, 0x2D000002,// EVEX_Vshufpd_xmm_k1z_xmm_xmmm128b64_imm8
 			0x000002B7, 0x2D000002,// EVEX_Vshufpd_ymm_k1z_ymm_ymmm256b64_imm8
 			0x000002B8, 0x1E000002,// EVEX_Vshufpd_zmm_k1z_zmm_zmmm512b64_imm8
-			0x09196005, 0x3B000000,// Cmpxchg8b_m64
-			0x09296005, 0x39000000,// Cmpxchg16b_m128
-			0x08900004, 0x930A0000,// Xrstors_mem
-			0x08900004, 0x930A0000,// Xrstors64_mem
-			0x08900007, 0x91020000,// Xsavec_mem
-			0x08900007, 0x91020000,// Xsavec64_mem
-			0x08900007, 0x930A0000,// Xsaves_mem
-			0x08900007, 0x930A0000,// Xsaves64_mem
-			0x0008C004, 0x87080000,// Vmptrld_m64
-			0x0008C004, 0x87080000,// Vmclear_m64
-			0x0008C004, 0x87080000,// Vmxon_m64
-			0x00074007, 0x6D000000,// Rdrand_r16
-			0x00074007, 0x6D000000,// Rdrand_r32
-			0x00074007, 0x6D000000,// Rdrand_r64
-			0x00008007, 0x87080000,// Vmptrst_m64
-			0x00074007, 0x6E000000,// Rdseed_r16
-			0x00074007, 0x6E000000,// Rdseed_r32
-			0x00074007, 0x6E000000,// Rdseed_r64
-			0x00000007, 0x6A000000,// Rdpid_r32
-			0x00000007, 0x6A000000,// Rdpid_r64
+			0x08596005, 0x3B000000,// Cmpxchg8b_m64
+			0x08696005, 0x39000000,// Cmpxchg16b_m128
+			0x07D00004, 0x900A0000,// Xrstors_mem
+			0x07D00004, 0x900A0000,// Xrstors64_mem
+			0x07D00007, 0x8E020000,// Xsavec_mem
+			0x07D00007, 0x8E020000,// Xsavec64_mem
+			0x07D00007, 0x900A0000,// Xsaves_mem
+			0x07D00007, 0x900A0000,// Xsaves64_mem
+			0x0008C004, 0x84080000,// Vmptrld_m64
+			0x0008C004, 0x84080000,// Vmclear_m64
+			0x0008C004, 0x84080000,// Vmxon_m64
+			0x00074007, 0x6A000000,// Rdrand_r16
+			0x00074007, 0x6A000000,// Rdrand_r32
+			0x00074007, 0x6A000000,// Rdrand_r64
+			0x00008007, 0x84080000,// Vmptrst_m64
+			0x00074007, 0x6B000000,// Rdseed_r16
+			0x00074007, 0x6B000000,// Rdseed_r32
+			0x00074007, 0x6B000000,// Rdseed_r64
+			0x00000007, 0x67000000,// Rdpid_r32
+			0x00000007, 0x67000000,// Rdpid_r64
 			0x00000006, 0x08000000,// Bswap_r16
 			0x00000006, 0x08000000,// Bswap_r32
 			0x00000006, 0x0C000000,// Bswap_r64
-			0x00000036, 0x79000000,// Addsubpd_xmm_xmmm128
+			0x00000036, 0x76000000,// Addsubpd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vaddsubpd_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vaddsubpd_ymm_ymm_ymmm256
-			0x00000036, 0x79000000,// Addsubps_xmm_xmmm128
+			0x00000036, 0x76000000,// Addsubps_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vaddsubps_xmm_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vaddsubps_ymm_ymm_ymmm256
 			0x00000036, 0x54000000,// Psrlw_mm_mmm64
-			0x00000036, 0x78000000,// Psrlw_xmm_xmmm128
+			0x00000036, 0x75000000,// Psrlw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpsrlw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpsrlw_ymm_ymm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpsrlw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpsrlw_ymm_k1z_ymm_xmmm128
 			0x000000B8, 0x1A000002,// EVEX_Vpsrlw_zmm_k1z_zmm_xmmm128
 			0x00000036, 0x54000000,// Psrld_mm_mmm64
-			0x00000036, 0x78000000,// Psrld_xmm_xmmm128
+			0x00000036, 0x75000000,// Psrld_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpsrld_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpsrld_ymm_ymm_xmmm128
 			0x000000B7, 0x2D000002,// EVEX_Vpsrld_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2D000002,// EVEX_Vpsrld_ymm_k1z_ymm_xmmm128
 			0x000000B8, 0x1E000002,// EVEX_Vpsrld_zmm_k1z_zmm_xmmm128
 			0x00000036, 0x54000000,// Psrlq_mm_mmm64
-			0x00000036, 0x78000000,// Psrlq_xmm_xmmm128
+			0x00000036, 0x75000000,// Psrlq_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpsrlq_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpsrlq_ymm_ymm_xmmm128
 			0x000000B7, 0x2D000002,// EVEX_Vpsrlq_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2D000002,// EVEX_Vpsrlq_ymm_k1z_ymm_xmmm128
 			0x000000B8, 0x1E000002,// EVEX_Vpsrlq_zmm_k1z_zmm_xmmm128
 			0x00000036, 0x54000000,// Paddq_mm_mmm64
-			0x00000036, 0x78000000,// Paddq_xmm_xmmm128
+			0x00000036, 0x75000000,// Paddq_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpaddq_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpaddq_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpaddq_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vpaddq_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vpaddq_zmm_k1z_zmm_zmmm512b64
 			0x00000036, 0x54000000,// Pmullw_mm_mmm64
-			0x00000036, 0x78000000,// Pmullw_xmm_xmmm128
+			0x00000036, 0x75000000,// Pmullw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmullw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmullw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpmullw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpmullw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpmullw_zmm_k1z_zmm_zmmm512
-			0x00000037, 0x78000000,// Movq_xmmm64_xmm
+			0x00000037, 0x75000000,// Movq_xmmm64_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovq_xmmm64_xmm
 			0x00000037, 0x1E000002,// EVEX_Vmovq_xmmm64_xmm
-			0x00000037, 0x78000000,// Movq2dq_xmm_mm
-			0x00000037, 0x78000000,// Movdq2q_mm_xmm
-			0x00000037, 0x77000000,// Pmovmskb_r32_mm
-			0x00000037, 0x77000000,// Pmovmskb_r64_mm
-			0x00000037, 0x78000000,// Pmovmskb_r32_xmm
-			0x00000037, 0x78000000,// Pmovmskb_r64_xmm
+			0x00000037, 0x75000000,// Movq2dq_xmm_mm
+			0x00000037, 0x75000000,// Movdq2q_mm_xmm
+			0x00000037, 0x74000000,// Pmovmskb_r32_mm
+			0x00000037, 0x74000000,// Pmovmskb_r64_mm
+			0x00000037, 0x75000000,// Pmovmskb_r32_xmm
+			0x00000037, 0x75000000,// Pmovmskb_r64_xmm
 			0x00000037, 0x0F000001,// VEX_Vpmovmskb_r32_xmm
 			0x00000037, 0x0F000001,// VEX_Vpmovmskb_r64_xmm
 			0x00000037, 0x11000001,// VEX_Vpmovmskb_r32_ymm
 			0x00000037, 0x11000001,// VEX_Vpmovmskb_r64_ymm
 			0x07300036, 0x54000000,// Psubusb_mm_mmm64
-			0x07300036, 0x78000000,// Psubusb_xmm_xmmm128
+			0x07300036, 0x75000000,// Psubusb_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vpsubusb_xmm_xmm_xmmm128
 			0x074000B7, 0x11000001,// VEX_Vpsubusb_ymm_ymm_ymmm256
 			0x074000B7, 0x2A000002,// EVEX_Vpsubusb_xmm_k1z_xmm_xmmm128
 			0x074000B7, 0x2A000002,// EVEX_Vpsubusb_ymm_k1z_ymm_ymmm256
 			0x074000B8, 0x1A000002,// EVEX_Vpsubusb_zmm_k1z_zmm_zmmm512
 			0x07300036, 0x54000000,// Psubusw_mm_mmm64
-			0x07300036, 0x78000000,// Psubusw_xmm_xmmm128
+			0x07300036, 0x75000000,// Psubusw_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vpsubusw_xmm_xmm_xmmm128
 			0x074000B7, 0x11000001,// VEX_Vpsubusw_ymm_ymm_ymmm256
 			0x074000B7, 0x2A000002,// EVEX_Vpsubusw_xmm_k1z_xmm_xmmm128
 			0x074000B7, 0x2A000002,// EVEX_Vpsubusw_ymm_k1z_ymm_ymmm256
 			0x074000B8, 0x1A000002,// EVEX_Vpsubusw_zmm_k1z_zmm_zmmm512
-			0x00000036, 0x77000000,// Pminub_mm_mmm64
-			0x00000036, 0x78000000,// Pminub_xmm_xmmm128
+			0x00000036, 0x74000000,// Pminub_mm_mmm64
+			0x00000036, 0x75000000,// Pminub_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpminub_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpminub_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpminub_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpminub_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpminub_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Pand_mm_mmm64
-			0x00000036, 0x78000000,// Pand_xmm_xmmm128
+			0x00000036, 0x75000000,// Pand_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpand_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpand_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpandd_xmm_k1z_xmm_xmmm128b32
@@ -2303,28 +2279,28 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x2D000002,// EVEX_Vpandq_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vpandq_zmm_k1z_zmm_zmmm512b64
 			0x00000036, 0x54000000,// Paddusb_mm_mmm64
-			0x00000036, 0x78000000,// Paddusb_xmm_xmmm128
+			0x00000036, 0x75000000,// Paddusb_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpaddusb_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpaddusb_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpaddusb_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpaddusb_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpaddusb_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Paddusw_mm_mmm64
-			0x00000036, 0x78000000,// Paddusw_xmm_xmmm128
+			0x00000036, 0x75000000,// Paddusw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpaddusw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpaddusw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpaddusw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpaddusw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpaddusw_zmm_k1z_zmm_zmmm512
-			0x00000036, 0x77000000,// Pmaxub_mm_mmm64
-			0x00000036, 0x78000000,// Pmaxub_xmm_xmmm128
+			0x00000036, 0x74000000,// Pmaxub_mm_mmm64
+			0x00000036, 0x75000000,// Pmaxub_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmaxub_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmaxub_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpmaxub_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpmaxub_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpmaxub_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Pandn_mm_mmm64
-			0x00000036, 0x78000000,// Pandn_xmm_xmmm128
+			0x00000036, 0x75000000,// Pandn_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpandn_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpandn_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpandnd_xmm_k1z_xmm_xmmm128b32
@@ -2333,22 +2309,22 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x2D000002,// EVEX_Vpandnq_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vpandnq_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vpandnq_zmm_k1z_zmm_zmmm512b64
-			0x00000036, 0x77000000,// Pavgb_mm_mmm64
-			0x00000036, 0x78000000,// Pavgb_xmm_xmmm128
+			0x00000036, 0x74000000,// Pavgb_mm_mmm64
+			0x00000036, 0x75000000,// Pavgb_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpavgb_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpavgb_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpavgb_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpavgb_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpavgb_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Psraw_mm_mmm64
-			0x00000036, 0x78000000,// Psraw_xmm_xmmm128
+			0x00000036, 0x75000000,// Psraw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpsraw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpsraw_ymm_ymm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpsraw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpsraw_ymm_k1z_ymm_xmmm128
 			0x000000B8, 0x1A000002,// EVEX_Vpsraw_zmm_k1z_zmm_xmmm128
 			0x00000036, 0x54000000,// Psrad_mm_mmm64
-			0x00000036, 0x78000000,// Psrad_xmm_xmmm128
+			0x00000036, 0x75000000,// Psrad_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpsrad_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpsrad_ymm_ymm_xmmm128
 			0x000000B7, 0x2D000002,// EVEX_Vpsrad_xmm_k1z_xmm_xmmm128
@@ -2357,34 +2333,34 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x2D000002,// EVEX_Vpsraq_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2D000002,// EVEX_Vpsraq_ymm_k1z_ymm_xmmm128
 			0x000000B8, 0x1E000002,// EVEX_Vpsraq_zmm_k1z_zmm_xmmm128
-			0x00000036, 0x77000000,// Pavgw_mm_mmm64
-			0x00000036, 0x78000000,// Pavgw_xmm_xmmm128
+			0x00000036, 0x74000000,// Pavgw_mm_mmm64
+			0x00000036, 0x75000000,// Pavgw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpavgw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpavgw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpavgw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpavgw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpavgw_zmm_k1z_zmm_zmmm512
-			0x00000036, 0x77000000,// Pmulhuw_mm_mmm64
-			0x00000036, 0x78000000,// Pmulhuw_xmm_xmmm128
+			0x00000036, 0x74000000,// Pmulhuw_mm_mmm64
+			0x00000036, 0x75000000,// Pmulhuw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmulhuw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmulhuw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpmulhuw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpmulhuw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpmulhuw_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Pmulhw_mm_mmm64
-			0x00000036, 0x78000000,// Pmulhw_xmm_xmmm128
+			0x00000036, 0x75000000,// Pmulhw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmulhw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmulhw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpmulhw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpmulhw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpmulhw_zmm_k1z_zmm_zmmm512
-			0x00000037, 0x78000000,// Cvttpd2dq_xmm_xmmm128
+			0x00000037, 0x75000000,// Cvttpd2dq_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vcvttpd2dq_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vcvttpd2dq_xmm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vcvttpd2dq_xmm_k1z_xmmm128b64
 			0x00000037, 0x2D000002,// EVEX_Vcvttpd2dq_xmm_k1z_ymmm256b64
 			0x00000037, 0x1E000002,// EVEX_Vcvttpd2dq_ymm_k1z_zmmm512b64_sae
-			0x00000037, 0x78000000,// Cvtdq2pd_xmm_xmmm64
+			0x00000037, 0x75000000,// Cvtdq2pd_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vcvtdq2pd_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vcvtdq2pd_ymm_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vcvtdq2pd_xmm_k1z_xmmm64b32
@@ -2393,42 +2369,42 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2C000002,// EVEX_Vcvtqq2pd_xmm_k1z_xmmm128b64
 			0x00000037, 0x2C000002,// EVEX_Vcvtqq2pd_ymm_k1z_ymmm256b64
 			0x00000038, 0x1C000002,// EVEX_Vcvtqq2pd_zmm_k1z_zmmm512b64_er
-			0x00000037, 0x78000000,// Cvtpd2dq_xmm_xmmm128
+			0x00000037, 0x75000000,// Cvtpd2dq_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vcvtpd2dq_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vcvtpd2dq_xmm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vcvtpd2dq_xmm_k1z_xmmm128b64
 			0x00000037, 0x2D000002,// EVEX_Vcvtpd2dq_xmm_k1z_ymmm256b64
 			0x00000037, 0x1E000002,// EVEX_Vcvtpd2dq_ymm_k1z_zmmm512b64_er
-			0x00000037, 0x77000000,// Movntq_m64_mm
-			0x00000037, 0x78000000,// Movntdq_m128_xmm
+			0x00000037, 0x74000000,// Movntq_m64_mm
+			0x00000037, 0x75000000,// Movntdq_m128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovntdq_m128_xmm
 			0x00000037, 0x0F000001,// VEX_Vmovntdq_m256_ymm
 			0x00000037, 0x2D000002,// EVEX_Vmovntdq_m128_xmm
 			0x00000037, 0x2D000002,// EVEX_Vmovntdq_m256_ymm
 			0x00000037, 0x1E000002,// EVEX_Vmovntdq_m512_zmm
 			0x07300036, 0x54000000,// Psubsb_mm_mmm64
-			0x07300036, 0x78000000,// Psubsb_xmm_xmmm128
+			0x07300036, 0x75000000,// Psubsb_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vpsubsb_xmm_xmm_xmmm128
 			0x074000B7, 0x11000001,// VEX_Vpsubsb_ymm_ymm_ymmm256
 			0x074000B7, 0x2A000002,// EVEX_Vpsubsb_xmm_k1z_xmm_xmmm128
 			0x074000B7, 0x2A000002,// EVEX_Vpsubsb_ymm_k1z_ymm_ymmm256
 			0x074000B8, 0x1A000002,// EVEX_Vpsubsb_zmm_k1z_zmm_zmmm512
 			0x07300036, 0x54000000,// Psubsw_mm_mmm64
-			0x07300036, 0x78000000,// Psubsw_xmm_xmmm128
+			0x07300036, 0x75000000,// Psubsw_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vpsubsw_xmm_xmm_xmmm128
 			0x074000B7, 0x11000001,// VEX_Vpsubsw_ymm_ymm_ymmm256
 			0x074000B7, 0x2A000002,// EVEX_Vpsubsw_xmm_k1z_xmm_xmmm128
 			0x074000B7, 0x2A000002,// EVEX_Vpsubsw_ymm_k1z_ymm_ymmm256
 			0x074000B8, 0x1A000002,// EVEX_Vpsubsw_zmm_k1z_zmm_zmmm512
-			0x00000036, 0x77000000,// Pminsw_mm_mmm64
-			0x00000036, 0x78000000,// Pminsw_xmm_xmmm128
+			0x00000036, 0x74000000,// Pminsw_mm_mmm64
+			0x00000036, 0x75000000,// Pminsw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpminsw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpminsw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpminsw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpminsw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpminsw_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Por_mm_mmm64
-			0x00000036, 0x78000000,// Por_xmm_xmmm128
+			0x00000036, 0x75000000,// Por_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpor_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpor_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpord_xmm_k1z_xmm_xmmm128b32
@@ -2438,28 +2414,28 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x2D000002,// EVEX_Vporq_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vporq_zmm_k1z_zmm_zmmm512b64
 			0x00000036, 0x54000000,// Paddsb_mm_mmm64
-			0x00000036, 0x78000000,// Paddsb_xmm_xmmm128
+			0x00000036, 0x75000000,// Paddsb_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpaddsb_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpaddsb_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpaddsb_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpaddsb_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpaddsb_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Paddsw_mm_mmm64
-			0x00000036, 0x78000000,// Paddsw_xmm_xmmm128
+			0x00000036, 0x75000000,// Paddsw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpaddsw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpaddsw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpaddsw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpaddsw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpaddsw_zmm_k1z_zmm_zmmm512
-			0x00000036, 0x77000000,// Pmaxsw_mm_mmm64
-			0x00000036, 0x78000000,// Pmaxsw_xmm_xmmm128
+			0x00000036, 0x74000000,// Pmaxsw_mm_mmm64
+			0x00000036, 0x75000000,// Pmaxsw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmaxsw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmaxsw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpmaxsw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpmaxsw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpmaxsw_zmm_k1z_zmm_zmmm512
 			0x07300036, 0x54000000,// Pxor_mm_mmm64
-			0x07300036, 0x78000000,// Pxor_xmm_xmmm128
+			0x07300036, 0x75000000,// Pxor_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vpxor_xmm_xmm_xmmm128
 			0x074000B7, 0x11000001,// VEX_Vpxor_ymm_ymm_ymmm256
 			0x074000B7, 0x2D000002,// EVEX_Vpxord_xmm_k1z_xmm_xmmm128b32
@@ -2468,98 +2444,98 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x074000B7, 0x2D000002,// EVEX_Vpxorq_xmm_k1z_xmm_xmmm128b64
 			0x074000B7, 0x2D000002,// EVEX_Vpxorq_ymm_k1z_ymm_ymmm256b64
 			0x074000B8, 0x1E000002,// EVEX_Vpxorq_zmm_k1z_zmm_zmmm512b64
-			0x00000037, 0x79000000,// Lddqu_xmm_m128
+			0x00000037, 0x76000000,// Lddqu_xmm_m128
 			0x00000037, 0x0F000001,// VEX_Vlddqu_xmm_m128
 			0x00000037, 0x0F000001,// VEX_Vlddqu_ymm_m256
 			0x00000036, 0x54000000,// Psllw_mm_mmm64
-			0x00000036, 0x78000000,// Psllw_xmm_xmmm128
+			0x00000036, 0x75000000,// Psllw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpsllw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpsllw_ymm_ymm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpsllw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpsllw_ymm_k1z_ymm_xmmm128
 			0x000000B8, 0x1A000002,// EVEX_Vpsllw_zmm_k1z_zmm_xmmm128
 			0x00000036, 0x54000000,// Pslld_mm_mmm64
-			0x00000036, 0x78000000,// Pslld_xmm_xmmm128
+			0x00000036, 0x75000000,// Pslld_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpslld_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpslld_ymm_ymm_xmmm128
 			0x000000B7, 0x2D000002,// EVEX_Vpslld_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2D000002,// EVEX_Vpslld_ymm_k1z_ymm_xmmm128
 			0x000000B8, 0x1E000002,// EVEX_Vpslld_zmm_k1z_zmm_xmmm128
 			0x00000036, 0x54000000,// Psllq_mm_mmm64
-			0x00000036, 0x78000000,// Psllq_xmm_xmmm128
+			0x00000036, 0x75000000,// Psllq_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpsllq_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpsllq_ymm_ymm_xmmm128
 			0x000000B7, 0x2D000002,// EVEX_Vpsllq_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2D000002,// EVEX_Vpsllq_ymm_k1z_ymm_xmmm128
 			0x000000B8, 0x1E000002,// EVEX_Vpsllq_zmm_k1z_zmm_xmmm128
-			0x00000036, 0x78000000,// Pmuludq_mm_mmm64
-			0x00000036, 0x78000000,// Pmuludq_xmm_xmmm128
+			0x00000036, 0x75000000,// Pmuludq_mm_mmm64
+			0x00000036, 0x75000000,// Pmuludq_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmuludq_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmuludq_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpmuludq_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vpmuludq_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vpmuludq_zmm_k1z_zmm_zmmm512b64
 			0x00000036, 0x54000000,// Pmaddwd_mm_mmm64
-			0x00000036, 0x78000000,// Pmaddwd_xmm_xmmm128
+			0x00000036, 0x75000000,// Pmaddwd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmaddwd_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmaddwd_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpmaddwd_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpmaddwd_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpmaddwd_zmm_k1z_zmm_zmmm512
-			0x00000036, 0x77000000,// Psadbw_mm_mmm64
-			0x00000036, 0x78000000,// Psadbw_xmm_xmmm128
+			0x00000036, 0x74000000,// Psadbw_mm_mmm64
+			0x00000036, 0x75000000,// Psadbw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpsadbw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpsadbw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpsadbw_xmm_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpsadbw_ymm_ymm_ymmm256
 			0x000000B7, 0x1A000002,// EVEX_Vpsadbw_zmm_zmm_zmmm512
-			0x093000B7, 0x77000000,// Maskmovq_rDI_mm_mm
-			0x093000B7, 0x78000000,// Maskmovdqu_rDI_xmm_xmm
-			0x093000B7, 0x0F000001,// VEX_Vmaskmovdqu_rDI_xmm_xmm
+			0x087000B7, 0x74000000,// Maskmovq_rDI_mm_mm
+			0x087000B7, 0x75000000,// Maskmovdqu_rDI_xmm_xmm
+			0x087000B7, 0x0F000001,// VEX_Vmaskmovdqu_rDI_xmm_xmm
 			0x07300036, 0x54000000,// Psubb_mm_mmm64
-			0x07300036, 0x78000000,// Psubb_xmm_xmmm128
+			0x07300036, 0x75000000,// Psubb_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vpsubb_xmm_xmm_xmmm128
 			0x074000B7, 0x11000001,// VEX_Vpsubb_ymm_ymm_ymmm256
 			0x074000B7, 0x2A000002,// EVEX_Vpsubb_xmm_k1z_xmm_xmmm128
 			0x074000B7, 0x2A000002,// EVEX_Vpsubb_ymm_k1z_ymm_ymmm256
 			0x074000B8, 0x1A000002,// EVEX_Vpsubb_zmm_k1z_zmm_zmmm512
 			0x07300036, 0x54000000,// Psubw_mm_mmm64
-			0x07300036, 0x78000000,// Psubw_xmm_xmmm128
+			0x07300036, 0x75000000,// Psubw_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vpsubw_xmm_xmm_xmmm128
 			0x074000B7, 0x11000001,// VEX_Vpsubw_ymm_ymm_ymmm256
 			0x074000B7, 0x2A000002,// EVEX_Vpsubw_xmm_k1z_xmm_xmmm128
 			0x074000B7, 0x2A000002,// EVEX_Vpsubw_ymm_k1z_ymm_ymmm256
 			0x074000B8, 0x1A000002,// EVEX_Vpsubw_zmm_k1z_zmm_zmmm512
 			0x07300036, 0x54000000,// Psubd_mm_mmm64
-			0x07300036, 0x78000000,// Psubd_xmm_xmmm128
+			0x07300036, 0x75000000,// Psubd_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vpsubd_xmm_xmm_xmmm128
 			0x074000B7, 0x11000001,// VEX_Vpsubd_ymm_ymm_ymmm256
 			0x074000B7, 0x2D000002,// EVEX_Vpsubd_xmm_k1z_xmm_xmmm128b32
 			0x074000B7, 0x2D000002,// EVEX_Vpsubd_ymm_k1z_ymm_ymmm256b32
 			0x074000B8, 0x1E000002,// EVEX_Vpsubd_zmm_k1z_zmm_zmmm512b32
-			0x07300036, 0x78000000,// Psubq_mm_mmm64
-			0x07300036, 0x78000000,// Psubq_xmm_xmmm128
+			0x07300036, 0x75000000,// Psubq_mm_mmm64
+			0x07300036, 0x75000000,// Psubq_xmm_xmmm128
 			0x074000B7, 0x0F000001,// VEX_Vpsubq_xmm_xmm_xmmm128
 			0x074000B7, 0x11000001,// VEX_Vpsubq_ymm_ymm_ymmm256
 			0x074000B7, 0x2D000002,// EVEX_Vpsubq_xmm_k1z_xmm_xmmm128b64
 			0x074000B7, 0x2D000002,// EVEX_Vpsubq_ymm_k1z_ymm_ymmm256b64
 			0x074000B8, 0x1E000002,// EVEX_Vpsubq_zmm_k1z_zmm_zmmm512b64
 			0x00000036, 0x54000000,// Paddb_mm_mmm64
-			0x00000036, 0x78000000,// Paddb_xmm_xmmm128
+			0x00000036, 0x75000000,// Paddb_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpaddb_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpaddb_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpaddb_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpaddb_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpaddb_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Paddw_mm_mmm64
-			0x00000036, 0x78000000,// Paddw_xmm_xmmm128
+			0x00000036, 0x75000000,// Paddw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpaddw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpaddw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpaddw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpaddw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpaddw_zmm_k1z_zmm_zmmm512
 			0x00000036, 0x54000000,// Paddd_mm_mmm64
-			0x00000036, 0x78000000,// Paddd_xmm_xmmm128
+			0x00000036, 0x75000000,// Paddd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpaddd_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpaddd_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpaddd_xmm_k1z_xmm_xmmm128b32
@@ -2568,58 +2544,58 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000000, 0x03900000,// Ud0_r16_rm16
 			0x00000000, 0x05900000,// Ud0_r32_rm32
 			0x00000000, 0x0C900000,// Ud0_r64_rm64
-			0x00000036, 0x7E000000,// Pshufb_mm_mmm64
-			0x00000036, 0x7E000000,// Pshufb_xmm_xmmm128
+			0x00000036, 0x7B000000,// Pshufb_mm_mmm64
+			0x00000036, 0x7B000000,// Pshufb_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpshufb_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpshufb_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpshufb_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpshufb_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpshufb_zmm_k1z_zmm_zmmm512
-			0x00000036, 0x7E000000,// Phaddw_mm_mmm64
-			0x00000036, 0x7E000000,// Phaddw_xmm_xmmm128
+			0x00000036, 0x7B000000,// Phaddw_mm_mmm64
+			0x00000036, 0x7B000000,// Phaddw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vphaddw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vphaddw_ymm_ymm_ymmm256
-			0x00000036, 0x7E000000,// Phaddd_mm_mmm64
-			0x00000036, 0x7E000000,// Phaddd_xmm_xmmm128
+			0x00000036, 0x7B000000,// Phaddd_mm_mmm64
+			0x00000036, 0x7B000000,// Phaddd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vphaddd_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vphaddd_ymm_ymm_ymmm256
-			0x00000036, 0x7E000000,// Phaddsw_mm_mmm64
-			0x00000036, 0x7E000000,// Phaddsw_xmm_xmmm128
+			0x00000036, 0x7B000000,// Phaddsw_mm_mmm64
+			0x00000036, 0x7B000000,// Phaddsw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vphaddsw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vphaddsw_ymm_ymm_ymmm256
-			0x00000036, 0x7E000000,// Pmaddubsw_mm_mmm64
-			0x00000036, 0x7E000000,// Pmaddubsw_xmm_xmmm128
+			0x00000036, 0x7B000000,// Pmaddubsw_mm_mmm64
+			0x00000036, 0x7B000000,// Pmaddubsw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmaddubsw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmaddubsw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpmaddubsw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpmaddubsw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpmaddubsw_zmm_k1z_zmm_zmmm512
-			0x00000036, 0x7E000000,// Phsubw_mm_mmm64
-			0x00000036, 0x7E000000,// Phsubw_xmm_xmmm128
+			0x00000036, 0x7B000000,// Phsubw_mm_mmm64
+			0x00000036, 0x7B000000,// Phsubw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vphsubw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vphsubw_ymm_ymm_ymmm256
-			0x00000036, 0x7E000000,// Phsubd_mm_mmm64
-			0x00000036, 0x7E000000,// Phsubd_xmm_xmmm128
+			0x00000036, 0x7B000000,// Phsubd_mm_mmm64
+			0x00000036, 0x7B000000,// Phsubd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vphsubd_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vphsubd_ymm_ymm_ymmm256
-			0x00000036, 0x7E000000,// Phsubsw_mm_mmm64
-			0x00000036, 0x7E000000,// Phsubsw_xmm_xmmm128
+			0x00000036, 0x7B000000,// Phsubsw_mm_mmm64
+			0x00000036, 0x7B000000,// Phsubsw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vphsubsw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vphsubsw_ymm_ymm_ymmm256
-			0x00000036, 0x7E000000,// Psignb_mm_mmm64
-			0x00000036, 0x7E000000,// Psignb_xmm_xmmm128
+			0x00000036, 0x7B000000,// Psignb_mm_mmm64
+			0x00000036, 0x7B000000,// Psignb_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpsignb_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpsignb_ymm_ymm_ymmm256
-			0x00000036, 0x7E000000,// Psignw_mm_mmm64
-			0x00000036, 0x7E000000,// Psignw_xmm_xmmm128
+			0x00000036, 0x7B000000,// Psignw_mm_mmm64
+			0x00000036, 0x7B000000,// Psignw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpsignw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpsignw_ymm_ymm_ymmm256
-			0x00000036, 0x7E000000,// Psignd_mm_mmm64
-			0x00000036, 0x7E000000,// Psignd_xmm_xmmm128
+			0x00000036, 0x7B000000,// Psignd_mm_mmm64
+			0x00000036, 0x7B000000,// Psignd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpsignd_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpsignd_ymm_ymm_ymmm256
-			0x00000036, 0x7E000000,// Pmulhrsw_mm_mmm64
-			0x00000036, 0x7E000000,// Pmulhrsw_xmm_xmmm128
+			0x00000036, 0x7B000000,// Pmulhrsw_mm_mmm64
+			0x00000036, 0x7B000000,// Pmulhrsw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmulhrsw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmulhrsw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpmulhrsw_xmm_k1z_xmm_xmmm128
@@ -2639,7 +2615,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x0008C034, 0x0F000001,// VEX_Vtestps_ymm_ymmm256
 			0x0008C034, 0x0F000001,// VEX_Vtestpd_xmm_xmmm128
 			0x0008C034, 0x0F000001,// VEX_Vtestpd_ymm_ymmm256
-			0x09400036, 0x7B000000,// Pblendvb_xmm_xmmm128
+			0x08800036, 0x78000000,// Pblendvb_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpsrlvw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpsrlvw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpsrlvw_zmm_k1z_zmm_zmmm512
@@ -2666,7 +2642,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vpmovusdw_xmmm64_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vpmovusdw_xmmm128_k1z_ymm
 			0x00000037, 0x1E000002,// EVEX_Vpmovusdw_ymmm256_k1z_zmm
-			0x09400036, 0x7B000000,// Blendvps_xmm_xmmm128
+			0x08800036, 0x78000000,// Blendvps_xmm_xmmm128
 			0x000000B7, 0x2D000002,// EVEX_Vprorvd_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2D000002,// EVEX_Vprorvd_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1E000002,// EVEX_Vprorvd_zmm_k1z_zmm_zmmm512b32
@@ -2676,7 +2652,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vpmovusqw_xmmm32_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vpmovusqw_xmmm64_k1z_ymm
 			0x00000037, 0x1E000002,// EVEX_Vpmovusqw_xmmm128_k1z_zmm
-			0x09400036, 0x7B000000,// Blendvpd_xmm_xmmm128
+			0x08800036, 0x78000000,// Blendvpd_xmm_xmmm128
 			0x000000B7, 0x2D000002,// EVEX_Vprolvd_xmm_k1z_xmm_xmmm128b32
 			0x000000B7, 0x2D000002,// EVEX_Vprolvd_ymm_k1z_ymm_ymmm256b32
 			0x000000B8, 0x1E000002,// EVEX_Vprolvd_zmm_k1z_zmm_zmmm512b32
@@ -2691,7 +2667,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B8, 0x1E000002,// EVEX_Vpermps_zmm_k1z_zmm_zmmm512b32
 			0x000000B7, 0x2D000002,// EVEX_Vpermpd_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vpermpd_zmm_k1z_zmm_zmmm512b64
-			0x0008C034, 0x7B000000,// Ptest_xmm_xmmm128
+			0x0008C034, 0x78000000,// Ptest_xmm_xmmm128
 			0x0008C034, 0x0F000001,// VEX_Vptest_xmm_xmmm128
 			0x0008C034, 0x0F000001,// VEX_Vptest_ymm_ymmm256
 			0x00000037, 0x0F000001,// VEX_Vbroadcastss_xmm_m32
@@ -2711,22 +2687,22 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000038, 0x1C000002,// EVEX_Vbroadcastf64x2_zmm_k1z_m128
 			0x00000038, 0x1C000002,// EVEX_Vbroadcastf32x8_zmm_k1z_m256
 			0x00000038, 0x1E000002,// EVEX_Vbroadcastf64x4_zmm_k1z_m256
-			0x00000037, 0x7E000000,// Pabsb_mm_mmm64
-			0x00000037, 0x7E000000,// Pabsb_xmm_xmmm128
+			0x00000037, 0x7B000000,// Pabsb_mm_mmm64
+			0x00000037, 0x7B000000,// Pabsb_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vpabsb_xmm_xmmm128
 			0x00000037, 0x11000001,// VEX_Vpabsb_ymm_ymmm256
 			0x00000037, 0x2A000002,// EVEX_Vpabsb_xmm_k1z_xmmm128
 			0x00000037, 0x2A000002,// EVEX_Vpabsb_ymm_k1z_ymmm256
 			0x00000038, 0x1A000002,// EVEX_Vpabsb_zmm_k1z_zmmm512
-			0x00000037, 0x7E000000,// Pabsw_mm_mmm64
-			0x00000037, 0x7E000000,// Pabsw_xmm_xmmm128
+			0x00000037, 0x7B000000,// Pabsw_mm_mmm64
+			0x00000037, 0x7B000000,// Pabsw_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vpabsw_xmm_xmmm128
 			0x00000037, 0x11000001,// VEX_Vpabsw_ymm_ymmm256
 			0x00000037, 0x2A000002,// EVEX_Vpabsw_xmm_k1z_xmmm128
 			0x00000037, 0x2A000002,// EVEX_Vpabsw_ymm_k1z_ymmm256
 			0x00000038, 0x1A000002,// EVEX_Vpabsw_zmm_k1z_zmmm512
-			0x00000037, 0x7E000000,// Pabsd_mm_mmm64
-			0x00000037, 0x7E000000,// Pabsd_xmm_xmmm128
+			0x00000037, 0x7B000000,// Pabsd_mm_mmm64
+			0x00000037, 0x7B000000,// Pabsd_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vpabsd_xmm_xmmm128
 			0x00000037, 0x11000001,// VEX_Vpabsd_ymm_ymmm256
 			0x00000037, 0x2D000002,// EVEX_Vpabsd_xmm_k1z_xmmm128b32
@@ -2735,7 +2711,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vpabsq_xmm_k1z_xmmm128b64
 			0x00000037, 0x2D000002,// EVEX_Vpabsq_ymm_k1z_ymmm256b64
 			0x00000038, 0x1E000002,// EVEX_Vpabsq_zmm_k1z_zmmm512b64
-			0x00000037, 0x7B000000,// Pmovsxbw_xmm_xmmm64
+			0x00000037, 0x78000000,// Pmovsxbw_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vpmovsxbw_xmm_xmmm64
 			0x00000037, 0x11000001,// VEX_Vpmovsxbw_ymm_xmmm128
 			0x00000037, 0x2A000002,// EVEX_Vpmovsxbw_xmm_k1z_xmmm64
@@ -2744,7 +2720,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2A000002,// EVEX_Vpmovswb_xmmm64_k1z_xmm
 			0x00000037, 0x2A000002,// EVEX_Vpmovswb_xmmm128_k1z_ymm
 			0x00000037, 0x1A000002,// EVEX_Vpmovswb_ymmm256_k1z_zmm
-			0x00000037, 0x7B000000,// Pmovsxbd_xmm_xmmm32
+			0x00000037, 0x78000000,// Pmovsxbd_xmm_xmmm32
 			0x00000037, 0x0F000001,// VEX_Vpmovsxbd_xmm_xmmm32
 			0x00000037, 0x11000001,// VEX_Vpmovsxbd_ymm_xmmm64
 			0x00000037, 0x2D000002,// EVEX_Vpmovsxbd_xmm_k1z_xmmm32
@@ -2753,7 +2729,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vpmovsdb_xmmm32_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vpmovsdb_xmmm64_k1z_ymm
 			0x00000037, 0x1E000002,// EVEX_Vpmovsdb_xmmm128_k1z_zmm
-			0x00000037, 0x7B000000,// Pmovsxbq_xmm_xmmm16
+			0x00000037, 0x78000000,// Pmovsxbq_xmm_xmmm16
 			0x00000037, 0x0F000001,// VEX_Vpmovsxbq_xmm_xmmm16
 			0x00000037, 0x11000001,// VEX_Vpmovsxbq_ymm_xmmm32
 			0x00000037, 0x2D000002,// EVEX_Vpmovsxbq_xmm_k1z_xmmm16
@@ -2762,7 +2738,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vpmovsqb_xmmm16_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vpmovsqb_xmmm32_k1z_ymm
 			0x00000037, 0x1E000002,// EVEX_Vpmovsqb_xmmm64_k1z_zmm
-			0x00000037, 0x7B000000,// Pmovsxwd_xmm_xmmm64
+			0x00000037, 0x78000000,// Pmovsxwd_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vpmovsxwd_xmm_xmmm64
 			0x00000037, 0x11000001,// VEX_Vpmovsxwd_ymm_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vpmovsxwd_xmm_k1z_xmmm64
@@ -2771,7 +2747,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vpmovsdw_xmmm64_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vpmovsdw_xmmm128_k1z_ymm
 			0x00000037, 0x1E000002,// EVEX_Vpmovsdw_ymmm256_k1z_zmm
-			0x00000037, 0x7B000000,// Pmovsxwq_xmm_xmmm32
+			0x00000037, 0x78000000,// Pmovsxwq_xmm_xmmm32
 			0x00000037, 0x0F000001,// VEX_Vpmovsxwq_xmm_xmmm32
 			0x00000037, 0x11000001,// VEX_Vpmovsxwq_ymm_xmmm64
 			0x00000037, 0x2D000002,// EVEX_Vpmovsxwq_xmm_k1z_xmmm32
@@ -2780,7 +2756,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vpmovsqw_xmmm32_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vpmovsqw_xmmm64_k1z_ymm
 			0x00000037, 0x1E000002,// EVEX_Vpmovsqw_xmmm128_k1z_zmm
-			0x00000037, 0x7B000000,// Pmovsxdq_xmm_xmmm64
+			0x00000037, 0x78000000,// Pmovsxdq_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vpmovsxdq_xmm_xmmm64
 			0x00000037, 0x11000001,// VEX_Vpmovsxdq_ymm_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vpmovsxdq_xmm_k1z_xmmm64
@@ -2813,7 +2789,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000BA, 0x2D000002,// EVEX_Vptestnmq_kr_k1_xmm_xmmm128b64
 			0x000000BA, 0x2D000002,// EVEX_Vptestnmq_kr_k1_ymm_ymmm256b64
 			0x000000BA, 0x1E000002,// EVEX_Vptestnmq_kr_k1_zmm_zmmm512b64
-			0x00000036, 0x7B000000,// Pmuldq_xmm_xmmm128
+			0x00000036, 0x78000000,// Pmuldq_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmuldq_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmuldq_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpmuldq_xmm_k1z_xmm_xmmm128b64
@@ -2825,7 +2801,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2A000002,// EVEX_Vpmovm2w_xmm_kr
 			0x00000037, 0x2A000002,// EVEX_Vpmovm2w_ymm_kr
 			0x00000037, 0x1A000002,// EVEX_Vpmovm2w_zmm_kr
-			0x00000036, 0x7B000000,// Pcmpeqq_xmm_xmmm128
+			0x00000036, 0x78000000,// Pcmpeqq_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpcmpeqq_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpcmpeqq_ymm_ymm_ymmm256
 			0x000000BA, 0x2D000002,// EVEX_Vpcmpeqq_kr_k1_xmm_xmmm128b64
@@ -2837,7 +2813,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2A000002,// EVEX_Vpmovw2m_kr_xmm
 			0x00000037, 0x2A000002,// EVEX_Vpmovw2m_kr_ymm
 			0x00000037, 0x1A000002,// EVEX_Vpmovw2m_kr_zmm
-			0x00000037, 0x7B000000,// Movntdqa_xmm_m128
+			0x00000037, 0x78000000,// Movntdqa_xmm_m128
 			0x00000037, 0x0F000001,// VEX_Vmovntdqa_xmm_m128
 			0x00000037, 0x11000001,// VEX_Vmovntdqa_ymm_m256
 			0x00000037, 0x2D000002,// EVEX_Vmovntdqa_xmm_m128
@@ -2846,7 +2822,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2B000002,// EVEX_Vpbroadcastmb2q_xmm_kr
 			0x00000037, 0x2B000002,// EVEX_Vpbroadcastmb2q_ymm_kr
 			0x00000037, 0x1B000002,// EVEX_Vpbroadcastmb2q_zmm_kr
-			0x00000036, 0x7B000000,// Packusdw_xmm_xmmm128
+			0x00000036, 0x78000000,// Packusdw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpackusdw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpackusdw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpackusdw_xmm_k1z_xmm_xmmm128b32
@@ -2868,7 +2844,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x0F000001,// VEX_Vmaskmovps_m256_ymm_ymm
 			0x000000B7, 0x0F000001,// VEX_Vmaskmovpd_m128_xmm_xmm
 			0x000000B7, 0x0F000001,// VEX_Vmaskmovpd_m256_ymm_ymm
-			0x00000037, 0x7B000000,// Pmovzxbw_xmm_xmmm64
+			0x00000037, 0x78000000,// Pmovzxbw_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vpmovzxbw_xmm_xmmm64
 			0x00000037, 0x11000001,// VEX_Vpmovzxbw_ymm_xmmm128
 			0x00000037, 0x2A000002,// EVEX_Vpmovzxbw_xmm_k1z_xmmm64
@@ -2877,7 +2853,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2A000002,// EVEX_Vpmovwb_xmmm64_k1z_xmm
 			0x00000037, 0x2A000002,// EVEX_Vpmovwb_xmmm128_k1z_ymm
 			0x00000037, 0x1A000002,// EVEX_Vpmovwb_ymmm256_k1z_zmm
-			0x00000037, 0x7B000000,// Pmovzxbd_xmm_xmmm32
+			0x00000037, 0x78000000,// Pmovzxbd_xmm_xmmm32
 			0x00000037, 0x0F000001,// VEX_Vpmovzxbd_xmm_xmmm32
 			0x00000037, 0x11000001,// VEX_Vpmovzxbd_ymm_xmmm64
 			0x00000037, 0x2D000002,// EVEX_Vpmovzxbd_xmm_k1z_xmmm32
@@ -2886,7 +2862,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vpmovdb_xmmm32_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vpmovdb_xmmm64_k1z_ymm
 			0x00000037, 0x1E000002,// EVEX_Vpmovdb_xmmm128_k1z_zmm
-			0x00000037, 0x7B000000,// Pmovzxbq_xmm_xmmm16
+			0x00000037, 0x78000000,// Pmovzxbq_xmm_xmmm16
 			0x00000037, 0x0F000001,// VEX_Vpmovzxbq_xmm_xmmm16
 			0x00000037, 0x11000001,// VEX_Vpmovzxbq_ymm_xmmm32
 			0x00000037, 0x2D000002,// EVEX_Vpmovzxbq_xmm_k1z_xmmm16
@@ -2895,7 +2871,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vpmovqb_xmmm16_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vpmovqb_xmmm32_k1z_ymm
 			0x00000037, 0x1E000002,// EVEX_Vpmovqb_xmmm64_k1z_zmm
-			0x00000037, 0x7B000000,// Pmovzxwd_xmm_xmmm64
+			0x00000037, 0x78000000,// Pmovzxwd_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vpmovzxwd_xmm_xmmm64
 			0x00000037, 0x11000001,// VEX_Vpmovzxwd_ymm_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vpmovzxwd_xmm_k1z_xmmm64
@@ -2904,7 +2880,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vpmovdw_xmmm64_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vpmovdw_xmmm128_k1z_ymm
 			0x00000037, 0x1E000002,// EVEX_Vpmovdw_ymmm256_k1z_zmm
-			0x00000037, 0x7B000000,// Pmovzxwq_xmm_xmmm32
+			0x00000037, 0x78000000,// Pmovzxwq_xmm_xmmm32
 			0x00000037, 0x0F000001,// VEX_Vpmovzxwq_xmm_xmmm32
 			0x00000037, 0x11000001,// VEX_Vpmovzxwq_ymm_xmmm64
 			0x00000037, 0x2D000002,// EVEX_Vpmovzxwq_xmm_k1z_xmmm32
@@ -2913,7 +2889,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2D000002,// EVEX_Vpmovqw_xmmm32_k1z_xmm
 			0x00000037, 0x2D000002,// EVEX_Vpmovqw_xmmm64_k1z_ymm
 			0x00000037, 0x1E000002,// EVEX_Vpmovqw_xmmm128_k1z_zmm
-			0x00000037, 0x7B000000,// Pmovzxdq_xmm_xmmm64
+			0x00000037, 0x78000000,// Pmovzxdq_xmm_xmmm64
 			0x00000037, 0x0F000001,// VEX_Vpmovzxdq_xmm_xmmm64
 			0x00000037, 0x11000001,// VEX_Vpmovzxdq_ymm_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vpmovzxdq_xmm_k1z_xmmm64
@@ -2927,13 +2903,13 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B8, 0x1E000002,// EVEX_Vpermd_zmm_k1z_zmm_zmmm512b32
 			0x000000B7, 0x2D000002,// EVEX_Vpermq_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vpermq_zmm_k1z_zmm_zmmm512b64
-			0x00000036, 0x7C000000,// Pcmpgtq_xmm_xmmm128
+			0x00000036, 0x79000000,// Pcmpgtq_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpcmpgtq_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpcmpgtq_ymm_ymm_ymmm256
 			0x000000BA, 0x2D000002,// EVEX_Vpcmpgtq_kr_k1_xmm_xmmm128b64
 			0x000000BA, 0x2D000002,// EVEX_Vpcmpgtq_kr_k1_ymm_ymmm256b64
 			0x000000BA, 0x1E000002,// EVEX_Vpcmpgtq_kr_k1_zmm_zmmm512b64
-			0x00000036, 0x7B000000,// Pminsb_xmm_xmmm128
+			0x00000036, 0x78000000,// Pminsb_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpminsb_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpminsb_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpminsb_xmm_k1z_xmm_xmmm128
@@ -2945,7 +2921,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2C000002,// EVEX_Vpmovm2q_xmm_kr
 			0x00000037, 0x2C000002,// EVEX_Vpmovm2q_ymm_kr
 			0x00000037, 0x1C000002,// EVEX_Vpmovm2q_zmm_kr
-			0x00000036, 0x7B000000,// Pminsd_xmm_xmmm128
+			0x00000036, 0x78000000,// Pminsd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpminsd_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpminsd_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpminsd_xmm_k1z_xmm_xmmm128b32
@@ -2960,7 +2936,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2C000002,// EVEX_Vpmovq2m_kr_xmm
 			0x00000037, 0x2C000002,// EVEX_Vpmovq2m_kr_ymm
 			0x00000037, 0x1C000002,// EVEX_Vpmovq2m_kr_zmm
-			0x00000036, 0x7B000000,// Pminuw_xmm_xmmm128
+			0x00000036, 0x78000000,// Pminuw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpminuw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpminuw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpminuw_xmm_k1z_xmm_xmmm128
@@ -2969,7 +2945,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2B000002,// EVEX_Vpbroadcastmw2d_xmm_kr
 			0x00000037, 0x2B000002,// EVEX_Vpbroadcastmw2d_ymm_kr
 			0x00000037, 0x1B000002,// EVEX_Vpbroadcastmw2d_zmm_kr
-			0x00000036, 0x7B000000,// Pminud_xmm_xmmm128
+			0x00000036, 0x78000000,// Pminud_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpminud_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpminud_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpminud_xmm_k1z_xmm_xmmm128b32
@@ -2978,13 +2954,13 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x2D000002,// EVEX_Vpminuq_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vpminuq_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vpminuq_zmm_k1z_zmm_zmmm512b64
-			0x00000036, 0x7B000000,// Pmaxsb_xmm_xmmm128
+			0x00000036, 0x78000000,// Pmaxsb_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmaxsb_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmaxsb_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpmaxsb_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpmaxsb_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpmaxsb_zmm_k1z_zmm_zmmm512
-			0x00000036, 0x7B000000,// Pmaxsd_xmm_xmmm128
+			0x00000036, 0x78000000,// Pmaxsd_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmaxsd_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmaxsd_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpmaxsd_xmm_k1z_xmm_xmmm128b32
@@ -2993,13 +2969,13 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x2D000002,// EVEX_Vpmaxsq_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vpmaxsq_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vpmaxsq_zmm_k1z_zmm_zmmm512b64
-			0x00000036, 0x7B000000,// Pmaxuw_xmm_xmmm128
+			0x00000036, 0x78000000,// Pmaxuw_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmaxuw_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmaxuw_ymm_ymm_ymmm256
 			0x000000B7, 0x2A000002,// EVEX_Vpmaxuw_xmm_k1z_xmm_xmmm128
 			0x000000B7, 0x2A000002,// EVEX_Vpmaxuw_ymm_k1z_ymm_ymmm256
 			0x000000B8, 0x1A000002,// EVEX_Vpmaxuw_zmm_k1z_zmm_zmmm512
-			0x00000036, 0x7B000000,// Pmaxud_xmm_xmmm128
+			0x00000036, 0x78000000,// Pmaxud_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmaxud_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmaxud_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpmaxud_xmm_k1z_xmm_xmmm128b32
@@ -3008,7 +2984,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x2D000002,// EVEX_Vpmaxuq_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2D000002,// EVEX_Vpmaxuq_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1E000002,// EVEX_Vpmaxuq_zmm_k1z_zmm_zmmm512b64
-			0x00000036, 0x7B000000,// Pmulld_xmm_xmmm128
+			0x00000036, 0x78000000,// Pmulld_xmm_xmmm128
 			0x000000B7, 0x0F000001,// VEX_Vpmulld_xmm_xmm_xmmm128
 			0x000000B7, 0x11000001,// VEX_Vpmulld_ymm_ymm_ymmm256
 			0x000000B7, 0x2D000002,// EVEX_Vpmulld_xmm_k1z_xmm_xmmm128b32
@@ -3017,7 +2993,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x2C000002,// EVEX_Vpmullq_xmm_k1z_xmm_xmmm128b64
 			0x000000B7, 0x2C000002,// EVEX_Vpmullq_ymm_k1z_ymm_ymmm256b64
 			0x000000B8, 0x1C000002,// EVEX_Vpmullq_zmm_k1z_zmm_zmmm512b64
-			0x00000037, 0x7B000000,// Phminposuw_xmm_xmmm128
+			0x00000037, 0x78000000,// Phminposuw_xmm_xmmm128
 			0x00000037, 0x0F000001,// VEX_Vphminposuw_xmm_xmmm128
 			0x00000037, 0x2D000002,// EVEX_Vgetexpps_xmm_k1z_xmmm128b32
 			0x00000037, 0x2D000002,// EVEX_Vgetexpps_ymm_k1z_ymmm256b32
@@ -3214,9 +3190,9 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x2A000002,// EVEX_Vpbroadcastw_xmm_k1z_xmmm16
 			0x00000037, 0x2A000002,// EVEX_Vpbroadcastw_ymm_k1z_xmmm16
 			0x00000038, 0x1A000002,// EVEX_Vpbroadcastw_zmm_k1z_xmmm16
-			0x08A00037, 0x2A000002,// EVEX_Vpbroadcastb_xmm_k1z_r32
-			0x08A00037, 0x2A000002,// EVEX_Vpbroadcastb_ymm_k1z_r32
-			0x08A00038, 0x1A000002,// EVEX_Vpbroadcastb_zmm_k1z_r32
+			0x07E00037, 0x2A000002,// EVEX_Vpbroadcastb_xmm_k1z_r32
+			0x07E00037, 0x2A000002,// EVEX_Vpbroadcastb_ymm_k1z_r32
+			0x07E00038, 0x1A000002,// EVEX_Vpbroadcastb_zmm_k1z_r32
 			0x01600037, 0x2A000002,// EVEX_Vpbroadcastw_xmm_k1z_r32
 			0x01600037, 0x2A000002,// EVEX_Vpbroadcastw_ymm_k1z_r32
 			0x01600038, 0x1A000002,// EVEX_Vpbroadcastw_zmm_k1z_r32
@@ -3244,10 +3220,10 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B6, 0x2D000002,// EVEX_Vpermt2pd_xmm_k1z_xmm_xmmm128b64
 			0x000000B6, 0x2D000002,// EVEX_Vpermt2pd_ymm_k1z_ymm_ymmm256b64
 			0x000000B9, 0x1E000002,// EVEX_Vpermt2pd_zmm_k1z_zmm_zmmm512b64
-			0x0008C034, 0x88080000,// Invept_r32_m128
-			0x0008C034, 0x88080000,// Invept_r64_m128
-			0x0008C034, 0x89080000,// Invvpid_r32_m128
-			0x0008C034, 0x89080000,// Invvpid_r64_m128
+			0x0008C034, 0x85080000,// Invept_r32_m128
+			0x0008C034, 0x85080000,// Invept_r64_m128
+			0x0008C034, 0x86080000,// Invvpid_r32_m128
+			0x0008C034, 0x86080000,// Invvpid_r64_m128
 			0x00000034, 0x50080000,// Invpcid_r32_m128
 			0x00000034, 0x50080000,// Invpcid_r64_m128
 			0x000000B7, 0x25000002,// EVEX_Vpmultishiftqb_xmm_k1z_xmm_xmmm128b64
@@ -3618,20 +3594,20 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000003, 0x21000002,// EVEX_Vscatterpf0qpd_vm64z_k1
 			0x00000003, 0x21000002,// EVEX_Vscatterpf1qps_vm64z_k1
 			0x00000003, 0x21000002,// EVEX_Vscatterpf1qpd_vm64z_k1
-			0x00000036, 0x73000000,// Sha1nexte_xmm_xmmm128
+			0x00000036, 0x70000000,// Sha1nexte_xmm_xmmm128
 			0x00000038, 0x1D000002,// EVEX_Vexp2ps_zmm_k1z_zmmm512b32_sae
 			0x00000038, 0x1D000002,// EVEX_Vexp2pd_zmm_k1z_zmmm512b64_sae
-			0x00000036, 0x73000000,// Sha1msg1_xmm_xmmm128
-			0x00000036, 0x73000000,// Sha1msg2_xmm_xmmm128
+			0x00000036, 0x70000000,// Sha1msg1_xmm_xmmm128
+			0x00000036, 0x70000000,// Sha1msg2_xmm_xmmm128
 			0x00000038, 0x1D000002,// EVEX_Vrcp28ps_zmm_k1z_zmmm512b32_sae
 			0x00000038, 0x1D000002,// EVEX_Vrcp28pd_zmm_k1z_zmmm512b64_sae
-			0x09400036, 0x73000000,// Sha256rnds2_xmm_xmmm128
+			0x08800036, 0x70000000,// Sha256rnds2_xmm_xmmm128
 			0x000000B7, 0x1D000002,// EVEX_Vrcp28ss_xmm_k1z_xmm_xmmm32_sae
 			0x000000B7, 0x1D000002,// EVEX_Vrcp28sd_xmm_k1z_xmm_xmmm64_sae
-			0x00000036, 0x73000000,// Sha256msg1_xmm_xmmm128
+			0x00000036, 0x70000000,// Sha256msg1_xmm_xmmm128
 			0x00000038, 0x1D000002,// EVEX_Vrsqrt28ps_zmm_k1z_zmmm512b32_sae
 			0x00000038, 0x1D000002,// EVEX_Vrsqrt28pd_zmm_k1z_zmmm512b64_sae
-			0x00000036, 0x73000000,// Sha256msg2_xmm_xmmm128
+			0x00000036, 0x70000000,// Sha256msg2_xmm_xmmm128
 			0x000000B7, 0x1D000002,// EVEX_Vrsqrt28ss_xmm_k1z_xmm_xmmm32_sae
 			0x000000B7, 0x1D000002,// EVEX_Vrsqrt28sd_xmm_k1z_xmm_xmmm64_sae
 			0x00000036, 0x4B000000,// Gf2p8mulb_xmm_xmmm128
@@ -3644,39 +3620,39 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000037, 0x10000001,// VEX_Vaesimc_xmm_xmmm128
 			0x00000036, 0x0E000000,// Aesenc_xmm_xmmm128
 			0x000000B7, 0x10000001,// VEX_Vaesenc_xmm_xmm_xmmm128
-			0x000000B7, 0x84000001,// VEX_Vaesenc_ymm_ymm_ymmm256
-			0x000000B7, 0x86000002,// EVEX_Vaesenc_xmm_xmm_xmmm128
-			0x000000B7, 0x86000002,// EVEX_Vaesenc_ymm_ymm_ymmm256
-			0x000000B7, 0x85000002,// EVEX_Vaesenc_zmm_zmm_zmmm512
+			0x000000B7, 0x81000001,// VEX_Vaesenc_ymm_ymm_ymmm256
+			0x000000B7, 0x83000002,// EVEX_Vaesenc_xmm_xmm_xmmm128
+			0x000000B7, 0x83000002,// EVEX_Vaesenc_ymm_ymm_ymmm256
+			0x000000B7, 0x82000002,// EVEX_Vaesenc_zmm_zmm_zmmm512
 			0x00000036, 0x0E000000,// Aesenclast_xmm_xmmm128
 			0x000000B7, 0x10000001,// VEX_Vaesenclast_xmm_xmm_xmmm128
-			0x000000B7, 0x84000001,// VEX_Vaesenclast_ymm_ymm_ymmm256
-			0x000000B7, 0x86000002,// EVEX_Vaesenclast_xmm_xmm_xmmm128
-			0x000000B7, 0x86000002,// EVEX_Vaesenclast_ymm_ymm_ymmm256
-			0x000000B7, 0x85000002,// EVEX_Vaesenclast_zmm_zmm_zmmm512
+			0x000000B7, 0x81000001,// VEX_Vaesenclast_ymm_ymm_ymmm256
+			0x000000B7, 0x83000002,// EVEX_Vaesenclast_xmm_xmm_xmmm128
+			0x000000B7, 0x83000002,// EVEX_Vaesenclast_ymm_ymm_ymmm256
+			0x000000B7, 0x82000002,// EVEX_Vaesenclast_zmm_zmm_zmmm512
 			0x00000036, 0x0E000000,// Aesdec_xmm_xmmm128
 			0x000000B7, 0x10000001,// VEX_Vaesdec_xmm_xmm_xmmm128
-			0x000000B7, 0x84000001,// VEX_Vaesdec_ymm_ymm_ymmm256
-			0x000000B7, 0x86000002,// EVEX_Vaesdec_xmm_xmm_xmmm128
-			0x000000B7, 0x86000002,// EVEX_Vaesdec_ymm_ymm_ymmm256
-			0x000000B7, 0x85000002,// EVEX_Vaesdec_zmm_zmm_zmmm512
+			0x000000B7, 0x81000001,// VEX_Vaesdec_ymm_ymm_ymmm256
+			0x000000B7, 0x83000002,// EVEX_Vaesdec_xmm_xmm_xmmm128
+			0x000000B7, 0x83000002,// EVEX_Vaesdec_ymm_ymm_ymmm256
+			0x000000B7, 0x82000002,// EVEX_Vaesdec_zmm_zmm_zmmm512
 			0x00000036, 0x0E000000,// Aesdeclast_xmm_xmmm128
 			0x000000B7, 0x10000001,// VEX_Vaesdeclast_xmm_xmm_xmmm128
-			0x000000B7, 0x84000001,// VEX_Vaesdeclast_ymm_ymm_ymmm256
-			0x000000B7, 0x86000002,// EVEX_Vaesdeclast_xmm_xmm_xmmm128
-			0x000000B7, 0x86000002,// EVEX_Vaesdeclast_ymm_ymm_ymmm256
-			0x000000B7, 0x85000002,// EVEX_Vaesdeclast_zmm_zmm_zmmm512
+			0x000000B7, 0x81000001,// VEX_Vaesdeclast_ymm_ymm_ymmm256
+			0x000000B7, 0x83000002,// EVEX_Vaesdeclast_xmm_xmm_xmmm128
+			0x000000B7, 0x83000002,// EVEX_Vaesdeclast_ymm_ymm_ymmm256
+			0x000000B7, 0x82000002,// EVEX_Vaesdeclast_zmm_zmm_zmmm512
 			0x00000037, 0x57000000,// Movbe_r16_m16
 			0x00000037, 0x57000000,// Movbe_r32_m32
 			0x00000037, 0x57000000,// Movbe_r64_m64
-			0x00000036, 0x7C000000,// Crc32_r32_rm8
-			0x00000036, 0x7C000000,// Crc32_r64_rm8
+			0x00000036, 0x79000000,// Crc32_r32_rm8
+			0x00000036, 0x79000000,// Crc32_r64_rm8
 			0x00000037, 0x57000000,// Movbe_m16_r16
 			0x00000037, 0x57000000,// Movbe_m32_r32
 			0x00000037, 0x57000000,// Movbe_m64_r64
-			0x00000036, 0x7C000000,// Crc32_r32_rm16
-			0x00000036, 0x7C000000,// Crc32_r32_rm32
-			0x00000036, 0x7C000000,// Crc32_r64_rm64
+			0x00000036, 0x79000000,// Crc32_r32_rm16
+			0x00000036, 0x79000000,// Crc32_r32_rm32
+			0x00000036, 0x79000000,// Crc32_r64_rm64
 			0x000940B7, 0x2E000001,// VEX_Andn_r32_r32_rm32
 			0x000940B7, 0x2E000001,// VEX_Andn_r64_r64_rm64
 			0x0008A037, 0x2E000001,// VEX_Blsr_r32_rm32
@@ -3685,8 +3661,8 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00088037, 0x2E000001,// VEX_Blsmsk_r64_rm64
 			0x0008A037, 0x2E000001,// VEX_Blsi_r32_rm32
 			0x0008A037, 0x2E000001,// VEX_Blsi_r64_rm64
-			0x08A8A0B7, 0x2F000001,// VEX_Bzhi_r32_rm32_r32
-			0x08A8A0B7, 0x2F000001,// VEX_Bzhi_r64_rm64_r64
+			0x07E8A0B7, 0x2F000001,// VEX_Bzhi_r32_rm32_r32
+			0x07E8A0B7, 0x2F000001,// VEX_Bzhi_r64_rm64_r64
 			0x00000037, 0x31080000,// Wrussd_m32_r32
 			0x00000037, 0x31080000,// Wrussq_m64_r64
 			0x00000097, 0x2F000001,// VEX_Pext_r32_r32_rm32
@@ -3699,25 +3675,25 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x0002E036, 0x0D000000,// Adcx_r64_rm64
 			0x0003E036, 0x0D000000,// Adox_r32_rm32
 			0x0003E036, 0x0D000000,// Adox_r64_rm64
-			0x095000E7, 0x2F000001,// VEX_Mulx_r32_r32_rm32
-			0x096000E7, 0x2F000001,// VEX_Mulx_r64_r64_rm64
+			0x089000E7, 0x2F000001,// VEX_Mulx_r32_r32_rm32
+			0x08A000E7, 0x2F000001,// VEX_Mulx_r64_r64_rm64
 			0x0169A0B7, 0x2E000001,// VEX_Bextr_r32_rm32_r32
 			0x0169A0B7, 0x2E000001,// VEX_Bextr_r64_rm64_r64
-			0x08A000B7, 0x2F000001,// VEX_Shlx_r32_rm32_r32
-			0x08A000B7, 0x2F000001,// VEX_Shlx_r64_rm64_r64
-			0x08A000B7, 0x2F000001,// VEX_Sarx_r32_rm32_r32
-			0x08A000B7, 0x2F000001,// VEX_Sarx_r64_rm64_r64
-			0x08A000B7, 0x2F000001,// VEX_Shrx_r32_rm32_r32
-			0x08A000B7, 0x2F000001,// VEX_Shrx_r64_rm64_r64
-			0x09700034, 0x58000000,// Movdir64b_r16_m512
-			0x09700034, 0x58000000,// Movdir64b_r32_m512
-			0x09700034, 0x58000000,// Movdir64b_r64_m512
-			0x09798034, 0x3F080000,// Enqcmds_r16_m512
-			0x09798034, 0x3F080000,// Enqcmds_r32_m512
-			0x09798034, 0x3F080000,// Enqcmds_r64_m512
-			0x09798034, 0x3F000000,// Enqcmd_r16_m512
-			0x09798034, 0x3F000000,// Enqcmd_r32_m512
-			0x09798034, 0x3F000000,// Enqcmd_r64_m512
+			0x07E000B7, 0x2F000001,// VEX_Shlx_r32_rm32_r32
+			0x07E000B7, 0x2F000001,// VEX_Shlx_r64_rm64_r64
+			0x07E000B7, 0x2F000001,// VEX_Sarx_r32_rm32_r32
+			0x07E000B7, 0x2F000001,// VEX_Sarx_r64_rm64_r64
+			0x07E000B7, 0x2F000001,// VEX_Shrx_r32_rm32_r32
+			0x07E000B7, 0x2F000001,// VEX_Shrx_r64_rm64_r64
+			0x08B00034, 0x58000000,// Movdir64b_r16_m512
+			0x08B00034, 0x58000000,// Movdir64b_r32_m512
+			0x08B00034, 0x58000000,// Movdir64b_r64_m512
+			0x08B98034, 0x3F080000,// Enqcmds_r16_m512
+			0x08B98034, 0x3F080000,// Enqcmds_r32_m512
+			0x08B98034, 0x3F080000,// Enqcmds_r64_m512
+			0x08B98034, 0x3F000000,// Enqcmd_r16_m512
+			0x08B98034, 0x3F000000,// Enqcmd_r32_m512
+			0x08B98034, 0x3F000000,// Enqcmd_r64_m512
 			0x00000037, 0x59000000,// Movdiri_m32_r32
 			0x00000037, 0x59000000,// Movdiri_m64_r64
 			0x000000B7, 0x11000001,// VEX_Vpermq_ymm_ymmm256_imm8
@@ -3745,60 +3721,60 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x2D000002,// EVEX_Vpermilpd_ymm_k1z_ymmm256b64_imm8
 			0x000000B8, 0x1E000002,// EVEX_Vpermilpd_zmm_k1z_zmmm512b64_imm8
 			0x000002B7, 0x0F000001,// VEX_Vperm2f128_ymm_ymm_ymmm256_imm8
-			0x000000B7, 0x7B000000,// Roundps_xmm_xmmm128_imm8
+			0x000000B7, 0x78000000,// Roundps_xmm_xmmm128_imm8
 			0x000000B7, 0x0F000001,// VEX_Vroundps_xmm_xmmm128_imm8
 			0x000000B7, 0x0F000001,// VEX_Vroundps_ymm_ymmm256_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vrndscaleps_xmm_k1z_xmmm128b32_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vrndscaleps_ymm_k1z_ymmm256b32_imm8
 			0x000000B8, 0x1E000002,// EVEX_Vrndscaleps_zmm_k1z_zmmm512b32_imm8_sae
-			0x000000B7, 0x7B000000,// Roundpd_xmm_xmmm128_imm8
+			0x000000B7, 0x78000000,// Roundpd_xmm_xmmm128_imm8
 			0x000000B7, 0x0F000001,// VEX_Vroundpd_xmm_xmmm128_imm8
 			0x000000B7, 0x0F000001,// VEX_Vroundpd_ymm_ymmm256_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vrndscalepd_xmm_k1z_xmmm128b64_imm8
 			0x000000B7, 0x2D000002,// EVEX_Vrndscalepd_ymm_k1z_ymmm256b64_imm8
 			0x000000B8, 0x1E000002,// EVEX_Vrndscalepd_zmm_k1z_zmmm512b64_imm8_sae
-			0x000000B6, 0x7B000000,// Roundss_xmm_xmmm32_imm8
+			0x000000B6, 0x78000000,// Roundss_xmm_xmmm32_imm8
 			0x000002B7, 0x0F000001,// VEX_Vroundss_xmm_xmm_xmmm32_imm8
 			0x000002B7, 0x1E000002,// EVEX_Vrndscaless_xmm_k1z_xmm_xmmm32_imm8_sae
-			0x000000B6, 0x7B000000,// Roundsd_xmm_xmmm64_imm8
+			0x000000B6, 0x78000000,// Roundsd_xmm_xmmm64_imm8
 			0x000002B7, 0x0F000001,// VEX_Vroundsd_xmm_xmm_xmmm64_imm8
 			0x000002B7, 0x1E000002,// EVEX_Vrndscalesd_xmm_k1z_xmm_xmmm64_imm8_sae
-			0x000000B6, 0x7B000000,// Blendps_xmm_xmmm128_imm8
+			0x000000B6, 0x78000000,// Blendps_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vblendps_xmm_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vblendps_ymm_ymm_ymmm256_imm8
-			0x000000B6, 0x7B000000,// Blendpd_xmm_xmmm128_imm8
+			0x000000B6, 0x78000000,// Blendpd_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vblendpd_xmm_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vblendpd_ymm_ymm_ymmm256_imm8
-			0x000000B6, 0x7B000000,// Pblendw_xmm_xmmm128_imm8
+			0x000000B6, 0x78000000,// Pblendw_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vpblendw_xmm_xmm_xmmm128_imm8
 			0x000002B7, 0x11000001,// VEX_Vpblendw_ymm_ymm_ymmm256_imm8
-			0x000000B6, 0x7E000000,// Palignr_mm_mmm64_imm8
-			0x000000B6, 0x7E000000,// Palignr_xmm_xmmm128_imm8
+			0x000000B6, 0x7B000000,// Palignr_mm_mmm64_imm8
+			0x000000B6, 0x7B000000,// Palignr_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vpalignr_xmm_xmm_xmmm128_imm8
 			0x000002B7, 0x11000001,// VEX_Vpalignr_ymm_ymm_ymmm256_imm8
 			0x000002B7, 0x2A000002,// EVEX_Vpalignr_xmm_k1z_xmm_xmmm128_imm8
 			0x000002B7, 0x2A000002,// EVEX_Vpalignr_ymm_k1z_ymm_ymmm256_imm8
 			0x000002B8, 0x1A000002,// EVEX_Vpalignr_zmm_k1z_zmm_zmmm512_imm8
-			0x000000B7, 0x7B000000,// Pextrb_r32m8_xmm_imm8
-			0x000000B7, 0x7B000000,// Pextrb_r64m8_xmm_imm8
+			0x000000B7, 0x78000000,// Pextrb_r32m8_xmm_imm8
+			0x000000B7, 0x78000000,// Pextrb_r64m8_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpextrb_r32m8_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpextrb_r64m8_xmm_imm8
 			0x000000B7, 0x1A000002,// EVEX_Vpextrb_r32m8_xmm_imm8
 			0x000000B7, 0x1A000002,// EVEX_Vpextrb_r64m8_xmm_imm8
-			0x000000B7, 0x7B000000,// Pextrw_r32m16_xmm_imm8
-			0x000000B7, 0x7B000000,// Pextrw_r64m16_xmm_imm8
+			0x000000B7, 0x78000000,// Pextrw_r32m16_xmm_imm8
+			0x000000B7, 0x78000000,// Pextrw_r64m16_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpextrw_r32m16_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpextrw_r64m16_xmm_imm8
 			0x000000B7, 0x1A000002,// EVEX_Vpextrw_r32m16_xmm_imm8
 			0x000000B7, 0x1A000002,// EVEX_Vpextrw_r64m16_xmm_imm8
-			0x000000B7, 0x7B000000,// Pextrd_rm32_xmm_imm8
-			0x000000B7, 0x7B000000,// Pextrq_rm64_xmm_imm8
+			0x000000B7, 0x78000000,// Pextrd_rm32_xmm_imm8
+			0x000000B7, 0x78000000,// Pextrq_rm64_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpextrd_rm32_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vpextrq_rm64_xmm_imm8
 			0x000000B7, 0x1C000002,// EVEX_Vpextrd_rm32_xmm_imm8
 			0x000000B7, 0x1C000002,// EVEX_Vpextrq_rm64_xmm_imm8
-			0x000000B7, 0x7B000000,// Extractps_rm32_xmm_imm8
-			0x000000B7, 0x7B000000,// Extractps_r64m32_xmm_imm8
+			0x000000B7, 0x78000000,// Extractps_rm32_xmm_imm8
+			0x000000B7, 0x78000000,// Extractps_r64m32_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vextractps_rm32_xmm_imm8
 			0x000000B7, 0x0F000001,// VEX_Vextractps_r64m32_xmm_imm8
 			0x000000B7, 0x1E000002,// EVEX_Vextractps_rm32_xmm_imm8
@@ -3834,17 +3810,17 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000002BA, 0x2D000002,// EVEX_Vpcmpq_kr_k1_xmm_xmmm128b64_imm8
 			0x000002BA, 0x2D000002,// EVEX_Vpcmpq_kr_k1_ymm_ymmm256b64_imm8
 			0x000002BA, 0x1E000002,// EVEX_Vpcmpq_kr_k1_zmm_zmmm512b64_imm8
-			0x08A000B6, 0x7B000000,// Pinsrb_xmm_r32m8_imm8
-			0x08A000B6, 0x7B000000,// Pinsrb_xmm_r64m8_imm8
-			0x08A002B7, 0x0F000001,// VEX_Vpinsrb_xmm_xmm_r32m8_imm8
-			0x08A002B7, 0x0F000001,// VEX_Vpinsrb_xmm_xmm_r64m8_imm8
-			0x08A002B7, 0x1A000002,// EVEX_Vpinsrb_xmm_xmm_r32m8_imm8
-			0x08A002B7, 0x1A000002,// EVEX_Vpinsrb_xmm_xmm_r64m8_imm8
-			0x000000B6, 0x7B000000,// Insertps_xmm_xmmm32_imm8
+			0x07E000B6, 0x78000000,// Pinsrb_xmm_r32m8_imm8
+			0x07E000B6, 0x78000000,// Pinsrb_xmm_r64m8_imm8
+			0x07E002B7, 0x0F000001,// VEX_Vpinsrb_xmm_xmm_r32m8_imm8
+			0x07E002B7, 0x0F000001,// VEX_Vpinsrb_xmm_xmm_r64m8_imm8
+			0x07E002B7, 0x1A000002,// EVEX_Vpinsrb_xmm_xmm_r32m8_imm8
+			0x07E002B7, 0x1A000002,// EVEX_Vpinsrb_xmm_xmm_r64m8_imm8
+			0x000000B6, 0x78000000,// Insertps_xmm_xmmm32_imm8
 			0x000002B7, 0x0F000001,// VEX_Vinsertps_xmm_xmm_xmmm32_imm8
 			0x000002B7, 0x1E000002,// EVEX_Vinsertps_xmm_xmm_xmmm32_imm8
-			0x000000B6, 0x7B000000,// Pinsrd_xmm_rm32_imm8
-			0x000000B6, 0x7B000000,// Pinsrq_xmm_rm64_imm8
+			0x000000B6, 0x78000000,// Pinsrd_xmm_rm32_imm8
+			0x000000B6, 0x78000000,// Pinsrq_xmm_rm64_imm8
 			0x000002B7, 0x0F000001,// VEX_Vpinsrd_xmm_xmm_rm32_imm8
 			0x000002B7, 0x0F000001,// VEX_Vpinsrq_xmm_xmm_rm64_imm8
 			0x000002B7, 0x1C000002,// EVEX_Vpinsrd_xmm_xmm_rm32_imm8
@@ -3901,12 +3877,12 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000002BA, 0x2A000002,// EVEX_Vpcmpw_kr_k1_xmm_xmmm128_imm8
 			0x000002BA, 0x2A000002,// EVEX_Vpcmpw_kr_k1_ymm_ymmm256_imm8
 			0x000002BA, 0x1A000002,// EVEX_Vpcmpw_kr_k1_zmm_zmmm512_imm8
-			0x000000B6, 0x7B000000,// Dpps_xmm_xmmm128_imm8
+			0x000000B6, 0x78000000,// Dpps_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vdpps_xmm_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vdpps_ymm_ymm_ymmm256_imm8
-			0x000000B6, 0x7B000000,// Dppd_xmm_xmmm128_imm8
+			0x000000B6, 0x78000000,// Dppd_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vdppd_xmm_xmm_xmmm128_imm8
-			0x000000B6, 0x7B000000,// Mpsadbw_xmm_xmmm128_imm8
+			0x000000B6, 0x78000000,// Mpsadbw_xmm_xmmm128_imm8
 			0x000002B7, 0x0F000001,// VEX_Vmpsadbw_xmm_xmm_xmmm128_imm8
 			0x000002B7, 0x11000001,// VEX_Vmpsadbw_ymm_ymm_ymmm256_imm8
 			0x000002B7, 0x2A000002,// EVEX_Vdbpsadbw_xmm_k1z_xmm_xmmm128_imm8
@@ -3916,21 +3892,21 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000002B8, 0x1E000002,// EVEX_Vshufi32x4_zmm_k1z_zmm_zmmm512b32_imm8
 			0x000002B7, 0x2D000002,// EVEX_Vshufi64x2_ymm_k1z_ymm_ymmm256b64_imm8
 			0x000002B8, 0x1E000002,// EVEX_Vshufi64x2_zmm_k1z_zmm_zmmm512b64_imm8
-			0x000000B6, 0x61000000,// Pclmulqdq_xmm_xmmm128_imm8
-			0x000002B7, 0x62000001,// VEX_Vpclmulqdq_xmm_xmm_xmmm128_imm8
-			0x000002B7, 0x8A000001,// VEX_Vpclmulqdq_ymm_ymm_ymmm256_imm8
-			0x000002B7, 0x8C000002,// EVEX_Vpclmulqdq_xmm_xmm_xmmm128_imm8
-			0x000002B7, 0x8C000002,// EVEX_Vpclmulqdq_ymm_ymm_ymmm256_imm8
-			0x000002B7, 0x8B000002,// EVEX_Vpclmulqdq_zmm_zmm_zmmm512_imm8
+			0x000000B6, 0x5E000000,// Pclmulqdq_xmm_xmmm128_imm8
+			0x000002B7, 0x5F000001,// VEX_Vpclmulqdq_xmm_xmm_xmmm128_imm8
+			0x000002B7, 0x87000001,// VEX_Vpclmulqdq_ymm_ymm_ymmm256_imm8
+			0x000002B7, 0x89000002,// EVEX_Vpclmulqdq_xmm_xmm_xmmm128_imm8
+			0x000002B7, 0x89000002,// EVEX_Vpclmulqdq_ymm_ymm_ymmm256_imm8
+			0x000002B7, 0x88000002,// EVEX_Vpclmulqdq_zmm_zmm_zmmm512_imm8
 			0x000002B7, 0x11000001,// VEX_Vperm2i128_ymm_ymm_ymmm256_imm8
-			0x000006B7, 0x8F000001,// VEX_Vpermil2ps_xmm_xmm_xmmm128_xmm_imm4
-			0x000006B7, 0x8F000001,// VEX_Vpermil2ps_ymm_ymm_ymmm256_ymm_imm4
-			0x000006B7, 0x8F000001,// VEX_Vpermil2ps_xmm_xmm_xmm_xmmm128_imm4
-			0x000006B7, 0x8F000001,// VEX_Vpermil2ps_ymm_ymm_ymm_ymmm256_imm4
-			0x000006B7, 0x8F000001,// VEX_Vpermil2pd_xmm_xmm_xmmm128_xmm_imm4
-			0x000006B7, 0x8F000001,// VEX_Vpermil2pd_ymm_ymm_ymmm256_ymm_imm4
-			0x000006B7, 0x8F000001,// VEX_Vpermil2pd_xmm_xmm_xmm_xmmm128_imm4
-			0x000006B7, 0x8F000001,// VEX_Vpermil2pd_ymm_ymm_ymm_ymmm256_imm4
+			0x000006B7, 0x8C000001,// VEX_Vpermil2ps_xmm_xmm_xmmm128_xmm_imm4
+			0x000006B7, 0x8C000001,// VEX_Vpermil2ps_ymm_ymm_ymmm256_ymm_imm4
+			0x000006B7, 0x8C000001,// VEX_Vpermil2ps_xmm_xmm_xmm_xmmm128_imm4
+			0x000006B7, 0x8C000001,// VEX_Vpermil2ps_ymm_ymm_ymm_ymmm256_imm4
+			0x000006B7, 0x8C000001,// VEX_Vpermil2pd_xmm_xmm_xmmm128_xmm_imm4
+			0x000006B7, 0x8C000001,// VEX_Vpermil2pd_ymm_ymm_ymmm256_ymm_imm4
+			0x000006B7, 0x8C000001,// VEX_Vpermil2pd_xmm_xmm_xmm_xmmm128_imm4
+			0x000006B7, 0x8C000001,// VEX_Vpermil2pd_ymm_ymm_ymm_ymmm256_imm4
 			0x000002B7, 0x0F000001,// VEX_Vblendvps_xmm_xmm_xmmm128_xmm
 			0x000002B7, 0x0F000001,// VEX_Vblendvps_ymm_ymm_ymmm256_ymm
 			0x000002B7, 0x0F000001,// VEX_Vblendvpd_xmm_xmm_xmmm128_xmm
@@ -3977,18 +3953,18 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000002B7, 0x42000001,// VEX_Vfmsubaddpd_ymm_ymm_ymmm256_ymm
 			0x000002B7, 0x42000001,// VEX_Vfmsubaddpd_xmm_xmm_xmm_xmmm128
 			0x000002B7, 0x42000001,// VEX_Vfmsubaddpd_ymm_ymm_ymm_ymmm256
-			0x098800B4, 0x7C000000,// Pcmpestrm_xmm_xmmm128_imm8
-			0x099800B4, 0x7C000000,// Pcmpestrm64_xmm_xmmm128_imm8
-			0x098800B4, 0x0F000001,// VEX_Vpcmpestrm_xmm_xmmm128_imm8
-			0x099800B4, 0x0F000001,// VEX_Vpcmpestrm64_xmm_xmmm128_imm8
-			0x09A800B4, 0x7C000000,// Pcmpestri_xmm_xmmm128_imm8
-			0x09B800B4, 0x7C000000,// Pcmpestri64_xmm_xmmm128_imm8
-			0x09A800B4, 0x0F000001,// VEX_Vpcmpestri_xmm_xmmm128_imm8
-			0x09B800B4, 0x0F000001,// VEX_Vpcmpestri64_xmm_xmmm128_imm8
-			0x09C800B4, 0x7C000000,// Pcmpistrm_xmm_xmmm128_imm8
-			0x09C800B4, 0x0F000001,// VEX_Vpcmpistrm_xmm_xmmm128_imm8
-			0x09D800B4, 0x7C000000,// Pcmpistri_xmm_xmmm128_imm8
-			0x09D800B4, 0x0F000001,// VEX_Vpcmpistri_xmm_xmmm128_imm8
+			0x08C800B4, 0x79000000,// Pcmpestrm_xmm_xmmm128_imm8
+			0x08D800B4, 0x79000000,// Pcmpestrm64_xmm_xmmm128_imm8
+			0x08C800B4, 0x0F000001,// VEX_Vpcmpestrm_xmm_xmmm128_imm8
+			0x08D800B4, 0x0F000001,// VEX_Vpcmpestrm64_xmm_xmmm128_imm8
+			0x08E800B4, 0x79000000,// Pcmpestri_xmm_xmmm128_imm8
+			0x08F800B4, 0x79000000,// Pcmpestri64_xmm_xmmm128_imm8
+			0x08E800B4, 0x0F000001,// VEX_Vpcmpestri_xmm_xmmm128_imm8
+			0x08F800B4, 0x0F000001,// VEX_Vpcmpestri64_xmm_xmmm128_imm8
+			0x090800B4, 0x79000000,// Pcmpistrm_xmm_xmmm128_imm8
+			0x090800B4, 0x0F000001,// VEX_Vpcmpistrm_xmm_xmmm128_imm8
+			0x091800B4, 0x79000000,// Pcmpistri_xmm_xmmm128_imm8
+			0x091800B4, 0x0F000001,// VEX_Vpcmpistri_xmm_xmmm128_imm8
 			0x000000BA, 0x2C000002,// EVEX_Vfpclassps_kr_k1_xmmm128b32_imm8
 			0x000000BA, 0x2C000002,// EVEX_Vfpclassps_kr_k1_ymmm256b32_imm8
 			0x000000BA, 0x1C000002,// EVEX_Vfpclassps_kr_k1_zmmm512b32_imm8
@@ -4063,7 +4039,7 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000002B7, 0x42000001,// VEX_Vfnmsubss_xmm_xmm_xmm_xmmm32
 			0x000002B7, 0x42000001,// VEX_Vfnmsubsd_xmm_xmm_xmmm64_xmm
 			0x000002B7, 0x42000001,// VEX_Vfnmsubsd_xmm_xmm_xmm_xmmm64
-			0x000000B6, 0x73000000,// Sha1rnds4_xmm_xmmm128_imm8
+			0x000000B6, 0x70000000,// Sha1rnds4_xmm_xmmm128_imm8
 			0x000000B6, 0x4B000000,// Gf2p8affineqb_xmm_xmmm128_imm8
 			0x000002B7, 0x4C000001,// VEX_Vgf2p8affineqb_xmm_xmm_xmmm128_imm8
 			0x000002B7, 0x4C000001,// VEX_Vgf2p8affineqb_ymm_ymm_ymmm256_imm8
@@ -4080,105 +4056,105 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x000000B7, 0x10000001,// VEX_Vaeskeygenassist_xmm_xmmm128_imm8
 			0x000000B7, 0x2F000001,// VEX_Rorx_r32_rm32_imm8
 			0x000000B7, 0x2F000001,// VEX_Rorx_r64_rm64_imm8
-			0x000002B7, 0x8F000003,// XOP_Vpmacssww_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpmacsswd_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpmacssdql_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpmacssdd_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpmacssdqh_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpmacsww_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpmacswd_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpmacsdql_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpmacsdd_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpmacsdqh_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpcmov_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpcmov_ymm_ymm_ymmm256_ymm
-			0x000002B7, 0x8F000003,// XOP_Vpcmov_xmm_xmm_xmm_xmmm128
-			0x000002B7, 0x8F000003,// XOP_Vpcmov_ymm_ymm_ymm_ymmm256
-			0x000002B7, 0x8F000003,// XOP_Vpperm_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpperm_xmm_xmm_xmm_xmmm128
-			0x000002B7, 0x8F000003,// XOP_Vpmadcsswd_xmm_xmm_xmmm128_xmm
-			0x000002B7, 0x8F000003,// XOP_Vpmadcswd_xmm_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vprotb_xmm_xmmm128_imm8
-			0x000000B7, 0x8F000003,// XOP_Vprotw_xmm_xmmm128_imm8
-			0x000000B7, 0x8F000003,// XOP_Vprotd_xmm_xmmm128_imm8
-			0x000000B7, 0x8F000003,// XOP_Vprotq_xmm_xmmm128_imm8
-			0x000002B7, 0x8F000003,// XOP_Vpcomb_xmm_xmm_xmmm128_imm8
-			0x000002B7, 0x8F000003,// XOP_Vpcomw_xmm_xmm_xmmm128_imm8
-			0x000002B7, 0x8F000003,// XOP_Vpcomd_xmm_xmm_xmmm128_imm8
-			0x000002B7, 0x8F000003,// XOP_Vpcomq_xmm_xmm_xmmm128_imm8
-			0x000002B7, 0x8F000003,// XOP_Vpcomub_xmm_xmm_xmmm128_imm8
-			0x000002B7, 0x8F000003,// XOP_Vpcomuw_xmm_xmm_xmmm128_imm8
-			0x000002B7, 0x8F000003,// XOP_Vpcomud_xmm_xmm_xmmm128_imm8
-			0x000002B7, 0x8F000003,// XOP_Vpcomuq_xmm_xmm_xmmm128_imm8
-			0x0008A037, 0x82000003,// XOP_Blcfill_r32_rm32
-			0x0008A037, 0x82000003,// XOP_Blcfill_r64_rm64
-			0x0008A037, 0x82000003,// XOP_Blsfill_r32_rm32
-			0x0008A037, 0x82000003,// XOP_Blsfill_r64_rm64
-			0x0008A037, 0x82000003,// XOP_Blcs_r32_rm32
-			0x0008A037, 0x82000003,// XOP_Blcs_r64_rm64
-			0x0008A037, 0x82000003,// XOP_Tzmsk_r32_rm32
-			0x0008A037, 0x82000003,// XOP_Tzmsk_r64_rm64
-			0x0008A037, 0x82000003,// XOP_Blcic_r32_rm32
-			0x0008A037, 0x82000003,// XOP_Blcic_r64_rm64
-			0x0008A037, 0x82000003,// XOP_Blsic_r32_rm32
-			0x0008A037, 0x82000003,// XOP_Blsic_r64_rm64
-			0x0008A037, 0x82000003,// XOP_T1mskc_r32_rm32
-			0x0008A037, 0x82000003,// XOP_T1mskc_r64_rm64
-			0x0008A037, 0x82000003,// XOP_Blcmsk_r32_rm32
-			0x0008A037, 0x82000003,// XOP_Blcmsk_r64_rm64
-			0x0008A037, 0x82000003,// XOP_Blci_r32_rm32
-			0x0008A037, 0x82000003,// XOP_Blci_r64_rm64
-			0x09E00004, 0x51000003,// XOP_Llwpcb_r32
-			0x09E00004, 0x51000003,// XOP_Llwpcb_r64
+			0x000002B7, 0x8C000003,// XOP_Vpmacssww_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpmacsswd_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpmacssdql_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpmacssdd_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpmacssdqh_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpmacsww_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpmacswd_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpmacsdql_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpmacsdd_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpmacsdqh_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpcmov_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpcmov_ymm_ymm_ymmm256_ymm
+			0x000002B7, 0x8C000003,// XOP_Vpcmov_xmm_xmm_xmm_xmmm128
+			0x000002B7, 0x8C000003,// XOP_Vpcmov_ymm_ymm_ymm_ymmm256
+			0x000002B7, 0x8C000003,// XOP_Vpperm_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpperm_xmm_xmm_xmm_xmmm128
+			0x000002B7, 0x8C000003,// XOP_Vpmadcsswd_xmm_xmm_xmmm128_xmm
+			0x000002B7, 0x8C000003,// XOP_Vpmadcswd_xmm_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vprotb_xmm_xmmm128_imm8
+			0x000000B7, 0x8C000003,// XOP_Vprotw_xmm_xmmm128_imm8
+			0x000000B7, 0x8C000003,// XOP_Vprotd_xmm_xmmm128_imm8
+			0x000000B7, 0x8C000003,// XOP_Vprotq_xmm_xmmm128_imm8
+			0x000002B7, 0x8C000003,// XOP_Vpcomb_xmm_xmm_xmmm128_imm8
+			0x000002B7, 0x8C000003,// XOP_Vpcomw_xmm_xmm_xmmm128_imm8
+			0x000002B7, 0x8C000003,// XOP_Vpcomd_xmm_xmm_xmmm128_imm8
+			0x000002B7, 0x8C000003,// XOP_Vpcomq_xmm_xmm_xmmm128_imm8
+			0x000002B7, 0x8C000003,// XOP_Vpcomub_xmm_xmm_xmmm128_imm8
+			0x000002B7, 0x8C000003,// XOP_Vpcomuw_xmm_xmm_xmmm128_imm8
+			0x000002B7, 0x8C000003,// XOP_Vpcomud_xmm_xmm_xmmm128_imm8
+			0x000002B7, 0x8C000003,// XOP_Vpcomuq_xmm_xmm_xmmm128_imm8
+			0x0008A037, 0x7F000003,// XOP_Blcfill_r32_rm32
+			0x0008A037, 0x7F000003,// XOP_Blcfill_r64_rm64
+			0x0008A037, 0x7F000003,// XOP_Blsfill_r32_rm32
+			0x0008A037, 0x7F000003,// XOP_Blsfill_r64_rm64
+			0x0008A037, 0x7F000003,// XOP_Blcs_r32_rm32
+			0x0008A037, 0x7F000003,// XOP_Blcs_r64_rm64
+			0x0008A037, 0x7F000003,// XOP_Tzmsk_r32_rm32
+			0x0008A037, 0x7F000003,// XOP_Tzmsk_r64_rm64
+			0x0008A037, 0x7F000003,// XOP_Blcic_r32_rm32
+			0x0008A037, 0x7F000003,// XOP_Blcic_r64_rm64
+			0x0008A037, 0x7F000003,// XOP_Blsic_r32_rm32
+			0x0008A037, 0x7F000003,// XOP_Blsic_r64_rm64
+			0x0008A037, 0x7F000003,// XOP_T1mskc_r32_rm32
+			0x0008A037, 0x7F000003,// XOP_T1mskc_r64_rm64
+			0x0008A037, 0x7F000003,// XOP_Blcmsk_r32_rm32
+			0x0008A037, 0x7F000003,// XOP_Blcmsk_r64_rm64
+			0x0008A037, 0x7F000003,// XOP_Blci_r32_rm32
+			0x0008A037, 0x7F000003,// XOP_Blci_r64_rm64
+			0x09200004, 0x51000003,// XOP_Llwpcb_r32
+			0x09200004, 0x51000003,// XOP_Llwpcb_r64
 			0x00000007, 0x51000003,// XOP_Slwpcb_r32
 			0x00000007, 0x51000003,// XOP_Slwpcb_r64
-			0x00000037, 0x8F000003,// XOP_Vfrczps_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vfrczps_ymm_ymmm256
-			0x00000037, 0x8F000003,// XOP_Vfrczpd_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vfrczpd_ymm_ymmm256
-			0x00000037, 0x8F000003,// XOP_Vfrczss_xmm_xmmm32
-			0x00000037, 0x8F000003,// XOP_Vfrczsd_xmm_xmmm64
-			0x000000B7, 0x8F000003,// XOP_Vprotb_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vprotb_xmm_xmm_xmmm128
-			0x000000B7, 0x8F000003,// XOP_Vprotw_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vprotw_xmm_xmm_xmmm128
-			0x000000B7, 0x8F000003,// XOP_Vprotd_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vprotd_xmm_xmm_xmmm128
-			0x000000B7, 0x8F000003,// XOP_Vprotq_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vprotq_xmm_xmm_xmmm128
-			0x000000B7, 0x8F000003,// XOP_Vpshlb_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vpshlb_xmm_xmm_xmmm128
-			0x000000B7, 0x8F000003,// XOP_Vpshlw_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vpshlw_xmm_xmm_xmmm128
-			0x000000B7, 0x8F000003,// XOP_Vpshld_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vpshld_xmm_xmm_xmmm128
-			0x000000B7, 0x8F000003,// XOP_Vpshlq_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vpshlq_xmm_xmm_xmmm128
-			0x000000B7, 0x8F000003,// XOP_Vpshab_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vpshab_xmm_xmm_xmmm128
-			0x000000B7, 0x8F000003,// XOP_Vpshaw_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vpshaw_xmm_xmm_xmmm128
-			0x000000B7, 0x8F000003,// XOP_Vpshad_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vpshad_xmm_xmm_xmmm128
-			0x000000B7, 0x8F000003,// XOP_Vpshaq_xmm_xmmm128_xmm
-			0x000000B7, 0x8F000003,// XOP_Vpshaq_xmm_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphaddbw_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphaddbd_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphaddbq_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphaddwd_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphaddwq_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphadddq_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphaddubw_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphaddubd_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphaddubq_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphadduwd_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphadduwq_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphaddudq_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphsubbw_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphsubwd_xmm_xmmm128
-			0x00000037, 0x8F000003,// XOP_Vphsubdq_xmm_xmmm128
-			0x0009A0B7, 0x82000003,// XOP_Bextr_r32_rm32_imm32
-			0x0009A0B7, 0x82000003,// XOP_Bextr_r64_rm64_imm32
+			0x00000037, 0x8C000003,// XOP_Vfrczps_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vfrczps_ymm_ymmm256
+			0x00000037, 0x8C000003,// XOP_Vfrczpd_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vfrczpd_ymm_ymmm256
+			0x00000037, 0x8C000003,// XOP_Vfrczss_xmm_xmmm32
+			0x00000037, 0x8C000003,// XOP_Vfrczsd_xmm_xmmm64
+			0x000000B7, 0x8C000003,// XOP_Vprotb_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vprotb_xmm_xmm_xmmm128
+			0x000000B7, 0x8C000003,// XOP_Vprotw_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vprotw_xmm_xmm_xmmm128
+			0x000000B7, 0x8C000003,// XOP_Vprotd_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vprotd_xmm_xmm_xmmm128
+			0x000000B7, 0x8C000003,// XOP_Vprotq_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vprotq_xmm_xmm_xmmm128
+			0x000000B7, 0x8C000003,// XOP_Vpshlb_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vpshlb_xmm_xmm_xmmm128
+			0x000000B7, 0x8C000003,// XOP_Vpshlw_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vpshlw_xmm_xmm_xmmm128
+			0x000000B7, 0x8C000003,// XOP_Vpshld_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vpshld_xmm_xmm_xmmm128
+			0x000000B7, 0x8C000003,// XOP_Vpshlq_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vpshlq_xmm_xmm_xmmm128
+			0x000000B7, 0x8C000003,// XOP_Vpshab_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vpshab_xmm_xmm_xmmm128
+			0x000000B7, 0x8C000003,// XOP_Vpshaw_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vpshaw_xmm_xmm_xmmm128
+			0x000000B7, 0x8C000003,// XOP_Vpshad_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vpshad_xmm_xmm_xmmm128
+			0x000000B7, 0x8C000003,// XOP_Vpshaq_xmm_xmmm128_xmm
+			0x000000B7, 0x8C000003,// XOP_Vpshaq_xmm_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphaddbw_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphaddbd_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphaddbq_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphaddwd_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphaddwq_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphadddq_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphaddubw_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphaddubd_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphaddubq_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphadduwd_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphadduwq_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphaddudq_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphsubbw_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphsubwd_xmm_xmmm128
+			0x00000037, 0x8C000003,// XOP_Vphsubdq_xmm_xmmm128
+			0x0009A0B7, 0x7F000003,// XOP_Bextr_r32_rm32_imm32
+			0x0009A0B7, 0x7F000003,// XOP_Bextr_r64_rm64_imm32
 			0x000720B4, 0x51000003,// XOP_Lwpins_r32_rm32_imm32
 			0x000720B4, 0x51000003,// XOP_Lwpins_r64_rm32_imm32
 			0x00000094, 0x51000003,// XOP_Lwpval_r32_rm32_imm32
@@ -4207,587 +4183,575 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00000036, 0x3C000004,// D3NOW_Pmulhrw_mm_mmm64
 			0x00000037, 0x3D000004,// D3NOW_Pswapd_mm_mmm64
 			0x00000036, 0x3C000004,// D3NOW_Pavgusb_mm_mmm64
-			0x09F70000, 0x94080000,// Rmpadjust
-			0x0A070000, 0x94080000,// Rmpupdate
-			0x0A170000, 0x94080000,// Psmash
-			0x0A266000, 0x94080000,// Pvalidatew
-			0x0A366000, 0x94080000,// Pvalidated
-			0x0A466000, 0x94080000,// Pvalidateq
-			0x00000000, 0x95000000,// Serialize
-			0x00000000, 0x96000000,// Xsusldtrk
-			0x00000000, 0x96000000,// Xresldtrk
-			0x0A500000, 0x97080000,// Invlpgbw
-			0x05900000, 0x97080000,// Invlpgbd
-			0x0A600000, 0x97080000,// Invlpgbq
-			0x00000000, 0x97080000,// Tlbsync
-			0x00000003, 0x67000000,// Prefetchreserved3_m8
-			0x00000003, 0x67000000,// Prefetchreserved4_m8
-			0x00000003, 0x67000000,// Prefetchreserved5_m8
-			0x00000003, 0x67000000,// Prefetchreserved6_m8
-			0x00000003, 0x67000000,// Prefetchreserved7_m8
+			0x09370000, 0x91080000,// Rmpadjust
+			0x09470000, 0x91080000,// Rmpupdate
+			0x09570000, 0x91080000,// Psmash
+			0x09666000, 0x91080000,// Pvalidatew
+			0x09766000, 0x91080000,// Pvalidated
+			0x09866000, 0x91080000,// Pvalidateq
+			0x00000000, 0x92000000,// Serialize
+			0x00000000, 0x93000000,// Xsusldtrk
+			0x00000000, 0x93000000,// Xresldtrk
+			0x09900000, 0x94080000,// Invlpgbw
+			0x05900000, 0x94080000,// Invlpgbd
+			0x09A00000, 0x94080000,// Invlpgbq
+			0x00000000, 0x94080000,// Tlbsync
+			0x00000003, 0x64000000,// Prefetchreserved3_m8
+			0x00000003, 0x64000000,// Prefetchreserved4_m8
+			0x00000003, 0x64000000,// Prefetchreserved5_m8
+			0x00000003, 0x64000000,// Prefetchreserved6_m8
+			0x00000003, 0x64000000,// Prefetchreserved7_m8
 			0x00000000, 0x03900000,// Ud0
-			0x00000000, 0x80500000,// Vmgexit
-			0x05B00000, 0x76020000,// Getsecq
-			0x0A700004, 0x99000001,// VEX_Ldtilecfg_m512
-			0x0A700000, 0x99000001,// VEX_Tilerelease
-			0x00000007, 0x99000001,// VEX_Sttilecfg_m512
-			0x00000007, 0x99000001,// VEX_Tilezero_tmm
-			0x20000037, 0x99000001,// VEX_Tileloaddt1_tmm_sibmem
-			0x20000037, 0x99000001,// VEX_Tilestored_sibmem_tmm
-			0x20000037, 0x99000001,// VEX_Tileloadd_tmm_sibmem
-			0x000000B6, 0x98000001,// VEX_Tdpbf16ps_tmm_tmm_tmm
-			0x000000B6, 0x9A000001,// VEX_Tdpbuud_tmm_tmm_tmm
-			0x000000B6, 0x9A000001,// VEX_Tdpbusd_tmm_tmm_tmm
-			0x000000B6, 0x9A000001,// VEX_Tdpbsud_tmm_tmm_tmm
-			0x000000B6, 0x9A000001,// VEX_Tdpbssd_tmm_tmm_tmm
+			0x00000000, 0x7D500000,// Vmgexit
+			0x05B00000, 0x73020000,// Getsecq
+			0x09B00004, 0x96000001,// VEX_Ldtilecfg_m512
+			0x09B00000, 0x96000001,// VEX_Tilerelease
+			0x00000007, 0x96000001,// VEX_Sttilecfg_m512
+			0x00000007, 0x96000001,// VEX_Tilezero_tmm
+			0x20000037, 0x96000001,// VEX_Tileloaddt1_tmm_sibmem
+			0x20000037, 0x96000001,// VEX_Tilestored_sibmem_tmm
+			0x20000037, 0x96000001,// VEX_Tileloadd_tmm_sibmem
+			0x000000B6, 0x95000001,// VEX_Tdpbf16ps_tmm_tmm_tmm
+			0x000000B6, 0x97000001,// VEX_Tdpbuud_tmm_tmm_tmm
+			0x000000B6, 0x97000001,// VEX_Tdpbusd_tmm_tmm_tmm
+			0x000000B6, 0x97000001,// VEX_Tdpbsud_tmm_tmm_tmm
+			0x000000B6, 0x97000001,// VEX_Tdpbssd_tmm_tmm_tmm
 			0x0005A007, 0x48000000,// Fnstdw_AX
 			0x0005A007, 0x48000000,// Fnstsg_AX
-			0x05B00000, 0x9B200000,// Altinst
-			0x00000000, 0x9E580000,// Tdcall
-			0x0008C000, 0x9E580000,// Seamret
-			0x0A898000, 0x9E080000,// Seamops
-			0x05C74000, 0x9E580000,// Seamcall
-			0x0A998004, 0xA1000000,// Aesencwide128kl_m384
-			0x0A998004, 0xA1000000,// Aesdecwide128kl_m384
-			0x0A998004, 0xA1000000,// Aesencwide256kl_m512
-			0x0A998004, 0xA1000000,// Aesdecwide256kl_m512
-			0x0AA98034, 0x9F080000,// Loadiwkey_xmm_xmm
-			0x00098036, 0xA0000000,// Aesenc128kl_xmm_m384
-			0x00098036, 0xA0000000,// Aesdec128kl_xmm_m384
-			0x00098036, 0xA0000000,// Aesenc256kl_xmm_m512
-			0x00098036, 0xA0000000,// Aesdec256kl_xmm_m512
-			0x0AB08037, 0xA0000000,// Encodekey128_r32_r32
-			0x0AC08037, 0xA0000000,// Encodekey256_r32_r32
+			0x05B00000, 0x98200000,// Altinst
+			0x00000000, 0x9B580000,// Tdcall
+			0x0008C000, 0x9B580000,// Seamret
+			0x09C98000, 0x9B080000,// Seamops
+			0x05C74000, 0x9B580000,// Seamcall
+			0x09D98004, 0x9E000000,// Aesencwide128kl_m384
+			0x09D98004, 0x9E000000,// Aesdecwide128kl_m384
+			0x09D98004, 0x9E000000,// Aesencwide256kl_m512
+			0x09D98004, 0x9E000000,// Aesdecwide256kl_m512
+			0x09E98034, 0x9C080000,// Loadiwkey_xmm_xmm
+			0x00098036, 0x9D000000,// Aesenc128kl_xmm_m384
+			0x00098036, 0x9D000000,// Aesdec128kl_xmm_m384
+			0x00098036, 0x9D000000,// Aesenc256kl_xmm_m512
+			0x00098036, 0x9D000000,// Aesdec256kl_xmm_m512
+			0x09F08037, 0x9D000000,// Encodekey128_r32_r32
+			0x0A008037, 0x9D000000,// Encodekey256_r32_r32
 			0x00000037, 0x11000001,// VEX_Vbroadcastss_xmm_xmm
 			0x00000037, 0x11000001,// VEX_Vbroadcastss_ymm_xmm
 			0x00000037, 0x11000001,// VEX_Vbroadcastsd_ymm_xmm
-			0x00000000, 0x80500000,// Vmgexit_F2
-			0x0AD68000, 0xA2440000,// Uiret
-			0x0004A000, 0xA2000000,// Testui
-			0x00016000, 0xA2000000,// Clui
-			0x00058000, 0xA2000000,// Stui
-			0x00000004, 0xA2000000,// Senduipi_r64
-			0x05B00000, 0xA3080000,// Hreset_imm8
-			0x000000B6, 0xA4000001,// VEX_Vpdpbusd_xmm_xmm_xmmm128
-			0x000000B6, 0xA4000001,// VEX_Vpdpbusd_ymm_ymm_ymmm256
-			0x000000B6, 0xA4000001,// VEX_Vpdpbusds_xmm_xmm_xmmm128
-			0x000000B6, 0xA4000001,// VEX_Vpdpbusds_ymm_ymm_ymmm256
-			0x000000B6, 0xA4000001,// VEX_Vpdpwssd_xmm_xmm_xmmm128
-			0x000000B6, 0xA4000001,// VEX_Vpdpwssd_ymm_ymm_ymmm256
-			0x000000B6, 0xA4000001,// VEX_Vpdpwssds_xmm_xmm_xmmm128
-			0x000000B6, 0xA4000001,// VEX_Vpdpwssds_ymm_ymm_ymmm256
-			0x09000004, 0xA6080000,// Lkgs_rm16
-			0x0AE00004, 0xA6080000,// Lkgs_r32m16
-			0x0AE00004, 0xA6080000,// Lkgs_r64m16
-			0x0AF6C000, 0xA54C0000,// Eretu
-			0x0B06C000, 0xA54C0000,// Erets
-			0x000000B7, 0xA8000002,// EVEX_Vaddph_xmm_k1z_xmm_xmmm128b16
-			0x000000B7, 0xA8000002,// EVEX_Vaddph_ymm_k1z_ymm_ymmm256b16
-			0x000000B8, 0xA7000002,// EVEX_Vaddph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B7, 0xA7000002,// EVEX_Vaddsh_xmm_k1z_xmm_xmmm16_er
-			0x000002BA, 0xA8000002,// EVEX_Vcmpph_kr_k1_xmm_xmmm128b16_imm8
-			0x000002BA, 0xA8000002,// EVEX_Vcmpph_kr_k1_ymm_ymmm256b16_imm8
-			0x000002BA, 0xA7000002,// EVEX_Vcmpph_kr_k1_zmm_zmmm512b16_imm8_sae
-			0x000002BA, 0xA7000002,// EVEX_Vcmpsh_kr_k1_xmm_xmmm16_imm8_sae
-			0x00084034, 0xA7000002,// EVEX_Vcomish_xmm_xmmm16_sae
-			0x00000037, 0xA8000002,// EVEX_Vcvtdq2ph_xmm_k1z_xmmm128b32
-			0x00000037, 0xA8000002,// EVEX_Vcvtdq2ph_xmm_k1z_ymmm256b32
-			0x00000037, 0xA7000002,// EVEX_Vcvtdq2ph_ymm_k1z_zmmm512b32_er
-			0x00000037, 0xA8000002,// EVEX_Vcvtpd2ph_xmm_k1z_xmmm128b64
-			0x00000037, 0xA8000002,// EVEX_Vcvtpd2ph_xmm_k1z_ymmm256b64
-			0x00000037, 0xA7000002,// EVEX_Vcvtpd2ph_xmm_k1z_zmmm512b64_er
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2dq_xmm_k1z_xmmm64b16
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2dq_ymm_k1z_xmmm128b16
-			0x00000038, 0xA7000002,// EVEX_Vcvtph2dq_zmm_k1z_ymmm256b16_er
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2pd_xmm_k1z_xmmm32b16
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2pd_ymm_k1z_xmmm64b16
-			0x00000038, 0xA7000002,// EVEX_Vcvtph2pd_zmm_k1z_xmmm128b16_sae
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2psx_xmm_k1z_xmmm64b16
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2psx_ymm_k1z_xmmm128b16
-			0x00000038, 0xA7000002,// EVEX_Vcvtph2psx_zmm_k1z_ymmm256b16_sae
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2qq_xmm_k1z_xmmm32b16
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2qq_ymm_k1z_xmmm64b16
-			0x00000038, 0xA7000002,// EVEX_Vcvtph2qq_zmm_k1z_xmmm128b16_er
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2udq_xmm_k1z_xmmm64b16
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2udq_ymm_k1z_xmmm128b16
-			0x00000038, 0xA7000002,// EVEX_Vcvtph2udq_zmm_k1z_ymmm256b16_er
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2uqq_xmm_k1z_xmmm32b16
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2uqq_ymm_k1z_xmmm64b16
-			0x00000038, 0xA7000002,// EVEX_Vcvtph2uqq_zmm_k1z_xmmm128b16_er
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2uw_xmm_k1z_xmmm128b16
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2uw_ymm_k1z_ymmm256b16
-			0x00000038, 0xA7000002,// EVEX_Vcvtph2uw_zmm_k1z_zmmm512b16_er
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2w_xmm_k1z_xmmm128b16
-			0x00000037, 0xA8000002,// EVEX_Vcvtph2w_ymm_k1z_ymmm256b16
-			0x00000038, 0xA7000002,// EVEX_Vcvtph2w_zmm_k1z_zmmm512b16_er
-			0x00000037, 0xA8000002,// EVEX_Vcvtps2phx_xmm_k1z_xmmm128b32
-			0x00000037, 0xA8000002,// EVEX_Vcvtps2phx_xmm_k1z_ymmm256b32
-			0x00000037, 0xA7000002,// EVEX_Vcvtps2phx_ymm_k1z_zmmm512b32_er
-			0x00000037, 0xA8000002,// EVEX_Vcvtqq2ph_xmm_k1z_xmmm128b64
-			0x00000037, 0xA8000002,// EVEX_Vcvtqq2ph_xmm_k1z_ymmm256b64
-			0x00000037, 0xA7000002,// EVEX_Vcvtqq2ph_xmm_k1z_zmmm512b64_er
-			0x000000B7, 0xA7000002,// EVEX_Vcvtsd2sh_xmm_k1z_xmm_xmmm64_er
-			0x000000B7, 0xA7000002,// EVEX_Vcvtsh2sd_xmm_k1z_xmm_xmmm16_sae
-			0x00000037, 0xA7000002,// EVEX_Vcvtsh2si_r32_xmmm16_er
-			0x00000037, 0xA7000002,// EVEX_Vcvtsh2si_r64_xmmm16_er
-			0x000000B7, 0xA7000002,// EVEX_Vcvtsh2ss_xmm_k1z_xmm_xmmm16_sae
-			0x00000037, 0xA7000002,// EVEX_Vcvtsh2usi_r32_xmmm16_er
-			0x00000037, 0xA7000002,// EVEX_Vcvtsh2usi_r64_xmmm16_er
-			0x000000B7, 0xA7000002,// EVEX_Vcvtsi2sh_xmm_xmm_rm32_er
-			0x000000B7, 0xA7000002,// EVEX_Vcvtsi2sh_xmm_xmm_rm64_er
-			0x000000B7, 0xA7000002,// EVEX_Vcvtss2sh_xmm_k1z_xmm_xmmm32_er
-			0x00000037, 0xA8000002,// EVEX_Vcvttph2dq_xmm_k1z_xmmm64b16
-			0x00000037, 0xA8000002,// EVEX_Vcvttph2dq_ymm_k1z_xmmm128b16
-			0x00000038, 0xA7000002,// EVEX_Vcvttph2dq_zmm_k1z_ymmm256b16_sae
-			0x00000037, 0xA8000002,// EVEX_Vcvttph2qq_xmm_k1z_xmmm32b16
-			0x00000037, 0xA8000002,// EVEX_Vcvttph2qq_ymm_k1z_xmmm64b16
-			0x00000038, 0xA7000002,// EVEX_Vcvttph2qq_zmm_k1z_xmmm128b16_sae
-			0x00000037, 0xA8000002,// EVEX_Vcvttph2udq_xmm_k1z_xmmm64b16
-			0x00000037, 0xA8000002,// EVEX_Vcvttph2udq_ymm_k1z_xmmm128b16
-			0x00000038, 0xA7000002,// EVEX_Vcvttph2udq_zmm_k1z_ymmm256b16_sae
-			0x00000037, 0xA8000002,// EVEX_Vcvttph2uqq_xmm_k1z_xmmm32b16
-			0x00000037, 0xA8000002,// EVEX_Vcvttph2uqq_ymm_k1z_xmmm64b16
-			0x00000038, 0xA7000002,// EVEX_Vcvttph2uqq_zmm_k1z_xmmm128b16_sae
-			0x00000037, 0xA8000002,// EVEX_Vcvttph2uw_xmm_k1z_xmmm128b16
-			0x00000037, 0xA8000002,// EVEX_Vcvttph2uw_ymm_k1z_ymmm256b16
-			0x00000038, 0xA7000002,// EVEX_Vcvttph2uw_zmm_k1z_zmmm512b16_sae
-			0x00000037, 0xA8000002,// EVEX_Vcvttph2w_xmm_k1z_xmmm128b16
-			0x00000037, 0xA8000002,// EVEX_Vcvttph2w_ymm_k1z_ymmm256b16
-			0x00000038, 0xA7000002,// EVEX_Vcvttph2w_zmm_k1z_zmmm512b16_sae
-			0x00000037, 0xA7000002,// EVEX_Vcvttsh2si_r32_xmmm16_sae
-			0x00000037, 0xA7000002,// EVEX_Vcvttsh2si_r64_xmmm16_sae
-			0x00000037, 0xA7000002,// EVEX_Vcvttsh2usi_r32_xmmm16_sae
-			0x00000037, 0xA7000002,// EVEX_Vcvttsh2usi_r64_xmmm16_sae
-			0x00000037, 0xA8000002,// EVEX_Vcvtudq2ph_xmm_k1z_xmmm128b32
-			0x00000037, 0xA8000002,// EVEX_Vcvtudq2ph_xmm_k1z_ymmm256b32
-			0x00000037, 0xA7000002,// EVEX_Vcvtudq2ph_ymm_k1z_zmmm512b32_er
-			0x00000037, 0xA8000002,// EVEX_Vcvtuqq2ph_xmm_k1z_xmmm128b64
-			0x00000037, 0xA8000002,// EVEX_Vcvtuqq2ph_xmm_k1z_ymmm256b64
-			0x00000037, 0xA7000002,// EVEX_Vcvtuqq2ph_xmm_k1z_zmmm512b64_er
-			0x000000B7, 0xA7000002,// EVEX_Vcvtusi2sh_xmm_xmm_rm32_er
-			0x000000B7, 0xA7000002,// EVEX_Vcvtusi2sh_xmm_xmm_rm64_er
-			0x00000037, 0xA8000002,// EVEX_Vcvtuw2ph_xmm_k1z_xmmm128b16
-			0x00000037, 0xA8000002,// EVEX_Vcvtuw2ph_ymm_k1z_ymmm256b16
-			0x00000038, 0xA7000002,// EVEX_Vcvtuw2ph_zmm_k1z_zmmm512b16_er
-			0x00000037, 0xA8000002,// EVEX_Vcvtw2ph_xmm_k1z_xmmm128b16
-			0x00000037, 0xA8000002,// EVEX_Vcvtw2ph_ymm_k1z_ymmm256b16
-			0x00000038, 0xA7000002,// EVEX_Vcvtw2ph_zmm_k1z_zmmm512b16_er
-			0x000000B7, 0xA8000002,// EVEX_Vdivph_xmm_k1z_xmm_xmmm128b16
-			0x000000B7, 0xA8000002,// EVEX_Vdivph_ymm_k1z_ymm_ymmm256b16
-			0x000000B8, 0xA7000002,// EVEX_Vdivph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B7, 0xA7000002,// EVEX_Vdivsh_xmm_k1z_xmm_xmmm16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfcmaddcph_xmm_k1z_xmm_xmmm128b32
-			0x000000B6, 0xA8000002,// EVEX_Vfcmaddcph_ymm_k1z_ymm_ymmm256b32
-			0x000000B9, 0xA7000002,// EVEX_Vfcmaddcph_zmm_k1z_zmm_zmmm512b32_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmaddcph_xmm_k1z_xmm_xmmm128b32
-			0x000000B6, 0xA8000002,// EVEX_Vfmaddcph_ymm_k1z_ymm_ymmm256b32
-			0x000000B9, 0xA7000002,// EVEX_Vfmaddcph_zmm_k1z_zmm_zmmm512b32_er
-			0x000000B6, 0xA7000002,// EVEX_Vfcmaddcsh_xmm_k1z_xmm_xmmm32_er
-			0x000000B6, 0xA7000002,// EVEX_Vfmaddcsh_xmm_k1z_xmm_xmmm32_er
-			0x000000B7, 0xA8000002,// EVEX_Vfcmulcph_xmm_k1z_xmm_xmmm128b32
-			0x000000B7, 0xA8000002,// EVEX_Vfcmulcph_ymm_k1z_ymm_ymmm256b32
-			0x000000B8, 0xA7000002,// EVEX_Vfcmulcph_zmm_k1z_zmm_zmmm512b32_er
-			0x000000B7, 0xA8000002,// EVEX_Vfmulcph_xmm_k1z_xmm_xmmm128b32
-			0x000000B7, 0xA8000002,// EVEX_Vfmulcph_ymm_k1z_ymm_ymmm256b32
-			0x000000B8, 0xA7000002,// EVEX_Vfmulcph_zmm_k1z_zmm_zmmm512b32_er
-			0x000000B7, 0xA7000002,// EVEX_Vfcmulcsh_xmm_k1z_xmm_xmmm32_er
-			0x000000B7, 0xA7000002,// EVEX_Vfmulcsh_xmm_k1z_xmm_xmmm32_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmaddsub132ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfmaddsub132ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfmaddsub132ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmaddsub213ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfmaddsub213ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfmaddsub213ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmaddsub231ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfmaddsub231ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfmaddsub231ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmsubadd132ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfmsubadd132ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfmsubadd132ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmsubadd213ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfmsubadd213ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfmsubadd213ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmsubadd231ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfmsubadd231ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfmsubadd231ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmadd132ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfmadd132ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfmadd132ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmadd213ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfmadd213ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfmadd213ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmadd231ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfmadd231ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfmadd231ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfnmadd132ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfnmadd132ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfnmadd132ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfnmadd213ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfnmadd213ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfnmadd213ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfnmadd231ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfnmadd231ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfnmadd231ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA7000002,// EVEX_Vfmadd132sh_xmm_k1z_xmm_xmmm16_er
-			0x000000B6, 0xA7000002,// EVEX_Vfmadd213sh_xmm_k1z_xmm_xmmm16_er
-			0x000000B6, 0xA7000002,// EVEX_Vfmadd231sh_xmm_k1z_xmm_xmmm16_er
-			0x000000B6, 0xA7000002,// EVEX_Vfnmadd132sh_xmm_k1z_xmm_xmmm16_er
-			0x000000B6, 0xA7000002,// EVEX_Vfnmadd213sh_xmm_k1z_xmm_xmmm16_er
-			0x000000B6, 0xA7000002,// EVEX_Vfnmadd231sh_xmm_k1z_xmm_xmmm16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmsub132ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfmsub132ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfmsub132ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmsub213ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfmsub213ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfmsub213ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfmsub231ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfmsub231ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfmsub231ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfnmsub132ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfnmsub132ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfnmsub132ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfnmsub213ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfnmsub213ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfnmsub213ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA8000002,// EVEX_Vfnmsub231ph_xmm_k1z_xmm_xmmm128b16
-			0x000000B6, 0xA8000002,// EVEX_Vfnmsub231ph_ymm_k1z_ymm_ymmm256b16
-			0x000000B9, 0xA7000002,// EVEX_Vfnmsub231ph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B6, 0xA7000002,// EVEX_Vfmsub132sh_xmm_k1z_xmm_xmmm16_er
-			0x000000B6, 0xA7000002,// EVEX_Vfmsub213sh_xmm_k1z_xmm_xmmm16_er
-			0x000000B6, 0xA7000002,// EVEX_Vfmsub231sh_xmm_k1z_xmm_xmmm16_er
-			0x000000B6, 0xA7000002,// EVEX_Vfnmsub132sh_xmm_k1z_xmm_xmmm16_er
-			0x000000B6, 0xA7000002,// EVEX_Vfnmsub213sh_xmm_k1z_xmm_xmmm16_er
-			0x000000B6, 0xA7000002,// EVEX_Vfnmsub231sh_xmm_k1z_xmm_xmmm16_er
-			0x000000BA, 0xA8000002,// EVEX_Vfpclassph_kr_k1_xmmm128b16_imm8
-			0x000000BA, 0xA8000002,// EVEX_Vfpclassph_kr_k1_ymmm256b16_imm8
-			0x000000BA, 0xA7000002,// EVEX_Vfpclassph_kr_k1_zmmm512b16_imm8
-			0x000000BA, 0xA7000002,// EVEX_Vfpclasssh_kr_k1_xmmm16_imm8
-			0x00000037, 0xA8000002,// EVEX_Vgetexpph_xmm_k1z_xmmm128b16
-			0x00000037, 0xA8000002,// EVEX_Vgetexpph_ymm_k1z_ymmm256b16
-			0x00000038, 0xA7000002,// EVEX_Vgetexpph_zmm_k1z_zmmm512b16_sae
-			0x000000B7, 0xA7000002,// EVEX_Vgetexpsh_xmm_k1z_xmm_xmmm16_sae
-			0x000000B7, 0xA8000002,// EVEX_Vgetmantph_xmm_k1z_xmmm128b16_imm8
-			0x000000B7, 0xA8000002,// EVEX_Vgetmantph_ymm_k1z_ymmm256b16_imm8
-			0x000000B8, 0xA7000002,// EVEX_Vgetmantph_zmm_k1z_zmmm512b16_imm8_sae
-			0x000002B7, 0xA7000002,// EVEX_Vgetmantsh_xmm_k1z_xmm_xmmm16_imm8_sae
-			0x000000B7, 0xA8000002,// EVEX_Vmaxph_xmm_k1z_xmm_xmmm128b16
-			0x000000B7, 0xA8000002,// EVEX_Vmaxph_ymm_k1z_ymm_ymmm256b16
-			0x000000B8, 0xA7000002,// EVEX_Vmaxph_zmm_k1z_zmm_zmmm512b16_sae
-			0x000000B7, 0xA7000002,// EVEX_Vmaxsh_xmm_k1z_xmm_xmmm16_sae
-			0x000000B7, 0xA8000002,// EVEX_Vminph_xmm_k1z_xmm_xmmm128b16
-			0x000000B7, 0xA8000002,// EVEX_Vminph_ymm_k1z_ymm_ymmm256b16
-			0x000000B8, 0xA7000002,// EVEX_Vminph_zmm_k1z_zmm_zmmm512b16_sae
-			0x000000B7, 0xA7000002,// EVEX_Vminsh_xmm_k1z_xmm_xmmm16_sae
-			0x00000037, 0xA7000002,// EVEX_Vmovsh_xmm_k1z_m16
-			0x00000037, 0xA7000002,// EVEX_Vmovsh_m16_k1_xmm
-			0x000000B7, 0xA7000002,// EVEX_Vmovsh_xmm_k1z_xmm_xmm
-			0x000000B7, 0xA7000002,// EVEX_Vmovsh_xmm_k1z_xmm_xmm_MAP5_11
-			0x01600037, 0xA7000002,// EVEX_Vmovw_xmm_r32m16
-			0x01600037, 0xA7000002,// EVEX_Vmovw_xmm_r64m16
-			0x00000037, 0xA7000002,// EVEX_Vmovw_r32m16_xmm
-			0x00000037, 0xA7000002,// EVEX_Vmovw_r64m16_xmm
-			0x000000B7, 0xA8000002,// EVEX_Vmulph_xmm_k1z_xmm_xmmm128b16
-			0x000000B7, 0xA8000002,// EVEX_Vmulph_ymm_k1z_ymm_ymmm256b16
-			0x000000B8, 0xA7000002,// EVEX_Vmulph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B7, 0xA7000002,// EVEX_Vmulsh_xmm_k1z_xmm_xmmm16_er
-			0x00000037, 0xA8000002,// EVEX_Vrcpph_xmm_k1z_xmmm128b16
-			0x00000037, 0xA8000002,// EVEX_Vrcpph_ymm_k1z_ymmm256b16
-			0x00000038, 0xA7000002,// EVEX_Vrcpph_zmm_k1z_zmmm512b16
-			0x000000B7, 0xA7000002,// EVEX_Vrcpsh_xmm_k1z_xmm_xmmm16
-			0x000000B7, 0xA8000002,// EVEX_Vreduceph_xmm_k1z_xmmm128b16_imm8
-			0x000000B7, 0xA8000002,// EVEX_Vreduceph_ymm_k1z_ymmm256b16_imm8
-			0x000000B8, 0xA7000002,// EVEX_Vreduceph_zmm_k1z_zmmm512b16_imm8_sae
-			0x000002B7, 0xA7000002,// EVEX_Vreducesh_xmm_k1z_xmm_xmmm16_imm8_sae
-			0x000000B7, 0xA8000002,// EVEX_Vrndscaleph_xmm_k1z_xmmm128b16_imm8
-			0x000000B7, 0xA8000002,// EVEX_Vrndscaleph_ymm_k1z_ymmm256b16_imm8
-			0x000000B8, 0xA7000002,// EVEX_Vrndscaleph_zmm_k1z_zmmm512b16_imm8_sae
-			0x000002B7, 0xA7000002,// EVEX_Vrndscalesh_xmm_k1z_xmm_xmmm16_imm8_sae
-			0x00000037, 0xA8000002,// EVEX_Vrsqrtph_xmm_k1z_xmmm128b16
-			0x00000037, 0xA8000002,// EVEX_Vrsqrtph_ymm_k1z_ymmm256b16
-			0x00000038, 0xA7000002,// EVEX_Vrsqrtph_zmm_k1z_zmmm512b16
-			0x000000B7, 0xA7000002,// EVEX_Vrsqrtsh_xmm_k1z_xmm_xmmm16
-			0x000000B7, 0xA8000002,// EVEX_Vscalefph_xmm_k1z_xmm_xmmm128b16
-			0x000000B7, 0xA8000002,// EVEX_Vscalefph_ymm_k1z_ymm_ymmm256b16
-			0x000000B8, 0xA7000002,// EVEX_Vscalefph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B7, 0xA7000002,// EVEX_Vscalefsh_xmm_k1z_xmm_xmmm16_er
-			0x00000037, 0xA8000002,// EVEX_Vsqrtph_xmm_k1z_xmmm128b16
-			0x00000037, 0xA8000002,// EVEX_Vsqrtph_ymm_k1z_ymmm256b16
-			0x00000038, 0xA7000002,// EVEX_Vsqrtph_zmm_k1z_zmmm512b16_er
-			0x000000B7, 0xA7000002,// EVEX_Vsqrtsh_xmm_k1z_xmm_xmmm16_er
-			0x000000B7, 0xA8000002,// EVEX_Vsubph_xmm_k1z_xmm_xmmm128b16
-			0x000000B7, 0xA8000002,// EVEX_Vsubph_ymm_k1z_ymm_ymmm256b16
-			0x000000B8, 0xA7000002,// EVEX_Vsubph_zmm_k1z_zmm_zmmm512b16_er
-			0x000000B7, 0xA7000002,// EVEX_Vsubsh_xmm_k1z_xmm_xmmm16_er
-			0x00084034, 0xA7000002,// EVEX_Vucomish_xmm_xmmm16_sae
-			0x0B100000, 0xA9080000,// Rdudbg
-			0x0B200000, 0xA9080000,// Wrudbg
-			0x00000034, 0xAA300001,// VEX_KNC_Jkzd_kr_rel8_64
-			0x00000034, 0xAA300001,// VEX_KNC_Jknzd_kr_rel8_64
-			0x00000003, 0xAA000001,// VEX_KNC_Vprefetchnta_m8
-			0x00000003, 0xAA000001,// VEX_KNC_Vprefetch0_m8
-			0x00000003, 0xAA000001,// VEX_KNC_Vprefetch1_m8
-			0x00000003, 0xAA000001,// VEX_KNC_Vprefetch2_m8
-			0x00000003, 0xAA000001,// VEX_KNC_Vprefetchenta_m8
-			0x00000003, 0xAA000001,// VEX_KNC_Vprefetche0_m8
-			0x00000003, 0xAA000001,// VEX_KNC_Vprefetche1_m8
-			0x00000003, 0xAA000001,// VEX_KNC_Vprefetche2_m8
-			0x00000036, 0xAA000001,// VEX_KNC_Kand_kr_kr
-			0x00000036, 0xAA000001,// VEX_KNC_Kandn_kr_kr
-			0x00000036, 0xAA000001,// VEX_KNC_Kandnr_kr_kr
-			0x00000037, 0xAA000001,// VEX_KNC_Knot_kr_kr
-			0x00000036, 0xAA000001,// VEX_KNC_Kor_kr_kr
-			0x00000036, 0xAA000001,// VEX_KNC_Kxnor_kr_kr
-			0x00000036, 0xAA000001,// VEX_KNC_Kxor_kr_kr
-			0x00000036, 0xAA000001,// VEX_KNC_Kmerge2l1h_kr_kr
-			0x00000036, 0xAA000001,// VEX_KNC_Kmerge2l1l_kr_kr
-			0x00000034, 0xAA300001,// VEX_KNC_Jkzd_kr_rel32_64
-			0x00000034, 0xAA300001,// VEX_KNC_Jknzd_kr_rel32_64
-			0x00000037, 0xAA000001,// VEX_KNC_Kmov_kr_kr
-			0x00000037, 0xAA000001,// VEX_KNC_Kmov_kr_r32
-			0x00000037, 0xAA000001,// VEX_KNC_Kmov_r32_kr
-			0x000000B7, 0xAA000001,// VEX_KNC_Kconcath_r64_kr_kr
-			0x000000B7, 0xAA000001,// VEX_KNC_Kconcatl_r64_kr_kr
-			0x0008C034, 0xAA000001,// VEX_KNC_Kortest_kr_kr
-			0x00000004, 0xAA000001,// VEX_KNC_Delay_r32
-			0x00000004, 0xAA000001,// VEX_KNC_Delay_r64
-			0x00000004, 0xAA000001,// VEX_KNC_Spflt_r32
-			0x00000004, 0xAA000001,// VEX_KNC_Spflt_r64
-			0x00000003, 0xAA000001,// VEX_KNC_Clevict1_m8
-			0x00000003, 0xAA000001,// VEX_KNC_Clevict0_m8
-			0x00098037, 0xAA000001,// VEX_KNC_Popcnt_r32_r32
-			0x00098037, 0xAA000001,// VEX_KNC_Popcnt_r64_r64
-			0x0008E037, 0xAA000001,// VEX_KNC_Tzcnt_r32_r32
-			0x0008E037, 0xAA000001,// VEX_KNC_Tzcnt_r64_r64
-			0x0008E036, 0xAA000001,// VEX_KNC_Tzcnti_r32_r32
-			0x0008E036, 0xAA000001,// VEX_KNC_Tzcnti_r64_r64
-			0x0008E037, 0xAA000001,// VEX_KNC_Lzcnt_r32_r32
-			0x0008E037, 0xAA000001,// VEX_KNC_Lzcnt_r64_r64
-			0x00000000, 0xAA020001,// VEX_KNC_Undoc_r32_rm32_128_F3_0F38_W0_F0
-			0x00000000, 0xAA020001,// VEX_KNC_Undoc_r64_rm64_128_F3_0F38_W1_F0
-			0x00000000, 0xAA020001,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F0
-			0x00000000, 0xAA020001,// VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F0
-			0x00000000, 0xAA020001,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F1
-			0x00000000, 0xAA020001,// VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F1
-			0x000000B7, 0xAA000001,// VEX_KNC_Kextract_kr_r64_imm8
-			0x00000003, 0xAA000005,// MVEX_Vprefetchnta_m
-			0x00000003, 0xAA000005,// MVEX_Vprefetch0_m
-			0x00000003, 0xAA000005,// MVEX_Vprefetch1_m
-			0x00000003, 0xAA000005,// MVEX_Vprefetch2_m
-			0x00000003, 0xAA000005,// MVEX_Vprefetchenta_m
-			0x00000003, 0xAA000005,// MVEX_Vprefetche0_m
-			0x00000003, 0xAA000005,// MVEX_Vprefetche1_m
-			0x00000003, 0xAA000005,// MVEX_Vprefetche2_m
-			0x00000038, 0xAA000005,// MVEX_Vmovaps_zmm_k1_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vmovapd_zmm_k1_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vmovaps_mt_k1_zmm
-			0x00000038, 0xAA000005,// MVEX_Vmovapd_mt_k1_zmm
-			0x00000038, 0xAA000005,// MVEX_Vmovnrapd_m_k1_zmm
-			0x00000038, 0xAA000005,// MVEX_Vmovnrngoapd_m_k1_zmm
-			0x00000038, 0xAA000005,// MVEX_Vmovnraps_m_k1_zmm
-			0x00000038, 0xAA000005,// MVEX_Vmovnrngoaps_m_k1_zmm
-			0x000000B8, 0xAA000005,// MVEX_Vaddps_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vaddpd_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vmulps_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vmulpd_zmm_k1_zmm_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vcvtps2pd_zmm_k1_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vcvtpd2ps_zmm_k1_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vsubps_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vsubpd_zmm_k1_zmm_zmmmt
-			0x000000BA, 0xAA000005,// MVEX_Vpcmpgtd_kr_k1_zmm_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vmovdqa32_zmm_k1_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vmovdqa64_zmm_k1_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpshufd_zmm_k1_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vpsrld_zmm_k1_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vpsrad_zmm_k1_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vpslld_zmm_k1_zmmmt_imm8
-			0x000000BA, 0xAA000005,// MVEX_Vpcmpeqd_kr_k1_zmm_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vcvtudq2pd_zmm_k1_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vmovdqa32_mt_k1_zmm
-			0x00000038, 0xAA000005,// MVEX_Vmovdqa64_mt_k1_zmm
-			0x00000003, 0xAA000005,// MVEX_Clevict1_m
-			0x00000003, 0xAA000005,// MVEX_Clevict0_m
-			0x000002BA, 0xAA000005,// MVEX_Vcmpps_kr_k1_zmm_zmmmt_imm8
-			0x000002BA, 0xAA000005,// MVEX_Vcmppd_kr_k1_zmm_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vpandd_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpandq_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpandnd_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpandnq_zmm_k1_zmm_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vcvtdq2pd_zmm_k1_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpord_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vporq_zmm_k1_zmm_zmmmt
-			0x074000B8, 0xAA000005,// MVEX_Vpxord_zmm_k1_zmm_zmmmt
-			0x074000B8, 0xAA000005,// MVEX_Vpxorq_zmm_k1_zmm_zmmmt
-			0x074000B8, 0xAA000005,// MVEX_Vpsubd_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpaddd_zmm_k1_zmm_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vbroadcastss_zmm_k1_mt
-			0x00000038, 0xAA000005,// MVEX_Vbroadcastsd_zmm_k1_mt
-			0x00000038, 0xAA000005,// MVEX_Vbroadcastf32x4_zmm_k1_mt
-			0x00000038, 0xAA000005,// MVEX_Vbroadcastf64x4_zmm_k1_mt
-			0x000000BA, 0xAA000005,// MVEX_Vptestmd_kr_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpermd_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpminsd_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpminud_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpmaxsd_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpmaxud_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpmulld_zmm_k1_zmm_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vgetexpps_zmm_k1_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vgetexppd_zmm_k1_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpsrlvd_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpsravd_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpsllvd_zmm_k1_zmm_zmmmt
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_48
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_49
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_4A
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_4B
-			0x000000B8, 0xAA000005,// MVEX_Vaddnps_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vaddnpd_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vgmaxabsps_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vgminps_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vgminpd_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vgmaxps_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vgmaxpd_zmm_k1_zmm_zmmmt
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_54
-			0x000000B9, 0xAA000005,// MVEX_Vfixupnanps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfixupnanpd_zmm_k1_zmm_zmmmt
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_56
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_57
-			0x00000038, 0xAA000005,// MVEX_Vpbroadcastd_zmm_k1_mt
-			0x00000038, 0xAA000005,// MVEX_Vpbroadcastq_zmm_k1_mt
-			0x00000038, 0xAA000005,// MVEX_Vbroadcasti32x4_zmm_k1_mt
-			0x00000038, 0xAA000005,// MVEX_Vbroadcasti64x4_zmm_k1_mt
-			0x000000D9, 0xAA000005,// MVEX_Vpadcd_zmm_k1_kr_zmmmt
-			0x000000D9, 0xAA000005,// MVEX_Vpaddsetcd_zmm_k1_kr_zmmmt
-			0x000000D9, 0xAA000005,// MVEX_Vpsbbd_zmm_k1_kr_zmmmt
-			0x000000D9, 0xAA000005,// MVEX_Vpsubsetbd_zmm_k1_kr_zmmmt
-			0x000000BA, 0xAA000005,// MVEX_Vpblendmd_zmm_k1_zmm_zmmmt
-			0x000000BA, 0xAA000005,// MVEX_Vpblendmq_zmm_k1_zmm_zmmmt
-			0x000000BA, 0xAA000005,// MVEX_Vblendmps_zmm_k1_zmm_zmmmt
-			0x000000BA, 0xAA000005,// MVEX_Vblendmpd_zmm_k1_zmm_zmmmt
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_67
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_68
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_69
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_6A
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_6B
-			0x074000B8, 0xAA000005,// MVEX_Vpsubrd_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vsubrps_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vsubrpd_zmm_k1_zmm_zmmmt
-			0x000000D9, 0xAA000005,// MVEX_Vpsbbrd_zmm_k1_kr_zmmmt
-			0x000000D9, 0xAA000005,// MVEX_Vpsubrsetbd_zmm_k1_kr_zmmmt
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_70
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_71
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_72
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_73
-			0x000000BA, 0xAA000005,// MVEX_Vpcmpltd_kr_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vscaleps_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpmulhud_zmm_k1_zmm_zmmmt
-			0x000000B8, 0xAA000005,// MVEX_Vpmulhd_zmm_k1_zmm_zmmmt
-			0x40000039, 0xAA000005,// MVEX_Vpgatherdd_zmm_k1_mvt
-			0x40000039, 0xAA000005,// MVEX_Vpgatherdq_zmm_k1_mvt
-			0x40000039, 0xAA000005,// MVEX_Vgatherdps_zmm_k1_mvt
-			0x40000039, 0xAA000005,// MVEX_Vgatherdpd_zmm_k1_mvt
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_94
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W1_94
-			0x000000B9, 0xAA000005,// MVEX_Vfmadd132ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfmadd132pd_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfmsub132ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfmsub132pd_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfnmadd132ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfnmadd132pd_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfnmsub132ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfnmsub132pd_zmm_k1_zmm_zmmmt
-			0x40000037, 0xAA000005,// MVEX_Vpscatterdd_mvt_k1_zmm
-			0x40000037, 0xAA000005,// MVEX_Vpscatterdq_mvt_k1_zmm
-			0x40000037, 0xAA000005,// MVEX_Vscatterdps_mvt_k1_zmm
-			0x40000037, 0xAA000005,// MVEX_Vscatterdpd_mvt_k1_zmm
-			0x000000B8, 0xAA000005,// MVEX_Vfmadd233ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfmadd213ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfmadd213pd_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfmsub213ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfmsub213pd_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfnmadd213ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfnmadd213pd_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfnmsub213ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfnmsub213pd_zmm_k1_zmm_zmmmt
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_mvt_512_66_0F38_W0_B0
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_mvt_512_66_0F38_W0_B2
-			0x000000B8, 0xAA000005,// MVEX_Vpmadd233d_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vpmadd231d_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfmadd231ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfmadd231pd_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfmsub231ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfmsub231pd_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfnmadd231ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfnmadd231pd_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfnmsub231ps_zmm_k1_zmm_zmmmt
-			0x000000B9, 0xAA000005,// MVEX_Vfnmsub231pd_zmm_k1_zmm_zmmmt
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_mvt_512_66_0F38_W0_C0
-			0x00000003, 0xAA000005,// MVEX_Vgatherpf0hintdps_mvt_k1
-			0x00000003, 0xAA000005,// MVEX_Vgatherpf0hintdpd_mvt_k1
-			0x40000003, 0xAA000005,// MVEX_Vgatherpf0dps_mvt_k1
-			0x40000003, 0xAA000005,// MVEX_Vgatherpf1dps_mvt_k1
-			0x00000003, 0xAA000005,// MVEX_Vscatterpf0hintdps_mvt_k1
-			0x00000003, 0xAA000005,// MVEX_Vscatterpf0hintdpd_mvt_k1
-			0x40000003, 0xAA000005,// MVEX_Vscatterpf0dps_mvt_k1
-			0x40000003, 0xAA000005,// MVEX_Vscatterpf1dps_mvt_k1
-			0x00000038, 0xAA000005,// MVEX_Vexp223ps_zmm_k1_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vlog2ps_zmm_k1_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vrcp23ps_zmm_k1_zmmmt
-			0x00000038, 0xAA000005,// MVEX_Vrsqrt23ps_zmm_k1_zmmmt
-			0x400000B8, 0xAA000005,// MVEX_Vaddsetsps_zmm_k1_zmm_zmmmt
-			0x400000B8, 0xAA000005,// MVEX_Vpaddsetsd_zmm_k1_zmm_zmmmt
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_CE
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W1_CE
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_CF
-			0x00000039, 0xAA000005,// MVEX_Vloadunpackld_zmm_k1_mt
-			0x00000039, 0xAA000005,// MVEX_Vloadunpacklq_zmm_k1_mt
-			0x0000003A, 0xAA000005,// MVEX_Vpackstoreld_mt_k1_zmm
-			0x0000003A, 0xAA000005,// MVEX_Vpackstorelq_mt_k1_zmm
-			0x00000039, 0xAA000005,// MVEX_Vloadunpacklps_zmm_k1_mt
-			0x00000039, 0xAA000005,// MVEX_Vloadunpacklpd_zmm_k1_mt
-			0x0000003A, 0xAA000005,// MVEX_Vpackstorelps_mt_k1_zmm
-			0x0000003A, 0xAA000005,// MVEX_Vpackstorelpd_mt_k1_zmm
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D2
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_D2
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D3
-			0x0B300039, 0xAA000005,// MVEX_Vloadunpackhd_zmm_k1_mt
-			0x0B300039, 0xAA000005,// MVEX_Vloadunpackhq_zmm_k1_mt
-			0x0B30003A, 0xAA000005,// MVEX_Vpackstorehd_mt_k1_zmm
-			0x0B30003A, 0xAA000005,// MVEX_Vpackstorehq_mt_k1_zmm
-			0x0B300039, 0xAA000005,// MVEX_Vloadunpackhps_zmm_k1_mt
-			0x0B300039, 0xAA000005,// MVEX_Vloadunpackhpd_zmm_k1_mt
-			0x0B30003A, 0xAA000005,// MVEX_Vpackstorehps_mt_k1_zmm
-			0x0B30003A, 0xAA000005,// MVEX_Vpackstorehpd_mt_k1_zmm
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D6
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_D6
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D7
-			0x000002B8, 0xAA000005,// MVEX_Valignd_zmm_k1_zmm_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vpermf32x4_zmm_k1_zmmmt_imm8
-			0x000002BA, 0xAA000005,// MVEX_Vpcmpud_kr_k1_zmm_zmmmt_imm8
-			0x000002BA, 0xAA000005,// MVEX_Vpcmpd_kr_k1_zmm_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vgetmantps_zmm_k1_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vgetmantpd_zmm_k1_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vrndfxpntps_zmm_k1_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vrndfxpntpd_zmm_k1_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vcvtfxpntudq2ps_zmm_k1_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vcvtfxpntps2udq_zmm_k1_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vcvtfxpntpd2udq_zmm_k1_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vcvtfxpntdq2ps_zmm_k1_zmmmt_imm8
-			0x000000B8, 0xAA000005,// MVEX_Vcvtfxpntps2dq_zmm_k1_zmmmt_imm8
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D0
-			0x00000000, 0xAA020005,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D1
-			0x000000B8, 0xAA000005,// MVEX_Vcvtfxpntpd2dq_zmm_k1_zmmmt_imm8
-			0x00000000, 0xAB020000,// Via_undoc_F30FA6F0_16
-			0x00000000, 0xAB020000,// Via_undoc_F30FA6F0_32
-			0x00000000, 0xAB020000,// Via_undoc_F30FA6F0_64
-			0x00000000, 0xAB020000,// Via_undoc_F30FA6F8_16
-			0x00000000, 0xAB020000,// Via_undoc_F30FA6F8_32
-			0x00000000, 0xAB020000,// Via_undoc_F30FA6F8_64
-			0x0B400000, 0x5E000000,// Xsha512_16
-			0x0B500000, 0x5E000000,// Xsha512_32
-			0x0B600000, 0x5E000000,// Xsha512_64
-			0x0B400000, 0x5E000000,// Xsha512_alt_16
-			0x0B500000, 0x5E000000,// Xsha512_alt_32
-			0x0B600000, 0x5E000000,// Xsha512_alt_64
+			0x00000000, 0x7D500000,// Vmgexit_F2
+			0x0A168000, 0x9F440000,// Uiret
+			0x0004A000, 0x9F000000,// Testui
+			0x00016000, 0x9F000000,// Clui
+			0x00058000, 0x9F000000,// Stui
+			0x00000004, 0x9F000000,// Senduipi_r64
+			0x05B00000, 0xA0080000,// Hreset_imm8
+			0x000000B6, 0xA1000001,// VEX_Vpdpbusd_xmm_xmm_xmmm128
+			0x000000B6, 0xA1000001,// VEX_Vpdpbusd_ymm_ymm_ymmm256
+			0x000000B6, 0xA1000001,// VEX_Vpdpbusds_xmm_xmm_xmmm128
+			0x000000B6, 0xA1000001,// VEX_Vpdpbusds_ymm_ymm_ymmm256
+			0x000000B6, 0xA1000001,// VEX_Vpdpwssd_xmm_xmm_xmmm128
+			0x000000B6, 0xA1000001,// VEX_Vpdpwssd_ymm_ymm_ymmm256
+			0x000000B6, 0xA1000001,// VEX_Vpdpwssds_xmm_xmm_xmmm128
+			0x000000B6, 0xA1000001,// VEX_Vpdpwssds_ymm_ymm_ymmm256
+			0x08400004, 0xA3080000,// Lkgs_rm16
+			0x0A200004, 0xA3080000,// Lkgs_r32m16
+			0x0A200004, 0xA3080000,// Lkgs_r64m16
+			0x0A36C000, 0xA24C0000,// Eretu
+			0x0A46C000, 0xA24C0000,// Erets
+			0x000000B7, 0xA5000002,// EVEX_Vaddph_xmm_k1z_xmm_xmmm128b16
+			0x000000B7, 0xA5000002,// EVEX_Vaddph_ymm_k1z_ymm_ymmm256b16
+			0x000000B8, 0xA4000002,// EVEX_Vaddph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B7, 0xA4000002,// EVEX_Vaddsh_xmm_k1z_xmm_xmmm16_er
+			0x000002BA, 0xA5000002,// EVEX_Vcmpph_kr_k1_xmm_xmmm128b16_imm8
+			0x000002BA, 0xA5000002,// EVEX_Vcmpph_kr_k1_ymm_ymmm256b16_imm8
+			0x000002BA, 0xA4000002,// EVEX_Vcmpph_kr_k1_zmm_zmmm512b16_imm8_sae
+			0x000002BA, 0xA4000002,// EVEX_Vcmpsh_kr_k1_xmm_xmmm16_imm8_sae
+			0x00084034, 0xA4000002,// EVEX_Vcomish_xmm_xmmm16_sae
+			0x00000037, 0xA5000002,// EVEX_Vcvtdq2ph_xmm_k1z_xmmm128b32
+			0x00000037, 0xA5000002,// EVEX_Vcvtdq2ph_xmm_k1z_ymmm256b32
+			0x00000037, 0xA4000002,// EVEX_Vcvtdq2ph_ymm_k1z_zmmm512b32_er
+			0x00000037, 0xA5000002,// EVEX_Vcvtpd2ph_xmm_k1z_xmmm128b64
+			0x00000037, 0xA5000002,// EVEX_Vcvtpd2ph_xmm_k1z_ymmm256b64
+			0x00000037, 0xA4000002,// EVEX_Vcvtpd2ph_xmm_k1z_zmmm512b64_er
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2dq_xmm_k1z_xmmm64b16
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2dq_ymm_k1z_xmmm128b16
+			0x00000038, 0xA4000002,// EVEX_Vcvtph2dq_zmm_k1z_ymmm256b16_er
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2pd_xmm_k1z_xmmm32b16
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2pd_ymm_k1z_xmmm64b16
+			0x00000038, 0xA4000002,// EVEX_Vcvtph2pd_zmm_k1z_xmmm128b16_sae
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2psx_xmm_k1z_xmmm64b16
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2psx_ymm_k1z_xmmm128b16
+			0x00000038, 0xA4000002,// EVEX_Vcvtph2psx_zmm_k1z_ymmm256b16_sae
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2qq_xmm_k1z_xmmm32b16
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2qq_ymm_k1z_xmmm64b16
+			0x00000038, 0xA4000002,// EVEX_Vcvtph2qq_zmm_k1z_xmmm128b16_er
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2udq_xmm_k1z_xmmm64b16
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2udq_ymm_k1z_xmmm128b16
+			0x00000038, 0xA4000002,// EVEX_Vcvtph2udq_zmm_k1z_ymmm256b16_er
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2uqq_xmm_k1z_xmmm32b16
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2uqq_ymm_k1z_xmmm64b16
+			0x00000038, 0xA4000002,// EVEX_Vcvtph2uqq_zmm_k1z_xmmm128b16_er
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2uw_xmm_k1z_xmmm128b16
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2uw_ymm_k1z_ymmm256b16
+			0x00000038, 0xA4000002,// EVEX_Vcvtph2uw_zmm_k1z_zmmm512b16_er
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2w_xmm_k1z_xmmm128b16
+			0x00000037, 0xA5000002,// EVEX_Vcvtph2w_ymm_k1z_ymmm256b16
+			0x00000038, 0xA4000002,// EVEX_Vcvtph2w_zmm_k1z_zmmm512b16_er
+			0x00000037, 0xA5000002,// EVEX_Vcvtps2phx_xmm_k1z_xmmm128b32
+			0x00000037, 0xA5000002,// EVEX_Vcvtps2phx_xmm_k1z_ymmm256b32
+			0x00000037, 0xA4000002,// EVEX_Vcvtps2phx_ymm_k1z_zmmm512b32_er
+			0x00000037, 0xA5000002,// EVEX_Vcvtqq2ph_xmm_k1z_xmmm128b64
+			0x00000037, 0xA5000002,// EVEX_Vcvtqq2ph_xmm_k1z_ymmm256b64
+			0x00000037, 0xA4000002,// EVEX_Vcvtqq2ph_xmm_k1z_zmmm512b64_er
+			0x000000B7, 0xA4000002,// EVEX_Vcvtsd2sh_xmm_k1z_xmm_xmmm64_er
+			0x000000B7, 0xA4000002,// EVEX_Vcvtsh2sd_xmm_k1z_xmm_xmmm16_sae
+			0x00000037, 0xA4000002,// EVEX_Vcvtsh2si_r32_xmmm16_er
+			0x00000037, 0xA4000002,// EVEX_Vcvtsh2si_r64_xmmm16_er
+			0x000000B7, 0xA4000002,// EVEX_Vcvtsh2ss_xmm_k1z_xmm_xmmm16_sae
+			0x00000037, 0xA4000002,// EVEX_Vcvtsh2usi_r32_xmmm16_er
+			0x00000037, 0xA4000002,// EVEX_Vcvtsh2usi_r64_xmmm16_er
+			0x000000B7, 0xA4000002,// EVEX_Vcvtsi2sh_xmm_xmm_rm32_er
+			0x000000B7, 0xA4000002,// EVEX_Vcvtsi2sh_xmm_xmm_rm64_er
+			0x000000B7, 0xA4000002,// EVEX_Vcvtss2sh_xmm_k1z_xmm_xmmm32_er
+			0x00000037, 0xA5000002,// EVEX_Vcvttph2dq_xmm_k1z_xmmm64b16
+			0x00000037, 0xA5000002,// EVEX_Vcvttph2dq_ymm_k1z_xmmm128b16
+			0x00000038, 0xA4000002,// EVEX_Vcvttph2dq_zmm_k1z_ymmm256b16_sae
+			0x00000037, 0xA5000002,// EVEX_Vcvttph2qq_xmm_k1z_xmmm32b16
+			0x00000037, 0xA5000002,// EVEX_Vcvttph2qq_ymm_k1z_xmmm64b16
+			0x00000038, 0xA4000002,// EVEX_Vcvttph2qq_zmm_k1z_xmmm128b16_sae
+			0x00000037, 0xA5000002,// EVEX_Vcvttph2udq_xmm_k1z_xmmm64b16
+			0x00000037, 0xA5000002,// EVEX_Vcvttph2udq_ymm_k1z_xmmm128b16
+			0x00000038, 0xA4000002,// EVEX_Vcvttph2udq_zmm_k1z_ymmm256b16_sae
+			0x00000037, 0xA5000002,// EVEX_Vcvttph2uqq_xmm_k1z_xmmm32b16
+			0x00000037, 0xA5000002,// EVEX_Vcvttph2uqq_ymm_k1z_xmmm64b16
+			0x00000038, 0xA4000002,// EVEX_Vcvttph2uqq_zmm_k1z_xmmm128b16_sae
+			0x00000037, 0xA5000002,// EVEX_Vcvttph2uw_xmm_k1z_xmmm128b16
+			0x00000037, 0xA5000002,// EVEX_Vcvttph2uw_ymm_k1z_ymmm256b16
+			0x00000038, 0xA4000002,// EVEX_Vcvttph2uw_zmm_k1z_zmmm512b16_sae
+			0x00000037, 0xA5000002,// EVEX_Vcvttph2w_xmm_k1z_xmmm128b16
+			0x00000037, 0xA5000002,// EVEX_Vcvttph2w_ymm_k1z_ymmm256b16
+			0x00000038, 0xA4000002,// EVEX_Vcvttph2w_zmm_k1z_zmmm512b16_sae
+			0x00000037, 0xA4000002,// EVEX_Vcvttsh2si_r32_xmmm16_sae
+			0x00000037, 0xA4000002,// EVEX_Vcvttsh2si_r64_xmmm16_sae
+			0x00000037, 0xA4000002,// EVEX_Vcvttsh2usi_r32_xmmm16_sae
+			0x00000037, 0xA4000002,// EVEX_Vcvttsh2usi_r64_xmmm16_sae
+			0x00000037, 0xA5000002,// EVEX_Vcvtudq2ph_xmm_k1z_xmmm128b32
+			0x00000037, 0xA5000002,// EVEX_Vcvtudq2ph_xmm_k1z_ymmm256b32
+			0x00000037, 0xA4000002,// EVEX_Vcvtudq2ph_ymm_k1z_zmmm512b32_er
+			0x00000037, 0xA5000002,// EVEX_Vcvtuqq2ph_xmm_k1z_xmmm128b64
+			0x00000037, 0xA5000002,// EVEX_Vcvtuqq2ph_xmm_k1z_ymmm256b64
+			0x00000037, 0xA4000002,// EVEX_Vcvtuqq2ph_xmm_k1z_zmmm512b64_er
+			0x000000B7, 0xA4000002,// EVEX_Vcvtusi2sh_xmm_xmm_rm32_er
+			0x000000B7, 0xA4000002,// EVEX_Vcvtusi2sh_xmm_xmm_rm64_er
+			0x00000037, 0xA5000002,// EVEX_Vcvtuw2ph_xmm_k1z_xmmm128b16
+			0x00000037, 0xA5000002,// EVEX_Vcvtuw2ph_ymm_k1z_ymmm256b16
+			0x00000038, 0xA4000002,// EVEX_Vcvtuw2ph_zmm_k1z_zmmm512b16_er
+			0x00000037, 0xA5000002,// EVEX_Vcvtw2ph_xmm_k1z_xmmm128b16
+			0x00000037, 0xA5000002,// EVEX_Vcvtw2ph_ymm_k1z_ymmm256b16
+			0x00000038, 0xA4000002,// EVEX_Vcvtw2ph_zmm_k1z_zmmm512b16_er
+			0x000000B7, 0xA5000002,// EVEX_Vdivph_xmm_k1z_xmm_xmmm128b16
+			0x000000B7, 0xA5000002,// EVEX_Vdivph_ymm_k1z_ymm_ymmm256b16
+			0x000000B8, 0xA4000002,// EVEX_Vdivph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B7, 0xA4000002,// EVEX_Vdivsh_xmm_k1z_xmm_xmmm16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfcmaddcph_xmm_k1z_xmm_xmmm128b32
+			0x000000B6, 0xA5000002,// EVEX_Vfcmaddcph_ymm_k1z_ymm_ymmm256b32
+			0x000000B9, 0xA4000002,// EVEX_Vfcmaddcph_zmm_k1z_zmm_zmmm512b32_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmaddcph_xmm_k1z_xmm_xmmm128b32
+			0x000000B6, 0xA5000002,// EVEX_Vfmaddcph_ymm_k1z_ymm_ymmm256b32
+			0x000000B9, 0xA4000002,// EVEX_Vfmaddcph_zmm_k1z_zmm_zmmm512b32_er
+			0x000000B6, 0xA4000002,// EVEX_Vfcmaddcsh_xmm_k1z_xmm_xmmm32_er
+			0x000000B6, 0xA4000002,// EVEX_Vfmaddcsh_xmm_k1z_xmm_xmmm32_er
+			0x000000B7, 0xA5000002,// EVEX_Vfcmulcph_xmm_k1z_xmm_xmmm128b32
+			0x000000B7, 0xA5000002,// EVEX_Vfcmulcph_ymm_k1z_ymm_ymmm256b32
+			0x000000B8, 0xA4000002,// EVEX_Vfcmulcph_zmm_k1z_zmm_zmmm512b32_er
+			0x000000B7, 0xA5000002,// EVEX_Vfmulcph_xmm_k1z_xmm_xmmm128b32
+			0x000000B7, 0xA5000002,// EVEX_Vfmulcph_ymm_k1z_ymm_ymmm256b32
+			0x000000B8, 0xA4000002,// EVEX_Vfmulcph_zmm_k1z_zmm_zmmm512b32_er
+			0x000000B7, 0xA4000002,// EVEX_Vfcmulcsh_xmm_k1z_xmm_xmmm32_er
+			0x000000B7, 0xA4000002,// EVEX_Vfmulcsh_xmm_k1z_xmm_xmmm32_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmaddsub132ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfmaddsub132ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfmaddsub132ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmaddsub213ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfmaddsub213ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfmaddsub213ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmaddsub231ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfmaddsub231ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfmaddsub231ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmsubadd132ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfmsubadd132ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfmsubadd132ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmsubadd213ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfmsubadd213ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfmsubadd213ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmsubadd231ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfmsubadd231ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfmsubadd231ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmadd132ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfmadd132ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfmadd132ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmadd213ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfmadd213ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfmadd213ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmadd231ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfmadd231ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfmadd231ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfnmadd132ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfnmadd132ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfnmadd132ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfnmadd213ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfnmadd213ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfnmadd213ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfnmadd231ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfnmadd231ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfnmadd231ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA4000002,// EVEX_Vfmadd132sh_xmm_k1z_xmm_xmmm16_er
+			0x000000B6, 0xA4000002,// EVEX_Vfmadd213sh_xmm_k1z_xmm_xmmm16_er
+			0x000000B6, 0xA4000002,// EVEX_Vfmadd231sh_xmm_k1z_xmm_xmmm16_er
+			0x000000B6, 0xA4000002,// EVEX_Vfnmadd132sh_xmm_k1z_xmm_xmmm16_er
+			0x000000B6, 0xA4000002,// EVEX_Vfnmadd213sh_xmm_k1z_xmm_xmmm16_er
+			0x000000B6, 0xA4000002,// EVEX_Vfnmadd231sh_xmm_k1z_xmm_xmmm16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmsub132ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfmsub132ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfmsub132ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmsub213ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfmsub213ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfmsub213ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfmsub231ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfmsub231ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfmsub231ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfnmsub132ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfnmsub132ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfnmsub132ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfnmsub213ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfnmsub213ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfnmsub213ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA5000002,// EVEX_Vfnmsub231ph_xmm_k1z_xmm_xmmm128b16
+			0x000000B6, 0xA5000002,// EVEX_Vfnmsub231ph_ymm_k1z_ymm_ymmm256b16
+			0x000000B9, 0xA4000002,// EVEX_Vfnmsub231ph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B6, 0xA4000002,// EVEX_Vfmsub132sh_xmm_k1z_xmm_xmmm16_er
+			0x000000B6, 0xA4000002,// EVEX_Vfmsub213sh_xmm_k1z_xmm_xmmm16_er
+			0x000000B6, 0xA4000002,// EVEX_Vfmsub231sh_xmm_k1z_xmm_xmmm16_er
+			0x000000B6, 0xA4000002,// EVEX_Vfnmsub132sh_xmm_k1z_xmm_xmmm16_er
+			0x000000B6, 0xA4000002,// EVEX_Vfnmsub213sh_xmm_k1z_xmm_xmmm16_er
+			0x000000B6, 0xA4000002,// EVEX_Vfnmsub231sh_xmm_k1z_xmm_xmmm16_er
+			0x000000BA, 0xA5000002,// EVEX_Vfpclassph_kr_k1_xmmm128b16_imm8
+			0x000000BA, 0xA5000002,// EVEX_Vfpclassph_kr_k1_ymmm256b16_imm8
+			0x000000BA, 0xA4000002,// EVEX_Vfpclassph_kr_k1_zmmm512b16_imm8
+			0x000000BA, 0xA4000002,// EVEX_Vfpclasssh_kr_k1_xmmm16_imm8
+			0x00000037, 0xA5000002,// EVEX_Vgetexpph_xmm_k1z_xmmm128b16
+			0x00000037, 0xA5000002,// EVEX_Vgetexpph_ymm_k1z_ymmm256b16
+			0x00000038, 0xA4000002,// EVEX_Vgetexpph_zmm_k1z_zmmm512b16_sae
+			0x000000B7, 0xA4000002,// EVEX_Vgetexpsh_xmm_k1z_xmm_xmmm16_sae
+			0x000000B7, 0xA5000002,// EVEX_Vgetmantph_xmm_k1z_xmmm128b16_imm8
+			0x000000B7, 0xA5000002,// EVEX_Vgetmantph_ymm_k1z_ymmm256b16_imm8
+			0x000000B8, 0xA4000002,// EVEX_Vgetmantph_zmm_k1z_zmmm512b16_imm8_sae
+			0x000002B7, 0xA4000002,// EVEX_Vgetmantsh_xmm_k1z_xmm_xmmm16_imm8_sae
+			0x000000B7, 0xA5000002,// EVEX_Vmaxph_xmm_k1z_xmm_xmmm128b16
+			0x000000B7, 0xA5000002,// EVEX_Vmaxph_ymm_k1z_ymm_ymmm256b16
+			0x000000B8, 0xA4000002,// EVEX_Vmaxph_zmm_k1z_zmm_zmmm512b16_sae
+			0x000000B7, 0xA4000002,// EVEX_Vmaxsh_xmm_k1z_xmm_xmmm16_sae
+			0x000000B7, 0xA5000002,// EVEX_Vminph_xmm_k1z_xmm_xmmm128b16
+			0x000000B7, 0xA5000002,// EVEX_Vminph_ymm_k1z_ymm_ymmm256b16
+			0x000000B8, 0xA4000002,// EVEX_Vminph_zmm_k1z_zmm_zmmm512b16_sae
+			0x000000B7, 0xA4000002,// EVEX_Vminsh_xmm_k1z_xmm_xmmm16_sae
+			0x00000037, 0xA4000002,// EVEX_Vmovsh_xmm_k1z_m16
+			0x00000037, 0xA4000002,// EVEX_Vmovsh_m16_k1_xmm
+			0x000000B7, 0xA4000002,// EVEX_Vmovsh_xmm_k1z_xmm_xmm
+			0x000000B7, 0xA4000002,// EVEX_Vmovsh_xmm_k1z_xmm_xmm_MAP5_11
+			0x01600037, 0xA4000002,// EVEX_Vmovw_xmm_r32m16
+			0x01600037, 0xA4000002,// EVEX_Vmovw_xmm_r64m16
+			0x00000037, 0xA4000002,// EVEX_Vmovw_r32m16_xmm
+			0x00000037, 0xA4000002,// EVEX_Vmovw_r64m16_xmm
+			0x000000B7, 0xA5000002,// EVEX_Vmulph_xmm_k1z_xmm_xmmm128b16
+			0x000000B7, 0xA5000002,// EVEX_Vmulph_ymm_k1z_ymm_ymmm256b16
+			0x000000B8, 0xA4000002,// EVEX_Vmulph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B7, 0xA4000002,// EVEX_Vmulsh_xmm_k1z_xmm_xmmm16_er
+			0x00000037, 0xA5000002,// EVEX_Vrcpph_xmm_k1z_xmmm128b16
+			0x00000037, 0xA5000002,// EVEX_Vrcpph_ymm_k1z_ymmm256b16
+			0x00000038, 0xA4000002,// EVEX_Vrcpph_zmm_k1z_zmmm512b16
+			0x000000B7, 0xA4000002,// EVEX_Vrcpsh_xmm_k1z_xmm_xmmm16
+			0x000000B7, 0xA5000002,// EVEX_Vreduceph_xmm_k1z_xmmm128b16_imm8
+			0x000000B7, 0xA5000002,// EVEX_Vreduceph_ymm_k1z_ymmm256b16_imm8
+			0x000000B8, 0xA4000002,// EVEX_Vreduceph_zmm_k1z_zmmm512b16_imm8_sae
+			0x000002B7, 0xA4000002,// EVEX_Vreducesh_xmm_k1z_xmm_xmmm16_imm8_sae
+			0x000000B7, 0xA5000002,// EVEX_Vrndscaleph_xmm_k1z_xmmm128b16_imm8
+			0x000000B7, 0xA5000002,// EVEX_Vrndscaleph_ymm_k1z_ymmm256b16_imm8
+			0x000000B8, 0xA4000002,// EVEX_Vrndscaleph_zmm_k1z_zmmm512b16_imm8_sae
+			0x000002B7, 0xA4000002,// EVEX_Vrndscalesh_xmm_k1z_xmm_xmmm16_imm8_sae
+			0x00000037, 0xA5000002,// EVEX_Vrsqrtph_xmm_k1z_xmmm128b16
+			0x00000037, 0xA5000002,// EVEX_Vrsqrtph_ymm_k1z_ymmm256b16
+			0x00000038, 0xA4000002,// EVEX_Vrsqrtph_zmm_k1z_zmmm512b16
+			0x000000B7, 0xA4000002,// EVEX_Vrsqrtsh_xmm_k1z_xmm_xmmm16
+			0x000000B7, 0xA5000002,// EVEX_Vscalefph_xmm_k1z_xmm_xmmm128b16
+			0x000000B7, 0xA5000002,// EVEX_Vscalefph_ymm_k1z_ymm_ymmm256b16
+			0x000000B8, 0xA4000002,// EVEX_Vscalefph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B7, 0xA4000002,// EVEX_Vscalefsh_xmm_k1z_xmm_xmmm16_er
+			0x00000037, 0xA5000002,// EVEX_Vsqrtph_xmm_k1z_xmmm128b16
+			0x00000037, 0xA5000002,// EVEX_Vsqrtph_ymm_k1z_ymmm256b16
+			0x00000038, 0xA4000002,// EVEX_Vsqrtph_zmm_k1z_zmmm512b16_er
+			0x000000B7, 0xA4000002,// EVEX_Vsqrtsh_xmm_k1z_xmm_xmmm16_er
+			0x000000B7, 0xA5000002,// EVEX_Vsubph_xmm_k1z_xmm_xmmm128b16
+			0x000000B7, 0xA5000002,// EVEX_Vsubph_ymm_k1z_ymm_ymmm256b16
+			0x000000B8, 0xA4000002,// EVEX_Vsubph_zmm_k1z_zmm_zmmm512b16_er
+			0x000000B7, 0xA4000002,// EVEX_Vsubsh_xmm_k1z_xmm_xmmm16_er
+			0x00084034, 0xA4000002,// EVEX_Vucomish_xmm_xmmm16_sae
+			0x0A500000, 0xA6080000,// Rdudbg
+			0x0A600000, 0xA6080000,// Wrudbg
+			0x00000034, 0xA7300001,// VEX_KNC_Jkzd_kr_rel8_64
+			0x00000034, 0xA7300001,// VEX_KNC_Jknzd_kr_rel8_64
+			0x00000003, 0xA7000001,// VEX_KNC_Vprefetchnta_m8
+			0x00000003, 0xA7000001,// VEX_KNC_Vprefetch0_m8
+			0x00000003, 0xA7000001,// VEX_KNC_Vprefetch1_m8
+			0x00000003, 0xA7000001,// VEX_KNC_Vprefetch2_m8
+			0x00000003, 0xA7000001,// VEX_KNC_Vprefetchenta_m8
+			0x00000003, 0xA7000001,// VEX_KNC_Vprefetche0_m8
+			0x00000003, 0xA7000001,// VEX_KNC_Vprefetche1_m8
+			0x00000003, 0xA7000001,// VEX_KNC_Vprefetche2_m8
+			0x00000036, 0xA7000001,// VEX_KNC_Kand_kr_kr
+			0x00000036, 0xA7000001,// VEX_KNC_Kandn_kr_kr
+			0x00000036, 0xA7000001,// VEX_KNC_Kandnr_kr_kr
+			0x00000037, 0xA7000001,// VEX_KNC_Knot_kr_kr
+			0x00000036, 0xA7000001,// VEX_KNC_Kor_kr_kr
+			0x00000036, 0xA7000001,// VEX_KNC_Kxnor_kr_kr
+			0x00000036, 0xA7000001,// VEX_KNC_Kxor_kr_kr
+			0x00000036, 0xA7000001,// VEX_KNC_Kmerge2l1h_kr_kr
+			0x00000036, 0xA7000001,// VEX_KNC_Kmerge2l1l_kr_kr
+			0x00000034, 0xA7300001,// VEX_KNC_Jkzd_kr_rel32_64
+			0x00000034, 0xA7300001,// VEX_KNC_Jknzd_kr_rel32_64
+			0x00000037, 0xA7000001,// VEX_KNC_Kmov_kr_kr
+			0x00000037, 0xA7000001,// VEX_KNC_Kmov_kr_r32
+			0x00000037, 0xA7000001,// VEX_KNC_Kmov_r32_kr
+			0x000000B7, 0xA7000001,// VEX_KNC_Kconcath_r64_kr_kr
+			0x000000B7, 0xA7000001,// VEX_KNC_Kconcatl_r64_kr_kr
+			0x0008C034, 0xA7000001,// VEX_KNC_Kortest_kr_kr
+			0x00000004, 0xA7000001,// VEX_KNC_Delay_r32
+			0x00000004, 0xA7000001,// VEX_KNC_Delay_r64
+			0x00000004, 0xA7000001,// VEX_KNC_Spflt_r32
+			0x00000004, 0xA7000001,// VEX_KNC_Spflt_r64
+			0x00000003, 0xA7000001,// VEX_KNC_Clevict1_m8
+			0x00000003, 0xA7000001,// VEX_KNC_Clevict0_m8
+			0x00098037, 0xA7000001,// VEX_KNC_Popcnt_r32_r32
+			0x00098037, 0xA7000001,// VEX_KNC_Popcnt_r64_r64
+			0x0008E037, 0xA7000001,// VEX_KNC_Tzcnt_r32_r32
+			0x0008E037, 0xA7000001,// VEX_KNC_Tzcnt_r64_r64
+			0x0008E036, 0xA7000001,// VEX_KNC_Tzcnti_r32_r32
+			0x0008E036, 0xA7000001,// VEX_KNC_Tzcnti_r64_r64
+			0x0008E037, 0xA7000001,// VEX_KNC_Lzcnt_r32_r32
+			0x0008E037, 0xA7000001,// VEX_KNC_Lzcnt_r64_r64
+			0x00000000, 0xA7020001,// VEX_KNC_Undoc_r32_rm32_128_F3_0F38_W0_F0
+			0x00000000, 0xA7020001,// VEX_KNC_Undoc_r64_rm64_128_F3_0F38_W1_F0
+			0x00000000, 0xA7020001,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F0
+			0x00000000, 0xA7020001,// VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F0
+			0x00000000, 0xA7020001,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F1
+			0x00000000, 0xA7020001,// VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F1
+			0x000000B7, 0xA7000001,// VEX_KNC_Kextract_kr_r64_imm8
+			0x00000003, 0xA7000005,// MVEX_Vprefetchnta_m
+			0x00000003, 0xA7000005,// MVEX_Vprefetch0_m
+			0x00000003, 0xA7000005,// MVEX_Vprefetch1_m
+			0x00000003, 0xA7000005,// MVEX_Vprefetch2_m
+			0x00000003, 0xA7000005,// MVEX_Vprefetchenta_m
+			0x00000003, 0xA7000005,// MVEX_Vprefetche0_m
+			0x00000003, 0xA7000005,// MVEX_Vprefetche1_m
+			0x00000003, 0xA7000005,// MVEX_Vprefetche2_m
+			0x00000038, 0xA7000005,// MVEX_Vmovaps_zmm_k1_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vmovapd_zmm_k1_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vmovaps_mt_k1_zmm
+			0x00000038, 0xA7000005,// MVEX_Vmovapd_mt_k1_zmm
+			0x00000038, 0xA7000005,// MVEX_Vmovnrapd_m_k1_zmm
+			0x00000038, 0xA7000005,// MVEX_Vmovnrngoapd_m_k1_zmm
+			0x00000038, 0xA7000005,// MVEX_Vmovnraps_m_k1_zmm
+			0x00000038, 0xA7000005,// MVEX_Vmovnrngoaps_m_k1_zmm
+			0x000000B8, 0xA7000005,// MVEX_Vaddps_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vaddpd_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vmulps_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vmulpd_zmm_k1_zmm_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vcvtps2pd_zmm_k1_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vcvtpd2ps_zmm_k1_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vsubps_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vsubpd_zmm_k1_zmm_zmmmt
+			0x000000BA, 0xA7000005,// MVEX_Vpcmpgtd_kr_k1_zmm_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vmovdqa32_zmm_k1_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vmovdqa64_zmm_k1_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpshufd_zmm_k1_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vpsrld_zmm_k1_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vpsrad_zmm_k1_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vpslld_zmm_k1_zmmmt_imm8
+			0x000000BA, 0xA7000005,// MVEX_Vpcmpeqd_kr_k1_zmm_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vcvtudq2pd_zmm_k1_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vmovdqa32_mt_k1_zmm
+			0x00000038, 0xA7000005,// MVEX_Vmovdqa64_mt_k1_zmm
+			0x00000003, 0xA7000005,// MVEX_Clevict1_m
+			0x00000003, 0xA7000005,// MVEX_Clevict0_m
+			0x000002BA, 0xA7000005,// MVEX_Vcmpps_kr_k1_zmm_zmmmt_imm8
+			0x000002BA, 0xA7000005,// MVEX_Vcmppd_kr_k1_zmm_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vpandd_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpandq_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpandnd_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpandnq_zmm_k1_zmm_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vcvtdq2pd_zmm_k1_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpord_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vporq_zmm_k1_zmm_zmmmt
+			0x074000B8, 0xA7000005,// MVEX_Vpxord_zmm_k1_zmm_zmmmt
+			0x074000B8, 0xA7000005,// MVEX_Vpxorq_zmm_k1_zmm_zmmmt
+			0x074000B8, 0xA7000005,// MVEX_Vpsubd_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpaddd_zmm_k1_zmm_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vbroadcastss_zmm_k1_mt
+			0x00000038, 0xA7000005,// MVEX_Vbroadcastsd_zmm_k1_mt
+			0x00000038, 0xA7000005,// MVEX_Vbroadcastf32x4_zmm_k1_mt
+			0x00000038, 0xA7000005,// MVEX_Vbroadcastf64x4_zmm_k1_mt
+			0x000000BA, 0xA7000005,// MVEX_Vptestmd_kr_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpermd_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpminsd_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpminud_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpmaxsd_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpmaxud_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpmulld_zmm_k1_zmm_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vgetexpps_zmm_k1_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vgetexppd_zmm_k1_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpsrlvd_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpsravd_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpsllvd_zmm_k1_zmm_zmmmt
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_48
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_49
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_4A
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_4B
+			0x000000B8, 0xA7000005,// MVEX_Vaddnps_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vaddnpd_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vgmaxabsps_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vgminps_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vgminpd_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vgmaxps_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vgmaxpd_zmm_k1_zmm_zmmmt
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_54
+			0x000000B9, 0xA7000005,// MVEX_Vfixupnanps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfixupnanpd_zmm_k1_zmm_zmmmt
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_56
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_57
+			0x00000038, 0xA7000005,// MVEX_Vpbroadcastd_zmm_k1_mt
+			0x00000038, 0xA7000005,// MVEX_Vpbroadcastq_zmm_k1_mt
+			0x00000038, 0xA7000005,// MVEX_Vbroadcasti32x4_zmm_k1_mt
+			0x00000038, 0xA7000005,// MVEX_Vbroadcasti64x4_zmm_k1_mt
+			0x000000D9, 0xA7000005,// MVEX_Vpadcd_zmm_k1_kr_zmmmt
+			0x000000D9, 0xA7000005,// MVEX_Vpaddsetcd_zmm_k1_kr_zmmmt
+			0x000000D9, 0xA7000005,// MVEX_Vpsbbd_zmm_k1_kr_zmmmt
+			0x000000D9, 0xA7000005,// MVEX_Vpsubsetbd_zmm_k1_kr_zmmmt
+			0x000000BA, 0xA7000005,// MVEX_Vpblendmd_zmm_k1_zmm_zmmmt
+			0x000000BA, 0xA7000005,// MVEX_Vpblendmq_zmm_k1_zmm_zmmmt
+			0x000000BA, 0xA7000005,// MVEX_Vblendmps_zmm_k1_zmm_zmmmt
+			0x000000BA, 0xA7000005,// MVEX_Vblendmpd_zmm_k1_zmm_zmmmt
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_67
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_68
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_69
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_6A
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_6B
+			0x074000B8, 0xA7000005,// MVEX_Vpsubrd_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vsubrps_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vsubrpd_zmm_k1_zmm_zmmmt
+			0x000000D9, 0xA7000005,// MVEX_Vpsbbrd_zmm_k1_kr_zmmmt
+			0x000000D9, 0xA7000005,// MVEX_Vpsubrsetbd_zmm_k1_kr_zmmmt
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_70
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_71
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_72
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_73
+			0x000000BA, 0xA7000005,// MVEX_Vpcmpltd_kr_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vscaleps_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpmulhud_zmm_k1_zmm_zmmmt
+			0x000000B8, 0xA7000005,// MVEX_Vpmulhd_zmm_k1_zmm_zmmmt
+			0x40000039, 0xA7000005,// MVEX_Vpgatherdd_zmm_k1_mvt
+			0x40000039, 0xA7000005,// MVEX_Vpgatherdq_zmm_k1_mvt
+			0x40000039, 0xA7000005,// MVEX_Vgatherdps_zmm_k1_mvt
+			0x40000039, 0xA7000005,// MVEX_Vgatherdpd_zmm_k1_mvt
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_94
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W1_94
+			0x000000B9, 0xA7000005,// MVEX_Vfmadd132ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfmadd132pd_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfmsub132ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfmsub132pd_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfnmadd132ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfnmadd132pd_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfnmsub132ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfnmsub132pd_zmm_k1_zmm_zmmmt
+			0x40000037, 0xA7000005,// MVEX_Vpscatterdd_mvt_k1_zmm
+			0x40000037, 0xA7000005,// MVEX_Vpscatterdq_mvt_k1_zmm
+			0x40000037, 0xA7000005,// MVEX_Vscatterdps_mvt_k1_zmm
+			0x40000037, 0xA7000005,// MVEX_Vscatterdpd_mvt_k1_zmm
+			0x000000B8, 0xA7000005,// MVEX_Vfmadd233ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfmadd213ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfmadd213pd_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfmsub213ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfmsub213pd_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfnmadd213ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfnmadd213pd_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfnmsub213ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfnmsub213pd_zmm_k1_zmm_zmmmt
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_mvt_512_66_0F38_W0_B0
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_mvt_512_66_0F38_W0_B2
+			0x000000B8, 0xA7000005,// MVEX_Vpmadd233d_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vpmadd231d_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfmadd231ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfmadd231pd_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfmsub231ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfmsub231pd_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfnmadd231ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfnmadd231pd_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfnmsub231ps_zmm_k1_zmm_zmmmt
+			0x000000B9, 0xA7000005,// MVEX_Vfnmsub231pd_zmm_k1_zmm_zmmmt
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_mvt_512_66_0F38_W0_C0
+			0x00000003, 0xA7000005,// MVEX_Vgatherpf0hintdps_mvt_k1
+			0x00000003, 0xA7000005,// MVEX_Vgatherpf0hintdpd_mvt_k1
+			0x40000003, 0xA7000005,// MVEX_Vgatherpf0dps_mvt_k1
+			0x40000003, 0xA7000005,// MVEX_Vgatherpf1dps_mvt_k1
+			0x00000003, 0xA7000005,// MVEX_Vscatterpf0hintdps_mvt_k1
+			0x00000003, 0xA7000005,// MVEX_Vscatterpf0hintdpd_mvt_k1
+			0x40000003, 0xA7000005,// MVEX_Vscatterpf0dps_mvt_k1
+			0x40000003, 0xA7000005,// MVEX_Vscatterpf1dps_mvt_k1
+			0x00000038, 0xA7000005,// MVEX_Vexp223ps_zmm_k1_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vlog2ps_zmm_k1_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vrcp23ps_zmm_k1_zmmmt
+			0x00000038, 0xA7000005,// MVEX_Vrsqrt23ps_zmm_k1_zmmmt
+			0x400000B8, 0xA7000005,// MVEX_Vaddsetsps_zmm_k1_zmm_zmmmt
+			0x400000B8, 0xA7000005,// MVEX_Vpaddsetsd_zmm_k1_zmm_zmmmt
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_CE
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W1_CE
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmm_zmmmt_512_66_0F38_W0_CF
+			0x00000039, 0xA7000005,// MVEX_Vloadunpackld_zmm_k1_mt
+			0x00000039, 0xA7000005,// MVEX_Vloadunpacklq_zmm_k1_mt
+			0x0000003A, 0xA7000005,// MVEX_Vpackstoreld_mt_k1_zmm
+			0x0000003A, 0xA7000005,// MVEX_Vpackstorelq_mt_k1_zmm
+			0x00000039, 0xA7000005,// MVEX_Vloadunpacklps_zmm_k1_mt
+			0x00000039, 0xA7000005,// MVEX_Vloadunpacklpd_zmm_k1_mt
+			0x0000003A, 0xA7000005,// MVEX_Vpackstorelps_mt_k1_zmm
+			0x0000003A, 0xA7000005,// MVEX_Vpackstorelpd_mt_k1_zmm
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D2
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_D2
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D3
+			0x0A700039, 0xA7000005,// MVEX_Vloadunpackhd_zmm_k1_mt
+			0x0A700039, 0xA7000005,// MVEX_Vloadunpackhq_zmm_k1_mt
+			0x0A70003A, 0xA7000005,// MVEX_Vpackstorehd_mt_k1_zmm
+			0x0A70003A, 0xA7000005,// MVEX_Vpackstorehq_mt_k1_zmm
+			0x0A700039, 0xA7000005,// MVEX_Vloadunpackhps_zmm_k1_mt
+			0x0A700039, 0xA7000005,// MVEX_Vloadunpackhpd_zmm_k1_mt
+			0x0A70003A, 0xA7000005,// MVEX_Vpackstorehps_mt_k1_zmm
+			0x0A70003A, 0xA7000005,// MVEX_Vpackstorehpd_mt_k1_zmm
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D6
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_66_0F38_W0_D6
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_512_0F38_W0_D7
+			0x000002B8, 0xA7000005,// MVEX_Valignd_zmm_k1_zmm_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vpermf32x4_zmm_k1_zmmmt_imm8
+			0x000002BA, 0xA7000005,// MVEX_Vpcmpud_kr_k1_zmm_zmmmt_imm8
+			0x000002BA, 0xA7000005,// MVEX_Vpcmpd_kr_k1_zmm_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vgetmantps_zmm_k1_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vgetmantpd_zmm_k1_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vrndfxpntps_zmm_k1_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vrndfxpntpd_zmm_k1_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vcvtfxpntudq2ps_zmm_k1_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vcvtfxpntps2udq_zmm_k1_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vcvtfxpntpd2udq_zmm_k1_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vcvtfxpntdq2ps_zmm_k1_zmmmt_imm8
+			0x000000B8, 0xA7000005,// MVEX_Vcvtfxpntps2dq_zmm_k1_zmmmt_imm8
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D0
+			0x00000000, 0xA7020005,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D1
+			0x000000B8, 0xA7000005,// MVEX_Vcvtfxpntpd2dq_zmm_k1_zmmmt_imm8
 			0x00000000, 0x00000000,// Zero_bytes
 		};
 	}

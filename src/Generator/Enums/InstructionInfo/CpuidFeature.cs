@@ -165,12 +165,6 @@ namespace Generator.Enums.InstructionInfo {
 		[Comment("Multi-byte nops (#(c:0F1F /0)#): CPUID.01H.EAX[Bits 11:8] = 0110B or 1111B")]
 		MULTIBYTENOP,
 		[Comment("CPUID.0C0000000H:EAX >= 0C0000001H AND CPUID.0C0000001H:EDX.ACE[Bits 7:6] = 11B ([6] = exists, [7] = enabled)")]
-		PADLOCK_ACE,
-		[Comment("CPUID.0C0000000H:EAX >= 0C0000001H AND CPUID.0C0000001H:EDX.PHE[Bits 11:10] = 11B ([10] = exists, [11] = enabled)")]
-		PADLOCK_PHE,
-		[Comment("CPUID.0C0000000H:EAX >= 0C0000001H AND CPUID.0C0000001H:EDX.PMM[Bits 13:12] = 11B ([12] = exists, [13] = enabled)")]
-		PADLOCK_PMM,
-		[Comment("#(c:PAUSE)# instruction (Pentium 4 or later)")]
 		PAUSE,
 		[Comment("CPUID.01H:ECX.PCLMULQDQ[bit 1]")]
 		PCLMULQDQ,
@@ -304,7 +298,5 @@ namespace Generator.Enums.InstructionInfo {
 		UDBG,
 		[Comment("Intel Knights Corner")]
 		KNC,
-		[Comment("Undocumented instruction")]
-		PADLOCK_UNDOC,
 	}
 }

@@ -2026,18 +2026,6 @@ repe scasb
 repe scasw
 repe scasd
 repe scasq
-rep montmul
-rep xsha1
-rep xsha256
-rep xcryptecb
-rep xcryptcbc
-rep xcryptctr
-rep xcryptcfb
-rep xcryptofb
-rep undoc
-rep undoc
-rep xsha512
-rep xsha512_alt
 
 repne insb
 repne insw
@@ -2087,18 +2075,6 @@ rep lodsd
 repe scasb
 repe scasw
 repe scasd
-rep montmul
-rep xsha1
-rep xsha256
-rep xcryptecb
-rep xcryptcbc
-rep xcryptctr
-rep xcryptcfb
-rep xcryptofb
-rep undoc
-rep undoc
-rep xsha512
-rep xsha512_alt
 
 repne insb
 repne insw
@@ -2143,18 +2119,6 @@ rep lodsd
 repe scasb
 repe scasw
 repe scasd
-rep montmul
-rep xsha1
-rep xsha256
-rep xcryptecb
-rep xcryptcbc
-rep xcryptctr
-rep xcryptcfb
-rep xcryptofb
-rep undoc
-rep undoc
-rep xsha512
-rep xsha512_alt
 
 repne insb
 repne insw
@@ -2204,18 +2168,6 @@ repe scasb
 repe scasw
 repe scasd
 repe scasq
-rep montmul
-rep xsha1
-rep xsha256
-rep xcryptecb
-rep xcryptcbc
-rep xcryptctr
-rep xcryptcfb
-rep xcryptofb
-rep undoc
-rep undoc
-rep xsha512
-rep xsha512_alt
 
 repne insb
 repne insw
@@ -2265,18 +2217,6 @@ rep lodsd
 repe scasb
 repe scasw
 repe scasd
-rep montmul
-rep xsha1
-rep xsha256
-rep xcryptecb
-rep xcryptcbc
-rep xcryptctr
-rep xcryptcfb
-rep xcryptofb
-rep undoc
-rep undoc
-rep xsha512
-rep xsha512_alt
 
 repne insb
 repne insw
@@ -2321,18 +2261,6 @@ rep lodsd
 repe scasb
 repe scasw
 repe scasd
-rep montmul
-rep xsha1
-rep xsha256
-rep xcryptecb
-rep xcryptcbc
-rep xcryptctr
-rep xcryptcfb
-rep xcryptofb
-rep undoc
-rep undoc
-rep xsha512
-rep xsha512_alt
 
 repne insb
 repne insw
@@ -2382,18 +2310,6 @@ repe scasb
 repe scasw
 repe scasd
 repe scasq
-rep montmul
-rep xsha1
-rep xsha256
-rep xcryptecb
-rep xcryptcbc
-rep xcryptctr
-rep xcryptcfb
-rep xcryptofb
-rep undoc
-rep undoc
-rep xsha512
-rep xsha512_alt
 
 repne insb
 repne insw
@@ -2443,18 +2359,6 @@ rep lodsd
 repe scasb
 repe scasw
 repe scasd
-rep montmul
-rep xsha1
-rep xsha256
-rep xcryptecb
-rep xcryptcbc
-rep xcryptctr
-rep xcryptcfb
-rep xcryptofb
-rep undoc
-rep undoc
-rep xsha512
-rep xsha512_alt
 
 repne insb
 repne insw
@@ -2499,18 +2403,6 @@ rep lodsd
 repe scasb
 repe scasw
 repe scasd
-rep montmul
-rep xsha1
-rep xsha256
-rep xcryptecb
-rep xcryptcbc
-rep xcryptctr
-rep xcryptcfb
-rep xcryptofb
-rep undoc
-rep undoc
-rep xsha512
-rep xsha512_alt
 
 repne insb
 repne insw
@@ -2560,18 +2452,6 @@ repz scasb
 repz scasw
 repz scasd
 repz scasq
-rep montmul
-rep xsha1
-rep xsha256
-rep xcryptecb
-rep xcryptcbc
-rep xcryptctr
-rep xcryptcfb
-rep xcryptofb
-rep undoc
-rep undoc
-rep xsha512
-rep xsha512_alt
 
 repnz insb
 repnz insw
@@ -2621,18 +2501,6 @@ rep lodsd
 repz scasb
 repz scasw
 repz scasd
-rep montmul
-rep xsha1
-rep xsha256
-rep xcryptecb
-rep xcryptcbc
-rep xcryptctr
-rep xcryptcfb
-rep xcryptofb
-rep undoc
-rep undoc
-rep xsha512
-rep xsha512_alt
 
 repnz insb
 repnz insw
@@ -2677,18 +2545,6 @@ rep lodsd
 repz scasb
 repz scasw
 repz scasd
-rep montmul
-rep xsha1
-rep xsha256
-rep xcryptecb
-rep xcryptcbc
-rep xcryptctr
-rep xcryptcfb
-rep xcryptofb
-rep undoc
-rep undoc
-rep xsha512
-rep xsha512_alt
 
 repnz insb
 repnz insw

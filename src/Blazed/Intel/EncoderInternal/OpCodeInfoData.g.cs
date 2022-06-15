@@ -12,7 +12,7 @@ namespace Blazed.Intel.EncoderInternal {
 		internal static readonly uint[] OpcFlags2 = GetOpcFlags2();
 
 		static uint[] GetOpcFlags1() =>
-			new uint[4780] {
+			new uint[4744] {
 				0x00000000,// INVALID
 				0x00000000,// DeclareByte
 				0x00000000,// DeclareWord
@@ -1971,32 +1971,8 @@ namespace Blazed.Intel.EncoderInternal {
 				0x00000000,// Shld_rm16_r16_CL
 				0x00000000,// Shld_rm32_r32_CL
 				0x00000000,// Shld_rm64_r64_CL
-				0x00000000,// Montmul_16
-				0x00000000,// Montmul_32
-				0x00000000,// Montmul_64
-				0x00000000,// Xsha1_16
-				0x00000000,// Xsha1_32
-				0x00000000,// Xsha1_64
-				0x00000000,// Xsha256_16
-				0x00000000,// Xsha256_32
-				0x00000000,// Xsha256_64
 				0x01800000,// Xbts_r16_rm16
 				0x01800000,// Xbts_r32_rm32
-				0x00000000,// Xcryptecb_16
-				0x00000000,// Xcryptecb_32
-				0x00000000,// Xcryptecb_64
-				0x00000000,// Xcryptcbc_16
-				0x00000000,// Xcryptcbc_32
-				0x00000000,// Xcryptcbc_64
-				0x00000000,// Xcryptctr_16
-				0x00000000,// Xcryptctr_32
-				0x00000000,// Xcryptctr_64
-				0x00000000,// Xcryptcfb_16
-				0x00000000,// Xcryptcfb_32
-				0x00000000,// Xcryptcfb_64
-				0x00000000,// Xcryptofb_16
-				0x00000000,// Xcryptofb_32
-				0x00000000,// Xcryptofb_64
 				0x01800000,// Ibts_rm16_r16
 				0x01800000,// Ibts_rm32_r32
 				0x00600000,// Cmpxchg486_rm8_r8
@@ -4780,23 +4756,11 @@ namespace Blazed.Intel.EncoderInternal {
 				0x01C10000,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D0
 				0x01C10000,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D1
 				0x01C00000,// MVEX_Vcvtfxpntpd2dq_zmm_k1_zmmmt_imm8
-				0x00010000,// Via_undoc_F30FA6F0_16
-				0x00010000,// Via_undoc_F30FA6F0_32
-				0x00010000,// Via_undoc_F30FA6F0_64
-				0x00010000,// Via_undoc_F30FA6F8_16
-				0x00010000,// Via_undoc_F30FA6F8_32
-				0x00010000,// Via_undoc_F30FA6F8_64
-				0x00000000,// Xsha512_16
-				0x00000000,// Xsha512_32
-				0x00000000,// Xsha512_64
-				0x00000000,// Xsha512_alt_16
-				0x00000000,// Xsha512_alt_32
-				0x00000000,// Xsha512_alt_64
 				0x00000000,// Zero_bytes
 			};
 
 		static uint[] GetOpcFlags2() =>
-			new uint[4780] {
+			new uint[4744] {
 				0x1E003FFF,// INVALID
 				0x1E003FFF,// DeclareByte
 				0x1E003FFF,// DeclareWord
@@ -6755,32 +6719,8 @@ namespace Blazed.Intel.EncoderInternal {
 				0x1E003FFF,// Shld_rm16_r16_CL
 				0x1E003FFF,// Shld_rm32_r32_CL
 				0x14003FF0,// Shld_rm64_r64_CL
-				0x0A003FFF,// Montmul_16
-				0x1E003FFF,// Montmul_32
-				0x14003FF0,// Montmul_64
-				0x0A003FFF,// Xsha1_16
-				0x1E003FFF,// Xsha1_32
-				0x14003FF0,// Xsha1_64
-				0x0A003FFF,// Xsha256_16
-				0x1E003FFF,// Xsha256_32
-				0x14003FF0,// Xsha256_64
 				0x0A003FFF,// Xbts_r16_rm16
 				0x0A003FFF,// Xbts_r32_rm32
-				0x0A003FFF,// Xcryptecb_16
-				0x1E003FFF,// Xcryptecb_32
-				0x14003FF0,// Xcryptecb_64
-				0x0A003FFF,// Xcryptcbc_16
-				0x1E003FFF,// Xcryptcbc_32
-				0x14003FF0,// Xcryptcbc_64
-				0x0A003FFF,// Xcryptctr_16
-				0x1E003FFF,// Xcryptctr_32
-				0x14003FF0,// Xcryptctr_64
-				0x0A003FFF,// Xcryptcfb_16
-				0x1E003FFF,// Xcryptcfb_32
-				0x14003FF0,// Xcryptcfb_64
-				0x0A003FFF,// Xcryptofb_16
-				0x1E003FFF,// Xcryptofb_32
-				0x14003FF0,// Xcryptofb_64
 				0x0A003FFF,// Ibts_rm16_r16
 				0x0A003FFF,// Ibts_rm32_r32
 				0x0A003FFF,// Cmpxchg486_rm8_r8
@@ -9564,18 +9504,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x14003FF0,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D0
 				0x14003FF0,// MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D1
 				0x14003FF0,// MVEX_Vcvtfxpntpd2dq_zmm_k1_zmmmt_imm8
-				0x0A003FFF,// Via_undoc_F30FA6F0_16
-				0x1E003FFF,// Via_undoc_F30FA6F0_32
-				0x14003FF0,// Via_undoc_F30FA6F0_64
-				0x0A003FFF,// Via_undoc_F30FA6F8_16
-				0x1E003FFF,// Via_undoc_F30FA6F8_32
-				0x14003FF0,// Via_undoc_F30FA6F8_64
-				0x0A003FFF,// Xsha512_16
-				0x1E003FFF,// Xsha512_32
-				0x14003FF0,// Xsha512_64
-				0x0A003FFF,// Xsha512_alt_16
-				0x1E003FFF,// Xsha512_alt_32
-				0x14003FF0,// Xsha512_alt_64
 				0x1E003FFF,// Zero_bytes
 			};
 	}

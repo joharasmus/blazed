@@ -643,22 +643,6 @@ a16 fs monitor
 a16 fs monitorx
 a16 fs clzero
 fs umonitor bp
-rep montmul
-a16 rep montmul
-rep xsha1
-a16 rep xsha1
-rep xsha256
-a16 rep xsha256
-rep xcryptecb
-a16 rep xcryptecb
-rep xcryptcbc
-a16 rep xcryptcbc
-rep xcryptctr
-a16 rep xcryptctr
-rep xcryptcfb
-a16 rep xcryptcfb
-rep xcryptofb
-a16 rep xcryptofb
 a16 pvalidate
 pvalidate
 serialize
@@ -669,11 +653,3 @@ invlpgb
 tlbsync
 cl1invmb
 altinst
-a16 rep undoc
-rep undoc
-a16 rep undoc
-rep undoc
-a16 rep xsha512
-rep xsha512
-a16 rep xsha512_alt
-rep xsha512_alt

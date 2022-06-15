@@ -277,14 +277,6 @@ Popq_FS
 Bt_rm64_r64
 Shld_rm64_r64_imm8
 Shld_rm64_r64_CL
-Montmul_64
-Xsha1_64
-Xsha256_64
-Xcryptecb_64
-Xcryptcbc_64
-Xcryptctr_64
-Xcryptcfb_64
-Xcryptofb_64
 Pushq_GS
 Popq_GS
 Bts_rm64_r64
@@ -713,7 +705,3 @@ MVEX_Vcvtfxpntps2dq_zmm_k1_zmmmt_imm8
 MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D0
 MVEX_Undoc_zmm_k1_zmmmt_imm8_512_66_0F3A_W0_D1
 MVEX_Vcvtfxpntpd2dq_zmm_k1_zmmmt_imm8
-Via_undoc_F30FA6F0_64
-Via_undoc_F30FA6F8_64
-Xsha512_64
-Xsha512_alt_64
