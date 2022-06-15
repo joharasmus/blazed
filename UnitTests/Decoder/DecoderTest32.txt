@@ -21795,30 +21795,6 @@ F3 0F01 D9, Vmgexit, Vmgexit, 0,
 
 F2 0F01 D9, Vmgexit_F2, Vmgexit, 0,
 
-0F36 00, Rdshr_rm32, Rdshr, 1, op0=m;ds;eax;;1;0;0;UInt32 decopt=Cyrix
-66 0F36 00, Rdshr_rm32, Rdshr, 1, op0=m;ds;eax;;1;0;0;UInt32 decopt=Cyrix enc=0F3600
-0F36 C2, Rdshr_rm32, Rdshr, 1, op0=r;edx decopt=Cyrix
-66 0F36 C2, Rdshr_rm32, Rdshr, 1, op0=r;edx decopt=Cyrix enc=0F36C2
-0F36 08, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F36 10, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F36 18, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F36 20, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F36 28, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F36 30, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F36 38, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-
-0F37 00, Wrshr_rm32, Wrshr, 1, op0=m;ds;eax;;1;0;0;UInt32 decopt=Cyrix
-66 0F37 00, Wrshr_rm32, Wrshr, 1, op0=m;ds;eax;;1;0;0;UInt32 decopt=Cyrix enc=0F3700
-0F37 C2, Wrshr_rm32, Wrshr, 1, op0=r;edx decopt=Cyrix
-66 0F37 C2, Wrshr_rm32, Wrshr, 1, op0=r;edx decopt=Cyrix enc=0F37C2
-0F37 08, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F37 10, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F37 18, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F37 20, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F37 28, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F37 30, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F37 38, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-
 0F38, Smint, Smint, 0, decopt=Cyrix
 66 0F38, Smint, Smint, 0, decopt=Cyrix enc=0F38
 

@@ -10535,16 +10535,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void rdshr_r32() {
-			TestAssembler(c => c.rdshr(edx), Instruction.Create(Code.Rdshr_rm32, Register.EDX), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void rdshr_m() {
-			TestAssembler(c => c.rdshr(__dword_ptr[si]), Instruction.Create(Code.Rdshr_rm32, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
 		public void rdsspd_r32() {
 			TestAssembler(c => c.rdsspd(edx), Instruction.Create(Code.Rdsspd_r32, Register.EDX));
 		}
@@ -46431,16 +46421,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		[Fact]
 		public void wrpkru() {
 			TestAssembler(c => c.wrpkru(), Instruction.Create(Code.Wrpkru));
-		}
-
-		[Fact]
-		public void wrshr_r32() {
-			TestAssembler(c => c.wrshr(edx), Instruction.Create(Code.Wrshr_rm32, Register.EDX), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void wrshr_m() {
-			TestAssembler(c => c.wrshr(__dword_ptr[si]), Instruction.Create(Code.Wrshr_rm32, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
 		}
 
 		[Fact]

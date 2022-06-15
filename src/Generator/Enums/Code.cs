@@ -4249,8 +4249,6 @@ namespace Generator.Enums {
 		VEX_Tdpbssd_tmm_tmm_tmm,
 		Fnstdw_AX,
 		Fnstsg_AX,
-		Rdshr_rm32,
-		Wrshr_rm32,
 		Smint,
 		Svdc_m80_Sreg,
 		Rsdc_Sreg_m80,

@@ -4246,8 +4246,6 @@ namespace Blazed.Intel {
 			3,// VEX_Tdpbssd_tmm_tmm_tmm
 			1,// Fnstdw_AX
 			1,// Fnstsg_AX
-			1,// Rdshr_rm32
-			1,// Wrshr_rm32
 			0,// Smint
 			2,// Svdc_m80_Sreg
 			2,// Rsdc_Sreg_m80

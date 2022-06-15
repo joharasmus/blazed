@@ -672,10 +672,6 @@ F2 0F 01 E9, Xresldtrk
 0F 01 FE, Invlpgbd
 0F 01 FF, Tlbsync
 0F0A, Cl1invmb, Cl1invmb
-0F36 00, Rdshr_rm32, Cyrix
-0F36 C2, Rdshr_rm32, Cyrix
-0F37 00, Wrshr_rm32, Cyrix
-0F37 C2, Wrshr_rm32, Cyrix
 0F38, Smint, Cyrix
 0F78 08, Svdc_m80_Sreg, Cyrix
 0F79 08, Rsdc_Sreg_m80, Cyrix

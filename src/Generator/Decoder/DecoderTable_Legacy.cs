@@ -1439,30 +1439,6 @@ static class DecoderTable_Legacy {
 				},
 			}),
 
-			("handlers_Grp_0F36_Cyrix",
-			new object[8] {
-				new object[] { Ev_REXW_1a, code[nameof(Code.Rdshr_rm32)], 0x03 },
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-			}),
-
-			("handlers_Grp_0F37_Cyrix",
-			new object[8] {
-				new object[] { Ev_REXW_1a, code[nameof(Code.Wrshr_rm32)], 0x03 },
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-			}),
-
 			("handlers_Grp_0F7A_Cyrix",
 			new object[8] {
 				new object[] { RM,
@@ -4084,10 +4060,7 @@ static class DecoderTable_Legacy {
 				new object[] { Simple, code[nameof(Code.Rdpmc)] },
 				new object[] { Simple, code[nameof(Code.Sysenter)] },
 				new object[] { Simple4, code[nameof(Code.Sysexitd)], code[nameof(Code.Sysexitq)] },
-				new object[] { Options1632_1,
-					invalid,
-					new object[] { Group, "handlers_Grp_0F36_Cyrix" }, options[nameof(DecoderOptions.Cyrix)]
-				},
+				invalid,
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix_NoModRM,
 						new object[] { Simple4b, code[nameof(Code.Getsecd)], code[nameof(Code.Getsecq)] },
@@ -4095,7 +4068,7 @@ static class DecoderTable_Legacy {
 						invalid_NoModRM,
 						invalid_NoModRM,
 					},
-					new object[] { Group, "handlers_Grp_0F37_Cyrix" }, options[nameof(DecoderOptions.Cyrix)]
+					invalid, invalid
 				},
 
 				// 38

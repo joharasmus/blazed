@@ -25685,18 +25685,6 @@ INSTRUCTION: DF E2 | FNSTSG AX | FPU387SL_ONLY
 	flags: 16 32 dec-opt=OldFpu tsx-impl-abort no-wait
 END
 
-# Code: Rdshr_rm32
-INSTRUCTION: 0F 36 /0 | RDSHR r/m32 | CYRIX_SHR
-	ops: w=rm | UInt32
-	flags: 16 32 dec-opt=Cyrix cpl0 no-outside-smm
-END
-
-# Code: Wrshr_rm32
-INSTRUCTION: 0F 37 /0 | WRSHR r/m32 | CYRIX_SHR
-	ops: r=rm | UInt32
-	flags: 16 32 dec-opt=Cyrix cpl0 no-outside-smm
-END
-
 # Code: Smint
 INSTRUCTION: 0F 38 | SMINT | CYRIX_SMINT
 	flags: 16 32 dec-opt=Cyrix cpl0 cflow=int

@@ -174,7 +174,6 @@ Options:
 				options.ExcludeCpuid.Add(nameof(CpuidFeature.CYRIX_SMM));
 				options.ExcludeCpuid.Add(nameof(CpuidFeature.CYRIX_SMINT));
 				options.ExcludeCpuid.Add(nameof(CpuidFeature.CYRIX_SMINT_0F7E));
-				options.ExcludeCpuid.Add(nameof(CpuidFeature.CYRIX_SHR));
 				break;
 
 			case "--include-cpuid":

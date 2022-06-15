@@ -286,8 +286,6 @@ namespace Generator.Enums.InstructionInfo {
 		CYRIX_SMINT,
 		[Comment("Cyrix #(c:SMINT 0F7E)# (6x86 or earlier)")]
 		CYRIX_SMINT_0F7E,
-		[Comment("Cyrix SMM instructions: #(c:RDSHR)#, #(c:WRSHR)# (6x86MX, M II, Cyrix III)")]
-		CYRIX_SHR,
 		[Comment("CPUID.0C0000000H:EAX >= 0C0000001H AND CPUID.0C0000001H:EDX.AIS[Bits 1:0] = 11B ([0] = exists, [1] = enabled)")]
 		CENTAUR_AIS,
 		[Comment("MOV to/from TR (80386, Intel486, Cyrix, Geode)")]

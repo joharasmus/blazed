@@ -672,10 +672,6 @@ a16 invlpgb
 invlpgb
 tlbsync
 cl1invmb
-rdshr [eax]
-rdshr edx
-wrshr [eax]
-wrshr edx
 smint
 svdc [eax], cs
 rsdc cs, [eax]

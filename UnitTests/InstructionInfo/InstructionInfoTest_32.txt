@@ -1685,14 +1685,6 @@ C7 F8 5AA51234, Xbegin_rel32, Legacy, RTM, flow=XbeginXabortXend op0=r cw=eax
 8D 34 D1, Lea_r32_m, Legacy, INTEL386, op0=w op1=nma w=esi r=ecx;edx
 # cl1invmb
 0F0A, Cl1invmb, Legacy, CL1INVMB, decopt=Cl1invmb priv
-# rdshr [eax]
-0F36 00, Rdshr_rm32, Legacy, CYRIX_SHR, priv op0=w r=ds r=eax wm=ds:eax;UInt32 decopt=Cyrix
-# rdshr edx
-0F36 C2, Rdshr_rm32, Legacy, CYRIX_SHR, priv op0=w w=edx decopt=Cyrix
-# wrshr [eax]
-0F37 00, Wrshr_rm32, Legacy, CYRIX_SHR, priv op0=r r=ds r=eax rm=ds:eax;UInt32 decopt=Cyrix
-# wrshr edx
-0F37 C2, Wrshr_rm32, Legacy, CYRIX_SHR, priv op0=r r=edx decopt=Cyrix
 # smint
 0F38, Smint, Legacy, CYRIX_SMINT, priv flow=Interrupt decopt=Cyrix
 # svdc [eax],cs

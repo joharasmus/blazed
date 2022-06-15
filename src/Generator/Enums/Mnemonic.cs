@@ -1569,8 +1569,6 @@ namespace Generator.Enums {
 		Sysretq,
 		Fnstdw,
 		Fnstsg,
-		Rdshr,
-		Wrshr,
 		Smint,
 		Svdc,
 		Rsdc,
