@@ -684,10 +684,6 @@ rsldt tword [eax]
 svts tword [eax]
 rsts tword [eax]
 smintold
-bb0_reset
-bb1_reset
-cpu_write
-cpu_read
 altinst
 undoc
 undoc

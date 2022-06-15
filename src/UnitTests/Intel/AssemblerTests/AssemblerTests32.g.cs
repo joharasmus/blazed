@@ -753,16 +753,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void bb0_reset() {
-			TestAssembler(c => c.bb0_reset(), Instruction.Create(Code.Bb0_reset), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void bb1_reset() {
-			TestAssembler(c => c.bb1_reset(), Instruction.Create(Code.Bb1_reset), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
 		public void bextr_r32_r32_r32() {
 			TestAssembler(c => c.bextr(edx, ebx, esp), Instruction.Create(Code.VEX_Bextr_r32_rm32_r32, Register.EDX, Register.EBX, Register.ESP));
 		}
@@ -2772,16 +2762,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		[Fact]
 		public void comiss_xmm_m() {
 			TestAssembler(c => c.comiss(xmm2, __xmmword_ptr[ecx]), Instruction.Create(Code.Comiss_xmm_xmmm32, Register.XMM2, new MemoryOperand(Register.ECX, Register.None, 1, 0x0, 0, false, Register.None)));
-		}
-
-		[Fact]
-		public void cpu_read() {
-			TestAssembler(c => c.cpu_read(), Instruction.Create(Code.Cpu_read), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void cpu_write() {
-			TestAssembler(c => c.cpu_write(), Instruction.Create(Code.Cpu_write), decoderOptions: DecoderOptions.Cyrix);
 		}
 
 		[Fact]

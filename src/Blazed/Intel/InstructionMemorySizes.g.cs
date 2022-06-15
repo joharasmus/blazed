@@ -4256,10 +4256,6 @@ namespace Blazed.Intel {
 			(byte)MemorySize.SegmentDescSelector,// Svts_m80
 			(byte)MemorySize.SegmentDescSelector,// Rsts_m80
 			0,// Smint_0F7E
-			0,// Bb0_reset
-			0,// Bb1_reset
-			0,// Cpu_write
-			0,// Cpu_read
 			0,// Altinst
 			0,// Cyrix_D9D7
 			0,// Cyrix_D9E2
@@ -9079,10 +9075,6 @@ namespace Blazed.Intel {
 			0,// Svts_m80
 			0,// Rsts_m80
 			0,// Smint_0F7E
-			0,// Bb0_reset
-			0,// Bb1_reset
-			0,// Cpu_write
-			0,// Cpu_read
 			0,// Altinst
 			0,// Cyrix_D9D7
 			0,// Cyrix_D9E2

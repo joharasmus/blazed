@@ -684,10 +684,6 @@ F2 0F 01 E9, Xresldtrk
 0F7C 00, Svts_m80, Cyrix
 0F7D 00, Rsts_m80, Cyrix
 0F7E, Smint_0F7E, Cyrix_SMINT_0F7E
-0F3A, Bb0_reset, Cyrix
-0F3B, Bb1_reset, Cyrix
-0F3C, Cpu_write, Cyrix
-0F3D, Cpu_read, Cyrix
 0F3F, Altinst, ALTINST
 D9 D7, Cyrix_D9D7, Cyrix
 D9 E2, Cyrix_D9E2, Cyrix

@@ -1471,18 +1471,6 @@ namespace Blazed.Intel {
 						AddRegister(flags, reg, OpAccess.Write);
 				}
 				break;
-			case ImpliedAccess.t_Reax_Rebx:
-				if ((flags & Flags.NoRegisterUsage) == 0) {
-					AddRegister(flags, Register.EAX, OpAccess.Read);
-					AddRegister(flags, Register.EBX, OpAccess.Read);
-				}
-				break;
-			case ImpliedAccess.t_Rebx_Weax:
-				if ((flags & Flags.NoRegisterUsage) == 0) {
-					AddRegister(flags, Register.EBX, OpAccess.Read);
-					AddRegister(flags, Register.EAX, OpAccess.Write);
-				}
-				break;
 			case ImpliedAccess.t_CRrcx_CRrdx_CRr8_CRr9_RWrax:
 				if ((flags & Flags.NoRegisterUsage) == 0) {
 					AddRegister(flags, Register.RCX, OpAccess.CondRead);

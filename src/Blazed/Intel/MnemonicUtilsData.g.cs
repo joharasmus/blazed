@@ -4256,10 +4256,6 @@ namespace Blazed.Intel {
 			(ushort)Mnemonic.Svts,// Svts_m80
 			(ushort)Mnemonic.Rsts,// Rsts_m80
 			(ushort)Mnemonic.Smint,// Smint_0F7E
-			(ushort)Mnemonic.Bb0_reset,// Bb0_reset
-			(ushort)Mnemonic.Bb1_reset,// Bb1_reset
-			(ushort)Mnemonic.Cpu_write,// Cpu_write
-			(ushort)Mnemonic.Cpu_read,// Cpu_read
 			(ushort)Mnemonic.Altinst,// Altinst
 			(ushort)Mnemonic.Undoc,// Cyrix_D9D7
 			(ushort)Mnemonic.Undoc,// Cyrix_D9E2

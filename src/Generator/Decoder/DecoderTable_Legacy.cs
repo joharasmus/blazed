@@ -4106,20 +4106,11 @@ static class DecoderTable_Legacy {
 				invalid,
 				new object[] { Options1632_1,
 					new object[] { AnotherTable, "Handlers_0F3A" },
-					new object[] { Simple, code[nameof(Code.Bb0_reset)] }, options[nameof(DecoderOptions.Cyrix)],
+					invalid, invalid
 				},
-				new object[] { Options1632_1,
-					invalid,
-					new object[] { Simple, code[nameof(Code.Bb1_reset)] }, options[nameof(DecoderOptions.Cyrix)]
-				},
-				new object[] { Options1632_1,
-					invalid,
-					new object[] { Simple, code[nameof(Code.Cpu_write)] }, options[nameof(DecoderOptions.Cyrix)]
-				},
-				new object[] { Options1632_1,
-					invalid,
-					new object[] { Simple, code[nameof(Code.Cpu_read)] }, options[nameof(DecoderOptions.Cyrix)]
-				},
+				invalid,
+				invalid,
+				invalid,
 				invalid,
 				new object[] { Options1632_1,
 					invalid,

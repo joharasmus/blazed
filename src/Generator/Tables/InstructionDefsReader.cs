@@ -206,7 +206,6 @@ namespace Generator.Tables {
 			toCpuidName[cpuid[nameof(CpuidFeature.CYRIX_SMINT)]] = "Cyrix 6x86MX+, AMD Geode GX/LX";
 			toCpuidName[cpuid[nameof(CpuidFeature.CYRIX_SMINT_0F7E)]] = "Cyrix 6x86 or earlier";
 			toCpuidName[cpuid[nameof(CpuidFeature.CYRIX_SHR)]] = "Cyrix 6x86MX, M II, III";
-			toCpuidName[cpuid[nameof(CpuidFeature.CYRIX_DDI)]] = "Cyrix MediaGX, GXm, GXLV, GX1";
 			toCpuidName[cpuid[nameof(CpuidFeature.CENTAUR_AIS)]] = "Centaur AIS";
 			toCpuidName[cpuid[nameof(CpuidFeature.AVX_VNNI)]] = "AVX-VNNI";
 			toCpuidName[cpuid[nameof(CpuidFeature.AVX512_FP16)]] = "AVX512-FP16";

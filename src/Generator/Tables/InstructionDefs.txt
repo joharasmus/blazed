@@ -25752,28 +25752,6 @@ INSTRUCTION: 0F 7E | SMINT | CYRIX_SMINT_0F7E
 	nasm: mnemonic=smintold
 END
 
-# Code: Bb0_reset
-INSTRUCTION: 0F 3A | BB0_RESET | CYRIX_DDI
-	flags: 16 32 dec-opt=Cyrix cpl0
-END
-
-# Code: Bb1_reset
-INSTRUCTION: 0F 3B | BB1_RESET | CYRIX_DDI
-	flags: 16 32 dec-opt=Cyrix cpl0
-END
-
-# Code: Cpu_write
-INSTRUCTION: 0F 3C | CPU_WRITE | CYRIX_DDI
-	implied: r=eax;ebx
-	flags: 16 32 dec-opt=Cyrix cpl0
-END
-
-# Code: Cpu_read
-INSTRUCTION: 0F 3D | CPU_READ | CYRIX_DDI
-	implied: w=eax r=ebx
-	flags: 16 32 dec-opt=Cyrix cpl0
-END
-
 # Code: Altinst
 INSTRUCTION: 0F 3F | ALTINST | CENTAUR_AIS
 	implied: r=eax

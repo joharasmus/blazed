@@ -21885,18 +21885,6 @@ F2 0F01 D9, Vmgexit_F2, Vmgexit, 0,
 0F7E, Smint_0F7E, Smint, 0, decopt=Cyrix_SMINT_0F7E
 66 0F7E, Smint_0F7E, Smint, 0, decopt=Cyrix_SMINT_0F7E enc=0F7E
 
-0F3A, Bb0_reset, Bb0_reset, 0, decopt=Cyrix
-66 0F3A, Bb0_reset, Bb0_reset, 0, decopt=Cyrix enc=0F3A
-
-0F3B, Bb1_reset, Bb1_reset, 0, decopt=Cyrix
-66 0F3B, Bb1_reset, Bb1_reset, 0, decopt=Cyrix enc=0F3B
-
-0F3C, Cpu_write, Cpu_write, 0, decopt=Cyrix
-66 0F3C, Cpu_write, Cpu_write, 0, decopt=Cyrix enc=0F3C
-
-0F3D, Cpu_read, Cpu_read, 0, decopt=Cyrix
-66 0F3D, Cpu_read, Cpu_read, 0, decopt=Cyrix enc=0F3D
-
 0F3F, Altinst, Altinst, 0, decopt=ALTINST
 66 0F3F, Altinst, Altinst, 0, decopt=ALTINST enc=0F3F
 

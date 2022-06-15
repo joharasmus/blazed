@@ -13,7 +13,7 @@ namespace Blazed.Intel.EncoderInternal {
 		internal static readonly uint[] EncFlags3 = GetEncFlags3();
 
 		static uint[] GetEncFlags1() =>
-			new uint[4820] {
+			new uint[4816] {
 				0x00000000,// INVALID
 				0x00000000,// DeclareByte
 				0x00000000,// DeclareWord
@@ -4262,10 +4262,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x00000004,// Svts_m80
 				0x00000004,// Rsts_m80
 				0x00000000,// Smint_0F7E
-				0x00000000,// Bb0_reset
-				0x00000000,// Bb1_reset
-				0x00000000,// Cpu_write
-				0x00000000,// Cpu_read
 				0x00000000,// Altinst
 				0x00000000,// Cyrix_D9D7
 				0x00000000,// Cyrix_D9E2
@@ -4837,7 +4833,7 @@ namespace Blazed.Intel.EncoderInternal {
 			};
 
 		static uint[] GetEncFlags2() =>
-			new uint[4820] {
+			new uint[4816] {
 				0x00000000,// INVALID
 				0x00000000,// DeclareByte
 				0x00000000,// DeclareWord
@@ -9086,10 +9082,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x8002007C,// Svts_m80
 				0x8002007D,// Rsts_m80
 				0x0002007E,// Smint_0F7E
-				0x0002003A,// Bb0_reset
-				0x0002003B,// Bb1_reset
-				0x0002003C,// Cpu_write
-				0x0002003D,// Cpu_read
 				0x0002003F,// Altinst
 				0x0001D9D7,// Cyrix_D9D7
 				0x0001D9E2,// Cyrix_D9E2
@@ -9661,7 +9653,7 @@ namespace Blazed.Intel.EncoderInternal {
 			};
 
 		static uint[] GetEncFlags3() =>
-			new uint[4820] {
+			new uint[4816] {
 				0x00030000,// INVALID
 				0x00030000,// DeclareByte
 				0x00030000,// DeclareWord
@@ -13910,10 +13902,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x00010000,// Svts_m80
 				0x00010000,// Rsts_m80
 				0x00010000,// Smint_0F7E
-				0x00010000,// Bb0_reset
-				0x00010000,// Bb1_reset
-				0x00010000,// Cpu_write
-				0x00010000,// Cpu_read
 				0x00010000,// Altinst
 				0x00010000,// Cyrix_D9D7
 				0x00010000,// Cyrix_D9E2

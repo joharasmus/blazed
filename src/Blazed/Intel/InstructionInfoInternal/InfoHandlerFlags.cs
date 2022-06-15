@@ -310,8 +310,6 @@ namespace Blazed.Intel.InstructionInfoInternal {
 		t_Rax_Recx_Redx,
 		t_Recx_Redx_Rrax,
 		t_Wtmm0TOtmm7,
-		t_Reax_Rebx,
-		t_Rebx_Weax,
 		t_CRrcx_CRrdx_CRr8_CRr9_RWrax,
 		t_RWxmm0TOxmm7,
 		t_Reax_Rxmm0,

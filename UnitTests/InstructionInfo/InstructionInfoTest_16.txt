@@ -681,10 +681,6 @@ C7 F8 5AA5, Xbegin_rel16, Legacy, RTM, flow=XbeginXabortXend op0=r cw=eax
 0F37 00, Wrshr_rm32, Legacy, CYRIX_SHR, priv op0=r r=ds r=bx;si rm=ds:bx+si*1;UInt32 decopt=Cyrix
 # wrshr edx
 0F37 C2, Wrshr_rm32, Legacy, CYRIX_SHR, priv op0=r r=edx decopt=Cyrix
-# cpu_write
-0F3C, Cpu_write, Legacy, CYRIX_DDI, priv r=eax;ebx decopt=Cyrix
-# cpu_read
-0F3D, Cpu_read, Legacy, CYRIX_DDI, priv r=ebx w=eax decopt=Cyrix
 # rep ccs_hash
 F3 0FA6 E8, Ccs_hash_16, Legacy, PADLOCK_GMI, crm=es:di;Unknown cwm=es:di;Unknown crm=es:si;Unknown cr=es cr=si;di cw=si rcw=ax;cx cr=bx
 # rep ccs_hash

@@ -202,10 +202,6 @@ Rsldt_m80
 Svts_m80
 Rsts_m80
 Smint_0F7E
-Bb0_reset
-Bb1_reset
-Cpu_write
-Cpu_read
 Altinst
 Cyrix_D9D7
 Cyrix_D9E2
