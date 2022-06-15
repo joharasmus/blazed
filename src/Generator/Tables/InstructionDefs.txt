@@ -13157,30 +13157,6 @@ INSTRUCTION: o32 0F A6 /r | XBTS r32, r/m32 | INTEL386_A0_ONLY
 	flags: 16 32 dec-opt=Xbts
 END
 
-# Code: Xstore_16
-INSTRUCTION: a16 0F A7 C0 | XSTORE | PADLOCK_RNG
-	implied: xstore=2
-	code-suffix: 16
-	flags: 16 32 rep ig-modrm-low3
-	nasm: asz
-END
-
-# Code: Xstore_32
-INSTRUCTION: a32 0F A7 C0 | XSTORE | PADLOCK_RNG
-	implied: xstore=4
-	code-suffix: 32
-	flags: rep ig-modrm-low3
-	nasm: asz
-END
-
-# Code: Xstore_64
-INSTRUCTION: a64 0F A7 C0 | XSTORE | PADLOCK_RNG
-	implied: xstore=8
-	code-suffix: 64
-	flags: 64 rep ig-modrm-low3
-	nasm: asz
-END
-
 # Code: Xcryptecb_16
 INSTRUCTION: a16 F3 0F A7 C8 | XCRYPTECB | PADLOCK_ACE
 	implied: cr=[es:dx=Unknown];[es:bx=Unknown];[es:si=Unknown] cw=[es:di=Unknown] rcw=cx cw=si;di
@@ -13296,31 +13272,6 @@ END
 # Code: Xcryptofb_64
 INSTRUCTION: a64 F3 0F A7 E8 | XCRYPTOFB | PADLOCK_ACE
 	implied: crcw=[es:rax=Unknown] cr=[es:rdx=Unknown];[es:rbx=Unknown];[es:rsi=Unknown] cw=[es:rdi=Unknown] rcw=rcx cw=rsi;rdi
-	code-suffix: 64
-	flags: 64 ig-modrm-low3
-	nasm: asz
-END
-
-# Code: Xstore_alt_16
-INSTRUCTION: a16 F3 0F A7 F8 | XSTORE_ALT | PADLOCK_RNG
-	# Seems to be an alias of XSTORE but doesn't accept F2 prefix (Zhaoxin KX-6580 CPU, tested by @tremalrik)
-	implied: xstore=2
-	code-suffix: 16
-	flags: 16 32 ig-modrm-low3
-	nasm: asz
-END
-
-# Code: Xstore_alt_32
-INSTRUCTION: a32 F3 0F A7 F8 | XSTORE_ALT | PADLOCK_RNG
-	implied: xstore=4
-	code-suffix: 32
-	flags: ig-modrm-low3
-	nasm: asz
-END
-
-# Code: Xstore_alt_64
-INSTRUCTION: a64 F3 0F A7 F8 | XSTORE_ALT | PADLOCK_RNG
-	implied: xstore=8
 	code-suffix: 64
 	flags: 64 ig-modrm-low3
 	nasm: asz

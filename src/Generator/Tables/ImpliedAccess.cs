@@ -212,7 +212,6 @@ namespace Generator.Tables {
 		Outs,
 		Scas,
 		Stos,
-		Xstore,
 		MemDispl,
 	}
 
@@ -578,10 +577,6 @@ namespace Generator.Tables {
 					break;
 				case ImplAccStatementKind.Stos:
 					sb.Append("stos");
-					break;
-				case ImplAccStatementKind.Xstore:
-					arg1 = (IntArgImplAccStatement)stmt;
-					sb.Append($"xstore{arg1.Arg}");
 					break;
 				case ImplAccStatementKind.MemDispl:
 					arg1 = (IntArgImplAccStatement)stmt;

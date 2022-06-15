@@ -12,7 +12,7 @@ namespace Blazed.Intel.EncoderInternal {
 		internal static readonly uint[] OpcFlags2 = GetOpcFlags2();
 
 		static uint[] GetOpcFlags1() =>
-			new uint[4786] {
+			new uint[4780] {
 				0x00000000,// INVALID
 				0x00000000,// DeclareByte
 				0x00000000,// DeclareWord
@@ -1982,9 +1982,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x00000000,// Xsha256_64
 				0x01800000,// Xbts_r16_rm16
 				0x01800000,// Xbts_r32_rm32
-				0x00000000,// Xstore_16
-				0x00000000,// Xstore_32
-				0x00000000,// Xstore_64
 				0x00000000,// Xcryptecb_16
 				0x00000000,// Xcryptecb_32
 				0x00000000,// Xcryptecb_64
@@ -4792,9 +4789,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x00000000,// Xsha512_16
 				0x00000000,// Xsha512_32
 				0x00000000,// Xsha512_64
-				0x00000000,// Xstore_alt_16
-				0x00000000,// Xstore_alt_32
-				0x00000000,// Xstore_alt_64
 				0x00000000,// Xsha512_alt_16
 				0x00000000,// Xsha512_alt_32
 				0x00000000,// Xsha512_alt_64
@@ -4802,7 +4796,7 @@ namespace Blazed.Intel.EncoderInternal {
 			};
 
 		static uint[] GetOpcFlags2() =>
-			new uint[4786] {
+			new uint[4780] {
 				0x1E003FFF,// INVALID
 				0x1E003FFF,// DeclareByte
 				0x1E003FFF,// DeclareWord
@@ -6772,9 +6766,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x14003FF0,// Xsha256_64
 				0x0A003FFF,// Xbts_r16_rm16
 				0x0A003FFF,// Xbts_r32_rm32
-				0x0A003FFF,// Xstore_16
-				0x1E003FFF,// Xstore_32
-				0x14003FF0,// Xstore_64
 				0x0A003FFF,// Xcryptecb_16
 				0x1E003FFF,// Xcryptecb_32
 				0x14003FF0,// Xcryptecb_64
@@ -9582,9 +9573,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x0A003FFF,// Xsha512_16
 				0x1E003FFF,// Xsha512_32
 				0x14003FF0,// Xsha512_64
-				0x0A003FFF,// Xstore_alt_16
-				0x1E003FFF,// Xstore_alt_32
-				0x14003FF0,// Xstore_alt_64
 				0x0A003FFF,// Xsha512_alt_16
 				0x1E003FFF,// Xsha512_alt_32
 				0x14003FF0,// Xsha512_alt_64

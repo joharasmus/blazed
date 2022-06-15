@@ -1977,9 +1977,6 @@ namespace Blazed.Intel {
 			(ushort)Mnemonic.Xsha256,// Xsha256_64
 			(ushort)Mnemonic.Xbts,// Xbts_r16_rm16
 			(ushort)Mnemonic.Xbts,// Xbts_r32_rm32
-			(ushort)Mnemonic.Xstore,// Xstore_16
-			(ushort)Mnemonic.Xstore,// Xstore_32
-			(ushort)Mnemonic.Xstore,// Xstore_64
 			(ushort)Mnemonic.Xcryptecb,// Xcryptecb_16
 			(ushort)Mnemonic.Xcryptecb,// Xcryptecb_32
 			(ushort)Mnemonic.Xcryptecb,// Xcryptecb_64
@@ -4787,9 +4784,6 @@ namespace Blazed.Intel {
 			(ushort)Mnemonic.Xsha512,// Xsha512_16
 			(ushort)Mnemonic.Xsha512,// Xsha512_32
 			(ushort)Mnemonic.Xsha512,// Xsha512_64
-			(ushort)Mnemonic.Xstore_alt,// Xstore_alt_16
-			(ushort)Mnemonic.Xstore_alt,// Xstore_alt_32
-			(ushort)Mnemonic.Xstore_alt,// Xstore_alt_64
 			(ushort)Mnemonic.Xsha512_alt,// Xsha512_alt_16
 			(ushort)Mnemonic.Xsha512_alt,// Xsha512_alt_32
 			(ushort)Mnemonic.Xsha512_alt,// Xsha512_alt_64

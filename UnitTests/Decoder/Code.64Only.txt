@@ -280,7 +280,6 @@ Shld_rm64_r64_CL
 Montmul_64
 Xsha1_64
 Xsha256_64
-Xstore_64
 Xcryptecb_64
 Xcryptcbc_64
 Xcryptctr_64
@@ -717,5 +716,4 @@ MVEX_Vcvtfxpntpd2dq_zmm_k1_zmmmt_imm8
 Via_undoc_F30FA6F0_64
 Via_undoc_F30FA6F8_64
 Xsha512_64
-Xstore_alt_64
 Xsha512_alt_64

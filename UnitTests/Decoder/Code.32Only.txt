@@ -163,7 +163,6 @@ Xsha1_16
 Xsha256_16
 Xbts_r16_rm16
 Xbts_r32_rm32
-Xstore_16
 Xcryptecb_16
 Xcryptcbc_16
 Xcryptctr_16
@@ -194,5 +193,4 @@ Altinst
 Via_undoc_F30FA6F0_16
 Via_undoc_F30FA6F8_16
 Xsha512_16
-Xstore_alt_16
 Xsha512_alt_16

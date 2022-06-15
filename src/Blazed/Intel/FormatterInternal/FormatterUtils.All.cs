@@ -122,9 +122,6 @@ namespace Blazed.Intel.FormatterInternal {
 			case Code.Xsha256_16:
 			case Code.Xsha256_32:
 			case Code.Xsha256_64:
-			case Code.Xstore_16:
-			case Code.Xstore_32:
-			case Code.Xstore_64:
 			case Code.Xcryptecb_16:
 			case Code.Xcryptecb_32:
 			case Code.Xcryptecb_64:
@@ -149,9 +146,6 @@ namespace Blazed.Intel.FormatterInternal {
 			case Code.Xsha512_16:
 			case Code.Xsha512_32:
 			case Code.Xsha512_64:
-			case Code.Xstore_alt_16:
-			case Code.Xstore_alt_32:
-			case Code.Xstore_alt_64:
 			case Code.Xsha512_alt_16:
 			case Code.Xsha512_alt_32:
 			case Code.Xsha512_alt_64:

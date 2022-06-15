@@ -104,7 +104,6 @@ namespace Blazed.Intel.InstructionInfoInternal {
 		PADLOCK_ACE,
 		PADLOCK_PHE,
 		PADLOCK_PMM,
-		PADLOCK_RNG,
 		PAUSE,
 		PCLMULQDQ,
 		PCLMULQDQ_and_AVX,

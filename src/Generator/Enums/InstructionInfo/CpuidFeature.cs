@@ -170,8 +170,6 @@ namespace Generator.Enums.InstructionInfo {
 		PADLOCK_PHE,
 		[Comment("CPUID.0C0000000H:EAX >= 0C0000001H AND CPUID.0C0000001H:EDX.PMM[Bits 13:12] = 11B ([12] = exists, [13] = enabled)")]
 		PADLOCK_PMM,
-		[Comment("CPUID.0C0000000H:EAX >= 0C0000001H AND CPUID.0C0000001H:EDX.RNG[Bits 3:2] = 11B ([2] = exists, [3] = enabled)")]
-		PADLOCK_RNG,
 		[Comment("#(c:PAUSE)# instruction (Pentium 4 or later)")]
 		PAUSE,
 		[Comment("CPUID.01H:ECX.PCLMULQDQ[bit 1]")]

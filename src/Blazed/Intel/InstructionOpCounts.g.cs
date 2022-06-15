@@ -1977,9 +1977,6 @@ namespace Blazed.Intel {
 			0,// Xsha256_64
 			2,// Xbts_r16_rm16
 			2,// Xbts_r32_rm32
-			0,// Xstore_16
-			0,// Xstore_32
-			0,// Xstore_64
 			0,// Xcryptecb_16
 			0,// Xcryptecb_32
 			0,// Xcryptecb_64
@@ -4787,9 +4784,6 @@ namespace Blazed.Intel {
 			0,// Xsha512_16
 			0,// Xsha512_32
 			0,// Xsha512_64
-			0,// Xstore_alt_16
-			0,// Xstore_alt_32
-			0,// Xstore_alt_64
 			0,// Xsha512_alt_16
 			0,// Xsha512_alt_32
 			0,// Xsha512_alt_64

@@ -162,7 +162,6 @@ Options:
 				options.ExcludeCpuid.Add(nameof(CpuidFeature.PADLOCK_ACE));
 				options.ExcludeCpuid.Add(nameof(CpuidFeature.PADLOCK_PHE));
 				options.ExcludeCpuid.Add(nameof(CpuidFeature.PADLOCK_PMM));
-				options.ExcludeCpuid.Add(nameof(CpuidFeature.PADLOCK_RNG));
 				break;
 
 			case "--include-cpuid":

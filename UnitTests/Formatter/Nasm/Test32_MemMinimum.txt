@@ -649,10 +649,6 @@ rep xsha1
 a16 rep xsha1
 rep xsha256
 a16 rep xsha256
-rep xstore
-a16 rep xstore
-xstore
-a16 xstore
 rep xcryptecb
 a16 rep xcryptecb
 rep xcryptcbc
@@ -679,7 +675,5 @@ a16 rep undoc
 rep undoc
 a16 rep xsha512
 rep xsha512
-a16 rep xstore_alt
-rep xstore_alt
 a16 rep xsha512_alt
 rep xsha512_alt

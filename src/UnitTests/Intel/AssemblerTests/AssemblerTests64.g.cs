@@ -49108,20 +49108,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void xstore() {
-			{ /* if (Bitness == 64) */
-				TestAssembler(c => c.xstore(), Instruction.Create(Code.Xstore_64), TestInstrFlags.RemoveRepRepnePrefixes);
-			} /* else skip !(Bitness == 64) not supported by this Assembler bitness */
-		}
-
-		[Fact]
-		public void xstore_alt() {
-			{ /* if (Bitness == 64) */
-				TestAssembler(c => c.xstore_alt(), Instruction.Create(Code.Xstore_alt_64), TestInstrFlags.RemoveRepRepnePrefixes);
-			} /* else skip !(Bitness == 64) not supported by this Assembler bitness */
-		}
-
-		[Fact]
 		public void xsusldtrk() {
 			TestAssembler(c => c.xsusldtrk(), Instruction.Create(Code.Xsusldtrk));
 		}

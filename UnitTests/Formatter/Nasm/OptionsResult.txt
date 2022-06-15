@@ -2029,7 +2029,6 @@ repe scasq
 rep montmul
 rep xsha1
 rep xsha256
-rep xstore
 rep xcryptecb
 rep xcryptcbc
 rep xcryptctr
@@ -2038,7 +2037,6 @@ rep xcryptofb
 rep undoc
 rep undoc
 rep xsha512
-rep xstore_alt
 rep xsha512_alt
 
 repne insb
@@ -2092,7 +2090,6 @@ repe scasd
 rep montmul
 rep xsha1
 rep xsha256
-rep xstore
 rep xcryptecb
 rep xcryptcbc
 rep xcryptctr
@@ -2101,7 +2098,6 @@ rep xcryptofb
 rep undoc
 rep undoc
 rep xsha512
-rep xstore_alt
 rep xsha512_alt
 
 repne insb
@@ -2150,7 +2146,6 @@ repe scasd
 rep montmul
 rep xsha1
 rep xsha256
-rep xstore
 rep xcryptecb
 rep xcryptcbc
 rep xcryptctr
@@ -2159,7 +2154,6 @@ rep xcryptofb
 rep undoc
 rep undoc
 rep xsha512
-rep xstore_alt
 rep xsha512_alt
 
 repne insb
@@ -2213,7 +2207,6 @@ repe scasq
 rep montmul
 rep xsha1
 rep xsha256
-rep xstore
 rep xcryptecb
 rep xcryptcbc
 rep xcryptctr
@@ -2222,7 +2215,6 @@ rep xcryptofb
 rep undoc
 rep undoc
 rep xsha512
-rep xstore_alt
 rep xsha512_alt
 
 repne insb
@@ -2276,7 +2268,6 @@ repe scasd
 rep montmul
 rep xsha1
 rep xsha256
-rep xstore
 rep xcryptecb
 rep xcryptcbc
 rep xcryptctr
@@ -2285,7 +2276,6 @@ rep xcryptofb
 rep undoc
 rep undoc
 rep xsha512
-rep xstore_alt
 rep xsha512_alt
 
 repne insb
@@ -2334,7 +2324,6 @@ repe scasd
 rep montmul
 rep xsha1
 rep xsha256
-rep xstore
 rep xcryptecb
 rep xcryptcbc
 rep xcryptctr
@@ -2343,7 +2332,6 @@ rep xcryptofb
 rep undoc
 rep undoc
 rep xsha512
-rep xstore_alt
 rep xsha512_alt
 
 repne insb
@@ -2397,7 +2385,6 @@ repe scasq
 rep montmul
 rep xsha1
 rep xsha256
-rep xstore
 rep xcryptecb
 rep xcryptcbc
 rep xcryptctr
@@ -2406,7 +2393,6 @@ rep xcryptofb
 rep undoc
 rep undoc
 rep xsha512
-rep xstore_alt
 rep xsha512_alt
 
 repne insb
@@ -2460,7 +2446,6 @@ repe scasd
 rep montmul
 rep xsha1
 rep xsha256
-rep xstore
 rep xcryptecb
 rep xcryptcbc
 rep xcryptctr
@@ -2469,7 +2454,6 @@ rep xcryptofb
 rep undoc
 rep undoc
 rep xsha512
-rep xstore_alt
 rep xsha512_alt
 
 repne insb
@@ -2518,7 +2502,6 @@ repe scasd
 rep montmul
 rep xsha1
 rep xsha256
-rep xstore
 rep xcryptecb
 rep xcryptcbc
 rep xcryptctr
@@ -2527,7 +2510,6 @@ rep xcryptofb
 rep undoc
 rep undoc
 rep xsha512
-rep xstore_alt
 rep xsha512_alt
 
 repne insb
@@ -2581,7 +2563,6 @@ repz scasq
 rep montmul
 rep xsha1
 rep xsha256
-rep xstore
 rep xcryptecb
 rep xcryptcbc
 rep xcryptctr
@@ -2590,7 +2571,6 @@ rep xcryptofb
 rep undoc
 rep undoc
 rep xsha512
-rep xstore_alt
 rep xsha512_alt
 
 repnz insb
@@ -2644,7 +2624,6 @@ repz scasd
 rep montmul
 rep xsha1
 rep xsha256
-rep xstore
 rep xcryptecb
 rep xcryptcbc
 rep xcryptctr
@@ -2653,7 +2632,6 @@ rep xcryptofb
 rep undoc
 rep undoc
 rep xsha512
-rep xstore_alt
 rep xsha512_alt
 
 repnz insb
@@ -2702,7 +2680,6 @@ repz scasd
 rep montmul
 rep xsha1
 rep xsha256
-rep xstore
 rep xcryptecb
 rep xcryptcbc
 rep xcryptctr
@@ -2711,7 +2688,6 @@ rep xcryptofb
 rep undoc
 rep undoc
 rep xsha512
-rep xstore_alt
 rep xsha512_alt
 
 repnz insb

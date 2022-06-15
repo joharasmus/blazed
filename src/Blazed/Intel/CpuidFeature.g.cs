@@ -175,144 +175,142 @@ namespace Blazed.Intel {
 		PADLOCK_PHE = 81,
 		/// <summary>CPUID.0C0000000H:EAX &gt;= 0C0000001H AND CPUID.0C0000001H:EDX.PMM[Bits 13:12] = 11B ([12] = exists, [13] = enabled)</summary>
 		PADLOCK_PMM = 82,
-		/// <summary>CPUID.0C0000000H:EAX &gt;= 0C0000001H AND CPUID.0C0000001H:EDX.RNG[Bits 3:2] = 11B ([2] = exists, [3] = enabled)</summary>
-		PADLOCK_RNG = 83,
 		/// <summary><c>PAUSE</c> instruction (Pentium 4 or later)</summary>
-		PAUSE = 84,
+		PAUSE = 83,
 		/// <summary>CPUID.01H:ECX.PCLMULQDQ[bit 1]</summary>
-		PCLMULQDQ = 85,
+		PCLMULQDQ = 84,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EBX.PCOMMIT[bit 22]</summary>
-		PCOMMIT = 86,
+		PCOMMIT = 85,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.PCONFIG[bit 18]</summary>
-		PCONFIG = 87,
+		PCONFIG = 86,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):ECX.PKU[bit 3]</summary>
-		PKU = 88,
+		PKU = 87,
 		/// <summary>CPUID.01H:ECX.POPCNT[bit 23]</summary>
-		POPCNT = 89,
+		POPCNT = 88,
 		/// <summary>CPUID.80000001H:ECX.PREFETCHW[bit 8]</summary>
-		PREFETCHW = 90,
+		PREFETCHW = 89,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):ECX.PREFETCHWT1[bit 0]</summary>
-		PREFETCHWT1 = 91,
+		PREFETCHWT1 = 90,
 		/// <summary>CPUID.(EAX=14H, ECX=0H):EBX.PTWRITE[bit 4]</summary>
-		PTWRITE = 92,
+		PTWRITE = 91,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):ECX.RDPID[bit 22]</summary>
-		RDPID = 93,
+		RDPID = 92,
 		/// <summary><c>RDPMC</c> instruction (Pentium MMX or later, or Pentium Pro or later)</summary>
-		RDPMC = 94,
+		RDPMC = 93,
 		/// <summary>CPUID.80000008H:EBX.RDPRU[bit 4]</summary>
-		RDPRU = 95,
+		RDPRU = 94,
 		/// <summary>CPUID.01H:ECX.RDRAND[bit 30]</summary>
-		RDRAND = 96,
+		RDRAND = 95,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EBX.RDSEED[bit 18]</summary>
-		RDSEED = 97,
+		RDSEED = 96,
 		/// <summary>CPUID.80000001H:EDX.RDTSCP[bit 27]</summary>
-		RDTSCP = 98,
+		RDTSCP = 97,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EBX.RTM[bit 11]</summary>
-		RTM = 99,
+		RTM = 98,
 		/// <summary>CPUID.01H:EDX.SEP[bit 11]</summary>
-		SEP = 100,
+		SEP = 99,
 		/// <summary>CPUID.(EAX=12H, ECX=0H):EAX.SGX1[bit 0]</summary>
-		SGX1 = 101,
+		SGX1 = 100,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EBX.SHA[bit 29]</summary>
-		SHA = 102,
+		SHA = 101,
 		/// <summary>CPUID.80000001H:ECX.SKINIT[bit 12]</summary>
-		SKINIT = 103,
+		SKINIT = 102,
 		/// <summary><see cref="SKINIT"/> or <see cref="SVM"/></summary>
-		SKINIT_or_SVM = 104,
+		SKINIT_or_SVM = 103,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EBX.SMAP[bit 20]</summary>
-		SMAP = 105,
+		SMAP = 104,
 		/// <summary>CPUID.01H:ECX.SMX[bit 6]</summary>
-		SMX = 106,
+		SMX = 105,
 		/// <summary>CPUID.01H:EDX.SSE[bit 25]</summary>
-		SSE = 107,
+		SSE = 106,
 		/// <summary>CPUID.01H:EDX.SSE2[bit 26]</summary>
-		SSE2 = 108,
+		SSE2 = 107,
 		/// <summary>CPUID.01H:ECX.SSE3[bit 0]</summary>
-		SSE3 = 109,
+		SSE3 = 108,
 		/// <summary>CPUID.01H:ECX.SSE4_1[bit 19]</summary>
-		SSE4_1 = 110,
+		SSE4_1 = 109,
 		/// <summary>CPUID.01H:ECX.SSE4_2[bit 20]</summary>
-		SSE4_2 = 111,
+		SSE4_2 = 110,
 		/// <summary>CPUID.80000001H:ECX.SSE4A[bit 6]</summary>
-		SSE4A = 112,
+		SSE4A = 111,
 		/// <summary>CPUID.01H:ECX.SSSE3[bit 9]</summary>
-		SSSE3 = 113,
+		SSSE3 = 112,
 		/// <summary>CPUID.80000001H:ECX.SVM[bit 2]</summary>
-		SVM = 114,
+		SVM = 113,
 		/// <summary>CPUID.8000001FH:EAX.SEV-ES[bit 3]</summary>
-		SEV_ES = 115,
+		SEV_ES = 114,
 		/// <summary>CPUID.80000001H:EDX.SYSCALL[bit 11]</summary>
-		SYSCALL = 116,
+		SYSCALL = 115,
 		/// <summary>CPUID.80000001H:ECX.TBM[bit 21]</summary>
-		TBM = 117,
+		TBM = 116,
 		/// <summary>CPUID.01H:EDX.TSC[bit 4]</summary>
-		TSC = 118,
+		TSC = 117,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):ECX.VAES[bit 9]</summary>
-		VAES = 119,
+		VAES = 118,
 		/// <summary>CPUID.01H:ECX.VMX[bit 5]</summary>
-		VMX = 120,
+		VMX = 119,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):ECX.VPCLMULQDQ[bit 10]</summary>
-		VPCLMULQDQ = 121,
+		VPCLMULQDQ = 120,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):ECX.WAITPKG[bit 5]</summary>
-		WAITPKG = 122,
+		WAITPKG = 121,
 		/// <summary>CPUID.(EAX=80000008H, ECX=0H):EBX.WBNOINVD[bit 9]</summary>
-		WBNOINVD = 123,
+		WBNOINVD = 122,
 		/// <summary>CPUID.80000001H:ECX.XOP[bit 11]</summary>
-		XOP = 124,
+		XOP = 123,
 		/// <summary>CPUID.01H:ECX.XSAVE[bit 26]</summary>
-		XSAVE = 125,
+		XSAVE = 124,
 		/// <summary>CPUID.(EAX=0DH, ECX=1H):EAX.XSAVEC[bit 1]</summary>
-		XSAVEC = 126,
+		XSAVEC = 125,
 		/// <summary>CPUID.(EAX=0DH, ECX=1H):EAX.XSAVEOPT[bit 0]</summary>
-		XSAVEOPT = 127,
+		XSAVEOPT = 126,
 		/// <summary>CPUID.(EAX=0DH, ECX=1H):EAX.XSAVES[bit 3]</summary>
-		XSAVES = 128,
+		XSAVES = 127,
 		/// <summary>CPUID.8000001FH:EAX.SEV-SNP[bit 4]</summary>
-		SEV_SNP = 129,
+		SEV_SNP = 128,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.SERIALIZE[bit 14]</summary>
-		SERIALIZE = 130,
+		SERIALIZE = 129,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.TSXLDTRK[bit 16]</summary>
-		TSXLDTRK = 131,
+		TSXLDTRK = 130,
 		/// <summary>CPUID.80000008H:EBX.INVLPGB[bit 3]</summary>
-		INVLPGB = 132,
+		INVLPGB = 131,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.AMX-BF16[bit 22]</summary>
-		AMX_BF16 = 133,
+		AMX_BF16 = 132,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.AMX-TILE[bit 24]</summary>
-		AMX_TILE = 134,
+		AMX_TILE = 133,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.AMX-INT8[bit 25]</summary>
-		AMX_INT8 = 135,
+		AMX_INT8 = 134,
 		/// <summary>CPUID.0C0000000H:EAX &gt;= 0C0000001H AND CPUID.0C0000001H:EDX.AIS[Bits 1:0] = 11B ([0] = exists, [1] = enabled)</summary>
-		CENTAUR_AIS = 136,
+		CENTAUR_AIS = 135,
 		/// <summary>MOV to/from TR (80386, Intel486)</summary>
-		MOV_TR = 137,
+		MOV_TR = 136,
 		/// <summary><c>RSM</c> instruction (some 386s, some 486s, Pentium and later)</summary>
-		SMM = 138,
+		SMM = 137,
 		/// <summary>CPUID.(EAX=??H, ECX=?H):???.????[bit ??]</summary>
-		TDX = 139,
+		TDX = 138,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):ECX.KL[bit 23]</summary>
-		KL = 140,
+		KL = 139,
 		/// <summary>CPUID.19H:EBX.AESKLE[bit 0]</summary>
-		AESKLE = 141,
+		AESKLE = 140,
 		/// <summary>CPUID.19H:EBX.WIDE_KL[bit 2]</summary>
-		WIDE_KL = 142,
+		WIDE_KL = 141,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.UINTR[bit 5]</summary>
-		UINTR = 143,
+		UINTR = 142,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.HRESET[bit 22]</summary>
-		HRESET = 144,
+		HRESET = 143,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.AVX-VNNI[bit 4]</summary>
-		AVX_VNNI = 145,
+		AVX_VNNI = 144,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.FRED[bit 17]</summary>
-		FRED = 146,
+		FRED = 145,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.LKGS[bit 18]</summary>
-		LKGS = 147,
+		LKGS = 146,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.AVX512-FP16[bit 23]</summary>
-		AVX512_FP16 = 148,
+		AVX512_FP16 = 147,
 		/// <summary>Undocumented Intel <c>RDUDBG</c> and <c>WRUDBG</c> instructions</summary>
-		UDBG = 149,
+		UDBG = 148,
 		/// <summary>Intel Knights Corner</summary>
-		KNC = 150,
+		KNC = 149,
 		/// <summary>Undocumented instruction</summary>
-		PADLOCK_UNDOC = 151,
+		PADLOCK_UNDOC = 150,
 	}
 }
 #endif

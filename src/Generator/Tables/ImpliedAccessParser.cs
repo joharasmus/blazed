@@ -92,7 +92,6 @@ namespace Generator.Tables {
 			"push", "pop", "pop-rm",
 			"pusha", "popa",
 			"emmi-reg",
-			"xstore",
 			"mem-displ"
 		};
 		public bool ReadImpliedAccesses(string line, [NotNullWhen(true)] out ImpliedAccesses? accesses, [NotNullWhen(false)] out string? error) {
@@ -477,12 +476,6 @@ namespace Generator.Tables {
 
 				case "stos":
 					stmt = new NoArgImplAccStatement(ImplAccStatementKind.Stos);
-					break;
-
-				case "xstore":
-					if (!TryParse_2_4_or_8(value, out arg1, out error))
-						return false;
-					stmt = new IntArgImplAccStatement(ImplAccStatementKind.Xstore, arg1);
 					break;
 
 				case "emmi-reg":

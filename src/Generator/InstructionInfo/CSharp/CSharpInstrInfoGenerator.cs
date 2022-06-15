@@ -334,10 +334,6 @@ sealed class CSharpInstrInfoGenerator : InstrInfoGenerator {
 			case ImplAccStatementKind.Stos:
 				writer.WriteLine("CommandStos(instruction, flags);");
 				break;
-			case ImplAccStatementKind.Xstore:
-				arg1 = (IntArgImplAccStatement)stmt;
-				writer.WriteLine($"CommandXstore(instruction, flags, {Verify_2_4_or_8(arg1.Arg)});");
-				break;
 			case ImplAccStatementKind.MemDispl:
 				arg1 = (IntArgImplAccStatement)stmt;
 				writer.WriteLine($"CommandMemDispl(flags, {(int)arg1.Arg});");

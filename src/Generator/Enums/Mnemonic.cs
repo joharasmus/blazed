@@ -1538,7 +1538,6 @@ namespace Generator.Enums {
 		Xsetbv,
 		Xsha1,
 		Xsha256,
-		Xstore,
 		Xtest,
 		Rmpadjust,
 		Rmpupdate,
@@ -1809,7 +1808,6 @@ namespace Generator.Enums {
 		Vsubrpd,
 		Vsubrps,
 		Xsha512,
-		Xstore_alt,
 		Xsha512_alt,
 		Zero_bytes,
 	}

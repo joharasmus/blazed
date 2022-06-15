@@ -1120,15 +1120,6 @@ namespace Blazed.Intel {
 					AddRegister(flags, Register.EAX, OpAccess.Read);
 				}
 				break;
-			case ImpliedAccess.t_xstore2:
-				CommandXstore(instruction, flags, 2);
-				break;
-			case ImpliedAccess.t_xstore4:
-				CommandXstore(instruction, flags, 4);
-				break;
-			case ImpliedAccess.t_xstore8:
-				CommandXstore(instruction, flags, 8);
-				break;
 			case ImpliedAccess.t_CRmem_CRmem_CRmem_CWmem_CRdx_CRbx_CRsi_CRdi_CRes_CWsi_CWdi_RCWcx:
 				if ((flags & Flags.NoMemoryUsage) == 0) {
 					AddMemory(Register.ES, Register.DX, Register.None, 1, 0x0, MemorySize.Unknown, OpAccess.CondRead, CodeSize.Code16, 0);

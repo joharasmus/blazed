@@ -1480,10 +1480,7 @@ static class DecoderTable_Legacy {
 
 			("handlers_Grp_0FA7",
 			new object[8] {
-				new object[] { RM,
-					new object[] { Simple5, code[nameof(Code.Xstore_16)], code[nameof(Code.Xstore_32)], code[nameof(Code.Xstore_64)] },
-					invalid,
-				},
+				invalid,
 				new object[] { RM,
 					new object[] { MandatoryPrefix4,
 						invalid,
@@ -1535,16 +1532,7 @@ static class DecoderTable_Legacy {
 					invalid,
 				},
 				invalid,
-				new object[] { RM,
-					new object[] { MandatoryPrefix4,
-						invalid,
-						invalid,
-						new object[] { Simple5, code[nameof(Code.Xstore_alt_16)], code[nameof(Code.Xstore_alt_32)], code[nameof(Code.Xstore_alt_64)] },
-						invalid,
-						0x00,
-					},
-					invalid,
-				},
+				invalid
 			}),
 
 			("handlers_Grp_0FBA",
