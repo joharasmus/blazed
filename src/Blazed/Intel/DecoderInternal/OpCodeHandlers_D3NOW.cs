@@ -34,8 +34,6 @@ namespace Blazed.Intel.DecoderInternal {
 			result[0x90] = Code.D3NOW_Pfcmpge_mm_mmm64;
 			result[0x8E] = Code.D3NOW_Pfpnacc_mm_mmm64;
 			result[0x8A] = Code.D3NOW_Pfnacc_mm_mmm64;
-			result[0x87] = Code.D3NOW_Pfrsqrtv_mm_mmm64;
-			result[0x86] = Code.D3NOW_Pfrcpv_mm_mmm64;
 			result[0x1D] = Code.D3NOW_Pf2id_mm_mmm64;
 			result[0x1C] = Code.D3NOW_Pf2iw_mm_mmm64;
 			result[0x0D] = Code.D3NOW_Pi2fd_mm_mmm64;
@@ -61,13 +59,7 @@ namespace Blazed.Intel.DecoderInternal {
 				decoder.ReadOpMem(ref instruction);
 			}
 			var code = codeValues[(int)decoder.ReadByte()];
-			switch (code) {
-			case Code.D3NOW_Pfrcpv_mm_mmm64:
-			case Code.D3NOW_Pfrsqrtv_mm_mmm64:
-				if ((decoder.options & DecoderOptions.Cyrix) == 0 || decoder.Bitness == 64)
-					code = Code.INVALID;
-				break;
-			}
+
 			instruction.InternalSetCodeNoCheck(code);
 			if (code == Code.INVALID)
 				decoder.SetInvalidInstruction();

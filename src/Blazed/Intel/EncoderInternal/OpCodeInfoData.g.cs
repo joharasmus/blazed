@@ -12,7 +12,7 @@ namespace Blazed.Intel.EncoderInternal {
 		internal static readonly uint[] OpcFlags2 = GetOpcFlags2();
 
 		static uint[] GetOpcFlags1() =>
-			new uint[4812] {
+			new uint[4810] {
 				0x00000000,// INVALID
 				0x00000000,// DeclareByte
 				0x00000000,// DeclareWord
@@ -4194,8 +4194,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x00000000,// D3NOW_Pi2fd_mm_mmm64
 				0x00000000,// D3NOW_Pf2iw_mm_mmm64
 				0x00000000,// D3NOW_Pf2id_mm_mmm64
-				0x00800000,// D3NOW_Pfrcpv_mm_mmm64
-				0x00800000,// D3NOW_Pfrsqrtv_mm_mmm64
 				0x00000000,// D3NOW_Pfnacc_mm_mmm64
 				0x00000000,// D3NOW_Pfpnacc_mm_mmm64
 				0x00000000,// D3NOW_Pfcmpge_mm_mmm64
@@ -4828,7 +4826,7 @@ namespace Blazed.Intel.EncoderInternal {
 			};
 
 		static uint[] GetOpcFlags2() =>
-			new uint[4812] {
+			new uint[4810] {
 				0x1E003FFF,// INVALID
 				0x1E003FFF,// DeclareByte
 				0x1E003FFF,// DeclareWord
@@ -9010,8 +9008,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x7E003FFF,// D3NOW_Pi2fd_mm_mmm64
 				0x7E003FFF,// D3NOW_Pf2iw_mm_mmm64
 				0x7E003FFF,// D3NOW_Pf2id_mm_mmm64
-				0x6A003FFF,// D3NOW_Pfrcpv_mm_mmm64
-				0x6A003FFF,// D3NOW_Pfrsqrtv_mm_mmm64
 				0x7E003FFF,// D3NOW_Pfnacc_mm_mmm64
 				0x7E003FFF,// D3NOW_Pfpnacc_mm_mmm64
 				0x7E003FFF,// D3NOW_Pfcmpge_mm_mmm64

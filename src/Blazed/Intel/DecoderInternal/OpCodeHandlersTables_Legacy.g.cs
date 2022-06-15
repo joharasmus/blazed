@@ -143,7 +143,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0x95, 0x21,// Cyrix_D9D7
+						0x93, 0x21,// Cyrix_D9D7
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 24 = 0x18
@@ -164,7 +164,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0x96, 0x21,// Cyrix_D9E2
+						0x94, 0x21,// Cyrix_D9E2
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 35 = 0x23
@@ -182,14 +182,14 @@ namespace Blazed.Intel.DecoderInternal {
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0x97, 0x21,// Ftstp
+						0x95, 0x21,// Ftstp
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 39 = 0x27
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0x98, 0x21,// Cyrix_D9E7
+						0x96, 0x21,// Cyrix_D9E7
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 40 = 0x28
@@ -476,7 +476,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0x99, 0x21,// Frint2
+						0x97, 0x21,// Frint2
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 61 = 0x3D
@@ -637,7 +637,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0x9A, 0x21,// Frichop
+						0x98, 0x21,// Frichop
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 61 = 0x3D
@@ -705,7 +705,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0x9B, 0x21,// Cyrix_DED8
+						0x99, 0x21,// Cyrix_DED8
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 25 = 0x19
@@ -716,7 +716,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0x9C, 0x21,// Cyrix_DEDA
+						0x9A, 0x21,// Cyrix_DEDA
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 27 = 0x1B
@@ -726,21 +726,21 @@ namespace Blazed.Intel.DecoderInternal {
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0x9D, 0x21,// Cyrix_DEDC
+						0x9B, 0x21,// Cyrix_DEDC
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 29 = 0x1D
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0x9E, 0x21,// Cyrix_DEDD
+						0x9C, 0x21,// Cyrix_DEDD
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 30 = 0x1E
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0x9F, 0x21,// Cyrix_DEDE
+						0x9D, 0x21,// Cyrix_DEDE
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 31 = 0x1F
@@ -842,7 +842,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x0A,// Options3
 						0x02,// Invalid
 						0x91,// Reg
-							0x8C, 0x21,// Fnstdw_AX
+							0x8A, 0x21,// Fnstdw_AX
 							0x15,// AX
 						0x40,// OldFpu
 					0x02,// Invalid
@@ -852,7 +852,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x0A,// Options3
 						0x02,// Invalid
 						0x91,// Reg
-							0x8D, 0x21,// Fnstsg_AX
+							0x8B, 0x21,// Fnstsg_AX
 							0x15,// AX
 						0x40,// OldFpu
 					0x02,// Invalid
@@ -883,7 +883,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0xA0, 0x21,// Frinear
+						0x9E, 0x21,// Frinear
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 61 = 0x3D
@@ -1445,7 +1445,7 @@ namespace Blazed.Intel.DecoderInternal {
 						0x01,// Bitness_DontReadModRM
 							0x02,// Invalid
 							0x49,// Evw
-								0xC8, 0x21,// Lkgs_rm16
+								0xC6, 0x21,// Lkgs_rm16
 					0x01,// Bitness_DontReadModRM
 						0x33,// Ev_3b
 							0x96, 0x06,// Jmpe_rm16
@@ -1456,7 +1456,7 @@ namespace Blazed.Intel.DecoderInternal {
 							0x01,// Bitness_DontReadModRM
 								0x02,// Invalid
 								0x49,// Evw
-									0xC8, 0x21,// Lkgs_rm16
+									0xC6, 0x21,// Lkgs_rm16
 					0x80, 0x20,// Jmpe
 
 				// 7 = 0x07
@@ -1589,11 +1589,11 @@ namespace Blazed.Intel.DecoderInternal {
 					0x00,// Bitness
 						0x03,// Invalid_NoModRM
 						0xA4,// Simple
-							0xCB, 0x21,// Eretu
+							0xC9, 0x21,// Eretu
 					0x00,// Bitness
 						0x03,// Invalid_NoModRM
 						0xA4,// Simple
-							0xCC, 0x21,// Erets
+							0xCA, 0x21,// Erets
 
 				// 11 = 0x0B
 				0x14,// MandatoryPrefix_NoModRM
@@ -1607,7 +1607,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0x14,// MandatoryPrefix_NoModRM
 					0x03,// Invalid_NoModRM
 					0xA4,// Simple
-						0xA1, 0x21,// Tdcall
+						0x9F, 0x21,// Tdcall
 					0x03,// Invalid_NoModRM
 					0x03,// Invalid_NoModRM
 
@@ -1617,7 +1617,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x00,// Bitness
 						0x03,// Invalid_NoModRM
 						0xA4,// Simple
-							0xA2, 0x21,// Seamret
+							0xA0, 0x21,// Seamret
 					0x03,// Invalid_NoModRM
 					0x03,// Invalid_NoModRM
 
@@ -1627,7 +1627,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x00,// Bitness
 						0x03,// Invalid_NoModRM
 						0xA4,// Simple
-							0xA3, 0x21,// Seamops
+							0xA1, 0x21,// Seamops
 					0x03,// Invalid_NoModRM
 					0x03,// Invalid_NoModRM
 
@@ -1638,7 +1638,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x00,// Bitness
 						0x03,// Invalid_NoModRM
 						0xA4,// Simple
-							0xA4, 0x21,// Seamcall
+							0xA2, 0x21,// Seamcall
 					0x03,// Invalid_NoModRM
 					0x03,// Invalid_NoModRM
 
@@ -1706,9 +1706,9 @@ namespace Blazed.Intel.DecoderInternal {
 					0xA4,// Simple
 						0xC2, 0x06,// Vmmcall
 					0xA4,// Simple
-						0xFE, 0x20,// Vmgexit
+						0xFC, 0x20,// Vmgexit
 					0xA4,// Simple
-						0xB3, 0x21,// Vmgexit_F2
+						0xB1, 0x21,// Vmgexit_F2
 
 				// 26 = 0x1A
 				0xAB,// Simple5
@@ -1742,12 +1742,12 @@ namespace Blazed.Intel.DecoderInternal {
 				// 40 = 0x28
 				0x11,// MandatoryPrefix
 					0xA5,// Simple_ModRM
-						0xF1, 0x20,// Serialize
+						0xEF, 0x20,// Serialize
 					0x02,// Invalid
 					0xA5,// Simple_ModRM
 						0xCF, 0x06,// Setssbsy
 					0xA5,// Simple_ModRM
-						0xF2, 0x20,// Xsusldtrk
+						0xF0, 0x20,// Xsusldtrk
 
 				// 41 = 0x29
 				0x11,// MandatoryPrefix
@@ -1755,7 +1755,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x02,// Invalid
 					0x02,// Invalid
 					0xA5,// Simple_ModRM
-						0xF3, 0x20,// Xresldtrk
+						0xF1, 0x20,// Xresldtrk
 
 				// 42 = 0x2A
 				0x11,// MandatoryPrefix
@@ -1775,7 +1775,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x00,// Bitness
 						0x03,// Invalid_NoModRM
 						0xA4,// Simple
-							0xB4, 0x21,// Uiret
+							0xB2, 0x21,// Uiret
 					0x03,// Invalid_NoModRM
 
 				// 45 = 0x2D
@@ -1785,7 +1785,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x00,// Bitness
 						0x03,// Invalid_NoModRM
 						0xA4,// Simple
-							0xB5, 0x21,// Testui
+							0xB3, 0x21,// Testui
 					0x03,// Invalid_NoModRM
 
 				// 46 = 0x2E
@@ -1796,7 +1796,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x00,// Bitness
 						0x03,// Invalid_NoModRM
 						0xA4,// Simple
-							0xB6, 0x21,// Clui
+							0xB4, 0x21,// Clui
 					0x03,// Invalid_NoModRM
 
 				// 47 = 0x2F
@@ -1807,7 +1807,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x00,// Bitness
 						0x03,// Invalid_NoModRM
 						0xA4,// Simple
-							0xB7, 0x21,// Stui
+							0xB5, 0x21,// Stui
 					0x03,// Invalid_NoModRM
 
 				// 48 = 0x30
@@ -1853,28 +1853,28 @@ namespace Blazed.Intel.DecoderInternal {
 				// 62 = 0x3E
 				0x14,// MandatoryPrefix_NoModRM
 					0xAB,// Simple5
-						0xF4, 0x20,// Invlpgbw
+						0xF2, 0x20,// Invlpgbw
 					0x03,// Invalid_NoModRM
 					0x00,// Bitness
 						0x03,// Invalid_NoModRM
 						0xA4,// Simple
-							0xEB, 0x20,// Rmpadjust
+							0xE9, 0x20,// Rmpadjust
 					0x00,// Bitness
 						0x03,// Invalid_NoModRM
 						0xA4,// Simple
-							0xEC, 0x20,// Rmpupdate
+							0xEA, 0x20,// Rmpupdate
 
 				// 63 = 0x3F
 				0x14,// MandatoryPrefix_NoModRM
 					0xA4,// Simple
-						0xF7, 0x20,// Tlbsync
+						0xF5, 0x20,// Tlbsync
 					0x03,// Invalid_NoModRM
 					0x00,// Bitness
 						0x03,// Invalid_NoModRM
 						0xA4,// Simple
-							0xED, 0x20,// Psmash
+							0xEB, 0x20,// Psmash
 					0xAB,// Simple5
-						0xEE, 0x20,// Pvalidatew
+						0xEC, 0x20,// Pvalidatew
 
 				// handlers_Grp_0F7A_Cyrix
 				0x01,// ArrayReference
@@ -1883,7 +1883,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0x09,// RM
 					0x02,// Invalid
 					0x13,// Ev_REXW_1a
-						0x90, 0x21,// Svldt_m80
+						0x8E, 0x21,// Svldt_m80
 						0x02,// 0x2
 
 				// 1 = 0x01
@@ -1898,7 +1898,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0x09,// RM
 					0x02,// Invalid
 					0x13,// Ev_REXW_1a
-						0x91, 0x21,// Rsldt_m80
+						0x8F, 0x21,// Rsldt_m80
 						0x02,// 0x2
 
 				// 1 = 0x01
@@ -1913,7 +1913,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0x09,// RM
 					0x02,// Invalid
 					0x13,// Ev_REXW_1a
-						0x92, 0x21,// Svts_m80
+						0x90, 0x21,// Svts_m80
 						0x02,// 0x2
 
 				// 1 = 0x01
@@ -1928,7 +1928,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0x09,// RM
 					0x02,// Invalid
 					0x13,// Ev_REXW_1a
-						0x93, 0x21,// Rsts_m80
+						0x91, 0x21,// Rsts_m80
 						0x02,// 0x2
 
 				// 1 = 0x01
@@ -1978,7 +1978,7 @@ namespace Blazed.Intel.DecoderInternal {
 						0x02,// Invalid
 						0x02,// Invalid
 						0xAB,// Simple5
-							0xC8, 0x25,// Xsha512_alt_16
+							0xC6, 0x25,// Xsha512_alt_16
 						0x02,// Invalid
 						0x00,// 0x0
 					0x02,// Invalid
@@ -1989,7 +1989,7 @@ namespace Blazed.Intel.DecoderInternal {
 						0x02,// Invalid
 						0x02,// Invalid
 						0xAB,// Simple5
-							0xC2, 0x25,// Xsha512_16
+							0xC0, 0x25,// Xsha512_16
 						0x02,// Invalid
 						0x00,// 0x0
 					0x02,// Invalid
@@ -2000,7 +2000,7 @@ namespace Blazed.Intel.DecoderInternal {
 						0x02,// Invalid
 						0x02,// Invalid
 						0xAB,// Simple5
-							0xC2, 0x21,// Ccs_hash_16
+							0xC0, 0x21,// Ccs_hash_16
 						0x02,// Invalid
 						0x00,// 0x0
 					0x02,// Invalid
@@ -2011,7 +2011,7 @@ namespace Blazed.Intel.DecoderInternal {
 						0x02,// Invalid
 						0x02,// Invalid
 						0xAB,// Simple5
-							0xBC, 0x25,// Via_undoc_F30FA6F0_16
+							0xBA, 0x25,// Via_undoc_F30FA6F0_16
 						0x02,// Invalid
 						0x00,// 0x0
 					0x02,// Invalid
@@ -2022,7 +2022,7 @@ namespace Blazed.Intel.DecoderInternal {
 						0x02,// Invalid
 						0x02,// Invalid
 						0xAB,// Simple5
-							0xBF, 0x25,// Via_undoc_F30FA6F8_16
+							0xBD, 0x25,// Via_undoc_F30FA6F8_16
 						0x02,// Invalid
 						0x00,// 0x0
 					0x02,// Invalid
@@ -2097,7 +2097,7 @@ namespace Blazed.Intel.DecoderInternal {
 						0x02,// Invalid
 						0x02,// Invalid
 						0xAB,// Simple5
-							0xC5, 0x21,// Ccs_encrypt_16
+							0xC3, 0x21,// Ccs_encrypt_16
 						0x02,// Invalid
 						0x00,// 0x0
 					0x02,// Invalid
@@ -2108,7 +2108,7 @@ namespace Blazed.Intel.DecoderInternal {
 						0x02,// Invalid
 						0x02,// Invalid
 						0xAB,// Simple5
-							0xC5, 0x25,// Xstore_alt_16
+							0xC3, 0x25,// Xstore_alt_16
 						0x02,// Invalid
 						0x00,// 0x0
 					0x02,// Invalid
@@ -2195,7 +2195,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x01,// Bitness_DontReadModRM
 						0x02,// Invalid
 						0xCC,// Rq
-							0xB8, 0x21,// Senduipi_r64
+							0xB6, 0x21,// Senduipi_r64
 					0x6E,// M_1
 						0x96, 0x11,// Vmxon_m64
 					0x02,// Invalid
@@ -2824,23 +2824,23 @@ namespace Blazed.Intel.DecoderInternal {
 
 				// 3 = 0x03
 				0x6E,// M_1
-					0xF8, 0x20,// Prefetchreserved3_m8
+					0xF6, 0x20,// Prefetchreserved3_m8
 
 				// 4 = 0x04
 				0x6E,// M_1
-					0xF9, 0x20,// Prefetchreserved4_m8
+					0xF7, 0x20,// Prefetchreserved4_m8
 
 				// 5 = 0x05
 				0x6E,// M_1
-					0xFA, 0x20,// Prefetchreserved5_m8
+					0xF8, 0x20,// Prefetchreserved5_m8
 
 				// 6 = 0x06
 				0x6E,// M_1
-					0xFB, 0x20,// Prefetchreserved6_m8
+					0xF9, 0x20,// Prefetchreserved6_m8
 
 				// 7 = 0x07
 				0x6E,// M_1
-					0xFC, 0x20,// Prefetchreserved7_m8
+					0xFA, 0x20,// Prefetchreserved7_m8
 
 				// grp0F0D
 				0x00,// HandlerReference
@@ -3047,25 +3047,25 @@ namespace Blazed.Intel.DecoderInternal {
 				0x09,// RM
 					0x02,// Invalid
 					0x6E,// M_1
-						0xA5, 0x21,// Aesencwide128kl_m384
+						0xA3, 0x21,// Aesencwide128kl_m384
 
 				// 1 = 0x01
 				0x09,// RM
 					0x02,// Invalid
 					0x6E,// M_1
-						0xA6, 0x21,// Aesdecwide128kl_m384
+						0xA4, 0x21,// Aesdecwide128kl_m384
 
 				// 2 = 0x02
 				0x09,// RM
 					0x02,// Invalid
 					0x6E,// M_1
-						0xA7, 0x21,// Aesencwide256kl_m512
+						0xA5, 0x21,// Aesencwide256kl_m512
 
 				// 3 = 0x03
 				0x09,// RM
 					0x02,// Invalid
 					0x6E,// M_1
-						0xA8, 0x21,// Aesdecwide256kl_m512
+						0xA6, 0x21,// Aesdecwide256kl_m512
 
 				// 4 = 0x04
 				0x05,// Dup
@@ -3088,7 +3088,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x03,// Invalid_NoModRM
 					0x03,// Invalid_NoModRM
 					0x64,// Ib
-						0xB9, 0x21,// Hreset_imm8
+						0xB7, 0x21,// Hreset_imm8
 					0x03,// Invalid_NoModRM
 
 				// 1 = 0x01
@@ -3650,8 +3650,8 @@ namespace Blazed.Intel.DecoderInternal {
 					0xB7,// VW_2
 						0xB4, 0x1C,// Aesenc_xmm_xmmm128
 					0xB8,// VW_3
-						0xA9, 0x21,// Loadiwkey_xmm_xmm
-						0xAA, 0x21,// Aesenc128kl_xmm_m384
+						0xA7, 0x21,// Loadiwkey_xmm_xmm
+						0xA8, 0x21,// Aesenc128kl_xmm_m384
 					0x02,// Invalid
 
 				// 221 = 0xDD
@@ -3662,7 +3662,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x09,// RM
 						0x02,// Invalid
 						0xB7,// VW_2
-							0xAB, 0x21,// Aesdec128kl_xmm_m384
+							0xA9, 0x21,// Aesdec128kl_xmm_m384
 					0x02,// Invalid
 
 				// 222 = 0xDE
@@ -3673,7 +3673,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x09,// RM
 						0x02,// Invalid
 						0xB7,// VW_2
-							0xAC, 0x21,// Aesenc256kl_xmm_m512
+							0xAA, 0x21,// Aesenc256kl_xmm_m512
 					0x02,// Invalid
 
 				// 223 = 0xDF
@@ -3684,7 +3684,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x09,// RM
 						0x02,// Invalid
 						0xB7,// VW_2
-							0xAD, 0x21,// Aesdec256kl_xmm_m512
+							0xAB, 0x21,// Aesdec256kl_xmm_m512
 					0x02,// Invalid
 
 				// 224 = 0xE0
@@ -3770,7 +3770,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x02,// Invalid
 					0x09,// RM
 						0xCD,// Gd_Rd
-							0xAE, 0x21,// Encodekey128_r32_r32
+							0xAC, 0x21,// Encodekey128_r32_r32
 						0x02,// Invalid
 					0x02,// Invalid
 
@@ -3780,7 +3780,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x02,// Invalid
 					0x09,// RM
 						0xCD,// Gd_Rd
-							0xAF, 0x21,// Encodekey256_r32_r32
+							0xAD, 0x21,// Encodekey256_r32_r32
 						0x02,// Invalid
 					0x02,// Invalid
 
@@ -4164,14 +4164,14 @@ namespace Blazed.Intel.DecoderInternal {
 					0xA4,// Simple
 						0xF6, 0x06,// Femms
 					0xA4,// Simple
-						0xBB, 0x23,// Rdudbg
+						0xB9, 0x23,// Rdudbg
 					0x80, 0x80, 0x02,// Udbg
 
 				// 15 = 0x0F
 				0x0A,// Options3
 					0x16,// D3NOW
 					0xA4,// Simple
-						0xBC, 0x23,// Wrudbg
+						0xBA, 0x23,// Wrudbg
 					0x80, 0x80, 0x02,// Udbg
 
 				// 16 = 0x10
@@ -4541,7 +4541,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x14,// MandatoryPrefix_NoModRM
 						0xC7,// Simple4b
 							0x90, 0x09,// Getsecd
-							0xFF, 0x20,// Getsecq
+							0xFD, 0x20,// Getsecq
 						0x03,// Invalid_NoModRM
 						0x03,// Invalid_NoModRM
 						0x03,// Invalid_NoModRM
@@ -4576,7 +4576,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0xC8,// Options1632_1
 					0x02,// Invalid
 					0xA4,// Simple
-						0x94, 0x21,// Altinst
+						0x92, 0x21,// Altinst
 					0x80, 0x80, 0x80, 0x04,// ALTINST
 
 				// 64 = 0x40
@@ -5056,7 +5056,7 @@ namespace Blazed.Intel.DecoderInternal {
 						0xB6,// VRIbIb
 							0xDB, 0x0D,// Insertq_xmm_xmm_imm8_imm8
 					0xCA,// M_Sw
-						0x8E, 0x21,// Svdc_m80_Sreg
+						0x8C, 0x21,// Svdc_m80_Sreg
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 121 = 0x79
@@ -5078,7 +5078,7 @@ namespace Blazed.Intel.DecoderInternal {
 								0x00,// INVALID
 							0x02,// Invalid
 					0xCB,// Sw_M
-						0x8F, 0x21,// Rsdc_Sreg_m80
+						0x8D, 0x21,// Rsdc_Sreg_m80
 					0x80, 0x80, 0x40,// Cyrix
 
 				// 122 = 0x7A
@@ -6014,7 +6014,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x50,// Gv_Ev_3a
 						0xFF, 0x13,// Ud0_r16_rm16
 					0xA4,// Simple
-						0xFD, 0x20,// Ud0
+						0xFB, 0x20,// Ud0
 					0x02,// AMD
 
 				// Handlers_MAP0

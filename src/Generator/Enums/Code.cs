@@ -4192,8 +4192,6 @@ namespace Generator.Enums {
 		D3NOW_Pi2fd_mm_mmm64,
 		D3NOW_Pf2iw_mm_mmm64,
 		D3NOW_Pf2id_mm_mmm64,
-		D3NOW_Pfrcpv_mm_mmm64,
-		D3NOW_Pfrsqrtv_mm_mmm64,
 		D3NOW_Pfnacc_mm_mmm64,
 		D3NOW_Pfpnacc_mm_mmm64,
 		D3NOW_Pfcmpge_mm_mmm64,

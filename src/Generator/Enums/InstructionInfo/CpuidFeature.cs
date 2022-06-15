@@ -128,8 +128,6 @@ namespace Generator.Enums.InstructionInfo {
 		FSGSBASE,
 		[Comment("CPUID.01H:EDX.FXSR[bit 24]")]
 		FXSR,
-		[Comment("Cyrix (AMD Geode GX/LX) 3DNow! instructions")]
-		CYRIX_D3NOW,
 		[Comment("CPUID.(EAX=07H, ECX=0H):ECX.GFNI[bit 8]")]
 		GFNI,
 		[Comment("CPUID.(EAX=07H, ECX=0H):EBX.HLE[bit 4]")]

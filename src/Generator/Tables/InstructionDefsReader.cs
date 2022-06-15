@@ -184,7 +184,6 @@ namespace Generator.Tables {
 			toCpuidName[cpuid[nameof(CpuidFeature.FPU287XL_ONLY)]] = "287 XL";
 			toCpuidName[cpuid[nameof(CpuidFeature.FPU387)]] = "387+";
 			toCpuidName[cpuid[nameof(CpuidFeature.FPU387SL_ONLY)]] = "387 SL";
-			toCpuidName[cpuid[nameof(CpuidFeature.CYRIX_D3NOW)]] = "AMD Geode GX/LX";
 			toCpuidName[cpuid[nameof(CpuidFeature.HLE_or_RTM)]] = "HLE or RTM";
 			toCpuidName[cpuid[nameof(CpuidFeature.SEV_ES)]] = "SEV-ES";
 			toCpuidName[cpuid[nameof(CpuidFeature.SEV_SNP)]] = "SEV-SNP";

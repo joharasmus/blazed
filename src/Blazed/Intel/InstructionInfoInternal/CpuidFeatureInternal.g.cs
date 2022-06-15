@@ -83,7 +83,6 @@ namespace Blazed.Intel.InstructionInfoInternal {
 		FPU387SL_ONLY,
 		FSGSBASE,
 		FXSR,
-		CYRIX_D3NOW,
 		GFNI,
 		AVX_and_GFNI,
 		AVX512F_and_GFNI,

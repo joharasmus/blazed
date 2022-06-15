@@ -8319,16 +8319,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void pfrcpv_mm_mm() {
-			TestAssembler(c => c.pfrcpv(mm2, mm3), Instruction.Create(Code.D3NOW_Pfrcpv_mm_mmm64, Register.MM2, Register.MM3), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void pfrcpv_mm_m() {
-			TestAssembler(c => c.pfrcpv(mm2, __qword_ptr[si]), Instruction.Create(Code.D3NOW_Pfrcpv_mm_mmm64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
 		public void pfrsqit1_mm_mm() {
 			TestAssembler(c => c.pfrsqit1(mm2, mm3), Instruction.Create(Code.D3NOW_Pfrsqit1_mm_mmm64, Register.MM2, Register.MM3));
 		}
@@ -8346,16 +8336,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		[Fact]
 		public void pfrsqrt_mm_m() {
 			TestAssembler(c => c.pfrsqrt(mm2, __qword_ptr[si]), Instruction.Create(Code.D3NOW_Pfrsqrt_mm_mmm64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)));
-		}
-
-		[Fact]
-		public void pfrsqrtv_mm_mm() {
-			TestAssembler(c => c.pfrsqrtv(mm2, mm3), Instruction.Create(Code.D3NOW_Pfrsqrtv_mm_mmm64, Register.MM2, Register.MM3), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void pfrsqrtv_mm_m() {
-			TestAssembler(c => c.pfrsqrtv(mm2, __qword_ptr[si]), Instruction.Create(Code.D3NOW_Pfrsqrtv_mm_mmm64, Register.MM2, new MemoryOperand(Register.SI, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
 		}
 
 		[Fact]

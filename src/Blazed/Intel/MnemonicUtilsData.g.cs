@@ -4189,8 +4189,6 @@ namespace Blazed.Intel {
 			(ushort)Mnemonic.Pi2fd,// D3NOW_Pi2fd_mm_mmm64
 			(ushort)Mnemonic.Pf2iw,// D3NOW_Pf2iw_mm_mmm64
 			(ushort)Mnemonic.Pf2id,// D3NOW_Pf2id_mm_mmm64
-			(ushort)Mnemonic.Pfrcpv,// D3NOW_Pfrcpv_mm_mmm64
-			(ushort)Mnemonic.Pfrsqrtv,// D3NOW_Pfrsqrtv_mm_mmm64
 			(ushort)Mnemonic.Pfnacc,// D3NOW_Pfnacc_mm_mmm64
 			(ushort)Mnemonic.Pfpnacc,// D3NOW_Pfpnacc_mm_mmm64
 			(ushort)Mnemonic.Pfcmpge,// D3NOW_Pfcmpge_mm_mmm64

@@ -4189,8 +4189,6 @@ namespace Blazed.Intel {
 			(byte)MemorySize.Packed64_Int32,// D3NOW_Pi2fd_mm_mmm64
 			(byte)MemorySize.Packed64_Float32,// D3NOW_Pf2iw_mm_mmm64
 			(byte)MemorySize.Packed64_Float32,// D3NOW_Pf2id_mm_mmm64
-			(byte)MemorySize.Packed64_Float32,// D3NOW_Pfrcpv_mm_mmm64
-			(byte)MemorySize.Packed64_Float32,// D3NOW_Pfrsqrtv_mm_mmm64
 			(byte)MemorySize.Packed64_Float32,// D3NOW_Pfnacc_mm_mmm64
 			(byte)MemorySize.Packed64_Float32,// D3NOW_Pfpnacc_mm_mmm64
 			(byte)MemorySize.Packed64_Float32,// D3NOW_Pfcmpge_mm_mmm64
@@ -9004,8 +9002,6 @@ namespace Blazed.Intel {
 			0,// D3NOW_Pi2fd_mm_mmm64
 			0,// D3NOW_Pf2iw_mm_mmm64
 			0,// D3NOW_Pf2id_mm_mmm64
-			0,// D3NOW_Pfrcpv_mm_mmm64
-			0,// D3NOW_Pfrsqrtv_mm_mmm64
 			0,// D3NOW_Pfnacc_mm_mmm64
 			0,// D3NOW_Pfpnacc_mm_mmm64
 			0,// D3NOW_Pfcmpge_mm_mmm64
