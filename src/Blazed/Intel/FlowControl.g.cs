@@ -23,7 +23,7 @@ namespace Blazed.Intel {
 		Call = 5,
 		/// <summary>It&apos;s an indirect call instruction: <c>CALL NEAR reg</c>, <c>CALL NEAR [mem]</c>, <c>CALL FAR [mem]</c></summary>
 		IndirectCall = 6,
-		/// <summary>It&apos;s an interrupt instruction: <c>INT n</c>, <c>INT3</c>, <c>INT1</c>, <c>INTO</c>, <c>SMINT</c></summary>
+		/// <summary>It&apos;s an interrupt instruction: <c>INT n</c>, <c>INT3</c>, <c>INT1</c>, <c>INTO</c></summary>
 		Interrupt = 7,
 		/// <summary>It&apos;s <c>XBEGIN</c></summary>
 		XbeginXabortXend = 8,

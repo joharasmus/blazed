@@ -192,14 +192,12 @@ Pvalidatew
 Invlpgbw
 Fnstdw_AX
 Fnstsg_AX
-Smint
 Svdc_m80_Sreg
 Rsdc_Sreg_m80
 Svldt_m80
 Rsldt_m80
 Svts_m80
 Rsts_m80
-Smint_0F7E
 Altinst
 Cyrix_D9D7
 Cyrix_D9E2

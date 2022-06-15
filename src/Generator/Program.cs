@@ -172,8 +172,6 @@ Options:
 				// Don't include CYRIX_D3NOW. They must be removed by --no-3dnow because the 3DNow! opcode handler has refs to all 3DNow! Code values
 				options.ExcludeCpuid.Add(nameof(CpuidFeature.CYRIX_FPU));
 				options.ExcludeCpuid.Add(nameof(CpuidFeature.CYRIX_SMM));
-				options.ExcludeCpuid.Add(nameof(CpuidFeature.CYRIX_SMINT));
-				options.ExcludeCpuid.Add(nameof(CpuidFeature.CYRIX_SMINT_0F7E));
 				break;
 
 			case "--include-cpuid":

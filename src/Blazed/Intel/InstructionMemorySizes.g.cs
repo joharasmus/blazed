@@ -4246,14 +4246,12 @@ namespace Blazed.Intel {
 			0,// VEX_Tdpbssd_tmm_tmm_tmm
 			0,// Fnstdw_AX
 			0,// Fnstsg_AX
-			0,// Smint
 			(byte)MemorySize.SegmentDescSelector,// Svdc_m80_Sreg
 			(byte)MemorySize.SegmentDescSelector,// Rsdc_Sreg_m80
 			(byte)MemorySize.SegmentDescSelector,// Svldt_m80
 			(byte)MemorySize.SegmentDescSelector,// Rsldt_m80
 			(byte)MemorySize.SegmentDescSelector,// Svts_m80
 			(byte)MemorySize.SegmentDescSelector,// Rsts_m80
-			0,// Smint_0F7E
 			0,// Altinst
 			0,// Cyrix_D9D7
 			0,// Cyrix_D9E2
@@ -9063,14 +9061,12 @@ namespace Blazed.Intel {
 			0,// VEX_Tdpbssd_tmm_tmm_tmm
 			0,// Fnstdw_AX
 			0,// Fnstsg_AX
-			0,// Smint
 			0,// Svdc_m80_Sreg
 			0,// Rsdc_Sreg_m80
 			0,// Svldt_m80
 			0,// Rsldt_m80
 			0,// Svts_m80
 			0,// Rsts_m80
-			0,// Smint_0F7E
 			0,// Altinst
 			0,// Cyrix_D9D7
 			0,// Cyrix_D9E2

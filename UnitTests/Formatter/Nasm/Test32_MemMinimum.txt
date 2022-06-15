@@ -672,14 +672,12 @@ a16 invlpgb
 invlpgb
 tlbsync
 cl1invmb
-smint
 svdc [eax], cs
 rsdc cs, [eax]
 svldt [eax]
 rsldt [eax]
 svts [eax]
 rsts [eax]
-smintold
 altinst
 undoc
 undoc

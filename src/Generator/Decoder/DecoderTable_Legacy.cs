@@ -4074,7 +4074,7 @@ static class DecoderTable_Legacy {
 				// 38
 				new object[] { Options1632_1,
 					new object[] { AnotherTable, "Handlers_0F38" },
-					new object[] { Simple, code[nameof(Code.Smint)] }, options[nameof(DecoderOptions.Cyrix)]
+					invalid, invalid
 				},
 				invalid,
 				new object[] { Options1632_1,
@@ -4451,7 +4451,7 @@ static class DecoderTable_Legacy {
 						new object[] { VW_2, code[nameof(Code.Movq_xmm_xmmm64)] },
 						invalid,
 					},
-					new object[] { Simple, code[nameof(Code.Smint_0F7E)] }, options[nameof(DecoderOptions.Cyrix_SMINT_0F7E)]
+					invalid, invalid
 				},
 				new object[] { MandatoryPrefix,
 					new object[] { Q_P, code[nameof(Code.Movq_mmm64_mm)] },

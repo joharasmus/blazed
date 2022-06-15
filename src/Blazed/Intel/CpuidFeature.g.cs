@@ -287,44 +287,40 @@ namespace Blazed.Intel {
 		CYRIX_FPU = 137,
 		/// <summary>Cyrix SMM instructions: <c>SVDC</c>, <c>RSDC</c>, <c>SVLDT</c>, <c>RSLDT</c>, <c>SVTS</c>, <c>RSTS</c> (Cyrix, AMD Geode GX/LX)</summary>
 		CYRIX_SMM = 138,
-		/// <summary>Cyrix <c>SMINT 0F38</c> (6x86MX and later, AMD Geode GX/LX)</summary>
-		CYRIX_SMINT = 139,
-		/// <summary>Cyrix <c>SMINT 0F7E</c> (6x86 or earlier)</summary>
-		CYRIX_SMINT_0F7E = 140,
 		/// <summary>CPUID.0C0000000H:EAX &gt;= 0C0000001H AND CPUID.0C0000001H:EDX.AIS[Bits 1:0] = 11B ([0] = exists, [1] = enabled)</summary>
-		CENTAUR_AIS = 141,
+		CENTAUR_AIS = 139,
 		/// <summary>MOV to/from TR (80386, Intel486, Cyrix, Geode)</summary>
-		MOV_TR = 142,
+		MOV_TR = 140,
 		/// <summary><c>RSM</c> instruction (some 386s, some 486s, Pentium and later)</summary>
-		SMM = 143,
+		SMM = 141,
 		/// <summary>CPUID.(EAX=??H, ECX=?H):???.????[bit ??]</summary>
-		TDX = 144,
+		TDX = 142,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):ECX.KL[bit 23]</summary>
-		KL = 145,
+		KL = 143,
 		/// <summary>CPUID.19H:EBX.AESKLE[bit 0]</summary>
-		AESKLE = 146,
+		AESKLE = 144,
 		/// <summary>CPUID.19H:EBX.WIDE_KL[bit 2]</summary>
-		WIDE_KL = 147,
+		WIDE_KL = 145,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.UINTR[bit 5]</summary>
-		UINTR = 148,
+		UINTR = 146,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.HRESET[bit 22]</summary>
-		HRESET = 149,
+		HRESET = 147,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.AVX-VNNI[bit 4]</summary>
-		AVX_VNNI = 150,
+		AVX_VNNI = 148,
 		/// <summary>CPUID.0C0000000H:EAX &gt;= 0C0000001H AND CPUID.0C0000001H:EDX.GMI[Bits 5:4] = 11B ([4] = exists, [5] = enabled)</summary>
-		PADLOCK_GMI = 151,
+		PADLOCK_GMI = 149,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.FRED[bit 17]</summary>
-		FRED = 152,
+		FRED = 150,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.LKGS[bit 18]</summary>
-		LKGS = 153,
+		LKGS = 151,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.AVX512-FP16[bit 23]</summary>
-		AVX512_FP16 = 154,
+		AVX512_FP16 = 152,
 		/// <summary>Undocumented Intel <c>RDUDBG</c> and <c>WRUDBG</c> instructions</summary>
-		UDBG = 155,
+		UDBG = 153,
 		/// <summary>Intel Knights Corner</summary>
-		KNC = 156,
+		KNC = 154,
 		/// <summary>Undocumented instruction</summary>
-		PADLOCK_UNDOC = 157,
+		PADLOCK_UNDOC = 155,
 	}
 }
 #endif

@@ -12571,16 +12571,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void smint() {
-			TestAssembler(c => c.smint(), Instruction.Create(Code.Smint), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void smint_0f7e() {
-			TestAssembler(c => c.smint_0f7e(), Instruction.Create(Code.Smint_0F7E), decoderOptions: DecoderOptions.Cyrix_SMINT_0F7E);
-		}
-
-		[Fact]
 		public void smsw_r16() {
 			TestAssembler(c => c.smsw(dx), Instruction.Create(Code.Smsw_rm16, Register.DX));
 		}

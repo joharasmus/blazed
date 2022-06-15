@@ -21793,9 +21793,6 @@ F3 0F01 D9, Vmgexit, Vmgexit, 0,
 
 F2 0F01 D9, Vmgexit_F2, Vmgexit, 0,
 
-0F38, Smint, Smint, 0, decopt=Cyrix
-66 0F38, Smint, Smint, 0, decopt=Cyrix enc=0F38
-
 0F78 CE, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
 0F78 08, Svdc_m80_Sreg, Svdc, 2, op0=m;ds;bx;si;1;0;0;SegmentDescSelector op1=r;cs decopt=Cyrix
 66 0F78 08, Svdc_m80_Sreg, Svdc, 2, op0=m;ds;bx;si;1;0;0;SegmentDescSelector op1=r;cs decopt=Cyrix enc=0F7808
@@ -21857,9 +21854,6 @@ F2 0F01 D9, Vmgexit_F2, Vmgexit, 0,
 0F7D 28, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
 0F7D 30, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
 0F7D 38, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-
-0F7E, Smint_0F7E, Smint, 0, decopt=Cyrix_SMINT_0F7E
-66 0F7E, Smint_0F7E, Smint, 0, decopt=Cyrix_SMINT_0F7E enc=0F7E
 
 0F3F, Altinst, Altinst, 0, decopt=ALTINST
 66 0F3F, Altinst, Altinst, 0, decopt=ALTINST enc=0F3F

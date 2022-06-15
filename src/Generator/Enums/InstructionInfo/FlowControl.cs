@@ -18,7 +18,7 @@ namespace Generator.Enums.InstructionInfo {
 		Call,
 		[Comment("It's an indirect call instruction: #(c:CALL NEAR reg)#, #(c:CALL NEAR [mem])#, #(c:CALL FAR [mem])#")]
 		IndirectCall,
-		[Comment("It's an interrupt instruction: #(c:INT n)#, #(c:INT3)#, #(c:INT1)#, #(c:INTO)#, #(c:SMINT)#")]
+		[Comment("It's an interrupt instruction: #(c:INT n)#, #(c:INT3)#, #(c:INT1)#, #(c:INTO)#")]
 		Interrupt,
 		[Comment("It's #(c:XBEGIN)#")]
 		XbeginXabortXend,

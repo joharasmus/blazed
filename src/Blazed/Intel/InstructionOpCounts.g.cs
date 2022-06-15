@@ -4246,14 +4246,12 @@ namespace Blazed.Intel {
 			3,// VEX_Tdpbssd_tmm_tmm_tmm
 			1,// Fnstdw_AX
 			1,// Fnstsg_AX
-			0,// Smint
 			2,// Svdc_m80_Sreg
 			2,// Rsdc_Sreg_m80
 			1,// Svldt_m80
 			1,// Rsldt_m80
 			1,// Svts_m80
 			1,// Rsts_m80
-			0,// Smint_0F7E
 			0,// Altinst
 			0,// Cyrix_D9D7
 			0,// Cyrix_D9E2

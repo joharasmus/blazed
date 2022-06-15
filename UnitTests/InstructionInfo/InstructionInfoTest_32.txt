@@ -1685,8 +1685,6 @@ C7 F8 5AA51234, Xbegin_rel32, Legacy, RTM, flow=XbeginXabortXend op0=r cw=eax
 8D 34 D1, Lea_r32_m, Legacy, INTEL386, op0=w op1=nma w=esi r=ecx;edx
 # cl1invmb
 0F0A, Cl1invmb, Legacy, CL1INVMB, decopt=Cl1invmb priv
-# smint
-0F38, Smint, Legacy, CYRIX_SMINT, priv flow=Interrupt decopt=Cyrix
 # svdc [eax],cs
 0F78 08, Svdc_m80_Sreg, Legacy, CYRIX_SMM, priv op0=w op1=r r=cs r=ds r=eax wm=ds:eax;SegmentDescSelector decopt=Cyrix
 # rsdc cs,[eax]
@@ -1699,8 +1697,6 @@ C7 F8 5AA51234, Xbegin_rel32, Legacy, RTM, flow=XbeginXabortXend op0=r cw=eax
 0F7C 00, Svts_m80, Legacy, CYRIX_SMM, priv op0=w r=ds r=eax wm=ds:eax;SegmentDescSelector decopt=Cyrix
 # rsts [eax]
 0F7D 00, Rsts_m80, Legacy, CYRIX_SMM, priv op0=r r=ds r=eax rm=ds:eax;SegmentDescSelector decopt=Cyrix
-# smint
-0F7E, Smint_0F7E, Legacy, CYRIX_SMINT_0F7E, priv flow=Interrupt decopt=Cyrix_SMINT_0F7E
 # altinst
 0F3F, Altinst, Legacy, CENTAUR_AIS, flow=IndirectBranch r=eax decopt=ALTINST
 # undoc
