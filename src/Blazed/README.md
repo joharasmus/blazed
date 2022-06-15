@@ -928,8 +928,6 @@ static class HowTo_DisassembleOldInstructions {
      * This method produces the following output:
 731E0A03 bndmov bnd1, [eax]
 731E0A07 mov tr3, esi
-731E0A0A rdshr [eax]
-731E0A0F svdc [eax], cs
 731E0A14 pmvzb mm1, [eax]
 731E0A17 frinear
 731E0A19 altinst
@@ -940,10 +938,6 @@ static class HowTo_DisassembleOldInstructions {
             0x66, 0x0F, 0x1A, 0x08,
             // mov tr3,esi
             0x0F, 0x26, 0xDE,
-            // rdshr [eax]
-            0x0F, 0x36, 0x00,
-            // svdc [eax],cs
-            0x0F, 0x78, 0x08,
             // pmvzb mm1,[eax]
             0x0F, 0x58, 0x08,
             // frinear
