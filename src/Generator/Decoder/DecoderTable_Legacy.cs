@@ -1439,66 +1439,6 @@ static class DecoderTable_Legacy {
 				},
 			}),
 
-			("handlers_Grp_0F7A_Cyrix",
-			new object[8] {
-				new object[] { RM,
-					invalid,
-					new object[] { Ev_REXW_1a, code[nameof(Code.Svldt_m80)], 0x02 },
-				},
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-			}),
-
-			("handlers_Grp_0F7B_Cyrix",
-			new object[8] {
-				new object[] { RM,
-					invalid,
-					new object[] { Ev_REXW_1a, code[nameof(Code.Rsldt_m80)], 0x02 },
-				},
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-			}),
-
-			("handlers_Grp_0F7C_Cyrix",
-			new object[8] {
-				new object[] { RM,
-					invalid,
-					new object[] { Ev_REXW_1a, code[nameof(Code.Svts_m80)], 0x02 },
-				},
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-			}),
-
-			("handlers_Grp_0F7D_Cyrix",
-			new object[8] {
-				new object[] { RM,
-					invalid,
-					new object[] { Ev_REXW_1a, code[nameof(Code.Rsts_m80)], 0x02 },
-				},
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-				invalid,
-			}),
-
 			("handlers_Grp_0FA6",
 			new object[8] {
 				new object[] { RM,
@@ -4401,7 +4341,7 @@ static class DecoderTable_Legacy {
 						invalid,
 						new object[] { VRIbIb, code[nameof(Code.Insertq_xmm_xmm_imm8_imm8)] }
 					},
-					new object[] { M_Sw, code[nameof(Code.Svdc_m80_Sreg)] }, options[nameof(DecoderOptions.Cyrix)]
+					invalid, invalid
 				},
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,
@@ -4416,16 +4356,10 @@ static class DecoderTable_Legacy {
 							invalid,
 						},
 					},
-					new object[] { Sw_M, code[nameof(Code.Rsdc_Sreg_m80)] }, options[nameof(DecoderOptions.Cyrix)]
+					invalid, invalid
 				},
-				new object[] { Options1632_1,
-					invalid,
-					new object[] { Group, "handlers_Grp_0F7A_Cyrix" }, options[nameof(DecoderOptions.Cyrix)]
-				},
-				new object[] { Options1632_1,
-					invalid,
-					new object[] { Group, "handlers_Grp_0F7B_Cyrix" }, options[nameof(DecoderOptions.Cyrix)]
-				},
+				invalid,
+				invalid,
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,
 						invalid,
@@ -4433,7 +4367,7 @@ static class DecoderTable_Legacy {
 						invalid,
 						new object[] { VW_2, code[nameof(Code.Haddps_xmm_xmmm128)] }
 					},
-					new object[] { Group, "handlers_Grp_0F7C_Cyrix" }, options[nameof(DecoderOptions.Cyrix)]
+					invalid, invalid
 				},
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,
@@ -4442,7 +4376,7 @@ static class DecoderTable_Legacy {
 						invalid,
 						new object[] { VW_2, code[nameof(Code.Hsubps_xmm_xmmm128)] }
 					},
-					new object[] { Group, "handlers_Grp_0F7D_Cyrix" }, options[nameof(DecoderOptions.Cyrix)]
+					invalid, invalid
 				},
 				new object[] { Options1632_1,
 					new object[] { MandatoryPrefix,

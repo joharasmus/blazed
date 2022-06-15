@@ -11325,16 +11325,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		}
 
 		[Fact]
-		public void rsdc_seg_m() {
-			TestAssembler(c => c.rsdc(ds, __[ecx]), Instruction.Create(Code.Rsdc_Sreg_m80, Register.DS, new MemoryOperand(Register.ECX, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void rsldt_m() {
-			TestAssembler(c => c.rsldt(__[ecx]), Instruction.Create(Code.Rsldt_m80, new MemoryOperand(Register.ECX, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
 		public void rsm() {
 			TestAssembler(c => c.rsm(), Instruction.Create(Code.Rsm));
 		}
@@ -11362,11 +11352,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		[Fact]
 		public void rstorssp_m() {
 			TestAssembler(c => c.rstorssp(__[ecx]), Instruction.Create(Code.Rstorssp_m64, new MemoryOperand(Register.ECX, Register.None, 1, 0x0, 0, false, Register.None)));
-		}
-
-		[Fact]
-		public void rsts_m() {
-			TestAssembler(c => c.rsts(__[ecx]), Instruction.Create(Code.Rsts_m80, new MemoryOperand(Register.ECX, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
 		}
 
 		[Fact]
@@ -13044,21 +13029,6 @@ namespace UnitTests.Intel.AssemblerTests {
 		[Fact]
 		public void subss_xmm_m() {
 			TestAssembler(c => c.subss(xmm2, __xmmword_ptr[ecx]), Instruction.Create(Code.Subss_xmm_xmmm32, Register.XMM2, new MemoryOperand(Register.ECX, Register.None, 1, 0x0, 0, false, Register.None)));
-		}
-
-		[Fact]
-		public void svdc_m_seg() {
-			TestAssembler(c => c.svdc(__[ecx], ds), Instruction.Create(Code.Svdc_m80_Sreg, new MemoryOperand(Register.ECX, Register.None, 1, 0x0, 0, false, Register.None), Register.DS), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void svldt_m() {
-			TestAssembler(c => c.svldt(__[ecx]), Instruction.Create(Code.Svldt_m80, new MemoryOperand(Register.ECX, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
-		}
-
-		[Fact]
-		public void svts_m() {
-			TestAssembler(c => c.svts(__[ecx]), Instruction.Create(Code.Svts_m80, new MemoryOperand(Register.ECX, Register.None, 1, 0x0, 0, false, Register.None)), decoderOptions: DecoderOptions.Cyrix);
 		}
 
 		[Fact]

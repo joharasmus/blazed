@@ -283,42 +283,40 @@ namespace Blazed.Intel {
 		AMX_INT8 = 135,
 		/// <summary>Cyrix FPU instructions (Cyrix, AMD Geode GX/LX)</summary>
 		CYRIX_FPU = 136,
-		/// <summary>Cyrix SMM instructions: <c>SVDC</c>, <c>RSDC</c>, <c>SVLDT</c>, <c>RSLDT</c>, <c>SVTS</c>, <c>RSTS</c> (Cyrix, AMD Geode GX/LX)</summary>
-		CYRIX_SMM = 137,
 		/// <summary>CPUID.0C0000000H:EAX &gt;= 0C0000001H AND CPUID.0C0000001H:EDX.AIS[Bits 1:0] = 11B ([0] = exists, [1] = enabled)</summary>
-		CENTAUR_AIS = 138,
+		CENTAUR_AIS = 137,
 		/// <summary>MOV to/from TR (80386, Intel486, Cyrix, Geode)</summary>
-		MOV_TR = 139,
+		MOV_TR = 138,
 		/// <summary><c>RSM</c> instruction (some 386s, some 486s, Pentium and later)</summary>
-		SMM = 140,
+		SMM = 139,
 		/// <summary>CPUID.(EAX=??H, ECX=?H):???.????[bit ??]</summary>
-		TDX = 141,
+		TDX = 140,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):ECX.KL[bit 23]</summary>
-		KL = 142,
+		KL = 141,
 		/// <summary>CPUID.19H:EBX.AESKLE[bit 0]</summary>
-		AESKLE = 143,
+		AESKLE = 142,
 		/// <summary>CPUID.19H:EBX.WIDE_KL[bit 2]</summary>
-		WIDE_KL = 144,
+		WIDE_KL = 143,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.UINTR[bit 5]</summary>
-		UINTR = 145,
+		UINTR = 144,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.HRESET[bit 22]</summary>
-		HRESET = 146,
+		HRESET = 145,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.AVX-VNNI[bit 4]</summary>
-		AVX_VNNI = 147,
+		AVX_VNNI = 146,
 		/// <summary>CPUID.0C0000000H:EAX &gt;= 0C0000001H AND CPUID.0C0000001H:EDX.GMI[Bits 5:4] = 11B ([4] = exists, [5] = enabled)</summary>
-		PADLOCK_GMI = 148,
+		PADLOCK_GMI = 147,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.FRED[bit 17]</summary>
-		FRED = 149,
+		FRED = 148,
 		/// <summary>CPUID.(EAX=07H, ECX=01H):EAX.LKGS[bit 18]</summary>
-		LKGS = 150,
+		LKGS = 149,
 		/// <summary>CPUID.(EAX=07H, ECX=0H):EDX.AVX512-FP16[bit 23]</summary>
-		AVX512_FP16 = 151,
+		AVX512_FP16 = 150,
 		/// <summary>Undocumented Intel <c>RDUDBG</c> and <c>WRUDBG</c> instructions</summary>
-		UDBG = 152,
+		UDBG = 151,
 		/// <summary>Intel Knights Corner</summary>
-		KNC = 153,
+		KNC = 152,
 		/// <summary>Undocumented instruction</summary>
-		PADLOCK_UNDOC = 154,
+		PADLOCK_UNDOC = 153,
 	}
 }
 #endif

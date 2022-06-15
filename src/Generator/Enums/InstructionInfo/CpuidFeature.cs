@@ -278,8 +278,6 @@ namespace Generator.Enums.InstructionInfo {
 		AMX_INT8,
 		[Comment("Cyrix FPU instructions (Cyrix, AMD Geode GX/LX)")]
 		CYRIX_FPU,
-		[Comment("Cyrix SMM instructions: #(c:SVDC)#, #(c:RSDC)#, #(c:SVLDT)#, #(c:RSLDT)#, #(c:SVTS)#, #(c:RSTS)# (Cyrix, AMD Geode GX/LX)")]
-		CYRIX_SMM,
 		[Comment("CPUID.0C0000000H:EAX >= 0C0000001H AND CPUID.0C0000001H:EDX.AIS[Bits 1:0] = 11B ([0] = exists, [1] = enabled)")]
 		CENTAUR_AIS,
 		[Comment("MOV to/from TR (80386, Intel486, Cyrix, Geode)")]

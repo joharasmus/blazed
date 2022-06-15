@@ -21789,68 +21789,6 @@ F3 0F01 D9, Vmgexit, Vmgexit, 0,
 
 F2 0F01 D9, Vmgexit_F2, Vmgexit, 0,
 
-0F78 CE, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F78 08, Svdc_m80_Sreg, Svdc, 2, op0=m;ds;eax;;1;0;0;SegmentDescSelector op1=r;cs decopt=Cyrix
-66 0F78 08, Svdc_m80_Sreg, Svdc, 2, op0=m;ds;eax;;1;0;0;SegmentDescSelector op1=r;cs decopt=Cyrix enc=0F7808
-0F78 18, Svdc_m80_Sreg, Svdc, 2, op0=m;ds;eax;;1;0;0;SegmentDescSelector op1=r;ds decopt=Cyrix
-0F78 30, INVALID, INVALID, 0, code=Svdc_m80_Sreg decopt=Cyrix
-0F78 38, INVALID, INVALID, 0, code=Svdc_m80_Sreg decopt=Cyrix
-0F78 30, INVALID, INVALID, 0, code=Svdc_m80_Sreg decopt=NoInvalidCheck decopt=Cyrix
-0F78 38, INVALID, INVALID, 0, code=Svdc_m80_Sreg decopt=NoInvalidCheck decopt=Cyrix
-
-0F79 CE, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F79 08, Rsdc_Sreg_m80, Rsdc, 2, op0=r;cs op1=m;ds;eax;;1;0;0;SegmentDescSelector decopt=Cyrix
-66 0F79 08, Rsdc_Sreg_m80, Rsdc, 2, op0=r;cs op1=m;ds;eax;;1;0;0;SegmentDescSelector decopt=Cyrix enc=0F7908
-0F79 18, Rsdc_Sreg_m80, Rsdc, 2, op0=r;ds op1=m;ds;eax;;1;0;0;SegmentDescSelector decopt=Cyrix
-0F79 30, INVALID, INVALID, 0, code=Rsdc_Sreg_m80 decopt=Cyrix
-0F79 38, INVALID, INVALID, 0, code=Rsdc_Sreg_m80 decopt=Cyrix
-0F79 30, INVALID, INVALID, 0, code=Rsdc_Sreg_m80 decopt=NoInvalidCheck decopt=Cyrix
-0F79 38, INVALID, INVALID, 0, code=Rsdc_Sreg_m80 decopt=NoInvalidCheck decopt=Cyrix
-
-0F7A 00, Svldt_m80, Svldt, 1, op0=m;ds;eax;;1;0;0;SegmentDescSelector decopt=Cyrix
-66 0F7A 00, Svldt_m80, Svldt, 1, op0=m;ds;eax;;1;0;0;SegmentDescSelector decopt=Cyrix enc=0F7A00
-0F7A C2, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7A 08, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7A 10, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7A 18, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7A 20, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7A 28, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7A 30, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7A 38, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-
-0F7B 00, Rsldt_m80, Rsldt, 1, op0=m;ds;eax;;1;0;0;SegmentDescSelector decopt=Cyrix
-66 0F7B 00, Rsldt_m80, Rsldt, 1, op0=m;ds;eax;;1;0;0;SegmentDescSelector decopt=Cyrix enc=0F7B00
-0F7B C2, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7B 08, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7B 10, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7B 18, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7B 20, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7B 28, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7B 30, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7B 38, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-
-0F7C 00, Svts_m80, Svts, 1, op0=m;ds;eax;;1;0;0;SegmentDescSelector decopt=Cyrix
-66 0F7C 00, Svts_m80, Svts, 1, op0=m;ds;eax;;1;0;0;SegmentDescSelector decopt=Cyrix enc=0F7C00
-0F7C C2, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7C 08, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7C 10, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7C 18, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7C 20, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7C 28, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7C 30, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7C 38, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-
-0F7D 00, Rsts_m80, Rsts, 1, op0=m;ds;eax;;1;0;0;SegmentDescSelector decopt=Cyrix
-66 0F7D 00, Rsts_m80, Rsts, 1, op0=m;ds;eax;;1;0;0;SegmentDescSelector decopt=Cyrix enc=0F7D00
-0F7D C2, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7D 08, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7D 10, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7D 18, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7D 20, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7D 28, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7D 30, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-0F7D 38, INVALID, INVALID, 0, code=INVALID decopt=Cyrix
-
 0F3F, Altinst, Altinst, 0, decopt=ALTINST
 66 0F3F, Altinst, Altinst, 0, decopt=ALTINST enc=0F3F
 

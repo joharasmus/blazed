@@ -25673,49 +25673,6 @@ INSTRUCTION: DF E2 | FNSTSG AX | FPU387SL_ONLY
 	flags: 16 32 dec-opt=OldFpu tsx-impl-abort no-wait
 END
 
-# Code: Svdc_m80_Sreg
-INSTRUCTION: 0F 78 /r | SVDC m80, Sreg | CYRIX_SMM
-	# Some CPUs only allow this instruction when in SMM (eg. Cyrix 6x86, Cyrix III)
-	ops: w=rm r=reg | SegmentDescSelector
-	flags: 16 32 dec-opt=Cyrix cpl0
-END
-
-# Code: Rsdc_Sreg_m80
-INSTRUCTION: 0F 79 /r | RSDC Sreg, m80 | CYRIX_SMM
-	# Some CPUs don't allow CS (#UD) as a target register (eg. Cyrix 6x86, Cyrix III), others allow it (eg. Geode LX)
-	# Some CPUs only allow this instruction when in SMM (eg. Cyrix 6x86, Cyrix III)
-	ops: w=reg r=rm | SegmentDescSelector
-	flags: 16 32 dec-opt=Cyrix cpl0
-END
-
-# Code: Svldt_m80
-INSTRUCTION: 0F 7A /0 | SVLDT m80 | CYRIX_SMM
-	# Some CPUs only allow this instruction when in SMM (eg. Cyrix 6x86, Cyrix III)
-	ops: w=rm | SegmentDescSelector
-	flags: 16 32 dec-opt=Cyrix cpl0
-END
-
-# Code: Rsldt_m80
-INSTRUCTION: 0F 7B /0 | RSLDT m80 | CYRIX_SMM
-	# Some CPUs only allow this instruction when in SMM (eg. Cyrix 6x86, Cyrix III)
-	ops: r=rm | SegmentDescSelector
-	flags: 16 32 dec-opt=Cyrix cpl0
-END
-
-# Code: Svts_m80
-INSTRUCTION: 0F 7C /0 | SVTS m80 | CYRIX_SMM
-	# Some CPUs only allow this instruction when in SMM (eg. Cyrix 6x86, Cyrix III)
-	ops: w=rm | SegmentDescSelector
-	flags: 16 32 dec-opt=Cyrix cpl0
-END
-
-# Code: Rsts_m80
-INSTRUCTION: 0F 7D /0 | RSTS m80 | CYRIX_SMM
-	# Some CPUs only allow this instruction when in SMM (eg. Cyrix 6x86, Cyrix III)
-	ops: r=rm | SegmentDescSelector
-	flags: 16 32 dec-opt=Cyrix cpl0
-END
-
 # Code: Altinst
 INSTRUCTION: 0F 3F | ALTINST | CENTAUR_AIS
 	implied: r=eax

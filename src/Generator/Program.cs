@@ -170,7 +170,6 @@ Options:
 
 			case "--no-cyrix":
 				options.ExcludeCpuid.Add(nameof(CpuidFeature.CYRIX_FPU));
-				options.ExcludeCpuid.Add(nameof(CpuidFeature.CYRIX_SMM));
 				break;
 
 			case "--include-cpuid":
