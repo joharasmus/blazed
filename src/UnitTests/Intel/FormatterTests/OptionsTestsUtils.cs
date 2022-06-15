@@ -19,14 +19,14 @@ namespace UnitTests.Intel.FormatterTests {
 		}
 
 		public static IEnumerable<object[]> GetFormatData(string formattedStringsFile, string optionsFile) {
-			var infosFilename = FileUtils.GetFormatterFilename(optionsFile);
+			var infosFilename = FileUtils.GetFormatterFilename(Path.Combine("Nasm", optionsFile));
 			var ignored = new HashSet<int>();
 			var infos = OptionsTestsReader.ReadFile(infosFilename, ignored).ToArray();
 			return GetFormatData(formattedStringsFile, infos, ignored);
 		}
 
 		static IEnumerable<object[]> GetFormatData(string formattedStringsFile, OptionsInstructionInfo[] infos, HashSet<int> ignored) {
-			var formattedStrings = FileUtils.ReadRawStrings(formattedStringsFile).ToArray();
+			var formattedStrings = FileUtils.ReadRawStrings(Path.Combine("Nasm", formattedStringsFile)).ToArray();
 			formattedStrings = Utils.Filter(formattedStrings, ignored);
 			if (infos.Length != formattedStrings.Length)
 				throw new ArgumentException($"(infos.Length) {infos.Length} != (formattedStrings.Length) {formattedStrings.Length} . infos[0].HexBytes = {(infos.Length == 0 ? "<EMPTY>" : infos[0].HexBytes)} & formattedStrings[0] = {(formattedStrings.Length == 0 ? "<EMPTY>" : formattedStrings[0])}");

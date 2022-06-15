@@ -10,7 +10,7 @@ namespace UnitTests.Intel.FormatterTests {
 	static class SymbolResolverTestUtils {
 		public static IEnumerable<object[]> GetFormatData(string formattedStringsFile) {
 			var (infos, ignored) = SymbolResolverTestInfos.AllInfos;
-			var formattedStrings = FileUtils.ReadRawStrings(formattedStringsFile).ToArray();
+			var formattedStrings = FileUtils.ReadRawStrings(Path.Combine("Nasm", formattedStringsFile)).ToArray();
 			formattedStrings = Utils.Filter(formattedStrings, ignored);
 			if (infos.Length != formattedStrings.Length)
 				throw new ArgumentException($"(infos.Length) {infos.Length} != (formattedStrings.Length) {formattedStrings.Length} . infos[0].HexBytes = {(infos.Length == 0 ? "<EMPTY>" : infos[0].HexBytes)} & formattedStrings[0] = {(formattedStrings.Length == 0 ? "<EMPTY>" : formattedStrings[0])}");

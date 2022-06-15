@@ -11,7 +11,7 @@ using Xunit;
 namespace UnitTests.Intel.FormatterTests {
 	public abstract class RegisterTests {
 		protected static IEnumerable<object[]> GetFormatData(string formattedRegistersFile) {
-			var formattedRegisters = FileUtils.ReadRawStrings(formattedRegistersFile).ToArray();
+			var formattedRegisters = FileUtils.ReadRawStrings(Path.Combine("Nasm", formattedRegistersFile)).ToArray();
 			if (BlazedConstants.RegisterEnumCount != formattedRegisters.Length)
 				throw new ArgumentException($"({nameof(BlazedConstants.RegisterEnumCount)}) {BlazedConstants.RegisterEnumCount} != (formattedRegisters.Length) {formattedRegisters.Length}");
 			var res = new object[formattedRegisters.Length][];

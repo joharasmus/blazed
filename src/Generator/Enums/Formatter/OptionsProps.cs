@@ -27,7 +27,6 @@ namespace Generator.Enums.Formatter {
 		OctalDigitGroupSize,
 		OctalPrefix,
 		OctalSuffix,
-		PreferST0,
 		RipRelativeAddresses,
 		ScaleBeforeIndex,
 		ShowBranchSize,

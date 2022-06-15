@@ -9,6 +9,6 @@ namespace UnitTests.Intel.FormatterTests {
 		[Theory]
 		[MemberData(nameof(Format_Data))]
 		void Format(int index, SymbolResolverTestCase info, string formattedString) => FormatBase(index, info, formattedString, FormatterFactory.Create_Resolver(new TestSymbolResolver(info)));
-		public static IEnumerable<object[]> Format_Data => SymbolResolverTestUtils.GetFormatData("SymbolResolverTests2");
+		public static IEnumerable<object[]> Format_Data => SymbolResolverTestUtils.GetFormatData("SymbolResolverTests");
 	}
 }

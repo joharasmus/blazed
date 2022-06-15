@@ -11,7 +11,7 @@ namespace UnitTests.Intel.FormatterTests {
 	public abstract class NumberTests {
 		protected static IEnumerable<object[]> GetFormatData() {
 			var numbers = NumberFileReader.ReadNumberFile(FileUtils.GetFormatterFilename("Number")).ToArray();
-			var formattedNumbers = FileUtils.ReadRawStrings("NumberTests2").Select(a => {
+			var formattedNumbers = FileUtils.ReadRawStrings("NumberTests").Select(a => {
 				var strings = a.Split(',');
 				if (strings.Length != numberBases.Length)
 					throw new InvalidOperationException($"Invalid line: {a}");

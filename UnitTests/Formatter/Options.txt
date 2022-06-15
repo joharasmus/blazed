@@ -682,67 +682,36 @@
 64, 62 F24D4B BC 50 7F, EVEX_Vfnmadd231ps_zmm_k1z_zmm_zmmm512b32_er, NumberBase=Hexadecimal SmallHexNumbersInDecimal=false SignedMemoryDisplacements=false DisplacementLeadingZeros=true LeadingZeros=true
 64, 62 F24D4B BC 50 80, EVEX_Vfnmadd231ps_zmm_k1z_zmm_zmmm512b32_er, NumberBase=Hexadecimal SmallHexNumbersInDecimal=false SignedMemoryDisplacements=false DisplacementLeadingZeros=true LeadingZeros=true
 
-64, D8 C3, Fadd_st0_sti, PreferST0=false
-64, D8 CB, Fmul_st0_sti, PreferST0=false
-64, D8 E3, Fsub_st0_sti, PreferST0=false
-64, D8 EB, Fsubr_st0_sti, PreferST0=false
-64, D8 F3, Fdiv_st0_sti, PreferST0=false
-64, D8 FB, Fdivr_st0_sti, PreferST0=false
-64, DA C3, Fcmovb_st0_sti, PreferST0=false
-64, DA CB, Fcmove_st0_sti, PreferST0=false
-64, DA D3, Fcmovbe_st0_sti, PreferST0=false
-64, DA DB, Fcmovu_st0_sti, PreferST0=false
-64, DB C3, Fcmovnb_st0_sti, PreferST0=false
-64, DB CB, Fcmovne_st0_sti, PreferST0=false
-64, DB D3, Fcmovnbe_st0_sti, PreferST0=false
-64, DB DB, Fcmovnu_st0_sti, PreferST0=false
-64, DB EB, Fucomi_st0_sti, PreferST0=false
-64, DB F3, Fcomi_st0_sti, PreferST0=false
-64, DC C3, Fadd_sti_st0, PreferST0=false
-64, DC CB, Fmul_sti_st0, PreferST0=false
-64, DC E3, Fsubr_sti_st0, PreferST0=false
-64, DC EB, Fsub_sti_st0, PreferST0=false
-64, DC F3, Fdivr_sti_st0, PreferST0=false
-64, DC FB, Fdiv_sti_st0, PreferST0=false
-64, DE C3, Faddp_sti_st0, PreferST0=false
-64, DE CB, Fmulp_sti_st0, PreferST0=false
-64, DE E3, Fsubrp_sti_st0, PreferST0=false
-64, DE EB, Fsubp_sti_st0, PreferST0=false
-64, DE F3, Fdivrp_sti_st0, PreferST0=false
-64, DE FB, Fdivp_sti_st0, PreferST0=false
-64, DF EB, Fucomip_st0_sti, PreferST0=false
-64, DF F3, Fcomip_st0_sti, PreferST0=false
-
-64, D8 C3, Fadd_st0_sti, PreferST0=true
-64, D8 CB, Fmul_st0_sti, PreferST0=true
-64, D8 E3, Fsub_st0_sti, PreferST0=true
-64, D8 EB, Fsubr_st0_sti, PreferST0=true
-64, D8 F3, Fdiv_st0_sti, PreferST0=true
-64, D8 FB, Fdivr_st0_sti, PreferST0=true
-64, DA C3, Fcmovb_st0_sti, PreferST0=true
-64, DA CB, Fcmove_st0_sti, PreferST0=true
-64, DA D3, Fcmovbe_st0_sti, PreferST0=true
-64, DA DB, Fcmovu_st0_sti, PreferST0=true
-64, DB C3, Fcmovnb_st0_sti, PreferST0=true
-64, DB CB, Fcmovne_st0_sti, PreferST0=true
-64, DB D3, Fcmovnbe_st0_sti, PreferST0=true
-64, DB DB, Fcmovnu_st0_sti, PreferST0=true
-64, DB EB, Fucomi_st0_sti, PreferST0=true
-64, DB F3, Fcomi_st0_sti, PreferST0=true
-64, DC C3, Fadd_sti_st0, PreferST0=true
-64, DC CB, Fmul_sti_st0, PreferST0=true
-64, DC E3, Fsubr_sti_st0, PreferST0=true
-64, DC EB, Fsub_sti_st0, PreferST0=true
-64, DC F3, Fdivr_sti_st0, PreferST0=true
-64, DC FB, Fdiv_sti_st0, PreferST0=true
-64, DE C3, Faddp_sti_st0, PreferST0=true
-64, DE CB, Fmulp_sti_st0, PreferST0=true
-64, DE E3, Fsubrp_sti_st0, PreferST0=true
-64, DE EB, Fsubp_sti_st0, PreferST0=true
-64, DE F3, Fdivrp_sti_st0, PreferST0=true
-64, DE FB, Fdivp_sti_st0, PreferST0=true
-64, DF EB, Fucomip_st0_sti, PreferST0=true
-64, DF F3, Fcomip_st0_sti, PreferST0=true
+64, D8 C3, Fadd_st0_sti,
+64, D8 CB, Fmul_st0_sti,
+64, D8 E3, Fsub_st0_sti,
+64, D8 EB, Fsubr_st0_sti,
+64, D8 F3, Fdiv_st0_sti,
+64, D8 FB, Fdivr_st0_sti,
+64, DA C3, Fcmovb_st0_sti,
+64, DA CB, Fcmove_st0_sti,
+64, DA D3, Fcmovbe_st0_sti,
+64, DA DB, Fcmovu_st0_sti,
+64, DB C3, Fcmovnb_st0_sti,
+64, DB CB, Fcmovne_st0_sti,
+64, DB D3, Fcmovnbe_st0_sti,
+64, DB DB, Fcmovnu_st0_sti,
+64, DB EB, Fucomi_st0_sti,
+64, DB F3, Fcomi_st0_sti,
+64, DC C3, Fadd_sti_st0,
+64, DC CB, Fmul_sti_st0,
+64, DC E3, Fsubr_sti_st0,
+64, DC EB, Fsub_sti_st0,
+64, DC F3, Fdivr_sti_st0,
+64, DC FB, Fdiv_sti_st0,
+64, DE C3, Faddp_sti_st0,
+64, DE CB, Fmulp_sti_st0,
+64, DE E3, Fsubrp_sti_st0,
+64, DE EB, Fsubp_sti_st0,
+64, DE F3, Fdivrp_sti_st0,
+64, DE FB, Fdivp_sti_st0,
+64, DF EB, Fucomip_st0_sti,
+64, DF F3, Fcomip_st0_sti,
 
 16, 72 00, Jb_rel8_16, CC_b=b
 16, 72 00, Jb_rel8_16, CC_b=c

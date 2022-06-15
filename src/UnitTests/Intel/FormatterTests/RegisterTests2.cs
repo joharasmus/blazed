@@ -10,6 +10,6 @@ namespace UnitTests.Intel.FormatterTests {
 		[Theory]
 		[MemberData(nameof(Format_Data))]
 		void Format(Register register, string formattedString) => FormatBase(register, formattedString, FormatterFactory.Create_Registers());
-		public static IEnumerable<object[]> Format_Data => GetFormatData("RegisterTests2");
+		public static IEnumerable<object[]> Format_Data => GetFormatData("RegisterTests");
 	}
 }

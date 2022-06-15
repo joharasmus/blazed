@@ -101,7 +101,7 @@ namespace UnitTests.Intel.FormatterTests {
 
 		public static IEnumerable<object[]> GetFormatData(int bitness, string formattedStringsFile, bool isMisc = false) {
 			var data = GetInstructionInfos(bitness, isMisc);
-			var formattedStrings = FileUtils.ReadRawStrings($"Test{bitness}_{formattedStringsFile}").ToArray();
+			var formattedStrings = FileUtils.ReadRawStrings(Path.Combine("Nasm", $"Test{bitness}_{formattedStringsFile}")).ToArray();
 			return GetFormatData(data.infos, data.ignored, formattedStrings);
 		}
 
@@ -116,7 +116,7 @@ namespace UnitTests.Intel.FormatterTests {
 		}
 
 		public static IEnumerable<object[]> GetFormatData(int bitness, (string hexBytes, Instruction instruction)[] infos, string formattedStringsFile) {
-			var formattedStrings = FileUtils.ReadRawStrings($"Test{bitness}_{formattedStringsFile}").ToArray();
+			var formattedStrings = FileUtils.ReadRawStrings(Path.Combine("Nasm", $"Test{bitness}_{formattedStringsFile}")).ToArray();
 			return GetFormatData(infos, formattedStrings);
 		}
 

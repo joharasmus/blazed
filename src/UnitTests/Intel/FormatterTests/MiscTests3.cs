@@ -90,7 +90,7 @@ namespace UnitTests.Intel.FormatterTests {
 		}
 		public static IEnumerable<object[]> FormatMnemonicOptions_Data {
 			get {
-				var filename = PathUtils.GetTestTextFilename("MnemonicOptions.txt", "Formatter");
+				var filename = PathUtils.GetTestTextFilename("MnemonicOptions.txt", "Formatter", "Nasm");
 				foreach (var tc in MnemonicOptionsTestsReader.ReadFile(filename))
 					yield return new object[6] { tc.HexBytes, tc.Code, tc.Bitness, tc.IP, tc.FormattedString, tc.Flags };
 			}

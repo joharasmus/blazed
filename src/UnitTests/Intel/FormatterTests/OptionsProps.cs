@@ -32,7 +32,6 @@ namespace UnitTests.Intel.FormatterTests {
 		OctalDigitGroupSize,
 		OctalPrefix,
 		OctalSuffix,
-		PreferST0,
 		RipRelativeAddresses,
 		ScaleBeforeIndex,
 		ShowBranchSize,
@@ -143,7 +142,9 @@ namespace UnitTests.Intel.FormatterTests {
 			case OptionsProps.IP:
 			case OptionsProps.DecoderOptions:
 				break;
-			default: throw new InvalidOperationException();
+			default:
+				Console.WriteLine(property);
+				throw new InvalidOperationException();
 			}
 		}
 

@@ -21,7 +21,6 @@ namespace UnitTests.Intel.FormatterTests {
 			case OptionsProps.DisplacementLeadingZeros:
 			case OptionsProps.LeadingZeros:
 			case OptionsProps.ShowSignExtendedImmediateSize:
-			case OptionsProps.PreferST0:
 			case OptionsProps.RipRelativeAddresses:
 			case OptionsProps.ScaleBeforeIndex:
 			case OptionsProps.ShowBranchSize:

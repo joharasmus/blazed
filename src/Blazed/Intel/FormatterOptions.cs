@@ -43,7 +43,6 @@ namespace Blazed.Intel {
 		enum Flags2 : uint {
 			None							= 0,
 			ShowSignExtendedImmediateSize	= 0x00000001,
-			PreferST0						= 0x00000002,
 			ShowUselessPrefixes				= 0x00000004,
 		}
 
