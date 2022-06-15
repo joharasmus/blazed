@@ -1687,30 +1687,6 @@ C7 F8 5AA51234, Xbegin_rel32, Legacy, RTM, flow=XbeginXabortXend op0=r cw=eax
 0F0A, Cl1invmb, Legacy, CL1INVMB, decopt=Cl1invmb priv
 # altinst
 0F3F, Altinst, Legacy, CENTAUR_AIS, flow=IndirectBranch r=eax decopt=ALTINST
-# undoc
-D9 D7, Cyrix_D9D7, Legacy, CYRIX_FPU, fu=0123 decopt=Cyrix
-# undoc
-D9 E2, Cyrix_D9E2, Legacy, CYRIX_FPU, fu=0123 decopt=Cyrix
-# ftstp
-D9 E6, Ftstp, Legacy, CYRIX_FPU, fc=1 fw=023 r=st0 decopt=Cyrix fpu-inc=1
-# undoc
-D9 E7, Cyrix_D9E7, Legacy, CYRIX_FPU, fu=0123 decopt=Cyrix
-# frint2
-DB FC, Frint2, Legacy, CYRIX_FPU, fw=1 fu=023 rw=st0 decopt=Cyrix
-# frichop
-DD FC, Frichop, Legacy, CYRIX_FPU, fw=1 fu=023 rw=st0 decopt=Cyrix
-# undoc
-DE D8, Cyrix_DED8, Legacy, CYRIX_FPU, fu=0123 decopt=Cyrix
-# undoc
-DE DA, Cyrix_DEDA, Legacy, CYRIX_FPU, fu=0123 decopt=Cyrix
-# undoc
-DE DC, Cyrix_DEDC, Legacy, CYRIX_FPU, fu=0123 decopt=Cyrix
-# undoc
-DE DD, Cyrix_DEDD, Legacy, CYRIX_FPU, fu=0123 decopt=Cyrix
-# undoc
-DE DE, Cyrix_DEDE, Legacy, CYRIX_FPU, fu=0123 decopt=Cyrix
-# frinear
-DF FC, Frinear, Legacy, CYRIX_FPU, fw=1 fu=023 rw=st0 decopt=Cyrix
 # rep ccs_hash
 67 F3 0FA6 E8, Ccs_hash_16, Legacy, PADLOCK_GMI, crm=es:di;Unknown cwm=es:di;Unknown crm=es:si;Unknown cr=es cr=si;di cw=si rcw=ax;cx cr=bx
 # rep ccs_hash

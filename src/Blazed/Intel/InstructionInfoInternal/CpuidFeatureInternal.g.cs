@@ -164,7 +164,6 @@ namespace Blazed.Intel.InstructionInfoInternal {
 		AMX_BF16,
 		AMX_TILE,
 		AMX_INT8,
-		CYRIX_FPU,
 		CENTAUR_AIS,
 		MOV_TR,
 		SMM,

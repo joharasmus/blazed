@@ -673,18 +673,6 @@ invlpgb
 tlbsync
 cl1invmb
 altinst
-undoc
-undoc
-ftstp
-undoc
-frint2
-frichop
-undoc
-undoc
-undoc
-undoc
-undoc
-frinear
 rep ccs_hash
 a16 rep ccs_hash
 rep ccs_encrypt

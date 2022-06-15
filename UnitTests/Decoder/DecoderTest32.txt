@@ -21792,30 +21792,6 @@ F2 0F01 D9, Vmgexit_F2, Vmgexit, 0,
 0F3F, Altinst, Altinst, 0, decopt=ALTINST
 66 0F3F, Altinst, Altinst, 0, decopt=ALTINST enc=0F3F
 
-D9 D7, Cyrix_D9D7, Undoc, 0, decopt=Cyrix
-
-D9 E2, Cyrix_D9E2, Undoc, 0, decopt=Cyrix
-
-D9 E6, Ftstp, Ftstp, 0, decopt=Cyrix
-
-D9 E7, Cyrix_D9E7, Undoc, 0, decopt=Cyrix
-
-DB FC, Frint2, Frint2, 0, decopt=Cyrix
-
-DD FC, Frichop, Frichop, 0, decopt=Cyrix
-
-DE D8, Cyrix_DED8, Undoc, 0, decopt=Cyrix
-
-DE DA, Cyrix_DEDA, Undoc, 0, decopt=Cyrix
-
-DE DC, Cyrix_DEDC, Undoc, 0, decopt=Cyrix
-
-DE DD, Cyrix_DEDD, Undoc, 0, decopt=Cyrix
-
-DE DE, Cyrix_DEDE, Undoc, 0, decopt=Cyrix
-
-DF FC, Frinear, Frinear, 0, decopt=Cyrix
-
 66 0F01 CC, Tdcall, Tdcall, 0,
 
 F3 0F38 D8 00, Aesencwide128kl_m384, Aesencwide128kl, 1, op0=m;ds;eax;;1;0;0;KLHandleAes128

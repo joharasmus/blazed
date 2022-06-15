@@ -245,7 +245,6 @@ namespace Blazed.Intel {
 			case Code.Fstp_sti_DFD8:
 			case Code.Fucomip_st0_sti:
 			case Code.Fcomip_st0_sti:
-			case Code.Ftstp:
 				return new FpuStackIncrementInfo(1, false, true);
 			case Code.Fucompp:
 			case Code.Fcompp:

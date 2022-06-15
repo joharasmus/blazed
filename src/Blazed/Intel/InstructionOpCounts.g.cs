@@ -4245,18 +4245,6 @@ namespace Blazed.Intel {
 			1,// Fnstdw_AX
 			1,// Fnstsg_AX
 			0,// Altinst
-			0,// Cyrix_D9D7
-			0,// Cyrix_D9E2
-			0,// Ftstp
-			0,// Cyrix_D9E7
-			0,// Frint2
-			0,// Frichop
-			0,// Cyrix_DED8
-			0,// Cyrix_DEDA
-			0,// Cyrix_DEDC
-			0,// Cyrix_DEDD
-			0,// Cyrix_DEDE
-			0,// Frinear
 			0,// Tdcall
 			0,// Seamret
 			0,// Seamops

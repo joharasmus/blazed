@@ -54,8 +54,6 @@ namespace Blazed.Intel {
 		NoLahfSahf64 = 0x00040000,
 		/// <summary>Decode <c>MPX</c> instructions</summary>
 		MPX = 0x00080000,
-		/// <summary>Decode most Cyrix instructions: <c>FPU</c>, <c>EMMI</c>, <c>SMM</c>, <c>DDI</c></summary>
-		Cyrix = 0x00100000,
 		/// <summary>Decode Centaur <c>ALTINST</c></summary>
 		ALTINST = 0x00800000,
 		/// <summary>Decode Intel Knights Corner instructions</summary>

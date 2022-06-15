@@ -13,7 +13,7 @@ namespace Blazed.Intel.EncoderInternal {
 		internal static readonly uint[] EncFlags3 = GetEncFlags3();
 
 		static uint[] GetEncFlags1() =>
-			new uint[4804] {
+			new uint[4792] {
 				0x00000000,// INVALID
 				0x00000000,// DeclareByte
 				0x00000000,// DeclareWord
@@ -4251,18 +4251,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x0000002F,// Fnstdw_AX
 				0x0000002F,// Fnstsg_AX
 				0x00000000,// Altinst
-				0x00000000,// Cyrix_D9D7
-				0x00000000,// Cyrix_D9E2
-				0x00000000,// Ftstp
-				0x00000000,// Cyrix_D9E7
-				0x00000000,// Frint2
-				0x00000000,// Frichop
-				0x00000000,// Cyrix_DED8
-				0x00000000,// Cyrix_DEDA
-				0x00000000,// Cyrix_DEDC
-				0x00000000,// Cyrix_DEDD
-				0x00000000,// Cyrix_DEDE
-				0x00000000,// Frinear
 				0x00000000,// Tdcall
 				0x00000000,// Seamret
 				0x00000000,// Seamops
@@ -4821,7 +4809,7 @@ namespace Blazed.Intel.EncoderInternal {
 			};
 
 		static uint[] GetEncFlags2() =>
-			new uint[4804] {
+			new uint[4792] {
 				0x00000000,// INVALID
 				0x00000000,// DeclareByte
 				0x00000000,// DeclareWord
@@ -9059,18 +9047,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x0001DFE1,// Fnstdw_AX
 				0x0001DFE2,// Fnstsg_AX
 				0x0002003F,// Altinst
-				0x0001D9D7,// Cyrix_D9D7
-				0x0001D9E2,// Cyrix_D9E2
-				0x0001D9E6,// Ftstp
-				0x0001D9E7,// Cyrix_D9E7
-				0x0001DBFC,// Frint2
-				0x0001DDFC,// Frichop
-				0x0001DED8,// Cyrix_DED8
-				0x0001DEDA,// Cyrix_DEDA
-				0x0001DEDC,// Cyrix_DEDC
-				0x0001DEDD,// Cyrix_DEDD
-				0x0001DEDE,// Cyrix_DEDE
-				0x0001DFFC,// Frinear
 				0x401301CC,// Tdcall
 				0x401301CD,// Seamret
 				0x401301CE,// Seamops
@@ -9629,7 +9605,7 @@ namespace Blazed.Intel.EncoderInternal {
 			};
 
 		static uint[] GetEncFlags3() =>
-			new uint[4804] {
+			new uint[4792] {
 				0x00030000,// INVALID
 				0x00030000,// DeclareByte
 				0x00030000,// DeclareWord
@@ -13867,18 +13843,6 @@ namespace Blazed.Intel.EncoderInternal {
 				0x00010000,// Fnstdw_AX
 				0x00010000,// Fnstsg_AX
 				0x00010000,// Altinst
-				0x00010000,// Cyrix_D9D7
-				0x00010000,// Cyrix_D9E2
-				0x00010000,// Ftstp
-				0x00010000,// Cyrix_D9E7
-				0x00010000,// Frint2
-				0x00010000,// Frichop
-				0x00010000,// Cyrix_DED8
-				0x00010000,// Cyrix_DEDA
-				0x00010000,// Cyrix_DEDC
-				0x00010000,// Cyrix_DEDD
-				0x00010000,// Cyrix_DEDE
-				0x00010000,// Frinear
 				0x00030000,// Tdcall
 				0x00020000,// Seamret
 				0x00020000,// Seamops

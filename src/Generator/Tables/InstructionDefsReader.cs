@@ -177,7 +177,7 @@ namespace Generator.Tables {
 			toCpuidName[cpuid[nameof(CpuidFeature.INTEL486_A_ONLY)]] = "486 A";
 			toCpuidName[cpuid[nameof(CpuidFeature.SMM)]] = "386+";
 			toCpuidName[cpuid[nameof(CpuidFeature.UMOV)]] = "386/486";
-			toCpuidName[cpuid[nameof(CpuidFeature.MOV_TR)]] = "386/486/Cyrix/Geode";
+			toCpuidName[cpuid[nameof(CpuidFeature.MOV_TR)]] = "386/486TR";
 			toCpuidName[cpuid[nameof(CpuidFeature.IA64)]] = "IA-64";
 			toCpuidName[cpuid[nameof(CpuidFeature.FPU)]] = "8087+";
 			toCpuidName[cpuid[nameof(CpuidFeature.FPU287)]] = "287+";
@@ -200,7 +200,6 @@ namespace Generator.Tables {
 			toCpuidName[cpuid[nameof(CpuidFeature.AMX_BF16)]] = "AMX-BF16";
 			toCpuidName[cpuid[nameof(CpuidFeature.AMX_TILE)]] = "AMX-TILE";
 			toCpuidName[cpuid[nameof(CpuidFeature.AMX_INT8)]] = "AMX-INT8";
-			toCpuidName[cpuid[nameof(CpuidFeature.CYRIX_FPU)]] = "Cyrix, AMD Geode GX/LX";
 			toCpuidName[cpuid[nameof(CpuidFeature.CENTAUR_AIS)]] = "Centaur AIS";
 			toCpuidName[cpuid[nameof(CpuidFeature.AVX_VNNI)]] = "AVX-VNNI";
 			toCpuidName[cpuid[nameof(CpuidFeature.AVX512_FP16)]] = "AVX512-FP16";

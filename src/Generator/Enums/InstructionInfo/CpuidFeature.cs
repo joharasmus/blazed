@@ -276,11 +276,9 @@ namespace Generator.Enums.InstructionInfo {
 		AMX_TILE,
 		[Comment("CPUID.(EAX=07H, ECX=0H):EDX.AMX-INT8[bit 25]")]
 		AMX_INT8,
-		[Comment("Cyrix FPU instructions (Cyrix, AMD Geode GX/LX)")]
-		CYRIX_FPU,
 		[Comment("CPUID.0C0000000H:EAX >= 0C0000001H AND CPUID.0C0000001H:EDX.AIS[Bits 1:0] = 11B ([0] = exists, [1] = enabled)")]
 		CENTAUR_AIS,
-		[Comment("MOV to/from TR (80386, Intel486, Cyrix, Geode)")]
+		[Comment("MOV to/from TR (80386, Intel486)")]
 		MOV_TR,
 		[Comment("#(c:RSM)# instruction (some 386s, some 486s, Pentium and later)")]
 		SMM,

@@ -10,7 +10,6 @@ namespace Generator.Enums.Encoder {
 		ALTINST,
 		Cl1invmb,
 		Cmpxchg486A,
-		Cyrix,
 		Jmpe,
 		Loadall286,
 		Loadall386,

@@ -673,18 +673,6 @@ F2 0F 01 E9, Xresldtrk
 0F 01 FF, Tlbsync
 0F0A, Cl1invmb, Cl1invmb
 0F3F, Altinst, ALTINST
-D9 D7, Cyrix_D9D7, Cyrix
-D9 E2, Cyrix_D9E2, Cyrix
-D9 E6, Ftstp, Cyrix
-D9 E7, Cyrix_D9E7, Cyrix
-DB FC, Frint2, Cyrix
-DD FC, Frichop, Cyrix
-DE D8, Cyrix_DED8, Cyrix
-DE DA, Cyrix_DEDA, Cyrix
-DE DC, Cyrix_DEDC, Cyrix
-DE DD, Cyrix_DEDD, Cyrix
-DE DE, Cyrix_DEDE, Cyrix
-DF FC, Frinear, Cyrix
 F3 0FA6 E8, Ccs_hash_32
 67 F3 0FA6 E8, Ccs_hash_16
 F3 0FA7 F0, Ccs_encrypt_32

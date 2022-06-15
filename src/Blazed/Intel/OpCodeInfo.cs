@@ -809,7 +809,6 @@ namespace Blazed.Intel {
 			DecoderOptions.ALTINST,
 			DecoderOptions.Cl1invmb,
 			DecoderOptions.Cmpxchg486A,
-			DecoderOptions.Cyrix,
 			DecoderOptions.Jmpe,
 			DecoderOptions.Loadall286,
 			DecoderOptions.Loadall386,

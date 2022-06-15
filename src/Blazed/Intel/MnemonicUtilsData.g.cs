@@ -4245,18 +4245,6 @@ namespace Blazed.Intel {
 			(ushort)Mnemonic.Fnstdw,// Fnstdw_AX
 			(ushort)Mnemonic.Fnstsg,// Fnstsg_AX
 			(ushort)Mnemonic.Altinst,// Altinst
-			(ushort)Mnemonic.Undoc,// Cyrix_D9D7
-			(ushort)Mnemonic.Undoc,// Cyrix_D9E2
-			(ushort)Mnemonic.Ftstp,// Ftstp
-			(ushort)Mnemonic.Undoc,// Cyrix_D9E7
-			(ushort)Mnemonic.Frint2,// Frint2
-			(ushort)Mnemonic.Frichop,// Frichop
-			(ushort)Mnemonic.Undoc,// Cyrix_DED8
-			(ushort)Mnemonic.Undoc,// Cyrix_DEDA
-			(ushort)Mnemonic.Undoc,// Cyrix_DEDC
-			(ushort)Mnemonic.Undoc,// Cyrix_DEDD
-			(ushort)Mnemonic.Undoc,// Cyrix_DEDE
-			(ushort)Mnemonic.Frinear,// Frinear
 			(ushort)Mnemonic.Tdcall,// Tdcall
 			(ushort)Mnemonic.Seamret,// Seamret
 			(ushort)Mnemonic.Seamops,// Seamops

@@ -929,7 +929,6 @@ static class HowTo_DisassembleOldInstructions {
 731E0A03 bndmov bnd1, [eax]
 731E0A07 mov tr3, esi
 731E0A14 pmvzb mm1, [eax]
-731E0A17 frinear
 731E0A19 altinst
     */
     public static void Example() {
@@ -940,20 +939,17 @@ static class HowTo_DisassembleOldInstructions {
             0x0F, 0x26, 0xDE,
             // pmvzb mm1,[eax]
             0x0F, 0x58, 0x08,
-            // frinear
-            0xDF, 0xFC,
             // altinst
             0x0F, 0x3F,
         };
 
-        // Enable decoding of Cyrix/Geode instructions, Centaur ALTINST, MOV to/from TR
-        // and MPX instructions.
+        // Enable decoding of Centaur ALTINST, MOV to/from TR and MPX instructions.
         // There are other options to enable other instructions such as UMOV, KNC, etc.
         // These are deprecated instructions or only used by old CPUs so they're not
         // enabled by default. Some newer instructions also use the same opcodes as
         // some of these old instructions.
         const DecoderOptions decoderOptions = DecoderOptions.MPX | DecoderOptions.MovTr |
-            DecoderOptions.Cyrix | DecoderOptions.ALTINST;
+            DecoderOptions.ALTINST;
         var codeReader = new ByteArrayCodeReader(codeBytes);
         var decoder = Decoder.Create(32, codeReader, decoderOptions);
         decoder.IP = 0x731E_0A03;
