@@ -729,7 +729,6 @@ namespace Blazed.Intel {
 					SetInvalidInstruction();
 					return;
 				}
-#endif
 			}
 #endif
 		}
@@ -1172,3 +1171,4 @@ after_imm_loop:
 		IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 	}
 }
+#endif
