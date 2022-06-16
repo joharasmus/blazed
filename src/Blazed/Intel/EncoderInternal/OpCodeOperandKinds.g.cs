@@ -87,7 +87,7 @@ namespace Blazed.Intel.EncoderInternal {
 			(byte)OpCodeOperandKind.brdisp_4,
 		};
 #if !NO_VEX
-		public static System.ReadOnlySpan<byte> VexOpKinds => new byte[39] {
+		public static System.ReadOnlySpan<byte> VexOpKinds => new byte[37] {
 			(byte)OpCodeOperandKind.None,
 			(byte)OpCodeOperandKind.mem,
 			(byte)OpCodeOperandKind.mem_vsib32x,
@@ -121,8 +121,6 @@ namespace Blazed.Intel.EncoderInternal {
 			(byte)OpCodeOperandKind.imm4_m2z,
 			(byte)OpCodeOperandKind.imm8,
 			(byte)OpCodeOperandKind.seg_rDI,
-			(byte)OpCodeOperandKind.br64_1,
-			(byte)OpCodeOperandKind.br64_4,
 			(byte)OpCodeOperandKind.sibmem,
 			(byte)OpCodeOperandKind.tmm_reg,
 			(byte)OpCodeOperandKind.tmm_rm,

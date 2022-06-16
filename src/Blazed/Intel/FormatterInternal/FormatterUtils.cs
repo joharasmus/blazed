@@ -135,8 +135,6 @@ namespace Blazed.Intel.FormatterInternal {
 			case Code.Jmp_rel8_16:
 			case Code.Jmp_rel8_32:
 			case Code.Jmp_rel8_64:
-			case Code.VEX_KNC_Jkzd_kr_rel8_64:
-			case Code.VEX_KNC_Jknzd_kr_rel8_64:
 				return FormatterFlowControl.ShortBranch;
 			case Code.Loopne_rel8_16_CX:
 			case Code.Loopne_rel8_32_CX:
@@ -224,8 +222,6 @@ namespace Blazed.Intel.FormatterInternal {
 			case Code.Jg_rel32_64:
 			case Code.Jmpe_disp16:
 			case Code.Jmpe_disp32:
-			case Code.VEX_KNC_Jkzd_kr_rel32_64:
-			case Code.VEX_KNC_Jknzd_kr_rel32_64:
 				return FormatterFlowControl.NearBranch;
 			case Code.Call_ptr1616:
 			case Code.Call_ptr1632:

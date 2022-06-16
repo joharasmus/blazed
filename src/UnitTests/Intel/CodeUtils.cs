@@ -30,8 +30,6 @@ static class CodeUtils {
 		if (name.StartsWith("D3NOW_", StringComparison.Ordinal))
 			return true;
 #endif
-		if (name.StartsWith("VEX_KNC_", StringComparison.Ordinal))
-			return true;
 
 		return ignored.Contains(name);
 	}

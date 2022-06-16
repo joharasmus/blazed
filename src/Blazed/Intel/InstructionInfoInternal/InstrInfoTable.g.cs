@@ -8,7 +8,7 @@
 #if INSTR_INFO
 namespace Blazed.Intel.InstructionInfoInternal {
 	static class InstrInfoTable {
-		internal static readonly uint[] Data = new uint[9074] {
+		internal static readonly uint[] Data = new uint[8978] {
 			0x00000000, 0x00900000,// INVALID
 			0x00000000, 0x00900000,// DeclareByte
 			0x00000000, 0x00900000,// DeclareWord
@@ -4497,54 +4497,6 @@ namespace Blazed.Intel.InstructionInfoInternal {
 			0x00084034, 0xA4000002,// EVEX_Vucomish_xmm_xmmm16_sae
 			0x0A500000, 0xA6080000,// Rdudbg
 			0x0A600000, 0xA6080000,// Wrudbg
-			0x00000034, 0xA7300001,// VEX_KNC_Jkzd_kr_rel8_64
-			0x00000034, 0xA7300001,// VEX_KNC_Jknzd_kr_rel8_64
-			0x00000003, 0xA7000001,// VEX_KNC_Vprefetchnta_m8
-			0x00000003, 0xA7000001,// VEX_KNC_Vprefetch0_m8
-			0x00000003, 0xA7000001,// VEX_KNC_Vprefetch1_m8
-			0x00000003, 0xA7000001,// VEX_KNC_Vprefetch2_m8
-			0x00000003, 0xA7000001,// VEX_KNC_Vprefetchenta_m8
-			0x00000003, 0xA7000001,// VEX_KNC_Vprefetche0_m8
-			0x00000003, 0xA7000001,// VEX_KNC_Vprefetche1_m8
-			0x00000003, 0xA7000001,// VEX_KNC_Vprefetche2_m8
-			0x00000036, 0xA7000001,// VEX_KNC_Kand_kr_kr
-			0x00000036, 0xA7000001,// VEX_KNC_Kandn_kr_kr
-			0x00000036, 0xA7000001,// VEX_KNC_Kandnr_kr_kr
-			0x00000037, 0xA7000001,// VEX_KNC_Knot_kr_kr
-			0x00000036, 0xA7000001,// VEX_KNC_Kor_kr_kr
-			0x00000036, 0xA7000001,// VEX_KNC_Kxnor_kr_kr
-			0x00000036, 0xA7000001,// VEX_KNC_Kxor_kr_kr
-			0x00000036, 0xA7000001,// VEX_KNC_Kmerge2l1h_kr_kr
-			0x00000036, 0xA7000001,// VEX_KNC_Kmerge2l1l_kr_kr
-			0x00000034, 0xA7300001,// VEX_KNC_Jkzd_kr_rel32_64
-			0x00000034, 0xA7300001,// VEX_KNC_Jknzd_kr_rel32_64
-			0x00000037, 0xA7000001,// VEX_KNC_Kmov_kr_kr
-			0x00000037, 0xA7000001,// VEX_KNC_Kmov_kr_r32
-			0x00000037, 0xA7000001,// VEX_KNC_Kmov_r32_kr
-			0x000000B7, 0xA7000001,// VEX_KNC_Kconcath_r64_kr_kr
-			0x000000B7, 0xA7000001,// VEX_KNC_Kconcatl_r64_kr_kr
-			0x0008C034, 0xA7000001,// VEX_KNC_Kortest_kr_kr
-			0x00000004, 0xA7000001,// VEX_KNC_Delay_r32
-			0x00000004, 0xA7000001,// VEX_KNC_Delay_r64
-			0x00000004, 0xA7000001,// VEX_KNC_Spflt_r32
-			0x00000004, 0xA7000001,// VEX_KNC_Spflt_r64
-			0x00000003, 0xA7000001,// VEX_KNC_Clevict1_m8
-			0x00000003, 0xA7000001,// VEX_KNC_Clevict0_m8
-			0x00098037, 0xA7000001,// VEX_KNC_Popcnt_r32_r32
-			0x00098037, 0xA7000001,// VEX_KNC_Popcnt_r64_r64
-			0x0008E037, 0xA7000001,// VEX_KNC_Tzcnt_r32_r32
-			0x0008E037, 0xA7000001,// VEX_KNC_Tzcnt_r64_r64
-			0x0008E036, 0xA7000001,// VEX_KNC_Tzcnti_r32_r32
-			0x0008E036, 0xA7000001,// VEX_KNC_Tzcnti_r64_r64
-			0x0008E037, 0xA7000001,// VEX_KNC_Lzcnt_r32_r32
-			0x0008E037, 0xA7000001,// VEX_KNC_Lzcnt_r64_r64
-			0x00000000, 0xA7020001,// VEX_KNC_Undoc_r32_rm32_128_F3_0F38_W0_F0
-			0x00000000, 0xA7020001,// VEX_KNC_Undoc_r64_rm64_128_F3_0F38_W1_F0
-			0x00000000, 0xA7020001,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F0
-			0x00000000, 0xA7020001,// VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F0
-			0x00000000, 0xA7020001,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F1
-			0x00000000, 0xA7020001,// VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F1
-			0x000000B7, 0xA7000001,// VEX_KNC_Kextract_kr_r64_imm8
 			0x00000000, 0x00000000,// Zero_bytes
 		};
 	}

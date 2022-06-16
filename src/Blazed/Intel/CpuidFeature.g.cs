@@ -301,8 +301,6 @@ namespace Blazed.Intel {
 		AVX512_FP16 = 144,
 		/// <summary>Undocumented Intel <c>RDUDBG</c> and <c>WRUDBG</c> instructions</summary>
 		UDBG = 145,
-		/// <summary>Intel Knights Corner</summary>
-		KNC = 146,
 	}
 }
 #endif

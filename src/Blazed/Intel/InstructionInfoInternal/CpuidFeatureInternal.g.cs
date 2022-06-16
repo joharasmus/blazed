@@ -175,7 +175,6 @@ namespace Blazed.Intel.InstructionInfoInternal {
 		AVX512_FP16,
 		AVX512VL_and_AVX512_FP16,
 		UDBG,
-		KNC,
 	}
 }
 #endif

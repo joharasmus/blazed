@@ -20,6 +20,5 @@ namespace Generator.Enums.Encoder {
 		Umov,
 		Xbts,
 		Udbg,
-		KNC,
 	}
 }

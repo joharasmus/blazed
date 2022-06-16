@@ -4496,54 +4496,6 @@ namespace Blazed.Intel {
 			(ushort)Mnemonic.Vucomish,// EVEX_Vucomish_xmm_xmmm16_sae
 			(ushort)Mnemonic.Rdudbg,// Rdudbg
 			(ushort)Mnemonic.Wrudbg,// Wrudbg
-			(ushort)Mnemonic.Jkzd,// VEX_KNC_Jkzd_kr_rel8_64
-			(ushort)Mnemonic.Jknzd,// VEX_KNC_Jknzd_kr_rel8_64
-			(ushort)Mnemonic.Vprefetchnta,// VEX_KNC_Vprefetchnta_m8
-			(ushort)Mnemonic.Vprefetch0,// VEX_KNC_Vprefetch0_m8
-			(ushort)Mnemonic.Vprefetch1,// VEX_KNC_Vprefetch1_m8
-			(ushort)Mnemonic.Vprefetch2,// VEX_KNC_Vprefetch2_m8
-			(ushort)Mnemonic.Vprefetchenta,// VEX_KNC_Vprefetchenta_m8
-			(ushort)Mnemonic.Vprefetche0,// VEX_KNC_Vprefetche0_m8
-			(ushort)Mnemonic.Vprefetche1,// VEX_KNC_Vprefetche1_m8
-			(ushort)Mnemonic.Vprefetche2,// VEX_KNC_Vprefetche2_m8
-			(ushort)Mnemonic.Kand,// VEX_KNC_Kand_kr_kr
-			(ushort)Mnemonic.Kandn,// VEX_KNC_Kandn_kr_kr
-			(ushort)Mnemonic.Kandnr,// VEX_KNC_Kandnr_kr_kr
-			(ushort)Mnemonic.Knot,// VEX_KNC_Knot_kr_kr
-			(ushort)Mnemonic.Kor,// VEX_KNC_Kor_kr_kr
-			(ushort)Mnemonic.Kxnor,// VEX_KNC_Kxnor_kr_kr
-			(ushort)Mnemonic.Kxor,// VEX_KNC_Kxor_kr_kr
-			(ushort)Mnemonic.Kmerge2l1h,// VEX_KNC_Kmerge2l1h_kr_kr
-			(ushort)Mnemonic.Kmerge2l1l,// VEX_KNC_Kmerge2l1l_kr_kr
-			(ushort)Mnemonic.Jkzd,// VEX_KNC_Jkzd_kr_rel32_64
-			(ushort)Mnemonic.Jknzd,// VEX_KNC_Jknzd_kr_rel32_64
-			(ushort)Mnemonic.Kmov,// VEX_KNC_Kmov_kr_kr
-			(ushort)Mnemonic.Kmov,// VEX_KNC_Kmov_kr_r32
-			(ushort)Mnemonic.Kmov,// VEX_KNC_Kmov_r32_kr
-			(ushort)Mnemonic.Kconcath,// VEX_KNC_Kconcath_r64_kr_kr
-			(ushort)Mnemonic.Kconcatl,// VEX_KNC_Kconcatl_r64_kr_kr
-			(ushort)Mnemonic.Kortest,// VEX_KNC_Kortest_kr_kr
-			(ushort)Mnemonic.Delay,// VEX_KNC_Delay_r32
-			(ushort)Mnemonic.Delay,// VEX_KNC_Delay_r64
-			(ushort)Mnemonic.Spflt,// VEX_KNC_Spflt_r32
-			(ushort)Mnemonic.Spflt,// VEX_KNC_Spflt_r64
-			(ushort)Mnemonic.Clevict1,// VEX_KNC_Clevict1_m8
-			(ushort)Mnemonic.Clevict0,// VEX_KNC_Clevict0_m8
-			(ushort)Mnemonic.Popcnt,// VEX_KNC_Popcnt_r32_r32
-			(ushort)Mnemonic.Popcnt,// VEX_KNC_Popcnt_r64_r64
-			(ushort)Mnemonic.Tzcnt,// VEX_KNC_Tzcnt_r32_r32
-			(ushort)Mnemonic.Tzcnt,// VEX_KNC_Tzcnt_r64_r64
-			(ushort)Mnemonic.Tzcnti,// VEX_KNC_Tzcnti_r32_r32
-			(ushort)Mnemonic.Tzcnti,// VEX_KNC_Tzcnti_r64_r64
-			(ushort)Mnemonic.Lzcnt,// VEX_KNC_Lzcnt_r32_r32
-			(ushort)Mnemonic.Lzcnt,// VEX_KNC_Lzcnt_r64_r64
-			(ushort)Mnemonic.Undoc,// VEX_KNC_Undoc_r32_rm32_128_F3_0F38_W0_F0
-			(ushort)Mnemonic.Undoc,// VEX_KNC_Undoc_r64_rm64_128_F3_0F38_W1_F0
-			(ushort)Mnemonic.Undoc,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F0
-			(ushort)Mnemonic.Undoc,// VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F0
-			(ushort)Mnemonic.Undoc,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F1
-			(ushort)Mnemonic.Undoc,// VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F1
-			(ushort)Mnemonic.Kextract,// VEX_KNC_Kextract_kr_r64_imm8
 			(ushort)Mnemonic.Zero_bytes,// Zero_bytes
 		};
 	}

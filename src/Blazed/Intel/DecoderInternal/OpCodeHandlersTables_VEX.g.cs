@@ -10,129 +10,6 @@ namespace Blazed.Intel.DecoderInternal {
 	static partial class OpCodeHandlersTables_VEX {
 		static System.ReadOnlySpan<byte> GetSerializedTables() =>
 			new byte[] {
-				// handlers_Grp_0F18
-				0x01,// ArrayReference
-				0x08,// 0x8
-				// 0 = 0x00
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x1D,// M
-									0x8A, 0x23,// VEX_KNC_Vprefetchnta_m8
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 1 = 0x01
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x1D,// M
-									0x8B, 0x23,// VEX_KNC_Vprefetch0_m8
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 2 = 0x02
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x1D,// M
-									0x8C, 0x23,// VEX_KNC_Vprefetch1_m8
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 3 = 0x03
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x1D,// M
-									0x8D, 0x23,// VEX_KNC_Vprefetch2_m8
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 4 = 0x04
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x1D,// M
-									0x8E, 0x23,// VEX_KNC_Vprefetchenta_m8
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 5 = 0x05
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x1D,// M
-									0x8F, 0x23,// VEX_KNC_Vprefetche0_m8
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 6 = 0x06
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x1D,// M
-									0x90, 0x23,// VEX_KNC_Vprefetche1_m8
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 7 = 0x07
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x1D,// M
-									0x91, 0x23,// VEX_KNC_Vprefetche2_m8
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
 				// handlers_Grp_0F71
 				0x01,// ArrayReference
 				0x08,// 0x8
@@ -329,57 +206,9 @@ namespace Blazed.Intel.DecoderInternal {
 					0x00,// Invalid
 
 				// 4 = 0x04
-				0x01,// Invalid2
-
-				// 6 = 0x06
-				0x0B,// MandatoryPrefix2_4
+				0x02,// Dup
+					0x04,// 4
 					0x00,// Invalid
-					0x00,// Invalid
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x07,// RM
-									0x4B,// Ev
-										0xA3, 0x23,// VEX_KNC_Delay_r32
-									0x00,// Invalid
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x07,// RM
-									0x4B,// Ev
-										0xA5, 0x23,// VEX_KNC_Spflt_r32
-									0x00,// Invalid
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-
-				// 7 = 0x07
-				0x0B,// MandatoryPrefix2_4
-					0x00,// Invalid
-					0x00,// Invalid
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x1D,// M
-									0xA7, 0x23,// VEX_KNC_Clevict1_m8
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x1D,// M
-									0xA8, 0x23,// VEX_KNC_Clevict0_m8
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
 
 				// handlers_Grp_0F38F3
 				0x01,// ArrayReference
@@ -1449,18 +1278,18 @@ namespace Blazed.Intel.DecoderInternal {
 							0x0E,// VectorLength
 								0x44,// Group8x64
 									0x06,// ArrayReference
-										0x06,// 0x6 = handlers_Grp_128_NP_0F38_W0_49_lo
+										0x05,// 0x5 = handlers_Grp_128_NP_0F38_W0_49_lo
 									0x06,// ArrayReference
-										0x07,// 0x7 = handlers_Grp_128_NP_0F38_W0_49_hi
+										0x06,// 0x6 = handlers_Grp_128_NP_0F38_W0_49_hi
 								0x00,// Invalid
 							0x00,// Invalid
 						0x09,// W
 							0x0E,// VectorLength
 								0x44,// Group8x64
 									0x06,// ArrayReference
-										0x08,// 0x8 = handlers_Grp_128_66_0F38_W0_49_lo
+										0x07,// 0x7 = handlers_Grp_128_66_0F38_W0_49_lo
 									0x06,// ArrayReference
-										0x09,// 0x9 = handlers_Grp_128_66_0F38_W0_49_hi
+										0x08,// 0x8 = handlers_Grp_128_66_0F38_W0_49_hi
 								0x00,// Invalid
 							0x00,// Invalid
 						0x00,// Invalid
@@ -1468,9 +1297,9 @@ namespace Blazed.Intel.DecoderInternal {
 							0x0E,// VectorLength
 								0x44,// Group8x64
 									0x06,// ArrayReference
-										0x0A,// 0xA = handlers_Grp_128_F2_0F38_W0_49_lo
+										0x09,// 0x9 = handlers_Grp_128_F2_0F38_W0_49_lo
 									0x06,// ArrayReference
-										0x0B,// 0xB = handlers_Grp_128_F2_0F38_W0_49_hi
+										0x0A,// 0xA = handlers_Grp_128_F2_0F38_W0_49_hi
 								0x00,// Invalid
 							0x00,// Invalid
 
@@ -2528,46 +2357,8 @@ namespace Blazed.Intel.DecoderInternal {
 
 				// 224 = 0xE0
 				0x02,// Dup
-					0x10,// 16
+					0x12,// 18
 					0x00,// Invalid
-
-				// 240 = 0xF0
-				0x0B,// MandatoryPrefix2_4
-					0x00,// Invalid
-					0x00,// Invalid
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x4A,// Gv_Ev
-									0xB1, 0x23,// VEX_KNC_Undoc_r32_rm32_128_F3_0F38_W0_F0
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x4A,// Gv_Ev
-									0xB3, 0x23,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F0
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-
-				// 241 = 0xF1
-				0x0B,// MandatoryPrefix2_4
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x4A,// Gv_Ev
-									0xB5, 0x23,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F1
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
 
 				// 242 = 0xF2
 				0x0B,// MandatoryPrefix2_4
@@ -2582,7 +2373,7 @@ namespace Blazed.Intel.DecoderInternal {
 				// 243 = 0xF3
 				0x08,// Group
 					0x06,// ArrayReference
-						0x05,// 0x5 = handlers_Grp_0F38F3
+						0x04,// 0x4 = handlers_Grp_0F38F3
 
 				// 244 = 0xF4
 				0x00,// Invalid
@@ -3055,29 +2846,8 @@ namespace Blazed.Intel.DecoderInternal {
 
 				// 58 = 0x3A
 				0x02,// Dup
-					0x04,// 4
+					0x06,// 6
 					0x00,// Invalid
-
-				// 62 = 0x3E
-				0x0B,// MandatoryPrefix2_4
-					0x00,// Invalid
-					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x49,// VK_R_Ib
-										0xB7, 0x23,// VEX_KNC_Kextract_kr_r64_imm8
-										0x35,// RAX
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 63 = 0x3F
-				0x00,// Invalid
 
 				// 64 = 0x40
 				0x0B,// MandatoryPrefix2_4
@@ -3729,46 +3499,7 @@ namespace Blazed.Intel.DecoderInternal {
 				0x80, 0x02,// 0x100
 				// 0 = 0x00
 				0x02,// Dup
-					0x74,// 116
-					0x00,// Invalid
-
-				// 116 = 0x74
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x4C,// K_Jb
-										0x88, 0x23,// VEX_KNC_Jkzd_kr_rel8_64
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 117 = 0x75
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x4C,// K_Jb
-										0x89, 0x23,// VEX_KNC_Jknzd_kr_rel8_64
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 118 = 0x76
-				0x02,// Dup
-					0x8A, 0x01,// 138
+					0x80, 0x02,// 256
 					0x00,// Invalid
 
 				// Handlers_0F
@@ -3960,13 +3691,8 @@ namespace Blazed.Intel.DecoderInternal {
 					0x00,// Invalid
 
 				// 24 = 0x18
-				0x08,// Group
-					0x06,// ArrayReference
-						0x00,// 0x0 = handlers_Grp_0F18
-
-				// 25 = 0x19
 				0x02,// Dup
-					0x0F,// 15
+					0x10,// 16
 					0x00,// Invalid
 
 				// 40 = 0x28
@@ -4089,15 +3815,7 @@ namespace Blazed.Intel.DecoderInternal {
 				// 65 = 0x41
 				0x0B,// MandatoryPrefix2_4
 					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x32,// VK_RK
-										0x92, 0x23,// VEX_KNC_Kand_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
+						0x00,// Invalid
 						0x09,// W
 							0x30,// VK_HK_RK
 								0xC1, 0x09,// VEX_Kandw_kr_kr_kr
@@ -4116,15 +3834,7 @@ namespace Blazed.Intel.DecoderInternal {
 				// 66 = 0x42
 				0x0B,// MandatoryPrefix2_4
 					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x32,// VK_RK
-										0x93, 0x23,// VEX_KNC_Kandn_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
+						0x00,// Invalid
 						0x09,// W
 							0x30,// VK_HK_RK
 								0xC5, 0x09,// VEX_Kandnw_kr_kr_kr
@@ -4141,21 +3851,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x00,// Invalid
 
 				// 67 = 0x43
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x32,// VK_RK
-										0x94, 0x23,// VEX_KNC_Kandnr_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
+				0x00,// Invalid
 
 				// 68 = 0x44
 				0x0B,// MandatoryPrefix2_4
@@ -4164,11 +3860,8 @@ namespace Blazed.Intel.DecoderInternal {
 							0x47,// Options_DontReadModRM
 								0x32,// VK_RK
 									0xC9, 0x09,// VEX_Knotw_kr_kr
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x32,// VK_RK
-										0x95, 0x23,// VEX_KNC_Knot_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
+								0x00,// Invalid
+								0x00,// Invalid
 							0x32,// VK_RK
 								0xCA, 0x09,// VEX_Knotq_kr_kr
 						0x00,// Invalid
@@ -4185,15 +3878,7 @@ namespace Blazed.Intel.DecoderInternal {
 				// 69 = 0x45
 				0x0B,// MandatoryPrefix2_4
 					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x32,// VK_RK
-										0x96, 0x23,// VEX_KNC_Kor_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
+						0x00,// Invalid
 						0x09,// W
 							0x30,// VK_HK_RK
 								0xCD, 0x09,// VEX_Korw_kr_kr_kr
@@ -4212,15 +3897,7 @@ namespace Blazed.Intel.DecoderInternal {
 				// 70 = 0x46
 				0x0B,// MandatoryPrefix2_4
 					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x32,// VK_RK
-										0x97, 0x23,// VEX_KNC_Kxnor_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
+						0x00,// Invalid
 						0x09,// W
 							0x30,// VK_HK_RK
 								0xD1, 0x09,// VEX_Kxnorw_kr_kr_kr
@@ -4239,15 +3916,7 @@ namespace Blazed.Intel.DecoderInternal {
 				// 71 = 0x47
 				0x0B,// MandatoryPrefix2_4
 					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x32,// VK_RK
-										0x98, 0x23,// VEX_KNC_Kxor_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
+						0x00,// Invalid
 						0x09,// W
 							0x30,// VK_HK_RK
 								0xD5, 0x09,// VEX_Kxorw_kr_kr_kr
@@ -4264,38 +3933,7 @@ namespace Blazed.Intel.DecoderInternal {
 					0x00,// Invalid
 
 				// 72 = 0x48
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x32,// VK_RK
-										0x99, 0x23,// VEX_KNC_Kmerge2l1h_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 73 = 0x49
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x32,// VK_RK
-										0x9A, 0x23,// VEX_KNC_Kmerge2l1l_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
+				0x01,// Invalid2
 
 				// 74 = 0x4A
 				0x0B,// MandatoryPrefix2_4
@@ -4914,17 +4552,17 @@ namespace Blazed.Intel.DecoderInternal {
 				// 113 = 0x71
 				0x08,// Group
 					0x06,// ArrayReference
-						0x01,// 0x1 = handlers_Grp_0F71
+						0x00,// 0x0 = handlers_Grp_0F71
 
 				// 114 = 0x72
 				0x08,// Group
 					0x06,// ArrayReference
-						0x02,// 0x2 = handlers_Grp_0F72
+						0x01,// 0x1 = handlers_Grp_0F72
 
 				// 115 = 0x73
 				0x08,// Group
 					0x06,// ArrayReference
-						0x03,// 0x3 = handlers_Grp_0F73
+						0x02,// 0x2 = handlers_Grp_0F73
 
 				// 116 = 0x74
 				0x0B,// MandatoryPrefix2_4
@@ -5054,46 +4692,7 @@ namespace Blazed.Intel.DecoderInternal {
 
 				// 128 = 0x80
 				0x02,// Dup
-					0x04,// 4
-					0x00,// Invalid
-
-				// 132 = 0x84
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x4D,// K_Jz
-										0x9B, 0x23,// VEX_KNC_Jkzd_kr_rel32_64
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 133 = 0x85
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x4D,// K_Jz
-										0x9C, 0x23,// VEX_KNC_Jknzd_kr_rel32_64
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 134 = 0x86
-				0x02,// Dup
-					0x0A,// 10
+					0x10,// 16
 					0x00,// Invalid
 
 				// 144 = 0x90
@@ -5103,11 +4702,8 @@ namespace Blazed.Intel.DecoderInternal {
 							0x47,// Options_DontReadModRM
 								0x34,// VK_WK
 									0xFE, 0x0E,// VEX_Kmovw_kr_km16
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x32,// VK_RK
-										0x9D, 0x23,// VEX_KNC_Kmov_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
+								0x00,// Invalid
+								0x00,// Invalid
 							0x34,// VK_WK
 								0xFF, 0x0E,// VEX_Kmovq_kr_km64
 						0x00,// Invalid
@@ -5148,12 +4744,8 @@ namespace Blazed.Intel.DecoderInternal {
 								0x31,// VK_R
 									0x86, 0x0F,// VEX_Kmovw_kr_r32
 									0x25,// EAX
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x31,// VK_R
-										0x9E, 0x23,// VEX_KNC_Kmov_kr_r32
-										0x25,// EAX
-								0x80, 0x80, 0x80, 0x08,// KNC
+								0x00,// Invalid
+								0x00,// Invalid
 							0x00,// Invalid
 						0x00,// Invalid
 					0x0E,// VectorLength
@@ -5186,12 +4778,8 @@ namespace Blazed.Intel.DecoderInternal {
 								0x11,// G_VK
 									0x8A, 0x0F,// VEX_Kmovw_r32_kr
 									0x25,// EAX
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x11,// G_VK
-										0x9F, 0x23,// VEX_KNC_Kmov_r32_kr
-										0x25,// EAX
-								0x80, 0x80, 0x80, 0x08,// KNC
+								0x00,// Invalid
+								0x00,// Invalid
 							0x00,// Invalid
 						0x00,// Invalid
 					0x0E,// VectorLength
@@ -5217,43 +4805,8 @@ namespace Blazed.Intel.DecoderInternal {
 						0x00,// Invalid
 
 				// 148 = 0x94
-				0x00,// Invalid
-
-				// 149 = 0x95
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x48,// Gq_HK_RK
-										0xA0, 0x23,// VEX_KNC_Kconcath_r64_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
-
-				// 150 = 0x96
-				0x00,// Invalid
-
-				// 151 = 0x97
-				0x0B,// MandatoryPrefix2_4
-					0x0E,// VectorLength
-						0x09,// W
-							0x47,// Options_DontReadModRM
-								0x00,// Invalid
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x48,// Gq_HK_RK
-										0xA1, 0x23,// VEX_KNC_Kconcatl_r64_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
-							0x00,// Invalid
-						0x00,// Invalid
-					0x00,// Invalid
-					0x00,// Invalid
+				0x02,// Dup
+					0x04,// 4
 					0x00,// Invalid
 
 				// 152 = 0x98
@@ -5263,11 +4816,8 @@ namespace Blazed.Intel.DecoderInternal {
 							0x47,// Options_DontReadModRM
 								0x32,// VK_RK
 									0x8E, 0x0F,// VEX_Kortestw_kr_kr
-								0x04,// Bitness_DontReadModRM
-									0x00,// Invalid
-									0x32,// VK_RK
-										0xA2, 0x23,// VEX_KNC_Kortest_kr_kr
-								0x80, 0x80, 0x80, 0x08,// KNC
+								0x00,// Invalid
+								0x00,// Invalid
 							0x32,// VK_RK
 								0x8F, 0x0F,// VEX_Kortestq_kr_kr
 						0x00,// Invalid
@@ -5308,82 +4858,11 @@ namespace Blazed.Intel.DecoderInternal {
 				// 174 = 0xAE
 				0x08,// Group
 					0x06,// ArrayReference
-						0x04,// 0x4 = handlers_Grp_0FAE
+						0x03,// 0x3 = handlers_Grp_0FAE
 
 				// 175 = 0xAF
 				0x02,// Dup
-					0x09,// 9
-					0x00,// Invalid
-
-				// 184 = 0xB8
-				0x0B,// MandatoryPrefix2_4
-					0x00,// Invalid
-					0x00,// Invalid
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x07,// RM
-									0x4A,// Gv_Ev
-										0xA9, 0x23,// VEX_KNC_Popcnt_r32_r32
-									0x00,// Invalid
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x00,// Invalid
-
-				// 185 = 0xB9
-				0x02,// Dup
-					0x03,// 3
-					0x00,// Invalid
-
-				// 188 = 0xBC
-				0x0B,// MandatoryPrefix2_4
-					0x00,// Invalid
-					0x00,// Invalid
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x07,// RM
-									0x4A,// Gv_Ev
-										0xAB, 0x23,// VEX_KNC_Tzcnt_r32_r32
-									0x00,// Invalid
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x07,// RM
-									0x4A,// Gv_Ev
-										0xAD, 0x23,// VEX_KNC_Tzcnti_r32_r32
-									0x00,// Invalid
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-
-				// 189 = 0xBD
-				0x0B,// MandatoryPrefix2_4
-					0x00,// Invalid
-					0x00,// Invalid
-					0x0E,// VectorLength
-						0x47,// Options_DontReadModRM
-							0x00,// Invalid
-							0x04,// Bitness_DontReadModRM
-								0x00,// Invalid
-								0x07,// RM
-									0x4A,// Gv_Ev
-										0xAF, 0x23,// VEX_KNC_Lzcnt_r32_r32
-									0x00,// Invalid
-							0x80, 0x80, 0x80, 0x08,// KNC
-						0x00,// Invalid
-					0x00,// Invalid
-
-				// 190 = 0xBE
-				0x02,// Dup
-					0x04,// 4
+					0x13,// 19
 					0x00,// Invalid
 
 				// 194 = 0xC2
@@ -6121,11 +5600,11 @@ namespace Blazed.Intel.DecoderInternal {
 				// 255 = 0xFF
 				0x00,// Invalid
 			};
-		const int MaxIdNames = 16;
-		const uint Handlers_MAP0Index = 14;
-		const uint Handlers_0FIndex = 15;
-		const uint Handlers_0F38Index = 12;
-		const uint Handlers_0F3AIndex = 13;
+		const int MaxIdNames = 15;
+		const uint Handlers_MAP0Index = 13;
+		const uint Handlers_0FIndex = 14;
+		const uint Handlers_0F38Index = 11;
+		const uint Handlers_0F3AIndex = 12;
 	}
 }
 #endif

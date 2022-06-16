@@ -138,10 +138,6 @@ namespace Blazed.Intel.BlockEncoderInternal {
 			case Code.Jg_rel16:
 			case Code.Jg_rel32_32:
 			case Code.Jg_rel32_64:
-			case Code.VEX_KNC_Jkzd_kr_rel8_64:
-			case Code.VEX_KNC_Jknzd_kr_rel8_64:
-			case Code.VEX_KNC_Jkzd_kr_rel32_64:
-			case Code.VEX_KNC_Jknzd_kr_rel32_64:
 				return new JccInstr(blockEncoder, block, instruction);
 			// GENERATOR-END: JccInstr
 

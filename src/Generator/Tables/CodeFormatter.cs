@@ -20,11 +20,10 @@ namespace Generator.Tables {
 		readonly InstructionDefFlags1 flags1;
 		readonly EncodingKind encoding;
 		readonly OpCodeOperandKindDef[] opKinds;
-		readonly bool isKnc;
 
 		public CodeFormatter(StringBuilder sb, RegisterDef[] regDefs, MemorySizeDefs memSizeTbl, string codeMnemonic, string? codeSuffix,
 			string? codeMemorySize, string? codeMemorySizeSuffix, EnumValue memSize, EnumValue memSizeBcst, InstructionDefFlags1 flags1,
-			EncodingKind encoding, OpCodeOperandKindDef[] opKinds, bool isKnc) {
+			EncodingKind encoding, OpCodeOperandKindDef[] opKinds) {
 			if (codeMnemonic == string.Empty)
 				throw new ArgumentOutOfRangeException(nameof(codeMnemonic));
 			this.sb = sb;
@@ -39,7 +38,6 @@ namespace Generator.Tables {
 			this.flags1 = flags1;
 			this.encoding = encoding;
 			this.opKinds = opKinds;
-			this.isKnc = isKnc;
 		}
 
 		MemorySize GetMemorySize(bool isBroadcast) => (MemorySize)(isBroadcast ? memSizeBcst.Value : memSize.Value);
@@ -53,8 +51,6 @@ namespace Generator.Tables {
 				break;
 			case EncodingKind.VEX:
 				sb.Append("VEX_");
-				if (isKnc)
-					sb.Append("KNC_");
 				break;
 			case EncodingKind.EVEX:
 				sb.Append("EVEX_");

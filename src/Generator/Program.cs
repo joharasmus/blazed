@@ -103,8 +103,6 @@ Options:
     Don't include XOP instructions
 --no-3dnow
     Don't include 3DNow! instructions
---no-knc
-    Don't include KNC instructions (KNC VEX)
 --include-cpuid <name>
     Include instructions with these CPUID features, remove everything else
     eg. --include-cpuid intel8086;intel186;intel286;intel386;intel486;x64;wbnoinvd
@@ -143,10 +141,6 @@ Options:
 				options.GeneratorFlags |= GeneratorFlags.No3DNow;
 				// Remove FEMMS too
 				options.ExcludeCpuid.Add(nameof(CpuidFeature.D3NOW));
-				break;
-
-			case "--no-knc":
-				options.ExcludeCpuid.Add(nameof(CpuidFeature.KNC));
 				break;
 
 			case "--include-cpuid":

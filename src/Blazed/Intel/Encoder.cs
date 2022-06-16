@@ -198,6 +198,7 @@ namespace Blazed.Intel {
 				ModRM |= (byte)(handler.RmGroupIndex | 0xC0);
 			}
 
+			
 			switch (handler.EncFlags3 & (EncFlags3.Bit16or32 | EncFlags3.Bit64)) {
 			case EncFlags3.Bit16or32 | EncFlags3.Bit64:
 				break;
@@ -215,6 +216,7 @@ namespace Blazed.Intel {
 			default:
 				throw new InvalidOperationException();
 			}
+			
 
 			switch (handler.OpSize) {
 			case CodeSize.Unknown:
@@ -281,7 +283,7 @@ namespace Blazed.Intel {
 					WriteImmediate();
 			}
 			else {
-				Debug.Assert(handler is DeclareDataHandler);
+				Debug.Assert(handler is DeclareDataHandler || handler is ZeroBytesHandler);
 				handler.Encode(this, instruction);
 			}
 

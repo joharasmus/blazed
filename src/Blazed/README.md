@@ -944,7 +944,7 @@ static class HowTo_DisassembleOldInstructions {
         };
 
         // Enable decoding of Centaur ALTINST, MOV to/from TR and MPX instructions.
-        // There are other options to enable other instructions such as UMOV, KNC, etc.
+        // There are other options to enable other instructions such as UMOV, etc.
         // These are deprecated instructions or only used by old CPUs so they're not
         // enabled by default. Some newer instructions also use the same opcodes as
         // some of these old instructions.

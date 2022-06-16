@@ -695,7 +695,7 @@ namespace Blazed.Intel {
 #endif
 			}
 			else {
-				if ((options & DecoderOptions.KNC) == 0 || !is64bMode)
+				if (!is64bMode)
 					SetInvalidInstruction();
 				else {
 

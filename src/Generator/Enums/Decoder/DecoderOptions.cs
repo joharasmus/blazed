@@ -49,6 +49,4 @@ enum DecoderOptions {
 	MPX						= 0x00080000,
 	[Comment("Decode Centaur #(c:ALTINST)#")]
 	ALTINST					= 0x00800000,
-	[Comment("Decode Intel Knights Corner instructions")]
-	KNC						= 0x01000000,
 }

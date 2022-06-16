@@ -200,7 +200,6 @@ namespace Blazed.Intel.InstructionInfoInternal {
 				0x90,// AVX512_FP16
 				0x21, 0x90,// AVX512VL_and_AVX512_FP16
 				0x91,// UDBG
-				0x92,// KNC
 			};
 	}
 }

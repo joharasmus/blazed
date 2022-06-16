@@ -4496,54 +4496,6 @@ namespace Blazed.Intel {
 			(byte)MemorySize.Float16,// EVEX_Vucomish_xmm_xmmm16_sae
 			0,// Rdudbg
 			0,// Wrudbg
-			0,// VEX_KNC_Jkzd_kr_rel8_64
-			0,// VEX_KNC_Jknzd_kr_rel8_64
-			(byte)MemorySize.UInt8,// VEX_KNC_Vprefetchnta_m8
-			(byte)MemorySize.UInt8,// VEX_KNC_Vprefetch0_m8
-			(byte)MemorySize.UInt8,// VEX_KNC_Vprefetch1_m8
-			(byte)MemorySize.UInt8,// VEX_KNC_Vprefetch2_m8
-			(byte)MemorySize.UInt8,// VEX_KNC_Vprefetchenta_m8
-			(byte)MemorySize.UInt8,// VEX_KNC_Vprefetche0_m8
-			(byte)MemorySize.UInt8,// VEX_KNC_Vprefetche1_m8
-			(byte)MemorySize.UInt8,// VEX_KNC_Vprefetche2_m8
-			0,// VEX_KNC_Kand_kr_kr
-			0,// VEX_KNC_Kandn_kr_kr
-			0,// VEX_KNC_Kandnr_kr_kr
-			0,// VEX_KNC_Knot_kr_kr
-			0,// VEX_KNC_Kor_kr_kr
-			0,// VEX_KNC_Kxnor_kr_kr
-			0,// VEX_KNC_Kxor_kr_kr
-			0,// VEX_KNC_Kmerge2l1h_kr_kr
-			0,// VEX_KNC_Kmerge2l1l_kr_kr
-			0,// VEX_KNC_Jkzd_kr_rel32_64
-			0,// VEX_KNC_Jknzd_kr_rel32_64
-			0,// VEX_KNC_Kmov_kr_kr
-			0,// VEX_KNC_Kmov_kr_r32
-			0,// VEX_KNC_Kmov_r32_kr
-			0,// VEX_KNC_Kconcath_r64_kr_kr
-			0,// VEX_KNC_Kconcatl_r64_kr_kr
-			0,// VEX_KNC_Kortest_kr_kr
-			0,// VEX_KNC_Delay_r32
-			0,// VEX_KNC_Delay_r64
-			0,// VEX_KNC_Spflt_r32
-			0,// VEX_KNC_Spflt_r64
-			(byte)MemorySize.UInt8,// VEX_KNC_Clevict1_m8
-			(byte)MemorySize.UInt8,// VEX_KNC_Clevict0_m8
-			0,// VEX_KNC_Popcnt_r32_r32
-			0,// VEX_KNC_Popcnt_r64_r64
-			0,// VEX_KNC_Tzcnt_r32_r32
-			0,// VEX_KNC_Tzcnt_r64_r64
-			0,// VEX_KNC_Tzcnti_r32_r32
-			0,// VEX_KNC_Tzcnti_r64_r64
-			0,// VEX_KNC_Lzcnt_r32_r32
-			0,// VEX_KNC_Lzcnt_r64_r64
-			(byte)MemorySize.UInt32,// VEX_KNC_Undoc_r32_rm32_128_F3_0F38_W0_F0
-			(byte)MemorySize.UInt64,// VEX_KNC_Undoc_r64_rm64_128_F3_0F38_W1_F0
-			(byte)MemorySize.UInt32,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F0
-			(byte)MemorySize.UInt64,// VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F0
-			(byte)MemorySize.UInt32,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F1
-			(byte)MemorySize.UInt64,// VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F1
-			0,// VEX_KNC_Kextract_kr_r64_imm8
 			0,// Zero_bytes
 		};
 
@@ -9036,54 +8988,6 @@ namespace Blazed.Intel {
 			0,// EVEX_Vucomish_xmm_xmmm16_sae
 			0,// Rdudbg
 			0,// Wrudbg
-			0,// VEX_KNC_Jkzd_kr_rel8_64
-			0,// VEX_KNC_Jknzd_kr_rel8_64
-			0,// VEX_KNC_Vprefetchnta_m8
-			0,// VEX_KNC_Vprefetch0_m8
-			0,// VEX_KNC_Vprefetch1_m8
-			0,// VEX_KNC_Vprefetch2_m8
-			0,// VEX_KNC_Vprefetchenta_m8
-			0,// VEX_KNC_Vprefetche0_m8
-			0,// VEX_KNC_Vprefetche1_m8
-			0,// VEX_KNC_Vprefetche2_m8
-			0,// VEX_KNC_Kand_kr_kr
-			0,// VEX_KNC_Kandn_kr_kr
-			0,// VEX_KNC_Kandnr_kr_kr
-			0,// VEX_KNC_Knot_kr_kr
-			0,// VEX_KNC_Kor_kr_kr
-			0,// VEX_KNC_Kxnor_kr_kr
-			0,// VEX_KNC_Kxor_kr_kr
-			0,// VEX_KNC_Kmerge2l1h_kr_kr
-			0,// VEX_KNC_Kmerge2l1l_kr_kr
-			0,// VEX_KNC_Jkzd_kr_rel32_64
-			0,// VEX_KNC_Jknzd_kr_rel32_64
-			0,// VEX_KNC_Kmov_kr_kr
-			0,// VEX_KNC_Kmov_kr_r32
-			0,// VEX_KNC_Kmov_r32_kr
-			0,// VEX_KNC_Kconcath_r64_kr_kr
-			0,// VEX_KNC_Kconcatl_r64_kr_kr
-			0,// VEX_KNC_Kortest_kr_kr
-			0,// VEX_KNC_Delay_r32
-			0,// VEX_KNC_Delay_r64
-			0,// VEX_KNC_Spflt_r32
-			0,// VEX_KNC_Spflt_r64
-			0,// VEX_KNC_Clevict1_m8
-			0,// VEX_KNC_Clevict0_m8
-			0,// VEX_KNC_Popcnt_r32_r32
-			0,// VEX_KNC_Popcnt_r64_r64
-			0,// VEX_KNC_Tzcnt_r32_r32
-			0,// VEX_KNC_Tzcnt_r64_r64
-			0,// VEX_KNC_Tzcnti_r32_r32
-			0,// VEX_KNC_Tzcnti_r64_r64
-			0,// VEX_KNC_Lzcnt_r32_r32
-			0,// VEX_KNC_Lzcnt_r64_r64
-			0,// VEX_KNC_Undoc_r32_rm32_128_F3_0F38_W0_F0
-			0,// VEX_KNC_Undoc_r64_rm64_128_F3_0F38_W1_F0
-			0,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F0
-			0,// VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F0
-			0,// VEX_KNC_Undoc_r32_rm32_128_F2_0F38_W0_F1
-			0,// VEX_KNC_Undoc_r64_rm64_128_F2_0F38_W1_F1
-			0,// VEX_KNC_Kextract_kr_r64_imm8
 			0,// Zero_bytes
 		};
 	}

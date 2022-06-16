@@ -296,7 +296,5 @@ namespace Generator.Enums.InstructionInfo {
 		AVX512_FP16,
 		[Comment("Undocumented Intel #(c:RDUDBG)# and #(c:WRUDBG)# instructions")]
 		UDBG,
-		[Comment("Intel Knights Corner")]
-		KNC,
 	}
 }

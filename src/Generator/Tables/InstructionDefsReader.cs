@@ -1276,21 +1276,6 @@ namespace Generator.Tables {
 			}
 			const InstructionDefFlags1 CpuModeBits = InstructionDefFlags1.Bit16 | InstructionDefFlags1.Bit32 | InstructionDefFlags1.Bit64;
 
-			var isKnc = state.Cpuid.Any(x => (CpuidFeature)x.Value == CpuidFeature.KNC);
-			if (isKnc) {
-				if ((state.Flags1 & CpuModeBits) != 0) {
-					Error(lineIndex, "KNC is 64-bit only. The parser hard codes the bitness");
-					return false;
-				}
-				state.Flags1 |= InstructionDefFlags1.Bit64;
-				state.Flags3 |= InstructionDefFlags3.AsmIgnore;
-				if (state.DecoderOption != decoderOptionNone) {
-					Error(lineIndex, "The parser adds KNC decoder option");
-					return false;
-				}
-				state.DecoderOption = toDecOptionValue[nameof(DecOptionValue.KNC)];
-			}
-
 			if ((state.Flags1 & CpuModeBits) == 0)
 				state.Flags1 |= CpuModeBits;
 			const InstructionDefFlags1 CplBits = InstructionDefFlags1.Cpl0 | InstructionDefFlags1.Cpl1 |
@@ -1411,8 +1396,7 @@ namespace Generator.Tables {
 			}
 
 			var codeFormatter = new CodeFormatter(sb, regDefs, memSizeTbl, state.CodeMnemonic, state.CodeSuffix, state.CodeMemorySize,
-				state.CodeMemorySizeSuffix, state.MemorySize, state.MemorySize_Broadcast, state.Flags1, parsedOpCode.Encoding, state.OpKinds,
-				isKnc);
+				state.CodeMemorySizeSuffix, state.MemorySize, state.MemorySize_Broadcast, state.Flags1, parsedOpCode.Encoding, state.OpKinds);
 			var codeValue = codeFormatter.Format();
 			if (usedCodeValues.TryGetValue(codeValue, out var otherLineIndex)) {
 				Error(state.LineIndex,

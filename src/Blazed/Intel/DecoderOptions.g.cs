@@ -56,8 +56,6 @@ namespace Blazed.Intel {
 		MPX = 0x00080000,
 		/// <summary>Decode Centaur <c>ALTINST</c></summary>
 		ALTINST = 0x00800000,
-		/// <summary>Decode Intel Knights Corner instructions</summary>
-		KNC = 0x01000000,
 	}
 }
 #endif
