@@ -14,7 +14,7 @@ else
 	is_windows=n
 fi
 net_tfm="net6.0"
-configuration=Release
+configuration=Debug
 full_check=y
 gen_check=y
 test_code=y
